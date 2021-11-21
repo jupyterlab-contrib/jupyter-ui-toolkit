@@ -1,0 +1,37 @@
+# Source files
+src/
+
+# Docs
+docs/
+samples/
+CODE_OF_CONDUCT.md
+SECURITY.md
+CONTRIBUTING.md
+
+# Tests
+*.spec.*
+coverage/
+
+# Builds
+build/
+storybook-static/
+
+# Config files
+.vscode
+.github
+.eslintrc.js
+.eslintignore
+.prettierrc
+.prettierignore
+.storybook
+babel.config.js
+tsconfig.json
+tsconfig.build.json
+webpack.config.js
+rollup.config.js
+policheck
+azure-pipelines.yml
+api-extractor.json
+
+# Cache
+temp

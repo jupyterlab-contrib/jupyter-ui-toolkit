@@ -1,0 +1,35 @@
+// Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
+// Distributed under the terms of the Modified BSD License.
+
+import {createLink, LinkArgs} from './fixtures/createLink';
+
+export default {
+	title: 'Library/Link',
+	argTypes: {
+		label: {control: 'text'},
+		href: {control: 'text'},
+	},
+	parameters: {
+		actions: {
+			disabled: true,
+		},
+	},
+};
+
+const Template = ({...args}: LinkArgs) => {
+	return createLink({...args});
+};
+
+export const Default: any = Template.bind({});
+Default.args = {
+	label: 'Link Text',
+	href: '#',
+};
+Default.parameters = {
+	docs: {
+		source: {
+			code: `<jp-link href="#">Link Text</jp-link>`,
+		},
+	},
+};

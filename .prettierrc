@@ -1,0 +1,36 @@
+{
+	"printWidth": 80,
+	"tabWidth": 4,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": true,
+	"quoteProps": "consistent",
+	"jsxSingleQuote": false,
+	"trailingComma": "es5",
+	"bracketSpacing": false,
+	"arrowParens": "avoid",
+	"overrides": [
+		{
+			"files": "docs/*.md",
+			"options": {
+				"printWidth": 130,
+				"singleQuote": false,
+				"useTabs": false,
+				"tabWidth": 2,
+				"bracketSpacing": true
+			}
+		},
+		{
+			"files": "src/data-grid/README.md",
+			"options": {
+				"printWidth": 110
+			}
+		},
+		{
+			"files": "src/design-tokens.ts",
+			"options": {
+				"printWidth": 200
+			}
+		}
+	]
+}
