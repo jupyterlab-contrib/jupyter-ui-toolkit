@@ -3,9 +3,7 @@
 **WIP this is very early work in progress and nothing is yet working.** But don't hesitate to open issues and PRs if you want to help.
 
 ![Extension status](https://img.shields.io/badge/status-draft-critical "Not yet working")
-
-![Release: Public Preview](https://img.shields.io/badge/release-public%20preview-orange)
-[![NPM Version](https://img.shields.io/npm/v/@vscode/webview-ui-toolkit?color=blue)](https://www.npmjs.com/package/@jupyter-notebook/ui-components)
+[![NPM Version](https://img.shields.io/npm/v/@jupyter-notebook/ui-components?color=blue)](https://www.npmjs.com/package/@jupyter-notebook/ui-components)
 ![Toolkit CI Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml/badge.svg)
 ![Deploy Docs Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
@@ -27,7 +25,7 @@ Note this project started as a fork of the [WebView toolkit for Visual Studio Co
 
 ## Release
 
-The UI Toolkit is currently in a public preview. Track progress towards 1.0 [here](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.0). Styles and API
+The UI Toolkit is currently in a proof of concept. Track progress towards 1.0 [here](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.0). Styles and API
 are not guarantee between minor versions prior to v1.0.0.
 
 ## Getting started
