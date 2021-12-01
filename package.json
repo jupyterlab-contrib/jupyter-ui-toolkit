@@ -19,5 +19,8 @@
       "packages/components",
       "packages/lab-example"
     ]
+  },
+  "resolutions": {
+    "webpack": "^5.0.0"
   }
 }

@@ -37,10 +37,10 @@ jobs:
               run: yarn install
 
             - name: Run Lint Check 🔍
-              run: yarn run lint
+              run: yarn run eslint:check
 
             - name: Run Format Check 🌸
-              run: yarn run fmt
+              run: yarn run prettier:check
 
     build-toolkit:
         runs-on: ubuntu-latest
