@@ -5,11 +5,12 @@
 ![Extension status](https://img.shields.io/badge/status-draft-critical "Not yet working")
 
 ![Release: Public Preview](https://img.shields.io/badge/release-public%20preview-orange)
-[![NPM Version](https://img.shields.io/npm/v/@vscode/webview-ui-toolkit?color=blue)](https://www.npmjs.com/package/@vscode/webview-ui-toolkit)
+[![NPM Version](https://img.shields.io/npm/v/@vscode/webview-ui-toolkit?color=blue)](https://www.npmjs.com/package/@jupyter-notebook/ui-components)
 ![Toolkit CI Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml/badge.svg)
 ![Deploy Docs Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
 
-![Toolkit for Jupyter Artwork](./docs/assets/toolkit-artwork.png)
+![Toolkit for Jupyter Artwork](./packages/components/docs/assets/toolkit-artwork.png)
 
 ## Introduction
 
@@ -31,6 +32,7 @@ are not guarantee between minor versions prior to v1.0.0.
 
 ## Getting started
 
+<!--
 Follow the [Getting Started Guide](./docs/getting-started.md).
 
 If you already have a webview-based extension, you can install the toolkit with the following command:
@@ -38,6 +40,7 @@ If you already have a webview-based extension, you can install the toolkit with 
 ```
 npm install --save @vscode/webview-ui-toolkit
 ```
+-->
 
 ## Documentation
 
