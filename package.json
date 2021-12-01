@@ -1,13 +1,22 @@
 {
-	"name": "@jupyter/root-ui-toolkit",
-	"private": true,
-	"scripts": {},
-	"devDependencies": {
-		"lerna": "^4.0.0"
-	},
-	"workspaces": {
-		"packages": [
-			"packages/components"
-		]
-	}
+  "name": "@jupyter/root-ui-toolkit",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "install": "lerna bootstrap",
+    "prettier": "prettier --write \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
+    "prettier:check": "prettier --list-different \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
+    "eslint": "eslint . --ext .ts,.tsx --fix",
+    "eslint:check": "eslint . --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/components",
+      "packages/lab-example"
+    ]
+  }
 }

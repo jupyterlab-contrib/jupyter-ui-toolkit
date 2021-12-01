@@ -1,5 +1,7 @@
-# Dependencies
 node_modules/
+**/node_modules
+**/lib
+jupyter_ui_demo
 
 # Production
 build/

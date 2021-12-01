@@ -21,29 +21,29 @@ export type T =
 export const tokenMappings: {[index: string]: CSSDesignToken<T>} = {};
 
 /**
- * Boolean flag that ensures the VS Code theme listener is initialized once.
+ * Boolean flag that ensures the Jupyter theme listener is initialized once.
  */
 let isThemeListenerInitialized = false;
 
 /**
  * Given a design token name, return a new FAST CSSDesignToken.
  *
- * @remarks A VS Code theme CSS variable can be optionally passed to be
+ * @remarks A Jupyter theme CSS variable can be optionally passed to be
  * associated with the design token.
  *
- * @remarks On the first execution the VS Code theme listener will also be
+ * @remarks On the first execution the Jupyter theme listener will also be
  * initialized.
  *
  * @param name A design token name.
- * @param vscodeThemeVar A VS Code theme CSS variable name to be associated with
+ * @param jpThemeVar A Jupyter theme CSS variable name to be associated with
  * the design token.
  * @returns A FAST CSSDesignToken that emits a CSS custom property.
  */
-export function create<T>(name: string, vscodeThemeVar?: string) {
+export function create<T>(name: string, jpThemeVar?: string) {
 	const designToken = DesignToken.create<T>(name);
 
-	if (vscodeThemeVar) {
-		tokenMappings[vscodeThemeVar] = designToken;
+	if (jpThemeVar) {
+		tokenMappings[jpThemeVar] = designToken;
 	}
 	if (!isThemeListenerInitialized) {
 		initThemeChangeListener(tokenMappings);

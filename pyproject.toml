@@ -1,0 +1,18 @@
+[build-system]
+requires = ["jupyter_packaging~=0.10,<2", "jupyterlab~=3.1"]
+build-backend = "jupyter_packaging.build_api"
+
+[tool.jupyter-packaging.options]
+skip-if-exists = ["jupyter_ui_demo/labextension/static/style.js"]
+ensured-targets = ["jupyter_ui_demo/labextension/static/style.js", "jupyter_ui_demo/labextension/package.json"]
+
+[tool.jupyter-packaging.builder]
+factory = "jupyter_packaging.npm_builder"
+
+[tool.jupyter-packaging.build-args]
+build_cmd = "build:prod"
+path = "packages/lab-example"
+npm = ["yarn"]
+
+[tool.check-manifest]
+ignore = ["jupyter_ui_demo/labextension/**", "yarn.lock", ".*", "package-lock.json"]

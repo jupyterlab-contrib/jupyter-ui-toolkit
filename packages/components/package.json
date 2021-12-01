@@ -2,15 +2,15 @@
 	"name": "@jupyter/ui-components",
 	"version": "0.1.0",
 	"description": "A component library for building extensions in Jupyter frontends.",
-	"homepage": "https://github.com/microsoft/vscode-webview-ui-toolkit#readme",
+	"homepage": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit#readme",
 	"license": "BSD-3-Clause",
 	"author": "Project Jupyter",
 	"bugs": {
-		"url": "https://github.com/microsoft/vscode-webview-ui-toolkit/issues"
+		"url": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/microsoft/vscode-webview-ui-toolkit.git"
+		"url": "git+https://github.com/jupyterlab-contrib/jupyter-ui-toolkit.git"
 	},
 	"main": "dist/esm/index.js",
 	"types": "dist/dts/index.d.ts",

@@ -1,0 +1,36 @@
+.jp-Artwork {
+  padding: 4px;
+  
+  font-family: var(--jp-ui-font-family);
+  color: var(--jp-ui-font-color1);
+  font-size: var(--jp-ui-font-size1);
+}
+
+.jp-Artwork > .jp-FlexRow {
+  height: 100%;
+  max-height: 500px;
+}
+
+.jp-Artwork .jp-FlexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.jp-Artwork .jp-FlexColumn {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.jp-Artwork .jp-FlexColumn > * {
+  flex: 0 0 auto;
+  margin: 4px;
+}
+
+.jp-Artwork .jp-FlexColumn > div > * {
+  margin: 2px;
+}
