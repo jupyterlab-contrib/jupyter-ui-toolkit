@@ -16,10 +16,10 @@ jobs:
                   node-version: '14'
 
             - name: Install Dependencies 📥
-              run: npm install
+              run: yarn install
 
             - name: Run Tests 🧪
-              run: npm run test
+              run: yarn run test
 
     lint:
         runs-on: ubuntu-latest
@@ -34,13 +34,13 @@ jobs:
                   node-version: '14'
 
             - name: Install Dependencies 📥
-              run: npm install
+              run: yarn install
 
             - name: Run Lint Check 🔍
-              run: npm run lint
+              run: yarn run lint
 
             - name: Run Format Check 🌸
-              run: npm run fmt
+              run: yarn run fmt
 
     build-toolkit:
         runs-on: ubuntu-latest
@@ -55,10 +55,10 @@ jobs:
                   node-version: '14'
 
             - name: Install Dependencies 📥
-              run: npm install
+              run: yarn install
 
             - name: Build Toolkit 🏗
-              run: npm run build
+              run: yarn run build
 
     build-docs:
         runs-on: ubuntu-latest
@@ -73,7 +73,8 @@ jobs:
                   node-version: '14'
 
             - name: Install Dependencies 📥
-              run: npm install
+              run: yarn install
 
             - name: Build Docs 🏗
-              run: npm run build:docs
+              run: yarn run build:docs
+              working-directory: packages/components
