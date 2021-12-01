@@ -17,9 +17,9 @@ export function initThemeChangeListener(tokenMappings: {
     });
     observer.observe(document.body, {
       attributes: true,
+      attributeFilter: ['data-jp-theme-name'],
       childList: false,
       characterData: false
-      // attributeFilter: ['data-jp-theme-name'],
     });
 
     applyCurrentTheme(tokenMappings);

@@ -2,8 +2,7 @@
   "extends": "../../tsconfigbase.json",
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": "src",
-    "types": ["react"]
+    "rootDir": "src"
   },
-  "include": ["src/*"]
+  "include": ["src/**/*"]
 }

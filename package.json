@@ -22,8 +22,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/components",
-      "packages/lab-example"
+      "packages/*"
     ]
   },
   "resolutions": {

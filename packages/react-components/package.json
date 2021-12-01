@@ -1,0 +1,51 @@
+{
+  "name": "@jupyter-notebook/react-ui-components",
+  "version": "0.1.0",
+  "description": "A component library for building extensions in Jupyter frontends.",
+  "homepage": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit#readme",
+  "license": "BSD-3-Clause",
+  "author": "Project Jupyter",
+  "bugs": {
+    "url": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jupyterlab-contrib/jupyter-ui-toolkit.git"
+  },
+  "files": [
+    "lib/**/*.{d.ts,js,js.map,json}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "clean": "rimraf lib tsconfig.tsbuildinfo",
+    "prettier:check": "prettier --config ./.prettierrc --check \"**/*.{ts,js,md}\"",
+    "prettier": "prettier --config ./.prettierrc --write \"**/*.{ts,js,md}\"",
+    "eslint:check": "eslint . --ext .ts,.tsx",
+    "eslint": "eslint . --ext .ts,.tsx --fix",
+    "prepublishOnly": "yarn run build",
+    "test": "jest --verbose --coverage"
+  },
+  "dependencies": {
+    "@jupyter-notebook/ui-components": "^0.1.0",
+    "@microsoft/fast-react-wrapper": "^0.1.17",
+    "react": "^17.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/react": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "babel-jest": "^27.2.4",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.25.2",
+    "jest": "^27.2.4",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "~4.3.5"
+  }
+}

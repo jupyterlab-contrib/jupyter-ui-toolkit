@@ -1,16 +1,27 @@
 import {
-  JupyterFrontEnd,
-  JupyterFrontEndPlugin
-} from '@jupyterlab/application';
-
-import { IThemeManager } from '@jupyterlab/apputils';
-
+  Button,
+  Checkbox,
+  Dropdown,
+  Link,
+  Option,
+  ProgressRing,
+  Radio,
+  RadioGroup,
+  Tag,
+  TextArea,
+  TextField
+} from '@jupyter-notebook/react-ui-components';
 import {
   allComponents,
   provideJupyterDesignSystem
 } from '@jupyter-notebook/ui-components';
-
+import {
+  JupyterFrontEnd,
+  JupyterFrontEndPlugin
+} from '@jupyterlab/application';
+import { IThemeManager, ReactWidget } from '@jupyterlab/apputils';
 import { Widget } from '@lumino/widgets';
+import React from 'react';
 
 provideJupyterDesignSystem().register(allComponents);
 
@@ -24,30 +35,28 @@ const plugin: JupyterFrontEndPlugin<void> = {
   activate: (app: JupyterFrontEnd, theme: IThemeManager | null) => {
     console.log('JupyterLab extension jupyter-ui-demo is activated!');
 
-    const obs = new MutationObserver(() => {
-      console.log(`Dummy observer called...`);
-    });
-    obs.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['data-jp-theme-name'],
-      childList: false,
-      characterData: false
-    });
-
     const widget = new Widget({ node: createNode() });
     widget.addClass('jp-Artwork');
     widget.id = 'artwork-ui-components';
     widget.title.label = 'Toolkit Gallery';
-    app.restored.then(() => {
-      // TODO we need to fix something upstream here
-      if (theme) {
-        theme.themeChanged.connect(() => {
-          document.body.classList.toggle('jp-mod-theme');
-        });
-        document.body.classList.toggle('jp-mod-theme');
-      }
 
+    // Add listener
+    const firstButton = widget.node.querySelector('jp-button');
+    if (firstButton) {
+      firstButton.addEventListener('click', () => {
+        alert('Reacting to vanilla click event.');
+      });
+    }
+
+    const reactWidget = ReactWidget.create(<Artwork />);
+    reactWidget.addClass('jp-Artwork');
+    reactWidget.id = 'artwork-react-ui-components';
+    reactWidget.title.label = 'React Toolkit Gallery';
+
+    app.restored.then(() => {
       app.shell.add(widget, 'main');
+      app.shell.add(reactWidget, 'main', { mode: 'split-right' });
+      app.shell.activateById(widget.id);
 
       (widget.node.querySelector('#basic-grid') as any).rowsData = [
         {
@@ -72,6 +81,72 @@ const plugin: JupyterFrontEndPlugin<void> = {
     });
   }
 };
+
+function Artwork(): JSX.Element {
+  // TODO provide typing for Jupyter React components - see https://www.fast.design/docs/integrations/react#typescript-and-tsx-support
+  const onClick = () => {
+    alert('Reacting on React click event.');
+  };
+  return (
+    <div className="jp-FlexRow">
+      <div className="jp-FlexColumn">
+        <div className="jp-FlexRow">
+          {/* @ts-expect-error property appearance not defined */}
+          <Button appearance="primary" onClick={onClick}>
+            Button
+          </Button>
+          {/* @ts-expect-error property appearance not defined */}
+          <Button appearance="secondary">Button</Button>
+          {/* @ts-expect-error property appearance not defined */}
+          <Button appearance="icon" aria-label="Confirm">
+            <span className="fa fa-cog"></span>
+          </Button>
+        </div>
+        {/* @ts-expect-error property value not defined */}
+        <TextField value="Populated text">Text Field Label</TextField>
+        <div className="jp-FlexColumn">
+          <label>Label</label>
+          <Dropdown>
+            <Option>Option Label #1</Option>
+            <Option>Option Label #2</Option>
+            <Option>Option Label #3</Option>
+          </Dropdown>
+        </div>
+        <TextArea>Text Area Label</TextArea>
+        {/* @ts-expect-error property href not defined */}
+        <Link href="#">Link Text</Link>
+      </div>
+      <div className="jp-FlexColumn">
+        {/* @ts-expect-error property orientation not defined */}
+        <RadioGroup orientation="vertical">
+          <label slot="label">Label</label>
+          {/* @ts-expect-error property checked not defined */}
+          <Radio checked>Radio Label</Radio>
+          <Radio>Radio Label</Radio>
+          {/* @ts-expect-error property disabled not defined */}
+          <Radio disabled>Radio Label</Radio>
+        </RadioGroup>
+        <div>
+          <label>Label</label>
+          <div className="jp-FlexColumn">
+            {/* @ts-expect-error property autofocus checked not defined */}
+            <Checkbox autofocus checked>
+              Label
+            </Checkbox>
+            {/* @ts-expect-error property checked not defined */}
+            <Checkbox checked>Label</Checkbox>
+            {/* @ts-expect-error property disabled not defined */}
+            <Checkbox disabled>Label</Checkbox>
+          </div>
+        </div>
+        <div>
+          <Tag>Tag</Tag>
+        </div>
+        <ProgressRing></ProgressRing>
+      </div>
+    </div>
+  );
+}
 
 function createNode(): HTMLElement {
   const node = document.createElement('div');

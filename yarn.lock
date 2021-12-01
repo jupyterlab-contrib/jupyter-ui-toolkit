@@ -2752,7 +2752,7 @@
   resolved "https://registry.yarnpkg.com/@microsoft/fast-element/-/fast-element-1.6.2.tgz#414abc9f49fde85e12002e01025c5cc3dddc16ac"
   integrity sha512-TrFOpe9k9xIK2iLfIG5T2+bavUAWBvAC/KQ/3ecFsK65l9PAZ/j3zlkyLxNrpIksFtUBkfVdV03kwFurZjqzKQ==
 
-"@microsoft/fast-foundation@^2.21.0":
+"@microsoft/fast-foundation@^2.21.0", "@microsoft/fast-foundation@^2.27.0":
   version "2.27.0"
   resolved "https://registry.yarnpkg.com/@microsoft/fast-foundation/-/fast-foundation-2.27.0.tgz#ea273db991df608e02207755f25e3e515e67d9b9"
   integrity sha512-pA+N1uaf3Ebv0UVji9gk2+oix8oWP1BdI7whEWOn+Zha5wISSDBbpUR4IceFrf269w4bQ/ga7xv8s/r0JeNiOw==
@@ -2761,6 +2761,14 @@
     "@microsoft/fast-web-utilities" "^5.0.2"
     tabbable "^5.2.0"
     tslib "^1.13.0"
+
+"@microsoft/fast-react-wrapper@^0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-react-wrapper/-/fast-react-wrapper-0.1.17.tgz#2c913c9ffa7bf5bfd93f718a76382690a9761db2"
+  integrity sha512-DUXUwh/kaU0kf8HEZpAGASDNlNfHPgRP2RkVp20I6y+5hJI+JMtIMiipC9oIfAgAALrUJa+040VcM2XmXMSu8Q==
+  dependencies:
+    "@microsoft/fast-element" "^1.6.2"
+    "@microsoft/fast-foundation" "^2.27.0"
 
 "@microsoft/fast-web-utilities@^5.0.2":
   version "5.0.2"
@@ -13341,7 +13349,7 @@ react@16.14.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-react@^17.0.1:
+react@^17.0.0, react@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==

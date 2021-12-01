@@ -1,10 +1,15 @@
 node_modules
-dist
-build
-coverage
+
+**/node_modules
+**/lib
+**/build
+**/dist
+**/coverage
+**/docs
+
 # don't lint storybook files
-.storybook/
+**/.storybook/
 # don't lint stories
-*.stories.*
+**/*.stories.*
 **/*.d.ts
-tests
+**/tests
