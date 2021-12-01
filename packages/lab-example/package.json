@@ -46,7 +46,7 @@
     "watch:labextension": "jupyter labextension watch ."
   },
   "dependencies": {
-    "@jupyter/ui-components": "^0.1.0",
+    "@jupyter-notebook/ui-components": "^0.1.0",
     "@jupyterlab/application": "^3.1.0",
     "@jupyterlab/apputils": "^3.0.0",
     "@lumino/widgets": "^1.30.0"

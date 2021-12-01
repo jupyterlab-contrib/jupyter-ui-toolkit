@@ -8,7 +8,7 @@ import { IThemeManager } from '@jupyterlab/apputils';
 import {
   allComponents,
   provideJupyterDesignSystem
-} from '@jupyter/ui-components';
+} from '@jupyter-notebook/ui-components';
 
 import { Widget } from '@lumino/widgets';
 
