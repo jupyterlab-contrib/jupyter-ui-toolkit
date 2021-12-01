@@ -3,10 +3,10 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	Badge as FoundationBadge,
-	badgeTemplate as template,
+  Badge as FoundationBadge,
+  badgeTemplate as template
 } from '@microsoft/fast-foundation';
-import {badgeStyles as styles} from './badge.styles';
+import { badgeStyles as styles } from './badge.styles';
 
 /**
  * The  badge class.
@@ -14,22 +14,22 @@ import {badgeStyles as styles} from './badge.styles';
  * @public
  */
 export class Badge extends FoundationBadge {
-	/**
-	 * Component lifecycle method that runs when the component is inserted
-	 * into the DOM.
-	 *
-	 * @internal
-	 */
-	public connectedCallback() {
-		super.connectedCallback();
+  /**
+   * Component lifecycle method that runs when the component is inserted
+   * into the DOM.
+   *
+   * @internal
+   */
+  public connectedCallback() {
+    super.connectedCallback();
 
-		// This will override any usage of the circular attribute
-		// inherited by the FAST Foundation Badge component so
-		// that Jupyter Badges are always circular
-		if (!this.circular) {
-			this.circular = true;
-		}
-	}
+    // This will override any usage of the circular attribute
+    // inherited by the FAST Foundation Badge component so
+    // that Jupyter Badges are always circular
+    if (!this.circular) {
+      this.circular = true;
+    }
+  }
 }
 
 /**
@@ -41,7 +41,7 @@ export class Badge extends FoundationBadge {
  * @public
  */
 export const jpBadge = Badge.compose({
-	baseName: 'badge',
-	template,
-	styles,
+  baseName: 'badge',
+  template,
+  styles
 });

@@ -1,8 +1,8 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import {allComponents} from './custom-elements';
-import {provideJupyterDesignSystem} from './jupyter-design-system';
+import { allComponents } from './custom-elements';
+import { provideJupyterDesignSystem } from './jupyter-design-system';
 
 export * from './index';
 
@@ -13,4 +13,4 @@ export * from './index';
  * rather than a module/build system.
  */
 export const JupyterDesignSystem =
-	provideJupyterDesignSystem().register(allComponents);
+  provideJupyterDesignSystem().register(allComponents);

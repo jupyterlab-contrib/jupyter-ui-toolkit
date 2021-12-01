@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import {DesignSystem} from '@microsoft/fast-foundation';
+import { DesignSystem } from '@microsoft/fast-foundation';
 
 /**
  * Provides a design system for the specified element either by returning one that was
@@ -10,6 +10,8 @@ import {DesignSystem} from '@microsoft/fast-foundation';
  * @returns A Jupyter Design System
  * @public
  */
-export function provideJupyterDesignSystem(element?: HTMLElement): DesignSystem {
-	return DesignSystem.getOrCreate(element).withPrefix('jp');
+export function provideJupyterDesignSystem(
+  element?: HTMLElement
+): DesignSystem {
+  return DesignSystem.getOrCreate(element).withPrefix('jp');
 }

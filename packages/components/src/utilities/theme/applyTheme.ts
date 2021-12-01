@@ -24,7 +24,7 @@ export function initThemeChangeListener(tokenMappings: {
 
     applyCurrentTheme(tokenMappings);
   };
-  
+
   if (document.readyState === 'complete') {
     addObserver();
   } else {

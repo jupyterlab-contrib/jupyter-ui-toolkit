@@ -3,11 +3,11 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	TextField as FoundationTextField,
-	textFieldTemplate as template,
-	TextFieldOptions,
+  TextField as FoundationTextField,
+  textFieldTemplate as template,
+  TextFieldOptions
 } from '@microsoft/fast-foundation';
-import {textFieldStyles as styles} from './text-field.styles';
+import { textFieldStyles as styles } from './text-field.styles';
 
 /**
  * The  text field class.
@@ -15,21 +15,21 @@ import {textFieldStyles as styles} from './text-field.styles';
  * @public
  */
 export class TextField extends FoundationTextField {
-	/**
-	 * Component lifecycle method that runs when the component is inserted
-	 * into the DOM.
-	 *
-	 * @internal
-	 */
-	public connectedCallback() {
-		super.connectedCallback();
-		if (this.textContent) {
-			this.setAttribute('aria-label', this.textContent);
-		} else {
-			// Describe the generic component if no label is provided
-			this.setAttribute('aria-label', 'Text field');
-		}
-	}
+  /**
+   * Component lifecycle method that runs when the component is inserted
+   * into the DOM.
+   *
+   * @internal
+   */
+  public connectedCallback() {
+    super.connectedCallback();
+    if (this.textContent) {
+      this.setAttribute('aria-label', this.textContent);
+    } else {
+      // Describe the generic component if no label is provided
+      this.setAttribute('aria-label', 'Text field');
+    }
+  }
 }
 
 /**
@@ -41,10 +41,10 @@ export class TextField extends FoundationTextField {
  * @public
  */
 export const jpTextField = TextField.compose<TextFieldOptions>({
-	baseName: 'text-field',
-	template,
-	styles,
-	shadowOptions: {
-		delegatesFocus: true,
-	},
+  baseName: 'text-field',
+  template,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true
+  }
 });

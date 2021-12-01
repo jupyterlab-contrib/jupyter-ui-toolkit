@@ -3,17 +3,17 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	Tab as FoundationTab,
-	TabPanel as FoundationTabPanel,
-	Tabs as FoundationTabs,
-	tabPanelTemplate,
-	TabsOrientation,
-	tabsTemplate,
-	tabTemplate,
+  Tab as FoundationTab,
+  TabPanel as FoundationTabPanel,
+  Tabs as FoundationTabs,
+  tabPanelTemplate,
+  TabsOrientation,
+  tabsTemplate,
+  tabTemplate
 } from '@microsoft/fast-foundation';
-import {panelsStyles} from './panels.styles';
-import {panelTabStyles} from './panel-tab.styles';
-import {panelViewStyles} from './panel-view.styles';
+import { panelsStyles } from './panels.styles';
+import { panelTabStyles } from './panel-tab.styles';
+import { panelViewStyles } from './panel-view.styles';
 
 /**
  * The  panels class.
@@ -21,29 +21,29 @@ import {panelViewStyles} from './panel-view.styles';
  * @public
  */
 export class Panels extends FoundationTabs {
-	/**
-	 * Component lifecycle method that runs when the component is inserted
-	 * into the DOM.
-	 *
-	 * @internal
-	 */
-	public connectedCallback() {
-		super.connectedCallback();
+  /**
+   * Component lifecycle method that runs when the component is inserted
+   * into the DOM.
+   *
+   * @internal
+   */
+  public connectedCallback() {
+    super.connectedCallback();
 
-		// This will override any usage of the orientation attribute
-		// inherited by the FAST Foundation Tabs component so that
-		// VSCodePanels are always oriented horizontally
-		if (this.orientation) {
-			this.orientation = TabsOrientation.horizontal;
-		}
+    // This will override any usage of the orientation attribute
+    // inherited by the FAST Foundation Tabs component so that
+    // VSCodePanels are always oriented horizontally
+    if (this.orientation) {
+      this.orientation = TabsOrientation.horizontal;
+    }
 
-		// Sets a default ARIA label on the panels component only if an
-		// aria-label attribute does not already exist
-		const ariaLabelValue = this.getAttribute('aria-label');
-		if (!ariaLabelValue) {
-			this.setAttribute('aria-label', 'Panels');
-		}
-	}
+    // Sets a default ARIA label on the panels component only if an
+    // aria-label attribute does not already exist
+    const ariaLabelValue = this.getAttribute('aria-label');
+    if (!ariaLabelValue) {
+      this.setAttribute('aria-label', 'Panels');
+    }
+  }
 }
 
 /**
@@ -55,9 +55,9 @@ export class Panels extends FoundationTabs {
  * @public
  */
 export const jpPanels = Panels.compose({
-	baseName: 'panels',
-	template: tabsTemplate,
-	styles: panelsStyles,
+  baseName: 'panels',
+  template: tabsTemplate,
+  styles: panelsStyles
 });
 
 /**
@@ -66,26 +66,26 @@ export const jpPanels = Panels.compose({
  * @public
  */
 export class PanelTab extends FoundationTab {
-	/**
-	 * Component lifecycle method that runs when the component is inserted
-	 * into the DOM.
-	 *
-	 * @internal
-	 */
-	public connectedCallback() {
-		super.connectedCallback();
+  /**
+   * Component lifecycle method that runs when the component is inserted
+   * into the DOM.
+   *
+   * @internal
+   */
+  public connectedCallback() {
+    super.connectedCallback();
 
-		// This will override any usage of the disabled attribute
-		// inherited by the FAST Foundation Tab component so that
-		// VSCodePanelTab can never be disabled
-		if (this.disabled) {
-			this.disabled = false;
-		}
+    // This will override any usage of the disabled attribute
+    // inherited by the FAST Foundation Tab component so that
+    // VSCodePanelTab can never be disabled
+    if (this.disabled) {
+      this.disabled = false;
+    }
 
-		if (this.textContent) {
-			this.setAttribute('aria-label', this.textContent);
-		}
-	}
+    if (this.textContent) {
+      this.setAttribute('aria-label', this.textContent);
+    }
+  }
 }
 
 /**
@@ -97,9 +97,9 @@ export class PanelTab extends FoundationTab {
  * @public
  */
 export const jpPanelTab = PanelTab.compose({
-	baseName: 'panel-tab',
-	template: tabTemplate,
-	styles: panelTabStyles,
+  baseName: 'panel-tab',
+  template: tabTemplate,
+  styles: panelTabStyles
 });
 
 /**
@@ -118,7 +118,7 @@ export class PanelView extends FoundationTabPanel {}
  * @public
  */
 export const jpPanelView = PanelView.compose({
-	baseName: 'panel-view',
-	template: tabPanelTemplate,
-	styles: panelViewStyles,
+  baseName: 'panel-view',
+  template: tabPanelTemplate,
+  styles: panelViewStyles
 });

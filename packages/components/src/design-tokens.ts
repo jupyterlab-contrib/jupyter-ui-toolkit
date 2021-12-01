@@ -1,130 +1,243 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import {create} from './utilities/design-tokens/create';
+import { create } from './utilities/design-tokens/create';
 
 /**
  * Global design tokens.
  */
 
-export const borderWidth = create<number>('border-width', '--jp-border-width').withDefault(1);
-export const contrastActiveBorder = create<string>('contrast-active-border', '--jp-contrastActiveBorder').withDefault('#f38518');
-export const contrastBorder = create<string>('contrast-border', '--jp-contrastBorder').withDefault('#6fc3df');
-export const cornerRadius = create<number>('corner-radius', '--jp-border-radius').withDefault(2);
+export const borderWidth = create<number>(
+  'border-width',
+  '--jp-border-width'
+).withDefault(1);
+export const contrastActiveBorder = create<string>(
+  'contrast-active-border',
+  '--jp-contrastActiveBorder'
+).withDefault('#f38518');
+export const contrastBorder = create<string>(
+  'contrast-border',
+  '--jp-contrastBorder'
+).withDefault('#6fc3df');
+export const cornerRadius = create<number>(
+  'corner-radius',
+  '--jp-border-radius'
+).withDefault(2);
 export const designUnit = create<number>('design-unit').withDefault(4);
-export const disabledOpacity = create<number>('disabled-opacity').withDefault(0.4);
+export const disabledOpacity =
+  create<number>('disabled-opacity').withDefault(0.4);
 // FIXME brand should be its own thing
-export const focusBorder = create<string>('focus-border').withDefault('#0d47a1');
-export const fontFamily = create<string>('font-family', '--jp-font-family').withDefault(
-	'system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol'
+export const focusBorder =
+  create<string>('focus-border').withDefault('#0d47a1');
+export const fontFamily = create<string>(
+  'font-family',
+  '--jp-font-family'
+).withDefault(
+  'system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol'
 );
 export const fontWeight = create<string>('font-weight').withDefault('400');
-export const foreground = create<string>('foreground', '--jp-ui-font-color1').withDefault('#cccccc');
+export const foreground = create<string>(
+  'foreground',
+  '--jp-ui-font-color1'
+).withDefault('#cccccc');
 export const inputHeight = create<string>('input-height').withDefault('26');
-export const inputMinWidth = create<string>('input-min-width').withDefault('100px');
+export const inputMinWidth =
+  create<string>('input-min-width').withDefault('100px');
 // FIXME
-export const typeRampBaseFontSize = create<string>('type-ramp-base-font-size', '--jp-ui-font-size1').withDefault('13px');
-export const typeRampBaseLineHeight = create<string>('type-ramp-base-line-height').withDefault('normal');
-export const typeRampMinus1FontSize = create<string>('type-ramp-minus1-font-size').withDefault('11px');
-export const typeRampMinus1LineHeight = create<string>('type-ramp-minus1-line-height').withDefault('16px');
-export const typeRampMinus2FontSize = create<string>('type-ramp-minus2-font-size').withDefault('9px');
-export const typeRampMinus2LineHeight = create<string>('type-ramp-minus2-line-height').withDefault('16px');
-export const typeRampPlus1FontSize = create<string>('type-ramp-plus1-font-size').withDefault('16px');
-export const typeRampPlus1LineHeight = create<string>('type-ramp-plus1-line-height').withDefault('24px');
+export const typeRampBaseFontSize = create<string>(
+  'type-ramp-base-font-size',
+  '--jp-ui-font-size1'
+).withDefault('13px');
+export const typeRampBaseLineHeight = create<string>(
+  'type-ramp-base-line-height'
+).withDefault('normal');
+export const typeRampMinus1FontSize = create<string>(
+  'type-ramp-minus1-font-size'
+).withDefault('11px');
+export const typeRampMinus1LineHeight = create<string>(
+  'type-ramp-minus1-line-height'
+).withDefault('16px');
+export const typeRampMinus2FontSize = create<string>(
+  'type-ramp-minus2-font-size'
+).withDefault('9px');
+export const typeRampMinus2LineHeight = create<string>(
+  'type-ramp-minus2-line-height'
+).withDefault('16px');
+export const typeRampPlus1FontSize = create<string>(
+  'type-ramp-plus1-font-size'
+).withDefault('16px');
+export const typeRampPlus1LineHeight = create<string>(
+  'type-ramp-plus1-line-height'
+).withDefault('24px');
 
 /**
  * Badge design tokens.
  */
 
-export const badgeBackground = create<string>('badge-background', '--jp-brand-color1').withDefault('#1976d2');
-export const badgeForeground = create<string>('badge-foreground', '--jp-ui-inverse-font-color1').withDefault('#ffffff');
+export const badgeBackground = create<string>(
+  'badge-background',
+  '--jp-brand-color1'
+).withDefault('#1976d2');
+export const badgeForeground = create<string>(
+  'badge-foreground',
+  '--jp-ui-inverse-font-color1'
+).withDefault('#ffffff');
 
 /**
  * Button design tokens.
  */
 
 // Note: Button border is used only for high contrast themes and should be left as transparent otherwise.
-export const buttonBorder = create<string>('button-border').withDefault('transparent');
-export const buttonIconBackground = create<string>('button-icon-background').withDefault('transparent');
-export const buttonIconCornerRadius = create<string>('button-icon-corner-radius').withDefault('5px');
-export const buttonIconFocusBorderOffset = create<number>('button-icon-outline-offset').withDefault(0);
-export const buttonIconHoverBackground = create<string>('button-icon-hover-background').withDefault('rgba(90, 93, 94, 0.31)');
-export const buttonIconPadding = create<string>('button-icon-padding').withDefault('3px');
-export const buttonPrimaryBackground = create<string>('button-primary-background').withDefault('#0e639c');
-export const buttonPrimaryForeground = create<string>('button-primary-foreground').withDefault('#ffffff');
-export const buttonPrimaryHoverBackground = create<string>('button-primary-hover-background').withDefault('#1177bb');
-export const buttonSecondaryBackground = create<string>('button-secondary-background').withDefault('#3a3d41');
-export const buttonSecondaryForeground = create<string>('button-secondary-foreground').withDefault('#ffffff');
-export const buttonSecondaryHoverBackground = create<string>('button-secondary-hover-background').withDefault('#45494e');
-export const buttonPaddingHorizontal = create<string>('button-padding-horizontal').withDefault('11px');
-export const buttonPaddingVertical = create<string>('button-padding-vertical').withDefault('6px');
+export const buttonBorder =
+  create<string>('button-border').withDefault('transparent');
+export const buttonIconBackground = create<string>(
+  'button-icon-background'
+).withDefault('transparent');
+export const buttonIconCornerRadius = create<string>(
+  'button-icon-corner-radius'
+).withDefault('5px');
+export const buttonIconFocusBorderOffset = create<number>(
+  'button-icon-outline-offset'
+).withDefault(0);
+export const buttonIconHoverBackground = create<string>(
+  'button-icon-hover-background'
+).withDefault('rgba(90, 93, 94, 0.31)');
+export const buttonIconPadding = create<string>(
+  'button-icon-padding'
+).withDefault('3px');
+export const buttonPrimaryBackground = create<string>(
+  'button-primary-background'
+).withDefault('#0e639c');
+export const buttonPrimaryForeground = create<string>(
+  'button-primary-foreground'
+).withDefault('#ffffff');
+export const buttonPrimaryHoverBackground = create<string>(
+  'button-primary-hover-background'
+).withDefault('#1177bb');
+export const buttonSecondaryBackground = create<string>(
+  'button-secondary-background'
+).withDefault('#3a3d41');
+export const buttonSecondaryForeground = create<string>(
+  'button-secondary-foreground'
+).withDefault('#ffffff');
+export const buttonSecondaryHoverBackground = create<string>(
+  'button-secondary-hover-background'
+).withDefault('#45494e');
+export const buttonPaddingHorizontal = create<string>(
+  'button-padding-horizontal'
+).withDefault('11px');
+export const buttonPaddingVertical = create<string>(
+  'button-padding-vertical'
+).withDefault('6px');
 
 /**
  * Checkbox design tokens.
  */
 
-export const checkboxBackground = create<string>('checkbox-background').withDefault('#3c3c3c');
-export const checkboxBorder = create<string>('checkbox-border').withDefault('#3c3c3c');
-export const checkboxCornerRadius = create<number>('checkbox-corner-radius').withDefault(3);
-export const checkboxForeground = create<string>('checkbox-foreground').withDefault('#f0f0f0');
+export const checkboxBackground = create<string>(
+  'checkbox-background'
+).withDefault('#3c3c3c');
+export const checkboxBorder =
+  create<string>('checkbox-border').withDefault('#3c3c3c');
+export const checkboxCornerRadius = create<number>(
+  'checkbox-corner-radius'
+).withDefault(3);
+export const checkboxForeground = create<string>(
+  'checkbox-foreground'
+).withDefault('#f0f0f0');
 
 /**
  * Data Grid design tokens
  */
 
-export const listActiveSelectionBackground = create<string>('list-active-selection-background').withDefault('#094771');
-export const listActiveSelectionForeground = create<string>('list-active-selection-foreground').withDefault('#ffffff');
-export const listHoverBackground = create<string>('list-hover-background').withDefault('#2a2d2e');
-export const quickInputBackground = create<string>('quick-input-background').withDefault('#252526');
+export const listActiveSelectionBackground = create<string>(
+  'list-active-selection-background'
+).withDefault('#094771');
+export const listActiveSelectionForeground = create<string>(
+  'list-active-selection-foreground'
+).withDefault('#ffffff');
+export const listHoverBackground = create<string>(
+  'list-hover-background'
+).withDefault('#2a2d2e');
+export const quickInputBackground = create<string>(
+  'quick-input-background'
+).withDefault('#252526');
 
 /**
  * Divider design tokens.
  */
 
-export const dividerBackground = create<string>('divider-background').withDefault('#454545');
+export const dividerBackground =
+  create<string>('divider-background').withDefault('#454545');
 
 /**
  * Dropdown design tokens.
  */
 
-export const dropdownBackground = create<string>('dropdown-background').withDefault('#3c3c3c');
-export const dropdownBorder = create<string>('dropdown-border').withDefault('#3c3c3c');
-export const dropdownForeground = create<string>('dropdown-foreground').withDefault('#f0f0f0');
-export const dropdownListMaxHeight = create<string>('dropdown-list-max-height').withDefault('200px');
+export const dropdownBackground = create<string>(
+  'dropdown-background'
+).withDefault('#3c3c3c');
+export const dropdownBorder =
+  create<string>('dropdown-border').withDefault('#3c3c3c');
+export const dropdownForeground = create<string>(
+  'dropdown-foreground'
+).withDefault('#f0f0f0');
+export const dropdownListMaxHeight = create<string>(
+  'dropdown-list-max-height'
+).withDefault('200px');
 
 /**
  * Text Field & Area design tokens.
  */
 
-export const inputBackground = create<string>('input-background').withDefault('#3c3c3c');
-export const inputForeground = create<string>('input-foreground').withDefault('#cccccc');
-export const inputPlaceholderForeground = create<string>('input-placeholder-foreground').withDefault('#cccccc');
+export const inputBackground =
+  create<string>('input-background').withDefault('#3c3c3c');
+export const inputForeground =
+  create<string>('input-foreground').withDefault('#cccccc');
+export const inputPlaceholderForeground = create<string>(
+  'input-placeholder-foreground'
+).withDefault('#cccccc');
 
 /**
  * Link design tokens.
  */
 
-export const linkActiveForeground = create<string>('link-foreground').withDefault('#3794ff');
-export const linkForeground = create<string>('link-active-foreground').withDefault('#3794ff');
+export const linkActiveForeground =
+  create<string>('link-foreground').withDefault('#3794ff');
+export const linkForeground = create<string>(
+  'link-active-foreground'
+).withDefault('#3794ff');
 
 /**
  * Progress ring design tokens.
  */
 
-export const progressBackground = create<string>('progress-background').withDefault('#0e70c0');
+export const progressBackground = create<string>(
+  'progress-background'
+).withDefault('#0e70c0');
 
 /**
  * Panels design tokens.
  */
 
-export const panelTabActiveBorder = create<string>('panel-tab-active-border').withDefault('#e7e7e7');
-export const panelTabActiveForeground = create<string>('panel-tab-active-foreground').withDefault('#e7e7e7');
-export const panelTabForeground = create<string>('panel-tab-foreground').withDefault('#e7e7e799');
-export const panelViewBackground = create<string>('panel-view-background').withDefault('#1e1e1e');
-export const panelViewBorder = create<string>('panel-view-border').withDefault('#80808059');
+export const panelTabActiveBorder = create<string>(
+  'panel-tab-active-border'
+).withDefault('#e7e7e7');
+export const panelTabActiveForeground = create<string>(
+  'panel-tab-active-foreground'
+).withDefault('#e7e7e7');
+export const panelTabForeground = create<string>(
+  'panel-tab-foreground'
+).withDefault('#e7e7e799');
+export const panelViewBackground = create<string>(
+  'panel-view-background'
+).withDefault('#1e1e1e');
+export const panelViewBorder =
+  create<string>('panel-view-border').withDefault('#80808059');
 
 /**
  * Tag design tokens.
  */
 
-export const tagCornerRadius = create<string>('tag-corner-radius').withDefault('2px');
+export const tagCornerRadius =
+  create<string>('tag-corner-radius').withDefault('2px');

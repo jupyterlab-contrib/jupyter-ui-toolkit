@@ -2,49 +2,49 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import {createDivider, DividerArgs} from './fixtures/createDivider';
+import { createDivider, DividerArgs } from './fixtures/createDivider';
 
 export default {
-	title: 'Library/Divider',
-	argTypes: {
-		role: {
-			control: {
-				type: 'select',
-				options: ['Separator', 'Presentation'],
-			},
-		},
-	},
-	parameters: {
-		actions: {
-			disabled: true,
-		},
-	},
+  title: 'Library/Divider',
+  argTypes: {
+    role: {
+      control: {
+        type: 'select',
+        options: ['Separator', 'Presentation']
+      }
+    }
+  },
+  parameters: {
+    actions: {
+      disabled: true
+    }
+  }
 };
 
-const Template = ({...args}: DividerArgs) => {
-	return createDivider({...args});
+const Template = ({ ...args }: DividerArgs) => {
+  return createDivider({ ...args });
 };
 
 export const Default: any = Template.bind({});
 Default.args = {
-	role: 'Separator',
+  role: 'Separator'
 };
 Default.parameters = {
-	docs: {
-		source: {
-			code: `<jp-divider></jp-divider>`,
-		},
-	},
+  docs: {
+    source: {
+      code: `<jp-divider></jp-divider>`
+    }
+  }
 };
 
 export const WithRole: any = Template.bind({});
 WithRole.args = {
-	role: 'Presentation',
+  role: 'Presentation'
 };
 WithRole.parameters = {
-	docs: {
-		source: {
-			code: `<jp-divider role="presentation"></jp-divider>`,
-		},
-	},
+  docs: {
+    source: {
+      code: `<jp-divider role="presentation"></jp-divider>`
+    }
+  }
 };

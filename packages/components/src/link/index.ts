@@ -3,11 +3,11 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	AnchorOptions,
-	Anchor as FoundationAnchor,
-	anchorTemplate as template,
+  AnchorOptions,
+  Anchor as FoundationAnchor,
+  anchorTemplate as template
 } from '@microsoft/fast-foundation';
-import {linkStyles as styles} from './link.styles';
+import { linkStyles as styles } from './link.styles';
 
 /**
  * Link configuration options
@@ -31,10 +31,10 @@ export class Link extends FoundationAnchor {}
  * @public
  */
 export const jpLink = Link.compose<LinkOptions>({
-	baseName: 'link',
-	template,
-	styles,
-	shadowOptions: {
-		delegatesFocus: true,
-	},
+  baseName: 'link',
+  template,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true
+  }
 });

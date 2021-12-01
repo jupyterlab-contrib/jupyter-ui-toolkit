@@ -1,8 +1,5 @@
 {
-    "extends": "./tsconfig.json",
-    "include": [
-      "packages/lab-example/src",
-      "packages/lab-example/style",
-    ],
-    "exclude": ["node_modules"]
-  }
+  "extends": "./tsconfig.json",
+  "include": ["packages/lab-example/src", "packages/lab-example/style"],
+  "exclude": ["node_modules"]
+}

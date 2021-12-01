@@ -2,18 +2,18 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import {Tag} from '../index';
+import { Tag } from '../index';
 
 export type TagArgs = {
-	label: string;
+  label: string;
 };
 
-export function createTag({label}: TagArgs) {
-	const tag = new Tag();
+export function createTag({ label }: TagArgs) {
+  const tag = new Tag();
 
-	if (label) {
-		tag.textContent = label;
-	}
+  if (label) {
+    tag.textContent = label;
+  }
 
-	return tag;
+  return tag;
 }

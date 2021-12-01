@@ -3,11 +3,11 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	CheckboxOptions,
-	Checkbox as FoundationCheckbox,
-	checkboxTemplate as template,
+  CheckboxOptions,
+  Checkbox as FoundationCheckbox,
+  checkboxTemplate as template
 } from '@microsoft/fast-foundation';
-import {checkboxStyles as styles} from './checkbox.styles';
+import { checkboxStyles as styles } from './checkbox.styles';
 
 /**
  * The  checkbox class.
@@ -15,21 +15,21 @@ import {checkboxStyles as styles} from './checkbox.styles';
  * @public
  */
 export class Checkbox extends FoundationCheckbox {
-	/**
-	 * Component lifecycle method that runs when the component is inserted
-	 * into the DOM.
-	 *
-	 * @internal
-	 */
-	public connectedCallback() {
-		super.connectedCallback();
-		if (this.textContent) {
-			this.setAttribute('aria-label', this.textContent);
-		} else {
-			// Fallback to the label if there is no text content
-			this.setAttribute('aria-label', 'Checkbox');
-		}
-	}
+  /**
+   * Component lifecycle method that runs when the component is inserted
+   * into the DOM.
+   *
+   * @internal
+   */
+  public connectedCallback() {
+    super.connectedCallback();
+    if (this.textContent) {
+      this.setAttribute('aria-label', this.textContent);
+    } else {
+      // Fallback to the label if there is no text content
+      this.setAttribute('aria-label', 'Checkbox');
+    }
+  }
 }
 
 /**
@@ -41,10 +41,10 @@ export class Checkbox extends FoundationCheckbox {
  * @public
  */
 export const jpCheckbox = Checkbox.compose<CheckboxOptions>({
-	baseName: 'checkbox',
-	template,
-	styles,
-	checkedIndicator: `
+  baseName: 'checkbox',
+  template,
+  styles,
+  checkedIndicator: `
 		<svg 
 			part="checked-indicator"
 			class="checked-indicator"
@@ -61,7 +61,7 @@ export const jpCheckbox = Checkbox.compose<CheckboxOptions>({
 			/>
 		</svg>
 	`,
-	indeterminateIndicator: `
+  indeterminateIndicator: `
 		<div part="indeterminate-indicator" class="indeterminate-indicator"></div>
-	`,
+	`
 });

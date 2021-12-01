@@ -40,7 +40,7 @@ There are a number of visual appearances that the `vscode-button` can have. The 
 <vscode-button appearance="primary">Button Text</vscode-button>
 <vscode-button appearance="secondary">Button Text</vscode-button>
 <vscode-button appearance="icon">
-	<span class="codicon codicon-check"></span>
+  <span class="codicon codicon-check"></span>
 </vscode-button>
 ```
 
@@ -70,8 +70,8 @@ An icon can be added to the left of Button text by adding an element with the at
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
 <vscode-button>
-	Button Text
-	<span slot="start" class="codicon codicon-add"></span>
+  Button Text
+  <span slot="start" class="codicon codicon-add"></span>
 </vscode-button>
 ```
 
@@ -93,6 +93,6 @@ For example, if you're using an icon button to confirm a state change, adding an
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
 <vscode-button appearance="icon" aria-label="Confirm">
-	<span class="codicon codicon-check"></span>
+  <span class="codicon codicon-check"></span>
 </vscode-button>
 ```

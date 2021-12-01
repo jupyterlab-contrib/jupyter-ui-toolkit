@@ -80,7 +80,7 @@ If this attribute is not specified, the `vscode-text-area` should be a child of 
 
 ```html
 <vscode-text-area name="example-vscode-text-area">
-	Text Area Label
+  Text Area Label
 </vscode-text-area>
 ```
 
@@ -90,7 +90,7 @@ If this attribute is not specified, the `vscode-text-area` should be a child of 
 
 ```html
 <vscode-text-area placeholder="Placeholder Text">
-	Text Area Label
+  Text Area Label
 </vscode-text-area>
 ```
 

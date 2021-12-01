@@ -1,31 +1,31 @@
 {
-	"compilerOptions": {
-		"target": "es6",
-		"module": "esnext",
-		"moduleResolution": "node",
-		"rootDir": "src",
-		"outDir": "dist/esm",
-		"declarationDir": "dist/dts",
-		"lib": ["dom", "es6"],
-		"pretty": true,
-		"esModuleInterop": true,
-		"importHelpers": true,
-		"experimentalDecorators": true,
-		"strictPropertyInitialization": false,
-		"declaration": true,
-		"sourceMap": false,
-		"noEmitOnError": true,
-		"strict": true,
-		"strictNullChecks": true,
-		"strictFunctionTypes": false,
-		"allowJs": true
-	},
-	"include": ["src"],
-	"exclude": [
-		"node_modules",
-		"src/**/*.spec.ts",
-		"src/**/*.stories.ts",
-		"src/**/fixtures/",
-		"src/utilities/storybook/"
-	]
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "dist/esm",
+    "declarationDir": "dist/dts",
+    "lib": ["dom", "es6"],
+    "pretty": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": false,
+    "allowJs": true
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "src/**/*.spec.ts",
+    "src/**/*.stories.ts",
+    "src/**/fixtures/",
+    "src/utilities/storybook/"
+  ]
 }

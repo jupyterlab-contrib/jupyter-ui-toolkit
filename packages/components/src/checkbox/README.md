@@ -96,14 +96,14 @@ Here is an example of the Visual Studio Code Checkbox and its various attributes
 
 ```html
 <form>
-	<fieldset>
-		<legend>Fieldset Legend</legend>
-		<vscode-checkbox checked required>Checked + Required</vscode-checkbox>
-		<vscode-checkbox checked readonly>Checked + Readonly</vscode-checkbox>
-		<vscode-checkbox autofocus>Autofocus</vscode-checkbox>
-		<vscode-checkbox disabled>Disabled</vscode-checkbox>
-		<vscode-checkbox value="baz">Value Set To "baz"</vscode-checkbox>
-	</fieldset>
-	<vscode-button type="submit">Submit Button</vscode-button>
+  <fieldset>
+    <legend>Fieldset Legend</legend>
+    <vscode-checkbox checked required>Checked + Required</vscode-checkbox>
+    <vscode-checkbox checked readonly>Checked + Readonly</vscode-checkbox>
+    <vscode-checkbox autofocus>Autofocus</vscode-checkbox>
+    <vscode-checkbox disabled>Disabled</vscode-checkbox>
+    <vscode-checkbox value="baz">Value Set To "baz"</vscode-checkbox>
+  </fieldset>
+  <vscode-button type="submit">Submit Button</vscode-button>
 </form>
 ```

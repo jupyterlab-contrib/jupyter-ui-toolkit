@@ -2,258 +2,258 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import {createDataGrid, DataGridArgs} from './fixtures/createDataGrid';
+import { createDataGrid, DataGridArgs } from './fixtures/createDataGrid';
 
 export default {
-	title: 'Library/Data Grid',
-	argTypes: {
-		generateHeader: {
-			control: {
-				type: 'select',
-				options: ['Default', 'Sticky'],
-			},
-		},
-		gridTemplateColumns: {control: 'text'},
-		hasCustomTitles: {control: 'boolean'},
-		gridData: {control: 'object'},
-		ariaLabel: {control: 'text'},
-	},
-	parameters: {
-		actions: {
-			disabled: true,
-		},
-	},
+  title: 'Library/Data Grid',
+  argTypes: {
+    generateHeader: {
+      control: {
+        type: 'select',
+        options: ['Default', 'Sticky']
+      }
+    },
+    gridTemplateColumns: { control: 'text' },
+    hasCustomTitles: { control: 'boolean' },
+    gridData: { control: 'object' },
+    ariaLabel: { control: 'text' }
+  },
+  parameters: {
+    actions: {
+      disabled: true
+    }
+  }
 };
 
-const Template = ({...args}: DataGridArgs) => {
-	return createDataGrid({...args});
+const Template = ({ ...args }: DataGridArgs) => {
+  return createDataGrid({ ...args });
 };
 
 export const Default: any = Template.bind({});
 Default.args = {
-	generateHeader: 'Default',
-	gridTemplateColumns: '',
-	hasCustomTitles: false,
-	gridData: [
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-	],
-	ariaLabel: 'Default',
+  generateHeader: 'Default',
+  gridTemplateColumns: '',
+  hasCustomTitles: false,
+  gridData: [
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    }
+  ],
+  ariaLabel: 'Default'
 };
 Default.parameters = {
-	docs: {
-		source: {
-			code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" aria-label="Default"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n];`,
-		},
-	},
+  docs: {
+    source: {
+      code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" aria-label="Default"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n];`
+    }
+  }
 };
 
 export const WithStickyHeader: any = Template.bind({});
 WithStickyHeader.args = {
-	...Default.args,
-	generateHeader: 'Sticky',
-	gridData: [
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-		{
-			Header1: 'Cell Data',
-			Header2: 'Cell Data',
-			Header3: 'Cell Data',
-			Header4: 'Cell Data',
-		},
-	],
-	ariaLabel: 'With Sticky Header',
+  ...Default.args,
+  generateHeader: 'Sticky',
+  gridData: [
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    },
+    {
+      Header1: 'Cell Data',
+      Header2: 'Cell Data',
+      Header3: 'Cell Data',
+      Header4: 'Cell Data'
+    }
+  ],
+  ariaLabel: 'With Sticky Header'
 };
 WithStickyHeader.parameters = {
-	docs: {
-		source: {
-			code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t// Insert more rows ...\n];`,
-		},
-	},
+  docs: {
+    source: {
+      code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t// Insert more rows ...\n];`
+    }
+  }
 };
 
 export const WithCustomColumnWidths: any = Template.bind({});
 WithCustomColumnWidths.args = {
-	...Default.args,
-	gridTemplateColumns: '100px 10vw 3fr 30%',
-	ariaLabel: 'With Custom Column Widths',
+  ...Default.args,
+  gridTemplateColumns: '100px 10vw 3fr 30%',
+  ariaLabel: 'With Custom Column Widths'
 };
 WithCustomColumnWidths.parameters = {
-	docs: {
-		source: {
-			code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" grid-template-columns="100px 10vw 3fr 30%" aria-label="With Custom Column Widths"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n];`,
-		},
-	},
+  docs: {
+    source: {
+      code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" grid-template-columns="100px 10vw 3fr 30%" aria-label="With Custom Column Widths"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n];`
+    }
+  }
 };
 
 export const WithCustomTitles: any = Template.bind({});
 WithCustomTitles.args = {
-	...Default.args,
-	hasCustomTitles: true,
-	ariaLabel: 'With Custom Titles',
+  ...Default.args,
+  hasCustomTitles: true,
+  ariaLabel: 'With Custom Titles'
 };
 WithCustomTitles.parameters = {
-	docs: {
-		source: {
-			code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" aria-label="With Custom Titles"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n];\ndocument.getElementById('basic-grid').columnDefinitions = [\n\t{title: 'A Custom Header Title', columnDataKey: 'Header1'},\n\t{title: 'Another Custom Title', columnDataKey: 'Header2'},\n\t{title: 'Title Is Custom', columnDataKey: 'Header3'},\n\t{title: 'Custom Title', columnDataKey: 'Header4'},\n];`,
-		},
-	},
+  docs: {
+    source: {
+      code: `<!-- HTML -->\n\n<jp-data-grid id="basic-grid" aria-label="With Custom Titles"></jp-data-grid>\n\n// TypeScript or JavaScript\n\ndocument.getElementById('basic-grid').rowsData = [\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n\t{Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data'},\n];\ndocument.getElementById('basic-grid').columnDefinitions = [\n\t{title: 'A Custom Header Title', columnDataKey: 'Header1'},\n\t{title: 'Another Custom Title', columnDataKey: 'Header2'},\n\t{title: 'Title Is Custom', columnDataKey: 'Header3'},\n\t{title: 'Custom Title', columnDataKey: 'Header4'},\n];`
+    }
+  }
 };

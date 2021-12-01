@@ -24,13 +24,15 @@ const plugin: JupyterFrontEndPlugin<void> = {
   activate: (app: JupyterFrontEnd, theme: IThemeManager | null) => {
     console.log('JupyterLab extension jupyter-ui-demo is activated!');
 
-    const obs = new MutationObserver(() => {console.log(`Dummy observer called...`)})
+    const obs = new MutationObserver(() => {
+      console.log(`Dummy observer called...`);
+    });
     obs.observe(document.body, {
       attributes: true,
       attributeFilter: ['data-jp-theme-name'],
       childList: false,
       characterData: false
-    })
+    });
 
     const widget = new Widget({ node: createNode() });
     widget.addClass('jp-Artwork');

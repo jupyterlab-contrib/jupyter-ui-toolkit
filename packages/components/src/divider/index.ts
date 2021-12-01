@@ -3,10 +3,10 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	Divider as FoundationDivider,
-	dividerTemplate as template,
+  Divider as FoundationDivider,
+  dividerTemplate as template
 } from '@microsoft/fast-foundation';
-import {dividerStyles as styles} from './divider.styles';
+import { dividerStyles as styles } from './divider.styles';
 
 /**
  * The  divider class.
@@ -24,7 +24,7 @@ export class Divider extends FoundationDivider {}
  * @public
  */
 export const jpDivider = Divider.compose({
-	baseName: 'divider',
-	template,
-	styles,
+  baseName: 'divider',
+  template,
+  styles
 });

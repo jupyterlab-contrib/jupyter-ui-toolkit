@@ -53,7 +53,7 @@ The `vscode-text-field` is a web component implementation of a [text field eleme
 
 ```html
 <vscode-text-field name="example-vscode-text-field"
-	>Text Field Label</vscode-text-field
+  >Text Field Label</vscode-text-field
 >
 ```
 
@@ -63,7 +63,7 @@ The `vscode-text-field` is a web component implementation of a [text field eleme
 
 ```html
 <vscode-text-field placeholder="Placeholder Text"
-	>Text Field Label</vscode-text-field
+  >Text Field Label</vscode-text-field
 >
 ```
 
@@ -93,8 +93,8 @@ An icon can be added to the left of the text field by adding an element with the
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
 <vscode-text-field>
-	Text Field Label
-	<span slot="start" class="codicon codicon-git-merge"></span>
+  Text Field Label
+  <span slot="start" class="codicon codicon-git-merge"></span>
 </vscode-text-field>
 ```
 
@@ -108,7 +108,7 @@ An icon can be added to the right of the text field by adding an element with th
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
 <vscode-text-field>
-	Text Field Label
-	<span slot="end" class="codicon codicon-chevron-right"></span>
+  Text Field Label
+  <span slot="end" class="codicon codicon-chevron-right"></span>
 </vscode-text-field>
 ```

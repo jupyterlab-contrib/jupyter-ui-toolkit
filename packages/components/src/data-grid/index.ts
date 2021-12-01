@@ -3,16 +3,16 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	dataGridCellTemplate as cellTemplate,
-	DataGrid as FoundationDataGrid,
-	DataGridCell as FoundationDataGridCell,
-	DataGridRow as FoundationDataGridRow,
-	dataGridTemplate as gridTemplate,
-	dataGridRowTemplate as rowTemplate,
+  dataGridCellTemplate as cellTemplate,
+  DataGrid as FoundationDataGrid,
+  DataGridCell as FoundationDataGridCell,
+  DataGridRow as FoundationDataGridRow,
+  dataGridTemplate as gridTemplate,
+  dataGridRowTemplate as rowTemplate
 } from '@microsoft/fast-foundation';
-import {dataGridStyles as gridStyles} from './data-grid.styles';
-import {dataGridRowStyles as rowStyles} from './data-grid-row.styles';
-import {dataGridCellStyles as cellStyles} from './data-grid-cell.styles';
+import { dataGridStyles as gridStyles } from './data-grid.styles';
+import { dataGridRowStyles as rowStyles } from './data-grid-row.styles';
+import { dataGridCellStyles as cellStyles } from './data-grid-cell.styles';
 
 /**
  * The  data grid class.
@@ -20,22 +20,22 @@ import {dataGridCellStyles as cellStyles} from './data-grid-cell.styles';
  * @public
  */
 export class DataGrid extends FoundationDataGrid {
-	/**
-	 * Component lifecycle method that runs when the component is inserted
-	 * into the DOM.
-	 *
-	 * @internal
-	 */
-	public connectedCallback() {
-		super.connectedCallback();
+  /**
+   * Component lifecycle method that runs when the component is inserted
+   * into the DOM.
+   *
+   * @internal
+   */
+  public connectedCallback() {
+    super.connectedCallback();
 
-		// Sets a default ARIA label on the data grid only if an aria-label attribute
-		// does not already exist
-		const ariaLabelValue = this.getAttribute('aria-label');
-		if (!ariaLabelValue) {
-			this.setAttribute('aria-label', 'Data Grid');
-		}
-	}
+    // Sets a default ARIA label on the data grid only if an aria-label attribute
+    // does not already exist
+    const ariaLabelValue = this.getAttribute('aria-label');
+    if (!ariaLabelValue) {
+      this.setAttribute('aria-label', 'Data Grid');
+    }
+  }
 }
 
 /**
@@ -47,10 +47,10 @@ export class DataGrid extends FoundationDataGrid {
  * @public
  */
 export const jpDataGrid = DataGrid.compose({
-	baseName: 'data-grid',
-	baseClass: FoundationDataGrid,
-	template: gridTemplate,
-	styles: gridStyles,
+  baseName: 'data-grid',
+  baseClass: FoundationDataGrid,
+  template: gridTemplate,
+  styles: gridStyles
 });
 
 /**
@@ -69,10 +69,10 @@ export class DataGridRow extends FoundationDataGridRow {}
  * @public
  */
 export const jpDataGridRow = DataGridRow.compose({
-	baseName: 'data-grid-row',
-	baseClass: FoundationDataGridRow,
-	template: rowTemplate,
-	styles: rowStyles,
+  baseName: 'data-grid-row',
+  baseClass: FoundationDataGridRow,
+  template: rowTemplate,
+  styles: rowStyles
 });
 
 /**
@@ -91,8 +91,8 @@ export class DataGridCell extends FoundationDataGridCell {}
  * @public
  */
 export const jpDataGridCell = DataGridCell.compose({
-	baseName: 'data-grid-cell',
-	baseClass: FoundationDataGridCell,
-	template: cellTemplate,
-	styles: cellStyles,
+  baseName: 'data-grid-cell',
+  baseClass: FoundationDataGridCell,
+  template: cellTemplate,
+  styles: cellStyles
 });

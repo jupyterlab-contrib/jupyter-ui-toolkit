@@ -3,11 +3,11 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-	Select as FoundationSelect,
-	SelectOptions,
-	selectTemplate as template,
+  Select as FoundationSelect,
+  SelectOptions,
+  selectTemplate as template
 } from '@microsoft/fast-foundation';
-import {dropdownStyles as styles} from './dropdown.styles';
+import { dropdownStyles as styles } from './dropdown.styles';
 
 /**
  * Dropdown configuration options
@@ -31,10 +31,10 @@ export class Dropdown extends FoundationSelect {}
  * @public
  */
 export const jpDropdown = Dropdown.compose<DropdownOptions>({
-	baseName: 'dropdown',
-	template,
-	styles,
-	indicator: `
+  baseName: 'dropdown',
+  template,
+  styles,
+  indicator: `
 		<svg 
 			class="select-indicator"
 			part="select-indicator"
@@ -50,5 +50,5 @@ export const jpDropdown = Dropdown.compose<DropdownOptions>({
 				d="M7.976 10.072l4.357-4.357.62.618L8.284 11h-.618L3 6.333l.619-.618 4.357 4.357z"
 			/>
 		</svg>
-	`,
+	`
 });
