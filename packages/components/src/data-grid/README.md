@@ -1,10 +1,10 @@
-# Visual Studio Code Data Grid
+# Jupyter Data Grid
 
-The `vscode-data-grid` enables developers to display data in a tabular layout. The data grid is created using three components that work together:
+The `jp-data-grid` enables developers to display data in a tabular layout. The data grid is created using three components that work together:
 
-- `<vscode-data-grid>`: The top level container element.
-- `<vscode-data-grid-row>`: Displays a single row of data associated with a single record or a header row.
-- `<vscode-data-grid-cell>`: Displays a single cell of data within a row.
+- `<jp-data-grid>`: The top level container element.
+- `<jp-data-grid-row>`: Displays a single row of data associated with a single record or a header row.
+- `<jp-data-grid-cell>`: Displays a single cell of data within a row.
 
 ## Data Grid Attributes
 
@@ -37,18 +37,18 @@ For example, if you're using a data grid to display real-time earthquake data, a
 
 ### Basic Usage
 
-The recommended basic usage of the `vscode-data-grid` is to use JavaScript (or TypeScript) to programmatically populate the rows and cells of the grid using the `rowsData` property as shown below.
+The recommended basic usage of the `jp-data-grid` is to use JavaScript (or TypeScript) to programmatically populate the rows and cells of the grid using the `rowsData` property as shown below.
 
 With that said, a data grid can still be created with HTML only (also shown below).
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-data-grid--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-data-grid--default)
 
 _Using HTML & JavaScript_
 
 Note that when using this method of data grid creation, the header row is automatically generated based on the data passed to `rowsData`.
 
 ```html
-<vscode-data-grid id="basic-grid" aria-label="Basic"></vscode-data-grid>
+<jp-data-grid id="basic-grid" aria-label="Basic"></jp-data-grid>
 ```
 
 ```javascript
@@ -81,45 +81,45 @@ _Using Only HTML_
 Note that when using this method of data grid creation, the `generate-header` attribute should be set to `none` and the header row must be manually defined using HTML.
 
 ```html
-<vscode-data-grid generate-header="none" aria-label="Basic">
-  <vscode-data-grid-row row-type="header">
-    <vscode-data-grid-cell cell-type="columnheader" grid-column="1"
-      >Header 1</vscode-data-grid-cell
+<jp-data-grid generate-header="none" aria-label="Basic">
+  <jp-data-grid-row row-type="header">
+    <jp-data-grid-cell cell-type="columnheader" grid-column="1"
+      >Header 1</jp-data-grid-cell
     >
-    <vscode-data-grid-cell cell-type="columnheader" grid-column="2"
-      >Header 2</vscode-data-grid-cell
+    <jp-data-grid-cell cell-type="columnheader" grid-column="2"
+      >Header 2</jp-data-grid-cell
     >
-    <vscode-data-grid-cell cell-type="columnheader" grid-column="3"
-      >Header 3</vscode-data-grid-cell
+    <jp-data-grid-cell cell-type="columnheader" grid-column="3"
+      >Header 3</jp-data-grid-cell
     >
-    <vscode-data-grid-cell cell-type="columnheader" grid-column="3"
-      >Header 4</vscode-data-grid-cell
+    <jp-data-grid-cell cell-type="columnheader" grid-column="3"
+      >Header 4</jp-data-grid-cell
     >
-  </vscode-data-grid-row>
-  <vscode-data-grid-row>
-    <vscode-data-grid-cell grid-column="1">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="2">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="3">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="4">Cell Data</vscode-data-grid-cell>
-  </vscode-data-grid-row>
-  <vscode-data-grid-row>
-    <vscode-data-grid-cell grid-column="1">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="2">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="3">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="4">Cell Data</vscode-data-grid-cell>
-  </vscode-data-grid-row>
-  <vscode-data-grid-row>
-    <vscode-data-grid-cell grid-column="1">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="2">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="3">Cell Data</vscode-data-grid-cell>
-    <vscode-data-grid-cell grid-column="4">Cell Data</vscode-data-grid-cell>
-  </vscode-data-grid-row>
-</vscode-data-grid>
+  </jp-data-grid-row>
+  <jp-data-grid-row>
+    <jp-data-grid-cell grid-column="1">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="2">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="3">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="4">Cell Data</jp-data-grid-cell>
+  </jp-data-grid-row>
+  <jp-data-grid-row>
+    <jp-data-grid-cell grid-column="1">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="2">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="3">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="4">Cell Data</jp-data-grid-cell>
+  </jp-data-grid-row>
+  <jp-data-grid-row>
+    <jp-data-grid-cell grid-column="1">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="2">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="3">Cell Data</jp-data-grid-cell>
+    <jp-data-grid-cell grid-column="4">Cell Data</jp-data-grid-cell>
+  </jp-data-grid-row>
+</jp-data-grid>
 ```
 
 ### Generate Header Attribute
 
-The `generate-header` attribute is applied to the `<vscode-data-grid>` component and can be used to automatically generate a header row when data is passed to the `rowsData` property in JavaScript.
+The `generate-header` attribute is applied to the `<jp-data-grid>` component and can be used to automatically generate a header row when data is passed to the `rowsData` property in JavaScript.
 
 There are three values that can be passed to the attribute:
 
@@ -129,26 +129,26 @@ There are three values that can be passed to the attribute:
 
 **Important Note**
 
-As shown above in the Basic Usage example, if the `vscode-data-grid` is defined using only HTML this attribute should be set to `none` and the header row should be manually created with HTML.
+As shown above in the Basic Usage example, if the `jp-data-grid` is defined using only HTML this attribute should be set to `none` and the header row should be manually created with HTML.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-data-grid--with-no-header)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-data-grid--with-no-header)
 
 ```html
-<vscode-data-grid
+<jp-data-grid
   id="basic-grid"
   generate-header="default"
   aria-label="Default Header"
-></vscode-data-grid>
-<vscode-data-grid
+></jp-data-grid>
+<jp-data-grid
   id="basic-grid"
   generate-header="sticky"
   aria-label="Sticky Header"
-></vscode-data-grid>
-<vscode-data-grid
+></jp-data-grid>
+<jp-data-grid
   id="basic-grid"
   generate-header="none"
   aria-label="No Header"
-></vscode-data-grid>
+></jp-data-grid>
 ```
 
 ```javascript
@@ -176,7 +176,7 @@ document.getElementById('basic-grid').rowsData = [
 
 ### Grid Template Columns Attribute
 
-The `grid-template-columns` attribute can be applied to either the `<vscode-data-grid>` or `<vscode-data-grid-row>` component and can be used to define the width of each column in either all rows or a given row.
+The `grid-template-columns` attribute can be applied to either the `<jp-data-grid>` or `<jp-data-grid-row>` component and can be used to define the width of each column in either all rows or a given row.
 
 Each row of a data grid is rendered using CSS Grid layout. As a result, the value passed to the `grid-template-columns` attribute of these components can be the same as a the `grid-template-columns` CSS Grid property (i.e. `grid-template-columns="1fr 1fr 1fr 1fr"`).
 
@@ -184,20 +184,20 @@ By default the data grid automatically sets the width of each column to `"1fr"`.
 
 **Differences Between Components**
 
-The primary difference between using the `grid-template-columns` attribute on the `<vscode-data-grid>` versus the `<vscode-data-grid-row>` is how the value of the attribute is applied.
+The primary difference between using the `grid-template-columns` attribute on the `<jp-data-grid>` versus the `<jp-data-grid-row>` is how the value of the attribute is applied.
 
-When defined on a `<vscode-data-grid>` component, the value of the attribute is automatically applied to every child row inside the component.
+When defined on a `<jp-data-grid>` component, the value of the attribute is automatically applied to every child row inside the component.
 
-When defined on a `<vscode-data-grid-row>` component, the value of the attribute is applied to only that row.
+When defined on a `<jp-data-grid-row>` component, the value of the attribute is applied to only that row.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-data-grid--with-custom-column-widths)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-data-grid--with-custom-column-widths)
 
 ```html
-<vscode-data-grid
+<jp-data-grid
   id="basic-grid"
   grid-template-columns="100px 10vw 3fr 30%"
   aria-label="Custom Column Widths"
-></vscode-data-grid>
+></jp-data-grid>
 ```
 
 ```javascript
@@ -236,9 +236,9 @@ The `row-type` attribute is used to define what type of row should be rendered. 
 Use this attribute when defining a data grid using only HTML. This attribute is automatically applied when rendering a data grid using JavaScript and the `rowsData` property.
 
 ```html
-<vscode-data-grid-row row-type="default"></vscode-data-grid-row>
-<vscode-data-grid-row row-type="header"></vscode-data-grid-row>
-<vscode-data-grid-row row-type="sticky-header"></vscode-data-grid-row>
+<jp-data-grid-row row-type="default"></jp-data-grid-row>
+<jp-data-grid-row row-type="header"></jp-data-grid-row>
+<jp-data-grid-row row-type="sticky-header"></jp-data-grid-row>
 ```
 
 ### Cell Type Attribute
@@ -253,8 +253,8 @@ The `cell-type` attribute is used to define what type of cell should be rendered
 Use this attribute when defining a data grid using only HTML. This attribute is automatically applied when rendering a data grid using JavaScript and the `rowsData` property.
 
 ```html
-<vscode-data-grid-cell cell-type="default"></vscode-data-grid-cell>
-<vscode-data-grid-cell cell-type="columnheader"></vscode-data-grid-cell>
+<jp-data-grid-cell cell-type="default"></jp-data-grid-cell>
+<jp-data-grid-cell cell-type="columnheader"></jp-data-grid-cell>
 ```
 
 ### Grid Column Attribute
@@ -266,12 +266,12 @@ The `grid-column` attribute is used to define the column index (i.e. the order) 
 Use this attribute when defining a data grid using only HTML. This attribute is automatically applied when rendering a data grid using JavaScript and the `rowsData` property.
 
 ```html
-<vscode-data-grid-row>
-  <vscode-data-grid-cell grid-column="1">Cell Data</vscode-data-grid-cell>
-  <vscode-data-grid-cell grid-column="2">Cell Data</vscode-data-grid-cell>
-  <vscode-data-grid-cell grid-column="3">Cell Data</vscode-data-grid-cell>
-  <vscode-data-grid-cell grid-column="4">Cell Data</vscode-data-grid-cell>
-</vscode-data-grid-row>
+<jp-data-grid-row>
+  <jp-data-grid-cell grid-column="1">Cell Data</jp-data-grid-cell>
+  <jp-data-grid-cell grid-column="2">Cell Data</jp-data-grid-cell>
+  <jp-data-grid-cell grid-column="3">Cell Data</jp-data-grid-cell>
+  <jp-data-grid-cell grid-column="4">Cell Data</jp-data-grid-cell>
+</jp-data-grid-row>
 ```
 
 ### Custom Column Titles
@@ -290,13 +290,13 @@ This should contain the key from the `rowsData` object (representing a specific 
 
 This is where you define the custom title for a given column.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-data-grid--with-custom-titles)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-data-grid--with-custom-titles)
 
 ```html
-<vscode-data-grid
+<jp-data-grid
   id="basic-grid"
   aria-label="Custom Column Titles"
-></vscode-data-grid>
+></jp-data-grid>
 ```
 
 ```javascript

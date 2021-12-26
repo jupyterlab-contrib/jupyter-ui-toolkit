@@ -1,6 +1,6 @@
-# Visual Studio Code Link
+# Jupyter Link
 
-The `vscode-link` is a web component implementation of an [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a).
+The `jp-link` is a web component implementation of an [anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a).
 
 ## Attributes
 
@@ -19,8 +19,8 @@ The `vscode-link` is a web component implementation of an [anchor element](https
 
 ### Basic Usage (With Href Attribute)
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-link--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-link--default)
 
 ```html
-<vscode-link href="#">Link Text</vscode-link>
+<jp-link href="#">Link Text</jp-link>
 ```

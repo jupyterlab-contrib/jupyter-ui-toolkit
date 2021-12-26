@@ -1,6 +1,6 @@
-# Visual Studio Code Text Area
+# Jupyter Text Area
 
-The `vscode-text-area` is a web component implementation of a [text area element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea).
+The `jp-text-area` is a web component implementation of a [text area element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea).
 
 ## Attributes
 
@@ -22,116 +22,116 @@ The `vscode-text-area` is a web component implementation of a [text area element
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--default)
 
 ```html
-<vscode-text-area>Text Area Label</vscode-text-area>
+<jp-text-area>Text Area Label</jp-text-area>
 ```
 
 ### Autofocus Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-autofocus)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-autofocus)
 
 ```html
-<vscode-text-area autofocus>Text Area Label</vscode-text-area>
+<jp-text-area autofocus>Text Area Label</jp-text-area>
 ```
 
 ### Cols Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-custom-cols)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-custom-cols)
 
 ```html
-<vscode-text-area cols="50">Text Area Label</vscode-text-area>
+<jp-text-area cols="50">Text Area Label</jp-text-area>
 ```
 
 ### Disabled Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-disabled)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-disabled)
 
 ```html
-<vscode-text-area disabled>Text Area Label</vscode-text-area>
+<jp-text-area disabled>Text Area Label</jp-text-area>
 ```
 
 ### Form Attribute
 
-The `form` attribute should contain the `id` value of the form element that the `vscode-text-area` is associated with. The associated form element should be in the same document as the `vscode-text-area`.
+The `form` attribute should contain the `id` value of the form element that the `jp-text-area` is associated with. The associated form element should be in the same document as the `jp-text-area`.
 
-This attribute allows you to place the `vscode-text-area` component anywhere within a document, not just as the child of a form element.
+This attribute allows you to place the `jp-text-area` component anywhere within a document, not just as the child of a form element.
 
 **Note**
 
-If this attribute is not specified, the `vscode-text-area` should be a child of a form element.
+If this attribute is not specified, the `jp-text-area` should be a child of a form element.
 
 ```html
 <form id="sample-form"></form>
-<!-- ... arbitrary HTML between the form and vscode-text-area ... -->
-<vscode-text-area form="sample-form">Text Area Label</vscode-text-area>
+<!-- ... arbitrary HTML between the form and jp-text-area ... -->
+<jp-text-area form="sample-form">Text Area Label</jp-text-area>
 ```
 
 ### Max Length Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-max-length)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-max-length)
 
 ```html
-<vscode-text-area maxlength="10">Text Area Label</vscode-text-area>
+<jp-text-area maxlength="10">Text Area Label</jp-text-area>
 ```
 
 ### Name Attribute
 
 ```html
-<vscode-text-area name="example-vscode-text-area">
+<jp-text-area name="example-jp-text-area">
   Text Area Label
-</vscode-text-area>
+</jp-text-area>
 ```
 
 ### Placeholder Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-placeholder)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-placeholder)
 
 ```html
-<vscode-text-area placeholder="Placeholder Text">
+<jp-text-area placeholder="Placeholder Text">
   Text Area Label
-</vscode-text-area>
+</jp-text-area>
 ```
 
 ### Read Only Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-readonly)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-readonly)
 
 ```html
-<vscode-text-area readonly>Text Area Label</vscode-text-area>
+<jp-text-area readonly>Text Area Label</jp-text-area>
 ```
 
 ### Resize Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-resize-none)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-resize-none)
 
 ```html
-<vscode-text-area resize="none">Text Area Label</vscode-text-area>
+<jp-text-area resize="none">Text Area Label</jp-text-area>
 ```
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-resize-both)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-resize-both)
 
 ```html
-<vscode-text-area resize="both">Text Area Label</vscode-text-area>
+<jp-text-area resize="both">Text Area Label</jp-text-area>
 ```
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-resize-vertical)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-resize-vertical)
 
 ```html
-<vscode-text-area resize="vertical">Text Area Label</vscode-text-area>
+<jp-text-area resize="vertical">Text Area Label</jp-text-area>
 ```
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-resize-horizontal)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-resize-horizontal)
 
 ```html
-<vscode-text-area resize="horizontal">Text Area Label</vscode-text-area>
+<jp-text-area resize="horizontal">Text Area Label</jp-text-area>
 ```
 
 ### Rows Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-area--with-custom-rows)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-custom-rows)
 
 ```html
-<vscode-text-area rows="20">Text Area Label</vscode-text-area>
+<jp-text-area rows="20">Text Area Label</jp-text-area>
 ```

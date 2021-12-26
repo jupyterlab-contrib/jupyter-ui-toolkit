@@ -1,6 +1,6 @@
-# Visual Studio Code Text Field
+# Jupyter Text Field
 
-The `vscode-text-field` is a web component implementation of a [text field element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/text).
+The `jp-text-field` is a web component implementation of a [text field element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/text).
 
 ## Attributes
 
@@ -19,96 +19,96 @@ The `vscode-text-field` is a web component implementation of a [text field eleme
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--default)
 
 ```html
-<vscode-text-field>Text Field Label</vscode-text-field>
+<jp-text-field>Text Field Label</jp-text-field>
 ```
 
 ### Autofocus Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-autofocus)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-autofocus)
 
 ```html
-<vscode-text-field autofocus>Text Field Label</vscode-text-field>
+<jp-text-field autofocus>Text Field Label</jp-text-field>
 ```
 
 ### Disabled Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-disabled)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-disabled)
 
 ```html
-<vscode-text-field disabled>Text Field Label</vscode-text-field>
+<jp-text-field disabled>Text Field Label</jp-text-field>
 ```
 
 ### Max Length Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-max-length)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-max-length)
 
 ```html
-<vscode-text-field maxlength="10">Text Field Label</vscode-text-field>
+<jp-text-field maxlength="10">Text Field Label</jp-text-field>
 ```
 
 ### Name Attribute
 
 ```html
-<vscode-text-field name="example-vscode-text-field"
-  >Text Field Label</vscode-text-field
+<jp-text-field name="example-jp-text-field"
+  >Text Field Label</jp-text-field
 >
 ```
 
 ### Placeholder Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-placeholder)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-placeholder)
 
 ```html
-<vscode-text-field placeholder="Placeholder Text"
-  >Text Field Label</vscode-text-field
+<jp-text-field placeholder="Placeholder Text"
+  >Text Field Label</jp-text-field
 >
 ```
 
 ### Read Only Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-readonly)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-readonly)
 
 ```html
-<vscode-text-field readonly>Text Field Label</vscode-text-field>
+<jp-text-field readonly>Text Field Label</jp-text-field>
 ```
 
 ### Size Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-custom-size)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-custom-size)
 
 ```html
-<vscode-text-field size="50">Text Field Label</vscode-text-field>
+<jp-text-field size="50">Text Field Label</jp-text-field>
 ```
 
 ### Start Icon
 
 An icon can be added to the left of the text field by adding an element with the attribute `slot="start"`.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-start-icon)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-start-icon)
 
 ```html
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
-<vscode-text-field>
+<jp-text-field>
   Text Field Label
   <span slot="start" class="codicon codicon-git-merge"></span>
-</vscode-text-field>
+</jp-text-field>
 ```
 
 ### End Icon
 
 An icon can be added to the right of the text field by adding an element with the attribute `slot="end"`.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-text-field--with-end-icon)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-end-icon)
 
 ```html
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
-<vscode-text-field>
+<jp-text-field>
   Text Field Label
   <span slot="end" class="codicon codicon-chevron-right"></span>
-</vscode-text-field>
+</jp-text-field>
 ```

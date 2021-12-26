@@ -1,10 +1,10 @@
-# Visual Studio Code Panels
+# Jupyter Panels
 
-The `vscode-panels` component is a web component implementation of a [tab](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role). The component is created using three components that work together to interchangably display different content:
+The `jp-panels` component is a web component implementation of a [tab](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role). The component is created using three components that work together to interchangably display different content:
 
-- `<vscode-panels>`: The top level container element.
-- `<vscode-panel-tab>`: Renders the panel tab that will be associated with a panel view.
-- `<vscode-panel-view>`: The container element that will hold content associated with a given tab.
+- `<jp-panels>`: The top level container element.
+- `<jp-panel-tab>`: Renders the panel tab that will be associated with a panel view.
+- `<jp-panel-view>`: The container element that will hold content associated with a given tab.
 
 ## Panels Attributes
 
@@ -32,12 +32,12 @@ For example, if you're using a panels component to display photos of puppies and
 
 Panel view components are rendered as a CSS [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) with default values––they will automatically flow any content contained within them horizontally starting from the left side of the container.
 
-This behavior can be overridden, however, by adding custom styles to all `<vscode-panel-view>` components or individual components. Below are a couple of examples for common overrides that may be desired.
+This behavior can be overridden, however, by adding custom styles to all `<jp-panel-view>` components or individual components. Below are a couple of examples for common overrides that may be desired.
 
-To completely opt out of `<vscode-panel-view>` components rendering as flexbox containers:
+To completely opt out of `<jp-panel-view>` components rendering as flexbox containers:
 
 ```css
-vscode-panel-view {
+jp-panel-view {
   display: block;
 }
 ```
@@ -45,7 +45,7 @@ vscode-panel-view {
 To make the content flow vertically:
 
 ```css
-vscode-panel-view {
+jp-panel-view {
   flex-direction: column;
 }
 ```
@@ -53,22 +53,22 @@ vscode-panel-view {
 To center the content within the container:
 
 ```css
-vscode-panel-view {
+jp-panel-view {
   justify-content: center;
   align-items: center;
 }
 ```
 
-To apply styling to one `<vscode-panel-view>` component:
+To apply styling to one `<jp-panel-view>` component:
 
 ```html
-<vscode-panels>
+<jp-panels>
   ...panel tabs...
-  <vscode-panel-view id="view-1">Problems content.</vscode-panel-view>
-  <vscode-panel-view id="view-2">Output content.</vscode-panel-view>
-  <vscode-panel-view id="view-3">Debug content.</vscode-panel-view>
-  <vscode-panel-view id="view-4">Terminal content.</vscode-panel-view>
-</vscode-panels>
+  <jp-panel-view id="view-1">Problems content.</jp-panel-view>
+  <jp-panel-view id="view-2">Output content.</jp-panel-view>
+  <jp-panel-view id="view-3">Debug content.</jp-panel-view>
+  <jp-panel-view id="view-4">Terminal content.</jp-panel-view>
+</jp-panels>
 ```
 
 ```css
@@ -78,22 +78,22 @@ To apply styling to one `<vscode-panel-view>` component:
 }
 ```
 
-To apply styling to multiple `<vscode-panel-view>` components (but not all):
+To apply styling to multiple `<jp-panel-view>` components (but not all):
 
 ```html
-<vscode-panels>
+<jp-panels>
   ...panel tabs...
-  <vscode-panel-view id="view-1"> Problems content. </vscode-panel-view>
-  <vscode-panel-view id="view-2" class="custom-styles">
+  <jp-panel-view id="view-1"> Problems content. </jp-panel-view>
+  <jp-panel-view id="view-2" class="custom-styles">
     Output content.
-  </vscode-panel-view>
-  <vscode-panel-view id="view-3" class="custom-styles">
+  </jp-panel-view>
+  <jp-panel-view id="view-3" class="custom-styles">
     Debug content.
-  </vscode-panel-view>
-  <vscode-panel-view id="view-4" class="custom-styles">
+  </jp-panel-view>
+  <jp-panel-view id="view-4" class="custom-styles">
     Terminal content.
-  </vscode-panel-view>
-</vscode-panels>
+  </jp-panel-view>
+</jp-panels>
 ```
 
 ```css
@@ -107,102 +107,102 @@ _Finally, an important detail to be aware of is that `<br/>` tags are [known to 
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-panels--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-panels--default)
 
 ```html
-<vscode-panels>
-  <vscode-panel-tab id="tab-1">PROBLEMS</vscode-panel-tab>
-  <vscode-panel-tab id="tab-2">OUTPUT</vscode-panel-tab>
-  <vscode-panel-tab id="tab-3">DEBUG CONSOLE</vscode-panel-tab>
-  <vscode-panel-tab id="tab-4">TERMINAL</vscode-panel-tab>
-  <vscode-panel-view id="view-1">Problems content.</vscode-panel-view>
-  <vscode-panel-view id="view-2">Output content.</vscode-panel-view>
-  <vscode-panel-view id="view-3">Debug content.</vscode-panel-view>
-  <vscode-panel-view id="view-4">Terminal content.</vscode-panel-view>
-</vscode-panels>
+<jp-panels>
+  <jp-panel-tab id="tab-1">PROBLEMS</jp-panel-tab>
+  <jp-panel-tab id="tab-2">OUTPUT</jp-panel-tab>
+  <jp-panel-tab id="tab-3">DEBUG CONSOLE</jp-panel-tab>
+  <jp-panel-tab id="tab-4">TERMINAL</jp-panel-tab>
+  <jp-panel-view id="view-1">Problems content.</jp-panel-view>
+  <jp-panel-view id="view-2">Output content.</jp-panel-view>
+  <jp-panel-view id="view-3">Debug content.</jp-panel-view>
+  <jp-panel-view id="view-4">Terminal content.</jp-panel-view>
+</jp-panels>
 ```
 
 ### Active ID Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-panels--with-active-tab)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-panels--with-active-tab)
 
 ```html
-<vscode-panels activeid="tab-4">
-  <vscode-panel-tab id="tab-1">PROBLEMS</vscode-panel-tab>
-  <vscode-panel-tab id="tab-2">OUTPUT</vscode-panel-tab>
-  <vscode-panel-tab id="tab-3">DEBUG CONSOLE</vscode-panel-tab>
-  <vscode-panel-tab id="tab-4">TERMINAL</vscode-panel-tab>
-  <vscode-panel-view id="view-1">Problems content.</vscode-panel-view>
-  <vscode-panel-view id="view-2">Output content.</vscode-panel-view>
-  <vscode-panel-view id="view-3">Debug content.</vscode-panel-view>
-  <vscode-panel-view id="view-4">Terminal content.</vscode-panel-view>
-</vscode-panels>
+<jp-panels activeid="tab-4">
+  <jp-panel-tab id="tab-1">PROBLEMS</jp-panel-tab>
+  <jp-panel-tab id="tab-2">OUTPUT</jp-panel-tab>
+  <jp-panel-tab id="tab-3">DEBUG CONSOLE</jp-panel-tab>
+  <jp-panel-tab id="tab-4">TERMINAL</jp-panel-tab>
+  <jp-panel-view id="view-1">Problems content.</jp-panel-view>
+  <jp-panel-view id="view-2">Output content.</jp-panel-view>
+  <jp-panel-view id="view-3">Debug content.</jp-panel-view>
+  <jp-panel-view id="view-4">Terminal content.</jp-panel-view>
+</jp-panels>
 ```
 
-### With Visual Studio Code Badge
+### With Jupyter Badge
 
-In addition to text, a Visual Studio Code Badge can be used in a panel tab to highlight an item, attract attention, and/or flag status.
+In addition to text, a Jupyter Badge can be used in a panel tab to highlight an item, attract attention, and/or flag status.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-panels--with-badge)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-panels--with-badge)
 
 ```html
-<vscode-panels>
-  <vscode-panel-tab id="tab-1">
+<jp-panels>
+  <jp-panel-tab id="tab-1">
     PROBLEMS
-    <vscode-badge appearance="secondary">1</vscode-badge>
-  </vscode-panel-tab>
-  <vscode-panel-tab id="tab-2">
+    <jp-badge appearance="secondary">1</jp-badge>
+  </jp-panel-tab>
+  <jp-panel-tab id="tab-2">
     OUTPUT
-    <vscode-badge appearance="secondary">1</vscode-badge>
-  </vscode-panel-tab>
-  <vscode-panel-tab id="tab-3">
+    <jp-badge appearance="secondary">1</jp-badge>
+  </jp-panel-tab>
+  <jp-panel-tab id="tab-3">
     DEBUG CONSOLE
-    <vscode-badge appearance="secondary">1</vscode-badge>
-  </vscode-panel-tab>
-  <vscode-panel-tab id="tab-4">
+    <jp-badge appearance="secondary">1</jp-badge>
+  </jp-panel-tab>
+  <jp-panel-tab id="tab-4">
     TERMINAL
-    <vscode-badge appearance="secondary">1</vscode-badge>
-  </vscode-panel-tab>
-  <vscode-panel-view id="view-1"> Problems Content </vscode-panel-view>
-  <vscode-panel-view id="view-2"> Output Content </vscode-panel-view>
-  <vscode-panel-view id="view-3"> Debug Console Content </vscode-panel-view>
-  <vscode-panel-view id="view-4"> Terminal Content </vscode-panel-view>
-</vscode-panels>
+    <jp-badge appearance="secondary">1</jp-badge>
+  </jp-panel-tab>
+  <jp-panel-view id="view-1"> Problems Content </jp-panel-view>
+  <jp-panel-view id="view-2"> Output Content </jp-panel-view>
+  <jp-panel-view id="view-3"> Debug Console Content </jp-panel-view>
+  <jp-panel-view id="view-4"> Terminal Content </jp-panel-view>
+</jp-panels>
 ```
 
 ### Complex Content
 
-A `vscode-panel-view` can also contain any valid HTML.
+A `jp-panel-view` can also contain any valid HTML.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-panels--with-complex-content)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-panels--with-complex-content)
 
 ```html
-<vscode-panels>
-  <vscode-panel-tab id="tab-1">PROBLEMS</vscode-panel-tab>
-  <vscode-panel-tab id="tab-2">OUTPUT</vscode-panel-tab>
-  <vscode-panel-tab id="tab-3">DEBUG CONSOLE</vscode-panel-tab>
-  <vscode-panel-tab id="tab-4">TERMINAL</vscode-panel-tab>
-  <vscode-panel-view id="view-1">
+<jp-panels>
+  <jp-panel-tab id="tab-1">PROBLEMS</jp-panel-tab>
+  <jp-panel-tab id="tab-2">OUTPUT</jp-panel-tab>
+  <jp-panel-tab id="tab-3">DEBUG CONSOLE</jp-panel-tab>
+  <jp-panel-tab id="tab-4">TERMINAL</jp-panel-tab>
+  <jp-panel-view id="view-1">
     <section style="display: flex; flex-direction: column; width: 100%;">
       <h1 style="margin-top: 0;">Smoothie Maker 🍓</h1>
-      <vscode-checkbox>Apples</vscode-checkbox>
-      <vscode-checkbox>Oranges</vscode-checkbox>
-      <vscode-checkbox>Grapes</vscode-checkbox>
-      <vscode-checkbox disabled>Blueberries</vscode-checkbox>
-      <vscode-checkbox>Pineapple</vscode-checkbox>
-      <vscode-checkbox>Mango</vscode-checkbox>
-      <vscode-checkbox>Lemon</vscode-checkbox>
-      <vscode-button>Make Smoothie!</vscode-button>
+      <jp-checkbox>Apples</jp-checkbox>
+      <jp-checkbox>Oranges</jp-checkbox>
+      <jp-checkbox>Grapes</jp-checkbox>
+      <jp-checkbox disabled>Blueberries</jp-checkbox>
+      <jp-checkbox>Pineapple</jp-checkbox>
+      <jp-checkbox>Mango</jp-checkbox>
+      <jp-checkbox>Lemon</jp-checkbox>
+      <jp-button>Make Smoothie!</jp-button>
     </section>
-  </vscode-panel-view>
-  <vscode-panel-view id="view-2">
+  </jp-panel-view>
+  <jp-panel-view id="view-2">
     ... Insert Complex Content ...
-  </vscode-panel-view>
-  <vscode-panel-view id="view-3">
+  </jp-panel-view>
+  <jp-panel-view id="view-3">
     ... Insert Complex Content ...
-  </vscode-panel-view>
-  <vscode-panel-view id="view-4">
+  </jp-panel-view>
+  <jp-panel-view id="view-4">
     ... Insert Complex Content ...
-  </vscode-panel-view>
-</vscode-panels>
+  </jp-panel-view>
+</jp-panels>
 ```

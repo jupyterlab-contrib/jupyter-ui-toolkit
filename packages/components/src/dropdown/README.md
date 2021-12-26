@@ -1,6 +1,6 @@
-# Visual Studio Code Dropdown
+# Jupyter Dropdown
 
-The `vscode-dropdown` is a web component implementation of a [select element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
+The `jp-dropdown` is a web component implementation of a [select element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
 
 ## Attributes
 
@@ -12,77 +12,77 @@ The `vscode-dropdown` is a web component implementation of a [select element](ht
 
 ## Usage
 
-The `vscode-dropdown` component must be used with the `vscode-option` component.
+The `jp-dropdown` component must be used with the `jp-option` component.
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-dropdown--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-dropdown--default)
 
 ```html
-<vscode-dropdown>
-  <vscode-option>Option Label #1</vscode-option>
-  <vscode-option>Option Label #2</vscode-option>
-  <vscode-option>Option Label #3</vscode-option>
-</vscode-dropdown>
+<jp-dropdown>
+  <jp-option>Option Label #1</jp-option>
+  <jp-option>Option Label #2</jp-option>
+  <jp-option>Option Label #3</jp-option>
+</jp-dropdown>
 ```
 
 ### Disabled Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-dropdown--with-disabled)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-dropdown--with-disabled)
 
 ```html
-<vscode-dropdown disabled>
-  <vscode-option>Option Label #1</vscode-option>
-  <vscode-option>Option Label #2</vscode-option>
-  <vscode-option>Option Label #3</vscode-option>
-</vscode-dropdown>
+<jp-dropdown disabled>
+  <jp-option>Option Label #1</jp-option>
+  <jp-option>Option Label #2</jp-option>
+  <jp-option>Option Label #3</jp-option>
+</jp-dropdown>
 ```
 
 ### Open Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-dropdown--with-open)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-dropdown--with-open)
 
 ```html
-<vscode-dropdown open>
-  <vscode-option>Option Label #1</vscode-option>
-  <vscode-option>Option Label #2</vscode-option>
-  <vscode-option>Option Label #3</vscode-option>
-</vscode-dropdown>
+<jp-dropdown open>
+  <jp-option>Option Label #1</jp-option>
+  <jp-option>Option Label #2</jp-option>
+  <jp-option>Option Label #3</jp-option>
+</jp-dropdown>
 ```
 
 ### Position Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-dropdown--with-position-above)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-dropdown--with-position-above)
 
 ```html
-<vscode-dropdown position="above">
-  <vscode-option>Option Label #1</vscode-option>
-  <vscode-option>Option Label #2</vscode-option>
-  <vscode-option>Option Label #3</vscode-option>
-</vscode-dropdown>
+<jp-dropdown position="above">
+  <jp-option>Option Label #1</jp-option>
+  <jp-option>Option Label #2</jp-option>
+  <jp-option>Option Label #3</jp-option>
+</jp-dropdown>
 ```
 
 ```html
-<vscode-dropdown position="below">
-  <vscode-option>Option Label #1</vscode-option>
-  <vscode-option>Option Label #2</vscode-option>
-  <vscode-option>Option Label #3</vscode-option>
-</vscode-dropdown>
+<jp-dropdown position="below">
+  <jp-option>Option Label #1</jp-option>
+  <jp-option>Option Label #2</jp-option>
+  <jp-option>Option Label #3</jp-option>
+</jp-dropdown>
 ```
 
 ### Custom Indicator
 
 The default indicator is a downward facing chevron, but it can customized by adding an element with the attribute `slot="indicator"`.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-dropdown--with-custom-indicator)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-dropdown--with-custom-indicator)
 
 ```html
 <!-- Note: Using Visual Studio Code Codicon Library -->
 
-<vscode-dropdown>
+<jp-dropdown>
   <span slot="indicator" class="codicon codicon-settings"></span>
-  <vscode-option>Option Label #1</vscode-option>
-  <vscode-option>Option Label #2</vscode-option>
-  <vscode-option>Option Label #3</vscode-option>
-</vscode-dropdown>
+  <jp-option>Option Label #1</jp-option>
+  <jp-option>Option Label #2</jp-option>
+  <jp-option>Option Label #3</jp-option>
+</jp-dropdown>
 ```

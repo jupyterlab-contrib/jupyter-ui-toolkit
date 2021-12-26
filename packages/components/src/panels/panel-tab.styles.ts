@@ -71,7 +71,7 @@ export const panelTabStyles = (
   :host(:focus) {
     outline: none;
   }
-  ::slotted(vscode-badge) {
+  ::slotted(jp-badge) {
     margin-inline-start: calc(${designUnit} * 2px);
   }
 `;

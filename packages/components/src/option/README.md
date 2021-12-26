@@ -1,8 +1,8 @@
-# Visual Studio Code Option
+# Jupyter Option
 
-The `vscode-option` is a web component implementation of an [option](https://w3c.github.io/aria/#option).
+The `jp-option` is a web component implementation of an [option](https://w3c.github.io/aria/#option).
 
-The `vscode-option` component will only provide internals related to form association when used within a form-associated component. See the `vscode-dropdown` component for more details.
+The `jp-option` component will only provide internals related to form association when used within a form-associated component. See the `jp-dropdown` component for more details.
 
 ## Attributes
 
@@ -16,30 +16,30 @@ The `vscode-option` component will only provide internals related to form associ
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-option--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-option--default)
 
 ```html
-<vscode-option>Option Label</vscode-option>
+<jp-option>Option Label</jp-option>
 ```
 
 ### Disabled Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-option--with-disabled)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-option--with-disabled)
 
 ```html
-<vscode-option disabled>Option Label</vscode-option>
+<jp-option disabled>Option Label</jp-option>
 ```
 
 ### Selected Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-option--with-selected)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-option--with-selected)
 
 ```html
-<vscode-option selected>Option Label</vscode-option>
+<jp-option selected>Option Label</jp-option>
 ```
 
 ### Value Attribute
 
 ```html
-<vscode-option value="example-option-value">Option Label</vscode-option>
+<jp-option value="example-option-value">Option Label</jp-option>
 ```

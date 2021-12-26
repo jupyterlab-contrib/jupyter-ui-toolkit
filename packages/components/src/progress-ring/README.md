@@ -1,6 +1,6 @@
-# Visual Studio Code Progress Ring
+# Jupyter Progress Ring
 
-The `vscode-progress-ring` component is used to indicate an indeterminate loading state.
+The `jp-progress-ring` component is used to indicate an indeterminate loading state.
 
 ## Attributes
 
@@ -12,8 +12,8 @@ None
 
 The progress ring displays a looping animation to indicate an indeterminate state where the wait time is unspecified.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-progress-ring--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-progress-ring--default)
 
 ```html
-<vscode-progress-ring></vscode-progress-ring>
+<jp-progress-ring></jp-progress-ring>
 ```

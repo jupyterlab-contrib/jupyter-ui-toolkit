@@ -1,6 +1,6 @@
-# Visual Studio Code Radio
+# Jupyter Radio
 
-The `vscode-radio` is a web component implementation of a [radio element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio).
+The `jp-radio` is a web component implementation of a [radio element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio).
 
 ## Attributes
 
@@ -15,32 +15,32 @@ The `vscode-radio` is a web component implementation of a [radio element](https:
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio--default)
 
 ```html
-<vscode-radio>Radio Label</vscode-radio>
+<jp-radio>Radio Label</jp-radio>
 ```
 
 ### Checked Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio--with-checked)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio--with-checked)
 
 ```html
-<vscode-radio checked>Radio Label</vscode-radio>
+<jp-radio checked>Radio Label</jp-radio>
 ```
 
 ### Read Only Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio--with-read-only)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio--with-read-only)
 
 ```html
-<vscode-radio readonly>Radio Label</vscode-radio>
+<jp-radio readonly>Radio Label</jp-radio>
 ```
 
 ### Disabled Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio--with-disabled)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio--with-disabled)
 
 ```html
-<vscode-radio disabled>Radio Label</vscode-radio>
+<jp-radio disabled>Radio Label</jp-radio>
 ```

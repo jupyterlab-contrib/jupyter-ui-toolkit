@@ -1,6 +1,6 @@
-# Visual Studio Code Checkbox
+# Jupyter Checkbox
 
-The `vscode-checkbox` is a web component implementation of a [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/checkbox).
+The `jp-checkbox` is a web component implementation of a [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/checkbox).
 
 ## Attributes
 
@@ -23,63 +23,63 @@ The `vscode-checkbox` is a web component implementation of a [checkbox element](
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-checkbox--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-checkbox--default)
 
 ```html
-<vscode-checkbox>Label</vscode-checkbox>
+<jp-checkbox>Label</jp-checkbox>
 ```
 
 ### Autofocus Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-checkbox--with-autofocus)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-checkbox--with-autofocus)
 
 ```html
-<vscode-checkbox autofocus>Label</vscode-checkbox>
+<jp-checkbox autofocus>Label</jp-checkbox>
 ```
 
 ### Checked Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-checkbox--with-checked)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-checkbox--with-checked)
 
 ```html
-<vscode-checkbox checked>Label</vscode-checkbox>
+<jp-checkbox checked>Label</jp-checkbox>
 ```
 
 ### Disabled Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-checkbox--with-disabled)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-checkbox--with-disabled)
 
 ```html
-<vscode-checkbox disabled>Label</vscode-checkbox>
+<jp-checkbox disabled>Label</jp-checkbox>
 ```
 
 ### Readonly Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-checkbox--with-read-only)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-checkbox--with-read-only)
 
 ```html
-<vscode-checkbox readonly>Label</vscode-checkbox>
+<jp-checkbox readonly>Label</jp-checkbox>
 ```
 
 ### Required Attribute
 
 ```html
-<vscode-checkbox required>Label</vscode-checkbox>
+<jp-checkbox required>Label</jp-checkbox>
 ```
 
 ### Value Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-checkbox--with-value)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-checkbox--with-value)
 
 ```html
-<vscode-checkbox value="baz">Label</vscode-checkbox>
+<jp-checkbox value="baz">Label</jp-checkbox>
 ```
 
 ### Indeterminate Property
 
 Checkboxes can also render an indeterminate state. This is achieved by getting a reference to a given checkbox using JavaScript and then setting the `indeterminate` property of the checkbox to `true`.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-checkbox--with-indeterminate)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-checkbox--with-indeterminate)
 
 ```javascript
 const checkbox = document.getElementById('basic-checkbox');
@@ -87,23 +87,23 @@ checkbox.indeterminate = true;
 ```
 
 ```html
-<vscode-checkbox id="basic-checkbox">Label</vscode-checkbox>
+<jp-checkbox id="basic-checkbox">Label</jp-checkbox>
 ```
 
 ### Form Usage
 
-Here is an example of the Visual Studio Code Checkbox and its various attributes being used in a form.
+Here is an example of the Jupyter Checkbox and its various attributes being used in a form.
 
 ```html
 <form>
   <fieldset>
     <legend>Fieldset Legend</legend>
-    <vscode-checkbox checked required>Checked + Required</vscode-checkbox>
-    <vscode-checkbox checked readonly>Checked + Readonly</vscode-checkbox>
-    <vscode-checkbox autofocus>Autofocus</vscode-checkbox>
-    <vscode-checkbox disabled>Disabled</vscode-checkbox>
-    <vscode-checkbox value="baz">Value Set To "baz"</vscode-checkbox>
+    <jp-checkbox checked required>Checked + Required</jp-checkbox>
+    <jp-checkbox checked readonly>Checked + Readonly</jp-checkbox>
+    <jp-checkbox autofocus>Autofocus</jp-checkbox>
+    <jp-checkbox disabled>Disabled</jp-checkbox>
+    <jp-checkbox value="baz">Value Set To "baz"</jp-checkbox>
   </fieldset>
-  <vscode-button type="submit">Submit Button</vscode-button>
+  <jp-button type="submit">Submit Button</jp-button>
 </form>
 ```

@@ -45,7 +45,7 @@ npm install --save @vscode/webview-ui-toolkit
 Further documentation can be found in the following places:
 
 - [Component Docs](./packages/components/docs/components.md)
-- [Storybook (Interactive Component Sandbox)](https://microsoft.github.io/vscode-webview-ui-toolkit/)
+- [Storybook (Interactive Component Sandbox)](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/)
 - [Toolkit Extension Samples](./packages/lab-example)
 
 ## Contributing

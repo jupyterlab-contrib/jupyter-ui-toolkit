@@ -1,6 +1,6 @@
-# Visual Studio Code Divider
+# Jupyter Divider
 
-The `vscode-divider` is a web component implementation of a [horiztonal rule element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr).
+The `jp-divider` is a web component implementation of a [horiztonal rule element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr).
 
 ## Attributes
 
@@ -12,26 +12,26 @@ The `vscode-divider` is a web component implementation of a [horiztonal rule ele
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-divider--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-divider--default)
 
 ```html
-<vscode-divider></vscode-divider>
+<jp-divider></jp-divider>
 ```
 
 ### Role Attribute
 
-The role attribute determines the semantic meaning (or lack there of) of a Visual Studio Code Divider. The two options are `separator` and `presentation`.
+The role attribute determines the semantic meaning (or lack there of) of a Jupyter Divider. The two options are `separator` and `presentation`.
 
 The `separator` option is the default value and indicates that the divider semantically separates content.
 
 The `presentation` option indicates that the divider has no semantic value and is for visual presentation only.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-divider--with-role)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-divider--with-role)
 
 ```html
 <!-- Indicates that the divider semantically separates content -->
-<vscode-divider role="separator"></vscode-divider>
+<jp-divider role="separator"></jp-divider>
 
 <!-- Indicates that the divider has no semantic value and is for visual presentation only -->
-<vscode-divider role="presentation"></vscode-divider>
+<jp-divider role="presentation"></jp-divider>
 ```

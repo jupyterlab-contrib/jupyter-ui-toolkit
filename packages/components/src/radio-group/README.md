@@ -1,6 +1,6 @@
-# Visual Studio Code Radio Group
+# Jupyter Radio Group
 
-The `vscode-radio-group` is a web component implementation of a [radio group](https://w3c.github.io/aria-practices/#radiobutton). While any DOM content is permissible as a child of the `vscode-radio-group`, only `vscode-radio` content and slotted content with a role of `radio` will receive keyboard support.
+The `jp-radio-group` is a web component implementation of a [radio group](https://w3c.github.io/aria-practices/#radiobutton). While any DOM content is permissible as a child of the `jp-radio-group`, only `jp-radio` content and slotted content with a role of `radio` will receive keyboard support.
 
 ## Attributes
 
@@ -15,72 +15,72 @@ The `vscode-radio-group` is a web component implementation of a [radio group](ht
 
 ### Basic Usage
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio-group--default)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio-group--default)
 
 ```html
-<vscode-radio-group>
+<jp-radio-group>
   <label slot="label">Radio Group Label</label>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-</vscode-radio-group>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+</jp-radio-group>
 ```
 
 ### Disabled Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio-group--with-disabled)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio-group--with-disabled)
 
 ```html
-<vscode-radio-group disabled>
+<jp-radio-group disabled>
   <label slot="label">Radio Group Label</label>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-</vscode-radio-group>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+</jp-radio-group>
 ```
 
 ### Name Attribute
 
 ```html
-<vscode-radio-group name="example-radio-group">
+<jp-radio-group name="example-radio-group">
   <label slot="label">Radio Group Label</label>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-</vscode-radio-group>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+</jp-radio-group>
 ```
 
 ### Orientation Attribute
 
 If the orientation attribute is not set, the default orientation is `horizontal`.
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio-group--with-vertical-orientation)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio-group--with-vertical-orientation)
 
 ```html
-<vscode-radio-group orientation="vertical">
+<jp-radio-group orientation="vertical">
   <label slot="label">Radio Group Label</label>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-</vscode-radio-group>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+</jp-radio-group>
 
-<vscode-radio-group orientation="horizontal">
+<jp-radio-group orientation="horizontal">
   <label slot="label">Radio Group Label</label>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-</vscode-radio-group>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+</jp-radio-group>
 ```
 
 ### Read Only Attribute
 
-[Interactive Storybook Example](https://microsoft.github.io/vscode-webview-ui-toolkit/?path=/story/library-radio-group--with-read-only)
+[Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-radio-group--with-read-only)
 
 ```html
-<vscode-radio-group readonly>
+<jp-radio-group readonly>
   <label slot="label">Radio Group Label</label>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-  <vscode-radio>Radio Label</vscode-radio>
-</vscode-radio-group>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+  <jp-radio>Radio Label</jp-radio>
+</jp-radio-group>
 ```
