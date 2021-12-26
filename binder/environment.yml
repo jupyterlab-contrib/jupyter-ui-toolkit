@@ -18,5 +18,3 @@ dependencies:
   - yarn >=1.21.0,<2.0.0a0
   - pip
   - wheel
-  # additional packages for demos
-  # - ipywidgets
