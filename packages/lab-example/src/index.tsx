@@ -129,13 +129,10 @@ function Artwork(): JSX.Element {
         <div>
           <label>Label</label>
           <div className="jp-FlexColumn">
-            {/* @ts-expect-error property autofocus checked not defined */}
             <Checkbox autofocus checked>
               Label
             </Checkbox>
-            {/* @ts-expect-error property checked not defined */}
             <Checkbox checked>Label</Checkbox>
-            {/* @ts-expect-error property disabled not defined */}
             <Checkbox disabled>Label</Checkbox>
           </div>
         </div>

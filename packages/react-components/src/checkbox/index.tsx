@@ -10,6 +10,17 @@ import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Checkbox = wrap(jpCheckbox());
+export const Checkbox: React.DetailedHTMLFactory<
+  React.HTMLAttributes<HTMLElement> & {
+    autofocus?: boolean;
+    checked?: boolean;
+    disabled?: boolean;
+    readonly?: boolean;
+    required?: boolean;
+    value?: string;
+    indeterminate?: boolean
+  },
+  HTMLElement
+> = wrap(jpCheckbox()) as any;
 // @ts-expect-error unknown property
 Checkbox.displayName = 'Jupyter.Checkbox';
