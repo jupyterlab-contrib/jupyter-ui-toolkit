@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "build:prod": "lerna run --scope @jupyter-notebook/web-components build && lerna run --scope jupyter-ui-demo build",
+    "build:prod": "lerna run --scope @jupyter-notebook/web-components --scope @jupyter-notebook/react-components build && lerna run --scope jupyter-ui-demo build:prod",
     "clean": "lerna run clean",
     "install": "lerna bootstrap",
     "format": "prettier --write \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
