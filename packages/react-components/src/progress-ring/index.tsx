@@ -4,12 +4,15 @@
 import {
   provideJupyterDesignSystem,
   jpProgressRing
-} from '@jupyter-notebook/ui-components';
+} from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const ProgressRing = wrap(jpProgressRing());
+export const ProgressRing: React.DetailedHTMLFactory<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+> = wrap(jpProgressRing()) as any;
 // @ts-expect-error unknown property
 ProgressRing.displayName = 'Jupyter.ProgressRing';

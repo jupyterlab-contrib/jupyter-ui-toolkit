@@ -4,12 +4,15 @@
 import {
   provideJupyterDesignSystem,
   jpTag
-} from '@jupyter-notebook/ui-components';
+} from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Tag = wrap(jpTag());
+export const Tag: React.DetailedHTMLFactory<
+  React.HTMLAttributes<HTMLElement>,
+  HTMLElement
+> = wrap(jpTag()) as any;
 // @ts-expect-error unknown property
 Tag.displayName = 'Jupyter.Tag';

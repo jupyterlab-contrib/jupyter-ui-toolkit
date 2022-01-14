@@ -4,12 +4,19 @@
 import {
   provideJupyterDesignSystem,
   jpOption
-} from '@jupyter-notebook/ui-components';
+} from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Option = wrap(jpOption());
+export const Option: React.DetailedHTMLFactory<
+React.HTMLAttributes<HTMLElement> & {
+  disabled?: boolean;
+  selected?: boolean;
+  value?: string;
+},
+HTMLElement
+> = wrap(jpOption()) as any;
 // @ts-expect-error unknown property
 Option.displayName = 'Juypter.Option';
