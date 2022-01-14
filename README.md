@@ -3,7 +3,7 @@
 **WIP this is very early work in progress and nothing is yet working.** But don't hesitate to open issues and PRs if you want to help.
 
 ![Extension status](https://img.shields.io/badge/status-draft-critical 'Not yet working')
-[![NPM Version](https://img.shields.io/npm/v/@jupyter-notebook/ui-components?color=blue)](https://www.npmjs.com/package/@jupyter-notebook/ui-components)
+[![NPM Version](https://img.shields.io/npm/v/@jupyter-notebook/web-components?color=blue)](https://www.npmjs.com/package/@jupyter-notebook/web-components)
 ![Toolkit CI Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml/badge.svg)
 ![Deploy Docs Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
