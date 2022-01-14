@@ -10,11 +10,11 @@ import {
   Tag,
   TextArea,
   TextField
-} from '@jupyter-notebook/react-ui-components';
+} from '@jupyter-notebook/react-components';
 import {
   allComponents,
   provideJupyterDesignSystem
-} from '@jupyter-notebook/ui-components';
+} from '@jupyter-notebook/web-components';
 import {
   JupyterFrontEnd,
   JupyterFrontEndPlugin
@@ -83,7 +83,6 @@ const plugin: JupyterFrontEndPlugin<void> = {
 };
 
 function Artwork(): JSX.Element {
-  // TODO provide typing for Jupyter React components - see https://www.fast.design/docs/integrations/react#typescript-and-tsx-support
   const onClick = () => {
     alert('Reacting on React click event.');
   };
@@ -91,18 +90,14 @@ function Artwork(): JSX.Element {
     <div className="jp-FlexRow">
       <div className="jp-FlexColumn">
         <div className="jp-FlexRow">
-          {/* @ts-expect-error property appearance not defined */}
           <Button appearance="primary" onClick={onClick}>
             Button
           </Button>
-          {/* @ts-expect-error property appearance not defined */}
           <Button appearance="secondary">Button</Button>
-          {/* @ts-expect-error property appearance not defined */}
           <Button appearance="icon" aria-label="Confirm">
             <span className="fa fa-cog"></span>
           </Button>
         </div>
-        {/* @ts-expect-error property value not defined */}
         <TextField value="Populated text">Text Field Label</TextField>
         <div className="jp-FlexColumn">
           <label>Label</label>
@@ -113,17 +108,13 @@ function Artwork(): JSX.Element {
           </Dropdown>
         </div>
         <TextArea>Text Area Label</TextArea>
-        {/* @ts-expect-error property href not defined */}
         <Link href="#">Link Text</Link>
       </div>
       <div className="jp-FlexColumn">
-        {/* @ts-expect-error property orientation not defined */}
         <RadioGroup orientation="vertical">
           <label slot="label">Label</label>
-          {/* @ts-expect-error property checked not defined */}
           <Radio checked>Radio Label</Radio>
           <Radio>Radio Label</Radio>
-          {/* @ts-expect-error property disabled not defined */}
           <Radio disabled>Radio Label</Radio>
         </RadioGroup>
         <div>

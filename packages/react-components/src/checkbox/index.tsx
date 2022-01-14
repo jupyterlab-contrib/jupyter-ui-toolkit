@@ -4,7 +4,7 @@
 import {
   provideJupyterDesignSystem,
   jpCheckbox
-} from '@jupyter-notebook/ui-components';
+} from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
@@ -18,7 +18,7 @@ export const Checkbox: React.DetailedHTMLFactory<
     readonly?: boolean;
     required?: boolean;
     value?: string;
-    indeterminate?: boolean
+    indeterminate?: boolean;
   },
   HTMLElement
 > = wrap(jpCheckbox()) as any;
