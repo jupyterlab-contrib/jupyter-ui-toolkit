@@ -12,13 +12,14 @@
     "lint:check": "lerna run eslint:check"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.1"
+    "lerna": "^4.0.0",
+    "prettier": "^2.1.1",
+    "yarn": "^1.22.17"
   },
   "workspaces": {
     "packages": [
