@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   ElementDefinitionContext,
   focusVisible,
@@ -24,7 +24,7 @@ import {
 export const dataGridCellStyles = (
   context: ElementDefinitionContext,
   definition: FoundationElementDefinition
-) => css`
+): ElementStyles => css`
   :host {
     padding: calc(${designUnit} * 1px) calc(${designUnit} * 3px);
     color: ${foreground};

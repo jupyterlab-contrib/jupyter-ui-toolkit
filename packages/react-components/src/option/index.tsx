@@ -11,12 +11,12 @@ import React from 'react';
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
 export const Option: React.DetailedHTMLFactory<
-React.HTMLAttributes<HTMLElement> & {
-  disabled?: boolean;
-  selected?: boolean;
-  value?: string;
-},
-HTMLElement
+  React.HTMLAttributes<HTMLElement> & {
+    disabled?: boolean;
+    selected?: boolean;
+    value?: string;
+  },
+  HTMLElement
 > = wrap(jpOption()) as any;
 // @ts-expect-error unknown property
 Option.displayName = 'Juypter.Option';

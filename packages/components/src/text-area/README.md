@@ -79,9 +79,7 @@ If this attribute is not specified, the `jp-text-area` should be a child of a fo
 ### Name Attribute
 
 ```html
-<jp-text-area name="example-jp-text-area">
-  Text Area Label
-</jp-text-area>
+<jp-text-area name="example-jp-text-area"> Text Area Label </jp-text-area>
 ```
 
 ### Placeholder Attribute
@@ -89,9 +87,7 @@ If this attribute is not specified, the `jp-text-area` should be a child of a fo
 [Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-area--with-placeholder)
 
 ```html
-<jp-text-area placeholder="Placeholder Text">
-  Text Area Label
-</jp-text-area>
+<jp-text-area placeholder="Placeholder Text"> Text Area Label </jp-text-area>
 ```
 
 ### Read Only Attribute

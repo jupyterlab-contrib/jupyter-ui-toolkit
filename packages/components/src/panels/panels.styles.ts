@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   display,
   ElementDefinitionContext,
@@ -21,7 +21,7 @@ import {
 export const panelsStyles = (
   context: ElementDefinitionContext,
   definition: FoundationElementDefinition
-) => css`
+): ElementStyles => css`
   ${display('grid')} :host {
     box-sizing: border-box;
     font-family: ${fontFamily};

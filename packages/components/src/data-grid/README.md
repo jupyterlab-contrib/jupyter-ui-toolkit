@@ -293,10 +293,7 @@ This is where you define the custom title for a given column.
 [Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-data-grid--with-custom-titles)
 
 ```html
-<jp-data-grid
-  id="basic-grid"
-  aria-label="Custom Column Titles"
-></jp-data-grid>
+<jp-data-grid id="basic-grid" aria-label="Custom Column Titles"></jp-data-grid>
 ```
 
 ```javascript

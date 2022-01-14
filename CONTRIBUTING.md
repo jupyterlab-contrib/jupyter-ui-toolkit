@@ -26,7 +26,7 @@ The benefit of using a code formatter like prettier is that it removes the topic
 code style from the conversation when reviewing pull requests, thereby
 speeding up the review process.
 
-You may use the prettier npm script (e.g. 
+You may use the prettier npm script (e.g.
 `yarn prettier`) to format the entire code base.
 We recommend installing a prettier extension for your code editor and
 configuring it to format your code with a keyboard shortcut or

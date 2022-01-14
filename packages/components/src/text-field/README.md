@@ -52,9 +52,7 @@ The `jp-text-field` is a web component implementation of a [text field element](
 ### Name Attribute
 
 ```html
-<jp-text-field name="example-jp-text-field"
-  >Text Field Label</jp-text-field
->
+<jp-text-field name="example-jp-text-field">Text Field Label</jp-text-field>
 ```
 
 ### Placeholder Attribute
@@ -62,9 +60,7 @@ The `jp-text-field` is a web component implementation of a [text field element](
 [Interactive Storybook Example](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/?path=/story/library-text-field--with-placeholder)
 
 ```html
-<jp-text-field placeholder="Placeholder Text"
-  >Text Field Label</jp-text-field
->
+<jp-text-field placeholder="Placeholder Text">Text Field Label</jp-text-field>
 ```
 
 ### Read Only Attribute

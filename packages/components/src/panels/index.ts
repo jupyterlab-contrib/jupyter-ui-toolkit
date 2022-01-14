@@ -27,7 +27,7 @@ export class Panels extends FoundationTabs {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
 
     // This will override any usage of the orientation attribute
@@ -72,7 +72,7 @@ export class PanelTab extends FoundationTab {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
 
     // This will override any usage of the disabled attribute

@@ -21,7 +21,7 @@ export class ProgressRing extends BaseProgress {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
 
     // This will override any usage of the paused attribute
@@ -51,7 +51,7 @@ export class ProgressRing extends BaseProgress {
     attrName: string,
     oldVal: string,
     newVal: string
-  ) {
+  ): void {
     if (attrName === 'value') {
       // This will override any usage of the value attribute
       // inherited by the FAST Foundation BaseProgress component

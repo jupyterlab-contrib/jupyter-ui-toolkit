@@ -3,79 +3,79 @@ name: toolkit-ci
 on: pull_request
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Install Dependencies 📥
+        run: yarn install
 
-            - name: Run Tests 🧪
-              run: yarn run test
-              working-directory: packages/components
+      - name: Run Tests 🧪
+        run: yarn run test
+        working-directory: packages/components
 
-    lint:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Install Dependencies 📥
+        run: yarn install
 
-            - name: Run Lint Check 🔍
-              run: yarn run eslint:check
+      - name: Run Lint Check 🔍
+        run: yarn run lint:check
 
-            - name: Run Format Check 🌸
-              run: yarn run prettier:check
+      - name: Run Format Check 🌸
+        run: yarn run format:check
 
-    build-toolkit:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+  build-toolkit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Install Dependencies 📥
+        run: yarn install
 
-            - name: Build Toolkit 🏗
-              run: yarn run build
+      - name: Build Toolkit 🏗
+        run: yarn run build
 
-    build-docs:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+  build-docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Install Dependencies 📥
+        run: yarn install
 
-            - name: Build Docs 🏗
-              run: yarn run build:docs
-              working-directory: packages/components
+      - name: Build Docs 🏗
+        run: yarn run build:docs
+        working-directory: packages/components

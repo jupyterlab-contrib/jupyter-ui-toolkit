@@ -10,7 +10,7 @@ import type { T } from '../design-tokens/create';
  */
 export function initThemeChangeListener(tokenMappings: {
   [index: string]: CSSDesignToken<T>;
-}) {
+}): void {
   const addObserver = () => {
     const observer = new MutationObserver(() => {
       applyCurrentTheme(tokenMappings);

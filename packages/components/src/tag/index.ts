@@ -20,7 +20,7 @@ export class Tag extends FoundationBadge {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
 
     // This will override any usage of the circular attribute

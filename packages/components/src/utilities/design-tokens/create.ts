@@ -39,7 +39,7 @@ let isThemeListenerInitialized = false;
  * the design token.
  * @returns A FAST CSSDesignToken that emits a CSS custom property.
  */
-export function create<T>(name: string, jpThemeVar?: string) {
+export function create<T>(name: string, jpThemeVar?: string): void {
   const designToken = DesignToken.create<T>(name);
 
   if (jpThemeVar) {

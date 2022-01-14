@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   display,
   ElementDefinitionContext,
@@ -13,7 +13,7 @@ import { designUnit, progressBackground } from '../design-tokens';
 export const progressRingStyles = (
   context: ElementDefinitionContext,
   definition: ProgressRingOptions
-) => css`
+): ElementStyles => css`
   ${display('flex')} :host {
     align-items: center;
     outline: none;
