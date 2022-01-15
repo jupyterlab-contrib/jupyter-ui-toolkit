@@ -71,7 +71,9 @@ jobs:
 
       - name: Update Snapshots
         if: ${{ failure() }}
-        run: yarn run test:visual -u
+        run: |
+          mv test-results test-assets
+          yarn run test:visual -u
         working-directory: packages/components
 
       - uses: actions/upload-artifact@v2
@@ -79,7 +81,7 @@ jobs:
         with:
           name: jupyter-ui-test
           path: |
-            packages/components/test-results
+            packages/components/test-assets/
             packages/components/src/**/*-snapshots/*
 
   lint:

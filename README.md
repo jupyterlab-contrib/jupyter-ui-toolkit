@@ -4,7 +4,7 @@
 
 ![Extension status](https://img.shields.io/badge/status-draft-critical 'Not yet working')
 [![NPM Version](https://img.shields.io/npm/v/@jupyter-notebook/web-components?color=blue)](https://www.npmjs.com/package/@jupyter-notebook/web-components)
-![Toolkit CI Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml/badge.svg)
+[![Toolkit CI Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml)
 ![Deploy Docs Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
 
