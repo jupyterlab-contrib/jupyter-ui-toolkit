@@ -7,7 +7,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: 'tsconfig.eslint.json',
+    project: 'tsconfig.json',
     sourceType: 'module'
   },
   plugins: ['@typescript-eslint'],
@@ -35,13 +35,5 @@ module.exports = {
     curly: ['error', 'all'],
     eqeqeq: 'error',
     'prefer-arrow-callback': 'error'
-  },
-  overrides: [
-    {
-      files: ['*.ts'],
-      parserOptions: {
-        project: ['./tsconfig.eslint.json']
-      }
-    }
-  ]
+  }
 };

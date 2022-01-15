@@ -86,7 +86,7 @@ export const allComponents = {
   jpTag,
   jpTextArea,
   jpTextField,
-  register(container?: Container, ...rest: any[]) {
+  register(container?: Container, ...rest: any[]): void {
     if (!container) {
       // preserve backward compatibility with code that loops through
       // the values of this object and calls them as funcs with no args

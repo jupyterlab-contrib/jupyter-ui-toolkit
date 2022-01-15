@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   disabledCursor,
   display,
@@ -26,7 +26,7 @@ import { OptionOptions } from './';
 export const optionStyles = (
   context: ElementDefinitionContext,
   definition: OptionOptions
-) => css`
+): ElementStyles => css`
   ${display('inline-flex')} :host {
     font-family: var(--body-font);
     border-radius: ${cornerRadius};

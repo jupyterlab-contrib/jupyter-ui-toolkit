@@ -26,7 +26,7 @@ export class DataGrid extends FoundationDataGrid {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
 
     // Sets a default ARIA label on the data grid only if an aria-label attribute

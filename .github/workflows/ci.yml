@@ -3,79 +3,127 @@ name: toolkit-ci
 on: pull_request
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Setup yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-
 
-            - name: Run Tests 🧪
-              run: yarn run test
-              working-directory: packages/components
+      - name: Install Dependencies 📥
+        run: yarn install
 
-    lint:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+      - name: Run Tests 🧪
+        run: yarn run test
+        working-directory: packages/components
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-            - name: Run Lint Check 🔍
-              run: yarn run eslint:check
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Setup yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-
 
-            - name: Run Format Check 🌸
-              run: yarn run prettier:check
+      - name: Install Dependencies 📥
+        run: yarn install
 
-    build-toolkit:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+      - name: Run Lint Check 🔍
+        run: yarn run lint:check
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+      - name: Run Format Check 🌸
+        run: yarn run format:check
 
-            - name: Install Dependencies 📥
-              run: yarn install
+  build-toolkit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-            - name: Build Toolkit 🏗
-              run: yarn run build
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    build-docs:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v2
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Setup yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-
 
-            - name: Setup Node 💾
-              uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
+      - name: Install Dependencies 📥
+        run: yarn install
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Build Toolkit 🏗
+        run: yarn run lerna run --scope @jupyter-notebook/web-components --scope @jupyter-notebook/react-components build
 
-            - name: Build Docs 🏗
-              run: yarn run build:docs
-              working-directory: packages/components
+  build-docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Setup Node 💾
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Setup yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            yarn-
+
+      - name: Install Dependencies 📥
+        run: yarn install
+
+      - name: Build Docs 🏗
+        run: yarn run build:docs
+        working-directory: packages/components

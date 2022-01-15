@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   ElementDefinitionContext,
   FoundationElementDefinition
@@ -16,7 +16,7 @@ import {
 export const dataGridRowStyles = (
   context: ElementDefinitionContext,
   definition: FoundationElementDefinition
-) => css`
+): ElementStyles => css`
   :host {
     display: grid;
     padding: calc((${designUnit} / 4) * 1px) 0;

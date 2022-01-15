@@ -7,6 +7,7 @@ jupyter_ui_demo
 build/
 dist/
 storybook-static/
+packages/components/docs/api-report.md
 
 # Misc
 .DS_Store

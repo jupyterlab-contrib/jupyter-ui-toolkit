@@ -13,3 +13,7 @@ node_modules
 **/*.stories.*
 **/*.d.ts
 **/tests
+src/utilities/storybook/
+src/**/*.spec.ts
+src/**/*.stories.ts
+src/**/fixtures/

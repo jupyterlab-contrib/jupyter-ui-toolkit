@@ -23,7 +23,7 @@ export class TextArea extends FoundationTextArea {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
     if (this.textContent) {
       this.setAttribute('aria-label', this.textContent);

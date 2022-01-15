@@ -21,7 +21,7 @@ export class Radio extends FoundationRadio {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
     if (this.textContent) {
       this.setAttribute('aria-label', this.textContent);

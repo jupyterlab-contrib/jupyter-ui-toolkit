@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   CheckboxOptions,
   disabledCursor,
@@ -28,7 +28,7 @@ import {
 export const checkboxStyles = (
   context: ElementDefinitionContext,
   defintiion: CheckboxOptions
-) => css`
+): ElementStyles => css`
   ${display('inline-flex')} :host {
     align-items: center;
     outline: none;

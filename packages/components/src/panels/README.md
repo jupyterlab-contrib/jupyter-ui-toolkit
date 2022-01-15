@@ -195,14 +195,8 @@ A `jp-panel-view` can also contain any valid HTML.
       <jp-button>Make Smoothie!</jp-button>
     </section>
   </jp-panel-view>
-  <jp-panel-view id="view-2">
-    ... Insert Complex Content ...
-  </jp-panel-view>
-  <jp-panel-view id="view-3">
-    ... Insert Complex Content ...
-  </jp-panel-view>
-  <jp-panel-view id="view-4">
-    ... Insert Complex Content ...
-  </jp-panel-view>
+  <jp-panel-view id="view-2"> ... Insert Complex Content ... </jp-panel-view>
+  <jp-panel-view id="view-3"> ... Insert Complex Content ... </jp-panel-view>
+  <jp-panel-view id="view-4"> ... Insert Complex Content ... </jp-panel-view>
 </jp-panels>
 ```

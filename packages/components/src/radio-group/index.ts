@@ -20,7 +20,7 @@ export class RadioGroup extends FoundationRadioGroup {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
     // Generates a unique id for each radio group label so that the label element
     // within the group can be correctly associated with the radio group.

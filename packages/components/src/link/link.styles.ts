@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   display,
   ElementDefinitionContext,
@@ -23,7 +23,7 @@ import { LinkOptions } from './';
 export const linkStyles = (
   context: ElementDefinitionContext,
   definition: LinkOptions
-) => css`
+): ElementStyles => css`
   ${display('inline-flex')} :host {
     background: transparent;
     box-sizing: border-box;

@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   disabledCursor,
   display,
@@ -26,7 +26,7 @@ import {
 export const radioStyles = (
   context: ElementDefinitionContext,
   definition: RadioOptions
-) => css`
+): ElementStyles => css`
   ${display('inline-flex')} :host {
     align-items: center;
     flex-direction: row;

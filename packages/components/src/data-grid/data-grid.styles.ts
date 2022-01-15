@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   ElementDefinitionContext,
   FoundationElementDefinition
@@ -11,7 +11,7 @@ import {
 export const dataGridStyles = (
   context: ElementDefinitionContext,
   definition: FoundationElementDefinition
-) => css`
+): ElementStyles => css`
   :host {
     display: flex;
     position: relative;

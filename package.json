@@ -3,22 +3,23 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "build:prod": "lerna run --scope @jupyter-notebook/ui-components build && lerna run --scope jupyter-ui-demo build",
+    "build:prod": "lerna run --scope @jupyter-notebook/web-components --scope @jupyter-notebook/react-components build && lerna run --scope jupyter-ui-demo build:prod",
     "clean": "lerna run clean",
     "install": "lerna bootstrap",
-    "prettier": "prettier --write \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
-    "prettier:check": "prettier --list-different \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
-    "eslint": "eslint . --ext .ts,.tsx --fix",
-    "eslint:check": "eslint . --ext .ts,.tsx"
+    "format": "prettier --write \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
+    "format:check": "prettier --list-different \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
+    "lint": "lerna run eslint",
+    "lint:check": "lerna run eslint:check"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.1"
+    "lerna": "^4.0.0",
+    "prettier": "^2.1.1",
+    "yarn": "^1.22.17"
   },
   "workspaces": {
     "packages": [

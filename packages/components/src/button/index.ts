@@ -35,7 +35,7 @@ export class Button extends FoundationButton {
    *
    * @internal
    */
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
 
     // If the appearance property has not been set, set it to the
@@ -60,7 +60,7 @@ export class Button extends FoundationButton {
     attrName: string,
     oldVal: string,
     newVal: string
-  ) {
+  ): void {
     // In the case when an icon only button is created add a default ARIA
     // label to the button since there is no longer button text to use
     // as the label
