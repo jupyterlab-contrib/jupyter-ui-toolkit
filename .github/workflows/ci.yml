@@ -77,7 +77,7 @@ jobs:
         working-directory: packages/components
 
       - uses: actions/upload-artifact@v2
-        if: ${{ always() }}
+        if: ${{ failure() }}
         with:
           name: jupyter-ui-test
           path: |
