@@ -1,15 +1,18 @@
 include LICENSE
+include NOTICES
 include *.md
 include pyproject.toml
 
 include package.json
 include install.json
+include lerna.json
 include ts*.json
 include yarn.lock
 
 graft jupyter_ui_demo/labextension
 
 # Javascript files
+include packages/components/api-extractor.json
 include packages/components/package.json
 include packages/components/rollup.config.js
 graft packages/components/.storybook
