@@ -17,3 +17,4 @@ src/utilities/storybook/
 src/**/*.spec.ts
 src/**/*.stories.ts
 src/**/fixtures/
+playwright.config.ts
