@@ -78,6 +78,14 @@
   },
   "jupyterlab": {
     "extension": true,
-    "outputDir": "../../jupyter_ui_demo/labextension"
+    "outputDir": "../../jupyter_ui_demo/labextension",
+    "sharedPackages": {
+      "@jupyter-notebook/react-components": {
+        "singleton": true
+      },
+      "@jupyter-notebook/web-components": {
+        "singleton": true
+      }
+    }
   }
 }
