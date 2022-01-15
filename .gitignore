@@ -128,3 +128,6 @@ yarn-error.log*
 
 # Cache
 temp
+
+# Visual testing
+packages/components/test-results

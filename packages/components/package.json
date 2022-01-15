@@ -26,7 +26,8 @@
     "eslint:check": "eslint . --ext .ts",
     "eslint": "eslint . --ext .ts --fix",
     "prepublishOnly": "yarn run build",
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "test:visual": "playwright test"
   },
   "dependencies": {
     "@microsoft/fast-element": "^1.6.0",
@@ -39,6 +40,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "@microsoft/api-extractor": "^7.18.9",
     "@microsoft/eslint-config-fast-dna": "^1.2.0",
+    "@playwright/test": "^1.17.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@rollup/plugin-typescript": "^8.2.0",
