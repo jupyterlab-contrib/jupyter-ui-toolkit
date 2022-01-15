@@ -15,6 +15,7 @@ graft jupyter_ui_demo/labextension
 include packages/components/api-extractor.json
 include packages/components/package.json
 include packages/components/rollup.config.js
+include packages/components/tsconfig.json
 graft packages/components/.storybook
 graft packages/components/docs
 graft packages/components/src
