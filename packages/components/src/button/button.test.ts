@@ -17,13 +17,13 @@ test.describe('Button', () => {
     ).toMatchSnapshot('button-secondary.png');
   });
 
-  test('With Autofocus', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--with-autofocus');
+  // test('With Autofocus', async ({ page }) => {
+  //   await page.goto('/iframe.html?id=library-button--with-autofocus');
 
-    expect(
-      await page.locator('#root :nth-child(1)').first().screenshot()
-    ).toMatchSnapshot('button-with-autofocus.png');
-  });
+  //   expect(
+  //     await page.locator('#root :nth-child(1)').first().screenshot()
+  //   ).toMatchSnapshot('button-with-autofocus.png');
+  // });
 
   test('With Disabled', async ({ page }) => {
     await page.goto('/iframe.html?id=library-button--with-disabled');
