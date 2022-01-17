@@ -26,6 +26,7 @@
     "src/**/*.spec.ts",
     "src/**/*.stories.ts",
     "src/**/fixtures/",
-    "src/utilities/storybook/"
+    "src/utilities/storybook/",
+    "playwright.config.ts"
   ]
 }
