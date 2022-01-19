@@ -60,6 +60,9 @@ function appearanceBehavior(value: string, styles: ElementStyles) {
  */
 const heightNumber = cssPartial`(${baseHeightMultiplier} + ${density}) * ${designUnit}`;
 
+// TODO do we really want to use outline for focus, active, ... => this call for a minimal style for toolbar probably
+// outline force to use a padding so that the outline is not hidden by other elements.
+
 /**
  * @internal
  */
@@ -76,6 +79,7 @@ const BaseButtonStyles = css`
     border-radius: calc(${controlCornerRadius} * 1px);
     fill: currentcolor;
     cursor: pointer;
+    margin: calc((${designUnit} + ${density} + 2) * 1px);
   }
 
   .control {
@@ -89,7 +93,7 @@ const BaseButtonStyles = css`
     padding: 0 calc((10 + (${designUnit} * 2 * ${density})) * 1px);
     white-space: nowrap;
     outline: 1px solid transparent;
-    outline-offset: 4px;
+    outline-offset: calc((${designUnit} + ${density}) * 1px);
     -moz-outline-radius: 0px;
     text-decoration: none;
     border: calc(${strokeWidth} * 1px) solid transparent;
