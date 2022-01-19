@@ -68,17 +68,19 @@ export class Badge extends Badge_2 {
     connectedCallback(): void;
 }
 
-// @public
+// Warning: (ae-internal-missing-underscore) The name "Button" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal
 export class Button extends Button_2 {
+    // @public
     appearance: ButtonAppearance;
-    // @internal
-    attributeChangedCallback(attrName: string, oldVal: string, newVal: string): void;
-    // @internal
     connectedCallback(): void;
+    // @public
+    defaultSlottedContentChanged(oldValue: HTMLElement[], newValue: HTMLElement[]): void;
 }
 
 // @public
-export type ButtonAppearance = 'primary' | 'secondary' | 'icon';
+export type ButtonAppearance = 'accent' | 'neutral' | 'outline' | 'stealth';
 
 // @public
 export class Checkbox extends Checkbox_2 {

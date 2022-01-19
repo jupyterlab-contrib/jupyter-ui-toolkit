@@ -1,7 +1,7 @@
 import { create } from '@storybook/theming/create';
 
 export default create({
-  base: 'light',
+  base: 'dark',
   brandTitle: 'Jupyter UI Toolkit',
   brandUrl: 'https://github.com/jupyterlab-contrib/jupyter-ui-toolkit'
 });

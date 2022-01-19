@@ -9,12 +9,12 @@ test.describe('Button', () => {
     ).toMatchSnapshot('button-default.png');
   });
 
-  test('Secondary', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--secondary');
+  test('Neutral', async ({ page }) => {
+    await page.goto('/iframe.html?id=library-button--neutral');
 
     expect(
       await page.locator('#root :nth-child(1)').first().screenshot()
-    ).toMatchSnapshot('button-secondary.png');
+    ).toMatchSnapshot('button-neutral.png');
   });
 
   // test('With Autofocus', async ({ page }) => {
