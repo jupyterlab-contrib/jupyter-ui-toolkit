@@ -2,15 +2,9 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { Button, buttonStyles } from '@microsoft/fast-components';
-import { css } from '@microsoft/fast-element';
-import {
-  ButtonOptions,
-  buttonTemplate as template,
-  ElementDefinitionContext
-} from '@microsoft/fast-foundation';
-
-/* Button style customization */
+import { Button } from '@microsoft/fast-components';
+import { buttonTemplate as template } from '@microsoft/fast-foundation';
+import { buttonStyles } from './button.styles';
 
 /**
  * The button component registration.
@@ -24,10 +18,7 @@ import {
 export const jpButton = Button.compose({
   baseName: 'button',
   template,
-  styles: (context: ElementDefinitionContext, definition: ButtonOptions) =>
-    css`
-      ${buttonStyles(context, definition)}
-    `,
+  styles: buttonStyles,
   shadowOptions: {
     delegatesFocus: true
   }
