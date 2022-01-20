@@ -12,7 +12,7 @@ export default {
     appearance: {
       control: {
         type: 'select',
-        options: ['Accent', 'Neutral', 'Outline', 'Stealth']
+        options: ['Accent', 'Error', 'Neutral', 'Outline', 'Stealth']
       }
     },
     isDisabled: { control: 'boolean' },
@@ -52,6 +52,12 @@ Default.args = {
   isAutoFocused: false,
   startIcon: false,
   onClick: action('button-clicked')
+};
+
+export const Error: any = Template.bind({});
+Error.args = {
+  ...Default.args,
+  appearance: 'Error'
 };
 
 export const Neutral: any = Template.bind({});

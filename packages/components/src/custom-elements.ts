@@ -6,7 +6,7 @@ import { jpButton } from './button/index';
 // Don't delete these. They're needed so that API-extractor doesn't add import types
 // with improper pathing
 /* eslint-disable @typescript-eslint/no-unused-vars */
-// import type { Button } from './button/index';
+import type { Button } from './button/index';
 
 // export all components
 export { jpButton };

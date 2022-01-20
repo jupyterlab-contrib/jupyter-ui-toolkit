@@ -39,6 +39,15 @@ import {
   PropertyStyleSheetBehavior
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
+import {
+  errorFillActive,
+  errorFillFocus,
+  errorFillHover,
+  errorFillRest,
+  foregroundOnErrorActive,
+  foregroundOnErrorHover,
+  foregroundOnErrorRest
+} from '../design-token';
 
 /**
  * Behavior that will conditionally apply a stylesheet based on the elements
@@ -270,79 +279,64 @@ const AccentButtonStyles = css`
 /**
  * @internal
  */
-const LightweightButtonStyles = css`
-  :host([appearance='lightweight']) {
-    background: transparent;
-    color: ${accentForegroundRest};
+const ErrorButtonStyles = css`
+  :host([appearance='error']) {
+    background: ${errorFillRest};
+    color: ${foregroundOnErrorRest};
   }
 
-  :host([appearance='lightweight']) .control {
-    padding: 0;
-    height: initial;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
+  :host([appearance='error']:hover) {
+    background: ${errorFillHover};
+    color: ${foregroundOnErrorHover};
   }
 
-  :host([appearance='lightweight']:hover) {
-    background: transparent;
-    color: ${accentForegroundHover};
+  :host([appearance='error']:hover) .control {
+    outline-color: ${errorFillHover};
   }
 
-  :host([appearance='lightweight']:active) {
-    background: transparent;
-    color: ${accentForegroundActive};
+  :host([appearance='error']:active) .control:active {
+    background: ${errorFillActive};
+    color: ${foregroundOnErrorActive};
+    outline-color: ${errorFillActive};
   }
 
-  :host([appearance='lightweight']) .content {
-    position: relative;
-  }
-
-  :host([appearance='lightweight']) .content::before {
-    content: '';
-    display: block;
-    height: calc(${strokeWidth} * 1px);
-    position: absolute;
-    top: calc(1em + 4px);
-    width: 100%;
-  }
-
-  :host([appearance='lightweight']:hover) .content::before {
-    background: ${accentForegroundHover};
-  }
-
-  :host([appearance='lightweight']:active) .content::before {
-    background: ${accentForegroundActive};
-  }
-
-  :host([appearance="lightweight"]) .control:${focusVisible} .content::before {
-    background: ${neutralForegroundRest};
-    height: calc(${focusStrokeWidth} * 1px);
+  :host([appearance="error"]) .control:${focusVisible} {
+    outline-color: ${errorFillFocus};
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
     css`
-      :host([appearance="lightweight"]) .control:hover,
-            :host([appearance="lightweight"]) .control:${focusVisible} {
+      :host([appearance='error']) .control {
         forced-color-adjust: none;
-        background: ${SystemColors.ButtonFace};
+        background: ${SystemColors.Highlight};
+        color: ${SystemColors.HighlightText};
+      }
+
+      :host([appearance='error']) .control:hover,
+      :host([appearance='error']:active) .control:active {
+        background: ${SystemColors.HighlightText};
+        outline-color: ${SystemColors.Highlight};
         color: ${SystemColors.Highlight};
       }
-      :host([appearance="lightweight"]) .control:hover .content::before,
-            :host([appearance="lightweight"]) .control:${focusVisible} .content::before {
-        background: ${SystemColors.Highlight};
+
+      :host([appearance="error"]) .control:${focusVisible} {
+        outline-color: ${SystemColors.Highlight};
       }
 
-      :host([appearance="lightweight"][href]) .control:hover,
-            :host([appearance="lightweight"][href]) .control:${focusVisible} {
-        background: ${SystemColors.ButtonFace};
-        box-shadow: none;
-        color: ${SystemColors.LinkText};
-      }
-
-      :host([appearance="lightweight"][href]) .control:hover .content::before,
-            :host([appearance="lightweight"][href]) .control:${focusVisible} .content::before {
+      :host([appearance='error'][href]) .control {
         background: ${SystemColors.LinkText};
+        color: ${SystemColors.HighlightText};
+      }
+
+      :host([appearance='error'][href]) .control:hover {
+        background: ${SystemColors.ButtonFace};
+        outline-color: ${SystemColors.LinkText};
+        color: ${SystemColors.LinkText};
+        fill: currentColor;
+      }
+
+      :host([appearance="error"][href]) .control:${focusVisible} {
+        outline-color: ${SystemColors.LinkText};
       }
     `
   )
@@ -523,33 +517,23 @@ export const buttonStyles: (
       )
     ),
     appearanceBehavior(
-      'lightweight',
+      'error',
       css`
-        :host([appearance='lightweight'][disabled]:hover),
-        :host([appearance='lightweight'][disabled]:active) {
-          background-color: transparent;
-          color: ${accentForegroundRest};
+        :host([appearance='error'][disabled]),
+        :host([appearance='error'][disabled]:hover),
+        :host([appearance='error'][disabled]:active) {
+          background: ${errorFillRest};
         }
 
-        :host([appearance='lightweight'][disabled]) .content::before,
-        :host([appearance='lightweight'][disabled]:hover) .content::before,
-        :host([appearance='lightweight'][disabled]:active) .content::before {
-          background: transparent;
-        }
-
-        ${LightweightButtonStyles}
+        ${ErrorButtonStyles}
       `.withBehaviors(
         forcedColorsStylesheetBehavior(
           css`
-            :host([appearance='lightweight'].disabled) .control {
-              forced-color-adjust: none;
+            :host([appearance='error'][disabled]) .control,
+            :host([appearance='error'][disabled]) .control:hover {
+              background: ${SystemColors.ButtonFace};
+              border-color: ${SystemColors.GrayText};
               color: ${SystemColors.GrayText};
-            }
-
-            :host([appearance='lightweight'].disabled)
-              .control:hover
-              .content::before {
-              background: none;
             }
           `
         )

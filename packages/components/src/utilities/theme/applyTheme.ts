@@ -5,6 +5,7 @@ import { parseColor } from '@microsoft/fast-colors';
 import {
   accentPalette,
   baseLayerLuminance,
+  bodyFont,
   neutralPalette,
   Palette,
   PaletteRGB,
@@ -17,7 +18,7 @@ import {
 import { DesignToken } from '@microsoft/fast-foundation';
 
 const THEME_NAME_BODY_ATTRIBUTE = 'data-jp-theme-name';
-const THEME_MODE_BODY_ATTRIBUTE = 'data-jp-theme-is-light';
+const THEME_MODE_BODY_ATTRIBUTE = 'data-jp-theme-light';
 
 /**
  * Configures a MutationObserver to watch for Jupyter theme changes and
@@ -80,6 +81,9 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
   '--jp-brand-color1': {
     converter: colorConverter,
     token: accentPalette
+  },
+  '--jp-ui-font-family': {
+    token: bodyFont
   },
   '--jp-ui-font-size1': {
     token: typeRampBaseFontSize
