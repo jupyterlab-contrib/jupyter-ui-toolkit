@@ -1,5 +1,4 @@
 // Copyright (c) Jupyter Development Team.
-// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import { action } from '@storybook/addon-actions';
@@ -31,10 +30,14 @@ const Template = ({ ...args }): HTMLElement => {
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',
-    `<jp-button appearance=${args.appearance.toLowerCase()} ${
-      args.isDisabled ? 'disabled' : ''
-    } ${args.isAutoFocused ? 'autofocus' : ''}
-    >${args.startIcon ? getFaIcon('plus', 'start') : ''}${args.label}</jp-button
+    `<jp-button ${
+      args.appearance ? `appearance=${args.appearance.toLowerCase()}` : ''
+    } ${args.isDisabled ? 'disabled' : ''} ${
+      args.isAutoFocused ? 'autofocus' : ''
+    }
+    >${args.startIcon ? getFaIcon('plus', args.label ? 'start' : null) : ''}${
+      args.label ?? ''
+    }</jp-button
   >`
   );
 
@@ -81,5 +84,12 @@ WithDisabled.args = {
 export const WithStartIcon: any = Template.bind({});
 WithStartIcon.args = {
   ...Default.args,
+  startIcon: true
+};
+
+export const IconOnly: any = Template.bind({});
+IconOnly.args = {
+  ...Default.args,
+  label: null,
   startIcon: true
 };

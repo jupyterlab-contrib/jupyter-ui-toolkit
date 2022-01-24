@@ -4,7 +4,14 @@
 import * as icons from '@fortawesome/free-solid-svg-icons';
 import { library, icon } from '@fortawesome/fontawesome-svg-core';
 
-export function getFaIcon(iconName: string, slotName: string): string {
+/**
+ * Generate the SVG for a fontawesome icon
+ *
+ * @param iconName Icon name
+ * @param slotName Optional slot for the icon
+ * @returns HTML string to be inserted
+ */
+export function getFaIcon(iconName: string, slotName: string | null): string {
   const objectName = iconName
     .split('-')
     .map(part => part[0].toUpperCase() + part.slice(1))
@@ -13,6 +20,8 @@ export function getFaIcon(iconName: string, slotName: string): string {
   const theIcon = icon({ prefix: 'fas', iconName: iconName as icons.IconName });
 
   const copy = theIcon!.node.item(0)!.cloneNode(true) as HTMLElement;
-  copy.setAttribute('slot', slotName);
+  if (slotName) {
+    copy.setAttribute('slot', slotName);
+  }
   return copy.outerHTML;
 }

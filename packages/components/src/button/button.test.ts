@@ -5,15 +5,23 @@ test.describe('Button', () => {
     await page.goto('/iframe.html?id=library-button--default');
 
     expect(
-      await page.locator('#root :nth-child(1)').first().screenshot()
+      await page.locator('jp-button').first().screenshot()
     ).toMatchSnapshot('button-default.png');
+  });
+
+  test('Error', async ({ page }) => {
+    await page.goto('/iframe.html?id=library-button--error');
+
+    expect(
+      await page.locator('jp-button').first().screenshot()
+    ).toMatchSnapshot('button-error.png');
   });
 
   test('Neutral', async ({ page }) => {
     await page.goto('/iframe.html?id=library-button--neutral');
 
     expect(
-      await page.locator('#root :nth-child(1)').first().screenshot()
+      await page.locator('jp-button').first().screenshot()
     ).toMatchSnapshot('button-neutral.png');
   });
 
@@ -21,7 +29,7 @@ test.describe('Button', () => {
   //   await page.goto('/iframe.html?id=library-button--with-autofocus');
 
   //   expect(
-  //     await page.locator('#root :nth-child(1)').first().screenshot()
+  //     await page.locator('jp-button').first().screenshot()
   //   ).toMatchSnapshot('button-with-autofocus.png');
   // });
 
@@ -29,7 +37,15 @@ test.describe('Button', () => {
     await page.goto('/iframe.html?id=library-button--with-disabled');
 
     expect(
-      await page.locator('#root :nth-child(1)').first().screenshot()
+      await page.locator('jp-button').first().screenshot()
     ).toMatchSnapshot('button-with-disabled.png');
+  });
+
+  test('With Start Icon', async ({ page }) => {
+    await page.goto('/iframe.html?id=library-button--with-start-icon');
+
+    expect(
+      await page.locator('jp-button').first().screenshot()
+    ).toMatchSnapshot('button-with-start-icon.png');
   });
 });

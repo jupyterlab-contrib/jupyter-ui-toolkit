@@ -3,7 +3,6 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { attr } from '@microsoft/fast-element';
-// import type { Button as FASTButton } from '@microsoft/fast-components';
 import {
   Button as FoundationButton,
   buttonTemplate as template
@@ -32,22 +31,13 @@ export class Button extends FoundationButton {
    * @remarks
    * HTML Attribute: appearance
    */
-  @attr()
+  @attr
   public appearance: ButtonAppearance;
 
-  constructor() {
-    super();
-  }
-
-  public connectedCallback() {
+  public connectedCallback(): void {
     super.connectedCallback();
     if (!this.appearance) {
       this.appearance = 'neutral';
-    }
-    if (this.appearance !== this.getAttribute('appearance')) {
-      console.error(
-        `RIP ${this.appearance} ${this.getAttribute('appearance')}`
-      );
     }
   }
 
