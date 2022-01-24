@@ -35,6 +35,10 @@ export class Button extends FoundationButton {
   @attr()
   public appearance: ButtonAppearance;
 
+  constructor() {
+    super();
+  }
+
   public connectedCallback() {
     super.connectedCallback();
     if (!this.appearance) {

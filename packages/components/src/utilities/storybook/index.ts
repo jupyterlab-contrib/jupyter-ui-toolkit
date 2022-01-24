@@ -9,10 +9,10 @@ export function getFaIcon(iconName: string, slotName: string): string {
     .split('-')
     .map(part => part[0].toUpperCase() + part.slice(1))
     .reduce((agg, part) => agg + part, 'fa');
-  library.add(icons[objectName]);
+  library.add((icons as any)[objectName]);
   const theIcon = icon({ prefix: 'fas', iconName: iconName as icons.IconName });
 
-  const copy = theIcon.node.item(0).cloneNode(true) as HTMLElement;
+  const copy = theIcon!.node.item(0)!.cloneNode(true) as HTMLElement;
   copy.setAttribute('slot', slotName);
   return copy.outerHTML;
 }

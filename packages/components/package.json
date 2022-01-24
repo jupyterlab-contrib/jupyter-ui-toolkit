@@ -33,13 +33,11 @@
     "@microsoft/fast-colors": "^5.1.4",
     "@microsoft/fast-components": "^2.17.1",
     "@microsoft/fast-element": "^1.6.0",
-    "@microsoft/fast-foundation": "^2.21.0"
+    "@microsoft/fast-foundation": "^2.21.0",
+    "@storybook/addons": "^6.4.14",
+    "ts-loader": "^7.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/plugin-proposal-decorators": "^7.14.2",
-    "@babel/preset-env": "^7.14.2",
-    "@babel/preset-typescript": "^7.13.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@microsoft/api-extractor": "^7.18.9",
