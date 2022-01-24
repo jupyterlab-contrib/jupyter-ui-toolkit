@@ -355,8 +355,16 @@ const OutlineButtonStyles = css`
     border-color: ${accentFillHover};
   }
 
+  :host([appearance='outline']:hover) .control {
+    outline-color: ${accentFillHover};
+  }
+
   :host([appearance='outline']:active) {
     border-color: ${accentFillActive};
+  }
+
+  :host([appearance='outline']:active) .control:active {
+    outline-color: ${accentFillActive};
   }
 
   :host([appearance='outline']) .control {
@@ -365,6 +373,7 @@ const OutlineButtonStyles = css`
 
   :host([appearance="outline"]) .control:${focusVisible} {
     border-color: ${accentFillFocus};
+    outline-color: ${accentFillActive};
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
