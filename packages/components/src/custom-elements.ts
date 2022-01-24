@@ -4,6 +4,7 @@ import type { Container } from '@microsoft/fast-foundation';
 import { jpButton } from './button/index';
 import { jpOption } from './option/index';
 import { jpSelect } from './select/index';
+import { jpTextField } from './text-field/index';
 
 // Don't delete these. They're needed so that API-extractor doesn't add import types
 // with improper pathing
@@ -11,9 +12,10 @@ import { jpSelect } from './select/index';
 import type { Button } from './button/index';
 import type { Option } from './option/index';
 import type { Select } from './select/index';
+import type { TextField } from './text-field/index';
 
 // export all components
-export { jpButton, jpOption, jpSelect };
+export { jpButton, jpOption, jpSelect, jpTextField };
 
 /**
  * All Jupyter Web Components
@@ -26,6 +28,7 @@ export const allComponents = {
   jpButton,
   jpOption,
   jpSelect,
+  jpTextField,
   register(container?: Container, ...rest: any[]): void {
     if (!container) {
       // preserve backward compatibility with code that loops through

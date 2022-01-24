@@ -46,31 +46,31 @@ const Template = ({ ...args }): HTMLElement => {
     select.addEventListener('change', args.onChange);
   }
 
-  return select as HTMLElement;
+  return select;
 };
 
-export const Default: any = Template.bind({});
+export const Default = Template.bind({});
 Default.args = {
   isOpen: false,
   isDisabled: false,
   customIndicator: false,
   numberOfChildren: 3,
-  onChange: action('dropdown-onchange')
+  onChange: action('select-onchange')
 };
 
-export const WithOpen: any = Template.bind({});
+export const WithOpen = Template.bind({});
 WithOpen.args = {
   ...Default.args,
   isOpen: true
 };
 
-export const WithDisabled: any = Template.bind({});
+export const WithDisabled = Template.bind({});
 WithDisabled.args = {
   ...Default.args,
   isDisabled: true
 };
 
-export const WithCustomIndicator: any = Template.bind({});
+export const WithCustomIndicator = Template.bind({});
 WithCustomIndicator.args = {
   ...Default.args,
   customIndicator: true
