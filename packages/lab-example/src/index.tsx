@@ -1,4 +1,9 @@
-import { Button } from '@jupyter-notebook/react-components';
+import {
+  Button,
+  Option,
+  Select,
+  TextField
+} from '@jupyter-notebook/react-components';
 import {
   allComponents,
   provideJupyterDesignSystem
@@ -46,26 +51,26 @@ const plugin: JupyterFrontEndPlugin<void> = {
       app.shell.add(reactWidget, 'main', { mode: 'split-right' });
       app.shell.activateById(widget.id);
 
-      (widget.node.querySelector('#basic-grid') as any).rowsData = [
-        {
-          Header1: 'Data 1 1',
-          Header2: 'Data 2 1',
-          Header3: 'Data 3 1',
-          Header4: 'Cell Data 4 1'
-        },
-        {
-          Header1: 'Data 1 2',
-          Header2: 'Data 2 2',
-          Header3: 'Data 3 2',
-          Header4: 'Cell Data 4 2'
-        },
-        {
-          Header1: 'Data 1 3',
-          Header2: 'Data 2 3',
-          Header3: 'Data 3 3',
-          Header4: 'Cell Data 4 3'
-        }
-      ];
+      // (widget.node.querySelector('#basic-grid') as any).rowsData = [
+      //   {
+      //     Header1: 'Data 1 1',
+      //     Header2: 'Data 2 1',
+      //     Header3: 'Data 3 1',
+      //     Header4: 'Cell Data 4 1'
+      //   },
+      //   {
+      //     Header1: 'Data 1 2',
+      //     Header2: 'Data 2 2',
+      //     Header3: 'Data 3 2',
+      //     Header4: 'Cell Data 4 2'
+      //   },
+      //   {
+      //     Header1: 'Data 1 3',
+      //     Header2: 'Data 2 3',
+      //     Header3: 'Data 3 3',
+      //     Header4: 'Cell Data 4 3'
+      //   }
+      // ];
     });
   }
 };
@@ -82,11 +87,44 @@ function Artwork(): JSX.Element {
             Button
           </Button>
           <Button appearance="neutral">Button</Button>
-          <Button>
-            <i className="fas fa-cog"></i>
+          <Button appearance="stealth" aria-label="Confirm">
+            <span className="fa fa-cog"></span>
           </Button>
         </div>
+        <TextField value="Populated text">Text Field Label</TextField>
+        <div className="jp-FlexColumn">
+          <label>Label</label>
+          <Select>
+            <Option>Option Label #1</Option>
+            <Option>Option Label #2</Option>
+            <Option>Option Label #3</Option>
+          </Select>
+        </div>
+        {/* <TextArea>Text Area Label</TextArea>
+        <Link href="#">Link Text</Link> */}
       </div>
+      {/* <div className="jp-FlexColumn">
+        <RadioGroup orientation="vertical">
+          <label slot="label">Label</label>
+          <Radio checked>Radio Label</Radio>
+          <Radio>Radio Label</Radio>
+          <Radio disabled>Radio Label</Radio>
+        </RadioGroup>
+        <div>
+          <label>Label</label>
+          <div className="jp-FlexColumn">
+            <Checkbox autofocus checked>
+              Label
+            </Checkbox>
+            <Checkbox checked>Label</Checkbox>
+            <Checkbox disabled>Label</Checkbox>
+          </div>
+        </div>
+        <div>
+          <Tag>Tag</Tag>
+        </div>
+        <ProgressRing></ProgressRing>
+      </div> */}
     </div>
   );
 }
@@ -101,9 +139,68 @@ function createNode(): HTMLElement {
       <div class="jp-FlexRow">
         <jp-button appearance="accent">Button</jp-button>
         <jp-button appearance="neutral">Button</jp-button>
-        <jp-button><i class="fas fa-cog"></i></jp-button>
+        <jp-button appearance="stealth" aria-label="Confirm"><span class="fa fa-cog"></span></jp-button>
       </div>
+      <jp-text-field value="Populated text">Text Field Label</jp-text-field>
+      <div class="jp-FlexColumn">
+        <label>
+          Label
+        </label>
+        <jp-select>
+          <jp-option>Option Label #1</jp-option>
+          <jp-option>Option Label #2</jp-option>
+          <jp-option>Option Label #3</jp-option>
+        </jp-select>
+      </div>
+      <!-- <jp-text-area>Text Area Label</jp-text-area>
+      <jp-link href="#">Link Text</jp-link> -->
     </div>
+    <!--
+    <div class="jp-FlexColumn">
+      <jp-radio-group orientation="vertical">
+        <label slot="label">Label</label>
+        <jp-radio checked>Radio Label</jp-radio>
+        <jp-radio>Radio Label</jp-radio>
+        <jp-radio disabled>Radio Label</jp-radio>
+      </jp-radio-group>
+      <div>
+        <label>Label</label>
+        <div class="jp-FlexColumn">
+          <jp-checkbox autofocus checked>Label</jp-checkbox>
+          <jp-checkbox checked>Label</jp-checkbox>
+          <jp-checkbox disabled>Label</jp-checkbox>
+        </div>
+      </div>
+      <div>
+        <jp-badge>1</jp-badge>
+        <jp-tag>Tag</jp-tag>
+      </div>
+      <jp-progress-ring></jp-progress-ring>
+    </div>
+    <div class="jp-FlexColumn">
+      <div>
+        <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
+      </div>
+      <jp-panels aria-label="Default">
+        <jp-panel-tab id="tab-1">Tab 1</jp-panel-tab>
+        <jp-panel-tab id="tab-2">Tab 2</jp-panel-tab>
+        <jp-panel-tab id="tab-3">Tab 3</jp-panel-tab>
+        <jp-panel-tab id="tab-4">Tab 4</jp-panel-tab>
+        <jp-panel-view id="view-1">
+          Tab 1 Content
+        </jp-panel-view>
+        <jp-panel-view id="view-2">
+          Tab 2 Content
+        </jp-panel-view>
+        <jp-panel-view id="view-3">
+          Tab 3 Content
+        </jp-panel-view>
+        <jp-panel-view id="view-4">
+          Tab 4 Content
+        </jp-panel-view>
+      </jp-panels>
+    </div>
+    -->
 </div>
 
 `

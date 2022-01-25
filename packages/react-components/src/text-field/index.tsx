@@ -3,30 +3,28 @@
 
 import {
   provideJupyterDesignSystem,
-  jpButton
+  jpTextField
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Button: React.DetailedHTMLFactory<
+export const TextField: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
-    appearance?: 'accent' | 'neutral' | 'outline' | 'stealth';
-    'aria-label'?: string;
     autofocus?: boolean;
+    cols?: number;
     disabled?: boolean;
     form?: string;
-    formaction?: string;
-    formenctype?: string;
-    formmethod?: string;
-    formtarget?: string;
+    maxlength?: number;
     name?: string;
-    minimal?: boolean;
-    type?: string;
+    placeholder?: string;
+    readonly?: boolean;
+    resize?: 'none' | 'vertical' | 'horizontal' | 'both';
+    rows?: number;
     value?: string;
   },
   HTMLElement
-> = wrap(jpButton()) as any;
+> = wrap(jpTextField()) as any;
 // @ts-expect-error unknown property
-Button.displayName = 'Jupyter.Button';
+TextField.displayName = 'Jupyter.TextField';

@@ -3,30 +3,21 @@
 
 import {
   provideJupyterDesignSystem,
-  jpButton
+  jpSelect
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Button: React.DetailedHTMLFactory<
+export const Select: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
-    appearance?: 'accent' | 'neutral' | 'outline' | 'stealth';
-    'aria-label'?: string;
-    autofocus?: boolean;
     disabled?: boolean;
-    form?: string;
-    formaction?: string;
-    formenctype?: string;
-    formmethod?: string;
-    formtarget?: string;
-    name?: string;
     minimal?: boolean;
-    type?: string;
-    value?: string;
+    open?: boolean;
+    position?: 'above' | 'below';
   },
   HTMLElement
-> = wrap(jpButton()) as any;
+> = wrap(jpSelect()) as any;
 // @ts-expect-error unknown property
-Button.displayName = 'Jupyter.Button';
+Select.displayName = 'Jupyter.Select';
