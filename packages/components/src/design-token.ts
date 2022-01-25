@@ -1,4 +1,6 @@
-import { parseColorHexRGB } from '@microsoft/fast-colors';
+// Copyright (c) Jupyter Development Team.
+// Distributed under the terms of the Modified BSD License.
+
 import {
   accentFillActiveDelta,
   accentFillFocusDelta,
@@ -11,17 +13,14 @@ import {
   fillColor,
   InteractiveColorRecipe,
   InteractiveSwatchSet,
-  isDark,
   neutralFillActiveDelta,
   neutralFillHoverDelta,
   neutralFillRestDelta,
   neutralPalette,
   Palette,
   PaletteRGB,
-  Swatch,
-  SwatchRGB
+  Swatch
 } from '@microsoft/fast-components';
-
 import { DesignToken } from '@microsoft/fast-foundation';
 import {
   ContrastTarget,
