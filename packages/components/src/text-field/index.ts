@@ -2,11 +2,9 @@ import {
   TextField,
   textFieldTemplate as template
 } from '@microsoft/fast-foundation';
-import { textFieldStyles as styles } from '@microsoft/fast-components';
+import { textFieldStyles as styles } from './text-field.styles';
 
 // TODO
-//   we don't use outline/filled appearance
-//   we need to focus with colored border and without at rest
 //   we need to add error/invalid
 
 /**
