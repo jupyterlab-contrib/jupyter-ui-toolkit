@@ -3,11 +3,7 @@ import {
   SelectOptions,
   selectTemplate as template
 } from '@microsoft/fast-foundation';
-import { selectStyles as styles } from '@microsoft/fast-components';
-
-// TODO
-//   we need to focus with colored border and without at rest
-//   we need to add error/invalid
+import { selectStyles as styles } from './select.styles';
 
 /**
  * A function that returns a Select registration for configuring the component with a DesignSystem.
