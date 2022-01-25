@@ -98,7 +98,7 @@ export const selectStyles: FoundationElementTemplate<
     }
 
     :host([minimal]) {
-      --density: -3;
+      --density: -4;
       min-width: unset;
     }
 

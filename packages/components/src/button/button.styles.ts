@@ -118,7 +118,7 @@ const BaseButtonStyles = css`
   }
 
   :host([minimal]) {
-    --density: -3;
+    --density: -4;
   }
 
   :host([minimal]) .control {
@@ -407,7 +407,7 @@ const OutlineButtonStyles = css`
  */
 const StealthButtonStyles = css`
   :host([appearance='stealth']) {
-    background: ${neutralFillStealthRest};
+    background: transparent;
   }
 
   :host([appearance='stealth']:hover) {
