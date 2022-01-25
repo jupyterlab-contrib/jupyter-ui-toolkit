@@ -116,7 +116,7 @@ function applyCurrentTheme() {
 
     if (document.body && value !== '') {
       const parsedValue = (toolkitTokenName.converter ?? ((v: string) => v))(
-        value
+        value.trim()
       );
       if (parsedValue !== null) {
         toolkitTokenName.token.setValueFor(document.body, parsedValue);
