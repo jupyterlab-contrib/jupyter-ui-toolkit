@@ -16,6 +16,7 @@ export default {
     },
     isDisabled: { control: 'boolean' },
     isAutoFocused: { control: 'boolean' },
+    isMinimal: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     onClick: {
       action: 'clicked',
@@ -30,11 +31,11 @@ const Template = ({ ...args }): HTMLElement => {
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',
-    `<jp-button ${
-      args.appearance ? `appearance=${args.appearance.toLowerCase()}` : ''
-    } ${args.isDisabled ? 'disabled' : ''} ${
-      args.isAutoFocused ? 'autofocus' : ''
-    }
+    `<jp-button 
+      ${args.appearance ? `appearance=${args.appearance.toLowerCase()}` : ''}
+      ${args.isDisabled ? 'disabled' : ''} 
+      ${args.isAutoFocused ? 'autofocus' : ''}
+      ${args.isMinimal ? 'minimal' : ''}
     >${args.startIcon ? getFaIcon('plus', args.label ? 'start' : null) : ''}${
       args.label ?? ''
     }</jp-button
@@ -53,6 +54,7 @@ Default.args = {
   appearance: 'Accent',
   isDisabled: false,
   isAutoFocused: false,
+  isMinimal: false,
   startIcon: false,
   onClick: action('button-clicked')
 };

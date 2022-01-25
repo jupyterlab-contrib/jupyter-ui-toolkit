@@ -48,4 +48,12 @@ test.describe('Button', () => {
       await page.locator('jp-button').first().screenshot()
     ).toMatchSnapshot('button-with-start-icon.png');
   });
+
+  test('Icon Only', async ({ page }) => {
+    await page.goto('/iframe.html?id=library-button--icon-only');
+
+    expect(
+      await page.locator('jp-button').first().screenshot()
+    ).toMatchSnapshot('button-icon-only.png');
+  });
 });

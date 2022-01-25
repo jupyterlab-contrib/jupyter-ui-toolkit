@@ -34,6 +34,9 @@ export class Button extends FoundationButton {
   @attr
   public appearance: ButtonAppearance;
 
+  @attr({ attribute: 'minimal', mode: 'boolean' })
+  public minimal: boolean;
+
   public connectedCallback(): void {
     super.connectedCallback();
     if (!this.appearance) {

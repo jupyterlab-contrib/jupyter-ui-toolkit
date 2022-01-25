@@ -3,16 +3,12 @@ import {
   accentFillFocus,
   accentFillHover,
   accentFillRest,
-  accentForegroundActive,
-  accentForegroundHover,
-  accentForegroundRest,
   baseHeightMultiplier,
   bodyFont,
   controlCornerRadius,
   density,
   designUnit,
   disabledOpacity,
-  focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,
   foregroundOnAccentRest,
@@ -48,6 +44,7 @@ import {
   foregroundOnErrorHover,
   foregroundOnErrorRest
 } from '../design-token';
+import { heightNumber } from '../styles';
 
 /**
  * Behavior that will conditionally apply a stylesheet based on the elements
@@ -61,13 +58,6 @@ import {
 function appearanceBehavior(value: string, styles: ElementStyles) {
   return new PropertyStyleSheetBehavior('appearance', value, styles);
 }
-
-/**
- * A formula to retrieve the control height.
- * Use this as the value of any CSS property that
- * accepts a pixel size.
- */
-const heightNumber = cssPartial`(${baseHeightMultiplier} + ${density}) * ${designUnit}`;
 
 // TODO do we really want to use outline for focus, active, ... => this call for a minimal style for toolbar probably
 // outline force to use a padding so that the outline is not hidden by other elements.
@@ -125,6 +115,14 @@ const BaseButtonStyles = css`
 
   :host(:active) {
     background-color: ${neutralFillActive};
+  }
+
+  :host([minimal]) {
+    --density: -3;
+  }
+
+  :host([minimal]) .control {
+    padding: 1px;
   }
 
   :host(:active) .control {
