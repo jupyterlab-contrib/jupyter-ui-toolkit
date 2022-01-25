@@ -3,7 +3,6 @@ import {
   accentFillFocus,
   accentFillHover,
   accentFillRest,
-  baseHeightMultiplier,
   bodyFont,
   controlCornerRadius,
   density,
@@ -24,7 +23,7 @@ import {
   typeRampBaseFontSize,
   typeRampBaseLineHeight
 } from '@microsoft/fast-components';
-import { css, cssPartial, ElementStyles } from '@microsoft/fast-element';
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   ButtonOptions,
   disabledCursor,

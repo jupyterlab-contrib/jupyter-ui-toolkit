@@ -17,6 +17,7 @@
   "sideEffects": false,
   "scripts": {
     "start": "start-storybook -p 6006",
+    "start:ci": "start-storybook -p 6006 --ci",
     "build": "rollup -c && tsc -p ./tsconfig.json",
     "build:docs": "build-storybook",
     "deploy:docs": "yarn run build:docs && gh-pages -d storybook-static",

@@ -5,7 +5,7 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0,
   testMatch: '**/*.test.ts',
   webServer: {
-    command: 'yarn run start',
+    command: 'yarn run start:ci',
     port: 6006,
     timeout: 120 * 1000,
     // It is safe to reuse the server for stories testing
