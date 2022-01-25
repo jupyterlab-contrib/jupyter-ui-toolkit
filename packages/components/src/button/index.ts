@@ -34,6 +34,13 @@ export class Button extends FoundationButton {
   @attr
   public appearance: ButtonAppearance;
 
+  /**
+   * Whether the button has a compact layout or not.
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: minimal
+   */
   @attr({ attribute: 'minimal', mode: 'boolean' })
   public minimal: boolean;
 
@@ -81,6 +88,7 @@ export class Button extends FoundationButton {
  */
 export const jpButton = Button.compose({
   baseName: 'button',
+  baseClass: FoundationButton,
   template,
   styles: buttonStyles,
   shadowOptions: {

@@ -1,3 +1,5 @@
+import { setTheme } from '../utilities/storybook';
+
 export default {
   title: 'Library/Option',
   argTypes: {
@@ -12,10 +14,17 @@ export default {
   }
 };
 
-const Template = ({ ...args }): string => {
-  return `<jp-option ${args.isDisabled ? 'disabled' : ''}${
-    args.isSelected ? 'selected' : ''
-  }>${args.label}</jp-option>`;
+const Template = (
+  args,
+  { globals: { backgrounds, accent }, parameters }
+): string => {
+  setTheme(accent, parameters.backgrounds, backgrounds);
+  return `<jp-option 
+    ${args.isDisabled ? 'disabled' : ''}
+    ${args.isSelected ? 'selected' : ''}
+  >
+    ${args.label}
+  </jp-option>`;
 };
 
 export const Default: any = Template.bind({});

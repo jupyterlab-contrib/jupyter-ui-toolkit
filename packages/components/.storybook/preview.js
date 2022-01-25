@@ -29,3 +29,21 @@ export const parameters = {
     ]
   }
 };
+
+export const globalTypes = {
+  accent: {
+    name: 'Accent',
+    description: 'Theme accent color for components',
+    defaultValue: '#006CBE',
+    toolbar: {
+      icon: 'paintbrush',
+      // Array of plain string values or MenuItem shape (see below)
+      items: [
+        { value: '#006CBE', right: '🔵', title: 'blue' },
+        { value: '#DA1A5F', title: 'pink' }
+      ],
+      // Property that specifies if the name of the item will be displayed
+      showName: false
+    }
+  }
+};

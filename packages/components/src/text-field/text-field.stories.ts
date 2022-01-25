@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
+import { getFaIcon, setTheme } from '../utilities/storybook';
 import { TextField } from './index';
 
 export default {
@@ -30,7 +30,11 @@ export default {
   }
 };
 
-const Template = ({ ...args }): HTMLElement => {
+const Template = (
+  args,
+  { globals: { backgrounds, accent }, parameters }
+): HTMLElement => {
+  setTheme(accent, parameters.backgrounds, backgrounds);
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',

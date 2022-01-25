@@ -2,7 +2,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
+import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
   title: 'Library/Button',
@@ -27,7 +27,11 @@ export default {
   }
 };
 
-const Template = ({ ...args }): HTMLElement => {
+const Template = (
+  args,
+  { globals: { backgrounds, accent }, parameters }
+): HTMLElement => {
+  setTheme(accent, parameters.backgrounds, backgrounds);
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',

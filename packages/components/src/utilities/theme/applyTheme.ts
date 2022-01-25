@@ -95,8 +95,6 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
  */
 function applyCurrentTheme() {
   if (!document.body.getAttribute(THEME_NAME_BODY_ATTRIBUTE)) {
-    baseLayerLuminance.setValueFor(document.body, StandardLuminance.DarkMode);
-    accentPalette.setValueFor(document.body, colorConverter('#0078D4')!);
     return;
   }
 
