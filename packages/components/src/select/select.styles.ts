@@ -97,6 +97,11 @@ export const selectStyles: FoundationElementTemplate<
       width: 100%;
     }
 
+    :host([minimal]) {
+      --density: -3;
+      min-width: unset;
+    }
+
     :host(:not([disabled]):hover) {
       background: ${neutralFillInputHover};
       border-color: ${accentFillHover};

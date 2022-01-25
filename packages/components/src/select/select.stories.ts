@@ -11,6 +11,7 @@ export default {
     isDisabled: { control: 'boolean' },
     customIndicator: { control: 'boolean' },
     numberOfChildren: { control: 'number' },
+    isMinimal: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -28,7 +29,10 @@ const Template = (
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',
-    `<jp-select ${args.isDisabled ? 'disabled' : ''}>
+    `<jp-select 
+      ${args.isDisabled ? 'disabled' : ''}
+      ${args.isMinimal ? 'minimal' : ''}
+    >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
         ${new Array(args.numberOfChildren ?? 3)
           .fill(0)
@@ -59,6 +63,7 @@ Default.args = {
   isDisabled: false,
   customIndicator: false,
   numberOfChildren: 3,
+  isMinimal: false,
   onChange: action('select-onchange')
 };
 

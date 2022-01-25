@@ -1,9 +1,26 @@
+import { attr } from '@microsoft/fast-element';
 import {
-  Select,
+  Select as FoundationSelect,
   SelectOptions,
   selectTemplate as template
 } from '@microsoft/fast-foundation';
 import { selectStyles as styles } from './select.styles';
+
+/**
+ * Base class for Select
+ * @public
+ */
+export class Select extends FoundationSelect {
+  /**
+   * Whether the select has a compact layout or not.
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: minimal
+   */
+  @attr({ attribute: 'minimal', mode: 'boolean' })
+  public minimal: boolean;
+}
 
 /**
  * A function that returns a Select registration for configuring the component with a DesignSystem.
@@ -16,6 +33,7 @@ import { selectStyles as styles } from './select.styles';
  */
 export const jpSelect = Select.compose<SelectOptions>({
   baseName: 'select',
+  baseClass: FoundationSelect,
   template,
   styles,
   indicator: `
@@ -31,11 +49,5 @@ export const jpSelect = Select.compose<SelectOptions>({
         </svg>
     `
 });
-
-/**
- * Base class for Select
- * @public
- */
-export { Select };
 
 export { styles as selectStyles };
