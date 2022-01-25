@@ -51,7 +51,7 @@ export const selectStyles: FoundationElementTemplate<
       --elevation: 14;
       background: ${neutralFillInputRest};
       border-radius: calc(${controlCornerRadius} * 1px);
-      border: calc(${strokeWidth} * 1px) solid ${neutralFillRest};
+      border: calc(${strokeWidth} * 1px) solid ${neutralStrokeRest};
       box-sizing: border-box;
       color: ${neutralForegroundRest};
       font-family: ${bodyFont};

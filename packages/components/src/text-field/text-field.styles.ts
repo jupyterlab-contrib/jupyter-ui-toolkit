@@ -59,7 +59,7 @@ export const textFieldStyles: (
       color: ${neutralForegroundRest};
       background: ${neutralFillInputRest};
       border-radius: calc(${controlCornerRadius} * 1px);
-      border: calc(${strokeWidth} * 1px) solid ${neutralFillRest};
+      border: calc(${strokeWidth} * 1px) solid ${neutralStrokeRest};
       height: calc(${heightNumber} * 1px);
     }
 
