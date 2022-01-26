@@ -1,8 +1,6 @@
-// Copyright (c) Jupyter Development Team.
-// Copyright (c) Microsoft Corporation.
-// Distributed under the terms of the Modified BSD License.
-
-import { createTextField, TextFieldArgs } from './fixtures/createTextField';
+import { action } from '@storybook/addon-actions';
+import { getFaIcon, setTheme } from '../utilities/storybook';
+import { TextField } from './index';
 
 export default {
   title: 'Library/Text Field',
@@ -12,149 +10,131 @@ export default {
     value: { control: 'text' },
     maxLength: { control: 'number' },
     size: { control: 'number' },
+    type: {
+      control: {
+        type: 'select',
+        options: ['Email', 'Password', 'Tel', 'Text', 'Url']
+      }
+    },
     isReadOnly: { control: 'boolean' },
     isDisabled: { control: 'boolean' },
     isAutoFocused: { control: 'boolean' },
     startIcon: { control: 'boolean' },
-    endIcon: { control: 'boolean' }
-  },
-  parameters: {
-    actions: {
-      disabled: true
+    endIcon: { control: 'boolean' },
+    onChange: {
+      action: 'changed',
+      table: {
+        disable: true
+      }
     }
   }
 };
 
-const Template = ({ ...args }: TextFieldArgs) => {
-  return createTextField({ ...args });
+const Template = (
+  args,
+  { globals: { backgrounds, accent }, parameters }
+): HTMLElement => {
+  setTheme(accent, parameters.backgrounds, backgrounds);
+  const container = document.createElement('div');
+  container.insertAdjacentHTML(
+    'afterbegin',
+    `<jp-text-field 
+      ${args.placeholder ? `placeholder="${args.placeholder}"` : ''}
+      ${args.maxLength ? `maxlength="${args.maxLength}"` : ''}
+      ${args.size ? `size="${args.size}"` : ''}
+      ${args.type ? `type="${args.type.toLowerCase()}"` : ''}
+      ${args.readonly ? 'readonly' : ''}
+      ${args.disabled ? 'disabled' : ''}
+      ${args.autofocus ? 'autofocus' : ''}
+    >
+      ${args.startIcon ? getFaIcon('search', 'start') : ''}
+      ${args.label}
+      ${args.endIcon ? getFaIcon('euro-sign', 'end') : ''}
+    </jp-text-field>`
+  );
+
+  const textField = container.firstChild as TextField;
+
+  if (args.value) {
+    textField.value = args.value;
+  }
+
+  if (args.onChange) {
+    textField.addEventListener('change', args.onChange);
+  }
+
+  return textField;
 };
 
-export const Default: any = Template.bind({});
+export const Default = Template.bind({});
 Default.args = {
   label: 'Text Field Label',
   placeholder: '',
   value: '',
   maxLength: '',
   size: '',
+  type: 'Text',
   isReadOnly: false,
   isDisabled: false,
   isAutoFocused: false,
   startIcon: false,
-  endIcon: false
-};
-Default.parameters = {
-  docs: {
-    source: {
-      code: `<jp-text-field>Text Field Label</jp-text-field>`
-    }
-  }
+  endIcon: false,
+  onChange: action('text-field-onchange')
 };
 
-export const WithPlaceholder: any = Template.bind({});
+export const WithPlaceholder = Template.bind({});
 WithPlaceholder.args = {
   ...Default.args,
   placeholder: 'Placeholder Text'
 };
-WithPlaceholder.parameters = {
-  docs: {
-    source: {
-      code: `<jp-text-field placeholder="Placeholder Text">Text Field Label</jp-text-field>`
-    }
-  }
-};
 
-export const WithAutofocus: any = Template.bind({});
+export const WithAutofocus = Template.bind({});
 WithAutofocus.args = {
   ...Default.args,
-  isAutoFocused: true
-};
-WithAutofocus.parameters = {
-  docs: {
-    source: {
-      code: `<jp-text-field autofocus>Text Field Label</jp-text-field>`
-    }
-  }
+  autofocus: true
 };
 
-export const WithDisabled: any = Template.bind({});
+export const WithDisabled = Template.bind({});
 WithDisabled.args = {
   ...Default.args,
-  placeholder: 'This text field cannot be interacted with',
-  isDisabled: true
-};
-WithDisabled.parameters = {
-  docs: {
-    source: {
-      code: `<jp-text-field disabled>Text Field Label</jp-text-field>`
-    }
-  }
+  disabled: true
 };
 
-export const WithCustomSize: any = Template.bind({});
-WithCustomSize.args = {
+export const WithSize = Template.bind({});
+WithSize.args = {
   ...Default.args,
   placeholder: 'This text field is 50 characters in width',
   size: 50
 };
-WithCustomSize.parameters = {
-  docs: {
-    source: {
-      code: `<jp-text-field size="50">Text Field Label</jp-text-field>`
-    }
-  }
+
+export const WithType = Template.bind({});
+WithType.args = {
+  ...Default.args,
+  placeholder: 'This text field has type password',
+  type: 'Password'
 };
 
-export const WithMaxLength: any = Template.bind({});
+export const WithMaxLength = Template.bind({});
 WithMaxLength.args = {
   ...Default.args,
   placeholder: 'This text field can only contain a maximum of 10 characters',
-  maxLength: 10,
-  size: 52
-};
-WithMaxLength.parameters = {
-  docs: {
-    source: {
-      code: `<jp-text-field maxlength="10">Text Field Label</jp-text-field>`
-    }
-  }
+  maxLength: 10
 };
 
-export const WithReadonly: any = Template.bind({});
+export const WithReadonly = Template.bind({});
 WithReadonly.args = {
   ...Default.args,
-  placeholder: 'This text is read only',
-  isReadOnly: true
-};
-WithReadonly.parameters = {
-  docs: {
-    source: {
-      code: `<jp-text-field readonly>Text Field Label</jp-text-field>`
-    }
-  }
+  readonly: true
 };
 
-export const WithStartIcon: any = Template.bind({});
+export const WithStartIcon = Template.bind({});
 WithStartIcon.args = {
   ...Default.args,
   startIcon: true
 };
-WithStartIcon.parameters = {
-  docs: {
-    source: {
-      code: `<!-- Note: Using Visual Studio Code Codicon Library -->\n\n<jp-text-field>\n\tText Field Label\n\t<span slot="start" class="codicon codicon-search"></span>\n</jp-text-field>`
-    }
-  }
-};
 
-export const WithEndIcon: any = Template.bind({});
+export const WithEndIcon = Template.bind({});
 WithEndIcon.args = {
   ...Default.args,
   endIcon: true
-};
-WithEndIcon.parameters = {
-  docs: {
-    source: {
-      code: `<!-- Note: Using Visual Studio Code Codicon Library -->\n\n<jp-text-field>\n\tText Field Label\n\t<span slot="end" class="codicon codicon-text-size"></span>\n</jp-text-field>`
-    }
-  }
 };

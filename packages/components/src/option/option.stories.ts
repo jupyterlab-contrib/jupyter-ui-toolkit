@@ -1,8 +1,4 @@
-// Copyright (c) Jupyter Development Team.
-// Copyright (c) Microsoft Corporation.
-// Distributed under the terms of the Modified BSD License.
-
-import { createOption, OptionArgs } from './fixtures/createOption';
+import { setTheme } from '../utilities/storybook';
 
 export default {
   title: 'Library/Option',
@@ -18,8 +14,17 @@ export default {
   }
 };
 
-const Template = ({ ...args }: OptionArgs) => {
-  return createOption({ ...args });
+const Template = (
+  args,
+  { globals: { backgrounds, accent }, parameters }
+): string => {
+  setTheme(accent, parameters.backgrounds, backgrounds);
+  return `<jp-option 
+    ${args.isDisabled ? 'disabled' : ''}
+    ${args.isSelected ? 'selected' : ''}
+  >
+    ${args.label}
+  </jp-option>`;
 };
 
 export const Default: any = Template.bind({});
@@ -28,36 +33,15 @@ Default.args = {
   isDisabled: false,
   isSelected: false
 };
-Default.parameters = {
-  docs: {
-    source: {
-      code: `<jp-option>Option Label</jp-option>`
-    }
-  }
-};
 
 export const WithDisabled: any = Template.bind({});
 WithDisabled.args = {
   ...Default.args,
   isDisabled: true
 };
-WithDisabled.parameters = {
-  docs: {
-    source: {
-      code: `<jp-option disabled>Option Label</jp-option>`
-    }
-  }
-};
 
 export const WithSelected: any = Template.bind({});
 WithSelected.args = {
   ...Default.args,
   isSelected: true
-};
-WithSelected.parameters = {
-  docs: {
-    source: {
-      code: `<jp-option selected>Option Label</jp-option>`
-    }
-  }
 };

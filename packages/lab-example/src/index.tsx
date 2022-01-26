@@ -1,14 +1,7 @@
 import {
   Button,
-  Checkbox,
-  Dropdown,
-  Link,
   Option,
-  ProgressRing,
-  Radio,
-  RadioGroup,
-  Tag,
-  TextArea,
+  Select,
   TextField
 } from '@jupyter-notebook/react-components';
 import {
@@ -58,26 +51,26 @@ const plugin: JupyterFrontEndPlugin<void> = {
       app.shell.add(reactWidget, 'main', { mode: 'split-right' });
       app.shell.activateById(widget.id);
 
-      (widget.node.querySelector('#basic-grid') as any).rowsData = [
-        {
-          Header1: 'Data 1 1',
-          Header2: 'Data 2 1',
-          Header3: 'Data 3 1',
-          Header4: 'Cell Data 4 1'
-        },
-        {
-          Header1: 'Data 1 2',
-          Header2: 'Data 2 2',
-          Header3: 'Data 3 2',
-          Header4: 'Cell Data 4 2'
-        },
-        {
-          Header1: 'Data 1 3',
-          Header2: 'Data 2 3',
-          Header3: 'Data 3 3',
-          Header4: 'Cell Data 4 3'
-        }
-      ];
+      // (widget.node.querySelector('#basic-grid') as any).rowsData = [
+      //   {
+      //     Header1: 'Data 1 1',
+      //     Header2: 'Data 2 1',
+      //     Header3: 'Data 3 1',
+      //     Header4: 'Cell Data 4 1'
+      //   },
+      //   {
+      //     Header1: 'Data 1 2',
+      //     Header2: 'Data 2 2',
+      //     Header3: 'Data 3 2',
+      //     Header4: 'Cell Data 4 2'
+      //   },
+      //   {
+      //     Header1: 'Data 1 3',
+      //     Header2: 'Data 2 3',
+      //     Header3: 'Data 3 3',
+      //     Header4: 'Cell Data 4 3'
+      //   }
+      // ];
     });
   }
 };
@@ -90,27 +83,27 @@ function Artwork(): JSX.Element {
     <div className="jp-FlexRow">
       <div className="jp-FlexColumn">
         <div className="jp-FlexRow">
-          <Button appearance="primary" onClick={onClick}>
+          <Button appearance="accent" onClick={onClick}>
             Button
           </Button>
-          <Button appearance="secondary">Button</Button>
-          <Button appearance="icon" aria-label="Confirm">
+          <Button appearance="neutral">Button</Button>
+          <Button appearance="stealth" aria-label="Confirm">
             <span className="fa fa-cog"></span>
           </Button>
         </div>
         <TextField value="Populated text">Text Field Label</TextField>
         <div className="jp-FlexColumn">
           <label>Label</label>
-          <Dropdown>
+          <Select>
             <Option>Option Label #1</Option>
             <Option>Option Label #2</Option>
             <Option>Option Label #3</Option>
-          </Dropdown>
+          </Select>
         </div>
-        <TextArea>Text Area Label</TextArea>
-        <Link href="#">Link Text</Link>
+        {/* <TextArea>Text Area Label</TextArea>
+        <Link href="#">Link Text</Link> */}
       </div>
-      <div className="jp-FlexColumn">
+      {/* <div className="jp-FlexColumn">
         <RadioGroup orientation="vertical">
           <label slot="label">Label</label>
           <Radio checked>Radio Label</Radio>
@@ -131,7 +124,7 @@ function Artwork(): JSX.Element {
           <Tag>Tag</Tag>
         </div>
         <ProgressRing></ProgressRing>
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -144,24 +137,25 @@ function createNode(): HTMLElement {
 <div class="jp-FlexRow">
     <div class="jp-FlexColumn">
       <div class="jp-FlexRow">
-        <jp-button appearance="primary">Button</jp-button>
-        <jp-button appearance="secondary">Button</jp-button>
-        <jp-button appearance="icon" aria-label="Confirm"><span class="fa fa-cog"></span></jp-button>
+        <jp-button appearance="accent">Button</jp-button>
+        <jp-button appearance="neutral">Button</jp-button>
+        <jp-button appearance="stealth" aria-label="Confirm"><span class="fa fa-cog"></span></jp-button>
       </div>
       <jp-text-field value="Populated text">Text Field Label</jp-text-field>
       <div class="jp-FlexColumn">
         <label>
           Label
         </label>
-        <jp-dropdown>
+        <jp-select>
           <jp-option>Option Label #1</jp-option>
           <jp-option>Option Label #2</jp-option>
           <jp-option>Option Label #3</jp-option>
-        </jp-dropdown>
+        </jp-select>
       </div>
-      <jp-text-area>Text Area Label</jp-text-area>
-      <jp-link href="#">Link Text</jp-link>
+      <!-- <jp-text-area>Text Area Label</jp-text-area>
+      <jp-link href="#">Link Text</jp-link> -->
     </div>
+    <!--
     <div class="jp-FlexColumn">
       <jp-radio-group orientation="vertical">
         <label slot="label">Label</label>
@@ -206,6 +200,7 @@ function createNode(): HTMLElement {
         </jp-panel-view>
       </jp-panels>
     </div>
+    -->
 </div>
 
 `

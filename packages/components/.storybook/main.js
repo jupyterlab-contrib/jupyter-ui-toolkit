@@ -2,11 +2,7 @@ module.exports = {
   core: {
     builder: 'webpack5'
   },
-  stories: [
-    '../src/**/*.stories.mdx',
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../docs/**/*.stories.mdx'
-  ],
+  stories: ['../src/**/*.stories.ts'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -14,5 +10,21 @@ module.exports = {
   ],
   features: {
     postcss: false
+  },
+  webpackFinal: async config => {
+    config.module.rules.push({
+      test: /\.ts$/,
+      sideEffects: true,
+      use: [
+        {
+          loader: 'ts-loader',
+          options: {
+            configFile: 'tsconfig.storybook.json'
+          }
+        }
+      ]
+    });
+
+    return config;
   }
 };

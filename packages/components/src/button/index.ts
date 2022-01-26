@@ -4,100 +4,93 @@
 
 import { attr } from '@microsoft/fast-element';
 import {
-  ButtonOptions,
   Button as FoundationButton,
   buttonTemplate as template
 } from '@microsoft/fast-foundation';
-import { buttonStyles as styles } from './button.styles';
+import { buttonStyles } from './button.styles';
 
 /**
  * Types of button appearance.
  * @public
  */
-export type ButtonAppearance = 'primary' | 'secondary' | 'icon';
+export type ButtonAppearance =
+  | 'accent'
+  | 'error'
+  | 'neutral'
+  | 'outline'
+  | 'stealth';
 
 /**
- * The  button class.
- *
- * @public
+ * @internal
  */
 export class Button extends FoundationButton {
   /**
    * The appearance the button should have.
    *
    * @public
+   * @remarks
+   * HTML Attribute: appearance
    */
-  @attr public appearance: ButtonAppearance;
+  @attr
+  public appearance: ButtonAppearance;
 
   /**
-   * Component lifecycle method that runs when the component is inserted
-   * into the DOM.
+   * Whether the button has a compact layout or not.
    *
-   * @internal
+   * @public
+   * @remarks
+   * HTML Attribute: minimal
    */
+  @attr({ attribute: 'minimal', mode: 'boolean' })
+  public minimal: boolean;
+
   public connectedCallback(): void {
     super.connectedCallback();
-
-    // If the appearance property has not been set, set it to the
-    // value of the appearance attribute.
     if (!this.appearance) {
-      const appearanceValue = this.getAttribute('appearance');
-      this.appearance = appearanceValue as ButtonAppearance;
+      this.appearance = 'neutral';
     }
   }
 
   /**
-   * Component lifecycle method that runs when an attribute of the
-   * element is changed.
+   * Applies 'icon-only' class when there is only an SVG in the default slot
    *
-   * @param attrName - The attribute that was changed
-   * @param oldVal - The old value of the attribute
-   * @param newVal - The new value of the attribute
-   *
-   * @internal
+   * @public
+   * @remarks
    */
-  public attributeChangedCallback(
-    attrName: string,
-    oldVal: string,
-    newVal: string
+  public defaultSlottedContentChanged(
+    oldValue: HTMLElement[],
+    newValue: HTMLElement[]
   ): void {
-    // In the case when an icon only button is created add a default ARIA
-    // label to the button since there is no longer button text to use
-    // as the label
-    if (attrName === 'appearance' && newVal === 'icon') {
-      // Only set the ARIA label to the default text if an aria-label attribute
-      // does not exist on the button
-      const ariaLabelValue = this.getAttribute('aria-label');
-      if (!ariaLabelValue) {
-        this.ariaLabel = 'Icon Button';
-      }
-    }
-
-    // In the case when the aria-label attribute has been defined on the
-    // <jp-button>, this will programmatically propogate the value to
-    // the <button> HTML element that lives in the Shadow DOM
-    if (attrName === 'aria-label') {
-      this.ariaLabel = newVal;
-    }
-
-    if (attrName === 'disabled') {
-      this.disabled = true;
+    const slottedElements = this.defaultSlottedContent.filter(
+      x => x.nodeType === Node.ELEMENT_NODE
+    );
+    if (
+      slottedElements.length === 1 &&
+      (slottedElements[0] instanceof SVGElement ||
+        slottedElements[0].classList.contains('fa') ||
+        slottedElements[0].classList.contains('fas'))
+    ) {
+      this.control.classList.add('icon-only');
+    } else {
+      this.control.classList.remove('icon-only');
     }
   }
 }
 
 /**
- * The  button component registration.
- *
- * @remarks
- * HTML Element: `<jp-button>`
+ * The button component registration.
  *
  * @public
+ * @remarks
+ * Generated HTML Element: `<jp-button>`
+ *
+ * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpButton = Button.compose<ButtonOptions>({
+export const jpButton = Button.compose({
   baseName: 'button',
+  baseClass: FoundationButton,
   template,
-  styles,
+  styles: buttonStyles,
   shadowOptions: {
     delegatesFocus: true
   }

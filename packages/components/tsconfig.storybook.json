@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfigbase.json",
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "playwright.config.ts"
+  ]
+}

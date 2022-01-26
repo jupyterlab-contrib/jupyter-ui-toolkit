@@ -13,7 +13,7 @@ export const parameters = {
     enableShortcuts: false
   },
   docs: {
-    theme: themes.light
+    theme: themes.dark
   },
   backgrounds: {
     default: 'dark',
@@ -23,13 +23,27 @@ export const parameters = {
         value: '#f9f9f9'
       },
       {
-        name: 'grey',
-        value: '#929396'
-      },
-      {
         name: 'dark',
         value: '#252526'
       }
     ]
+  }
+};
+
+export const globalTypes = {
+  accent: {
+    name: 'Accent',
+    description: 'Theme accent color for components',
+    defaultValue: '#006CBE',
+    toolbar: {
+      icon: 'paintbrush',
+      // Array of plain string values or MenuItem shape (see below)
+      items: [
+        { value: '#006CBE', right: '🔵', title: 'blue' },
+        { value: '#DA1A5F', title: 'pink' }
+      ],
+      // Property that specifies if the name of the item will be displayed
+      showName: false
+    }
   }
 };

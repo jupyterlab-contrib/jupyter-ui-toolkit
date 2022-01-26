@@ -1,46 +1,23 @@
-// Copyright (c) Jupyter Development Team.
-// Copyright (c) Microsoft Corporation.
-// Distributed under the terms of the Modified BSD License.
-
 import {
-  TextField as FoundationTextField,
-  textFieldTemplate as template,
-  TextFieldOptions
+  TextField,
+  textFieldTemplate as template
 } from '@microsoft/fast-foundation';
 import { textFieldStyles as styles } from './text-field.styles';
 
-/**
- * The  text field class.
- *
- * @public
- */
-export class TextField extends FoundationTextField {
-  /**
-   * Component lifecycle method that runs when the component is inserted
-   * into the DOM.
-   *
-   * @internal
-   */
-  public connectedCallback(): void {
-    super.connectedCallback();
-    if (this.textContent) {
-      this.setAttribute('aria-label', this.textContent);
-    } else {
-      // Describe the generic component if no label is provided
-      this.setAttribute('aria-label', 'Text field');
-    }
-  }
-}
+// TODO
+//   we need to add error/invalid
 
 /**
- * The  text field component registration.
+ * A function that returns a TextField registration for configuring the component with a DesignSystem.
  *
- * @remarks
- * HTML Element: `<jp-text-field>`
  *
  * @public
+ * @remarks
+ * Generates HTML Element: `<jp-text-field>`
+ *
+ * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpTextField = TextField.compose<TextFieldOptions>({
+export const jpTextField = TextField.compose({
   baseName: 'text-field',
   template,
   styles,
@@ -48,3 +25,7 @@ export const jpTextField = TextField.compose<TextFieldOptions>({
     delegatesFocus: true
   }
 });
+
+export { TextField };
+
+export { styles as textFieldStyles };

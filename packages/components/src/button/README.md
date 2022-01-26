@@ -10,6 +10,7 @@ The `jp-button` is a web component implementation of a [button element](https://
 | `aria-label`     | string  | Defines a label for buttons that screen readers can use.                                |
 | `autofocus`      | boolean | Determines if the element should receive document focus on page load.                   |
 | `disabled`       | boolean | Prevents the user from interacting with the button––it cannot be pressed or focused.    |
+| `minimal`        | boolean | Compact layout                                                                          |
 | `form`           | string  | See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes). |
 | `formaction`     | string  | See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes). |
 | `formenctype`    | string  | See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes). |

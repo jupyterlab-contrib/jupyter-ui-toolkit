@@ -5,7 +5,7 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0,
   testMatch: '**/*.test.ts',
   webServer: {
-    command: 'yarn run start',
+    command: 'yarn run start:ci',
     port: 6006,
     timeout: 120 * 1000,
     // It is safe to reuse the server for stories testing
@@ -13,7 +13,11 @@ const config: PlaywrightTestConfig = {
   },
   use: {
     baseURL: process.env.TARGET_URL ?? 'http://localhost:6006',
-    trace: 'on-first-retry'
+    trace: 'on-first-retry',
+    launchOptions: {
+      // Force slow motion to let storybook the time to update styles
+      slowMo: 30
+    }
   },
   projects: [
     {
