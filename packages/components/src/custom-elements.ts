@@ -7,6 +7,7 @@ import { jpBreadcrumb } from './breadcrumb/index';
 import { jpBreadcrumbItem } from './breadcrumb-item/index';
 import { jpButton } from './button/index';
 import { jpOption } from './option/index';
+import { jpProgress } from './progress/index';
 import { jpSelect } from './select/index';
 import { jpTextField } from './text-field/index';
 
@@ -18,6 +19,7 @@ import type { Breadcrumb } from './breadcrumb/index';
 import type { BreadcrumbItem } from './breadcrumb-item/index';
 import type { Button } from './button/index';
 import type { Option } from './option/index';
+import type { Progress } from './progress/index';
 import type { Select } from './select/index';
 import type { TextField } from './text-field/index';
 
@@ -28,6 +30,7 @@ export {
   jpBreadcrumbItem,
   jpButton,
   jpOption,
+  jpProgress,
   jpSelect,
   jpTextField
 };
@@ -45,6 +48,7 @@ export const allComponents = {
   jpBreadcrumbItem,
   jpButton,
   jpOption,
+  jpProgress,
   jpSelect,
   jpTextField,
   register(container?: Container, ...rest: any[]): void {

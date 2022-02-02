@@ -13,6 +13,7 @@ export * from './breadcrumb/index';
 export * from './breadcrumb-item/index';
 export * from './button/index';
 export * from './option/index';
+export * from './progress/index';
 export * from './select/index';
 export * from './text-field/index';
 
