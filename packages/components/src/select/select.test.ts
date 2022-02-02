@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Select', () => {
   test('Default', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-select--default');
+    await page.goto('/iframe.html?id=select--default');
 
     expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
       'select-default.png'
@@ -13,7 +13,7 @@ test.describe('Select', () => {
   });
 
   test('WithOpen', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-select--with-open');
+    await page.goto('/iframe.html?id=select--with-open');
 
     expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
       'select-with-open.png'
@@ -21,7 +21,7 @@ test.describe('Select', () => {
   });
 
   test('WithDisabled', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-select--with-disabled');
+    await page.goto('/iframe.html?id=select--with-disabled');
 
     expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
       'select-with-disabled.png'
@@ -29,7 +29,7 @@ test.describe('Select', () => {
   });
 
   test('WithCustomIndicator', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-select--with-custom-indicator');
+    await page.goto('/iframe.html?id=select--with-custom-indicator');
 
     expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
       'select-with-custom-indicator.png'

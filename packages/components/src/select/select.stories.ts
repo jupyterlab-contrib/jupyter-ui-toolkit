@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Library/Select',
+  title: 'Select',
   argTypes: {
     isOpen: { control: 'boolean' },
     isDisabled: { control: 'boolean' },

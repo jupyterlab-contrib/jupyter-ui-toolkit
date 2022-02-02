@@ -8,7 +8,13 @@ export * from './jupyter-design-system';
 export * from './custom-elements';
 
 // Export components and classes
+export * from './avatar/index';
+export * from './breadcrumb/index';
+export * from './breadcrumb-item/index';
 export * from './button/index';
+export * from './option/index';
+export * from './select/index';
+export * from './text-field/index';
 
 // Add Jupyter theme change listener
 {
