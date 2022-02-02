@@ -8,16 +8,17 @@ import {
   density,
   designUnit,
   disabledOpacity,
+  focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,
   foregroundOnAccentRest,
   neutralFillActive,
-  neutralFillFocus,
   neutralFillHover,
   neutralFillRest,
   neutralFillStealthActive,
   neutralFillStealthHover,
   neutralFillStealthRest,
+  neutralFillStrongFocus,
   neutralForegroundRest,
   strokeWidth,
   typeRampBaseFontSize,
@@ -38,10 +39,7 @@ import {
   errorFillActive,
   errorFillFocus,
   errorFillHover,
-  errorFillRest,
-  foregroundOnErrorActive,
-  foregroundOnErrorHover,
-  foregroundOnErrorRest
+  errorFillRest
 } from '../design-token';
 import { heightNumber } from '../styles';
 
@@ -58,8 +56,8 @@ function appearanceBehavior(value: string, styles: ElementStyles) {
   return new PropertyStyleSheetBehavior('appearance', value, styles);
 }
 
-// TODO do we really want to use outline for focus, active, ... => this call for a minimal style for toolbar probably
-// outline force to use a padding so that the outline is not hidden by other elements.
+// TODO do we really want to use outline for focus => this call for a minimal style for toolbar probably
+// outline force to use a margin so that the outline is not hidden by other elements.
 
 /**
  * @internal
@@ -90,9 +88,7 @@ const BaseButtonStyles = css`
     align-items: center;
     padding: 0 calc((10 + (${designUnit} * 2 * ${density})) * 1px);
     white-space: nowrap;
-    outline: 1px solid transparent;
-    outline-offset: calc((${designUnit} + ${density}) * 1px);
-    -moz-outline-radius: 0px;
+    outline: none;
     text-decoration: none;
     border: calc(${strokeWidth} * 1px) solid transparent;
     color: inherit;
@@ -108,10 +104,6 @@ const BaseButtonStyles = css`
     background-color: ${neutralFillHover};
   }
 
-  :host(:hover) .control {
-    outline-color: ${neutralFillHover};
-  }
-
   :host(:active) {
     background-color: ${neutralFillActive};
   }
@@ -124,12 +116,11 @@ const BaseButtonStyles = css`
     padding: 1px;
   }
 
-  :host(:active) .control {
-    outline-color: ${neutralFillActive};
-  }
-
-  :host .control:${focusVisible} {
-    outline-color: ${neutralFillFocus};
+  /* prettier-ignore */
+  .control:${focusVisible} {
+    outline: 1px solid ${neutralFillStrongFocus};
+    outline-offset: calc((${designUnit} + ${density}) * 1px);
+    -moz-outline-radius: 0px;
   }
 
   .control::-moz-focus-inner {
@@ -178,16 +169,19 @@ const BaseButtonStyles = css`
         color: ${SystemColors.HighlightText};
       }
 
-      .control: ${focusVisible} {
+      /* prettier-ignore */
+      .control:${focusVisible} {
         forced-color-adjust: none;
         background-color: ${SystemColors.Highlight};
-        outline-color: ${SystemColors.ButtonText};
+        outline: 1px solid ${SystemColors.ButtonText};
+        outline-offset: calc((${designUnit} + ${density}) * 1px);
+        -moz-outline-radius: 0px;
         color: ${SystemColors.HighlightText};
       }
 
       .control:hover,
       :host([appearance='outline']) .control:hover {
-        outline-color: ${SystemColors.ButtonText};
+        border-color: ${SystemColors.ButtonText};
       }
 
       :host([href]) .control {
@@ -196,10 +190,11 @@ const BaseButtonStyles = css`
       }
 
       :host([href]) .control:hover,
-            :host([href]) .control:${focusVisible} {
+      :host([href]) .control:${focusVisible} {
         forced-color-adjust: none;
         background: ${SystemColors.ButtonFace};
-        outline-color: ${SystemColors.LinkText};
+        border-color: ${SystemColors.LinkText};
+        box-shadow: 0 0 0 1px ${SystemColors.LinkText} inset;
         color: ${SystemColors.LinkText};
         fill: currentColor;
       }
@@ -221,18 +216,15 @@ const AccentButtonStyles = css`
     color: ${foregroundOnAccentHover};
   }
 
-  :host([appearance='accent']:hover) .control {
-    outline-color: ${accentFillHover};
-  }
-
   :host([appearance='accent']:active) .control:active {
     background: ${accentFillActive};
     color: ${foregroundOnAccentActive};
-    outline-color: ${accentFillActive};
   }
 
   :host([appearance="accent"]) .control:${focusVisible} {
-    outline-color: ${accentFillFocus};
+    outline: 1px solid ${accentFillFocus};
+    outline-offset: calc((${designUnit} + ${density}) * 1px);
+    -moz-outline-radius: 0px;
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
@@ -246,12 +238,14 @@ const AccentButtonStyles = css`
       :host([appearance='accent']) .control:hover,
       :host([appearance='accent']:active) .control:active {
         background: ${SystemColors.HighlightText};
-        outline-color: ${SystemColors.Highlight};
+        border-color: ${SystemColors.Highlight};
         color: ${SystemColors.Highlight};
       }
 
       :host([appearance="accent"]) .control:${focusVisible} {
-        outline-color: ${SystemColors.Highlight};
+        outline: 1px solid ${SystemColors.Highlight};
+        outline-offset: calc((${designUnit} + ${density}) * 1px);
+        -moz-outline-radius: 0px;
       }
 
       :host([appearance='accent'][href]) .control {
@@ -261,13 +255,16 @@ const AccentButtonStyles = css`
 
       :host([appearance='accent'][href]) .control:hover {
         background: ${SystemColors.ButtonFace};
-        outline-color: ${SystemColors.LinkText};
+        border-color: ${SystemColors.LinkText};
+        box-shadow: none;
         color: ${SystemColors.LinkText};
         fill: currentColor;
       }
 
       :host([appearance="accent"][href]) .control:${focusVisible} {
-        outline-color: ${SystemColors.LinkText};
+        border-color: ${SystemColors.LinkText};
+        box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px)
+          ${SystemColors.HighlightText} inset;
       }
     `
   )
@@ -279,26 +276,23 @@ const AccentButtonStyles = css`
 const ErrorButtonStyles = css`
   :host([appearance='error']) {
     background: ${errorFillRest};
-    color: ${foregroundOnErrorRest};
+    color: ${foregroundOnAccentRest};
   }
 
   :host([appearance='error']:hover) {
     background: ${errorFillHover};
-    color: ${foregroundOnErrorHover};
-  }
-
-  :host([appearance='error']:hover) .control {
-    outline-color: ${errorFillHover};
+    color: ${foregroundOnAccentHover};
   }
 
   :host([appearance='error']:active) .control:active {
     background: ${errorFillActive};
-    color: ${foregroundOnErrorActive};
-    outline-color: ${errorFillActive};
+    color: ${foregroundOnAccentActive};
   }
 
   :host([appearance="error"]) .control:${focusVisible} {
-    outline-color: ${errorFillFocus};
+    outline: 1px solid ${errorFillFocus};
+    outline-offset: calc((${designUnit} + ${density}) * 1px);
+    -moz-outline-radius: 0px;
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
@@ -312,12 +306,14 @@ const ErrorButtonStyles = css`
       :host([appearance='error']) .control:hover,
       :host([appearance='error']:active) .control:active {
         background: ${SystemColors.HighlightText};
-        outline-color: ${SystemColors.Highlight};
+        border-color: ${SystemColors.Highlight};
         color: ${SystemColors.Highlight};
       }
 
       :host([appearance="error"]) .control:${focusVisible} {
-        outline-color: ${SystemColors.Highlight};
+        outline: 1px solid ${SystemColors.Highlight};
+        outline-offset: calc((${designUnit} + ${density}) * 1px);
+        -moz-outline-radius: 0px;
       }
 
       :host([appearance='error'][href]) .control {
@@ -327,13 +323,16 @@ const ErrorButtonStyles = css`
 
       :host([appearance='error'][href]) .control:hover {
         background: ${SystemColors.ButtonFace};
-        outline-color: ${SystemColors.LinkText};
+        border-color: ${SystemColors.LinkText};
+        box-shadow: none;
         color: ${SystemColors.LinkText};
         fill: currentColor;
       }
 
       :host([appearance="error"][href]) .control:${focusVisible} {
-        outline-color: ${SystemColors.LinkText};
+        border-color: ${SystemColors.LinkText};
+        box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px)
+          ${SystemColors.HighlightText} inset;
       }
     `
   )
@@ -352,16 +351,8 @@ const OutlineButtonStyles = css`
     border-color: ${accentFillHover};
   }
 
-  :host([appearance='outline']:hover) .control {
-    outline-color: ${accentFillHover};
-  }
-
   :host([appearance='outline']:active) {
     border-color: ${accentFillActive};
-  }
-
-  :host([appearance='outline']:active) .control:active {
-    outline-color: ${accentFillActive};
   }
 
   :host([appearance='outline']) .control {
@@ -369,8 +360,9 @@ const OutlineButtonStyles = css`
   }
 
   :host([appearance="outline"]) .control:${focusVisible} {
-    border-color: ${accentFillFocus};
-    outline-color: ${accentFillActive};
+    outline: 1px solid ${accentFillFocus};
+    outline-offset: calc((${designUnit} + ${density}) * 1px);
+    -moz-outline-radius: 0px;
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
@@ -381,7 +373,9 @@ const OutlineButtonStyles = css`
       :host([appearance="outline"]) .control:${focusVisible} {
         forced-color-adjust: none;
         background-color: ${SystemColors.Highlight};
-        border-color: ${SystemColors.ButtonText};
+        outline: 1px solid ${SystemColors.ButtonText};
+        outline-offset: calc((${designUnit} + ${density}) * 1px);
+        -moz-outline-radius: 0px;
         color: ${SystemColors.HighlightText};
         fill: currentColor;
       }
@@ -392,7 +386,7 @@ const OutlineButtonStyles = css`
         fill: currentColor;
       }
       :host([appearance="outline"][href]) .control:hover,
-            :host([appearance="outline"][href]) .control:${focusVisible} {
+      :host([appearance="outline"][href]) .control:${focusVisible} {
         forced-color-adjust: none;
         border-color: ${SystemColors.LinkText};
         box-shadow: 0 0 0 1px ${SystemColors.LinkText} inset;
@@ -423,14 +417,14 @@ const StealthButtonStyles = css`
       :host([appearance='stealth']) .control {
         forced-color-adjust: none;
         background: ${SystemColors.ButtonFace};
-        outline-color: transparent;
+        border-color: transparent;
         color: ${SystemColors.ButtonText};
         fill: currentColor;
       }
 
       :host([appearance='stealth']:hover) .control {
         background: ${SystemColors.Highlight};
-        outline-color: ${SystemColors.Highlight};
+        border-color: ${SystemColors.Highlight};
         color: ${SystemColors.HighlightText};
         fill: currentColor;
       }
@@ -447,9 +441,9 @@ const StealthButtonStyles = css`
       }
 
       :host([appearance="stealth"][href]:hover) .control,
-            :host([appearance="stealth"][href]:${focusVisible}) .control {
+         :host([appearance="stealth"][href]:${focusVisible}) .control {
         background: ${SystemColors.LinkText};
-        outline-color: ${SystemColors.LinkText};
+        border-color: ${SystemColors.LinkText};
         color: ${SystemColors.HighlightText};
         fill: currentColor;
       }
