@@ -3,27 +3,21 @@
 
 import { action } from '@storybook/addon-actions';
 import { getFaIcon, setTheme } from '../utilities/storybook';
-import { TextField } from './index';
+import { Search } from './index';
 
 export default {
-  title: 'Text Field',
+  title: 'Search',
   argTypes: {
     label: { control: 'text' },
     placeholder: { control: 'text' },
     value: { control: 'text' },
     maxLength: { control: 'number' },
     size: { control: 'number' },
-    type: {
-      control: {
-        type: 'select',
-        options: ['Email', 'Password', 'Tel', 'Text', 'Url']
-      }
-    },
     isReadOnly: { control: 'boolean' },
     isDisabled: { control: 'boolean' },
     isAutoFocused: { control: 'boolean' },
-    startIcon: { control: 'boolean' },
-    endIcon: { control: 'boolean' },
+    searchIcon: { control: 'boolean' },
+    appearance: { control: 'radio', options: ['outline', 'filled'] },
     onChange: {
       action: 'changed',
       table: {
@@ -41,48 +35,46 @@ const Template = (
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',
-    `<jp-text-field 
-      ${args.placeholder ? `placeholder="${args.placeholder}"` : ''}
-      ${args.maxLength ? `maxlength="${args.maxLength}"` : ''}
-      ${args.size ? `size="${args.size}"` : ''}
-      ${args.type ? `type="${args.type.toLowerCase()}"` : ''}
-      ${args.readonly ? 'readonly' : ''}
-      ${args.disabled ? 'disabled' : ''}
-      ${args.autofocus ? 'autofocus' : ''}
-    >
-      ${args.startIcon ? getFaIcon('search', 'start') : ''}
-      ${args.label}
-      ${args.endIcon ? getFaIcon('euro-sign', 'end') : ''}
-    </jp-text-field>`
+    `<jp-search
+        ${args.placeholder ? `placeholder="${args.placeholder}"` : ''}
+        ${args.maxLength ? `maxlength="${args.maxLength}"` : ''}
+        ${args.size ? `size="${args.size}"` : ''}
+        ${args.readonly ? 'readonly' : ''}
+        ${args.disabled ? 'disabled' : ''}
+        ${args.autofocus ? 'autofocus' : ''}
+        appearance="${args.appearance}"
+      >
+        ${args.label}
+        ${args.searchIcon ? getFaIcon('search', 'end') : ''}
+      </jp-search>`
   );
 
-  const textField = container.firstChild as TextField;
+  const search = container.firstChild as Search;
 
   if (args.value) {
-    textField.value = args.value;
+    search.value = args.value;
   }
 
   if (args.onChange) {
-    textField.addEventListener('change', args.onChange);
+    search.addEventListener('change', args.onChange);
   }
 
-  return textField;
+  return search;
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Text Field Label',
+  label: 'Search Label',
   placeholder: '',
   value: '',
   maxLength: '',
   size: '',
-  type: 'Text',
   isReadOnly: false,
   isDisabled: false,
   isAutoFocused: false,
-  startIcon: false,
-  endIcon: false,
-  onChange: action('text-field-onchange')
+  appearance: 'outline',
+  searchIcon: false,
+  onChange: action('search-onchange')
 };
 
 export const WithPlaceholder = Template.bind({});
@@ -106,21 +98,14 @@ WithDisabled.args = {
 export const WithSize = Template.bind({});
 WithSize.args = {
   ...Default.args,
-  placeholder: 'This text field is 50 characters in width',
+  placeholder: 'This search is 50 characters in width',
   size: 50
-};
-
-export const WithType = Template.bind({});
-WithType.args = {
-  ...Default.args,
-  placeholder: 'This text field has type password',
-  type: 'Password'
 };
 
 export const WithMaxLength = Template.bind({});
 WithMaxLength.args = {
   ...Default.args,
-  placeholder: 'This text field can only contain a maximum of 10 characters',
+  placeholder: 'This search field can only contain a maximum of 10 characters',
   maxLength: 10
 };
 
@@ -130,14 +115,8 @@ WithReadonly.args = {
   readonly: true
 };
 
-export const WithStartIcon = Template.bind({});
-WithStartIcon.args = {
+export const WithSearchIcon = Template.bind({});
+WithSearchIcon.args = {
   ...Default.args,
-  startIcon: true
-};
-
-export const WithEndIcon = Template.bind({});
-WithEndIcon.args = {
-  ...Default.args,
-  endIcon: true
+  searchIcon: true
 };

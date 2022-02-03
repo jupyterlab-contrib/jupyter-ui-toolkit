@@ -8,10 +8,10 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  fillColor,
   neutralFillHover,
   neutralFillInputHover,
   neutralFillInputRest,
-  neutralFillRest,
   neutralFillStrongActive,
   neutralFillStrongHover,
   neutralFillStrongRest,
@@ -31,13 +31,9 @@ import {
   TextFieldOptions
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
-import { heightNumber } from '../styles';
+import { heightNumber } from '../styles/index';
 
-/**
- * Styles for Text Field
- * @public
- */
-export const textFieldStyles: FoundationElementTemplate<
+export const searchStyles: FoundationElementTemplate<
   ElementStyles,
   TextFieldOptions
 > = (context, definition) =>
@@ -71,9 +67,17 @@ export const textFieldStyles: FoundationElementTemplate<
       margin-top: auto;
       margin-bottom: auto;
       border: none;
-      padding: 0 calc(${designUnit} * 2px + 1px);
+      padding: 0;
+      padding-inline-start: calc(${designUnit} * 2px + 1px);
+      padding-inline-end: calc(
+        (${designUnit} * 2px) + (${heightNumber} * 1px) + 1px
+      );
       font-size: ${typeRampBaseFontSize};
       line-height: ${typeRampBaseLineHeight};
+    }
+
+    .control::-webkit-search-cancel-button {
+      -webkit-appearance: none;
     }
 
     .control:hover,
@@ -81,6 +85,25 @@ export const textFieldStyles: FoundationElementTemplate<
     .control:disabled,
     .control:active {
       outline: none;
+    }
+
+    /* Cancel margin set for button focus outline */
+    jp-button {
+      margin: 0;
+    }
+
+    .clear-button {
+      position: absolute;
+      right: 0;
+      top: 1px;
+      height: calc(100% - 2px);
+      opacity: 0;
+    }
+
+    .input-wrapper {
+      display: flex;
+      position: relative;
+      width: 100%;
     }
 
     .label {
@@ -100,22 +123,26 @@ export const textFieldStyles: FoundationElementTemplate<
     .start,
     .end {
       display: flex;
-      margin: auto;
+      margin: 1px;
       fill: currentcolor;
+    }
+
+    ::slotted([slot='end']) {
+      height: 100%;
+    }
+
+    .end {
+      margin-inline-end: 1px;
     }
 
     ::slotted(svg) {
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
       width: 16px;
       height: 16px;
-    }
-
-    .start {
-      margin-inline-start: 11px;
-    }
-
-    .end {
       margin-inline-end: 11px;
+      margin-inline-start: 11px;
+      margin-top: auto;
+      margin-bottom: auto;
     }
 
     :host(:hover:not([disabled])) .root {
@@ -132,8 +159,24 @@ export const textFieldStyles: FoundationElementTemplate<
       border-color: ${accentFillFocus};
     }
 
+    .clear-button__hidden {
+      opacity: 0;
+    }
+
+    :host(:hover:not([disabled], [readOnly])) .clear-button,
+    :host(:active:not([disabled], [readOnly])) .clear-button,
+    :host(:focus-within:not([disabled], [readOnly])) .clear-button {
+      opacity: 1;
+    }
+
+    :host(:hover:not([disabled], [readOnly])) .clear-button__hidden,
+    :host(:active:not([disabled], [readOnly])) .clear-button__hidden,
+    :host(:focus-within:not([disabled], [readOnly])) .clear-button__hidden {
+      opacity: 0;
+    }
+
     :host([appearance='filled']) .root {
-      background: ${neutralFillRest};
+      background: ${fillColor};
     }
 
     :host([appearance='filled']:hover:not([disabled])) .root {
