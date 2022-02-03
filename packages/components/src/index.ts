@@ -16,6 +16,9 @@ export * from './option/index';
 export * from './progress/index';
 export * from './search/index';
 export * from './select/index';
+export * from './tab-panel/index';
+export * from './tab/index';
+export * from './tabs/index';
 export * from './text-field/index';
 
 // Add Jupyter theme change listener

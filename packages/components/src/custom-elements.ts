@@ -10,6 +10,9 @@ import { jpOption } from './option/index';
 import { jpProgress } from './progress/index';
 import { jpSearch } from './search/index';
 import { jpSelect } from './select/index';
+import { jpTabPanel } from './tab-panel/index';
+import { jpTab } from './tab/index';
+import { jpTabs } from './tabs/index';
 import { jpTextField } from './text-field/index';
 
 // Don't delete these. They're needed so that API-extractor doesn't add import types
@@ -23,6 +26,9 @@ import type { Option } from './option/index';
 import type { Progress } from './progress/index';
 import type { Search } from './search/index';
 import type { Select } from './select/index';
+import type { TabPanel } from './tab-panel/index';
+import type { Tab } from './tab/index';
+import type { Tabs } from './tabs/index';
 import type { TextField } from './text-field/index';
 
 // export all components
@@ -35,6 +41,9 @@ export {
   jpProgress,
   jpSearch,
   jpSelect,
+  jpTab,
+  jpTabPanel,
+  jpTabs,
   jpTextField
 };
 
@@ -54,6 +63,9 @@ export const allComponents = {
   jpProgress,
   jpSearch,
   jpSelect,
+  jpTab,
+  jpTabPanel,
+  jpTabs,
   jpTextField,
   register(container?: Container, ...rest: any[]): void {
     if (!container) {

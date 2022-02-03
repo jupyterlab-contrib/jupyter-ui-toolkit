@@ -10,6 +10,11 @@ export default {
     svgSeparator: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     endIcon: { control: 'boolean' }
+  },
+  parameters: {
+    actions: {
+      disabled: true
+    }
   }
 };
 

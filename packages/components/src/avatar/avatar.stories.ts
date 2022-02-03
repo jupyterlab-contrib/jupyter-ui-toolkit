@@ -14,6 +14,11 @@ export default {
     color: { control: 'select', options: ['foo', 'bar'] },
     image: { control: 'boolean' }
   },
+  parameters: {
+    actions: {
+      disabled: true
+    }
+  },
   decorators: [
     story => `<style>
     jp-avatar {

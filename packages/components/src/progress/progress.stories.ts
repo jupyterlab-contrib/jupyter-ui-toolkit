@@ -12,6 +12,11 @@ export default {
     paused: { control: 'boolean' },
     height: { control: 'number', min: 4 }
   },
+  parameters: {
+    actions: {
+      disabled: true
+    }
+  },
   decorators: [
     story => `<div style="width: 300px;">
     ${story()}
