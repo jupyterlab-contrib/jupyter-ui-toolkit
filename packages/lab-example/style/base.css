@@ -1,3 +1,9 @@
+/* Fixes for JupyterLab */
+jp-tab {
+  box-sizing: border-box;
+}
+/* End fixes */
+
 .jp-Artwork {
   padding: 4px;
 
@@ -6,7 +12,9 @@
   font-size: var(--jp-ui-font-size1);
 }
 
-.jp-Artwork > .jp-FlexRow {
+.jp-Artwork > .jp-Grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
   max-height: 500px;
 }
@@ -33,4 +41,15 @@
 
 .jp-Artwork .jp-FlexColumn > div > * {
   margin: 2px;
+}
+
+jp-progress {
+  width: 100%;
+}
+
+:root {
+  --avatar-fill-blue: royalblue;
+  --avatar-fill-red: indianred;
+  --avatar-color-light: white;
+  --avatar-color-dark: slategrey;
 }

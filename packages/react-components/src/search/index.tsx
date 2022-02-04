@@ -3,19 +3,20 @@
 
 import {
   provideJupyterDesignSystem,
-  jpTextField
+  jpSearch
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const TextField: React.DetailedHTMLFactory<
+export const Search: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
     appearance?: 'outline' | 'filled';
     autofocus?: boolean;
     disabled?: boolean;
     form?: string;
+    label?: string;
     list?: string;
     maxlength?: number;
     minlength?: number;
@@ -25,11 +26,9 @@ export const TextField: React.DetailedHTMLFactory<
     readonly?: boolean;
     required?: boolean;
     size?: number;
-    spellcheck?: string;
-    type?: 'text' | 'email' | 'password' | 'tel' | 'url';
     value?: string;
   },
   HTMLElement
-> = wrap(jpTextField()) as any;
+> = wrap(jpSearch()) as any;
 // @ts-expect-error unknown property
-TextField.displayName = 'Jupyter.TextField';
+Search.displayName = 'Jupyter.Search';
