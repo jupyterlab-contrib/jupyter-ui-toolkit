@@ -39,13 +39,23 @@ const plugin: JupyterFrontEndPlugin<void> = {
     widget.id = 'artwork-ui-components';
     widget.title.label = 'Toolkit Gallery';
 
-    // Add listener
-    const firstButton = widget.node.querySelector('jp-button');
-    if (firstButton) {
-      firstButton.addEventListener('click', () => {
+    // Add listeners
+    const buttons = widget.node.querySelectorAll('jp-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
         alert('Reacting to vanilla click event.');
       });
-    }
+    });
+    const search = widget.node.querySelector('jp-search');
+    search?.addEventListener('change', event => {
+      console.log(event);
+      alert(`Search change event: ${(event as any).target.value}`);
+    });
+    const textField = widget.node.querySelector('jp-text-field');
+    textField?.addEventListener('change', event => {
+      console.log(event);
+      alert(`Text field change event: ${(event as any).target.value}`);
+    });
 
     const reactWidget = ReactWidget.create(<Artwork />);
     reactWidget.addClass('jp-Artwork');
@@ -96,8 +106,10 @@ function Artwork(): JSX.Element {
           <Button appearance="accent" onClick={onClick}>
             Button
           </Button>
-          <Button appearance="neutral">Button</Button>
-          <Button appearance="stealth" aria-label="Confirm">
+          <Button appearance="neutral" onClick={onClick}>
+            Button
+          </Button>
+          <Button appearance="stealth" aria-label="Confirm" onClick={onClick}>
             <span className="fa fa-cog"></span>
           </Button>
         </div>
@@ -246,7 +258,6 @@ function createNode(): HTMLElement {
       </jp-tabs>
     </div>
 </div>
-
 `
   );
 

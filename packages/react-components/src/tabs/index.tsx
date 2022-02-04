@@ -17,6 +17,6 @@ export const Tabs: React.DetailedHTMLFactory<
     orientation?: 'horizontal' | 'vertical';
   },
   HTMLElement
-> = wrap(jpTabs()) as any;
+> = wrap(jpTabs(), { events: { onChange: 'change' } }) as any;
 // @ts-expect-error unknown property
 Tabs.displayName = 'Jupyter.Tabs';

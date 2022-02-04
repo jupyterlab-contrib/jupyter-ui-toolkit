@@ -18,6 +18,11 @@ export const Select: React.DetailedHTMLFactory<
     position?: 'above' | 'below';
   },
   HTMLElement
-> = wrap(jpSelect()) as any;
+> = wrap(jpSelect(), {
+  events: {
+    onChange: 'change',
+    onInput: 'input'
+  }
+}) as any;
 // @ts-expect-error unknown property
 Select.displayName = 'Jupyter.Select';

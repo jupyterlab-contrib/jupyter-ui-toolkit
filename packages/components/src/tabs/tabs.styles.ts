@@ -24,10 +24,8 @@ import { heightNumber } from '../styles/index';
 export const tabsStyles: FoundationElementTemplate<
   ElementStyles,
   TabsOptions
-> = (context, definition) => {
-  console.log(context);
-  console.log(definition);
-  return css`
+> = (context, definition) =>
+  css`
     ${display('grid')} :host {
       box-sizing: border-box;
       font-family: ${bodyFont};
@@ -132,4 +130,3 @@ export const tabsStyles: FoundationElementTemplate<
       `
     )
   );
-};

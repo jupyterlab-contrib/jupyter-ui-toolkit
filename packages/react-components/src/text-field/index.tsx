@@ -30,6 +30,8 @@ export const TextField: React.DetailedHTMLFactory<
     value?: string;
   },
   HTMLElement
-> = wrap(jpTextField()) as any;
+> = wrap(jpTextField(), {
+  events: { onChange: 'change', onInput: 'input' }
+}) as any;
 // @ts-expect-error unknown property
 TextField.displayName = 'Jupyter.TextField';

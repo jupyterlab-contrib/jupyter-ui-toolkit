@@ -29,6 +29,11 @@ export const Search: React.DetailedHTMLFactory<
     value?: string;
   },
   HTMLElement
-> = wrap(jpSearch()) as any;
+> = wrap(jpSearch(), {
+  events: {
+    onChange: 'change',
+    onInput: 'input'
+  }
+}) as any;
 // @ts-expect-error unknown property
 Search.displayName = 'Jupyter.Search';
