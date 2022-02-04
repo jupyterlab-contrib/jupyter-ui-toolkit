@@ -22,8 +22,6 @@ export default {
   decorators: [
     story => `<style>
     jp-avatar {
-      flex-basis: 32px;
-
       --avatar-fill-accent-primary: #cf4073;
       --avatar-fill-accent-secondary: #0078d4;
       --avatar-color-foo: hsl(0, 0%, 100%);
