@@ -8,6 +8,7 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  focusStrokeWidth,
   neutralFillHover,
   neutralFillInputHover,
   neutralFillInputRest,
@@ -130,6 +131,7 @@ export const textFieldStyles: FoundationElementTemplate<
 
     :host(:focus-within:not([disabled])) .root {
       border-color: ${accentFillFocus};
+      box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px) ${accentFillFocus} inset;
     }
 
     :host([appearance='filled']) .root {

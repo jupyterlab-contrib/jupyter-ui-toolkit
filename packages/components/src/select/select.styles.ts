@@ -15,6 +15,8 @@ import {
   neutralFillInputHover,
   neutralFillInputRest,
   neutralFillStealthRest,
+  neutralFillStrongHover,
+  neutralFillStrongRest,
   neutralForegroundRest,
   neutralLayerFloating,
   neutralStrokeRest,
@@ -50,7 +52,7 @@ export const selectStyles: FoundationElementTemplate<
       --elevation: 14;
       background: ${neutralFillInputRest};
       border-radius: calc(${controlCornerRadius} * 1px);
-      border: calc(${strokeWidth} * 1px) solid ${neutralStrokeRest};
+      border: calc(${strokeWidth} * 1px) solid ${neutralFillStrongRest};
       box-sizing: border-box;
       color: ${neutralForegroundRest};
       font-family: ${bodyFont};
@@ -103,11 +105,12 @@ export const selectStyles: FoundationElementTemplate<
 
     :host(:not([disabled]):hover) {
       background: ${neutralFillInputHover};
-      border-color: ${accentFillHover};
+      border-color: ${neutralFillStrongHover};
     }
 
     :host(:${focusVisible}) {
       border-color: ${accentFillFocus};
+      box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
     }
 
     :host([disabled]) {
