@@ -5,10 +5,10 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Progress', () => {
   test('With value', async ({ page }) => {
-    await page.goto('/iframe.html?id=avatar--with-value');
+    await page.goto('/iframe.html?id=progress--with-value');
 
-    expect(await page.locator('jp-avatar').screenshot()).toMatchSnapshot(
-      'avatar-with-value.png'
+    expect(await page.locator('jp-progress').screenshot()).toMatchSnapshot(
+      'progress-with-value.png'
     );
   });
 });

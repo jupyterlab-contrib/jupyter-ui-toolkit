@@ -25,9 +25,10 @@ const Template = (
   setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-breadcrumb>
-    ${[1, 2, 3].map(v =>
-      args.customChildren
-        ? `<jp-breadcrumb-item>
+    ${[1, 2, 3]
+      .map(v =>
+        args.customChildren
+          ? `<jp-breadcrumb-item>
           ${args.startIcon ? getFaIcon('folder', 'start') : ''}
           <jp-button>
             Breadcrumb item ${v}
@@ -35,13 +36,14 @@ const Template = (
           ${args.endIcon ? getFaIcon('robot', 'end') : ''}
           ${args.svgSeparator ? getFaIcon('angle-right', 'separator') : ''}
         </jp-breadcrumb-item>`
-        : `<jp-breadcrumb-item href="#">
+          : `<jp-breadcrumb-item href="#">
           ${args.startIcon ? getFaIcon('folder', 'start') : ''}
           Breadcrumb item ${v}
           ${args.endIcon ? getFaIcon('robot', 'end') : ''}
           ${args.svgSeparator ? getFaIcon('angle-right', 'separator') : ''}
         </jp-breadcrumb-item>`
-    )}
+      )
+      .join('\n')}
   </jp-breadcrumb>`;
 };
 
