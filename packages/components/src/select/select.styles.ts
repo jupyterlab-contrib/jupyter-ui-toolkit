@@ -110,7 +110,7 @@ export const selectStyles: FoundationElementTemplate<
 
     :host(:${focusVisible}) {
       border-color: ${accentFillFocus};
-      box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
+      box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px) ${accentFillFocus} inset;
     }
 
     :host([disabled]) {
