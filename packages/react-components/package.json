@@ -25,7 +25,7 @@
     "prettier": "prettier --config ./.prettierrc --write \"**/*.{ts,js,md}\"",
     "eslint:check": "eslint . --ext .ts,.tsx",
     "eslint": "eslint . --ext .ts,.tsx --fix",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "rimraf README.md && cp ../../README.md . && yarn run build",
     "test": "jest --verbose --coverage"
   },
   "dependencies": {
@@ -50,6 +50,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "277fbf2624d81e2f41eeef6ac6fe8cdcd09b22bd"
+  }
 }
