@@ -12,7 +12,18 @@ const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
 export const BreadcrumbItem: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
+    download?: string;
+    href?: string;
+    hreflang?: string;
+    ping?: string;
+    referrerpolicy?: string;
+    rel?: string;
+    /**
+     * Whether to display breadcrumb item separator
+     */
     separator?: boolean;
+    target?: '_self' | '_blank' | '_parent' | '_top';
+    type?: string;
   },
   HTMLElement
 > = wrap(jpBreadcrumbItem()) as any;
