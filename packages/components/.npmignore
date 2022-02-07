@@ -1,0 +1,29 @@
+# Source files
+src/
+
+# Docs
+docs/
+
+# Tests
+*.spec.*
+coverage/
+test-results/
+
+# Builds
+build/
+storybook-static/
+
+# Config files
+.storybook
+.eslintrc.js
+.eslintignore
+api-extractor.json
+jest.config.js
+tsconfig.json
+tsconfigbase.json
+tsconfig.storybook.json
+rollup.config.js
+playwright.config.ts
+
+# Cache
+temp
