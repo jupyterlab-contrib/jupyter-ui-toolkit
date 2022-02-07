@@ -74,5 +74,9 @@
     "tslib": "^2.1.0",
     "typescript": "~4.3.5",
     "webpack": "^5.0.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "277fbf2624d81e2f41eeef6ac6fe8cdcd09b22bd"
 }
