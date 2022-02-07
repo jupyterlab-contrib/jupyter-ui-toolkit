@@ -6,6 +6,7 @@ const sum = (a, b) => {
   return a + b;
 };
 
+// FIXME
 test('temporary test', () => {
   expect(sum(1, 2)).toBe(3);
 });

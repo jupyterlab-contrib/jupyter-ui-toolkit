@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import { initThemeChangeListener } from './utilities/theme/applyTheme';
+export { addJupyterLabThemeChangeListener } from './utilities/theme/applyTheme';
 
 export * from './design-token';
 export * from './jupyter-design-system';
@@ -20,13 +20,3 @@ export * from './tab-panel/index';
 export * from './tab/index';
 export * from './tabs/index';
 export * from './text-field/index';
-
-// Add Jupyter theme change listener
-{
-  let isThemeChangeInitialized = false;
-
-  if (!isThemeChangeInitialized) {
-    isThemeChangeInitialized = true;
-    initThemeChangeListener();
-  }
-}

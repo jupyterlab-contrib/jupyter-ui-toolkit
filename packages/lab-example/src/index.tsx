@@ -11,6 +11,7 @@ import {
   TextField
 } from '@jupyter-notebook/react-components';
 import {
+  addJupyterLabThemeChangeListener,
   allComponents,
   provideJupyterDesignSystem
 } from '@jupyter-notebook/web-components';
@@ -23,6 +24,7 @@ import { Widget } from '@lumino/widgets';
 import React from 'react';
 
 provideJupyterDesignSystem().register(allComponents);
+addJupyterLabThemeChangeListener();
 
 /**
  * Initialization data for the jupyter-ui-demo extension.

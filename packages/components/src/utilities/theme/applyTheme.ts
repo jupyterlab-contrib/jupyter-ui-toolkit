@@ -21,10 +21,22 @@ const THEME_NAME_BODY_ATTRIBUTE = 'data-jp-theme-name';
 const THEME_MODE_BODY_ATTRIBUTE = 'data-jp-theme-light';
 
 /**
+ * Flag to initialized only one listener
+ */
+let isThemeChangeInitialized = false;
+
+/**
  * Configures a MutationObserver to watch for Jupyter theme changes and
  * applies the current Jupyter theme to the toolkit components.
  */
-export function initThemeChangeListener(): void {
+export function addJupyterLabThemeChangeListener(): void {
+  if (!isThemeChangeInitialized) {
+    isThemeChangeInitialized = true;
+    initThemeChangeListener();
+  }
+}
+
+function initThemeChangeListener(): void {
   const addObserver = () => {
     const observer = new MutationObserver(() => {
       applyCurrentTheme();
@@ -46,11 +58,26 @@ export function initThemeChangeListener(): void {
   }
 }
 
+/**
+ * JupyterLab CSS variable to Design Token converter
+ */
 interface IConverter<T> {
+  /**
+   * Convert the CSS variable value to design token value
+   */
   converter?: (value: string) => T | null;
+  /**
+   * Design token to update
+   */
   token: DesignToken<T>;
 }
 
+/**
+ * Convert a base color to a palette.
+ *
+ * @param value Color string
+ * @returns The palette generated from the color
+ */
 const colorConverter = (value: string): Palette<Swatch> | null => {
   const parsedColor = parseColor(value);
 
@@ -61,6 +88,12 @@ const colorConverter = (value: string): Palette<Swatch> | null => {
     : null;
 };
 
+/**
+ * Convert a string to an integer.
+ *
+ * @param value String to convert
+ * @returns Extracted integer or null
+ */
 const intConverter = (value: string): number | null => {
   const parsedValue = parseInt(value, 10);
   return isNaN(parsedValue) ? null : parsedValue;
