@@ -25,6 +25,14 @@ test.describe('Button', () => {
     );
   });
 
+  test('Lightweight', async ({ page }) => {
+    await page.goto('/iframe.html?id=button--lightweight');
+
+    expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
+      'button-lightweight.png'
+    );
+  });
+
   // test('With Autofocus', async ({ page }) => {
   //   await page.goto('/iframe.html?id=button--with-autofocus');
 

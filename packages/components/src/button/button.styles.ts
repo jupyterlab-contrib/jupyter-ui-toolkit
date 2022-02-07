@@ -7,6 +7,9 @@ import {
   accentFillFocus,
   accentFillHover,
   accentFillRest,
+  accentForegroundActive,
+  accentForegroundHover,
+  accentForegroundRest,
   bodyFont,
   controlCornerRadius,
   density,
@@ -345,6 +348,87 @@ const ErrorButtonStyles = css`
 /**
  * @internal
  */
+export const LightweightButtonStyles = css`
+  :host([appearance='lightweight']) {
+    background: transparent;
+    color: ${accentForegroundRest};
+  }
+
+  :host([appearance='lightweight']) .control {
+    padding: 0;
+    height: initial;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  :host([appearance='lightweight']:hover) {
+    background: transparent;
+    color: ${accentForegroundHover};
+  }
+
+  :host([appearance='lightweight']:active) {
+    background: transparent;
+    color: ${accentForegroundActive};
+  }
+
+  :host([appearance='lightweight']) .content {
+    position: relative;
+  }
+
+  :host([appearance='lightweight']) .content::before {
+    content: '';
+    display: block;
+    height: calc(${strokeWidth} * 1px);
+    position: absolute;
+    top: calc(1em + 4px);
+    width: 100%;
+  }
+
+  :host([appearance='lightweight']:hover) .content::before {
+    background: ${accentForegroundHover};
+  }
+
+  :host([appearance='lightweight']:active) .content::before {
+    background: ${accentForegroundActive};
+  }
+
+  :host([appearance="lightweight"]) .control:${focusVisible} .content::before {
+    background: ${neutralForegroundRest};
+    height: calc(${focusStrokeWidth} * 1px);
+  }
+`.withBehaviors(
+  forcedColorsStylesheetBehavior(
+    css`
+      :host([appearance="lightweight"]) .control:hover,
+      :host([appearance="lightweight"]) .control:${focusVisible} {
+        forced-color-adjust: none;
+        background: ${SystemColors.ButtonFace};
+        color: ${SystemColors.Highlight};
+      }
+      :host([appearance="lightweight"]) .control:hover .content::before,
+      :host([appearance="lightweight"]) .control:${focusVisible} .content::before {
+        background: ${SystemColors.Highlight};
+      }
+
+      :host([appearance="lightweight"][href]) .control:hover,
+      :host([appearance="lightweight"][href]) .control:${focusVisible} {
+        background: ${SystemColors.ButtonFace};
+        box-shadow: none;
+        color: ${SystemColors.LinkText};
+      }
+
+      :host([appearance="lightweight"][href]) .control:hover .content::before,
+      :host([appearance="lightweight"][href]) .control:${focusVisible} .content::before {
+        background: ${SystemColors.LinkText};
+      }
+    `
+  )
+);
+
+/**
+ * @internal
+ */
 const OutlineButtonStyles = css`
   :host([appearance='outline']) {
     background: transparent;
@@ -538,6 +622,39 @@ export const buttonStyles: (
               background: ${SystemColors.ButtonFace};
               border-color: ${SystemColors.GrayText};
               color: ${SystemColors.GrayText};
+            }
+          `
+        )
+      )
+    ),
+    appearanceBehavior(
+      'lightweight',
+      css`
+        :host([appearance='lightweight'][disabled]:hover),
+        :host([appearance='lightweight'][disabled]:active) {
+          background-color: transparent;
+          color: ${accentForegroundRest};
+        }
+
+        :host([appearance='lightweight'][disabled]) .content::before,
+        :host([appearance='lightweight'][disabled]:hover) .content::before,
+        :host([appearance='lightweight'][disabled]:active) .content::before {
+          background: transparent;
+        }
+
+        ${LightweightButtonStyles}
+      `.withBehaviors(
+        forcedColorsStylesheetBehavior(
+          css`
+            :host([appearance='lightweight'].disabled) .control {
+              forced-color-adjust: none;
+              color: ${SystemColors.GrayText};
+            }
+
+            :host([appearance='lightweight'].disabled)
+              .control:hover
+              .content::before {
+              background: none;
             }
           `
         )

@@ -16,6 +16,7 @@ import { buttonStyles } from './button.styles';
 export type ButtonAppearance =
   | 'accent'
   | 'error'
+  | 'lightweight'
   | 'neutral'
   | 'outline'
   | 'stealth';
