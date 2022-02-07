@@ -4,7 +4,10 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Progress', () => {
-  test('With value', async ({ page }) => {
+  test('With value', async ({ browserName, page }) => {
+    // FIXME
+    test.skip(browserName === 'webkit', 'Progress bar animation unstable.');
+
     await page.goto('/iframe.html?id=progress--with-value');
 
     // Ensure the progress animation is finished
