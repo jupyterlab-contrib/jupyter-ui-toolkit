@@ -1,9 +1,12 @@
+// Copyright (c) Jupyter Development Team.
+// Distributed under the terms of the Modified BSD License.
+
 import { action } from '@storybook/addon-actions';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 import { TextField } from './index';
 
 export default {
-  title: 'Library/Text Field',
+  title: 'Text Field',
   argTypes: {
     label: { control: 'text' },
     placeholder: { control: 'text' },

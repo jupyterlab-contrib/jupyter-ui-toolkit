@@ -1,7 +1,13 @@
 import {
+  Avatar,
   Button,
   Option,
+  Progress,
+  Search,
   Select,
+  Tab,
+  TabPanel,
+  Tabs,
   TextField
 } from '@jupyter-notebook/react-components';
 import {
@@ -25,7 +31,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupyter-ui-demo:plugin',
   optional: [IThemeManager],
   autoStart: true,
-  activate: (app: JupyterFrontEnd, theme: IThemeManager | null) => {
+  activate: (app: JupyterFrontEnd) => {
     console.log('JupyterLab extension jupyter-ui-demo is activated!');
 
     const widget = new Widget({ node: createNode() });
@@ -33,13 +39,23 @@ const plugin: JupyterFrontEndPlugin<void> = {
     widget.id = 'artwork-ui-components';
     widget.title.label = 'Toolkit Gallery';
 
-    // Add listener
-    const firstButton = widget.node.querySelector('jp-button');
-    if (firstButton) {
-      firstButton.addEventListener('click', () => {
+    // Add listeners
+    const buttons = widget.node.querySelectorAll('jp-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
         alert('Reacting to vanilla click event.');
       });
-    }
+    });
+    const search = widget.node.querySelector('jp-search');
+    search?.addEventListener('change', event => {
+      console.log(event);
+      alert(`Search change event: ${(event as any).target.value}`);
+    });
+    const textField = widget.node.querySelector('jp-text-field');
+    textField?.addEventListener('change', event => {
+      console.log(event);
+      alert(`Text field change event: ${(event as any).target.value}`);
+    });
 
     const reactWidget = ReactWidget.create(<Artwork />);
     reactWidget.addClass('jp-Artwork');
@@ -76,22 +92,33 @@ const plugin: JupyterFrontEndPlugin<void> = {
 };
 
 function Artwork(): JSX.Element {
+  const onChange = (event: any) => {
+    alert(`React on React change event: ${event?.target?.value}`);
+  };
   const onClick = () => {
     alert('Reacting on React click event.');
   };
+
   return (
-    <div className="jp-FlexRow">
-      <div className="jp-FlexColumn">
+    <div className="jp-Grid">
+      <div className="jp-FlexColumn" style={{ gridColumn: 1 }}>
         <div className="jp-FlexRow">
           <Button appearance="accent" onClick={onClick}>
             Button
           </Button>
-          <Button appearance="neutral">Button</Button>
-          <Button appearance="stealth" aria-label="Confirm">
+          <Button appearance="neutral" onClick={onClick}>
+            Button
+          </Button>
+          <Button appearance="stealth" aria-label="Confirm" onClick={onClick}>
             <span className="fa fa-cog"></span>
           </Button>
         </div>
-        <TextField value="Populated text">Text Field Label</TextField>
+        <Search value="Dummy search text" onChange={onChange}>
+          Search Label
+        </Search>
+        <TextField value="Populated text" onChange={onChange}>
+          Text Field Label
+        </TextField>
         <div className="jp-FlexColumn">
           <label>Label</label>
           <Select>
@@ -102,6 +129,24 @@ function Artwork(): JSX.Element {
         </div>
         {/* <TextArea>Text Area Label</TextArea>
         <Link href="#">Link Text</Link> */}
+      </div>
+      <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
+        <Avatar shape="circle">JS</Avatar>
+        <div className="jp-FlexColumn">
+          <label>Progress</label>
+          <Progress></Progress>
+          <Progress min={0} max={50} value={30}></Progress>
+        </div>
+      </div>
+      <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
+        <Tabs>
+          <Tab id="one">One</Tab>
+          <Tab id="two">Two</Tab>
+          <Tab id="three">Three</Tab>
+          <TabPanel id="panelOne">This is panel one content.</TabPanel>
+          <TabPanel id="panelTwo">This is panel two content.</TabPanel>
+          <TabPanel id="panelThree">This is panel three content.</TabPanel>
+        </Tabs>
       </div>
       {/* <div className="jp-FlexColumn">
         <RadioGroup orientation="vertical">
@@ -134,13 +179,14 @@ function createNode(): HTMLElement {
   node.insertAdjacentHTML(
     'afterbegin',
     `
-<div class="jp-FlexRow">
-    <div class="jp-FlexColumn">
+<div class="jp-Grid">
+    <div class="jp-FlexColumn" style="grid-column: 1;">
       <div class="jp-FlexRow">
         <jp-button appearance="accent">Button</jp-button>
         <jp-button appearance="neutral">Button</jp-button>
         <jp-button appearance="stealth" aria-label="Confirm"><span class="fa fa-cog"></span></jp-button>
       </div>
+      <jp-search value="Dummy search text">Search Label</jp-search>
       <jp-text-field value="Populated text">Text Field Label</jp-text-field>
       <div class="jp-FlexColumn">
         <label>
@@ -177,32 +223,41 @@ function createNode(): HTMLElement {
       </div>
       <jp-progress-ring></jp-progress-ring>
     </div>
-    <div class="jp-FlexColumn">
+    -->
+    <div class="jp-FlexColumn" style="grid-column: 2;">
+      <jp-avatar shape="circle">JS</jp-avatar>
+      <div class="jp-FlexColumn">
+        <label>Progress</label>
+        <jp-progress></jp-progress>
+        <jp-progress min="0" max="50" value="30"></jp-progress>
+      </div>
+    </div>
+    <div class="jp-FlexColumn" style="grid-column: 3;">
+      <!--
       <div>
         <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
       </div>
-      <jp-panels aria-label="Default">
-        <jp-panel-tab id="tab-1">Tab 1</jp-panel-tab>
-        <jp-panel-tab id="tab-2">Tab 2</jp-panel-tab>
-        <jp-panel-tab id="tab-3">Tab 3</jp-panel-tab>
-        <jp-panel-tab id="tab-4">Tab 4</jp-panel-tab>
-        <jp-panel-view id="view-1">
+      -->
+      <jp-tabs aria-label="Default">
+        <jp-tab id="tab-1">Tab 1</jp-tab>
+        <jp-tab id="tab-2">Tab 2</jp-tab>
+        <jp-tab id="tab-3">Tab 3</jp-tab>
+        <jp-tab id="tab-4">Tab 4</jp-tab>
+        <jp-tab-panel id="view-1">
           Tab 1 Content
-        </jp-panel-view>
-        <jp-panel-view id="view-2">
+        </jp-tab-panel>
+        <jp-tab-panel id="view-2">
           Tab 2 Content
-        </jp-panel-view>
-        <jp-panel-view id="view-3">
+        </jp-tab-panel>
+        <jp-tab-panel id="view-3">
           Tab 3 Content
-        </jp-panel-view>
-        <jp-panel-view id="view-4">
+        </jp-tab-panel>
+        <jp-tab-panel id="view-4">
           Tab 4 Content
-        </jp-panel-view>
-      </jp-panels>
+        </jp-tab-panel>
+      </jp-tabs>
     </div>
-    -->
 </div>
-
 `
   );
 

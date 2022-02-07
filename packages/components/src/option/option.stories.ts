@@ -1,7 +1,7 @@
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Library/Option',
+  title: 'Option',
   argTypes: {
     label: { control: 'text' },
     isDisabled: { control: 'boolean' },

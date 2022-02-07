@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Button', () => {
   test('Default', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--default');
+    await page.goto('/iframe.html?id=button--default');
 
     expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
       'button-default.png'
@@ -10,7 +10,7 @@ test.describe('Button', () => {
   });
 
   test('Error', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--error');
+    await page.goto('/iframe.html?id=button--error');
 
     expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
       'button-error.png'
@@ -18,7 +18,7 @@ test.describe('Button', () => {
   });
 
   test('Neutral', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--neutral');
+    await page.goto('/iframe.html?id=button--neutral');
 
     expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
       'button-neutral.png'
@@ -26,7 +26,7 @@ test.describe('Button', () => {
   });
 
   // test('With Autofocus', async ({ page }) => {
-  //   await page.goto('/iframe.html?id=library-button--with-autofocus');
+  //   await page.goto('/iframe.html?id=button--with-autofocus');
 
   //   expect(
   //     await page.locator('jp-button').screenshot()
@@ -34,7 +34,7 @@ test.describe('Button', () => {
   // });
 
   test('With Disabled', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--with-disabled');
+    await page.goto('/iframe.html?id=button--with-disabled');
 
     expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
       'button-with-disabled.png'
@@ -42,7 +42,7 @@ test.describe('Button', () => {
   });
 
   test('With Start Icon', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--with-start-icon');
+    await page.goto('/iframe.html?id=button--with-start-icon');
 
     expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
       'button-with-start-icon.png'
@@ -50,7 +50,7 @@ test.describe('Button', () => {
   });
 
   test('Icon Only', async ({ page }) => {
-    await page.goto('/iframe.html?id=library-button--icon-only');
+    await page.goto('/iframe.html?id=button--icon-only');
 
     expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
       'button-icon-only.png'

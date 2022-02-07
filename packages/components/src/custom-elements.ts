@@ -2,21 +2,50 @@
 // Distributed under the terms of the Modified BSD License.
 
 import type { Container } from '@microsoft/fast-foundation';
+import { jpAvatar } from './avatar/index';
+import { jpBreadcrumb } from './breadcrumb/index';
+import { jpBreadcrumbItem } from './breadcrumb-item/index';
 import { jpButton } from './button/index';
 import { jpOption } from './option/index';
+import { jpProgress } from './progress/index';
+import { jpSearch } from './search/index';
 import { jpSelect } from './select/index';
+import { jpTabPanel } from './tab-panel/index';
+import { jpTab } from './tab/index';
+import { jpTabs } from './tabs/index';
 import { jpTextField } from './text-field/index';
 
 // Don't delete these. They're needed so that API-extractor doesn't add import types
 // with improper pathing
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import type { Avatar } from './avatar/index';
+import type { Breadcrumb } from './breadcrumb/index';
+import type { BreadcrumbItem } from './breadcrumb-item/index';
 import type { Button } from './button/index';
 import type { Option } from './option/index';
+import type { Progress } from './progress/index';
+import type { Search } from './search/index';
 import type { Select } from './select/index';
+import type { TabPanel } from './tab-panel/index';
+import type { Tab } from './tab/index';
+import type { Tabs } from './tabs/index';
 import type { TextField } from './text-field/index';
 
 // export all components
-export { jpButton, jpOption, jpSelect, jpTextField };
+export {
+  jpAvatar,
+  jpBreadcrumb,
+  jpBreadcrumbItem,
+  jpButton,
+  jpOption,
+  jpProgress,
+  jpSearch,
+  jpSelect,
+  jpTab,
+  jpTabPanel,
+  jpTabs,
+  jpTextField
+};
 
 /**
  * All Jupyter Web Components
@@ -26,9 +55,17 @@ export { jpButton, jpOption, jpSelect, jpTextField };
  * statically link and register all available components.
  */
 export const allComponents = {
+  jpAvatar,
+  jpBreadcrumb,
+  jpBreadcrumbItem,
   jpButton,
   jpOption,
+  jpProgress,
+  jpSearch,
   jpSelect,
+  jpTab,
+  jpTabPanel,
+  jpTabs,
   jpTextField,
   register(container?: Container, ...rest: any[]): void {
     if (!container) {

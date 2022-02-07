@@ -3,17 +3,19 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  accentFillActive,
   accentFillFocus,
-  accentFillHover,
   bodyFont,
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  focusStrokeWidth,
   neutralFillHover,
   neutralFillInputHover,
   neutralFillInputRest,
   neutralFillRest,
+  neutralFillStrongActive,
+  neutralFillStrongHover,
+  neutralFillStrongRest,
   neutralForegroundRest,
   neutralStrokeRest,
   strokeWidth,
@@ -24,9 +26,9 @@ import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   disabledCursor,
   display,
-  ElementDefinitionContext,
   focusVisible,
   forcedColorsStylesheetBehavior,
+  FoundationElementTemplate,
   TextFieldOptions
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
@@ -36,13 +38,10 @@ import { heightNumber } from '../styles';
  * Styles for Text Field
  * @public
  */
-export const textFieldStyles: (
-  context: ElementDefinitionContext,
-  definition: TextFieldOptions
-) => ElementStyles = (
-  context: ElementDefinitionContext,
-  definition: TextFieldOptions
-) =>
+export const textFieldStyles: FoundationElementTemplate<
+  ElementStyles,
+  TextFieldOptions
+> = (context, definition) =>
   css`
     ${display('inline-block')} :host {
       font-family: ${bodyFont};
@@ -58,7 +57,7 @@ export const textFieldStyles: (
       color: ${neutralForegroundRest};
       background: ${neutralFillInputRest};
       border-radius: calc(${controlCornerRadius} * 1px);
-      border: calc(${strokeWidth} * 1px) solid ${neutralStrokeRest};
+      border: calc(${strokeWidth} * 1px) solid ${neutralFillStrongRest};
       height: calc(${heightNumber} * 1px);
     }
 
@@ -122,16 +121,17 @@ export const textFieldStyles: (
 
     :host(:hover:not([disabled])) .root {
       background: ${neutralFillInputHover};
-      border-color: ${accentFillHover};
+      border-color: ${neutralFillStrongHover};
     }
 
     :host(:active:not([disabled])) .root {
       background: ${neutralFillInputHover};
-      border-color: ${accentFillActive};
+      border-color: ${neutralFillStrongActive};
     }
 
     :host(:focus-within:not([disabled])) .root {
       border-color: ${accentFillFocus};
+      box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px) ${accentFillFocus} inset;
     }
 
     :host([appearance='filled']) .root {

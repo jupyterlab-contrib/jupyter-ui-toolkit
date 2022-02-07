@@ -12,19 +12,26 @@ const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
 export const TextField: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
+    appearance?: 'outline' | 'filled';
     autofocus?: boolean;
-    cols?: number;
     disabled?: boolean;
     form?: string;
+    list?: string;
     maxlength?: number;
+    minlength?: number;
     name?: string;
+    pattern?: string;
     placeholder?: string;
     readonly?: boolean;
-    resize?: 'none' | 'vertical' | 'horizontal' | 'both';
-    rows?: number;
+    required?: boolean;
+    size?: number;
+    spellcheck?: string;
+    type?: 'text' | 'email' | 'password' | 'tel' | 'url';
     value?: string;
   },
   HTMLElement
-> = wrap(jpTextField()) as any;
+> = wrap(jpTextField(), {
+  events: { onChange: 'change', onInput: 'input' }
+}) as any;
 // @ts-expect-error unknown property
 TextField.displayName = 'Jupyter.TextField';
