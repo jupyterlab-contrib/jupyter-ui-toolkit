@@ -5,6 +5,10 @@
   "homepage": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit#readme",
   "license": "BSD-3-Clause",
   "author": "Project Jupyter",
+  "keywords": [
+    "Jupyter",
+    "React"
+  ],
   "bugs": {
     "url": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues"
   },

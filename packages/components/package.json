@@ -5,6 +5,12 @@
   "homepage": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit#readme",
   "license": "BSD-3-Clause",
   "author": "Project Jupyter",
+  "keywords": [
+    "Jupyter",
+    "FAST Design",
+    "Custom elements",
+    "Web components"
+  ],
   "bugs": {
     "url": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues"
   },
