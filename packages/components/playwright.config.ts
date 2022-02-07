@@ -16,7 +16,7 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry',
     launchOptions: {
       // Force slow motion to let storybook the time to update styles
-      slowMo: 30
+      slowMo: 40
     }
   },
   projects: [

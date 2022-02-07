@@ -7,6 +7,9 @@ test.describe('Progress', () => {
   test('With value', async ({ page }) => {
     await page.goto('/iframe.html?id=progress--with-value');
 
+    // Ensure the progress animation is finished
+    await page.waitForTimeout(200);
+
     expect(await page.locator('jp-progress').screenshot()).toMatchSnapshot(
       'progress-with-value.png'
     );
