@@ -18,6 +18,10 @@ export const ProgressRing: React.DetailedHTMLFactory<
     paused?: boolean;
   },
   HTMLElement
-> = wrap(jpProgressRing()) as any;
+> = wrap(
+  jpProgressRing(),
+  // Name need to be exported otherwise a `jp-progress` element is instantiated
+  { name: 'jp-progress-ring' }
+) as any;
 // @ts-expect-error unknown property
 ProgressRing.displayName = 'Jupyter.ProgressRing';

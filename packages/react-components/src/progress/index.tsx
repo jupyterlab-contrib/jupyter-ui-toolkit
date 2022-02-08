@@ -18,6 +18,6 @@ export const Progress: React.DetailedHTMLFactory<
     paused?: boolean;
   },
   HTMLElement
-> = wrap(jpProgress()) as any;
+> = wrap(jpProgress(), { name: 'jp-progress' }) as any;
 // @ts-expect-error unknown property
 Progress.displayName = 'Jupyter.Progress';

@@ -269,7 +269,7 @@ function createNode(): HTMLElement {
         <jp-progress min="0" max="50" value="30"></jp-progress>
       </div>
       <div class="jp-FlexColumn">
-        <label>Progress</label>
+        <label>Progress Ring</label>
         <jp-progress-ring></jp-progress-ring>
         <jp-progress-ring min="0" max="50" value="30"></jp-progress-ring>
       </div>
