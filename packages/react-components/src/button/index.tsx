@@ -12,7 +12,7 @@ const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
 export const Button: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
-    appearance?: 'accent' | 'neutral' | 'outline' | 'stealth';
+    appearance?: 'accent' | 'lightweight' | 'neutral' | 'outline' | 'stealth';
     'aria-label'?: string;
     autofocus?: boolean;
     disabled?: boolean;
