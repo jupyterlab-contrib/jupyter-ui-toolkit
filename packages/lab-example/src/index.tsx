@@ -1,5 +1,7 @@
 import {
   Avatar,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   Option,
   Progress,
@@ -148,6 +150,11 @@ function Artwork(): JSX.Element {
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
         <Avatar shape="circle">JS</Avatar>
+        <Breadcrumb>
+          <BreadcrumbItem href="#">Item 1</BreadcrumbItem>
+          <BreadcrumbItem href="#">Item 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Item 3</BreadcrumbItem>
+        </Breadcrumb>
         <div className="jp-FlexColumn">
           <label>Progress</label>
           <Progress></Progress>
@@ -247,6 +254,11 @@ function createNode(): HTMLElement {
     -->
     <div class="jp-FlexColumn" style="grid-column: 2;">
       <jp-avatar shape="circle">JS</jp-avatar>
+      <jp-breadcrumb>
+        <jp-breadcrumb-item href="#">Item 1</jp-breadcrumb-item>
+        <jp-breadcrumb-item href="#">Item 2</jp-breadcrumb-item>
+        <jp-breadcrumb-item href="#">Item 3</jp-breadcrumb-item>
+      </jp-breadcrumb>
       <div class="jp-FlexColumn">
         <label>Progress</label>
         <jp-progress></jp-progress>
