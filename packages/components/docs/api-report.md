@@ -4,245 +4,287 @@
 
 ```ts
 
-import { Anchor } from '@microsoft/fast-foundation';
-import { AnchorOptions } from '@microsoft/fast-foundation';
-import { Badge as Badge_2 } from '@microsoft/fast-foundation';
-import { BaseProgress } from '@microsoft/fast-foundation';
+import { Avatar } from '@microsoft/fast-components';
+import { AvatarOptions } from '@microsoft/fast-foundation';
+import { Breadcrumb } from '@microsoft/fast-foundation';
+import { BreadcrumbItem } from '@microsoft/fast-foundation';
+import { BreadcrumbItemOptions } from '@microsoft/fast-foundation';
+import { breadcrumbStyles } from '@microsoft/fast-components';
 import { Button as Button_2 } from '@microsoft/fast-foundation';
-import { ButtonOptions } from '@microsoft/fast-foundation';
-import { Checkbox as Checkbox_2 } from '@microsoft/fast-foundation';
-import { CheckboxOptions } from '@microsoft/fast-foundation';
+import { ColorRecipe } from '@microsoft/fast-components';
 import { Constructable } from '@microsoft/fast-element';
 import type { Container } from '@microsoft/fast-foundation';
-import { DataGrid as DataGrid_2 } from '@microsoft/fast-foundation';
-import { DataGridCell as DataGridCell_2 } from '@microsoft/fast-foundation';
-import { DataGridRow as DataGridRow_2 } from '@microsoft/fast-foundation';
-import { DesignSystem } from '@microsoft/fast-foundation';
-import { Divider as Divider_2 } from '@microsoft/fast-foundation';
+import { CSSDesignToken } from '@microsoft/fast-foundation';
+import type { DesignSystem } from '@microsoft/fast-foundation';
+import { DesignToken } from '@microsoft/fast-foundation';
+import { ElementStyles } from '@microsoft/fast-element';
 import { FoundationElement } from '@microsoft/fast-foundation';
 import { FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { FoundationElementRegistry } from '@microsoft/fast-foundation';
-import { ListboxOption } from '@microsoft/fast-foundation';
+import { FoundationElementTemplate } from '@microsoft/fast-foundation';
+import { horizontalSliderLabelStyles } from '@microsoft/fast-components';
+import { InteractiveColorRecipe } from '@microsoft/fast-components';
 import { ListboxOptionOptions } from '@microsoft/fast-foundation';
+import { ListboxOption as Option_2 } from '@microsoft/fast-foundation';
 import { OverrideFoundationElementDefinition } from '@microsoft/fast-foundation';
-import { ProgressRingOptions } from '@microsoft/fast-foundation';
-import { Radio as Radio_2 } from '@microsoft/fast-foundation';
-import { RadioGroup as RadioGroup_2 } from '@microsoft/fast-foundation';
-import { RadioOptions } from '@microsoft/fast-foundation';
-import { Select } from '@microsoft/fast-foundation';
+import { Palette } from '@microsoft/fast-components';
+import { BaseProgress as Progress } from '@microsoft/fast-foundation';
+import { ProgressOptions } from '@microsoft/fast-foundation';
+import { progressStyles } from '@microsoft/fast-components';
+import { Search } from '@microsoft/fast-components';
+import { SearchAppearance } from '@microsoft/fast-components';
+import { Select as Select_2 } from '@microsoft/fast-foundation';
 import { SelectOptions } from '@microsoft/fast-foundation';
+import { SliderLabel } from '@microsoft/fast-components';
+import { sliderLabelStyles } from '@microsoft/fast-components';
+import { SliderOptions } from '@microsoft/fast-foundation';
+import { Swatch } from '@microsoft/fast-components';
 import { Tab } from '@microsoft/fast-foundation';
 import { TabPanel } from '@microsoft/fast-foundation';
+import { tabPanelStyles } from '@microsoft/fast-components';
 import { Tabs } from '@microsoft/fast-foundation';
-import { TextArea as TextArea_2 } from '@microsoft/fast-foundation';
-import { TextField as TextField_2 } from '@microsoft/fast-foundation';
+import { TabsOptions } from '@microsoft/fast-foundation';
+import { TextField } from '@microsoft/fast-components';
+import { TextFieldAppearance } from '@microsoft/fast-components';
 import { TextFieldOptions } from '@microsoft/fast-foundation';
+import { verticalSliderLabelStyles } from '@microsoft/fast-components';
+import { ViewTemplate } from '@microsoft/fast-element';
+
+// @public
+export function addJupyterLabThemeChangeListener(): void;
 
 // @public
 export const allComponents: {
-    jpBadge: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Badge>;
-    jpButton: (overrideDefinition?: OverrideFoundationElementDefinition<ButtonOptions> | undefined) => FoundationElementRegistry<ButtonOptions, Constructable<FoundationElement>>;
-    jpCheckbox: (overrideDefinition?: OverrideFoundationElementDefinition<CheckboxOptions> | undefined) => FoundationElementRegistry<CheckboxOptions, Constructable<FoundationElement>>;
-    jpDataGrid: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DataGrid>;
-    jpDataGridCell: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DataGridCell>;
-    jpDataGridRow: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DataGridRow>;
-    jpDivider: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Divider>;
-    jpDropdown: (overrideDefinition?: OverrideFoundationElementDefinition<SelectOptions> | undefined) => FoundationElementRegistry<SelectOptions, Constructable<FoundationElement>>;
-    jpLink: (overrideDefinition?: OverrideFoundationElementDefinition<AnchorOptions> | undefined) => FoundationElementRegistry<AnchorOptions, Constructable<FoundationElement>>;
-    jpOption: (overrideDefinition?: OverrideFoundationElementDefinition<ListboxOptionOptions> | undefined) => FoundationElementRegistry<ListboxOptionOptions, Constructable<FoundationElement>>;
-    jpPanels: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Panels>;
-    jpPanelTab: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof PanelTab>;
-    jpPanelView: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof PanelView>;
-    jpProgressRing: (overrideDefinition?: OverrideFoundationElementDefinition<ProgressRingOptions> | undefined) => FoundationElementRegistry<ProgressRingOptions, Constructable<FoundationElement>>;
-    jpRadioGroup: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof RadioGroup>;
-    jpRadio: (overrideDefinition?: OverrideFoundationElementDefinition<RadioOptions> | undefined) => FoundationElementRegistry<RadioOptions, Constructable<FoundationElement>>;
-    jpTag: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Tag>;
-    jpTextArea: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof TextArea>;
-    jpTextField: (overrideDefinition?: OverrideFoundationElementDefinition<TextFieldOptions> | undefined) => FoundationElementRegistry<TextFieldOptions, Constructable<FoundationElement>>;
+    jpAvatar: (overrideDefinition?: OverrideFoundationElementDefinition<AvatarOptions> | undefined) => FoundationElementRegistry<AvatarOptions, Constructable<FoundationElement>>;
+    jpBreadcrumb: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Breadcrumb>;
+    jpBreadcrumbItem: (overrideDefinition?: OverrideFoundationElementDefinition<BreadcrumbItemOptions> | undefined) => FoundationElementRegistry<BreadcrumbItemOptions, Constructable<FoundationElement>>;
+    jpButton: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Button>;
+    jpOption: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+    styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+    styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
+    }, typeof Option_2>;
+    jpProgress: (overrideDefinition?: OverrideFoundationElementDefinition<ProgressOptions> | undefined) => FoundationElementRegistry<ProgressOptions, Constructable<FoundationElement>>;
+    jpSearch: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Search>;
+    jpSelect: (overrideDefinition?: OverrideFoundationElementDefinition<SelectOptions> | undefined) => FoundationElementRegistry<SelectOptions, Constructable<FoundationElement>>;
+    jpSlider: (overrideDefinition?: OverrideFoundationElementDefinition<SliderOptions> | undefined) => FoundationElementRegistry<SliderOptions, Constructable<FoundationElement>>;
+    jpSliderLabel: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof SliderLabel>;
+    jpTab: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Tab>;
+    jpTabPanel: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof TabPanel>;
+    jpTabs: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Tabs>;
+    jpTextField: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof TextField>;
     register(container?: Container | undefined, ...rest: any[]): void;
 };
 
+export { Avatar }
+
+// @public (undocumented)
+export const avatarStyles: FoundationElementTemplate<ElementStyles, AvatarOptions>;
+
+export { Breadcrumb }
+
+export { BreadcrumbItem }
+
 // @public
-export class Badge extends Badge_2 {
-    // @internal
-    connectedCallback(): void;
-}
+export const breadcrumbItemStyles: FoundationElementTemplate<ElementStyles, BreadcrumbItemOptions>;
+
+export { breadcrumbStyles }
 
 // Warning: (ae-internal-missing-underscore) The name "Button" should be prefixed with an underscore because the declaration is marked as @internal
 //
-// @internal
+// @internal (undocumented)
 export class Button extends Button_2 {
     // @public
     appearance: ButtonAppearance;
+    // (undocumented)
     connectedCallback(): void;
     // @public
     defaultSlottedContentChanged(oldValue: HTMLElement[], newValue: HTMLElement[]): void;
+    // @public
+    minimal: boolean;
 }
 
 // @public
-export type ButtonAppearance = 'accent' | 'neutral' | 'outline' | 'stealth';
+export type ButtonAppearance = 'accent' | 'error' | 'lightweight' | 'neutral' | 'outline' | 'stealth';
+
+// @public (undocumented)
+export const errorFillActive: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const errorFillFocus: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const errorFillHover: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const errorFillRecipe: DesignToken<InteractiveColorRecipe>;
+
+// @public (undocumented)
+export const errorFillRest: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const errorForegroundActive: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const errorForegroundFocus: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const errorForegroundHover: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const errorForegroundRecipe: DesignToken<InteractiveColorRecipe>;
+
+// @public (undocumented)
+export const errorForegroundRest: CSSDesignToken<Swatch>;
 
 // @public
-export class Checkbox extends Checkbox_2 {
-    // @internal
-    connectedCallback(): void;
-}
+export const errorPalette: DesignToken<Palette<Swatch>>;
+
+// @public (undocumented)
+export const foregroundOnErrorActive: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const foregroundOnErrorActiveLarge: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const foregroundOnErrorFocus: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const foregroundOnErrorFocusLarge: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const foregroundOnErrorHover: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const foregroundOnErrorHoverLarge: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const foregroundOnErrorLargeRecipe: DesignToken<ColorRecipe>;
+
+// @public (undocumented)
+export const foregroundOnErrorRecipe: DesignToken<ColorRecipe>;
+
+// @public (undocumented)
+export const foregroundOnErrorRest: CSSDesignToken<Swatch>;
+
+// @public (undocumented)
+export const foregroundOnErrorRestLarge: CSSDesignToken<Swatch>;
+
+export { horizontalSliderLabelStyles }
 
 // @public
-export class DataGrid extends DataGrid_2 {
-    // @internal
-    connectedCallback(): void;
-}
+export const jpAvatar: (overrideDefinition?: OverrideFoundationElementDefinition<AvatarOptions> | undefined) => FoundationElementRegistry<AvatarOptions, Constructable<FoundationElement>>;
 
 // @public
-export class DataGridCell extends DataGridCell_2 {
-}
+export const jpBreadcrumb: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Breadcrumb>;
 
 // @public
-export class DataGridRow extends DataGridRow_2 {
-}
+export const jpBreadcrumbItem: (overrideDefinition?: OverrideFoundationElementDefinition<BreadcrumbItemOptions> | undefined) => FoundationElementRegistry<BreadcrumbItemOptions, Constructable<FoundationElement>>;
+
+// Warning: (ae-incompatible-release-tags) The symbol "jpButton" is marked as @public, but its signature references "Button" which is marked as @internal
+//
+// @public
+export const jpButton: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Button>;
 
 // @public
-export class Divider extends Divider_2 {
-}
+export const jpOption: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
+}, typeof Option_2>;
 
 // @public
-export class Dropdown extends Select {
-}
+export const jpProgress: (overrideDefinition?: OverrideFoundationElementDefinition<ProgressOptions> | undefined) => FoundationElementRegistry<ProgressOptions, Constructable<FoundationElement>>;
 
 // @public
-export type DropdownOptions = SelectOptions;
+export const jpSearch: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Search>;
 
 // @public
-export const jpBadge: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Badge>;
+export const jpSelect: (overrideDefinition?: OverrideFoundationElementDefinition<SelectOptions> | undefined) => FoundationElementRegistry<SelectOptions, Constructable<FoundationElement>>;
 
 // @public
-export const jpButton: (overrideDefinition?: OverrideFoundationElementDefinition<ButtonOptions> | undefined) => FoundationElementRegistry<ButtonOptions, Constructable<FoundationElement>>;
+export const jpSlider: (overrideDefinition?: OverrideFoundationElementDefinition<SliderOptions> | undefined) => FoundationElementRegistry<SliderOptions, Constructable<FoundationElement>>;
 
 // @public
-export const jpCheckbox: (overrideDefinition?: OverrideFoundationElementDefinition<CheckboxOptions> | undefined) => FoundationElementRegistry<CheckboxOptions, Constructable<FoundationElement>>;
+export const jpSliderLabel: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof SliderLabel>;
 
 // @public
-export const jpDataGrid: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DataGrid>;
+export const jpTab: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Tab>;
 
 // @public
-export const jpDataGridCell: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DataGridCell>;
+export const jpTabPanel: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof TabPanel>;
 
 // @public
-export const jpDataGridRow: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DataGridRow>;
+export const jpTabs: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Tabs>;
 
 // @public
-export const jpDivider: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Divider>;
+export const jpTextField: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof TextField>;
 
-// @public
-export const jpDropdown: (overrideDefinition?: OverrideFoundationElementDefinition<SelectOptions> | undefined) => FoundationElementRegistry<SelectOptions, Constructable<FoundationElement>>;
-
-// @public
-export const jpLink: (overrideDefinition?: OverrideFoundationElementDefinition<AnchorOptions> | undefined) => FoundationElementRegistry<AnchorOptions, Constructable<FoundationElement>>;
-
-// @public
-export const jpOption: (overrideDefinition?: OverrideFoundationElementDefinition<ListboxOptionOptions> | undefined) => FoundationElementRegistry<ListboxOptionOptions, Constructable<FoundationElement>>;
-
-// @public
-export const jpPanels: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Panels>;
-
-// @public
-export const jpPanelTab: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof PanelTab>;
-
-// @public
-export const jpPanelView: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof PanelView>;
-
-// @public
-export const jpProgressRing: (overrideDefinition?: OverrideFoundationElementDefinition<ProgressRingOptions> | undefined) => FoundationElementRegistry<ProgressRingOptions, Constructable<FoundationElement>>;
-
-// @public
-export const jpRadio: (overrideDefinition?: OverrideFoundationElementDefinition<RadioOptions> | undefined) => FoundationElementRegistry<RadioOptions, Constructable<FoundationElement>>;
-
-// @public
-export const jpRadioGroup: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof RadioGroup>;
-
-// @public
-export const jpTag: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Tag>;
-
-// @public
-export const jpTextArea: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof TextArea>;
-
-// @public
-export const jpTextField: (overrideDefinition?: OverrideFoundationElementDefinition<TextFieldOptions> | undefined) => FoundationElementRegistry<TextFieldOptions, Constructable<FoundationElement>>;
-
-// @public
-export class Link extends Anchor {
-}
-
-// @public
-export type LinkOptions = AnchorOptions;
-
-// @public
-class Option_2 extends ListboxOption {
-    // @internal
-    connectedCallback(): void;
-}
 export { Option_2 as Option }
 
 // @public
-export type OptionOptions = ListboxOptionOptions;
+export const optionStyles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
 
-// @public
-export class Panels extends Tabs {
-    // @internal
-    connectedCallback(): void;
-}
+export { Progress }
 
-// @public
-export class PanelTab extends Tab {
-    // @internal
-    connectedCallback(): void;
-}
-
-// @public
-export class PanelView extends TabPanel {
-}
-
-// @public
-export class ProgressRing extends BaseProgress {
-    // @internal
-    attributeChangedCallback(attrName: string, oldVal: string, newVal: string): void;
-    // @internal
-    connectedCallback(): void;
-}
+export { progressStyles }
 
 // @public
 export function provideJupyterDesignSystem(element?: HTMLElement): DesignSystem;
 
+export { Search }
+
+export { SearchAppearance }
+
+// @public (undocumented)
+export const searchStyles: FoundationElementTemplate<ElementStyles, TextFieldOptions>;
+
 // @public
-export class Radio extends Radio_2 {
-    // @internal
-    connectedCallback(): void;
+export class Select extends Select_2 {
+    minimal: boolean;
 }
 
 // @public
-export class RadioGroup extends RadioGroup_2 {
-    // @internal
-    connectedCallback(): void;
-}
+export const selectStyles: FoundationElementTemplate<ElementStyles, SelectOptions>;
+
+export { SliderLabel }
+
+export { sliderLabelStyles }
+
+export { Tab }
+
+export { TabPanel }
+
+export { tabPanelStyles }
+
+export { Tabs }
 
 // @public
-export class Tag extends Badge_2 {
-    // @internal
-    connectedCallback(): void;
-}
+export const tabsStyles: FoundationElementTemplate<ElementStyles, TabsOptions>;
 
 // @public
-export class TextArea extends TextArea_2 {
-    // @internal
-    connectedCallback(): void;
-}
+export const tabStyles: FoundationElementTemplate<ElementStyles>;
+
+export { TextField }
+
+export { TextFieldAppearance }
 
 // @public
-export class TextField extends TextField_2 {
-    // @internal
-    connectedCallback(): void;
-}
+export const textFieldStyles: FoundationElementTemplate<ElementStyles, TextFieldOptions>;
+
+export { verticalSliderLabelStyles }
+
+// Warnings were encountered during analysis:
+//
+// dist/dts/custom-elements.d.ts:37:5 - (ae-incompatible-release-tags) The symbol "jpButton" is marked as @public, but its signature references "Button" which is marked as @internal
 
 // (No @packageDocumentation comment for this package)
 
