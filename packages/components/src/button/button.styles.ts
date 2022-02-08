@@ -383,6 +383,10 @@ export const LightweightButtonStyles = css`
     background: ${accentForegroundActive};
   }
 
+  :host([appearance="lightweight"]) .control:${focusVisible} {
+    outline-color: transparent;
+  }
+
   :host([appearance="lightweight"]) .control:${focusVisible} .content::before {
     background: ${neutralForegroundRest};
     height: calc(${focusStrokeWidth} * 1px);
