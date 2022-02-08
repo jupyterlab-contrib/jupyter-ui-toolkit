@@ -82,7 +82,7 @@ const BaseButtonStyles = css`
     border-radius: calc(${controlCornerRadius} * 1px);
     fill: currentcolor;
     cursor: pointer;
-    margin: calc((${designUnit} + ${density} + 2) * 1px);
+    margin: calc((${focusStrokeWidth} + 2) * 1px);
   }
 
   .control {
@@ -95,7 +95,9 @@ const BaseButtonStyles = css`
     align-items: center;
     padding: 0 calc((10 + (${designUnit} * 2 * ${density})) * 1px);
     white-space: nowrap;
-    outline: none;
+    outline: calc(${focusStrokeWidth} * 1px) solid transparent;
+    outline-offset: 2px;
+    -moz-outline-radius: 0px;
     text-decoration: none;
     border: calc(${strokeWidth} * 1px) solid transparent;
     color: inherit;
@@ -125,9 +127,7 @@ const BaseButtonStyles = css`
 
   /* prettier-ignore */
   .control:${focusVisible} {
-    outline: 1px solid ${neutralFillStrongFocus};
-    outline-offset: calc((${designUnit} + ${density}) * 1px);
-    -moz-outline-radius: 0px;
+    outline-color: ${neutralFillStrongFocus};
   }
 
   .control::-moz-focus-inner {
@@ -180,9 +180,7 @@ const BaseButtonStyles = css`
       .control:${focusVisible} {
         forced-color-adjust: none;
         background-color: ${SystemColors.Highlight};
-        outline: 1px solid ${SystemColors.ButtonText};
-        outline-offset: calc((${designUnit} + ${density}) * 1px);
-        -moz-outline-radius: 0px;
+        outline-color: ${SystemColors.ButtonText};
         color: ${SystemColors.HighlightText};
       }
 
@@ -229,9 +227,7 @@ const AccentButtonStyles = css`
   }
 
   :host([appearance="accent"]) .control:${focusVisible} {
-    outline: 1px solid ${accentFillFocus};
-    outline-offset: calc((${designUnit} + ${density}) * 1px);
-    -moz-outline-radius: 0px;
+    outline-color: ${accentFillFocus};
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
@@ -250,9 +246,7 @@ const AccentButtonStyles = css`
       }
 
       :host([appearance="accent"]) .control:${focusVisible} {
-        outline: 1px solid ${SystemColors.Highlight};
-        outline-offset: calc((${designUnit} + ${density}) * 1px);
-        -moz-outline-radius: 0px;
+        outline-color: ${SystemColors.Highlight};
       }
 
       :host([appearance='accent'][href]) .control {
@@ -297,9 +291,7 @@ const ErrorButtonStyles = css`
   }
 
   :host([appearance="error"]) .control:${focusVisible} {
-    outline: 1px solid ${errorFillFocus};
-    outline-offset: calc((${designUnit} + ${density}) * 1px);
-    -moz-outline-radius: 0px;
+    outline-color: ${errorFillFocus};
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
@@ -318,9 +310,7 @@ const ErrorButtonStyles = css`
       }
 
       :host([appearance="error"]) .control:${focusVisible} {
-        outline: 1px solid ${SystemColors.Highlight};
-        outline-offset: calc((${designUnit} + ${density}) * 1px);
-        -moz-outline-radius: 0px;
+        outline-color: ${SystemColors.Highlight};
       }
 
       :host([appearance='error'][href]) .control {
@@ -448,9 +438,7 @@ const OutlineButtonStyles = css`
   }
 
   :host([appearance="outline"]) .control:${focusVisible} {
-    outline: 1px solid ${accentFillFocus};
-    outline-offset: calc((${designUnit} + ${density}) * 1px);
-    -moz-outline-radius: 0px;
+    outline-color: ${accentFillFocus};
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
@@ -461,9 +449,7 @@ const OutlineButtonStyles = css`
       :host([appearance="outline"]) .control:${focusVisible} {
         forced-color-adjust: none;
         background-color: ${SystemColors.Highlight};
-        outline: 1px solid ${SystemColors.ButtonText};
-        outline-offset: calc((${designUnit} + ${density}) * 1px);
-        -moz-outline-radius: 0px;
+        outline-color: ${SystemColors.ButtonText};
         color: ${SystemColors.HighlightText};
         fill: currentColor;
       }
@@ -497,6 +483,10 @@ const StealthButtonStyles = css`
 
   :host([appearance='stealth']:active) {
     background: ${neutralFillStealthActive};
+  }
+
+  :host([appearance='stealth']) .control:${focusVisible} {
+    outline-color: ${accentFillFocus};
   }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(
