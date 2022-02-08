@@ -1,10 +1,14 @@
 import {
   Avatar,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   Option,
   Progress,
   Search,
   Select,
+  Slider,
+  SliderLabel,
   Tab,
   TabPanel,
   Tabs,
@@ -58,6 +62,10 @@ const plugin: JupyterFrontEndPlugin<void> = {
       console.log(event);
       alert(`Text field change event: ${(event as any).target.value}`);
     });
+    const slider = widget.node.querySelector('jp-slider');
+    slider?.addEventListener('change', event => {
+      console.log(`Slider change event: ${(event as any).target.value}`);
+    });
 
     const reactWidget = ReactWidget.create(<Artwork />);
     reactWidget.addClass('jp-Artwork');
@@ -97,6 +105,9 @@ function Artwork(): JSX.Element {
   const onChange = (event: any) => {
     alert(`React on React change event: ${event?.target?.value}`);
   };
+  const onChangeConsole = (event: any) => {
+    console.log(`React on React change event: ${event?.target?.value}`);
+  };
   const onClick = () => {
     alert('Reacting on React click event.');
   };
@@ -129,11 +140,21 @@ function Artwork(): JSX.Element {
             <Option>Option Label #3</Option>
           </Select>
         </div>
+        <Slider min="0" max="100" onChange={onChangeConsole}>
+          <SliderLabel position="0">0%</SliderLabel>
+          <SliderLabel position="50">50%</SliderLabel>
+          <SliderLabel position="100">100%</SliderLabel>
+        </Slider>
         {/* <TextArea>Text Area Label</TextArea>
         <Link href="#">Link Text</Link> */}
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
         <Avatar shape="circle">JS</Avatar>
+        <Breadcrumb>
+          <BreadcrumbItem href="#">Item 1</BreadcrumbItem>
+          <BreadcrumbItem href="#">Item 2</BreadcrumbItem>
+          <BreadcrumbItem href="#">Item 3</BreadcrumbItem>
+        </Breadcrumb>
         <div className="jp-FlexColumn">
           <label>Progress</label>
           <Progress></Progress>
@@ -200,6 +221,11 @@ function createNode(): HTMLElement {
           <jp-option>Option Label #3</jp-option>
         </jp-select>
       </div>
+      <jp-slider min="0" max="100">
+        <jp-slider-label position="0">0%</jp-slider-label>
+        <jp-slider-label position="50">50%</jp-slider-label>
+        <jp-slider-label position="100">100%</jp-slider-label>
+      </jp-slider>
       <!-- <jp-text-area>Text Area Label</jp-text-area>
       <jp-link href="#">Link Text</jp-link> -->
     </div>
@@ -228,6 +254,11 @@ function createNode(): HTMLElement {
     -->
     <div class="jp-FlexColumn" style="grid-column: 2;">
       <jp-avatar shape="circle">JS</jp-avatar>
+      <jp-breadcrumb>
+        <jp-breadcrumb-item href="#">Item 1</jp-breadcrumb-item>
+        <jp-breadcrumb-item href="#">Item 2</jp-breadcrumb-item>
+        <jp-breadcrumb-item href="#">Item 3</jp-breadcrumb-item>
+      </jp-breadcrumb>
       <div class="jp-FlexColumn">
         <label>Progress</label>
         <jp-progress></jp-progress>

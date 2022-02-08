@@ -11,7 +11,14 @@ export default {
     appearance: {
       control: {
         type: 'select',
-        options: ['Accent', 'Error', 'Neutral', 'Outline', 'Stealth']
+        options: [
+          'Accent',
+          'Error',
+          'Lightweight',
+          'Neutral',
+          'Outline',
+          'Stealth'
+        ]
       }
     },
     isDisabled: { control: 'boolean' },
@@ -73,6 +80,12 @@ export const Neutral: any = Template.bind({});
 Neutral.args = {
   ...Default.args,
   appearance: 'Neutral'
+};
+
+export const Lightweight: any = Template.bind({});
+Lightweight.args = {
+  ...Default.args,
+  appearance: 'Lightweight'
 };
 
 export const WithAutofocus: any = Template.bind({});

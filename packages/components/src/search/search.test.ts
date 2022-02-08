@@ -3,60 +3,58 @@
 
 import { test, expect } from '@playwright/test';
 
-test.describe('Search', () => {
-  test('Default', async ({ page }) => {
-    await page.goto('/iframe.html?id=search--default');
+test('Default', async ({ page }) => {
+  await page.goto('/iframe.html?id=search--default');
 
-    expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
-      'search-default.png'
-    );
-  });
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-default.png'
+  );
+});
 
-  test('With Placeholder', async ({ page }) => {
-    await page.goto('/iframe.html?id=search--with-placeholder');
+test('With Placeholder', async ({ page }) => {
+  await page.goto('/iframe.html?id=search--with-placeholder');
 
-    expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
-      'search-with-placeholder.png'
-    );
-  });
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-with-placeholder.png'
+  );
+});
 
-  test('With Autofocus', async ({ page }) => {
-    await page.goto('/iframe.html?id=search--with-autofocus');
+test('With Autofocus', async ({ page }) => {
+  await page.goto('/iframe.html?id=search--with-autofocus');
 
-    expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
-      'search-with-autofocus.png'
-    );
-  });
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-with-autofocus.png'
+  );
+});
 
-  test('With Disabled', async ({ page }) => {
-    await page.goto('/iframe.html?id=search--with-disabled');
+test('With Disabled', async ({ page }) => {
+  await page.goto('/iframe.html?id=search--with-disabled');
 
-    expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
-      'search-with-disabled.png'
-    );
-  });
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-with-disabled.png'
+  );
+});
 
-  test('With Size', async ({ page }) => {
-    await page.goto('/iframe.html?id=search--with-size');
+test('With Size', async ({ page }) => {
+  await page.goto('/iframe.html?id=search--with-size');
 
-    expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
-      'search-with-size.png'
-    );
-  });
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-with-size.png'
+  );
+});
 
-  test('With Maxlength', async ({ page }) => {
-    await page.goto('/iframe.html?id=search--with-max-length');
+test('With Maxlength', async ({ page }) => {
+  await page.goto('/iframe.html?id=search--with-max-length');
 
-    expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
-      'search-with-maxlength.png'
-    );
-  });
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-with-maxlength.png'
+  );
+});
 
-  test('With Search Icon', async ({ page }) => {
-    await page.goto('/iframe.html?id=search--with-search-icon');
+test('With Search Icon', async ({ page }) => {
+  await page.goto('/iframe.html?id=search--with-search-icon');
 
-    expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
-      'search-with-search-icon.png'
-    );
-  });
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-with-search-icon.png'
+  );
 });

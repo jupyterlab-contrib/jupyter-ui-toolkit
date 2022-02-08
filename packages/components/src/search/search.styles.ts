@@ -158,7 +158,8 @@ export const searchStyles: FoundationElementTemplate<
 
     :host(:focus-within:not([disabled])) .root {
       border-color: ${accentFillFocus};
-      box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px) ${accentFillFocus} inset;
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - 1) * 1px) ${accentFillFocus}
+        inset;
     }
 
     .clear-button__hidden {

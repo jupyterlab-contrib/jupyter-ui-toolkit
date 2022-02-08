@@ -12,6 +12,7 @@ include yarn.lock
 graft jupyter_ui_demo/labextension
 
 # Javascript files
+include packages/components/README.md
 include packages/components/api-extractor.json
 include packages/components/package.json
 include packages/components/jest.config.js
@@ -23,9 +24,12 @@ include packages/components/tsconfig.storybook.json
 graft packages/components/.storybook
 graft packages/components/docs
 graft packages/components/src
+include packages/react-components/README.md
 include packages/react-components/package.json
 include packages/react-components/tsconfig.json
 graft packages/react-components/src
+include packages/lab-example/LICENSE
+include packages/lab-example/README.md
 include packages/lab-example/package.json
 include packages/lab-example/tsconfig.json
 graft packages/lab-example/src
