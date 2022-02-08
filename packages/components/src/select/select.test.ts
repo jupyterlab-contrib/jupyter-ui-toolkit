@@ -3,36 +3,34 @@
 
 import { test, expect } from '@playwright/test';
 
-test.describe('Select', () => {
-  test('Default', async ({ page }) => {
-    await page.goto('/iframe.html?id=select--default');
+test('Default', async ({ page }) => {
+  await page.goto('/iframe.html?id=select--default');
 
-    expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
-      'select-default.png'
-    );
-  });
+  expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
+    'select-default.png'
+  );
+});
 
-  test('WithOpen', async ({ page }) => {
-    await page.goto('/iframe.html?id=select--with-open');
+test('WithOpen', async ({ page }) => {
+  await page.goto('/iframe.html?id=select--with-open');
 
-    expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
-      'select-with-open.png'
-    );
-  });
+  expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
+    'select-with-open.png'
+  );
+});
 
-  test('WithDisabled', async ({ page }) => {
-    await page.goto('/iframe.html?id=select--with-disabled');
+test('WithDisabled', async ({ page }) => {
+  await page.goto('/iframe.html?id=select--with-disabled');
 
-    expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
-      'select-with-disabled.png'
-    );
-  });
+  expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
+    'select-with-disabled.png'
+  );
+});
 
-  test('WithCustomIndicator', async ({ page }) => {
-    await page.goto('/iframe.html?id=select--with-custom-indicator');
+test('WithCustomIndicator', async ({ page }) => {
+  await page.goto('/iframe.html?id=select--with-custom-indicator');
 
-    expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
-      'select-with-custom-indicator.png'
-    );
-  });
+  expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
+    'select-with-custom-indicator.png'
+  );
 });
