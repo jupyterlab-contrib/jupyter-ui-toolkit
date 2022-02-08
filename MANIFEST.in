@@ -28,8 +28,8 @@ include packages/react-components/README.md
 include packages/react-components/package.json
 include packages/react-components/tsconfig.json
 graft packages/react-components/src
-include packages/lab-components/LICENSE
-include packages/lab-components/README.md
+include packages/lab-example/LICENSE
+include packages/lab-example/README.md
 include packages/lab-example/package.json
 include packages/lab-example/tsconfig.json
 graft packages/lab-example/src
