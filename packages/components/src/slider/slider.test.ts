@@ -19,7 +19,10 @@ test('Vertical', async ({ page }) => {
   );
 });
 
-test('With Disabled', async ({ page }) => {
+test('With Disabled', async ({ browserName, page }) => {
+  // FIXME
+  test.skip(browserName === 'webkit', 'Slider thumb animation unstable.');
+
   await page.goto('/iframe.html?id=slider--with-disabled');
 
   expect(await page.locator('body').screenshot()).toMatchSnapshot(
