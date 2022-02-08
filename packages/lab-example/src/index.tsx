@@ -5,6 +5,7 @@ import {
   Button,
   Option,
   Progress,
+  ProgressRing,
   Search,
   Select,
   Slider,
@@ -160,6 +161,11 @@ function Artwork(): JSX.Element {
           <Progress></Progress>
           <Progress min={0} max={50} value={30}></Progress>
         </div>
+        <div className="jp-FlexColumn">
+          <label>Progress Ring</label>
+          <ProgressRing></ProgressRing>
+          <ProgressRing min={0} max={50} value={30}></ProgressRing>
+        </div>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
         <Tabs>
@@ -191,7 +197,6 @@ function Artwork(): JSX.Element {
         <div>
           <Tag>Tag</Tag>
         </div>
-        <ProgressRing></ProgressRing>
       </div> */}
     </div>
   );
@@ -249,7 +254,6 @@ function createNode(): HTMLElement {
         <jp-badge>1</jp-badge>
         <jp-tag>Tag</jp-tag>
       </div>
-      <jp-progress-ring></jp-progress-ring>
     </div>
     -->
     <div class="jp-FlexColumn" style="grid-column: 2;">
@@ -263,6 +267,11 @@ function createNode(): HTMLElement {
         <label>Progress</label>
         <jp-progress></jp-progress>
         <jp-progress min="0" max="50" value="30"></jp-progress>
+      </div>
+      <div class="jp-FlexColumn">
+        <label>Progress</label>
+        <jp-progress-ring></jp-progress-ring>
+        <jp-progress-ring min="0" max="50" value="30"></jp-progress-ring>
       </div>
     </div>
     <div class="jp-FlexColumn" style="grid-column: 3;">
