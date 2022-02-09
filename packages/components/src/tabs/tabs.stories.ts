@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -9,23 +10,21 @@ export default {
     activePanel: { control: 'select', options: [null, 'One', 'Two', 'Three'] },
     activeIndicator: { control: 'boolean' },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] }
-  },
-  parameters: {
-    actions: {
-      disabled: true
-    }
   }
 };
 
 const Template = (
   args,
   { globals: { backgrounds, accent }, parameters }
-): string => {
+): HTMLElement => {
   setTheme(accent, parameters.backgrounds, backgrounds);
 
-  return `<jp-tabs 
-    ${!args.activeIndicator && 'activeIndicator="false"'}
-    ${args.activePanel ? `activeId=Tab${args.activePanel}` : ''}
+  const container = document.createElement('div');
+  container.insertAdjacentHTML(
+    'afterbegin',
+    `<jp-tabs 
+    ${!args.activeIndicator && 'activeindicator="false"'}
+    ${args.activePanel ? `activeid=Tab${args.activePanel}` : ''}
     orientation="${args.orientation}"
   >
     <jp-tab id="TabOne">Tab one</jp-tab>
@@ -40,14 +39,24 @@ const Template = (
     <jp-tab-panel id="TabPanelThree">
         Tab three content. This is for testing.
     </jp-tab-panel>
-  </jp-tabs>`;
+  </jp-tabs>`
+  );
+
+  const tabs = container.firstChild as HTMLElement;
+
+  if (args.onChange) {
+    tabs.addEventListener('change', args.onChange);
+  }
+
+  return tabs;
 };
 
 export const Default = Template.bind({});
 Default.args = {
   activePanel: null,
   activeIndicator: true,
-  orientation: 'horizontal'
+  orientation: 'horizontal',
+  onChange: action('tabs-onchange')
 };
 
 export const Vertical = Template.bind({});

@@ -3,14 +3,14 @@
 
 import {
   provideJupyterDesignSystem,
-  jpProgress
+  jpProgressRing
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Progress: React.DetailedHTMLFactory<
+export const ProgressRing: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
     min?: number;
     max?: number;
@@ -18,6 +18,10 @@ export const Progress: React.DetailedHTMLFactory<
     paused?: boolean;
   },
   HTMLElement
-> = wrap(jpProgress(), { name: 'jp-progress' }) as any;
+> = wrap(
+  jpProgressRing(),
+  // Name need to be exported otherwise a `jp-progress` element is instantiated
+  { name: 'jp-progress-ring' }
+) as any;
 // @ts-expect-error unknown property
-Progress.displayName = 'Jupyter.Progress';
+ProgressRing.displayName = 'Jupyter.ProgressRing';

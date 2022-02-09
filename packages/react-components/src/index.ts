@@ -4,6 +4,7 @@ export * from './breadcrumb-item';
 export * from './button';
 export * from './option';
 export * from './progress';
+export * from './progress-ring';
 export * from './search';
 export * from './select';
 export * from './slider';

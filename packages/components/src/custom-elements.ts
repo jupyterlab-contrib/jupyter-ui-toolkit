@@ -8,6 +8,7 @@ import { jpBreadcrumbItem } from './breadcrumb-item/index';
 import { jpButton } from './button/index';
 import { jpOption } from './option/index';
 import { jpProgress } from './progress/index';
+import { jpProgressRing } from './progress-ring/index';
 import { jpSearch } from './search/index';
 import { jpSelect } from './select/index';
 import { jpSlider } from './slider/index';
@@ -26,6 +27,7 @@ import type { BreadcrumbItem } from './breadcrumb-item/index';
 import type { Button } from './button/index';
 import type { Option } from './option/index';
 import type { Progress } from './progress/index';
+import type { ProgressRing } from './progress-ring/index';
 import type { Search } from './search/index';
 import type { Select } from './select/index';
 import type { Slider } from './slider/index';
@@ -43,6 +45,7 @@ export {
   jpButton,
   jpOption,
   jpProgress,
+  jpProgressRing,
   jpSearch,
   jpSelect,
   jpSlider,
@@ -67,6 +70,7 @@ export const allComponents = {
   jpButton,
   jpOption,
   jpProgress,
+  jpProgressRing,
   jpSearch,
   jpSelect,
   jpSlider,
