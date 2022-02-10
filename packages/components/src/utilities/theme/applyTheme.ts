@@ -80,22 +80,6 @@ interface IConverter<T> {
 }
 
 /**
- * Convert a base color to a palette.
- *
- * @param value Color string
- * @returns The palette generated from the color
- */
-const colorConverter = (value: string): Palette<Swatch> | null => {
-  const parsedColor = parseColor(value);
-
-  return parsedColor
-    ? PaletteRGB.from(
-        SwatchRGB.create(parsedColor.r, parsedColor.g, parsedColor.b)
-      )
-    : null;
-};
-
-/**
  * Convert a string to an integer.
  *
  * @param value String to convert
@@ -114,9 +98,26 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
     converter: intConverter,
     token: strokeWidth
   },
-  '--jp-border-color1': {
-    converter: colorConverter,
-    // TODO something better to be done for setting the neutral color
+  '--jp-layout-color1': {
+    converter: (value: string, isDark: boolean): Palette<Swatch> | null => {
+      const parsedColor = parseColor(value);
+      if (parsedColor) {
+        const hsl = rgbToHSL(parsedColor);
+        // Neutral luminance should be about 50%
+        const correctedHSL = ColorHSL.fromObject({
+          h: hsl.h,
+          s: hsl.s,
+          l: 0.5
+        });
+        const correctedRGB = hslToRGB(correctedHSL!);
+
+        return PaletteRGB.from(
+          SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b)
+        );
+      } else {
+        return null;
+      }
+    },
     token: neutralPalette
   },
   '--jp-brand-color1': {
