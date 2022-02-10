@@ -5,7 +5,6 @@
 import {
   accentFillActive,
   accentFillFocus,
-  accentFillHover,
   bodyFont,
   controlCornerRadius,
   designUnit,
@@ -110,8 +109,8 @@ export const selectStyles: FoundationElementTemplate<
 
     :host(:${focusVisible}) {
       border-color: ${accentFillFocus};
-      box-shadow: 0 0 0 calc((${focusStrokeWidth} - 1) * 1px) ${accentFillFocus}
-        inset;
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+        ${accentFillFocus};
     }
 
     :host([disabled]) {
@@ -250,7 +249,7 @@ export const selectStyles: FoundationElementTemplate<
             :host(:${focusVisible}) ::slotted([aria-selected="true"][role="option"]:not([disabled])) {
           background: ${SystemColors.Highlight};
           border-color: ${SystemColors.ButtonText};
-          box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px) inset
+          box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
             ${SystemColors.HighlightText};
           color: ${SystemColors.HighlightText};
           fill: currentcolor;
