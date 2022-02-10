@@ -158,7 +158,8 @@ export const searchStyles: FoundationElementTemplate<
 
     :host(:focus-within:not([disabled])) .root {
       border-color: ${accentFillFocus};
-      box-shadow: 0 0 0 calc((${focusStrokeWidth} - 1) * 1px) ${accentFillFocus};
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+        ${accentFillFocus};
     }
 
     .clear-button__hidden {
@@ -228,7 +229,7 @@ export const searchStyles: FoundationElementTemplate<
         }
         :host(:focus-within:enabled) .root {
           border-color: ${SystemColors.Highlight};
-          box-shadow: 0 0 0 calc((${focusStrokeWidth} - 1) * 1px)
+          box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
             ${SystemColors.Highlight};
         }
         input::placeholder {
