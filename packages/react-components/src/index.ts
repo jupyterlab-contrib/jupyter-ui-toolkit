@@ -2,6 +2,7 @@ export * from './avatar';
 export * from './breadcrumb';
 export * from './breadcrumb-item';
 export * from './button';
+export * from './number-field';
 export * from './option';
 export * from './progress';
 export * from './progress-ring';
