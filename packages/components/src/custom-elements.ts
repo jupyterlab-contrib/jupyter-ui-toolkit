@@ -7,6 +7,7 @@ import { jpBreadcrumb } from './breadcrumb/index';
 import { jpBreadcrumbItem } from './breadcrumb-item/index';
 import { jpButton } from './button/index';
 import { jpCheckbox } from './checkbox/index';
+import { jpCombobox } from './combobox/index';
 import { jpNumberField } from './number-field/index';
 import { jpOption } from './option/index';
 import { jpProgress } from './progress/index';
@@ -28,6 +29,7 @@ import type { Breadcrumb } from './breadcrumb/index';
 import type { BreadcrumbItem } from './breadcrumb-item/index';
 import type { Button } from './button/index';
 import type { Checkbox } from './checkbox/index';
+import type { Combobox } from './combobox/index';
 import type { NumberField } from './number-field/index';
 import type { Option } from './option/index';
 import type { Progress } from './progress/index';
@@ -48,6 +50,7 @@ export {
   jpBreadcrumbItem,
   jpButton,
   jpCheckbox,
+  jpCombobox,
   jpNumberField,
   jpOption,
   jpProgress,
@@ -75,6 +78,7 @@ export const allComponents = {
   jpBreadcrumbItem,
   jpButton,
   jpCheckbox,
+  jpCombobox,
   jpNumberField,
   jpOption,
   jpProgress,
