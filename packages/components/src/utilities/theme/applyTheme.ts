@@ -1,8 +1,14 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import { parseColor } from '@microsoft/fast-colors';
 import {
+  ColorHSL,
+  hslToRGB,
+  parseColor,
+  rgbToHSL
+} from '@microsoft/fast-colors';
+import {
+  accentFillHoverDelta,
   accentPalette,
   baseLayerLuminance,
   bodyFont,
@@ -65,28 +71,12 @@ interface IConverter<T> {
   /**
    * Convert the CSS variable value to design token value
    */
-  converter?: (value: string) => T | null;
+  converter?: (value: string, isDark: boolean) => T | null;
   /**
    * Design token to update
    */
   token: DesignToken<T>;
 }
-
-/**
- * Convert a base color to a palette.
- *
- * @param value Color string
- * @returns The palette generated from the color
- */
-const colorConverter = (value: string): Palette<Swatch> | null => {
-  const parsedColor = parseColor(value);
-
-  return parsedColor
-    ? PaletteRGB.from(
-        SwatchRGB.create(parsedColor.r, parsedColor.g, parsedColor.b)
-      )
-    : null;
-};
 
 /**
  * Convert a string to an integer.
@@ -107,12 +97,51 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
     converter: intConverter,
     token: strokeWidth
   },
-  '--jp-border-color1': {
-    converter: colorConverter,
+  '--jp-layout-color1': {
+    converter: (value: string, isDark: boolean): Palette<Swatch> | null => {
+      const parsedColor = parseColor(value);
+      if (parsedColor) {
+        const hsl = rgbToHSL(parsedColor);
+        // Neutral luminance should be about 50%
+        const correctedHSL = ColorHSL.fromObject({
+          h: hsl.h,
+          s: hsl.s,
+          l: 0.5
+        });
+        const correctedRGB = hslToRGB(correctedHSL!);
+
+        return PaletteRGB.from(
+          SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b)
+        );
+      } else {
+        return null;
+      }
+    },
     token: neutralPalette
   },
   '--jp-brand-color1': {
-    converter: colorConverter,
+    converter: (value: string, isDark: boolean): Palette<Swatch> | null => {
+      const parsedColor = parseColor(value);
+      if (parsedColor) {
+        const hsl = rgbToHSL(parsedColor);
+        // Correct luminance to get accent fill closer to brand color 1
+        const direction = isDark ? 1 : -1;
+        const correctedHSL = ColorHSL.fromObject({
+          h: hsl.h,
+          s: hsl.s,
+          l:
+            hsl.l +
+            (direction * accentFillHoverDelta.getValueFor(document.body)) / 94.0
+        });
+        const correctedRGB = hslToRGB(correctedHSL!);
+
+        return PaletteRGB.from(
+          SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b)
+        );
+      } else {
+        return null;
+      }
+    },
     token: accentPalette
   },
   '--jp-ui-font-family': {
@@ -137,10 +166,11 @@ function applyCurrentTheme() {
   const styles = getComputedStyle(document.body);
 
   // Set mode
-  const value = document.body.getAttribute(THEME_MODE_BODY_ATTRIBUTE);
+  const isDark =
+    document.body.getAttribute(THEME_MODE_BODY_ATTRIBUTE) === 'false';
   baseLayerLuminance.setValueFor(
     document.body,
-    value === 'false' ? StandardLuminance.DarkMode : StandardLuminance.LightMode
+    isDark ? StandardLuminance.DarkMode : StandardLuminance.LightMode
   );
 
   for (const jpTokenName in tokenMappings) {
@@ -149,7 +179,8 @@ function applyCurrentTheme() {
 
     if (document.body && value !== '') {
       const parsedValue = (toolkitTokenName.converter ?? ((v: string) => v))(
-        value.trim()
+        value.trim(),
+        isDark
       );
       if (parsedValue !== null) {
         toolkitTokenName.token.setValueFor(document.body, parsedValue);
