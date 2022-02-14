@@ -1,3 +1,6 @@
+// Copyright (c) Jupyter Development Team.
+// Distributed under the terms of the Modified BSD License.
+
 import { attr } from '@microsoft/fast-element';
 import {
   Select as FoundationSelect,

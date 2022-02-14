@@ -12,6 +12,7 @@ export * from './avatar/index';
 export * from './breadcrumb/index';
 export * from './breadcrumb-item/index';
 export * from './button/index';
+export * from './checkbox/index';
 export * from './number-field/index';
 export * from './option/index';
 export * from './progress/index';
