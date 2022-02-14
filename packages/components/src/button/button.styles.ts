@@ -95,9 +95,7 @@ const BaseButtonStyles = css`
     align-items: center;
     padding: 0 calc((10 + (${designUnit} * 2 * ${density})) * 1px);
     white-space: nowrap;
-    outline: calc(${focusStrokeWidth} * 1px) solid transparent;
-    outline-offset: 2px;
-    -moz-outline-radius: 0px;
+    outline: none;
     text-decoration: none;
     border: calc(${strokeWidth} * 1px) solid transparent;
     color: inherit;
@@ -127,7 +125,9 @@ const BaseButtonStyles = css`
 
   /* prettier-ignore */
   .control:${focusVisible} {
-    outline-color: ${neutralFillStrongFocus};
+    outline: calc(${focusStrokeWidth} * 1px) solid ${neutralFillStrongFocus};
+    outline-offset: 2px;
+    -moz-outline-radius: 0px;
   }
 
   .control::-moz-focus-inner {
@@ -147,7 +147,7 @@ const BaseButtonStyles = css`
   ::slotted(svg) {
     ${
       /* Glyph size and margin-left is temporary -
-            replace when adaptive typography is figured out */ ''
+         replace when adaptive typography is figured out */ ''
     } width: 16px;
     height: 16px;
     pointer-events: none;
