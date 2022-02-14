@@ -14,6 +14,7 @@ import { jpCard } from './card/index';
 import { jpCheckbox } from './checkbox/index';
 import { jpCombobox } from './combobox/index';
 import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index';
+import { jpDateField } from './date-field/index';
 import { jpDivider } from './divider/index';
 import { jpMenu } from './menu/index';
 import { jpMenuItem } from './menu-item/index';
@@ -53,6 +54,7 @@ import type { Card } from './card/index';
 import type { Checkbox } from './checkbox/index';
 import type { Combobox } from './combobox/index';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index';
+import type { DateField } from './date-field/index';
 import type { Divider } from './divider/index';
 import type { Menu } from './menu/index';
 import type { MenuItem } from './menu-item/index';
@@ -93,6 +95,7 @@ export {
   jpDataGrid,
   jpDataGridCell,
   jpDataGridRow,
+  jpDateField,
   jpDivider,
   jpMenu,
   jpMenuItem,
@@ -140,6 +143,7 @@ export const allComponents = {
   jpDataGrid,
   jpDataGridCell,
   jpDataGridRow,
+  jpDateField,
   jpDivider,
   jpMenu,
   jpMenuItem,
