@@ -18,6 +18,7 @@ export default {
     isAutoFocused: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     endIcon: { control: 'boolean' },
+    appearance: { control: 'radio', options: ['outline', 'filled'] },
     onChange: {
       action: 'changed',
       table: {
@@ -42,6 +43,7 @@ const Template = (
       ${args.readonly ? 'readonly' : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.autofocus ? 'autofocus' : ''}
+      appearance="${args.appearance}"
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -74,6 +76,7 @@ Default.args = {
   isAutoFocused: false,
   startIcon: false,
   endIcon: false,
+  appearance: 'outline',
   onChange: action('number-field-onchange')
 };
 
