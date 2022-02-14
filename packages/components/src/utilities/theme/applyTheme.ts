@@ -5,8 +5,7 @@ import {
   ColorHSL,
   hslToRGB,
   parseColor,
-  rgbToHSL,
-  rgbToLinearLuminance
+  rgbToHSL
 } from '@microsoft/fast-colors';
 import {
   accentFillHoverDelta,
