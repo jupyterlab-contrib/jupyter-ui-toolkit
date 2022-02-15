@@ -21,6 +21,7 @@ import { jpTabPanel } from './tab-panel/index';
 import { jpTab } from './tab/index';
 import { jpTabs } from './tabs/index';
 import { jpTextField } from './text-field/index';
+import { jpToolbar } from './toolbar/index';
 
 // Don't delete these. They're needed so that API-extractor doesn't add import types
 // with improper pathing
@@ -44,6 +45,7 @@ import type { TabPanel } from './tab-panel/index';
 import type { Tab } from './tab/index';
 import type { Tabs } from './tabs/index';
 import type { TextField } from './text-field/index';
+import type { Toolbar } from './toolbar/index';
 
 // export all components
 export {
@@ -67,7 +69,8 @@ export {
   jpTab,
   jpTabPanel,
   jpTabs,
-  jpTextField
+  jpTextField,
+  jpToolbar
 };
 
 /**
@@ -99,6 +102,7 @@ export const allComponents = {
   jpTabPanel,
   jpTabs,
   jpTextField,
+  jpToolbar,
   register(container?: Container, ...rest: any[]): void {
     if (!container) {
       // preserve backward compatibility with code that loops through

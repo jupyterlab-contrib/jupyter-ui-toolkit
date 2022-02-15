@@ -25,3 +25,4 @@ export * from './tab-panel/index';
 export * from './tab/index';
 export * from './tabs/index';
 export * from './text-field/index';
+export * from './toolbar/index';
