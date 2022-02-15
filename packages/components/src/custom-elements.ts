@@ -2,6 +2,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import type { Container } from '@microsoft/fast-foundation';
+import { jpAnchoredRegion } from './anchored-region/index';
 import { jpAvatar } from './avatar/index';
 import { jpBreadcrumb } from './breadcrumb/index';
 import { jpBreadcrumbItem } from './breadcrumb-item/index';
@@ -26,6 +27,7 @@ import { jpToolbar } from './toolbar/index';
 // Don't delete these. They're needed so that API-extractor doesn't add import types
 // with improper pathing
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import type { AnchoredRegion } from './anchored-region/index';
 import type { Avatar } from './avatar/index';
 import type { Breadcrumb } from './breadcrumb/index';
 import type { BreadcrumbItem } from './breadcrumb-item/index';
@@ -49,6 +51,7 @@ import type { Toolbar } from './toolbar/index';
 
 // export all components
 export {
+  jpAnchoredRegion,
   jpAvatar,
   jpBreadcrumb,
   jpBreadcrumbItem,
@@ -81,6 +84,7 @@ export {
  * statically link and register all available components.
  */
 export const allComponents = {
+  jpAnchoredRegion,
   jpAvatar,
   jpBreadcrumb,
   jpBreadcrumbItem,

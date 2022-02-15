@@ -8,6 +8,7 @@ export * from './jupyter-design-system';
 export * from './custom-elements';
 
 // Export components and classes
+export * from './anchored-region/index';
 export * from './avatar/index';
 export * from './breadcrumb/index';
 export * from './breadcrumb-item/index';
