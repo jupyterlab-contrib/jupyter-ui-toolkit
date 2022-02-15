@@ -25,6 +25,7 @@ import { jpTextField } from './text-field/index';
 import { jpToolbar } from './toolbar/index';
 import { jpTooltip } from './tooltip/index';
 import { jpTreeItem } from './tree-item/index';
+import { jpTreeView } from './tree-view/index';
 
 // Don't delete these. They're needed so that API-extractor doesn't add import types
 // with improper pathing
@@ -52,6 +53,7 @@ import type { TextField } from './text-field/index';
 import type { Toolbar } from './toolbar/index';
 import type { Tooltip } from './tooltip/index';
 import type { TreeItem } from './tree-item/index';
+import type { TreeView } from './tree-view/index';
 
 // export all components
 export {
@@ -79,7 +81,8 @@ export {
   jpTextField,
   jpToolbar,
   jpTooltip,
-  jpTreeItem
+  jpTreeItem,
+  jpTreeView
 };
 
 /**
@@ -115,6 +118,7 @@ export const allComponents = {
   jpToolbar,
   jpTooltip,
   jpTreeItem,
+  jpTreeView,
   register(container?: Container, ...rest: any[]): void {
     if (!container) {
       // preserve backward compatibility with code that loops through
