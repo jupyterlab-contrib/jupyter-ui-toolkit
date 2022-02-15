@@ -7,7 +7,7 @@ import { setTheme } from '../utilities/storybook';
 export default {
   title: 'Slider',
   argTypes: {
-    value: { control: 'range', options: { min: 0, max: 10, step: 5 } },
+    value: { control: 'range', min: 0, max: 10, step: 5 },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
