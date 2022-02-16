@@ -15,7 +15,7 @@ test('Default', async ({ page }) => {
     }
   });
 
-  expect(await page.locator('jp-tooltip').screenshot()).toMatchSnapshot(
+  expect(await page.locator('jp-anchored-region').screenshot()).toMatchSnapshot(
     'tooltip-default.png'
   );
 });

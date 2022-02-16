@@ -28,7 +28,7 @@
     "build:docs": "build-storybook",
     "clean": "yarn clean:lib && yarn clean:test",
     "clean:lib": "rimraf dist",
-    "clean:test": "rimraf test-results tests-out tsconfig.playwright.tsbuildinfo",
+    "clean:test": "rimraf test-results tests-out/**/*.js tests-out/**/*.js.map tsconfig.playwright.tsbuildinfo",
     "deploy:docs": "yarn run build:docs && gh-pages -d storybook-static",
     "doc": "api-extractor run --local",
     "prettier:check": "prettier --config ../../.prettierrc --check \"src/**/*.ts\"",
