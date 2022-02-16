@@ -132,4 +132,5 @@ temp
 # Visual testing
 packages/components/test-results
 lerna-debug.log
-packages/components/tests-out
+packages/components/tests-out/**/*.js
+packages/components/tests-out/**/*.js.map
