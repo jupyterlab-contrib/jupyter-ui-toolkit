@@ -38,14 +38,14 @@ jobs:
         run: yarn run playwright install --with-deps
         working-directory: packages/components
 
-      - name: Run Visual Tests 🧪
-        run: yarn run test:visual
-        working-directory: packages/components
+      # - name: Run Visual Tests 🧪
+      #   run: yarn run test:visual
+      #   working-directory: packages/components
 
       - name: Update Snapshots
-        if: ${{ failure() }}
+        # if: ${{ failure() }}
         run: |
-          mv test-results test-assets
+          # mv test-results test-assets
           yarn run test:visual -u
         working-directory: packages/components
 
@@ -55,4 +55,4 @@ jobs:
           name: jupyter-ui-test
           path: |
             packages/components/test-assets/
-            packages/components/src/**/*-snapshots/*
+            packages/components/tests-out/**/*-snapshots/*
