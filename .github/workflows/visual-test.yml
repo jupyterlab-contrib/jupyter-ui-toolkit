@@ -9,7 +9,6 @@ on:
 jobs:
   visual-test:
     runs-on: ubuntu-latest
-    # timeout-minutes: 40
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -38,12 +37,12 @@ jobs:
         run: yarn run playwright install --with-deps
         working-directory: packages/components
 
-      # - name: Run Visual Tests 🧪
-      #   run: yarn run test:visual
-      #   working-directory: packages/components
+      - name: Run Visual Tests 🧪
+        run: yarn run test:visual
+        working-directory: packages/components
 
       - name: Update Snapshots
-        # if: ${{ failure() }}
+        if: ${{ failure() }}
         run: |
           # mv test-results test-assets
           yarn run test:visual -u
