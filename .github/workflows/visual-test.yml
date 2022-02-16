@@ -9,6 +9,7 @@ on:
 jobs:
   visual-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -44,7 +45,7 @@ jobs:
       - name: Update Snapshots
         if: ${{ failure() }}
         run: |
-          # mv test-results test-assets
+          mv test-results test-assets
           yarn run test:visual -u
         working-directory: packages/components
 

@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=combobox--disabled');
+  await page.goto('/iframe.html?id=combobox--with-disabled');
 
   expect(await page.locator('jp-combobox').screenshot()).toMatchSnapshot(
     'combobox-disabled.png'
