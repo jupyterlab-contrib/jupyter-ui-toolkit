@@ -10,11 +10,13 @@ jp-tab {
   font-family: var(--jp-ui-font-family);
   color: var(--jp-ui-font-color1);
   font-size: var(--jp-ui-font-size1);
+
+  overflow: auto;
 }
 
 .jp-Artwork > .jp-Grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   height: 100%;
   max-height: 500px;
 }
@@ -43,7 +45,8 @@ jp-tab {
   margin: 2px;
 }
 
-jp-progress {
+jp-progress,
+jp-tree-view {
   width: 100%;
 }
 

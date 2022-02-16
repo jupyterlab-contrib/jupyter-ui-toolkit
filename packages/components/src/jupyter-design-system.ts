@@ -14,5 +14,6 @@ import type { DesignSystem } from '@microsoft/fast-foundation';
 export function provideJupyterDesignSystem(
   element?: HTMLElement
 ): DesignSystem {
+  // TODO we should not use fast or maybe due to design token reuse
   return provideFASTDesignSystem(element).withPrefix('jp');
 }

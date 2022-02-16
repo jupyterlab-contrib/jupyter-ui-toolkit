@@ -3,7 +3,7 @@ import { PlaywrightTestConfig, devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  testMatch: '**/*.test.ts',
+  testMatch: 'tests-out/**/*.test.js',
   webServer: {
     command: 'yarn run start:ci',
     port: 6006,

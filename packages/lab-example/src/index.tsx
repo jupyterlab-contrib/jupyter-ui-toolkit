@@ -3,6 +3,10 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
+  Checkbox,
+  Combobox,
+  DataGrid,
+  NumberField,
   Option,
   Progress,
   ProgressRing,
@@ -13,11 +17,15 @@ import {
   Tab,
   TabPanel,
   Tabs,
-  TextField
+  TextField,
+  Tooltip,
+  TreeItem,
+  TreeView
 } from '@jupyter-notebook/react-components';
 import {
   addJupyterLabThemeChangeListener,
   allComponents,
+  DataGrid as WebDataGrid,
   provideJupyterDesignSystem
 } from '@jupyter-notebook/web-components';
 import {
@@ -30,6 +38,27 @@ import React from 'react';
 
 provideJupyterDesignSystem().register(allComponents);
 addJupyterLabThemeChangeListener();
+
+const TABLE_DATA = [
+  {
+    Header1: 'Data 1 1',
+    Header2: 'Data 2 1',
+    Header3: 'Data 3 1',
+    Header4: 'Cell Data 4 1'
+  },
+  {
+    Header1: 'Data 1 2',
+    Header2: 'Data 2 2',
+    Header3: 'Data 3 2',
+    Header4: 'Cell Data 4 2'
+  },
+  {
+    Header1: 'Data 1 3',
+    Header2: 'Data 2 3',
+    Header3: 'Data 3 3',
+    Header4: 'Cell Data 4 3'
+  }
+];
 
 /**
  * Initialization data for the jupyter-ui-demo extension.
@@ -47,62 +76,68 @@ const plugin: JupyterFrontEndPlugin<void> = {
     widget.title.label = 'Toolkit Gallery';
 
     // Add listeners
+    const clickListener = () => {
+      alert('Reacting to vanilla click event.');
+    };
+    const changeListener = (name: string) => {
+      const f = (event: Event) => {
+        console.log(event);
+        alert(`${name} change event: ${(event as any).target.value}`);
+      };
+      return f;
+    };
+    const changeConsoleListener = (name: string) => {
+      const f = (event: Event) => {
+        console.log(`${name} change event: ${(event as any).target.value}`);
+      };
+      return f;
+    };
     const buttons = widget.node.querySelectorAll('jp-button');
     buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        alert('Reacting to vanilla click event.');
-      });
+      button.addEventListener('click', clickListener);
     });
     const search = widget.node.querySelector('jp-search');
-    search?.addEventListener('change', event => {
-      console.log(event);
-      alert(`Search change event: ${(event as any).target.value}`);
-    });
+    search?.addEventListener('change', changeListener('Search'));
+    search?.addEventListener('input', changeConsoleListener('Search'));
     const textField = widget.node.querySelector('jp-text-field');
-    textField?.addEventListener('change', event => {
-      console.log(event);
-      alert(`Text field change event: ${(event as any).target.value}`);
-    });
+    textField?.addEventListener('change', changeListener('Text field'));
+    const numberField = widget.node.querySelector('jp-number-field');
+    numberField?.addEventListener('change', changeListener('Number field'));
+    const select = widget.node.querySelector('jp-select');
+    select?.addEventListener('change', changeListener('Select'));
+    const combobox = widget.node.querySelector('jp-combobox');
+    combobox?.addEventListener('change', changeListener('Combobox'));
+    combobox?.addEventListener('input', changeConsoleListener('Combobox'));
     const slider = widget.node.querySelector('jp-slider');
-    slider?.addEventListener('change', event => {
-      console.log(`Slider change event: ${(event as any).target.value}`);
-    });
+    slider?.addEventListener('change', changeConsoleListener('Slider'));
 
-    const reactWidget = ReactWidget.create(<Artwork />);
+    const dataRef = React.createRef<WebDataGrid>();
+    const reactWidget = ReactWidget.create(<Artwork dataRef={dataRef} />);
     reactWidget.addClass('jp-Artwork');
     reactWidget.id = 'artwork-react-ui-components';
     reactWidget.title.label = 'React Toolkit Gallery';
 
     app.restored.then(() => {
       app.shell.add(widget, 'main');
-      app.shell.add(reactWidget, 'main', { mode: 'split-right' });
+      app.shell.add(reactWidget, 'main', { mode: 'split-bottom' });
       app.shell.activateById(widget.id);
 
-      // (widget.node.querySelector('#basic-grid') as any).rowsData = [
-      //   {
-      //     Header1: 'Data 1 1',
-      //     Header2: 'Data 2 1',
-      //     Header3: 'Data 3 1',
-      //     Header4: 'Cell Data 4 1'
-      //   },
-      //   {
-      //     Header1: 'Data 1 2',
-      //     Header2: 'Data 2 2',
-      //     Header3: 'Data 3 2',
-      //     Header4: 'Cell Data 4 2'
-      //   },
-      //   {
-      //     Header1: 'Data 1 3',
-      //     Header2: 'Data 2 3',
-      //     Header3: 'Data 3 3',
-      //     Header4: 'Cell Data 4 3'
-      //   }
-      // ];
+      const loadTableData = setInterval(() => {
+        const dataGrid: WebDataGrid | null =
+          widget.node.querySelector('#basic-grid');
+        if (dataGrid?.isConnected) {
+          clearInterval(loadTableData);
+          dataGrid.rowsData = TABLE_DATA;
+          if (dataRef.current) {
+            dataRef.current.rowsData = TABLE_DATA;
+          }
+        }
+      }, 100);
     });
   }
 };
 
-function Artwork(): JSX.Element {
+function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
   const onChange = (event: any) => {
     alert(`React on React change event: ${event?.target?.value}`);
   };
@@ -127,29 +162,61 @@ function Artwork(): JSX.Element {
             <span className="fa fa-cog"></span>
           </Button>
         </div>
-        <Search value="Dummy search text" onChange={onChange}>
+        <Search
+          value="Dummy search text"
+          onChange={onChange}
+          onInput={onChangeConsole}
+        >
           Search Label
         </Search>
         <TextField value="Populated text" onChange={onChange}>
           Text Field Label
         </TextField>
+        <NumberField value="10" onChange={onChange}>
+          Number Field Label
+        </NumberField>
         <div className="jp-FlexColumn">
-          <label>Label</label>
-          <Select>
+          <label>Select</label>
+          <Select onChange={onChange}>
             <Option>Option Label #1</Option>
             <Option>Option Label #2</Option>
             <Option>Option Label #3</Option>
           </Select>
         </div>
+        <div className="jp-FlexColumn">
+          <label>Combobox</label>
+          <Combobox onChange={onChange} onInput={onChangeConsole}>
+            <Option>Option Label #1</Option>
+            <Option>Option Label #2</Option>
+            <Option>Option Label #3</Option>
+          </Combobox>
+        </div>
+        {/* <TextArea>Text Area Label</TextArea>
+        <Link href="#">Link Text</Link> */}
+      </div>
+      <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
         <Slider min="0" max="100" onChange={onChangeConsole}>
           <SliderLabel position="0">0%</SliderLabel>
           <SliderLabel position="50">50%</SliderLabel>
           <SliderLabel position="100">100%</SliderLabel>
         </Slider>
-        {/* <TextArea>Text Area Label</TextArea>
-        <Link href="#">Link Text</Link> */}
+        {/* <RadioGroup orientation="vertical">
+          <label slot="label">Label</label>
+          <Radio checked>Radio Label</Radio>
+          <Radio>Radio Label</Radio>
+          <Radio disabled>Radio Label</Radio>
+        </RadioGroup> */}
+        <div className="jp-FlexColumn">
+          <label>Checkboxes</label>
+          <Checkbox checked>Label</Checkbox>
+          <Checkbox checked>Label</Checkbox>
+          <Checkbox disabled>Label</Checkbox>
+        </div>
+        {/* <div>
+          <Tag>Tag</Tag>
+        </div> */}
       </div>
-      <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
+      <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
         <Avatar shape="circle">JS</Avatar>
         <Breadcrumb>
           <BreadcrumbItem href="#">Item 1</BreadcrumbItem>
@@ -166,8 +233,15 @@ function Artwork(): JSX.Element {
           <ProgressRing></ProgressRing>
           <ProgressRing min={0} max={50} value={30}></ProgressRing>
         </div>
+        <div className="jp-FlexColumn">
+          <label>Tooltip</label>
+          <Tooltip anchor="anchored-react-button">React tooltip</Tooltip>
+          <Button id="anchored-react-button">Anchor</Button>
+        </div>
       </div>
-      <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
+      <div className="jp-FlexColumn" style={{ gridColumn: 4 }}>
+        <DataGrid ref={props.dataRef}></DataGrid>
+
         <Tabs>
           <Tab id="one">One</Tab>
           <Tab id="two">Two</Tab>
@@ -176,28 +250,38 @@ function Artwork(): JSX.Element {
           <TabPanel id="panelTwo">This is panel two content.</TabPanel>
           <TabPanel id="panelThree">This is panel three content.</TabPanel>
         </Tabs>
+
+        <TreeView>
+          <TreeItem>
+            Root item 1
+            <TreeItem expanded>
+              Flowers
+              <TreeItem>Daisy</TreeItem>
+              <TreeItem disabled>Sunflower</TreeItem>
+              <TreeItem>
+                Rose
+                <TreeItem>Pink</TreeItem>
+                <TreeItem>Red</TreeItem>
+                <TreeItem>White</TreeItem>
+              </TreeItem>
+            </TreeItem>
+            <TreeItem>Nested item 2</TreeItem>
+            <TreeItem>Nested item 3</TreeItem>
+          </TreeItem>
+          <TreeItem>
+            Root item 2
+            <TreeItem>
+              Flowers
+              <TreeItem disabled>Daisy</TreeItem>
+              <TreeItem>Sunflower</TreeItem>
+              <TreeItem>Rose</TreeItem>
+            </TreeItem>
+            <TreeItem>Nested item 2</TreeItem>
+            <TreeItem>Nested item 3</TreeItem>
+          </TreeItem>
+          <TreeItem>Root item 3</TreeItem>
+        </TreeView>
       </div>
-      {/* <div className="jp-FlexColumn">
-        <RadioGroup orientation="vertical">
-          <label slot="label">Label</label>
-          <Radio checked>Radio Label</Radio>
-          <Radio>Radio Label</Radio>
-          <Radio disabled>Radio Label</Radio>
-        </RadioGroup>
-        <div>
-          <label>Label</label>
-          <div className="jp-FlexColumn">
-            <Checkbox autofocus checked>
-              Label
-            </Checkbox>
-            <Checkbox checked>Label</Checkbox>
-            <Checkbox disabled>Label</Checkbox>
-          </div>
-        </div>
-        <div>
-          <Tag>Tag</Tag>
-        </div>
-      </div> */}
     </div>
   );
 }
@@ -216,9 +300,10 @@ function createNode(): HTMLElement {
       </div>
       <jp-search value="Dummy search text">Search Label</jp-search>
       <jp-text-field value="Populated text">Text Field Label</jp-text-field>
+      <jp-number-field value="30">Number Field Label</jp-number-field>
       <div class="jp-FlexColumn">
         <label>
-          Label
+          Select
         </label>
         <jp-select>
           <jp-option>Option Label #1</jp-option>
@@ -226,37 +311,45 @@ function createNode(): HTMLElement {
           <jp-option>Option Label #3</jp-option>
         </jp-select>
       </div>
+      <div class="jp-FlexColumn">
+        <label>
+          Combobox
+        </label>
+        <jp-combobox>
+          <jp-option>Option Label #1</jp-option>
+          <jp-option>Option Label #2</jp-option>
+          <jp-option>Option Label #3</jp-option>
+        </jp-combobox>
+      </div>
+      <!-- <jp-text-area>Text Area Label</jp-text-area>
+      <jp-link href="#">Link Text</jp-link> -->
+    </div>
+    <div class="jp-FlexColumn" style="grid-column: 2;">
       <jp-slider min="0" max="100">
         <jp-slider-label position="0">0%</jp-slider-label>
         <jp-slider-label position="50">50%</jp-slider-label>
         <jp-slider-label position="100">100%</jp-slider-label>
       </jp-slider>
-      <!-- <jp-text-area>Text Area Label</jp-text-area>
-      <jp-link href="#">Link Text</jp-link> -->
-    </div>
-    <!--
-    <div class="jp-FlexColumn">
+      <!--
       <jp-radio-group orientation="vertical">
         <label slot="label">Label</label>
         <jp-radio checked>Radio Label</jp-radio>
         <jp-radio>Radio Label</jp-radio>
         <jp-radio disabled>Radio Label</jp-radio>
       </jp-radio-group>
-      <div>
-        <label>Label</label>
-        <div class="jp-FlexColumn">
-          <jp-checkbox autofocus checked>Label</jp-checkbox>
-          <jp-checkbox checked>Label</jp-checkbox>
-          <jp-checkbox disabled>Label</jp-checkbox>
-        </div>
+      -->
+      <div class="jp-FlexColumn">
+        <label>Checkboxes</label>
+        <jp-checkbox autofocus checked>Label</jp-checkbox>
+        <jp-checkbox checked>Label</jp-checkbox>
+        <jp-checkbox disabled>Label</jp-checkbox>
       </div>
-      <div>
+      <!--
         <jp-badge>1</jp-badge>
         <jp-tag>Tag</jp-tag>
-      </div>
+      -->
     </div>
-    -->
-    <div class="jp-FlexColumn" style="grid-column: 2;">
+    <div class="jp-FlexColumn" style="grid-column: 3;">
       <jp-avatar shape="circle">JS</jp-avatar>
       <jp-breadcrumb>
         <jp-breadcrumb-item href="#">Item 1</jp-breadcrumb-item>
@@ -273,13 +366,15 @@ function createNode(): HTMLElement {
         <jp-progress-ring></jp-progress-ring>
         <jp-progress-ring min="0" max="50" value="30"></jp-progress-ring>
       </div>
-    </div>
-    <div class="jp-FlexColumn" style="grid-column: 3;">
-      <!--
-      <div>
-        <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
+      <div class="jp-FlexColumn">
+        <label>Tooltip</label>
+        <jp-tooltip anchor="anchored-button">Beautiful tooltip</jp-tooltip>
+        <jp-button id="anchored-button">Anchor</jp-button>
       </div>
-      -->
+    </div>
+    <div class="jp-FlexColumn" style="grid-column: 4;">
+      <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
+
       <jp-tabs aria-label="Default">
         <jp-tab id="tab-1">Tab 1</jp-tab>
         <jp-tab id="tab-2">Tab 2</jp-tab>
@@ -298,6 +393,39 @@ function createNode(): HTMLElement {
           Tab 4 Content
         </jp-tab-panel>
       </jp-tabs>
+
+      <jp-tree-view>
+        <jp-tree-item>
+          Root item 1
+          <jp-tree-item expanded>
+            Flowers
+            <jp-tree-item>Daisy</jp-tree-item>
+            <jp-tree-item disabled>Sunflower</jp-tree-item>
+            <jp-tree-item>
+              Rose
+              <jp-tree-item>Pink</jp-tree-item>
+              <jp-tree-item>Red</jp-tree-item>
+              <jp-tree-item>White</jp-tree-item>
+            </jp-tree-item>
+          </jp-tree-item>
+          <jp-tree-item>Nested item 2</jp-tree-item>
+          <jp-tree-item>Nested item 3</jp-tree-item>
+        </jp-tree-item>
+        <jp-tree-item>
+          Root item 2
+          <jp-tree-item>
+            Flowers
+            <jp-tree-item disabled>Daisy</jp-tree-item>
+            <jp-tree-item>Sunflower</jp-tree-item>
+            <jp-tree-item>Rose</jp-tree-item>
+          </jp-tree-item>
+          <jp-tree-item>Nested item 2</jp-tree-item>
+          <jp-tree-item>Nested item 3</jp-tree-item>
+        </jp-tree-item>
+        <jp-tree-item>
+          Root item 3
+        </jp-tree-item>
+      </jp-tree-view>
     </div>
 </div>
 `

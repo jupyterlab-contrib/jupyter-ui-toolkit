@@ -2,79 +2,28 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import {
-  accentFillFocus,
-  bodyFont,
-  controlCornerRadius,
-  designUnit,
-  disabledOpacity,
-  fillColor,
-  focusStrokeWidth,
-  neutralFillHover,
-  neutralFillInputHover,
-  neutralFillInputRest,
-  neutralFillStrongActive,
-  neutralFillStrongHover,
-  neutralFillStrongRest,
-  neutralForegroundRest,
-  neutralStrokeRest,
-  strokeWidth,
-  typeRampBaseFontSize,
-  typeRampBaseLineHeight
-} from '@microsoft/fast-components';
+import { designUnit } from '@microsoft/fast-components';
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
-  disabledCursor,
-  display,
   focusVisible,
-  forcedColorsStylesheetBehavior,
   FoundationElementTemplate,
   TextFieldOptions
 } from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
-import { heightNumber } from '../styles/index';
+import { BaseFieldStyles, heightNumber } from '../styles/index';
 
 export const searchStyles: FoundationElementTemplate<
   ElementStyles,
   TextFieldOptions
 > = (context, definition) =>
   css`
-    ${display('inline-block')} :host {
-      font-family: ${bodyFont};
-      outline: none;
-      user-select: none;
-    }
-
-    .root {
-      box-sizing: border-box;
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      color: ${neutralForegroundRest};
-      background: ${neutralFillInputRest};
-      border-radius: calc(${controlCornerRadius} * 1px);
-      border: calc(${strokeWidth} * 1px) solid ${neutralFillStrongRest};
-      height: calc(${heightNumber} * 1px);
-    }
+    ${BaseFieldStyles}
 
     .control {
-      -webkit-appearance: none;
-      font: inherit;
-      background: transparent;
-      border: 0;
-      color: inherit;
-      height: calc(100% - 4px);
-      width: 100%;
-      margin-top: auto;
-      margin-bottom: auto;
-      border: none;
       padding: 0;
       padding-inline-start: calc(${designUnit} * 2px + 1px);
       padding-inline-end: calc(
         (${designUnit} * 2px) + (${heightNumber} * 1px) + 1px
       );
-      font-size: ${typeRampBaseFontSize};
-      line-height: ${typeRampBaseLineHeight};
     }
 
     .control::-webkit-search-cancel-button {
@@ -107,25 +56,10 @@ export const searchStyles: FoundationElementTemplate<
       width: 100%;
     }
 
-    .label {
-      display: block;
-      color: ${neutralForegroundRest};
-      cursor: pointer;
-      font-size: ${typeRampBaseFontSize};
-      line-height: ${typeRampBaseLineHeight};
-      margin-bottom: 4px;
-    }
-
-    .label__hidden {
-      display: none;
-      visibility: hidden;
-    }
-
     .start,
     .end {
       display: flex;
       margin: 1px;
-      fill: currentcolor;
     }
 
     ::slotted([slot='end']) {
@@ -138,28 +72,10 @@ export const searchStyles: FoundationElementTemplate<
 
     ::slotted(svg) {
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
-      width: 16px;
-      height: 16px;
       margin-inline-end: 11px;
       margin-inline-start: 11px;
       margin-top: auto;
       margin-bottom: auto;
-    }
-
-    :host(:hover:not([disabled])) .root {
-      background: ${neutralFillInputHover};
-      border-color: ${neutralFillStrongHover};
-    }
-
-    :host(:active:not([disabled])) .root {
-      background: ${neutralFillInputHover};
-      border-color: ${neutralFillStrongActive};
-    }
-
-    :host(:focus-within:not([disabled])) .root {
-      border-color: ${accentFillFocus};
-      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
-        ${accentFillFocus};
     }
 
     .clear-button__hidden {
@@ -177,64 +93,4 @@ export const searchStyles: FoundationElementTemplate<
     :host(:focus-within:not([disabled], [readOnly])) .clear-button__hidden {
       opacity: 0;
     }
-
-    :host([appearance='filled']) .root {
-      background: ${fillColor};
-    }
-
-    :host([appearance='filled']:hover:not([disabled])) .root {
-      background: ${neutralFillHover};
-    }
-
-    :host([disabled]) .label,
-    :host([readonly]) .label,
-    :host([readonly]) .control,
-    :host([disabled]) .control {
-      cursor: ${disabledCursor};
-    }
-
-    :host([disabled]) {
-      opacity: ${disabledOpacity};
-    }
-
-    :host([disabled]) .control {
-      border-color: ${neutralStrokeRest};
-    }
-  `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        .root,
-        :host([appearance='filled']) .root {
-          forced-color-adjust: none;
-          background: ${SystemColors.Field};
-          border-color: ${SystemColors.FieldText};
-        }
-        :host(:hover:not([disabled])) .root,
-        :host([appearance='filled']:hover:not([disabled])) .root,
-        :host([appearance='filled']:hover) .root {
-          background: ${SystemColors.Field};
-          border-color: ${SystemColors.Highlight};
-        }
-        .start,
-        .end {
-          fill: currentcolor;
-        }
-        :host([disabled]) {
-          opacity: 1;
-        }
-        :host([disabled]) .root,
-        :host([appearance='filled']:hover[disabled]) .root {
-          border-color: ${SystemColors.GrayText};
-          background: ${SystemColors.Field};
-        }
-        :host(:focus-within:enabled) .root {
-          border-color: ${SystemColors.Highlight};
-          box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
-            ${SystemColors.Highlight};
-        }
-        input::placeholder {
-          color: ${SystemColors.GrayText};
-        }
-      `
-    )
-  );
+  `;

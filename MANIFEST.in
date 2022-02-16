@@ -20,10 +20,12 @@ include packages/components/playwright.config.ts
 include packages/components/rollup.config.js
 include packages/components/tsconfigbase.json
 include packages/components/tsconfig.json
+include packages/components/tsconfig.playwright.json
 include packages/components/tsconfig.storybook.json
 graft packages/components/.storybook
 graft packages/components/docs
 graft packages/components/src
+prune packages/components/tests-out
 include packages/react-components/README.md
 include packages/react-components/package.json
 include packages/react-components/tsconfig.json

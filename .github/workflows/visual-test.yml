@@ -9,7 +9,7 @@ on:
 jobs:
   visual-test:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -55,4 +55,4 @@ jobs:
           name: jupyter-ui-test
           path: |
             packages/components/test-assets/
-            packages/components/src/**/*-snapshots/*
+            packages/components/tests-out/**/*-snapshots/*
