@@ -168,7 +168,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
 };
 
 function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
-  const tooltipAnchor = React.useRef<HTMLElement>(null);
+  const [tooltipAnchor, setTooltipAnchor] = React.useState<HTMLElement | null>(
+    null
+  );
 
   const onEvent = (event: any) => {
     console.log(event);
@@ -275,9 +277,15 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </div>
         <div className="jp-FlexColumn">
           <label>Tooltip</label>
-          {/* The tooltip component needs to be placed after the anchor so the reference is defined */}
-          <Button ref={tooltipAnchor}>Anchor</Button>
-          <Tooltip anchorElement={tooltipAnchor.current}>React tooltip</Tooltip>
+          {/* Use callback ref to react to the component mount */}
+          <Button
+            ref={(anchor: HTMLElement) => {
+              setTooltipAnchor(anchor);
+            }}
+          >
+            Anchor
+          </Button>
+          <Tooltip anchorElement={tooltipAnchor}>React tooltip</Tooltip>
         </div>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 4 }}>
