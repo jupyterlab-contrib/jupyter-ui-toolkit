@@ -17,6 +17,8 @@ export const TreeItem: React.DetailedHTMLFactory<
     disabled?: boolean;
   },
   HTMLElement
-> = wrap(jpTreeItem()) as any;
+> = wrap(jpTreeItem(), {
+  events: { onExpand: 'expanded-change', onSelect: 'selected-change' }
+}) as any;
 // @ts-expect-error unknown property
 TreeItem.displayName = 'Jupyter.TreeItem';

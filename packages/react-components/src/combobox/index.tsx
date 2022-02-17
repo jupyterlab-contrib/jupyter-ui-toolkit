@@ -20,6 +20,11 @@ export const Combobox: React.DetailedHTMLFactory<
     value?: 'string';
   },
   HTMLElement
-> = wrap(jpCombobox()) as any;
+> = wrap(jpCombobox(), {
+  events: {
+    onChange: 'change',
+    onInput: 'input'
+  }
+}) as any;
 // @ts-expect-error unknown property
 Combobox.displayName = 'Jupyter.Combobox';
