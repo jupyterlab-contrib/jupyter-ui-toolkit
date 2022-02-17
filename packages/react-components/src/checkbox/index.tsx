@@ -19,6 +19,6 @@ export const Checkbox: React.DetailedHTMLFactory<
     readonly?: boolean;
   },
   HTMLElement
-> = wrap(jpCheckbox()) as any;
+> = wrap(jpCheckbox(), { events: { onChange: 'change' } }) as any;
 // @ts-expect-error unknown property
 Checkbox.displayName = 'Jupyter.Checkbox';

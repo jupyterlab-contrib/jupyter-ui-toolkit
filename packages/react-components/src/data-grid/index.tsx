@@ -12,15 +12,9 @@ import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const DataGrid: React.DetailedHTMLFactory<
-  React.HTMLAttributes<HTMLElement> & {
-    'generate-header'?: 'none' | 'default' | 'sticky';
-    'grid-template-columns'?: 'string';
-  },
-  HTMLElement
-> = wrap(jpDataGrid()) as any;
-// @ts-expect-error unknown property
-DataGrid.displayName = 'Jupyter.DataGrid';
+// WARNING The wrapping needs to be called in order (from bottom to top DOM elements)
+// Otherwise during the wrapping the tag for sub elements won't be resolved and this
+// will contaminate the standard web component.
 
 export const DataGridCell: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
@@ -28,7 +22,9 @@ export const DataGridCell: React.DetailedHTMLFactory<
     'grid-column'?: string;
   },
   HTMLElement
-> = wrap(jpDataGridCell()) as any;
+> = wrap(jpDataGridCell(), {
+  events: { onFocus: 'cell-focused' }
+}) as any;
 // @ts-expect-error unknown property
 DataGridCell.displayName = 'Jupyter.DataGridCell';
 
@@ -38,6 +34,16 @@ export const DataGridRow: React.DetailedHTMLFactory<
     'row-type'?: 'default' | 'header' | 'sticky-header';
   },
   HTMLElement
-> = wrap(jpDataGridRow()) as any;
+> = wrap(jpDataGridRow(), { events: { onFocus: 'row-focused' } }) as any;
 // @ts-expect-error unknown property
 DataGridRow.displayName = 'Jupyter.DataGridRow';
+
+export const DataGrid: React.DetailedHTMLFactory<
+  React.HTMLAttributes<HTMLElement> & {
+    'generate-header'?: 'none' | 'default' | 'sticky';
+    'grid-template-columns'?: 'string';
+  },
+  HTMLElement
+> = wrap(jpDataGrid()) as any;
+// @ts-expect-error unknown property
+DataGrid.displayName = 'Jupyter.DataGrid';

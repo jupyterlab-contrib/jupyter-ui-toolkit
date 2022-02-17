@@ -37,6 +37,14 @@ export const AnchoredRegion: React.DetailedHTMLFactory<
     'vertical-scaling'?: 'anchor' | 'fill' | 'content';
     'fixed-placement'?: boolean;
     'auto-update-mode'?: 'anchor' | 'auto';
+    /**
+     * @property
+     */
+    anchorElement?: HTMLElement | null;
+    /**
+     * @property
+     */
+    viewportElement?: HTMLElement | null;
   },
   HTMLElement
 > = wrap(jpAnchoredRegion()) as any;

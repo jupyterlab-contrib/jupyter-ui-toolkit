@@ -60,33 +60,6 @@ const Template = (
   //     </jp-data-grid-row>
   //     </jp-data-grid>`;
 
-  //   const container = document.createElement('div');
-  //   container.innerHTML =
-  //     '<jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>';
-  //   const grid = container.firstChild as DataGrid;
-
-  //   grid.rowsData = [
-  //     {
-  //       Header1: 'Data 1 1',
-  //       Header2: 'Data 2 1',
-  //       Header3: 'Data 3 1',
-  //       Header4: 'Cell Data 4 1'
-  //     },
-  //     {
-  //       Header1: 'Data 1 2',
-  //       Header2: 'Data 2 2',
-  //       Header3: 'Data 3 2',
-  //       Header4: 'Cell Data 4 2'
-  //     },
-  //     {
-  //       Header1: 'Data 1 3',
-  //       Header2: 'Data 2 3',
-  //       Header3: 'Data 3 3',
-  //       Header4: 'Cell Data 4 3'
-  //     }
-  //   ];
-  //   return grid;
-
   return '<jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>';
 };
 

@@ -92,6 +92,15 @@ const plugin: JupyterFrontEndPlugin<void> = {
       };
       return f;
     };
+    const eventListener = (name: string, emitAlert = false) => {
+      const f = (event: Event) => {
+        console.log(event);
+        if (emitAlert) {
+          alert(`${name} event: ${event.type}`);
+        }
+      };
+      return f;
+    };
     const buttons = widget.node.querySelectorAll('jp-button');
     buttons.forEach(button => {
       button.addEventListener('click', clickListener);
@@ -99,17 +108,41 @@ const plugin: JupyterFrontEndPlugin<void> = {
     const search = widget.node.querySelector('jp-search');
     search?.addEventListener('change', changeListener('Search'));
     search?.addEventListener('input', changeConsoleListener('Search'));
+
     const textField = widget.node.querySelector('jp-text-field');
     textField?.addEventListener('change', changeListener('Text field'));
+    textField?.addEventListener('input', changeListener('Text field'));
+
     const numberField = widget.node.querySelector('jp-number-field');
     numberField?.addEventListener('change', changeListener('Number field'));
+    numberField?.addEventListener('input', changeListener('Number field'));
+
     const select = widget.node.querySelector('jp-select');
     select?.addEventListener('change', changeListener('Select'));
+
     const combobox = widget.node.querySelector('jp-combobox');
     combobox?.addEventListener('change', changeListener('Combobox'));
     combobox?.addEventListener('input', changeConsoleListener('Combobox'));
+
     const slider = widget.node.querySelector('jp-slider');
     slider?.addEventListener('change', changeConsoleListener('Slider'));
+
+    const checkbox = widget.node.querySelectorAll('jp-checkbox');
+    checkbox.forEach(box => {
+      box.addEventListener('change', eventListener('Checkbox', true));
+    });
+
+    const tooltip = widget.node.querySelector('jp-tooltip');
+    tooltip?.addEventListener('dismiss', eventListener('Tooltip'));
+
+    const tabs = widget.node.querySelector('jp-tabs');
+    tabs?.addEventListener('change', eventListener('Tabs'));
+
+    const treeItems = widget.node.querySelectorAll('jp-tree-item');
+    treeItems.forEach(item => {
+      item.addEventListener('selected-change', eventListener('Tree Item'));
+      item.addEventListener('expanded-change', eventListener('Tree Item'));
+    });
 
     const dataRef = React.createRef<WebDataGrid>();
     const reactWidget = ReactWidget.create(<Artwork dataRef={dataRef} />);
@@ -122,22 +155,25 @@ const plugin: JupyterFrontEndPlugin<void> = {
       app.shell.add(reactWidget, 'main', { mode: 'split-bottom' });
       app.shell.activateById(widget.id);
 
-      const loadTableData = setInterval(() => {
-        const dataGrid: WebDataGrid | null =
-          widget.node.querySelector('#basic-grid');
-        if (dataGrid?.isConnected) {
-          clearInterval(loadTableData);
-          dataGrid.rowsData = TABLE_DATA;
-          if (dataRef.current) {
-            dataRef.current.rowsData = TABLE_DATA;
-          }
+      const dataGrid: WebDataGrid | null =
+        widget.node.querySelector('#basic-grid');
+      if (dataGrid?.isConnected) {
+        dataGrid.rowsData = TABLE_DATA;
+        if (dataRef.current) {
+          dataRef.current.rowsData = TABLE_DATA;
         }
-      }, 100);
+      }
     });
   }
 };
 
 function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
+  const tooltipAnchor = React.useRef<HTMLElement>(null);
+
+  const onEvent = (event: any) => {
+    console.log(event);
+    alert(`Got a React event: ${event.type}`);
+  };
   const onChange = (event: any) => {
     alert(`React on React change event: ${event?.target?.value}`);
   };
@@ -208,9 +244,13 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </RadioGroup> */}
         <div className="jp-FlexColumn">
           <label>Checkboxes</label>
-          <Checkbox checked>Label</Checkbox>
-          <Checkbox checked>Label</Checkbox>
-          <Checkbox disabled>Label</Checkbox>
+          <Checkbox onChange={onEvent} checked>
+            Label
+          </Checkbox>
+          <Checkbox onChange={onEvent}>Label</Checkbox>
+          <Checkbox onChange={onEvent} disabled>
+            Label
+          </Checkbox>
         </div>
         {/* <div>
           <Tag>Tag</Tag>
@@ -235,14 +275,15 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </div>
         <div className="jp-FlexColumn">
           <label>Tooltip</label>
-          <Tooltip anchor="anchored-react-button">React tooltip</Tooltip>
-          <Button id="anchored-react-button">Anchor</Button>
+          {/* The tooltip component needs to be placed after the anchor so the reference is defined */}
+          <Button ref={tooltipAnchor}>Anchor</Button>
+          <Tooltip anchorElement={tooltipAnchor.current}>React tooltip</Tooltip>
         </div>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 4 }}>
         <DataGrid ref={props.dataRef}></DataGrid>
 
-        <Tabs>
+        <Tabs onChange={onEvent}>
           <Tab id="one">One</Tab>
           <Tab id="two">Two</Tab>
           <Tab id="three">Three</Tab>
@@ -252,7 +293,8 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </Tabs>
 
         <TreeView>
-          <TreeItem>
+          {/* @ts-expect-error unknown event onExpand */}
+          <TreeItem onSelect={onEvent} onExpand={onEvent}>
             Root item 1
             <TreeItem expanded>
               Flowers
@@ -340,8 +382,8 @@ function createNode(): HTMLElement {
       -->
       <div class="jp-FlexColumn">
         <label>Checkboxes</label>
-        <jp-checkbox autofocus checked>Label</jp-checkbox>
         <jp-checkbox checked>Label</jp-checkbox>
+        <jp-checkbox>Label</jp-checkbox>
         <jp-checkbox disabled>Label</jp-checkbox>
       </div>
       <!--
