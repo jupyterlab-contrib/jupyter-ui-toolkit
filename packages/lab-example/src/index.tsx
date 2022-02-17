@@ -277,7 +277,6 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <label>Tooltip</label>
           {/* The tooltip component needs to be placed after the anchor so the reference is defined */}
           <Button ref={tooltipAnchor}>Anchor</Button>
-          {/* @ts-expect-error unknown property anchorElement */}
           <Tooltip anchorElement={tooltipAnchor.current}>React tooltip</Tooltip>
         </div>
       </div>

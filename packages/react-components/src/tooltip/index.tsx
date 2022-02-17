@@ -19,6 +19,10 @@ export const Tooltip: React.DetailedHTMLFactory<
     position?: 'top' | 'right' | 'bottom' | 'left' | 'start' | 'end';
     'horizontal-viewport-lock'?: boolean;
     'vertical-viewport-lock'?: boolean;
+    /**
+     * @property
+     */
+    anchorElement?: HTMLElement | null;
   },
   HTMLElement
 > = wrap(jpTooltip()) as any;
