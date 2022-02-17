@@ -7,7 +7,6 @@ import {
   bodyFont,
   controlCornerRadius,
   designUnit,
-  focusStrokeOuter,
   focusStrokeWidth,
   neutralForegroundRest,
   strokeWidth,
