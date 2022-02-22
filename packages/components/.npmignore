@@ -24,6 +24,7 @@ tsconfigbase.json
 tsconfig.storybook.json
 rollup.config.js
 playwright.config.ts
+tsconfig.playwright.*
 
 # Cache
 temp
