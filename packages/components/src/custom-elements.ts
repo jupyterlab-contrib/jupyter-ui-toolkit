@@ -22,6 +22,7 @@ import { jpSearch } from './search/index';
 import { jpSelect } from './select/index';
 import { jpSlider } from './slider/index';
 import { jpSliderLabel } from './slider-label/index';
+import { jpSwitch } from './switch/index';
 import { jpTabPanel } from './tab-panel/index';
 import { jpTab } from './tab/index';
 import { jpTabs } from './tabs/index';
@@ -54,6 +55,7 @@ import type { Search } from './search/index';
 import type { Select } from './select/index';
 import type { Slider } from './slider/index';
 import type { SliderLabel } from './slider-label/index';
+import type { Switch } from './switch/index';
 import type { TabPanel } from './tab-panel/index';
 import type { Tab } from './tab/index';
 import type { Tabs } from './tabs/index';
@@ -87,6 +89,7 @@ export {
   jpSelect,
   jpSlider,
   jpSliderLabel,
+  jpSwitch,
   jpTab,
   jpTabPanel,
   jpTabs,
@@ -127,6 +130,7 @@ export const allComponents = {
   jpSelect,
   jpSlider,
   jpSliderLabel,
+  jpSwitch,
   jpTab,
   jpTabPanel,
   jpTabs,
