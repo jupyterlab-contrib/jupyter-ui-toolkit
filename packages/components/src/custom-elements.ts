@@ -7,6 +7,7 @@ import { jpAvatar } from './avatar/index';
 import { jpBreadcrumb } from './breadcrumb/index';
 import { jpBreadcrumbItem } from './breadcrumb-item/index';
 import { jpButton } from './button/index';
+import { jpCard } from './card/index';
 import { jpCheckbox } from './checkbox/index';
 import { jpCombobox } from './combobox/index';
 import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index';
@@ -35,6 +36,7 @@ import type { Avatar } from './avatar/index';
 import type { Breadcrumb } from './breadcrumb/index';
 import type { BreadcrumbItem } from './breadcrumb-item/index';
 import type { Button } from './button/index';
+import type { Card } from './card/index';
 import type { Checkbox } from './checkbox/index';
 import type { Combobox } from './combobox/index';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index';
@@ -62,6 +64,7 @@ export {
   jpBreadcrumb,
   jpBreadcrumbItem,
   jpButton,
+  jpCard,
   jpCheckbox,
   jpCombobox,
   jpDataGrid,
@@ -98,6 +101,7 @@ export const allComponents = {
   jpBreadcrumb,
   jpBreadcrumbItem,
   jpButton,
+  jpCard,
   jpCheckbox,
   jpCombobox,
   jpDataGrid,
