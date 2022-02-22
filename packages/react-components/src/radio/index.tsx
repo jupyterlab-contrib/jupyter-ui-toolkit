@@ -17,6 +17,7 @@ export const Radio: React.DetailedHTMLFactory<
     name?: string;
     readonly?: boolean;
     required?: boolean;
+    value?: string;
   },
   HTMLElement
 > = wrap(jpRadio(), { events: { onChange: 'change' } }) as any;

@@ -3,13 +3,17 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
+  Card,
   Checkbox,
   Combobox,
   DataGrid,
+  Divider,
   NumberField,
   Option,
   Progress,
   ProgressRing,
+  Radio,
+  RadioGroup,
   Search,
   Select,
   Slider,
@@ -18,6 +22,7 @@ import {
   TabPanel,
   Tabs,
   TextField,
+  Toolbar,
   Tooltip,
   TreeItem,
   TreeView
@@ -126,6 +131,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     const slider = widget.node.querySelector('jp-slider');
     slider?.addEventListener('change', changeConsoleListener('Slider'));
+
+    const radioGroup = widget.node.querySelector('jp-radio-group');
+    radioGroup?.addEventListener('change', eventListener('Radio Group'));
 
     const checkbox = widget.node.querySelectorAll('jp-checkbox');
     checkbox.forEach(box => {
@@ -238,12 +246,16 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <SliderLabel position="50">50%</SliderLabel>
           <SliderLabel position="100">100%</SliderLabel>
         </Slider>
-        {/* <RadioGroup orientation="vertical">
+        <RadioGroup orientation="vertical" onChange={onChange}>
           <label slot="label">Label</label>
-          <Radio checked>Radio Label</Radio>
-          <Radio>Radio Label</Radio>
-          <Radio disabled>Radio Label</Radio>
-        </RadioGroup> */}
+          <Radio value="radio-1" checked>
+            Radio Label
+          </Radio>
+          <Radio value="radio-2">Radio Label</Radio>
+          <Radio value="radio-3" disabled>
+            Radio Label
+          </Radio>
+        </RadioGroup>
         <div className="jp-FlexColumn">
           <label>Checkboxes</label>
           <Checkbox onChange={onEvent} checked>
@@ -265,6 +277,11 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <BreadcrumbItem href="#">Item 2</BreadcrumbItem>
           <BreadcrumbItem href="#">Item 3</BreadcrumbItem>
         </Breadcrumb>
+        <Card>This is a card</Card>
+        <div className="jp-FlexColumn">
+          <label>Divider</label>
+          <Divider></Divider>
+        </div>
         <div className="jp-FlexColumn">
           <label>Progress</label>
           <Progress></Progress>
@@ -289,7 +306,18 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </div>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 4 }}>
-        <DataGrid ref={props.dataRef}></DataGrid>
+        <Toolbar>
+          <label slot="start">Toolbar</label>
+          <Button>Button</Button>
+          <Checkbox>Choice 1</Checkbox>
+          <Checkbox>Choice 2</Checkbox>
+        </Toolbar>
+
+        <DataGrid
+          ref={props.dataRef}
+          generate-header="sticky"
+          aria-label="With Sticky Header"
+        ></DataGrid>
 
         <Tabs onChange={onEvent}>
           <Tab id="one">One</Tab>
@@ -380,14 +408,12 @@ function createNode(): HTMLElement {
         <jp-slider-label position="50">50%</jp-slider-label>
         <jp-slider-label position="100">100%</jp-slider-label>
       </jp-slider>
-      <!--
       <jp-radio-group orientation="vertical">
         <label slot="label">Label</label>
-        <jp-radio checked>Radio Label</jp-radio>
-        <jp-radio>Radio Label</jp-radio>
-        <jp-radio disabled>Radio Label</jp-radio>
+        <jp-radio value="radio-1" checked>Radio Label</jp-radio>
+        <jp-radio value="radio-2">Radio Label</jp-radio>
+        <jp-radio value="radio-3" disabled>Radio Label</jp-radio>
       </jp-radio-group>
-      -->
       <div class="jp-FlexColumn">
         <label>Checkboxes</label>
         <jp-checkbox checked>Label</jp-checkbox>
@@ -406,6 +432,11 @@ function createNode(): HTMLElement {
         <jp-breadcrumb-item href="#">Item 2</jp-breadcrumb-item>
         <jp-breadcrumb-item href="#">Item 3</jp-breadcrumb-item>
       </jp-breadcrumb>
+      <jp-card>This is a card</jp-card>
+      <div class="jp-FlexColumn">
+        <label>Divider</label>
+        <jp-divider></jp-divider>
+      </div>
       <div class="jp-FlexColumn">
         <label>Progress</label>
         <jp-progress></jp-progress>
@@ -423,6 +454,13 @@ function createNode(): HTMLElement {
       </div>
     </div>
     <div class="jp-FlexColumn" style="grid-column: 4;">
+      <jp-toolbar>
+        <label slot="start">Toolbar</label>
+        <jp-button>Button</jp-button>
+        <jp-checkbox>Choice 1</jp-checkbox>
+        <jp-checkbox>Choice 2</jp-checkbox>
+      </jp-toolbar>
+
       <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
 
       <jp-tabs aria-label="Default">

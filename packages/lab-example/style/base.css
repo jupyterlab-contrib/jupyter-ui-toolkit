@@ -4,6 +4,15 @@ jp-tab {
 }
 /* End fixes */
 
+:root {
+  --avatar-fill-blue: royalblue;
+  --avatar-fill-red: indianred;
+  --avatar-color-light: white;
+  --avatar-color-dark: slategrey;
+
+  --card-height: 100px;
+}
+
 .jp-Artwork {
   padding: 4px;
 
@@ -45,14 +54,13 @@ jp-tab {
   margin: 2px;
 }
 
+jp-divider,
 jp-progress,
 jp-tree-view {
   width: 100%;
 }
 
-:root {
-  --avatar-fill-blue: royalblue;
-  --avatar-fill-red: indianred;
-  --avatar-color-light: white;
-  --avatar-color-dark: slategrey;
+jp-toolbar > * {
+  margin-top: auto;
+  margin-bottom: auto;
 }
