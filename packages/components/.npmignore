@@ -6,8 +6,10 @@ docs/
 
 # Tests
 *.spec.*
+*.test.*
 coverage/
 test-results/
+tests-out/
 
 # Builds
 build/
