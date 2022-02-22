@@ -11,6 +11,7 @@ import { jpCard } from './card/index';
 import { jpCheckbox } from './checkbox/index';
 import { jpCombobox } from './combobox/index';
 import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index';
+import { jpDivider } from './divider/index';
 import { jpNumberField } from './number-field/index';
 import { jpOption } from './option/index';
 import { jpProgress } from './progress/index';
@@ -40,6 +41,7 @@ import type { Card } from './card/index';
 import type { Checkbox } from './checkbox/index';
 import type { Combobox } from './combobox/index';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index';
+import type { Divider } from './divider/index';
 import type { NumberField } from './number-field/index';
 import type { Option } from './option/index';
 import type { Progress } from './progress/index';
@@ -70,6 +72,7 @@ export {
   jpDataGrid,
   jpDataGridCell,
   jpDataGridRow,
+  jpDivider,
   jpNumberField,
   jpOption,
   jpProgress,
@@ -107,6 +110,7 @@ export const allComponents = {
   jpDataGrid,
   jpDataGridCell,
   jpDataGridRow,
+  jpDivider,
   jpNumberField,
   jpOption,
   jpProgress,

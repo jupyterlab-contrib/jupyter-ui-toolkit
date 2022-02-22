@@ -17,6 +17,7 @@ export * from './card/index';
 export * from './checkbox/index';
 export * from './combobox/index';
 export * from './data-grid/index';
+export * from './divider/index';
 export * from './number-field/index';
 export * from './option/index';
 export * from './progress/index';
