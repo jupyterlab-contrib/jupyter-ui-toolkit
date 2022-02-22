@@ -18,6 +18,7 @@ import {
   Select,
   Slider,
   SliderLabel,
+  Switch,
   Tab,
   TabPanel,
   Tabs,
@@ -133,12 +134,18 @@ const plugin: JupyterFrontEndPlugin<void> = {
     slider?.addEventListener('change', changeConsoleListener('Slider'));
 
     const radioGroup = widget.node.querySelector('jp-radio-group');
-    radioGroup?.addEventListener('change', eventListener('Radio Group'));
+    radioGroup?.addEventListener(
+      'change',
+      changeConsoleListener('Radio Group')
+    );
 
     const checkbox = widget.node.querySelectorAll('jp-checkbox');
     checkbox.forEach(box => {
       box.addEventListener('change', eventListener('Checkbox', true));
     });
+
+    const switch_ = widget.node.querySelector('jp-switch');
+    switch_?.addEventListener('change', changeListener('Switch'));
 
     const tooltip = widget.node.querySelector('jp-tooltip');
     tooltip?.addEventListener('dismiss', eventListener('Tooltip'));
@@ -246,7 +253,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <SliderLabel position="50">50%</SliderLabel>
           <SliderLabel position="100">100%</SliderLabel>
         </Slider>
-        <RadioGroup orientation="vertical" onChange={onChange}>
+        <RadioGroup orientation="vertical" onChange={onChangeConsole}>
           <label slot="label">Label</label>
           <Radio value="radio-1" checked>
             Radio Label
@@ -258,19 +265,20 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </RadioGroup>
         <div className="jp-FlexColumn">
           <label>Checkboxes</label>
-          <Checkbox onChange={onEvent} checked>
+          <Checkbox onChange={onChangeConsole} checked>
             Label
           </Checkbox>
-          <Checkbox onChange={onEvent}>Label</Checkbox>
-          <Checkbox onChange={onEvent} disabled>
+          <Checkbox onChange={onChangeConsole}>Label</Checkbox>
+          <Checkbox onChange={onChangeConsole} disabled>
             Label
           </Checkbox>
         </div>
+        <Switch onChange={onChangeConsole}>Switch</Switch>
+      </div>
+      <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
         {/* <div>
           <Tag>Tag</Tag>
         </div> */}
-      </div>
-      <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
         <Avatar shape="circle">JS</Avatar>
         <Breadcrumb>
           <BreadcrumbItem href="#">Item 1</BreadcrumbItem>
@@ -420,12 +428,13 @@ function createNode(): HTMLElement {
         <jp-checkbox>Label</jp-checkbox>
         <jp-checkbox disabled>Label</jp-checkbox>
       </div>
+      <jp-switch>Switch</jp-switch>
+    </div>
+    <div class="jp-FlexColumn" style="grid-column: 3;">
       <!--
         <jp-badge>1</jp-badge>
         <jp-tag>Tag</jp-tag>
       -->
-    </div>
-    <div class="jp-FlexColumn" style="grid-column: 3;">
       <jp-avatar shape="circle">JS</jp-avatar>
       <jp-breadcrumb>
         <jp-breadcrumb-item href="#">Item 1</jp-breadcrumb-item>

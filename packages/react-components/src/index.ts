@@ -18,6 +18,7 @@ export * from './search';
 export * from './select';
 export * from './slider';
 export * from './slider-label';
+export * from './switch';
 export * from './tab-panel';
 export * from './tab';
 export * from './tabs';
