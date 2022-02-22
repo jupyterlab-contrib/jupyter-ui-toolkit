@@ -16,6 +16,8 @@ import { jpNumberField } from './number-field/index';
 import { jpOption } from './option/index';
 import { jpProgress } from './progress/index';
 import { jpProgressRing } from './progress-ring/index';
+import { jpRadio } from './radio/index';
+import { jpRadioGroup } from './radio-group/index';
 import { jpSearch } from './search/index';
 import { jpSelect } from './select/index';
 import { jpSlider } from './slider/index';
@@ -46,6 +48,8 @@ import type { NumberField } from './number-field/index';
 import type { Option } from './option/index';
 import type { Progress } from './progress/index';
 import type { ProgressRing } from './progress-ring/index';
+import type { Radio } from './radio/index';
+import type { RadioGroup } from './radio-group/index';
 import type { Search } from './search/index';
 import type { Select } from './select/index';
 import type { Slider } from './slider/index';
@@ -77,6 +81,8 @@ export {
   jpOption,
   jpProgress,
   jpProgressRing,
+  jpRadio,
+  jpRadioGroup,
   jpSearch,
   jpSelect,
   jpSlider,
@@ -115,6 +121,8 @@ export const allComponents = {
   jpOption,
   jpProgress,
   jpProgressRing,
+  jpRadio,
+  jpRadioGroup,
   jpSearch,
   jpSelect,
   jpSlider,

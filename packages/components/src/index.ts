@@ -21,6 +21,8 @@ export * from './divider/index';
 export * from './number-field/index';
 export * from './option/index';
 export * from './progress/index';
+export * from './radio/index';
+export * from './radio-group/index';
 export * from './search/index';
 export * from './select/index';
 export * from './slider-label/index';
