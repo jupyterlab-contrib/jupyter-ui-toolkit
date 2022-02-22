@@ -3,23 +3,19 @@
 
 import {
   provideJupyterDesignSystem,
-  jpCheckbox
+  jpDivider
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Checkbox: React.DetailedHTMLFactory<
+export const Divider: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
-    checked?: boolean;
-    indeterminate?: boolean;
-    name?: string;
-    required?: boolean;
-    disabled?: boolean;
-    readonly?: boolean;
+    orientation?: 'horizontal' | 'vertical';
+    role?: 'separator' | 'presentation';
   },
   HTMLElement
-> = wrap(jpCheckbox(), { events: { onChange: 'change' } }) as any;
+> = wrap(jpDivider()) as any;
 // @ts-expect-error unknown property
-Checkbox.displayName = 'Jupyter.Checkbox';
+Divider.displayName = 'Jupyter.Divider';

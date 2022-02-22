@@ -7,17 +7,22 @@ import { jpAvatar } from './avatar/index';
 import { jpBreadcrumb } from './breadcrumb/index';
 import { jpBreadcrumbItem } from './breadcrumb-item/index';
 import { jpButton } from './button/index';
+import { jpCard } from './card/index';
 import { jpCheckbox } from './checkbox/index';
 import { jpCombobox } from './combobox/index';
 import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index';
+import { jpDivider } from './divider/index';
 import { jpNumberField } from './number-field/index';
 import { jpOption } from './option/index';
 import { jpProgress } from './progress/index';
 import { jpProgressRing } from './progress-ring/index';
+import { jpRadio } from './radio/index';
+import { jpRadioGroup } from './radio-group/index';
 import { jpSearch } from './search/index';
 import { jpSelect } from './select/index';
 import { jpSlider } from './slider/index';
 import { jpSliderLabel } from './slider-label/index';
+import { jpSwitch } from './switch/index';
 import { jpTabPanel } from './tab-panel/index';
 import { jpTab } from './tab/index';
 import { jpTabs } from './tabs/index';
@@ -35,17 +40,22 @@ import type { Avatar } from './avatar/index';
 import type { Breadcrumb } from './breadcrumb/index';
 import type { BreadcrumbItem } from './breadcrumb-item/index';
 import type { Button } from './button/index';
+import type { Card } from './card/index';
 import type { Checkbox } from './checkbox/index';
 import type { Combobox } from './combobox/index';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index';
+import type { Divider } from './divider/index';
 import type { NumberField } from './number-field/index';
 import type { Option } from './option/index';
 import type { Progress } from './progress/index';
 import type { ProgressRing } from './progress-ring/index';
+import type { Radio } from './radio/index';
+import type { RadioGroup } from './radio-group/index';
 import type { Search } from './search/index';
 import type { Select } from './select/index';
 import type { Slider } from './slider/index';
 import type { SliderLabel } from './slider-label/index';
+import type { Switch } from './switch/index';
 import type { TabPanel } from './tab-panel/index';
 import type { Tab } from './tab/index';
 import type { Tabs } from './tabs/index';
@@ -62,19 +72,24 @@ export {
   jpBreadcrumb,
   jpBreadcrumbItem,
   jpButton,
+  jpCard,
   jpCheckbox,
   jpCombobox,
   jpDataGrid,
   jpDataGridCell,
   jpDataGridRow,
+  jpDivider,
   jpNumberField,
   jpOption,
   jpProgress,
   jpProgressRing,
+  jpRadio,
+  jpRadioGroup,
   jpSearch,
   jpSelect,
   jpSlider,
   jpSliderLabel,
+  jpSwitch,
   jpTab,
   jpTabPanel,
   jpTabs,
@@ -98,19 +113,24 @@ export const allComponents = {
   jpBreadcrumb,
   jpBreadcrumbItem,
   jpButton,
+  jpCard,
   jpCheckbox,
   jpCombobox,
   jpDataGrid,
   jpDataGridCell,
   jpDataGridRow,
+  jpDivider,
   jpNumberField,
   jpOption,
   jpProgress,
   jpProgressRing,
+  jpRadio,
+  jpRadioGroup,
   jpSearch,
   jpSelect,
   jpSlider,
   jpSliderLabel,
+  jpSwitch,
   jpTab,
   jpTabPanel,
   jpTabs,

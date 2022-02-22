@@ -3,23 +3,23 @@
 
 import {
   provideJupyterDesignSystem,
-  jpCheckbox
+  jpRadio
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Checkbox: React.DetailedHTMLFactory<
+export const Radio: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
     checked?: boolean;
-    indeterminate?: boolean;
-    name?: string;
-    required?: boolean;
     disabled?: boolean;
+    name?: string;
     readonly?: boolean;
+    required?: boolean;
+    value?: string;
   },
   HTMLElement
-> = wrap(jpCheckbox(), { events: { onChange: 'change' } }) as any;
+> = wrap(jpRadio(), { events: { onChange: 'change' } }) as any;
 // @ts-expect-error unknown property
-Checkbox.displayName = 'Jupyter.Checkbox';
+Radio.displayName = 'Jupyter.Radio';

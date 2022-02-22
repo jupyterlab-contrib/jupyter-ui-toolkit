@@ -3,23 +3,16 @@
 
 import {
   provideJupyterDesignSystem,
-  jpCheckbox
+  jpCard
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const Checkbox: React.DetailedHTMLFactory<
-  React.HTMLAttributes<HTMLElement> & {
-    checked?: boolean;
-    indeterminate?: boolean;
-    name?: string;
-    required?: boolean;
-    disabled?: boolean;
-    readonly?: boolean;
-  },
+export const Card: React.DetailedHTMLFactory<
+  React.HTMLAttributes<HTMLElement>,
   HTMLElement
-> = wrap(jpCheckbox(), { events: { onChange: 'change' } }) as any;
+> = wrap(jpCard()) as any;
 // @ts-expect-error unknown property
-Checkbox.displayName = 'Jupyter.Checkbox';
+Card.displayName = 'Jupyter.Card';
