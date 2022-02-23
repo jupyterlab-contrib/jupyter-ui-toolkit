@@ -16,6 +16,7 @@ export const Select: React.DetailedHTMLFactory<
     minimal?: boolean;
     open?: boolean;
     position?: 'above' | 'below';
+    value?: string;
   },
   HTMLElement
 > = wrap(jpSelect(), {

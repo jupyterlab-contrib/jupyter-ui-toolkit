@@ -12,6 +12,8 @@ const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
 export const Option: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
+    checked?: boolean;
+    defaultSelected?: boolean;
     disabled?: boolean;
     selected?: boolean;
     value?: string;
