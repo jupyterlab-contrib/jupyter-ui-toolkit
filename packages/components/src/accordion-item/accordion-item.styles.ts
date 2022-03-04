@@ -90,7 +90,8 @@ export const accordionItemStyles: FoundationElementTemplate<
       cursor: pointer;
     }
 
-    .button: ${focusVisible}::before {
+    /* prettier-ignore */
+    .button:${focusVisible}::before {
       outline: none;
       border: calc(${focusStrokeWidth} * 1px) solid ${accentFillFocus};
       border-radius: calc(${controlCornerRadius} * 1px);
@@ -149,7 +150,8 @@ export const accordionItemStyles: FoundationElementTemplate<
   `.withBehaviors(
     forcedColorsStylesheetBehavior(
       css`
-        .button: ${focusVisible}::before {
+        /* prettier-ignore */
+        .button:${focusVisible}::before {
           border-color: ${SystemColors.Highlight};
         }
         :host slot[name='collapsed-icon'],
