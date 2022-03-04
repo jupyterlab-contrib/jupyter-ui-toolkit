@@ -25,7 +25,7 @@ export const TextField: React.DetailedHTMLFactory<
     readonly?: boolean;
     required?: boolean;
     size?: number;
-    spellcheck?: string;
+    spellcheck?: boolean;
     type?: 'text' | 'email' | 'password' | 'tel' | 'url';
     value?: string;
   },

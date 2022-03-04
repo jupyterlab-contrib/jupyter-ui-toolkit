@@ -8,6 +8,7 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  focusStrokeWidth,
   neutralFillActive,
   neutralFillHover,
   neutralFillRest,
@@ -96,7 +97,9 @@ export const tabStyles: FoundationElementTemplate<ElementStyles> = (
 
     :host(:${focusVisible}) {
       outline: none;
-      border: calc(${strokeWidth} * 1px) solid ${accentFillFocus};
+      border-color: ${accentFillFocus};
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+        ${accentFillFocus};
     }
 
     :host(:focus) {

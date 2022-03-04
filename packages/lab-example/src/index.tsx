@@ -1,5 +1,11 @@
+// Copyright (c) Jupyter Development Team.
+// Distributed under the terms of the Modified BSD License.
+
 import {
+  Accordion,
+  AccordionItem,
   Avatar,
+  Badge,
   Breadcrumb,
   BreadcrumbItem,
   Button,
@@ -8,6 +14,8 @@ import {
   Combobox,
   DataGrid,
   Divider,
+  Menu,
+  MenuItem,
   NumberField,
   Option,
   Progress,
@@ -22,6 +30,7 @@ import {
   Tab,
   TabPanel,
   Tabs,
+  TextArea,
   TextField,
   Toolbar,
   Tooltip,
@@ -244,8 +253,8 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
             <Option>Option Label #3</Option>
           </Combobox>
         </div>
-        {/* <TextArea>Text Area Label</TextArea>
-        <Link href="#">Link Text</Link> */}
+        <TextArea>Text Area Label</TextArea>
+        {/*<Link href="#">Link Text</Link> */}
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
         <Slider min="0" max="100" onChange={onChangeConsole}>
@@ -276,10 +285,8 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         <Switch onChange={onChangeConsole}>Switch</Switch>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
-        {/* <div>
-          <Tag>Tag</Tag>
-        </div> */}
         <Avatar shape="circle">JS</Avatar>
+        <Badge>22</Badge>
         <Breadcrumb>
           <BreadcrumbItem href="#">Item 1</BreadcrumbItem>
           <BreadcrumbItem href="#">Item 2</BreadcrumbItem>
@@ -312,6 +319,22 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           </Button>
           <Tooltip anchorElement={tooltipAnchor}>React tooltip</Tooltip>
         </div>
+
+        <Menu>
+          <MenuItem role="menuitemcheckbox">Menu item 1</MenuItem>
+          <MenuItem>
+            Menu item 2
+            <Menu>
+              <MenuItem role="menuitemcheckbox">Checkbox 1</MenuItem>
+              <MenuItem>Nested Menu item 1.1</MenuItem>
+              <MenuItem>Nested Menu item 1.2</MenuItem>
+              <MenuItem>Nested Menu item 1.3</MenuItem>
+            </Menu>
+          </MenuItem>
+          <MenuItem>
+            Menu item 3<div slot="end">Shortcut text</div>
+          </MenuItem>
+        </Menu>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 4 }}>
         <Toolbar>
@@ -320,6 +343,21 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <Checkbox>Choice 1</Checkbox>
           <Checkbox>Choice 2</Checkbox>
         </Toolbar>
+
+        <Accordion {...{ 'expand-mode': 'single' }}>
+          <AccordionItem expanded>
+            <span slot="heading">Panel one</span>
+            Panel one content
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="heading">Panel two</span>
+            Panel two content
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="heading">Panel three</span>
+            Panel three content
+          </AccordionItem>
+        </Accordion>
 
         <DataGrid
           ref={props.dataRef}
@@ -407,8 +445,8 @@ function createNode(): HTMLElement {
           <jp-option>Option Label #3</jp-option>
         </jp-combobox>
       </div>
-      <!-- <jp-text-area>Text Area Label</jp-text-area>
-      <jp-link href="#">Link Text</jp-link> -->
+      <jp-text-area>Text Area Label</jp-text-area>
+      <!-- <jp-link href="#">Link Text</jp-link> -->
     </div>
     <div class="jp-FlexColumn" style="grid-column: 2;">
       <jp-slider min="0" max="100">
@@ -431,10 +469,7 @@ function createNode(): HTMLElement {
       <jp-switch>Switch</jp-switch>
     </div>
     <div class="jp-FlexColumn" style="grid-column: 3;">
-      <!--
-        <jp-badge>1</jp-badge>
-        <jp-tag>Tag</jp-tag>
-      -->
+      <jp-badge>18</jp-badge>
       <jp-avatar shape="circle">JS</jp-avatar>
       <jp-breadcrumb>
         <jp-breadcrumb-item href="#">Item 1</jp-breadcrumb-item>
@@ -461,6 +496,28 @@ function createNode(): HTMLElement {
         <jp-tooltip anchor="anchored-button">Beautiful tooltip</jp-tooltip>
         <jp-button id="anchored-button">Anchor</jp-button>
       </div>
+
+      <jp-menu>
+        <jp-menu-item role="menuitemcheckbox">
+            Menu item 1
+        </jp-menu-item>
+        <jp-menu-item>
+            Menu item 2
+            <jp-menu>
+                <jp-menu-item role="menuitemcheckbox">Checkbox 1</jp-menu-item>
+                <jp-menu-item>Nested Menu item 1.1</jp-menu-item>
+                <jp-menu-item>Nested Menu item 1.2</jp-menu-item>
+                <jp-menu-item>Nested Menu item 1.3</jp-menu-item>
+            </jp-menu>
+        </jp-menu-item>
+        <jp-menu-item>
+            Menu item 3
+            <div slot="end">
+                Shortcut text
+            </div>
+        </jp-menu-item>
+      </jp-menu>
+
     </div>
     <div class="jp-FlexColumn" style="grid-column: 4;">
       <jp-toolbar>
@@ -470,6 +527,21 @@ function createNode(): HTMLElement {
         <jp-checkbox>Choice 2</jp-checkbox>
       </jp-toolbar>
 
+      <jp-accordion expand-mode="single">
+          <jp-accordion-item expanded>
+              <span slot="heading">Panel one</span>
+              Panel one content
+          </jp-accordion-item>
+          <jp-accordion-item>
+              <span slot="heading">Panel two</span>
+              Panel two content
+          </jp-accordion-item>
+          <jp-accordion-item>
+              <span slot="heading">Panel three</span>
+              Panel three content
+          </jp-accordion-item>
+      </jp-accordion>
+      
       <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
 
       <jp-tabs aria-label="Default">

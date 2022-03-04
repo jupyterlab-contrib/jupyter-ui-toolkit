@@ -1,3 +1,8 @@
+/* 
+/  Copyright (c) Jupyter Development Team.
+/  Distributed under the terms of the Modified BSD License.
+/*/
+
 /* Fixes for JupyterLab */
 jp-tab {
   box-sizing: border-box;
@@ -9,6 +14,11 @@ jp-tab {
   --avatar-fill-red: indianred;
   --avatar-color-light: white;
   --avatar-color-dark: slategrey;
+
+  --badge-fill-blue: royalblue;
+  --badge-fill-red: indianred;
+  --badge-color-light: white;
+  --badge-color-dark: slategrey;
 
   --card-height: 100px;
 }
