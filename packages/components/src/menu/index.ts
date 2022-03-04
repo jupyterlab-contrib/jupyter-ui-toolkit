@@ -1,3 +1,6 @@
+// Copyright (c) Jupyter Development Team.
+// Distributed under the terms of the Modified BSD License.
+
 import { Menu, menuTemplate as template } from '@microsoft/fast-foundation';
 import { menuStyles as styles } from '@microsoft/fast-components';
 
