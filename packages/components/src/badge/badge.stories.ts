@@ -9,9 +9,9 @@ export default {
     circular: { control: 'boolean' },
     fill: {
       control: 'select',
-      options: ['accent-primary', 'accent-secondary']
+      options: ['none', 'accent-primary', 'accent-secondary']
     },
-    color: { control: 'select', options: ['foo', 'bar'] }
+    color: { control: 'select', options: ['none', 'foo', 'bar'] }
   },
   parameters: {
     actions: {
@@ -39,21 +39,24 @@ const Template = (
 
   return `<jp-badge
     ${args.circular ? 'circular' : ''}
-    fill="${args.fill}"
-    color="${args.color}"
+    ${args.fill !== 'none' ? `fill="${args.fill}"` : ''}
+    ${args.color !== 'none' ? `color="${args.color}"` : ''}
   >
+    42
   </jp-badge>`;
 };
 
 export const Default = Template.bind({});
 Default.args = {
   circular: true,
-  fill: 'accent-primary',
-  color: 'foo'
+  fill: 'none',
+  color: 'none'
 };
 
 export const Square = Template.bind({});
 Square.args = {
   ...Default.args,
-  circular: false
+  circular: false,
+  fill: 'accent-primary',
+  color: 'foo'
 };

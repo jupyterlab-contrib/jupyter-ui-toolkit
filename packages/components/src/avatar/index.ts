@@ -1,39 +1,16 @@
 // Copyright (c) Jupyter Development Team.
-// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import {
-  accentFillRest,
-  Avatar,
-  avatarStyles as styles,
-  foregroundOnAccentRest,
-  imgTemplate
-} from '@microsoft/fast-components';
-import { css, ElementStyles } from '@microsoft/fast-element';
+import { Avatar, imgTemplate } from '@microsoft/fast-components';
 import {
   Avatar as FoundationAvatar,
   AvatarOptions,
-  avatarTemplate as template,
-  FoundationElementTemplate
+  avatarTemplate as template
 } from '@microsoft/fast-foundation';
+import { avatarStyles as styles } from './avatar.styles';
 
 export { Avatar } from '@microsoft/fast-components';
-
-export const avatarStyles: FoundationElementTemplate<
-  ElementStyles,
-  AvatarOptions
-> = (context, definition: AvatarOptions) => css`
-  ${styles(context, definition)}
-
-  .backplate {
-    min-width: var(--avatar-size, var(--avatar-size-default));
-    background-color: ${accentFillRest};
-  }
-
-  .link {
-    color: ${foregroundOnAccentRest};
-  }
-`;
+export { styles as avatarStyles };
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Avatar} registration for configuring the component with a DesignSystem.
@@ -48,7 +25,7 @@ export const jpAvatar = Avatar.compose<AvatarOptions>({
   baseName: 'avatar',
   baseClass: FoundationAvatar,
   template,
-  styles: avatarStyles,
+  styles,
   media: imgTemplate,
   shadowOptions: {
     delegatesFocus: true

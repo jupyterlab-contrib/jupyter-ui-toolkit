@@ -2,7 +2,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { Badge, badgeTemplate as template } from '@microsoft/fast-foundation';
-import { badgeStyles as styles } from '@microsoft/fast-components';
+import { badgeStyles as styles } from './badge.styles';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Badge} registration for configuring the component with a DesignSystem.

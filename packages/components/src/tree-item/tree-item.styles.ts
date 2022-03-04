@@ -126,8 +126,9 @@ export const treeItemStyles: FoundationElementTemplate<
     }
 
     :host(:${focusVisible}) .positioning-region {
-      border: ${accentFillFocus} calc((${focusStrokeWidth}) * 1px) solid;
-      border-radius: calc(${controlCornerRadius} * 1px);
+      border-color: ${accentFillFocus};
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+        ${accentFillFocus} inset;
       color: ${neutralForegroundRest};
     }
 
@@ -136,6 +137,7 @@ export const treeItemStyles: FoundationElementTemplate<
       position: relative;
       box-sizing: border-box;
       border: transparent calc(${strokeWidth} * 1px) solid;
+      border-radius: calc(${controlCornerRadius} * 1px);
       height: calc((${heightNumber} + 1) * 1px);
     }
 

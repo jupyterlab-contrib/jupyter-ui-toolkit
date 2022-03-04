@@ -2,18 +2,8 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { css, ElementStyles } from '@microsoft/fast-element';
 import {
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior,
-  FoundationElementTemplate
-} from '@microsoft/fast-foundation';
-import {
-  accentFillActive,
   accentFillFocus,
-  accentFillHover,
   bodyFont,
   controlCornerRadius,
   designUnit,
@@ -24,6 +14,8 @@ import {
   neutralFillInputHover,
   neutralFillInputRest,
   neutralFillRest,
+  neutralFillStrongActive,
+  neutralFillStrongHover,
   neutralFillStrongRest,
   neutralForegroundRest,
   neutralStrokeRest,
@@ -31,6 +23,14 @@ import {
   typeRampBaseFontSize,
   typeRampBaseLineHeight
 } from '@microsoft/fast-components';
+import { css, ElementStyles } from '@microsoft/fast-element';
+import {
+  disabledCursor,
+  display,
+  focusVisible,
+  forcedColorsStylesheetBehavior,
+  FoundationElementTemplate
+} from '@microsoft/fast-foundation';
 import { heightNumber } from '../styles/index';
 
 /**
@@ -66,12 +66,12 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
 
     .control:hover:enabled {
       background: ${neutralFillInputHover};
-      border-color: ${accentFillHover};
+      border-color: ${neutralFillStrongHover};
     }
 
     .control:active:enabled {
       background: ${neutralFillInputActive};
-      border-color: ${accentFillActive};
+      border-color: ${neutralFillStrongActive};
     }
 
     .control:hover,
@@ -84,7 +84,7 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
     :host(:focus-within) .control {
       border-color: ${accentFillFocus};
       box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
-        ${accentFillFocus} inset;
+        ${accentFillFocus};
     }
 
     :host([appearance='filled']) .control {

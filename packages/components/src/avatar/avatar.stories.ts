@@ -9,9 +9,9 @@ export default {
     shape: { control: 'select', options: ['circle', 'square', 'default'] },
     fill: {
       control: 'select',
-      options: ['accent-primary', 'accent-secondary']
+      options: ['none', 'accent-primary', 'accent-secondary']
     },
-    color: { control: 'select', options: ['foo', 'bar'] },
+    color: { control: 'select', options: ['none', 'foo', 'bar'] },
     image: { control: 'boolean' }
   },
   parameters: {
@@ -43,8 +43,8 @@ const Template = (
     alt="John's avatar"
     link="#"
     shape="${args.shape}"
-    fill="${args.fill}"
-    color="${args.color}"
+    ${args.fill !== 'none' ? `fill="${args.fill}"` : ''}
+    ${args.color !== 'none' ? `color="${args.color}"` : ''}
   >
     ${
       args.image
@@ -57,14 +57,16 @@ const Template = (
 export const Default = Template.bind({});
 Default.args = {
   shape: 'circle',
-  fill: 'accent-primary',
-  color: 'foo',
+  fill: 'none',
+  color: 'none',
   image: false
 };
 
 export const Square = Template.bind({});
 Square.args = {
   ...Default.args,
+  fill: 'accent-primary',
+  color: 'foo',
   shape: 'square'
 };
 
