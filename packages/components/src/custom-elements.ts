@@ -2,8 +2,11 @@
 // Distributed under the terms of the Modified BSD License.
 
 import type { Container } from '@microsoft/fast-foundation';
+import { jpAccordion } from './accordion/index';
+import { jpAccordionItem } from './accordion-item/index';
 import { jpAnchoredRegion } from './anchored-region/index';
 import { jpAvatar } from './avatar/index';
+import { jpBadge } from './badge/index';
 import { jpBreadcrumb } from './breadcrumb/index';
 import { jpBreadcrumbItem } from './breadcrumb-item/index';
 import { jpButton } from './button/index';
@@ -12,6 +15,8 @@ import { jpCheckbox } from './checkbox/index';
 import { jpCombobox } from './combobox/index';
 import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index';
 import { jpDivider } from './divider/index';
+import { jpMenu } from './menu/index';
+import { jpMenuItem } from './menu-item/index';
 import { jpNumberField } from './number-field/index';
 import { jpOption } from './option/index';
 import { jpProgress } from './progress/index';
@@ -26,6 +31,7 @@ import { jpSwitch } from './switch/index';
 import { jpTabPanel } from './tab-panel/index';
 import { jpTab } from './tab/index';
 import { jpTabs } from './tabs/index';
+import { jpTextArea } from './text-area/index';
 import { jpTextField } from './text-field/index';
 import { jpToolbar } from './toolbar/index';
 import { jpTooltip } from './tooltip/index';
@@ -35,8 +41,11 @@ import { jpTreeView } from './tree-view/index';
 // Don't delete these. They're needed so that API-extractor doesn't add import types
 // with improper pathing
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import type { Accordion } from './accordion/index';
+import type { AccordionItem } from './accordion-item/index';
 import type { AnchoredRegion } from './anchored-region/index';
 import type { Avatar } from './avatar/index';
+import type { Badge } from './badge/index';
 import type { Breadcrumb } from './breadcrumb/index';
 import type { BreadcrumbItem } from './breadcrumb-item/index';
 import type { Button } from './button/index';
@@ -45,6 +54,8 @@ import type { Checkbox } from './checkbox/index';
 import type { Combobox } from './combobox/index';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index';
 import type { Divider } from './divider/index';
+import type { Menu } from './menu/index';
+import type { MenuItem } from './menu-item/index';
 import type { NumberField } from './number-field/index';
 import type { Option } from './option/index';
 import type { Progress } from './progress/index';
@@ -59,6 +70,7 @@ import type { Switch } from './switch/index';
 import type { TabPanel } from './tab-panel/index';
 import type { Tab } from './tab/index';
 import type { Tabs } from './tabs/index';
+import type { TextArea } from './text-area/index';
 import type { TextField } from './text-field/index';
 import type { Toolbar } from './toolbar/index';
 import type { Tooltip } from './tooltip/index';
@@ -67,8 +79,11 @@ import type { TreeView } from './tree-view/index';
 
 // export all components
 export {
+  jpAccordion,
+  jpAccordionItem,
   jpAnchoredRegion,
   jpAvatar,
+  jpBadge,
   jpBreadcrumb,
   jpBreadcrumbItem,
   jpButton,
@@ -79,6 +94,8 @@ export {
   jpDataGridCell,
   jpDataGridRow,
   jpDivider,
+  jpMenu,
+  jpMenuItem,
   jpNumberField,
   jpOption,
   jpProgress,
@@ -93,6 +110,7 @@ export {
   jpTab,
   jpTabPanel,
   jpTabs,
+  jpTextArea,
   jpTextField,
   jpToolbar,
   jpTooltip,
@@ -108,8 +126,11 @@ export {
  * statically link and register all available components.
  */
 export const allComponents = {
+  jpAccordion,
+  jpAccordionItem,
   jpAnchoredRegion,
   jpAvatar,
+  jpBadge,
   jpBreadcrumb,
   jpBreadcrumbItem,
   jpButton,
@@ -120,6 +141,8 @@ export const allComponents = {
   jpDataGridCell,
   jpDataGridRow,
   jpDivider,
+  jpMenu,
+  jpMenuItem,
   jpNumberField,
   jpOption,
   jpProgress,
@@ -134,6 +157,7 @@ export const allComponents = {
   jpTab,
   jpTabPanel,
   jpTabs,
+  jpTextArea,
   jpTextField,
   jpToolbar,
   jpTooltip,
