@@ -3,35 +3,35 @@
 
 import {
   provideJupyterDesignSystem,
-  jpTextField
+  jpTextArea
 } from '@jupyter-notebook/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
-export const TextField: React.DetailedHTMLFactory<
+export const TextArea: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
     appearance?: 'outline' | 'filled';
     autofocus?: boolean;
+    cols?: number;
     disabled?: boolean;
     form?: string;
     list?: string;
     maxlength?: number;
     minlength?: number;
     name?: string;
-    pattern?: string;
     placeholder?: string;
     readonly?: boolean;
     required?: boolean;
-    size?: number;
+    rows?: number;
+    resize?: 'none' | 'both' | 'horizontal' | 'vertical';
     spellcheck?: boolean;
-    type?: 'text' | 'email' | 'password' | 'tel' | 'url';
     value?: string;
   },
   HTMLElement
-> = wrap(jpTextField(), {
-  events: { onChange: 'change', onInput: 'input' }
+> = wrap(jpTextArea(), {
+  events: { onChange: 'change' }
 }) as any;
 // @ts-expect-error unknown property
-TextField.displayName = 'Jupyter.TextField';
+TextArea.displayName = 'Jupyter.TextArea';
