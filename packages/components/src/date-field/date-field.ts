@@ -209,7 +209,6 @@ export class DateField extends FormAssociatedDateField {
     super.valueChanged(previous, this.value);
 
     if (previous !== undefined && !this.isUserInput) {
-      this.$emit('input');
       this.$emit('change');
     }
 
