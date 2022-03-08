@@ -1,6 +1,6 @@
 {
   "name": "jupyter-ui-demo",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A JupyterLab extension to present an artwork of available UI components",
   "private": true,
   "keywords": [
@@ -48,8 +48,8 @@
     "watch:labextension": "jupyter labextension watch ."
   },
   "dependencies": {
-    "@jupyter-notebook/react-components": "^0.7.0",
-    "@jupyter-notebook/web-components": "^0.7.0",
+    "@jupyter-notebook/react-components": "^0.8.0",
+    "@jupyter-notebook/web-components": "^0.8.0",
     "@jupyterlab/application": "^3.1.0",
     "@jupyterlab/apputils": "^3.0.0",
     "@lumino/widgets": "^1.30.0",
