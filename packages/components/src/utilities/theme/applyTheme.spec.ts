@@ -2,7 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-const sum = (a, b) => {
+const sum = (a: number, b: number): number => {
   return a + b;
 };
 

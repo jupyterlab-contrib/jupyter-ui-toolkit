@@ -13,6 +13,7 @@ import {
 } from '@microsoft/fast-foundation';
 import type { FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { FormAssociatedDateField } from './date-field.form-associated';
+import { nullableDateConverter } from '../converters';
 
 /**
  * Number field appearances
@@ -25,6 +26,8 @@ export type DateFieldAppearance = 'filled' | 'outline';
  * @public
  */
 export type DateFieldOptions = FoundationElementDefinition & StartEndOptions;
+
+const INVALID_DATE = 'Invalid Date';
 
 /**
  * A Dext Field Custom HTML Element.
@@ -103,8 +106,8 @@ export class DateField extends FormAssociatedDateField {
    * @remarks
    * HTMLAttribute: max
    */
-  @attr({ converter: nullableNumberConverter })
-  public max: number;
+  @attr({ converter: nullableDateConverter })
+  public max: Date;
 
   /**
    * Ensures that the max is greater than the min and that the value
@@ -114,12 +117,8 @@ export class DateField extends FormAssociatedDateField {
    *
    * @internal
    */
-  public maxChanged(previous: number, next: number): void {
-    this.max = Math.max(next, this.min ?? next);
-    const min = Math.min(this.min, this.max);
-    if (this.min !== undefined && this.min !== min) {
-      this.min = min;
-    }
+  public maxChanged(previous: Date, next: Date): void {
+    this.max = next < (this.min ?? next) ? this.min : next;
     this.value = this.getValidValue(this.value);
   }
 
@@ -129,8 +128,8 @@ export class DateField extends FormAssociatedDateField {
    * @remarks
    * HTMLAttribute: min
    */
-  @attr({ converter: nullableNumberConverter })
-  public min: number;
+  @attr({ converter: nullableDateConverter })
+  public min: Date;
 
   /**
    * Ensures that the min is less than the max and that the value
@@ -140,12 +139,8 @@ export class DateField extends FormAssociatedDateField {
    *
    * @internal
    */
-  public minChanged(previous: number, next: number): void {
-    this.min = Math.min(next, this.max ?? next);
-    const max = Math.max(this.min, this.max);
-    if (this.max !== undefined && this.max !== max) {
-      this.max = max;
-    }
+  public minChanged(previous: Date, next: Date): void {
+    this.min = next > (this.max ?? next) ? this.max : next;
     this.value = this.getValidValue(this.value);
   }
 
@@ -173,11 +168,11 @@ export class DateField extends FormAssociatedDateField {
    * @public
    */
   public get valueAsNumber(): number {
-    return parseFloat(super.value);
+    return new Date(super.value).valueOf();
   }
 
   public set valueAsNumber(next: number) {
-    this.value = next.toString();
+    this.value = new Date(next).toString();
   }
 
   /**
@@ -186,7 +181,7 @@ export class DateField extends FormAssociatedDateField {
    * @public
    */
   public get valueAsDate(): Date {
-    return new Date(parseFloat(super.value));
+    return new Date(super.value);
   }
 
   public set valueAsDate(next: Date) {
@@ -228,14 +223,19 @@ export class DateField extends FormAssociatedDateField {
    * @internal
    */
   private getValidValue(value: string): string {
-    let validValue: number | string = parseFloat(
-      parseFloat(value).toPrecision(12)
-    );
-    if (isNaN(validValue)) {
+    let validValue: Date | string = new Date(value);
+    if (validValue.toString() === INVALID_DATE) {
       validValue = '';
     } else {
-      validValue = Math.min(validValue, this.max ?? validValue);
-      validValue = Math.max(validValue, this.min ?? validValue).toString();
+      validValue =
+        validValue > (this.max ?? validValue) ? this.max : validValue;
+      validValue =
+        validValue < (this.min ?? validValue) ? this.min : validValue;
+      validValue = `${validValue.getFullYear().toString().padStart(4, '0')}-${(
+        validValue.getMonth() + 1
+      )
+        .toString()
+        .padStart(2, '0')}-${validValue.getDate().toString().padStart(2, '0')}`;
     }
 
     return validValue;
@@ -249,18 +249,10 @@ export class DateField extends FormAssociatedDateField {
   public stepUp(): void {
     // Step is given in days: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#step
     const step = 86400000 * this.step;
-    const value = parseFloat(this.value);
-    const stepUpValue = !isNaN(value)
-      ? value + step
-      : this.min > 0
-      ? this.min
-      : this.max < 0
-      ? this.max
-      : !this.min
-      ? step
-      : 0;
-
-    this.value = stepUpValue.toString();
+    const value = new Date(this.value);
+    this.value = new Date(
+      value.toString() !== INVALID_DATE ? value.valueOf() + step : 0
+    ).toString();
   }
 
   /**
@@ -271,18 +263,12 @@ export class DateField extends FormAssociatedDateField {
   public stepDown(): void {
     // Step is given in days: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#step
     const step = 86400000 * this.step;
-    const value = parseFloat(this.value);
-    const stepDownValue = !isNaN(value)
-      ? value - step
-      : this.min > 0
-      ? this.min
-      : this.max < 0
-      ? this.max
-      : !this.min
-      ? 0 - step
-      : 0;
-
-    this.value = stepDownValue.toString();
+    const value = new Date(this.value);
+    this.value = new Date(
+      value.toString() !== INVALID_DATE
+        ? Math.max(value.valueOf() - step, 0)
+        : 0
+    ).toString();
   }
 
   /**

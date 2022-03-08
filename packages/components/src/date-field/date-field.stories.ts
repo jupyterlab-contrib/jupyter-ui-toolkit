@@ -33,8 +33,8 @@ const Template = (
   container.insertAdjacentHTML(
     'afterbegin',
     `<jp-date-field
-      ${args.readonly ? 'readonly' : ''}
-      ${args.disabled ? 'disabled' : ''}
+      ${args.readonly ? 'readonly=""' : ''}
+      ${args.disabled ? 'disabled=""' : ''}
       ${args.autofocus ? 'autofocus' : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
