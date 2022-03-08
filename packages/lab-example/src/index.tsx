@@ -13,6 +13,7 @@ import {
   Checkbox,
   Combobox,
   DataGrid,
+  DateField,
   Divider,
   Menu,
   MenuItem,
@@ -132,6 +133,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
     numberField?.addEventListener('change', changeListener('Number field'));
     numberField?.addEventListener('input', changeListener('Number field'));
 
+    const dateField = widget.node.querySelector('jp-date-field');
+    dateField?.addEventListener('change', changeListener('Date field'));
+
     const select = widget.node.querySelector('jp-select');
     select?.addEventListener('change', changeListener('Select'));
 
@@ -237,6 +241,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         <NumberField value="10" onChange={onChange}>
           Number Field Label
         </NumberField>
+        <DateField value="2021-09-12" onChange={onChange}>
+          Date Field Label
+        </DateField>
         <div className="jp-FlexColumn">
           <label>Select</label>
           <Select onChange={onChange}>
@@ -253,10 +260,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
             <Option>Option Label #3</Option>
           </Combobox>
         </div>
-        <TextArea>Text Area Label</TextArea>
-        {/*<Link href="#">Link Text</Link> */}
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
+        <TextArea>Text Area Label</TextArea>
         <Slider min="0" max="100" onChange={onChangeConsole}>
           <SliderLabel position="0">0%</SliderLabel>
           <SliderLabel position="50">50%</SliderLabel>
@@ -425,6 +431,9 @@ function createNode(): HTMLElement {
       <jp-search value="Dummy search text">Search Label</jp-search>
       <jp-text-field value="Populated text">Text Field Label</jp-text-field>
       <jp-number-field value="30">Number Field Label</jp-number-field>
+      <jp-date-field value="2021-09-12">
+        Date Field Label
+      </jp-date-field>
       <div class="jp-FlexColumn">
         <label>
           Select
@@ -445,10 +454,9 @@ function createNode(): HTMLElement {
           <jp-option>Option Label #3</jp-option>
         </jp-combobox>
       </div>
-      <jp-text-area>Text Area Label</jp-text-area>
-      <!-- <jp-link href="#">Link Text</jp-link> -->
     </div>
     <div class="jp-FlexColumn" style="grid-column: 2;">
+      <jp-text-area>Text Area Label</jp-text-area>
       <jp-slider min="0" max="100">
         <jp-slider-label position="0">0%</jp-slider-label>
         <jp-slider-label position="50">50%</jp-slider-label>

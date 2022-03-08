@@ -13,6 +13,7 @@ export * from './card';
 export * from './checkbox';
 export * from './combobox';
 export * from './data-grid';
+export * from './date-field';
 export * from './divider';
 export * from './menu';
 export * from './menu-item';
