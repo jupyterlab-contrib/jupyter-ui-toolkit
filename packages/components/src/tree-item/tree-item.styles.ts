@@ -161,6 +161,7 @@ export const treeItemStyles: FoundationElementTemplate<
       align-items: center;
       white-space: nowrap;
       width: 100%;
+      min-width: 0;
       height: calc(${heightNumber} * 1px);
       margin-inline-start: calc(${designUnit} * 2px + 8px);
       font-size: ${typeRampBaseFontSize};
