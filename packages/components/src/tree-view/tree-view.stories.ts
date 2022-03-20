@@ -39,7 +39,7 @@ const Template = (
         <jp-tree-item>Nested item 2</jp-tree-item>
         <jp-tree-item>Nested item 3</jp-tree-item>
       </jp-tree-item>
-      <jp-tree-item>
+      <jp-tree-item expanded>
         Root item 2
         <jp-tree-item>
           Flowers
