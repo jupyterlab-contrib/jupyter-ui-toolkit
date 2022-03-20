@@ -13,7 +13,6 @@ import {
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
-  accentFillRest,
   bodyFont,
   controlCornerRadius,
   density,
@@ -51,33 +50,33 @@ export const accordionItemStyles: FoundationElementTemplate<
       padding: calc((6 + (${designUnit} * 2 * ${density})) * 1px);
     }
 
-    .heading {
+    div.heading {
       display: grid;
       position: relative;
-      grid-template-columns: auto 1fr auto calc(${heightNumber} * 1px);
+      grid-template-columns: calc(${heightNumber} * 1px) auto 1fr auto;
+      color: ${neutralForegroundRest};
     }
 
     .button {
       appearance: none;
       border: none;
       background: none;
-      grid-column: 2;
-      grid-row: 1;
+      grid-column: 3;
       outline: none;
       padding: 0 calc((6 + (${designUnit} * 2 * ${density})) * 1px);
       text-align: left;
       height: calc(${heightNumber} * 1px);
-      color: ${neutralForegroundRest};
+      color: currentcolor;
       cursor: pointer;
       font-family: inherit;
     }
 
     .button:hover {
-      color: ${neutralForegroundRest};
+      color: currentcolor;
     }
 
     .button:active {
-      color: ${neutralForegroundRest};
+      color: currentcolor;
     }
 
     .button::before {
@@ -105,14 +104,15 @@ export const accordionItemStyles: FoundationElementTemplate<
       display: flex;
       align-items: center;
       justify-content: center;
-      grid-column: 4;
+      grid-column: 1;
+      grid-row: 1;
       pointer-events: none;
       position: relative;
     }
 
     slot[name='expanded-icon'],
     slot[name='collapsed-icon'] {
-      fill: ${accentFillRest};
+      fill: currentcolor;
     }
 
     slot[name='collapsed-icon'] {
@@ -136,7 +136,7 @@ export const accordionItemStyles: FoundationElementTemplate<
       align-items: center;
       padding-inline-start: calc(${designUnit} * 1px);
       justify-content: center;
-      grid-column: 1;
+      grid-column: 2;
       position: relative;
     }
 
@@ -144,7 +144,7 @@ export const accordionItemStyles: FoundationElementTemplate<
       display: flex;
       align-items: center;
       justify-content: center;
-      grid-column: 3;
+      grid-column: 4;
       position: relative;
     }
   `.withBehaviors(
