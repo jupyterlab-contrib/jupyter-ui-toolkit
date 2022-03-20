@@ -9,7 +9,7 @@ import {
 } from '@microsoft/fast-foundation';
 import { avatarStyles as styles } from './avatar.styles';
 
-export { Avatar } from '@microsoft/fast-components';
+export { Avatar, imgTemplate } from '@microsoft/fast-components';
 export { styles as avatarStyles };
 
 /**

@@ -15,7 +15,7 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
+} from '../design-token';
 import { selectStyles } from '../select/select.styles';
 
 /**

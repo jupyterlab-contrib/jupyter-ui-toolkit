@@ -2,12 +2,12 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { neutralForegroundRest } from '@microsoft/fast-components';
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   FoundationElementTemplate,
   NumberFieldOptions
 } from '@microsoft/fast-foundation';
+import { neutralForegroundRest } from '../design-token';
 import { BaseFieldStyles } from '../styles/index';
 
 /**

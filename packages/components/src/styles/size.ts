@@ -3,11 +3,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { cssPartial } from '@microsoft/fast-element';
-import {
-  baseHeightMultiplier,
-  density,
-  designUnit
-} from '@microsoft/fast-components';
+import { baseHeightMultiplier, density, designUnit } from '../design-token';
 
 /**
  * A formula to retrieve the control height.

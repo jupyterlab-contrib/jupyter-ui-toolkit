@@ -2,13 +2,6 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import {
-  accentFillFocus,
-  controlCornerRadius,
-  fillColor,
-  focusStrokeWidth,
-  strokeWidth
-} from '@microsoft/fast-components';
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   display,
@@ -18,6 +11,13 @@ import {
   ToolbarOptions
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
+import {
+  accentFillFocus,
+  controlCornerRadius,
+  fillColor,
+  focusStrokeWidth,
+  strokeWidth
+} from '../design-token';
 
 /**
  * Styles for the Toolbar

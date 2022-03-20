@@ -2,7 +2,6 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { accentFillFocus } from '@microsoft/fast-components';
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   AccordionItemOptions,
@@ -13,6 +12,7 @@ import {
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
+  accentFillFocus,
   accentFillRest,
   bodyFont,
   controlCornerRadius,
@@ -24,7 +24,7 @@ import {
   strokeWidth,
   typeRampMinus1FontSize,
   typeRampMinus1LineHeight
-} from '@microsoft/fast-components';
+} from '../design-token';
 import { heightNumber } from '../styles/size';
 
 /**

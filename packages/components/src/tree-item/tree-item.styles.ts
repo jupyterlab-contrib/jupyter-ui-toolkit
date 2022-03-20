@@ -2,6 +2,19 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css, cssPartial, ElementStyles } from '@microsoft/fast-element';
+import {
+  DesignToken,
+  disabledCursor,
+  display,
+  focusVisible,
+  forcedColorsStylesheetBehavior,
+  FoundationElementTemplate,
+  TreeItem,
+  TreeItemOptions
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
+import type { Swatch } from '../colors';
 import {
   accentFillFocus,
   accentForegroundRest,
@@ -21,22 +34,9 @@ import {
   neutralFillStealthRest,
   neutralForegroundRest,
   strokeWidth,
-  Swatch,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
-import { css, cssPartial, ElementStyles } from '@microsoft/fast-element';
-import {
-  DesignToken,
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior,
-  FoundationElementTemplate,
-  TreeItem,
-  TreeItemOptions
-} from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
+} from '../design-token';
 import { heightNumber } from '../styles/index';
 
 const ltr = css`

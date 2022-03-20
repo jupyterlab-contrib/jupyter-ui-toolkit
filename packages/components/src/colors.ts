@@ -10,6 +10,17 @@ import {
   SwatchRGB
 } from '@microsoft/fast-components';
 
+export {
+  InteractiveSwatchSet,
+  isDark,
+  Palette,
+  PaletteRGB,
+  Recipe,
+  StandardLuminance,
+  Swatch,
+  SwatchRGB
+} from '@microsoft/fast-components';
+
 /*
  * The error palette is built using the same color algorithm as the accent palette
  * But by copying the algorithm from @microsoft/fast-components at commit 03d711f222bd816834a5e1d60256d3e083b27c27

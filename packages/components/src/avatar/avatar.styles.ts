@@ -2,6 +2,13 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css, ElementStyles } from '@microsoft/fast-element';
+import {
+  AvatarOptions,
+  Badge,
+  display,
+  FoundationElementTemplate
+} from '@microsoft/fast-foundation';
 import {
   accentFillRest,
   baseHeightMultiplier,
@@ -12,14 +19,7 @@ import {
   foregroundOnAccentRest,
   neutralForegroundRest,
   typeRampBaseFontSize
-} from '@microsoft/fast-components';
-import { css, ElementStyles } from '@microsoft/fast-element';
-import {
-  AvatarOptions,
-  Badge,
-  display,
-  FoundationElementTemplate
-} from '@microsoft/fast-foundation';
+} from '../design-token';
 
 const rtl: FoundationElementTemplate<ElementStyles, AvatarOptions> = (
   context,

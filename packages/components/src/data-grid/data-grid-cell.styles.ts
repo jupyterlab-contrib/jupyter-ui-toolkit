@@ -2,6 +2,13 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css, ElementStyles } from '@microsoft/fast-element';
+import {
+  focusVisible,
+  forcedColorsStylesheetBehavior,
+  FoundationElementTemplate
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillFocus,
   bodyFont,
@@ -12,14 +19,7 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
-import { css, ElementStyles } from '@microsoft/fast-element';
-import {
-  focusVisible,
-  forcedColorsStylesheetBehavior,
-  FoundationElementTemplate
-} from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
+} from '../design-token';
 
 /**
  * Styles for Data Grid cell

@@ -7,21 +7,23 @@ import {
   parseColor,
   rgbToHSL
 } from '@microsoft/fast-colors';
+import { DesignToken } from '@microsoft/fast-foundation';
+import {
+  Palette,
+  PaletteRGB,
+  StandardLuminance,
+  Swatch,
+  SwatchRGB
+} from '../../colors';
 import {
   accentFillHoverDelta,
   accentPalette,
   baseLayerLuminance,
   bodyFont,
   neutralPalette,
-  Palette,
-  PaletteRGB,
-  StandardLuminance,
   strokeWidth,
-  Swatch,
-  SwatchRGB,
   typeRampBaseFontSize
-} from '@microsoft/fast-components';
-import { DesignToken } from '@microsoft/fast-foundation';
+} from '../../design-token';
 
 const THEME_NAME_BODY_ATTRIBUTE = 'data-jp-theme-name';
 const THEME_MODE_BODY_ATTRIBUTE = 'data-jp-theme-light';
