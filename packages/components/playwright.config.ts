@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: 'yarn run start:ci',
     url: 'http://localhost:6006/iframe.html?id=accordion--default',
-    timeout: 120 * 1000,
+    timeout: 5 * 60 * 1000,
     // It is safe to reuse the server for stories testing
     reuseExistingServer: true
   },
