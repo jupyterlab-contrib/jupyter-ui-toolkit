@@ -2743,26 +2743,26 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@microsoft/api-extractor-model@7.15.3":
-  version "7.15.3"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.15.3.tgz#cf76deeeb2733d974da678f530c2dbaceb18a065"
-  integrity sha512-NkSjolmSI7NGvbdz0Y7kjQfdpD+j9E5CwXTxEyjDqxd10MI7GXV8DnAsQ57GFJcgHKgTjf2aUnYfMJ9w3aMicw==
+"@microsoft/api-extractor-model@7.15.4":
+  version "7.15.4"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.15.4.tgz#59fc1e00530b7a604c719221a59dc265c76e9bc5"
+  integrity sha512-9bIXQKKQr5jAH1c9atXrukr4ua30fhqxMwWIOOjEnexPBPu3nhy9lC4/GpE0kPUp1Al3wSXgFnOEGzEH+HFz+w==
   dependencies:
     "@microsoft/tsdoc" "0.13.2"
     "@microsoft/tsdoc-config" "~0.15.2"
-    "@rushstack/node-core-library" "3.45.0"
+    "@rushstack/node-core-library" "3.45.1"
 
 "@microsoft/api-extractor@^7.18.9":
-  version "7.19.4"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.19.4.tgz#95d43d410a1dfb28a02062c4693bcb9c52afe9eb"
-  integrity sha512-iehC6YA3DGJvxTUaK7HUtQmP6hAQU07+Q/OR8TG4dVR6KpqCi9UPEVk8AgCvQkiK+6FbVEFQTx0qLuYk4EeuHg==
+  version "7.19.5"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.19.5.tgz#85b2404135a4158864d448fde8991ef7dc39b6a7"
+  integrity sha512-ra5r8P7PocOpemrZRccI3Tf1+wukI0gT6ncRB448QSxSYlmqKuvez95YUSYPwHIN/ztKL0cn5PfMOauU1lZfGQ==
   dependencies:
-    "@microsoft/api-extractor-model" "7.15.3"
+    "@microsoft/api-extractor-model" "7.15.4"
     "@microsoft/tsdoc" "0.13.2"
     "@microsoft/tsdoc-config" "~0.15.2"
-    "@rushstack/node-core-library" "3.45.0"
-    "@rushstack/rig-package" "0.3.7"
-    "@rushstack/ts-command-line" "4.10.6"
+    "@rushstack/node-core-library" "3.45.1"
+    "@rushstack/rig-package" "0.3.8"
+    "@rushstack/ts-command-line" "4.10.7"
     colors "~1.2.1"
     lodash "~4.17.15"
     resolve "~1.17.0"
@@ -2782,45 +2782,44 @@
     eslint-plugin-react "^7.19.0"
     typescript "^3.9.0"
 
-"@microsoft/fast-colors@^5.1.4":
-  version "5.1.4"
-  resolved "https://registry.yarnpkg.com/@microsoft/fast-colors/-/fast-colors-5.1.4.tgz#9268dd9010d5c11161697196aaa86958191cbee4"
-  integrity sha512-+0ZVfZ04627buD8ZK8k84FpZom85vU0qUoRtcnFQm6AG5MIWcRE8m5ybJlMIjv2LIJcI/q7tjl+ruKBpWaqwJQ==
+"@microsoft/fast-colors@^5.1.4", "@microsoft/fast-colors@^5.1.5":
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-colors/-/fast-colors-5.1.5.tgz#3d7dacae85c263030c793ba457991d4cdcec7538"
+  integrity sha512-g8FByhbmRxibSpHkDE90CLCsh61HzH4ujPBG5N1zWXgM8LtzaF6OYBzfd8uGJ/md+SGeHf3aH9fcT8HTCbarXw==
 
 "@microsoft/fast-components@^2.17.1":
-  version "2.19.1"
-  resolved "https://registry.yarnpkg.com/@microsoft/fast-components/-/fast-components-2.19.1.tgz#648581e4901eff6be18dec1067a36fb2dee04e25"
-  integrity sha512-6V98S8pcyjOAwL5//E1NtiDMY5qgWO19NP3LEJI/PYcFq76FfwYiLrBuxQ0jHLEUFFEY8FFKiobk5Cv6ImLSfw==
+  version "2.25.1"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-components/-/fast-components-2.25.1.tgz#68b07bf2594f978dda12948c8c88757d470b2e56"
+  integrity sha512-Ud8hEG83xFs3vz7gaGEaTyTwhWa9vlgBEspdL/0Upaij/97uw6Mo3YoGwaeib0TRUargpEduSDHXiEtvKwJXbA==
   dependencies:
-    "@microsoft/fast-colors" "^5.1.4"
-    "@microsoft/fast-element" "^1.7.0"
-    "@microsoft/fast-foundation" "^2.32.1"
+    "@microsoft/fast-colors" "^5.1.5"
+    "@microsoft/fast-element" "^1.8.0"
+    "@microsoft/fast-foundation" "^2.37.1"
     "@microsoft/fast-web-utilities" "^5.1.0"
     tslib "^1.13.0"
-    vscode-html-languageservice "^4.0.3"
 
-"@microsoft/fast-element@^1.6.0", "@microsoft/fast-element@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@microsoft/fast-element/-/fast-element-1.7.0.tgz#7e4b164c77c07d93b28f057231b37e7e2e8fed04"
-  integrity sha512-2qpAWuiOSdQfH/XdO8ZtVhlvQVCjHlojWUPoGbvHJDizBccZib+4uGReG87RIBp2Fi0s7ngYPRUioS1Lr+Xe0A==
+"@microsoft/fast-element@^1.6.0", "@microsoft/fast-element@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-element/-/fast-element-1.8.0.tgz#275f3c2ad5713a7e4821cc9cf6c7e1883e3bfc2f"
+  integrity sha512-92GhkCYcay+vcI2yE+P1yD+v59u8Thprmaqg9PgTstf8jLOrevW/6Hna76tMioQQOFtZ8wm2NiiMHD/4sjrfhQ==
 
-"@microsoft/fast-foundation@^2.21.0", "@microsoft/fast-foundation@^2.32.1":
-  version "2.32.1"
-  resolved "https://registry.yarnpkg.com/@microsoft/fast-foundation/-/fast-foundation-2.32.1.tgz#371462f7569266a5d86f5813f3047144f7e8a52b"
-  integrity sha512-X+rXtPezZJAbHFx/3LxvpjrVKjw9RGa8UhM8Q6CJbhD6Kgi0zNpCRb1h+fUkMIra5DmhXAaGBKrGEtHDSRsYAw==
+"@microsoft/fast-foundation@^2.21.0", "@microsoft/fast-foundation@^2.37.1":
+  version "2.37.1"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-foundation/-/fast-foundation-2.37.1.tgz#54a4a968c744581ab08dcfd586f7607fce8c2d85"
+  integrity sha512-hzsz7frX0jXmsgxEt+rOf3sfchjRk8YwP3AuEawuuLOXMRKqWVZlHsfsP/5Ypg5yFrsR6qafSTjtvSZwcAJ96g==
   dependencies:
-    "@microsoft/fast-element" "^1.7.0"
+    "@microsoft/fast-element" "^1.8.0"
     "@microsoft/fast-web-utilities" "^5.1.0"
     tabbable "^5.2.0"
     tslib "^1.13.0"
 
 "@microsoft/fast-react-wrapper@^0.1.17":
-  version "0.1.24"
-  resolved "https://registry.yarnpkg.com/@microsoft/fast-react-wrapper/-/fast-react-wrapper-0.1.24.tgz#adc558430f81cf01b358dc3a99a24c577115471b"
-  integrity sha512-kaIReDwkPu4jP8F7UJ464S4S/0eF0rQFIZEKrRKOcDj+tPo8aM1kXvEELOG9EMsTrzHUWrOaDMTj2BEewpEtow==
+  version "0.1.42"
+  resolved "https://registry.yarnpkg.com/@microsoft/fast-react-wrapper/-/fast-react-wrapper-0.1.42.tgz#cd2f4546c5721c4185793065df11138b6420396a"
+  integrity sha512-lf4J/FIYzzn1oMc1LpEetx2juldHFFqeN0vzdGmlZfAuIQxnKV8ypRhMKW9aJOH2NS9DzgetAaC/XiKV4p92Mg==
   dependencies:
-    "@microsoft/fast-element" "^1.7.0"
-    "@microsoft/fast-foundation" "^2.32.1"
+    "@microsoft/fast-element" "^1.8.0"
+    "@microsoft/fast-foundation" "^2.37.1"
 
 "@microsoft/fast-web-utilities@^5.1.0":
   version "5.1.0"
@@ -3140,10 +3139,10 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@rushstack/node-core-library@3.45.0":
-  version "3.45.0"
-  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-3.45.0.tgz#8c86b39271b6d84260b1e70db87e1e265b54f620"
-  integrity sha512-YMuIJl19vQT1+g/OU9mLY6T5ZBT9uDlmeXExDQACpGuxTJW+LHNbk/lRX+eCApQI2eLBlaL4U68r3kZlqwbdmw==
+"@rushstack/node-core-library@3.45.1":
+  version "3.45.1"
+  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-3.45.1.tgz#787361b61a48d616eb4b059641721a3dc138f001"
+  integrity sha512-BwdssTNe007DNjDBxJgInHg8ePytIPyT0La7ZZSQZF9+rSkT42AygXPGvbGsyFfEntjr4X37zZSJI7yGzL16cQ==
   dependencies:
     "@types/node" "12.20.24"
     colors "~1.2.1"
@@ -3155,18 +3154,18 @@
     timsort "~0.3.0"
     z-schema "~5.0.2"
 
-"@rushstack/rig-package@0.3.7":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@rushstack/rig-package/-/rig-package-0.3.7.tgz#3fa564b1d129d28689dd4309502792b15e84bf81"
-  integrity sha512-pzMsTSeTC8IiZ6EJLr53gGMvhT4oLWH+hxD7907cHyWuIUlEXFtu/2pK25vUQT13nKp5DJCWxXyYoGRk/h6rtA==
+"@rushstack/rig-package@0.3.8":
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/@rushstack/rig-package/-/rig-package-0.3.8.tgz#0e8b2fbc7a35d96f6ccf34e773f7c1adb1524296"
+  integrity sha512-MDWg1xovea99PWloSiYMjFcCLsrdjFtYt6aOyHNs5ojn5mxrzR6U9F83hvbQjTWnKPMvZtr0vcek+4n+OQOp3Q==
   dependencies:
     resolve "~1.17.0"
     strip-json-comments "~3.1.1"
 
-"@rushstack/ts-command-line@4.10.6":
-  version "4.10.6"
-  resolved "https://registry.yarnpkg.com/@rushstack/ts-command-line/-/ts-command-line-4.10.6.tgz#5669e481e4339ceb4e1428183eb0937d3bc3841b"
-  integrity sha512-Y3GkUag39sTIlukDg9mUp8MCHrrlJ27POrBNRQGc/uF+VVgX8M7zMzHch5zP6O1QVquWgD7Engdpn2piPYaS/g==
+"@rushstack/ts-command-line@4.10.7":
+  version "4.10.7"
+  resolved "https://registry.yarnpkg.com/@rushstack/ts-command-line/-/ts-command-line-4.10.7.tgz#21e3757a756cbd4f7eeab8f89ec028a64d980efc"
+  integrity sha512-CjS+DfNXUSO5Ab2wD1GBGtUTnB02OglRWGqfaTcac9Jn45V5MeUOsq/wA8wEeS5Y/3TZ2P1k+IWdVDiuOFP9Og==
   dependencies:
     "@types/argparse" "1.0.38"
     argparse "~1.0.9"
@@ -16042,36 +16041,6 @@ vfile@^4.0.0:
     is-buffer "^2.0.0"
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
-
-vscode-html-languageservice@^4.0.3:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/vscode-html-languageservice/-/vscode-html-languageservice-4.2.1.tgz#b95077cffd19bf187e53c7bf79e3e0dd7edbc7cf"
-  integrity sha512-PgaToZVXJ44nFWEBuSINdDgVV6EnpC3MnXBsysR3O5TKcAfywbYeRGRy+Y4dVR7YeUgDvtb+JkJoSkaYC0mxXQ==
-  dependencies:
-    vscode-languageserver-textdocument "^1.0.1"
-    vscode-languageserver-types "^3.16.0"
-    vscode-nls "^5.0.0"
-    vscode-uri "^3.0.2"
-
-vscode-languageserver-textdocument@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/vscode-languageserver-textdocument/-/vscode-languageserver-textdocument-1.0.3.tgz#879f2649bfa5a6e07bc8b392c23ede2dfbf43eff"
-  integrity sha512-ynEGytvgTb6HVSUwPJIAZgiHQmPCx8bZ8w5um5Lz+q5DjP0Zj8wTFhQpyg8xaMvefDytw2+HH5yzqS+FhsR28A==
-
-vscode-languageserver-types@^3.16.0:
-  version "3.16.0"
-  resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.16.0.tgz#ecf393fc121ec6974b2da3efb3155644c514e247"
-  integrity sha512-k8luDIWJWyenLc5ToFQQMaSrqCHiLwyKPHKPQZ5zz21vM+vIVUSvsRpcbiECH4WR88K2XZqc4ScRcZ7nk/jbeA==
-
-vscode-nls@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/vscode-nls/-/vscode-nls-5.0.0.tgz#99f0da0bd9ea7cda44e565a74c54b1f2bc257840"
-  integrity sha512-u0Lw+IYlgbEJFF6/qAqG2d1jQmJl0eyAGJHoAJqr2HT4M2BNuQYSEiSE75f52pXHSJm8AlTjnLLbBFPrdz2hpA==
-
-vscode-uri@^3.0.2:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/vscode-uri/-/vscode-uri-3.0.3.tgz#a95c1ce2e6f41b7549f86279d19f47951e4f4d84"
-  integrity sha512-EcswR2S8bpR7fD0YPeS7r2xXExrScVMxg4MedACaWHEtx9ftCF/qHG1xGkolzTPcEmjTavCQgbVzHUIdTMzFGA==
 
 w3c-hr-time@^1.0.1, w3c-hr-time@^1.0.2:
   version "1.0.2"
