@@ -22,7 +22,7 @@ import {
   neutralForegroundRest,
   neutralStrokeHover,
   neutralStrokeRest
-} from '@microsoft/fast-components';
+} from '../design-token';
 import { heightNumber } from '../styles/index';
 
 /**

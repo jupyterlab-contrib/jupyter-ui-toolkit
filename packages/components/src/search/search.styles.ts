@@ -2,13 +2,13 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import { designUnit } from '@microsoft/fast-components';
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   focusVisible,
   FoundationElementTemplate,
   TextFieldOptions
 } from '@microsoft/fast-foundation';
+import { designUnit } from '../design-token';
 import { BaseFieldStyles, heightNumber } from '../styles/index';
 
 export const searchStyles: FoundationElementTemplate<

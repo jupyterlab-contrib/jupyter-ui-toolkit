@@ -22,7 +22,7 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
+} from '../design-token';
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   disabledCursor,

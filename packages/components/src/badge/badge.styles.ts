@@ -4,7 +4,6 @@
 import { css, ElementStyles } from '@microsoft/fast-element';
 import { display, FoundationElementTemplate } from '@microsoft/fast-foundation';
 import {
-  accentForegroundRest,
   bodyFont,
   controlCornerRadius,
   designUnit,
@@ -13,7 +12,7 @@ import {
   strokeWidth,
   typeRampMinus1FontSize,
   typeRampMinus1LineHeight
-} from '@microsoft/fast-components';
+} from '../design-token';
 import { heightNumber } from '../styles/index';
 
 /**

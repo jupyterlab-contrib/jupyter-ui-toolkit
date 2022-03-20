@@ -1,8 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import { provideFASTDesignSystem } from '@microsoft/fast-components';
-import type { DesignSystem } from '@microsoft/fast-foundation';
+import { DesignSystem } from '@microsoft/fast-foundation';
 
 /**
  * Provides a design system for the specified element either by returning one that was
@@ -14,6 +13,5 @@ import type { DesignSystem } from '@microsoft/fast-foundation';
 export function provideJupyterDesignSystem(
   element?: HTMLElement
 ): DesignSystem {
-  // TODO we should not use fast or maybe due to design token reuse
-  return provideFASTDesignSystem(element).withPrefix('jp');
+  return DesignSystem.getOrCreate(element).withPrefix('jp');
 }

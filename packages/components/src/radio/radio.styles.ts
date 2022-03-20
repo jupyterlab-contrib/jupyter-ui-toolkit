@@ -2,6 +2,16 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css, ElementStyles } from '@microsoft/fast-element';
+import {
+  disabledCursor,
+  display,
+  focusVisible,
+  forcedColorsStylesheetBehavior,
+  FoundationElementTemplate,
+  RadioOptions
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillActive,
   accentFillFocus,
@@ -24,17 +34,7 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
-import { css, ElementStyles } from '@microsoft/fast-element';
-import {
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior,
-  FoundationElementTemplate,
-  RadioOptions
-} from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
+} from '../design-token';
 import { heightNumber } from '../styles/index';
 
 /**

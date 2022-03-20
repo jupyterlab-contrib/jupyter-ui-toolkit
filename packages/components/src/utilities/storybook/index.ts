@@ -1,17 +1,11 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import { icon, library } from '@fortawesome/fontawesome-svg-core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
-import { library, icon } from '@fortawesome/fontawesome-svg-core';
-import {
-  accentPalette,
-  baseLayerLuminance,
-  isDark,
-  PaletteRGB,
-  StandardLuminance,
-  SwatchRGB
-} from '@microsoft/fast-components';
 import { parseColor } from '@microsoft/fast-colors';
+import { isDark, PaletteRGB, StandardLuminance, SwatchRGB } from '../../colors';
+import { accentPalette, baseLayerLuminance } from '../../design-token';
 
 /**
  * Generate the SVG for a fontawesome icon
