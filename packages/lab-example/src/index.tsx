@@ -49,8 +49,14 @@ import {
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 import { IThemeManager, ReactWidget } from '@jupyterlab/apputils';
-import { Widget } from '@lumino/widgets';
+import { Panel, Widget } from '@lumino/widgets';
 import React from 'react';
+import {
+  BasicModel,
+  BasicView,
+  ObservableModel,
+  ObservableView
+} from './model';
 
 provideJupyterDesignSystem().register(allComponents);
 addJupyterLabThemeChangeListener();
@@ -191,6 +197,26 @@ const plugin: JupyterFrontEndPlugin<void> = {
           dataRef.current.rowsData = TABLE_DATA;
         }
       }
+
+      // Demo Model-View
+      const panel = new Panel();
+      panel.id = 'jupyter-ui-toolkit-demo-panel';
+      const title1 = new Widget();
+      title1.node.textContent = 'Using signal';
+      panel.addWidget(title1);
+      const view1 = new BasicView();
+      view1.model = new BasicModel();
+      panel.addWidget(new Widget({ node: view1 }));
+
+      const title2 = new Widget();
+      title2.node.textContent = 'Using FAST observable';
+      panel.addWidget(title2);
+      const view2 = new ObservableView();
+      view2.model = new ObservableModel();
+      panel.addWidget(new Widget({ node: view2 }));
+
+      panel.title.label = 'Demo';
+      app.shell.add(panel, 'right');
     });
   }
 };
