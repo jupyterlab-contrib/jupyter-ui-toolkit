@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import { neutralForegroundRest, typeRampBaseFontSize } from '../design-token';
+import { neutralForegroundRest, typeRampBaseFontSize } from '../design-tokens';
 import { setTheme } from '../utilities/storybook';
 
 export default {

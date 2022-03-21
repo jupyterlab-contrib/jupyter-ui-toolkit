@@ -19,7 +19,7 @@ import {
   foregroundOnAccentRest,
   neutralForegroundRest,
   typeRampBaseFontSize
-} from '../design-token';
+} from '../design-tokens';
 
 const rtl: FoundationElementTemplate<ElementStyles, AvatarOptions> = (
   context,

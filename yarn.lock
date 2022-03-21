@@ -2782,12 +2782,12 @@
     eslint-plugin-react "^7.19.0"
     typescript "^3.9.0"
 
-"@microsoft/fast-colors@^5.1.4", "@microsoft/fast-colors@^5.1.5":
+"@microsoft/fast-colors@^5.1.5":
   version "5.1.5"
   resolved "https://registry.yarnpkg.com/@microsoft/fast-colors/-/fast-colors-5.1.5.tgz#3d7dacae85c263030c793ba457991d4cdcec7538"
   integrity sha512-g8FByhbmRxibSpHkDE90CLCsh61HzH4ujPBG5N1zWXgM8LtzaF6OYBzfd8uGJ/md+SGeHf3aH9fcT8HTCbarXw==
 
-"@microsoft/fast-components@^2.17.1":
+"@microsoft/fast-components@^2.25.1":
   version "2.25.1"
   resolved "https://registry.yarnpkg.com/@microsoft/fast-components/-/fast-components-2.25.1.tgz#68b07bf2594f978dda12948c8c88757d470b2e56"
   integrity sha512-Ud8hEG83xFs3vz7gaGEaTyTwhWa9vlgBEspdL/0Upaij/97uw6Mo3YoGwaeib0TRUargpEduSDHXiEtvKwJXbA==
@@ -2798,12 +2798,12 @@
     "@microsoft/fast-web-utilities" "^5.1.0"
     tslib "^1.13.0"
 
-"@microsoft/fast-element@^1.6.0", "@microsoft/fast-element@^1.8.0":
+"@microsoft/fast-element@^1.8.0":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@microsoft/fast-element/-/fast-element-1.8.0.tgz#275f3c2ad5713a7e4821cc9cf6c7e1883e3bfc2f"
   integrity sha512-92GhkCYcay+vcI2yE+P1yD+v59u8Thprmaqg9PgTstf8jLOrevW/6Hna76tMioQQOFtZ8wm2NiiMHD/4sjrfhQ==
 
-"@microsoft/fast-foundation@^2.21.0", "@microsoft/fast-foundation@^2.37.1":
+"@microsoft/fast-foundation@^2.37.1":
   version "2.37.1"
   resolved "https://registry.yarnpkg.com/@microsoft/fast-foundation/-/fast-foundation-2.37.1.tgz#54a4a968c744581ab08dcfd586f7607fce8c2d85"
   integrity sha512-hzsz7frX0jXmsgxEt+rOf3sfchjRk8YwP3AuEawuuLOXMRKqWVZlHsfsP/5Ypg5yFrsR6qafSTjtvSZwcAJ96g==
@@ -2813,7 +2813,7 @@
     tabbable "^5.2.0"
     tslib "^1.13.0"
 
-"@microsoft/fast-react-wrapper@^0.1.17":
+"@microsoft/fast-react-wrapper@^0.1.42":
   version "0.1.42"
   resolved "https://registry.yarnpkg.com/@microsoft/fast-react-wrapper/-/fast-react-wrapper-0.1.42.tgz#cd2f4546c5721c4185793065df11138b6420396a"
   integrity sha512-lf4J/FIYzzn1oMc1LpEetx2juldHFFqeN0vzdGmlZfAuIQxnKV8ypRhMKW9aJOH2NS9DzgetAaC/XiKV4p92Mg==

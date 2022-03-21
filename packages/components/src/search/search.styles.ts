@@ -4,12 +4,44 @@
 
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
+  DesignToken,
   focusVisible,
   FoundationElementTemplate,
   TextFieldOptions
 } from '@microsoft/fast-foundation';
-import { designUnit } from '../design-token';
+import { Swatch } from '../colors';
+import {
+  bodyFont,
+  controlCornerRadius,
+  density,
+  neutralFillRecipe,
+  neutralFillStealthActive,
+  neutralFillStealthHover,
+  neutralFillStealthRecipe,
+  neutralForegroundRest,
+  typeRampBaseFontSize,
+  typeRampBaseLineHeight,
+  designUnit
+} from '../design-tokens';
 import { BaseFieldStyles, heightNumber } from '../styles/index';
+
+const clearButtonHover = DesignToken.create<Swatch>(
+  'clear-button-hover'
+).withDefault((target: HTMLElement) => {
+  const buttonRecipe = neutralFillStealthRecipe.getValueFor(target);
+  const inputRecipe = neutralFillRecipe.getValueFor(target);
+  return buttonRecipe.evaluate(target, inputRecipe.evaluate(target).hover)
+    .hover;
+});
+
+const clearButtonActive = DesignToken.create<Swatch>(
+  'clear-button-active'
+).withDefault((target: HTMLElement) => {
+  const buttonRecipe = neutralFillStealthRecipe.getValueFor(target);
+  const inputRecipe = neutralFillRecipe.getValueFor(target);
+  return buttonRecipe.evaluate(target, inputRecipe.evaluate(target).hover)
+    .active;
+});
 
 export const searchStyles: FoundationElementTemplate<
   ElementStyles,
@@ -37,17 +69,37 @@ export const searchStyles: FoundationElementTemplate<
       outline: none;
     }
 
-    /* Cancel margin set for button focus outline */
-    jp-button {
-      margin: 0;
-    }
-
     .clear-button {
-      position: absolute;
-      right: 0;
-      top: 1px;
       height: calc(100% - 2px);
       opacity: 0;
+      margin: 1px;
+      background: transparent;
+      color: ${neutralForegroundRest};
+      fill: currentcolor;
+      border: none;
+      border-radius: calc(${controlCornerRadius} * 1px);
+      min-width: calc(${heightNumber} * 1px);
+      font-size: ${typeRampBaseFontSize};
+      line-height: ${typeRampBaseLineHeight};
+      outline: none;
+      font-family: ${bodyFont};
+      padding: 0 calc((10 + (${designUnit} * 2 * ${density})) * 1px);
+    }
+
+    .clear-button:hover {
+      background: ${neutralFillStealthHover};
+    }
+
+    .clear-button:active {
+      background: ${neutralFillStealthActive};
+    }
+
+    :host([appearance='filled']) .clear-button:hover {
+      background: ${clearButtonHover};
+    }
+
+    :host([appearance='filled']) .clear-button:active {
+      background: ${clearButtonActive};
     }
 
     .input-wrapper {

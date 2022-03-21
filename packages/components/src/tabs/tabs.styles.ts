@@ -18,7 +18,7 @@ import {
   neutralForegroundRest,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-token';
+} from '../design-tokens';
 import { heightNumber } from '../styles/index';
 
 /**

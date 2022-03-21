@@ -17,7 +17,7 @@ import {
   fillColor,
   focusStrokeWidth,
   strokeWidth
-} from '../design-token';
+} from '../design-tokens';
 
 /**
  * Styles for the Toolbar

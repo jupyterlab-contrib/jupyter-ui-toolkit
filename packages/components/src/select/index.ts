@@ -39,7 +39,7 @@ export const jpSelect = Select.compose<SelectOptions>({
   baseClass: FoundationSelect,
   template,
   styles,
-  indicator: `
+  indicator: /* html */ `
         <svg
             class="select-indicator"
             part="select-indicator"

@@ -23,7 +23,7 @@ import {
   neutralPalette,
   strokeWidth,
   typeRampBaseFontSize
-} from '../../design-token';
+} from '../../design-tokens';
 
 const THEME_NAME_BODY_ATTRIBUTE = 'data-jp-theme-name';
 const THEME_MODE_BODY_ATTRIBUTE = 'data-jp-theme-light';

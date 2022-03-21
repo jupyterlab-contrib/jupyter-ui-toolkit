@@ -7,7 +7,7 @@ import {
   FoundationElementTemplate,
   NumberFieldOptions
 } from '@microsoft/fast-foundation';
-import { neutralForegroundRest } from '../design-token';
+import { neutralForegroundRest } from '../design-tokens';
 import { BaseFieldStyles } from '../styles/index';
 
 /**

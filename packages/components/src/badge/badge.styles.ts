@@ -12,7 +12,7 @@ import {
   strokeWidth,
   typeRampMinus1FontSize,
   typeRampMinus1LineHeight
-} from '../design-token';
+} from '../design-tokens';
 import { heightNumber } from '../styles/index';
 
 /**
