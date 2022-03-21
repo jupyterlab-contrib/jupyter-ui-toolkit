@@ -204,13 +204,16 @@ const plugin: JupyterFrontEndPlugin<void> = {
       const title1 = new Widget();
       title1.node.textContent = 'Using signal';
       panel.addWidget(title1);
-      panel.addWidget(new BasicView(new BasicModel()));
+      const view1 = new BasicView();
+      view1.model = new BasicModel();
+      panel.addWidget(new Widget({ node: view1 }));
+
       const title2 = new Widget();
       title2.node.textContent = 'Using FAST observable';
       panel.addWidget(title2);
-      const view = new ObservableView();
-      view.model = new ObservableModel();
-      panel.addWidget(new Widget({ node: view }));
+      const view2 = new ObservableView();
+      view2.model = new ObservableModel();
+      panel.addWidget(new Widget({ node: view2 }));
 
       panel.title.label = 'Demo';
       app.shell.add(panel, 'right');

@@ -74,3 +74,9 @@ jp-toolbar > * {
   margin-top: auto;
   margin-bottom: auto;
 }
+
+#jupyter-ui-toolkit-demo-panel {
+  background-color: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  padding: 5px;
+}
