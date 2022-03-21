@@ -14,7 +14,7 @@ import {
   TreeItemOptions
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
-import type { Swatch } from '../colors';
+import type { Swatch } from '../color';
 import {
   accentFillFocus,
   accentForegroundRest,

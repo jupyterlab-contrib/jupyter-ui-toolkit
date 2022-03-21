@@ -3,6 +3,7 @@
 
 export { addJupyterLabThemeChangeListener } from './utilities/theme/applyTheme';
 
+export * from './color';
 export * from './design-tokens';
 export * from './jupyter-design-system';
 export * from './custom-elements';
