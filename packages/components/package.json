@@ -40,10 +40,10 @@
     "test:visual": "tsc --incremental -p tsconfig.playwright.json && playwright test"
   },
   "dependencies": {
-    "@microsoft/fast-colors": "^5.1.4",
-    "@microsoft/fast-components": "^2.17.1",
-    "@microsoft/fast-element": "^1.6.0",
-    "@microsoft/fast-foundation": "^2.21.0",
+    "@microsoft/fast-colors": "^5.1.5",
+    "@microsoft/fast-components": "^2.25.1",
+    "@microsoft/fast-element": "^1.8.0",
+    "@microsoft/fast-foundation": "^2.37.1",
     "@microsoft/fast-web-utilities": "^5.1.0"
   },
   "devDependencies": {
