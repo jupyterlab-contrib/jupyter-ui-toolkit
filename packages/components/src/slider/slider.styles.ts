@@ -22,7 +22,7 @@ import {
   neutralForegroundRest,
   neutralStrokeHover,
   neutralStrokeRest
-} from '../design-token';
+} from '../design-tokens';
 import { heightNumber } from '../styles/index';
 
 /**

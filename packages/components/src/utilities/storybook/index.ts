@@ -5,7 +5,7 @@ import { icon, library } from '@fortawesome/fontawesome-svg-core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
 import { parseColor } from '@microsoft/fast-colors';
 import { isDark, PaletteRGB, StandardLuminance, SwatchRGB } from '../../colors';
-import { accentPalette, baseLayerLuminance } from '../../design-token';
+import { accentPalette, baseLayerLuminance } from '../../design-tokens';
 
 /**
  * Generate the SVG for a fontawesome icon

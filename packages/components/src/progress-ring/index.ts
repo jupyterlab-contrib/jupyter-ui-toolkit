@@ -21,7 +21,7 @@ export const jpProgressRing = ProgressRing.compose<ProgressRingOptions>({
   baseName: 'progress-ring',
   template,
   styles,
-  indeterminateIndicator: `
+  indeterminateIndicator: /* html */ `
         <svg class="progress" part="progress" viewBox="0 0 16 16">
             <circle
                 class="background"
