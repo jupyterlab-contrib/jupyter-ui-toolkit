@@ -9,7 +9,7 @@ import {
   FoundationElementTemplate,
   TextFieldOptions
 } from '@microsoft/fast-foundation';
-import { Swatch } from '../colors';
+import { Swatch } from '../color';
 import {
   bodyFont,
   controlCornerRadius,

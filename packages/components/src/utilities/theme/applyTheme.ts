@@ -14,7 +14,7 @@ import {
   StandardLuminance,
   Swatch,
   SwatchRGB
-} from '../../colors';
+} from '../../color';
 import {
   accentFillHoverDelta,
   accentPalette,

@@ -28,12 +28,13 @@ import {
   errorFillAlgorithm,
   errorForegroundAlgorithm,
   foregroundOnErrorAlgorithm
-} from './colors';
+} from './color';
 
 // Export design token from @microsoft/fast-components
 // to encapsulate them.
 
 export {
+  accentColor,
   accentFillActive,
   accentFillActiveDelta,
   accentFillFocus,
@@ -81,7 +82,7 @@ export {
   foregroundOnAccentRest,
   foregroundOnAccentRestLarge,
   InteractiveColorRecipe,
-  InteractiveSwatchSet,
+  neutralColor,
   neutralFillActive,
   neutralFillActiveDelta,
   neutralFillFocus,
