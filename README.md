@@ -52,25 +52,21 @@ as example for creating a customized toolkit.
 The UI Toolkit is currently in a proof of concept. Track progress towards 1.0 [here](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1.0).
 Styles and API are not guarantee between minor versions prior to v1.0.0.
 
-## Getting started
+## Installation
 
 ### From NPM
 
-You will need to install `yarn` (for example with `npm install --global yarn`).
+To install the `web-components` library, use either `npm` or `yarn` as follows:
 
-To build the components packages, execute:
-
-```sh
-yarn install
-yarn build
+```shell
+npm install --save @jupyter-notebook/web-components
 ```
 
-Then to interactively test or develop web components:
-
-```sh
-cd packages/components
-yarn start
+```shell
+yarn add @jupyter-notebook/web-components
 ```
+
+> If you need the React components of the toolkit, you need to install `@jupyter-notebook/react-components`.
 
 ### From CDN
 
@@ -87,6 +83,24 @@ A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is 
 ```
 
 The above CDN location points to the latest release of `@jupyter-notebook/web-components`. It is advised that when you deploy your site or app, you import the specific version you have developed and tested with.
+
+## Contributing
+
+You will need to install `yarn` (for example with `npm install --global yarn`).
+
+To build the components packages, execute:
+
+```sh
+yarn install
+yarn build
+```
+
+Then to interactively test or develop web components:
+
+```sh
+cd packages/components
+yarn start
+```
 
 ### JupyterLab demo extension
 
