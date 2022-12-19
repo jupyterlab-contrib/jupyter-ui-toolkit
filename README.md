@@ -54,6 +54,8 @@ Styles and API are not guarantee between minor versions prior to v1.0.0.
 
 ## Getting started
 
+### From NPM
+
 You will need to install `yarn` (for example with `npm install --global yarn`).
 
 To build the components packages, execute:
@@ -69,6 +71,22 @@ Then to interactively test or develop web components:
 cd packages/components
 yarn start
 ```
+
+### From CDN
+
+A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is available on CDN. You can use this script by adding [`type="module"`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) to the script element and then importing from the CDN.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="https://unpkg.com/@jupyter-notebook/web-components"></script>
+  </head>
+  <!-- ... -->
+</html>
+```
+
+The above CDN location points to the latest release of `@jupyter-notebook/web-components`. It is advised that when you deploy your site or app, you import the specific version you have developed and tested with.
 
 ### JupyterLab demo extension
 
