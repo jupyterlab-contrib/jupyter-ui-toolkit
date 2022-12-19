@@ -84,37 +84,6 @@ A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is 
 
 The above CDN location points to the latest release of `@jupyter-notebook/web-components`. It is advised that when you deploy your site or app, you import the specific version you have developed and tested with.
 
-## Contributing
-
-You will need to install `yarn` (for example with `npm install --global yarn`).
-
-To build the components packages, execute:
-
-```sh
-yarn install
-yarn build
-```
-
-Then to interactively test or develop web components:
-
-```sh
-cd packages/components
-yarn start
-```
-
-### JupyterLab demo extension
-
-To test locally the JupyterLab demo extension, using `conda` package manager:
-
-```sh
-conda create -n jupyter-toolkit -c conda-forge -y nodejs yarn jupyterlab=3
-conda activate jupyter-toolkit
-yarn install
-yarn build
-pip install -e .
-jupyter labextension develop --overwrite .
-```
-
 ## Documentation
 
 Further documentation can be found in the following places:

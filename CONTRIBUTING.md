@@ -12,6 +12,37 @@ that we believe are good examples of small, self-contained changes. We
 encourage those that are new to the code base to implement and/or ask
 questions about these issues.
 
+## Development installation
+
+You will need to install `yarn` (for example with `npm install --global yarn`).
+
+To build the components packages, execute:
+
+```sh
+yarn install
+yarn build
+```
+
+Then to interactively test or develop web components:
+
+```sh
+cd packages/components
+yarn start
+```
+
+### JupyterLab demo extension
+
+To test locally the JupyterLab demo extension, using `conda` package manager:
+
+```sh
+conda create -n jupyter-toolkit -c conda-forge -y nodejs yarn jupyterlab=3
+conda activate jupyter-toolkit
+yarn install
+yarn build
+pip install -e .
+jupyter labextension develop --overwrite .
+```
+
 ## General Guidelines for Contributing
 
 For general documentation about contributing to Jupyter projects, see
