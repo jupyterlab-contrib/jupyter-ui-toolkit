@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-import type { StoryFn, Meta, StoryObj} from '@storybook/html';
+import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
@@ -17,11 +17,12 @@ export default {
   }
 };
 
-const Template: StoryFn = (
-  args,
-  context // { globals: { backgrounds, accent }, parameters }
-): string => {
-  // setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args, context): string => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
+  setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-tree-item
     ${args.selected ? 'selected' : ''}
@@ -32,26 +33,26 @@ const Template: StoryFn = (
   </jp-tree-item`;
 };
 
-export const Default: StoryObj = {render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   selected: false,
   beforeContent: false,
   afterContent: false
 };
 
-export const Selected: StoryObj = {render: Template.bind({})};
+export const Selected: StoryObj = { render: Template.bind({}) };
 Selected.args = {
   ...Default.args,
   selected: true
 };
 
-export const WithBeforeContent: StoryObj = {render: Template.bind({})};
+export const WithBeforeContent: StoryObj = { render: Template.bind({}) };
 WithBeforeContent.args = {
   ...Default.args,
   beforeContent: true
 };
 
-export const WithAfterContent: StoryObj = {render: Template.bind({})};
+export const WithAfterContent: StoryObj = { render: Template.bind({}) };
 WithAfterContent.args = {
   ...Default.args,
   afterContent: true

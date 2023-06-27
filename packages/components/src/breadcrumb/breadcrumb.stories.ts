@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-import type { StoryFn, Meta, StoryObj} from '@storybook/html';
+import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
@@ -18,11 +18,12 @@ export default {
   }
 };
 
-const Template: StoryFn = (
-  args,
-  context // { globals: { backgrounds, accent }, parameters }
-): string => {
-  // setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args, context): string => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
+  setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-breadcrumb>
     ${[1, 2, 3]
@@ -47,7 +48,7 @@ const Template: StoryFn = (
   </jp-breadcrumb>`;
 };
 
-export const Default: StoryObj = {render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   customChildren: false,
   svgSeparator: false,
@@ -55,25 +56,25 @@ Default.args = {
   endIcon: false
 };
 
-export const WithCustomChildren: StoryObj = {render: Template.bind({})};
+export const WithCustomChildren: StoryObj = { render: Template.bind({}) };
 WithCustomChildren.args = {
   ...Default.args,
   customChildren: true
 };
 
-export const WithSvgSeparator: StoryObj = {render: Template.bind({})};
+export const WithSvgSeparator: StoryObj = { render: Template.bind({}) };
 WithSvgSeparator.args = {
   ...Default.args,
   svgSeparator: true
 };
 
-export const WithStartIcon: StoryObj = {render: Template.bind({})};
+export const WithStartIcon: StoryObj = { render: Template.bind({}) };
 WithStartIcon.args = {
   ...Default.args,
   startIcon: true
 };
 
-export const WithEndIcon: StoryObj = {render: Template.bind({})};
+export const WithEndIcon: StoryObj = { render: Template.bind({}) };
 WithEndIcon.args = {
   ...Default.args,
   endIcon: true

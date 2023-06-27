@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-import type { StoryFn, Meta, StoryObj} from '@storybook/html';
+import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -33,11 +33,12 @@ export default {
   ]
 } as Meta;
 
-const Template: StoryFn = (
-  args,
-  context // { globals: { backgrounds, accent }, parameters }
-): string => {
-  // setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args, context): string => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
+  setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-avatar
     alt="John's avatar"
@@ -54,7 +55,7 @@ const Template: StoryFn = (
   </jp-avatar>`;
 };
 
-export const Default: StoryObj = {render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   shape: 'circle',
   fill: 'none',
@@ -62,7 +63,7 @@ Default.args = {
   image: false
 };
 
-export const Square: StoryObj = {render: Template.bind({})};
+export const Square: StoryObj = { render: Template.bind({}) };
 Square.args = {
   ...Default.args,
   fill: 'accent-primary',
@@ -70,7 +71,7 @@ Square.args = {
   shape: 'square'
 };
 
-export const WithImage: StoryObj = {render: Template.bind({})};
+export const WithImage: StoryObj = { render: Template.bind({}) };
 WithImage.args = {
   ...Default.args,
   image: true

@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import type { StoryFn, Meta, StoryObj} from '@storybook/html';
+import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -33,11 +33,12 @@ export default {
   ]
 } as Meta;
 
-const Template: StoryFn = (
-  args,
-  context // { globals: { backgrounds, accent }, parameters }
-): string => {
-  // setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args, context): string => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
+  setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-tooltip anchor="anchor-default"
       ${args.visible ? 'visible' : ''}
@@ -51,7 +52,7 @@ const Template: StoryFn = (
     </jp-button>`;
 };
 
-export const Default: StoryObj = {render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   visible: false,
   position: 'top',

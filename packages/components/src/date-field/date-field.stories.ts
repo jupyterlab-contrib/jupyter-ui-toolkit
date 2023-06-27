@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import type { StoryFn, Meta, StoryObj} from '@storybook/html';
+import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 import { DateField } from './index';
@@ -25,11 +25,12 @@ export default {
   }
 };
 
-const Template: StoryFn = (
-  args,
-  context // { globals: { backgrounds, accent }, parameters }
-): HTMLElement => {
-  // setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args, context): HTMLElement => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
+  setTheme(accent, parameters.backgrounds, backgrounds);
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',
@@ -57,7 +58,7 @@ const Template: StoryFn = (
   return dateField;
 };
 
-export const Default: StoryObj = {render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   label: 'Date Field Label',
   value: '',
@@ -69,31 +70,31 @@ Default.args = {
   onChange: action('date-field-onchange')
 };
 
-export const WithAutofocus: StoryObj = {render: Template.bind({})};
+export const WithAutofocus: StoryObj = { render: Template.bind({}) };
 WithAutofocus.args = {
   ...Default.args,
   autofocus: true
 };
 
-export const WithDisabled: StoryObj = {render: Template.bind({})};
+export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
   disabled: true
 };
 
-export const WithReadonly: StoryObj = {render: Template.bind({})};
+export const WithReadonly: StoryObj = { render: Template.bind({}) };
 WithReadonly.args = {
   ...Default.args,
   readonly: true
 };
 
-export const WithStartIcon: StoryObj = {render: Template.bind({})};
+export const WithStartIcon: StoryObj = { render: Template.bind({}) };
 WithStartIcon.args = {
   ...Default.args,
   startIcon: true
 };
 
-export const WithEndIcon: StoryObj = {render: Template.bind({})};
+export const WithEndIcon: StoryObj = { render: Template.bind({}) };
 WithEndIcon.args = {
   ...Default.args,
   endIcon: true
