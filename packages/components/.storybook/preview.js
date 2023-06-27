@@ -52,6 +52,6 @@ const globalTypes = {
 const preview = {
   parameters,
   globalTypes
-}
+};
 
 export default preview;

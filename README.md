@@ -12,7 +12,6 @@ help.
 [![Deploy Docs Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
 
-
 ![Toolkit for Jupyter Artwork](https://raw.githubusercontent.com/jupyterlab-contrib/jupyter-ui-toolkit/main/packages/components/docs/assets/toolkit-artwork.png)
 
 [Explore the components](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/) | [Online JupyterLab demo](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
@@ -76,7 +75,10 @@ A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script type="module" src="https://unpkg.com/@jupyter/web-components"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@jupyter/web-components"
+    ></script>
   </head>
   <!-- ... -->
 </html>
