@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 
@@ -19,11 +20,11 @@ export default {
   }
 };
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): HTMLElement => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',
@@ -46,7 +47,7 @@ const Template = (
   return radio;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};
 Default.args = {
   isChecked: false,
   isDisabled: false,
@@ -54,19 +55,19 @@ Default.args = {
   onChange: action('radio-onchange')
 };
 
-export const WithChecked = Template.bind({});
+export const WithChecked: StoryObj = {render: Template.bind({})};
 WithChecked.args = {
   ...Default.args,
   isChecked: true
 };
 
-export const WithDisabled = Template.bind({});
+export const WithDisabled: StoryObj = {render: Template.bind({})};
 WithDisabled.args = {
   ...Default.args,
   isDisabled: true
 };
 
-export const WithReadOnly = Template.bind({});
+export const WithReadOnly: StoryObj = {render: Template.bind({})};
 WithReadOnly.args = {
   ...Default.args,
   isDisabled: true

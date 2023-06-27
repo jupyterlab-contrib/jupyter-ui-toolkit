@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 
@@ -20,11 +21,11 @@ export default {
   }
 };
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): HTMLElement => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
 
   const container = document.createElement('div');
   container.insertAdjacentHTML(
@@ -51,7 +52,7 @@ const Template = (
   return slider;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};
 Default.args = {
   orientation: 'horizontal',
   disabled: false,
@@ -60,13 +61,13 @@ Default.args = {
   onChange: action('slider-onchange')
 };
 
-export const Vertical = Template.bind({});
+export const Vertical: StoryObj = {render: Template.bind({})};
 Vertical.args = {
   ...Default.args,
   orientation: 'vertical'
 };
 
-export const WithDisabled = Template.bind({});
+export const WithDisabled: StoryObj = {render: Template.bind({})};
 WithDisabled.args = {
   ...Default.args,
   disabled: true

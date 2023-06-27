@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -19,11 +20,11 @@ export default {
   }
 };
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): string => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
   return `<jp-progress-ring
     ${typeof args.min === 'number' ? `min="${args.min}"` : ''}
     ${typeof args.max === 'number' ? `max="${args.max}"` : ''}
@@ -36,7 +37,7 @@ const Template = (
   </jp-progress-ring>`;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};
 Default.args = {
   min: null,
   max: null,
@@ -45,7 +46,7 @@ Default.args = {
   height: null
 };
 
-export const WithValue = Template.bind({});
+export const WithValue: StoryObj = {render: Template.bind({})};
 WithValue.args = {
   ...Default.args,
   min: 0,
@@ -53,7 +54,7 @@ WithValue.args = {
   value: 30
 };
 
-export const Paused = Template.bind({});
+export const Paused: StoryObj = {render: Template.bind({})};
 Paused.args = {
   ...WithValue.args,
   paused: true

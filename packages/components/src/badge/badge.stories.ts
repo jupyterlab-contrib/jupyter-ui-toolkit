@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -29,13 +29,13 @@ export default {
   </style>
   ${story()}`
   ]
-};
+} as Meta;
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): string => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-badge
     ${args.circular ? 'circular' : ''}
@@ -46,14 +46,14 @@ const Template = (
   </jp-badge>`;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};
 Default.args = {
   circular: true,
   fill: 'none',
   color: 'none'
 };
 
-export const Square = Template.bind({});
+export const Square: StoryObj = {render: Template.bind({})};
 Square.args = {
   ...Default.args,
   circular: false,

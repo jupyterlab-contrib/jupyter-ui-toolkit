@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { neutralForegroundRest, typeRampBaseFontSize } from '../design-tokens';
 import { setTheme } from '../utilities/storybook';
 
@@ -24,17 +24,17 @@ export default {
       </style>
       ${story()}`
   ]
-};
+} as Meta;
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): string => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-card>
     Card with text
   </jp-card>`;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};

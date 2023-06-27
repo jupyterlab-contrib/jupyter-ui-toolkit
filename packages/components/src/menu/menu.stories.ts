@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
@@ -15,11 +16,11 @@ export default {
   }
 };
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): string => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-menu>
   <jp-menu-item role="menuitemcheckbox">
@@ -85,5 +86,5 @@ const Template = (
 </jp-menu>`;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};
 Default.args = {};

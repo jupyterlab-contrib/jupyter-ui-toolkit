@@ -45,6 +45,9 @@
     "stylelint-config-standard": "^26.0.0",
     "stylelint-prettier": "^2.0.0"
   },
+  "resolutions": {
+    "file-system-cache": "<2.4.0 || >2.4.0"
+  },
   "packageManager": "yarn@3.6.0",
   "stylelint": {
     "extends": [

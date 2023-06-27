@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 import { TextArea } from './index';
@@ -29,11 +30,11 @@ export default {
   }
 };
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): HTMLElement => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
   const container = document.createElement('div');
   container.insertAdjacentHTML(
     'afterbegin',
@@ -63,7 +64,7 @@ const Template = (
   return textField;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};
 Default.args = {
   label: 'Text Area Label',
   placeholder: '',
@@ -77,32 +78,32 @@ Default.args = {
   onChange: action('text-area-onchange')
 };
 
-export const WithPlaceholder = Template.bind({});
+export const WithPlaceholder: StoryObj = {render: Template.bind({})};
 WithPlaceholder.args = {
   ...Default.args,
   placeholder: 'Placeholder Text'
 };
 
-export const WithAutofocus = Template.bind({});
+export const WithAutofocus: StoryObj = {render: Template.bind({})};
 WithAutofocus.args = {
   ...Default.args,
   autofocus: true
 };
 
-export const WithDisabled = Template.bind({});
+export const WithDisabled: StoryObj = {render: Template.bind({})};
 WithDisabled.args = {
   ...Default.args,
   disabled: true
 };
 
-export const WithMaxLength = Template.bind({});
+export const WithMaxLength: StoryObj = {render: Template.bind({})};
 WithMaxLength.args = {
   ...Default.args,
   placeholder: 'This text field can only contain a maximum of 10 characters',
   maxLength: 10
 };
 
-export const WithReadonly = Template.bind({});
+export const WithReadonly: StoryObj = {render: Template.bind({})};
 WithReadonly.args = {
   ...Default.args,
   readonly: true

@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj} from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -17,11 +18,11 @@ export default {
   }
 };
 
-const Template = (
+const Template: StoryFn = (
   args,
-  { globals: { backgrounds, accent }, parameters }
+  context // { globals: { backgrounds, accent }, parameters }
 ): string => {
-  setTheme(accent, parameters.backgrounds, backgrounds);
+  // setTheme(accent, parameters.backgrounds, backgrounds);
   return `<jp-option 
     ${args.isDisabled ? 'disabled' : ''}
     ${args.isSelected ? 'selected' : ''}
@@ -30,20 +31,20 @@ const Template = (
   </jp-option>`;
 };
 
-export const Default: any = Template.bind({});
+export const Default: StoryObj = {render: Template.bind({})};
 Default.args = {
   label: 'Option Label',
   isDisabled: false,
   isSelected: false
 };
 
-export const WithDisabled: any = Template.bind({});
+export const WithDisabled: StoryObj = {render: Template.bind({})};
 WithDisabled.args = {
   ...Default.args,
   isDisabled: true
 };
 
-export const WithSelected: any = Template.bind({});
+export const WithSelected: StoryObj = {render: Template.bind({})};
 WithSelected.args = {
   ...Default.args,
   isSelected: true
