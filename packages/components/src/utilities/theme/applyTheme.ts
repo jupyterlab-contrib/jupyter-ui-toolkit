@@ -69,7 +69,7 @@ function initThemeChangeListener(): void {
 /**
  * JupyterLab CSS variable to Design Token converter
  */
-interface IConverter<T> {
+interface IConverter<T extends string | number | boolean | BigInteger | null | Array<any> | symbol | {}> {
   /**
    * Convert the CSS variable value to design token value
    */

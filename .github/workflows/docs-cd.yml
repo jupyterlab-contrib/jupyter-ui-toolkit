@@ -11,7 +11,7 @@ jobs:
         timeout-minutes: 10
         steps:
             - name: Checkout 🛎️
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: Install Dependencies 📥
               run: yarn install
@@ -21,7 +21,7 @@ jobs:
               working-directory: packages/components
 
             - name: Deploy Docs 🚀
-              uses: JamesIves/github-pages-deploy-action@4.1.3
+              uses: JamesIves/github-pages-deploy-action@v4
               with:
                   branch: gh-pages
                   folder: packages/components/storybook-static
