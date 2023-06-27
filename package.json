@@ -1,9 +1,9 @@
 {
-  "name": "@jupyter-notebook/root-ui-toolkit",
+  "name": "@jupyter/root-ui-toolkit",
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "build:prod": "lerna run --scope @jupyter-notebook/web-components --scope @jupyter-notebook/react-components build && lerna run --scope jupyter-ui-demo build:prod",
+    "build:prod": "lerna run --scope @jupyter/web-components --scope @jupyter/react-components build && lerna run --scope jupyter-ui-demo build:prod",
     "clean": "lerna run clean",
     "install": "lerna bootstrap",
     "format": "prettier --write \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
@@ -29,5 +29,6 @@
   },
   "resolutions": {
     "webpack": "^5.0.0"
-  }
+  },
+  "packageManager": "yarn@3.6.0"
 }
