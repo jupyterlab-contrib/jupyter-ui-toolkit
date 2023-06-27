@@ -79,9 +79,6 @@
     "style/index.js"
   ],
   "styleModule": "style/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
   "jupyterlab": {
     "extension": true,
     "outputDir": "../../jupyter_ui_demo/labextension",
