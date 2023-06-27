@@ -6,8 +6,8 @@ export * from './date-field';
 export * from './date-field.template';
 
 /**
- * A function that returns a {@link @jupyter-notebook/web-components#DateField} registration for configuring the component with a DesignSystem.
- * Implements {@link @jupyter-notebook/web-components#dateFieldTemplate}
+ * A function that returns a {@link @jupyter/web-components#DateField} registration for configuring the component with a DesignSystem.
+ * Implements {@link @jupyter/web-components#dateFieldTemplate}
  *
  *
  * @public

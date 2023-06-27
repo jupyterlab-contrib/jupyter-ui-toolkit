@@ -5,7 +5,7 @@ class _DateField extends FoundationElement {}
 interface _DateField extends FormAssociated {}
 
 /**
- * A form-associated base class for the {@link @jupyter-notebook/web-components#(DateField:class)} component.
+ * A form-associated base class for the {@link @jupyter/web-components#(DateField:class)} component.
  *
  * @internal
  */

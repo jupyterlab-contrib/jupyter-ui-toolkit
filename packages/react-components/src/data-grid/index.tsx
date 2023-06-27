@@ -6,7 +6,7 @@ import {
   jpDataGrid,
   jpDataGridCell,
   jpDataGridRow
-} from '@jupyter-notebook/web-components';
+} from '@jupyter/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 

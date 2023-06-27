@@ -37,13 +37,13 @@ import {
   Tooltip,
   TreeItem,
   TreeView
-} from '@jupyter-notebook/react-components';
+} from '@jupyter/react-components';
 import {
   addJupyterLabThemeChangeListener,
   allComponents,
   DataGrid as WebDataGrid,
   provideJupyterDesignSystem
-} from '@jupyter-notebook/web-components';
+} from '@jupyter/web-components';
 import {
   JupyterFrontEnd,
   JupyterFrontEndPlugin

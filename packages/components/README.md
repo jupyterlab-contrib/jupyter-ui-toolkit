@@ -4,7 +4,7 @@
 help.
 
 [![Extension status](https://img.shields.io/badge/status-ready-success 'The package is ready to be used')](https://jupyterlab-contrib.github.io/)
-[![NPM Version](https://img.shields.io/npm/v/@jupyter-notebook/web-components?color=blue)](https://www.npmjs.com/package/@jupyter-notebook/web-components)
+[![NPM Version](https://img.shields.io/npm/v/@jupyter/web-components?color=blue)](https://www.npmjs.com/package/@jupyter/web-components)
 [![Toolkit CI Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml)
 [![Deploy Docs Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
@@ -32,9 +32,9 @@ Features of the library include:
 
 This repository contains three packages:
 
-- [`@jupyter-notebook/web-components`](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/tree/main/packages/components/):
+- [`@jupyter/web-components`](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/tree/main/packages/components/):
   The main package defining the web components.
-- [`@jupyter-notebook/react-components`](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/tree/main/packages/react-components):
+- [`@jupyter/react-components`](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/tree/main/packages/react-components):
   Wrapped the web components to use them with [React](https://reactjs.org).
 - [`jupyter-ui-demo`](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/tree/main/packages/lab-example):
   Unpublished JupyterLab extension to demonstrate the integration of the toolkit.

@@ -99,7 +99,7 @@ jobs:
         run: yarn install
 
       - name: Build Toolkit 🏗
-        run: yarn run lerna run --scope @jupyter-notebook/web-components --scope @jupyter-notebook/react-components build
+        run: yarn run lerna run --scope @jupyter/web-components --scope @jupyter/react-components build
 
   build-docs:
     runs-on: ubuntu-latest

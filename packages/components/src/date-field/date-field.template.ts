@@ -9,7 +9,7 @@ import type { FoundationElementTemplate } from '@microsoft/fast-foundation';
 import type { DateField, DateFieldOptions } from './date-field';
 
 /**
- * The template for the {@link @jupyter-notebook/web-components#(DateField:class)} component.
+ * The template for the {@link @jupyter/web-components#(DateField:class)} component.
  * @public
  */
 export const dateFieldTemplate: FoundationElementTemplate<
