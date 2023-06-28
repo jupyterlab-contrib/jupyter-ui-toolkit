@@ -78,6 +78,7 @@ interface IConverter<
     | null
     | Array<any>
     | symbol
+    // eslint-disable-next-line @typescript-eslint/ban-types
     | {}
 > {
   /**
