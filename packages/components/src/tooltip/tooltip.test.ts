@@ -7,6 +7,7 @@ import { Tooltip } from './index';
 test('Default', async ({ page }) => {
   await page.goto('/iframe.html?id=tooltip--default');
 
+  await page.locator('jp-button').waitFor();
   await page.evaluate(() => {
     const tooltip = document.querySelector('jp-tooltip') as Tooltip;
     if (tooltip) {

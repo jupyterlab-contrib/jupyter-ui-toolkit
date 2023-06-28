@@ -32,7 +32,11 @@ export default [
       del({ targets: 'dist/*' }),
       nodeResolve(),
       commonjs(),
-      typescript(),
+      // Don't output declarations as they gonna be produced in a second step
+      typescript({
+        declaration: false,
+        declarationDir: undefined
+      }),
       transformTaggedTemplate({
         tagsToProcess: ['css'],
         transformer: transformCSSFragment,

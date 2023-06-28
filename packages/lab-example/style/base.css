@@ -1,12 +1,13 @@
 /* 
 /  Copyright (c) Jupyter Development Team.
 /  Distributed under the terms of the Modified BSD License.
-/*/
+/ */
 
 /* Fixes for JupyterLab */
 jp-tab {
   box-sizing: border-box;
 }
+
 /* End fixes */
 
 :root {
@@ -14,22 +15,18 @@ jp-tab {
   --avatar-fill-red: indianred;
   --avatar-color-light: white;
   --avatar-color-dark: slategrey;
-
   --badge-fill-blue: royalblue;
   --badge-fill-red: indianred;
   --badge-color-light: white;
   --badge-color-dark: slategrey;
-
   --card-height: 100px;
 }
 
 .jp-Artwork {
   padding: 4px;
-
   font-family: var(--jp-ui-font-family);
   color: var(--jp-ui-font-color1);
   font-size: var(--jp-ui-font-size1);
-
   overflow: auto;
 }
 
@@ -55,6 +52,11 @@ jp-tab {
   padding: 4px;
 }
 
+jp-toolbar > * {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .jp-Artwork .jp-FlexColumn > * {
   flex: 0 0 auto;
   margin: 4px;
@@ -68,11 +70,6 @@ jp-divider,
 jp-progress,
 jp-tree-view {
   width: 100%;
-}
-
-jp-toolbar > * {
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 #jupyter-ui-toolkit-demo-panel {

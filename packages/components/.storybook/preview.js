@@ -1,9 +1,10 @@
 import * as JupyterComponents from '../src/index-rollup';
+// import type {Preview} from '@storybook/web-components';
 import { themes } from '@storybook/theming';
 
 JupyterComponents;
 
-export const parameters = {
+const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
     storySort: {
@@ -30,7 +31,7 @@ export const parameters = {
   }
 };
 
-export const globalTypes = {
+const globalTypes = {
   accent: {
     name: 'Accent',
     description: 'Theme accent color for components',
@@ -47,3 +48,10 @@ export const globalTypes = {
     }
   }
 };
+
+const preview = {
+  parameters,
+  globalTypes
+};
+
+export default preview;

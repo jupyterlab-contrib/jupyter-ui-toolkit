@@ -1,10 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import {
-  provideJupyterDesignSystem,
-  jpAvatar
-} from '@jupyter-notebook/web-components';
+import { provideJupyterDesignSystem, jpAvatar } from '@jupyter/web-components';
 import { provideReactWrapper } from '@microsoft/fast-react-wrapper';
 import React from 'react';
 

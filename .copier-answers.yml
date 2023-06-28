@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.0.6
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: ''
+author_name: Project Jupyter
+has_binder: true
+has_settings: false
+kind: frontend
+labextension_name: 'jupyter-ui-demo'
+project_short_description: UI Toolkit for Jupyter.
+python_name: jupyter_ui_demo
+repository: https://github.com/jupyterlab-contrib/jupyter-ui-toolkit
+test: false
+

@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -16,10 +17,11 @@ export default {
   }
 };
 
-const Template = (
-  args,
-  { globals: { backgrounds, accent }, parameters }
-): string => {
+const Template: StoryFn = (args, context): string => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
   setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-slider-label
@@ -30,20 +32,20 @@ const Template = (
     </jp-slider-label>`;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   hideMark: false,
   position: null,
   disabled: false
 };
 
-export const WithHideMark = Template.bind({});
+export const WithHideMark: StoryObj = { render: Template.bind({}) };
 WithHideMark.args = {
   ...Default.args,
   hideMark: true
 };
 
-export const WithDisabled = Template.bind({});
+export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
   disabled: true

@@ -1,6 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -25,23 +26,24 @@ export default {
         ${story()}
       </div>`
   ]
-};
+} as Meta;
 
-const Template = (
-  args,
-  { globals: { backgrounds, accent }, parameters }
-): string => {
+const Template: StoryFn = (args, context): string => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
   setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-divider orientation="${args.orientation}"></jp-divider>`;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   orientation: 'horizontal'
 };
 
-export const Vertical = Template.bind({});
+export const Vertical: StoryObj = { render: Template.bind({}) };
 Vertical.args = {
   ...Default.args,
   orientation: 'vertical'

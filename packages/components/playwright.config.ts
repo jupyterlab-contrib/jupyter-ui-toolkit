@@ -32,6 +32,10 @@ const config: PlaywrightTestConfig = {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] }
     }
+  ],
+  reporter: [
+    [process.env.CI ? 'github' : 'list'],
+    ['html', { open: process.env.CI ? 'never' : 'on-failure' }]
   ]
 };
 

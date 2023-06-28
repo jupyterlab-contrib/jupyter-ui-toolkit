@@ -69,7 +69,18 @@ function initThemeChangeListener(): void {
 /**
  * JupyterLab CSS variable to Design Token converter
  */
-interface IConverter<T> {
+interface IConverter<
+  T extends
+    | string
+    | number
+    | boolean
+    | BigInteger
+    | null
+    | Array<any>
+    | symbol
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    | {}
+> {
   /**
    * Convert the CSS variable value to design token value
    */

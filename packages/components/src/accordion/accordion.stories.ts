@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-
+import type { HtmlRenderer, Meta, StoryObj, StoryFn } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
@@ -14,12 +14,13 @@ export default {
       disabled: true
     }
   }
-};
+} as Meta;
 
-const Template = (
-  args,
-  { globals: { backgrounds, accent }, parameters }
-): string => {
+const Template: StoryFn<HtmlRenderer> = (args, context): string => {
+  const {
+    globals: { backgrounds, accent },
+    parameters
+  } = context;
   setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `
@@ -39,5 +40,5 @@ const Template = (
   </jp-accordion>`;
 };
 
-export const Default = Template.bind({});
+export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {};

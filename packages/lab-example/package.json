@@ -1,6 +1,6 @@
 {
   "name": "jupyter-ui-demo",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "A JupyterLab extension to present an artwork of available UI components",
   "private": true,
   "keywords": [
@@ -48,27 +48,30 @@
     "watch:labextension": "jupyter labextension watch ."
   },
   "dependencies": {
-    "@jupyter-notebook/react-components": "^0.9.1",
-    "@jupyter-notebook/web-components": "^0.9.1",
-    "@jupyterlab/application": "^3.1.0",
-    "@jupyterlab/apputils": "^3.0.0",
-    "@lumino/messaging": "^1.10.1",
-    "@lumino/signaling": "^1.10.1",
-    "@lumino/widgets": "^1.30.0",
-    "@microsoft/fast-element": "^1.8.0",
-    "react": "^17.0.0"
+    "@jupyter/react-components": "^0.10.0",
+    "@jupyter/web-components": "^0.10.0",
+    "@jupyterlab/application": "^3.1.0 || ^4.0.0",
+    "@jupyterlab/apputils": "^3.0.0 || ^4.0.0",
+    "@lumino/messaging": "^1.10.1 || ^2.0.0",
+    "@lumino/signaling": "^1.10.1 || ^2.0.0",
+    "@lumino/widgets": "^1.30.0 || ^2.0.0",
+    "@microsoft/fast-element": "^1.12.0",
+    "react": ">=17.0.0 <19.0.0"
   },
   "devDependencies": {
-    "@jupyterlab/builder": "^3.1.0",
-    "@types/react": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
-    "eslint": "^7.14.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
+    "@jupyterlab/builder": "^4.0.0",
+    "@types/react": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.1",
-    "rimraf": "^3.0.2",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "source-map-loader": "^1.0.2",
+    "style-loader": "^3.3.1",
     "typescript": "~4.3.5"
   },
   "sideEffects": [
@@ -76,17 +79,14 @@
     "style/index.js"
   ],
   "styleModule": "style/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
   "jupyterlab": {
     "extension": true,
     "outputDir": "../../jupyter_ui_demo/labextension",
     "sharedPackages": {
-      "@jupyter-notebook/react-components": {
+      "@jupyter/react-components": {
         "singleton": true
       },
-      "@jupyter-notebook/web-components": {
+      "@jupyter/web-components": {
         "singleton": true
       }
     }
