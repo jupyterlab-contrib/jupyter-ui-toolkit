@@ -62,7 +62,7 @@ source_dir = "src"
 build_dir = "jupyter_ui_demo/labextension"
 
 [tool.jupyter-releaser.options]
-version_cmd = "hatch version"
+version_cmd = "python scripts/bump_version.py --force"
 
 [tool.jupyter-releaser.hooks]
 before-build-npm = [
