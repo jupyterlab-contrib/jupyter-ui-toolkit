@@ -36,8 +36,8 @@ artifacts = ["jupyter_ui_demo/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyter_ui_demo/labextension" = "share/jupyter/labextensions/@jupyter/root-ui-toolkit"
-"install.json" = "share/jupyter/labextensions/@jupyter/root-ui-toolkit/install.json"
+"jupyter_ui_demo/labextension" = "share/jupyter/labextensions/jupyter-ui-demo"
+"install.json" = "share/jupyter/labextensions/jupyter-ui-demo/install.json"
 
 [tool.hatch.build.hooks.version]
 path = "jupyter_ui_demo/_version.py"

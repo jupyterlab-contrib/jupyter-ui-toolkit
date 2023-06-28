@@ -90,4 +90,4 @@ jobs:
           pip install myextension.tar.gz
           pip install jupyterlab
           jupyter labextension list 2>&1 | grep -ie "jupyter-ui-demo.*OK"
-          python -m jupyterlab.browser_check --no-chrome-test
+          python -m jupyterlab.browser_check --no-browser-test

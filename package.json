@@ -25,11 +25,11 @@
     "build": "lerna run build",
     "build:prod": "lerna run --scope @jupyter/web-components --scope @jupyter/react-components build && lerna run --scope jupyter-ui-demo build:prod",
     "clean": "lerna run clean",
-    "format": "jlpm stylelint && prettier --write \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
-    "format:check": "jlpm stylelint --check && prettier --list-different \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
+    "format": "yarn stylelint && prettier --write \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
+    "format:check": "yarn stylelint:check && prettier --list-different \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
     "lint": "lerna run eslint",
     "lint:check": "lerna run eslint:check",
-    "stylelint": "jlpm stylelint:check --fix",
+    "stylelint": "yarn stylelint:check --fix",
     "stylelint:check": "stylelint --cache \"packages/lab-example/style/**/*.css\""
   },
   "devDependencies": {
