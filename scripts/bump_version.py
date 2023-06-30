@@ -3,6 +3,7 @@
 
 import json
 from pathlib import Path
+from shutil import which
 
 import click
 from jupyter_releaser.util import get_version, run
@@ -45,6 +46,7 @@ def bump(force, spec):
         js_version += f"-{p}.{x}"
 
     # bump the JS packages
+    run(f"{which('yarn')} install")
     lerna_cmd = f"{LERNA_CMD} {js_version}"
     if force:
         lerna_cmd += " --yes"
