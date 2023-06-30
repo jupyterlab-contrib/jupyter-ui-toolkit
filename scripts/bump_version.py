@@ -8,7 +8,7 @@ import click
 from jupyter_releaser.util import get_version, run
 from pkg_resources import parse_version  # type: ignore
 
-LERNA_CMD = "jlpm run lerna version --no-push --force-publish --no-git-tag-version"
+LERNA_CMD = "yarn run lerna version --no-push --force-publish --no-git-tag-version"
 
 
 @click.command()
