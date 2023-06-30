@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jupyter UI toolkit using CDN</title>
+    <script type="module" src="https://unpkg.com/@jupyter/web-components/dist/toolkit.min.js"></script>
+    <style>
+        /*
+            Minimal set of CSS properties from a JupyterLab theme
+            used to theme the toolkit.
+        */
+        :root {
+            --jp-brand-color1: #f2c812;
+            --jp-layout-color1: #808080;
+            --jp-border-width: 1px;
+            --jp-ui-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            --jp-ui-font-size1: 13px;
+        }
+    </style>
+</head>
+<!-- 
+    The toolkit supports theming from JupyterLab theme
+    For that you need to set `data-jp-theme-name` with a theme _name_
+    and `data-jp-theme-light` with `true` (ligth theme) or `false` (dark theme)
+-->
+
+<body data-jp-theme-name="default" data-jp-theme-light="true">
+
+    <jp-button appearance="accent" onclick="alert('Accent button pressed')">Click me!</jp-button>
+    <jp-button onclick="alert('Neutral button pressed')">Click me!</jp-button>
+
+    <script type="module">
+        // Inject JupyterLab theme listener
+        import { addJupyterLabThemeChangeListener } from 'https://unpkg.com/@jupyter/web-components/dist/toolkit.min.js';
+        addJupyterLabThemeChangeListener();
+    </script>
+</body>
+
+</html>

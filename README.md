@@ -1,12 +1,12 @@
 # UI Toolkit for Jupyter
 
-**WIP this is early work in progress.** But don't hesitate to open issues and PRs if you want to
-help.
+> Don't hesitate to open issues and PRs if you want to
+> help.
 
 [![Extension status](https://img.shields.io/badge/status-ready-success 'The package is ready to be used')](https://jupyterlab-contrib.github.io/)
 [![NPM Version](https://img.shields.io/npm/v/@jupyter/web-components?color=blue)](https://www.npmjs.com/package/@jupyter/web-components)
-[![Extension status](https://img.shields.io/badge/cdn-jsdelivr-brightgreen)](https://www.jsdelivr.com/package/npm/@jupyter/web-components)
-[![Extension status](https://img.shields.io/badge/cdn-unpkg-brightgreen)](https://unpkg.com/browse/@jupyter/web-components/)
+[![jsdelivr status](https://img.shields.io/badge/cdn-jsdelivr-brightgreen)](https://www.jsdelivr.com/package/npm/@jupyter/web-components)
+[![unpkg status](https://img.shields.io/badge/cdn-unpkg-brightgreen)](https://unpkg.com/browse/@jupyter/web-components/)
 
 [![Toolkit CI Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/ci.yml)
 [![Deploy Docs Status](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/actions/workflows/docs-cd.yml/badge.svg)](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/)
@@ -77,7 +77,7 @@ A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is 
   <head>
     <script
       type="module"
-      src="https://unpkg.com/@jupyter/web-components"
+      src="https://unpkg.com/@jupyter/web-components/dist/toolkit.min.js"
     ></script>
   </head>
   <!-- ... -->
