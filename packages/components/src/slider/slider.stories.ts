@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Slider',
+  title: 'Components/Slider',
   argTypes: {
     value: { control: 'range', min: 0, max: 10, step: 5 },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },

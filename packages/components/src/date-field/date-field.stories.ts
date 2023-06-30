@@ -7,7 +7,7 @@ import { getFaIcon, setTheme } from '../utilities/storybook';
 import { DateField } from './index';
 
 export default {
-  title: 'Date Field',
+  title: 'Components/Date Field',
   argTypes: {
     label: { control: 'text' },
     value: { control: 'number' },

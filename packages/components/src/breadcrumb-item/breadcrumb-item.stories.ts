@@ -4,7 +4,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Breadcrumb Item',
+  title: 'Components/Breadcrumb Item',
   argTypes: {
     href: { control: 'boolean' },
     startIcon: { control: 'boolean' },

@@ -7,7 +7,7 @@ import { setTheme } from '../utilities/storybook';
 import { Switch } from './index';
 
 export default {
-  title: 'Switch',
+  title: 'Components/Switch',
   argTypes: {
     label: { control: 'text' },
     withMessages: { control: 'boolean' },

@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Radio Group',
+  title: 'Components/Radio Group',
   argTypes: {
     isDisabled: { control: 'boolean' },
     isReadOnly: { control: 'boolean' },

@@ -7,7 +7,7 @@ import { getFaIcon, setTheme } from '../utilities/storybook';
 import { TextField } from './index';
 
 export default {
-  title: 'Text Field',
+  title: 'Components/Text Field',
   argTypes: {
     label: { control: 'text' },
     placeholder: { control: 'text' },

@@ -5,7 +5,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Menu Item',
+  title: 'Components/Menu Item',
   argTypes: {
     role: {
       control: 'radio',

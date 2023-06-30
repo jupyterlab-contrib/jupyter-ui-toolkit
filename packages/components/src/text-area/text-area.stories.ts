@@ -7,7 +7,7 @@ import { setTheme } from '../utilities/storybook';
 import { TextArea } from './index';
 
 export default {
-  title: 'Text Area',
+  title: 'Components/Text Area',
   argTypes: {
     label: { control: 'text' },
     placeholder: { control: 'text' },

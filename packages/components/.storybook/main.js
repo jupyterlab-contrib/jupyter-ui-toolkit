@@ -1,30 +1,41 @@
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.ts'],
+  stories: [
+    '../docs/**/*.mdx',
+    '../src/**/*.stories.mdx',
+    '../src/**/*.stories.ts'
+  ],
   addons: [
+    '@storybook/addon-docs',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y'
   ],
-  features: {
-    postcss: false
-  },
   webpackFinal: async config => {
-    config.module.rules.push({
-      test: /\.ts$/,
-      sideEffects: true,
-      use: [
-        {
-          loader: 'ts-loader',
-          options: {
-            configFile: 'tsconfig.storybook.json'
+    config.module.rules.push(
+      {
+        test: /\.ts$/,
+        sideEffects: true,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: 'tsconfig.storybook.json'
+            }
           }
-        }
-      ]
-    });
+        ]
+      },
+      {
+        test: /\.md$/,
+        type: 'asset/source'
+      }
+    );
     return config;
   },
   framework: {
     name: '@storybook/html-webpack5',
     options: {}
+  },
+  docs: {
+    autodocs: 'tag'
   }
 };

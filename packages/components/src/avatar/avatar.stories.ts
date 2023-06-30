@@ -4,7 +4,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Avatar',
+  title: 'Components/Avatar',
   argTypes: {
     shape: { control: 'select', options: ['circle', 'square', 'default'] },
     fill: {

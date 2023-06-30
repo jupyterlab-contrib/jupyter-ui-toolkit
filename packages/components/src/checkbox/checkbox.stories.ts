@@ -6,7 +6,7 @@ import { setTheme } from '../utilities/storybook';
 import { Checkbox } from './index';
 
 export default {
-  title: 'Checkbox',
+  title: 'Components/Checkbox',
   argTypes: {
     label: { control: 'text' },
     isChecked: { control: 'boolean' },

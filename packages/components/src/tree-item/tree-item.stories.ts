@@ -4,7 +4,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Tree Item',
+  title: 'Components/Tree Item',
   argTypes: {
     selected: { control: 'boolean' },
     beforeContent: { control: 'boolean' },

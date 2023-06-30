@@ -4,7 +4,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Breadcrumb',
+  title: 'Components/Breadcrumb',
   argTypes: {
     customChildren: { control: 'boolean' },
     svgSeparator: { control: 'boolean' },

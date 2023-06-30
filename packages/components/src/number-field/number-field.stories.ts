@@ -7,7 +7,7 @@ import { getFaIcon, setTheme } from '../utilities/storybook';
 import { NumberField } from './index';
 
 export default {
-  title: 'Number Field',
+  title: 'Components/Number Field',
   argTypes: {
     label: { control: 'text' },
     placeholder: { control: 'text' },

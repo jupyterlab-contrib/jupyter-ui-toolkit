@@ -90,8 +90,7 @@ The above CDN location points to the latest release of `@jupyter/web-components`
 
 Further documentation can be found in the following places:
 
-- [Component Docs](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/tree/main/packages/components/docs/components.md)
-- [Storybook (Interactive Component Sandbox)](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/)
+- [Interactive documentation](https://jupyterlab-contrib.github.io/jupyter-ui-toolkit/)
 - [Toolkit Extension Samples](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/tree/main/packages/lab-example):
   [Try online](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyter-ui-toolkit/main)
 

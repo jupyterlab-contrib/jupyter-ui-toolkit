@@ -7,7 +7,7 @@ import { getFaIcon, setTheme } from '../utilities/storybook';
 import { Combobox } from './index';
 
 export default {
-  title: 'Combobox',
+  title: 'Components/Combobox',
   argTypes: {
     isOpen: { control: 'boolean' },
     isDisabled: { control: 'boolean' },

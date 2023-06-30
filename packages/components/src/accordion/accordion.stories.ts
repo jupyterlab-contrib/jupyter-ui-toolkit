@@ -4,7 +4,7 @@ import type { HtmlRenderer, Meta, StoryObj, StoryFn } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Accordion',
+  title: 'Components/Accordion',
 
   parameters: {
     controls: {

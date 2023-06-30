@@ -7,7 +7,7 @@ import { setTheme } from '../utilities/storybook';
 import { TreeView } from './index';
 
 export default {
-  title: 'Tree View',
+  title: 'Components/Tree View',
   parameters: {
     controls: {
       disabled: true
