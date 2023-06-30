@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=slider-label--default');
+  await page.goto('/iframe.html?id=components-slider-label--default');
 
   expect(await page.locator('body').screenshot()).toMatchSnapshot(
     'slider-label-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('With Hide Mark', async ({ page }) => {
-  await page.goto('/iframe.html?id=slider-label--with-hide-mark');
+  await page.goto('/iframe.html?id=components-slider-label--with-hide-mark');
 
   expect(await page.locator('body').screenshot()).toMatchSnapshot(
     'slider-label-with-hide-mark.png'

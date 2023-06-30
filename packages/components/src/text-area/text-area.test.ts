@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=text-area--default');
+  await page.goto('/iframe.html?id=components-text-area--default');
 
   expect(await page.locator('jp-text-area').screenshot()).toMatchSnapshot(
     'text-area-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('With Placeholder', async ({ page }) => {
-  await page.goto('/iframe.html?id=text-area--with-placeholder');
+  await page.goto('/iframe.html?id=components-text-area--with-placeholder');
 
   expect(await page.locator('jp-text-area').screenshot()).toMatchSnapshot(
     'text-area-with-placeholder.png'
@@ -20,7 +20,7 @@ test('With Placeholder', async ({ page }) => {
 });
 
 test('With Autofocus', async ({ page }) => {
-  await page.goto('/iframe.html?id=text-area--with-autofocus');
+  await page.goto('/iframe.html?id=components-text-area--with-autofocus');
 
   expect(await page.locator('jp-text-area').screenshot()).toMatchSnapshot(
     'text-area-with-autofocus.png'
@@ -28,7 +28,7 @@ test('With Autofocus', async ({ page }) => {
 });
 
 test('With Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=text-area--with-disabled');
+  await page.goto('/iframe.html?id=components-text-area--with-disabled');
 
   expect(await page.locator('jp-text-area').screenshot()).toMatchSnapshot(
     'text-area-with-disabled.png'
@@ -36,7 +36,7 @@ test('With Disabled', async ({ page }) => {
 });
 
 test('With Max Length', async ({ page }) => {
-  await page.goto('/iframe.html?id=text-area--with-max-length');
+  await page.goto('/iframe.html?id=components-text-area--with-max-length');
 
   expect(await page.locator('jp-text-area').screenshot()).toMatchSnapshot(
     'text-area-with-max-length.png'
@@ -44,7 +44,7 @@ test('With Max Length', async ({ page }) => {
 });
 
 test('With Readonly', async ({ page }) => {
-  await page.goto('/iframe.html?id=text-area--with-readonly');
+  await page.goto('/iframe.html?id=components-text-area--with-readonly');
 
   expect(await page.locator('jp-text-area').screenshot()).toMatchSnapshot(
     'text-area-with-readonly.png'

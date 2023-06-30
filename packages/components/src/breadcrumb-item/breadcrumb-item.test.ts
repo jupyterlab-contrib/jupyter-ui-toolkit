@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=breadcrumb-item--default');
+  await page.goto('/iframe.html?id=components-breadcrumb-item--default');
 
   expect(await page.locator('jp-breadcrumb-item').screenshot()).toMatchSnapshot(
     'breadcrumb-item-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Without href', async ({ page }) => {
-  await page.goto('/iframe.html?id=breadcrumb-item--without-href');
+  await page.goto('/iframe.html?id=components-breadcrumb-item--without-href');
 
   expect(await page.locator('jp-breadcrumb-item').screenshot()).toMatchSnapshot(
     'breadcrumb-item-without-href.png'
@@ -20,7 +20,9 @@ test('Without href', async ({ page }) => {
 });
 
 test('With Start Icon', async ({ page }) => {
-  await page.goto('/iframe.html?id=breadcrumb-item--with-start-icon');
+  await page.goto(
+    '/iframe.html?id=components-breadcrumb-item--with-start-icon'
+  );
 
   expect(await page.locator('jp-breadcrumb-item').screenshot()).toMatchSnapshot(
     'breadcrumb-item-with-start-icon.png'
@@ -28,7 +30,7 @@ test('With Start Icon', async ({ page }) => {
 });
 
 test('With End Icon', async ({ page }) => {
-  await page.goto('/iframe.html?id=breadcrumb-item--with-end-icon');
+  await page.goto('/iframe.html?id=components-breadcrumb-item--with-end-icon');
 
   expect(await page.locator('jp-breadcrumb-item').screenshot()).toMatchSnapshot(
     'breadcrumb-item-with-end-icon.png'

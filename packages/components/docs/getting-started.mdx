@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Getting started" />
+
+# Getting started
+
+This toolkit provides [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) styled for Jupyter frontends. But you can use
+them independently of Jupyter frontends.
+
+> As web components are a web standard, you can use them in any popular framework such as Vue, Svelte,... .
+> The only one not fully supported them yet is React. Therefore the toolkit provides a React flavored of
+> the component through the package `@jupyter/react-components`.
+
+The toolkit can be consumed directly by importing it in your HTML webpage or by adding as a NPM dependency to your project.
+
+## HTML integration (through CDN)
+
+A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is available on CDN. You can use this script by adding [`type="module"`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) to the script element and then importing from the CDN.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      type="module"
+      src="https://unpkg.com/@jupyter/web-components/dist/toolkit.min.js"
+    ></script>
+  </head>
+  <!-- ... -->
+</html>
+```
+
+The above CDN location points to the latest release of `@jupyter/web-components`. It is advised that when you deploy your site or app, you import the specific version you have developed and tested with.
+
+> A [example](https://raw.githubusercontent.com/jupyterlab-contrib/jupyter-ui-toolkit/main/examples/cdn) is available in the project repository.
+
+## NPM package
+
+To install the `web-components` library, use either `npm` or `yarn` as follows:
+
+```shell
+npm install --save @jupyter/web-components
+```
+
+```shell
+yarn add @jupyter/web-components
+```
+
+> If you need the React components of the toolkit, you need to install `@jupyter/react-components`.

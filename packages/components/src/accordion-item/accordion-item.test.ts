@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=accordion-item--default');
+  await page.goto('/iframe.html?id=components-accordion-item--default');
 
   expect(await page.locator('jp-accordion-item').screenshot()).toMatchSnapshot(
     'accordion-item-default.png'

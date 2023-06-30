@@ -1,3 +1,5 @@
+import remarkGfm from 'remark-gfm';
+
 module.exports = {
   stories: [
     '../docs/**/*.mdx',
@@ -5,7 +7,16 @@ module.exports = {
     '../src/**/*.stories.ts'
   ],
   addons: [
-    '@storybook/addon-docs',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm]
+          }
+        }
+      }
+    },
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y'
@@ -36,6 +47,7 @@ module.exports = {
     options: {}
   },
   docs: {
-    autodocs: 'tag'
+    autodocs: true,
+    defaultName: 'Documentation'
   }
 };

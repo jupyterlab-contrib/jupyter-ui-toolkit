@@ -41,10 +41,9 @@ const globalTypes = {
       // Array of plain string values or MenuItem shape (see below)
       items: [
         { value: '#006CBE', right: '🔵', title: 'blue' },
-        { value: '#DA1A5F', title: 'pink' }
-      ],
-      // Property that specifies if the name of the item will be displayed
-      showName: false
+        { value: '#DA1A5F', title: 'pink' },
+        { value: '#f2c812', title: 'yellow' }
+      ]
     }
   }
 };

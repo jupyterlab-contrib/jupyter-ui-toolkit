@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=switch--default');
+  await page.goto('/iframe.html?id=components-switch--default');
 
   expect(await page.locator('jp-switch').screenshot()).toMatchSnapshot(
     'switch-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Checked', async ({ page }) => {
-  await page.goto('/iframe.html?id=switch--with-checked');
+  await page.goto('/iframe.html?id=components-switch--with-checked');
 
   expect(await page.locator('jp-switch').screenshot()).toMatchSnapshot(
     'switch-with-checked.png'
@@ -20,7 +20,7 @@ test('Checked', async ({ page }) => {
 });
 
 test('Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=switch--with-disabled');
+  await page.goto('/iframe.html?id=components-switch--with-disabled');
 
   expect(await page.locator('jp-switch').screenshot()).toMatchSnapshot(
     'switch-disabled.png'
@@ -28,7 +28,7 @@ test('Disabled', async ({ page }) => {
 });
 
 test('With Messages', async ({ page }) => {
-  await page.goto('/iframe.html?id=switch--with-messages');
+  await page.goto('/iframe.html?id=components-switch--with-messages');
 
   expect(await page.locator('jp-switch').screenshot()).toMatchSnapshot(
     'switch-with-messages.png'

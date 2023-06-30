@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=button--default');
+  await page.goto('/iframe.html?id=components-button--default');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Error', async ({ page }) => {
-  await page.goto('/iframe.html?id=button--error');
+  await page.goto('/iframe.html?id=components-button--error');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-error.png'
@@ -20,7 +20,7 @@ test('Error', async ({ page }) => {
 });
 
 test('Neutral', async ({ page }) => {
-  await page.goto('/iframe.html?id=button--neutral');
+  await page.goto('/iframe.html?id=components-button--neutral');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-neutral.png'
@@ -28,7 +28,7 @@ test('Neutral', async ({ page }) => {
 });
 
 test('Lightweight', async ({ page }) => {
-  await page.goto('/iframe.html?id=button--lightweight');
+  await page.goto('/iframe.html?id=components-button--lightweight');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-lightweight.png'
@@ -36,7 +36,7 @@ test('Lightweight', async ({ page }) => {
 });
 
 // test('With Autofocus', async ({ page }) => {
-//   await page.goto('/iframe.html?id=button--with-autofocus');
+//   await page.goto('/iframe.html?id=components-button--with-autofocus');
 
 //   expect(
 //     await page.locator('jp-button').screenshot()
@@ -44,7 +44,7 @@ test('Lightweight', async ({ page }) => {
 // });
 
 test('With Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=button--with-disabled');
+  await page.goto('/iframe.html?id=components-button--with-disabled');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-with-disabled.png'
@@ -52,7 +52,7 @@ test('With Disabled', async ({ page }) => {
 });
 
 test('With Start Icon', async ({ page }) => {
-  await page.goto('/iframe.html?id=button--with-start-icon');
+  await page.goto('/iframe.html?id=components-button--with-start-icon');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-with-start-icon.png'
@@ -60,7 +60,7 @@ test('With Start Icon', async ({ page }) => {
 });
 
 test('Icon Only', async ({ page }) => {
-  await page.goto('/iframe.html?id=button--icon-only');
+  await page.goto('/iframe.html?id=components-button--icon-only');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-icon-only.png'

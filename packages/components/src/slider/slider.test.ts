@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=slider--default');
+  await page.goto('/iframe.html?id=components-slider--default');
 
   expect(await page.locator('body').screenshot()).toMatchSnapshot(
     'slider-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Vertical', async ({ page }) => {
-  await page.goto('/iframe.html?id=slider--vertical');
+  await page.goto('/iframe.html?id=components-slider--vertical');
 
   expect(await page.locator('body').screenshot()).toMatchSnapshot(
     'slider-vertical.png'
@@ -23,7 +23,7 @@ test('With Disabled', async ({ browserName, page }) => {
   // FIXME
   test.skip(browserName === 'webkit', 'Slider thumb animation unstable.');
 
-  await page.goto('/iframe.html?id=slider--with-disabled');
+  await page.goto('/iframe.html?id=components-slider--with-disabled');
 
   expect(await page.locator('body').screenshot()).toMatchSnapshot(
     'slider-with-disabled.png'

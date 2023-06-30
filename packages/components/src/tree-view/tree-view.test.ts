@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=tree-view--default');
+  await page.goto('/iframe.html?id=components-tree-view--default');
 
   expect(await page.locator('jp-tree-view').screenshot()).toMatchSnapshot(
     'tree-view-default.png'
