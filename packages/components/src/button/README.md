@@ -1,6 +1,6 @@
 # Jupyter Button
 
-The `jp-button` is a web component implementation of a [button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `jp-button` also supports several visual appearances––primary, secondary, and icon.
+The `jp-button` is a web component implementation of a [button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `jp-button` also supports several visual appearances; primary, secondary, and icon.
 
 ## Attributes
 
