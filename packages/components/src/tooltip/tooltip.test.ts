@@ -5,7 +5,7 @@ import { test, expect } from '@playwright/test';
 import { Tooltip } from './index';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=tooltip--default');
+  await page.goto('/iframe.html?id=components-tooltip--default');
 
   await page.locator('jp-button').waitFor();
   await page.evaluate(() => {

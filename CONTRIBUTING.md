@@ -14,7 +14,7 @@ questions about these issues.
 
 ## Development installation
 
-You will need to install `yarn` (for example with `npm install --global yarn`).
+You will need to install `yarn` (for example with `npm install --global yarn && yarn set version berry`).
 
 To build the components packages, execute:
 
@@ -35,7 +35,7 @@ yarn start
 To test locally the JupyterLab demo extension, using `conda` package manager:
 
 ```sh
-conda create -n jupyter-toolkit -c conda-forge -y nodejs yarn jupyterlab=3
+conda create -n jupyter-toolkit -c conda-forge -y nodejs yarn=3 jupyterlab=4
 conda activate jupyter-toolkit
 yarn install
 yarn build
@@ -70,7 +70,7 @@ and the issues it solves before a pull request is opened.
 
 ## Issue Management
 
-Opening an issue lets community members participate in the design
+[Opening an issue](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/issues/new/choose) lets community members participate in the design
 discussion, makes others aware of work being done, and sets the stage
 for a fruitful community interaction. A pull request should reference
 the issue it is addressing. Once the pull request is merged, the issue

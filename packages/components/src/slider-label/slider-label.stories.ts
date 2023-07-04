@@ -5,7 +5,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Slider Label',
+  title: 'Components/Slider Label',
   argTypes: {
     hideMark: { control: 'boolean' },
     disabled: { control: 'boolean' }

@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Button',
+  title: 'Components/Button',
   argTypes: {
     label: { control: 'text' },
     appearance: {

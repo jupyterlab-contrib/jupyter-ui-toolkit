@@ -5,7 +5,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Option',
+  title: 'Components/Option',
   argTypes: {
     label: { control: 'text' },
     isDisabled: { control: 'boolean' },

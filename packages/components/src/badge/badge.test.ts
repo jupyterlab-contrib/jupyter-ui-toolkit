@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=badge--default');
+  await page.goto('/iframe.html?id=components-badge--default');
 
   expect(await page.locator('jp-badge').screenshot()).toMatchSnapshot(
     'badge-default.png'

@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=menu-item--default');
+  await page.goto('/iframe.html?id=components-menu-item--default');
 
   expect(await page.locator('jp-menu-item').screenshot()).toMatchSnapshot(
     'menu-item-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=menu-item--disabled');
+  await page.goto('/iframe.html?id=components-menu-item--disabled');
 
   expect(await page.locator('jp-menu-item').screenshot()).toMatchSnapshot(
     'menu-item-disabled.png'
@@ -20,7 +20,7 @@ test('Disabled', async ({ page }) => {
 });
 
 test('Checkbox', async ({ page }) => {
-  await page.goto('/iframe.html?id=menu-item--checkbox');
+  await page.goto('/iframe.html?id=components-menu-item--checkbox');
 
   expect(await page.locator('jp-menu-item').screenshot()).toMatchSnapshot(
     'menu-item-checkbox.png'
@@ -28,7 +28,7 @@ test('Checkbox', async ({ page }) => {
 });
 
 test('Radio', async ({ page }) => {
-  await page.goto('/iframe.html?id=menu-item--radio');
+  await page.goto('/iframe.html?id=components-menu-item--radio');
 
   expect(await page.locator('jp-menu-item').screenshot()).toMatchSnapshot(
     'menu-item-radio.png'

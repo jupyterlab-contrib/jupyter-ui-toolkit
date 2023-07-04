@@ -5,7 +5,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Divider',
+  title: 'Components/Divider',
   argTypes: {
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] }
   },

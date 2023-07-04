@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=option--default');
+  await page.goto('/iframe.html?id=components-option--default');
 
   expect(await page.locator('jp-option').screenshot()).toMatchSnapshot(
     'option-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('With Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=option--with-disabled');
+  await page.goto('/iframe.html?id=components-option--with-disabled');
 
   expect(await page.locator('jp-option').screenshot()).toMatchSnapshot(
     'option-disabled.png'
@@ -20,7 +20,7 @@ test('With Disabled', async ({ page }) => {
 });
 
 test('With Selected', async ({ page }) => {
-  await page.goto('/iframe.html?id=option--with-selected');
+  await page.goto('/iframe.html?id=components-option--with-selected');
 
   expect(await page.locator('jp-option').screenshot()).toMatchSnapshot(
     'option-selected.png'

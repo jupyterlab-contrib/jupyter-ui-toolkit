@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--default');
+  await page.goto('/iframe.html?id=components-number-field--default');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('With Placeholder', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--with-placeholder');
+  await page.goto('/iframe.html?id=components-number-field--with-placeholder');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-with-placeholder.png'
@@ -20,7 +20,7 @@ test('With Placeholder', async ({ page }) => {
 });
 
 test('With Autofocus', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--with-autofocus');
+  await page.goto('/iframe.html?id=components-number-field--with-autofocus');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-with-autofocus.png'
@@ -28,7 +28,7 @@ test('With Autofocus', async ({ page }) => {
 });
 
 test('With Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--with-disabled');
+  await page.goto('/iframe.html?id=components-number-field--with-disabled');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-with-disabled.png'
@@ -36,7 +36,7 @@ test('With Disabled', async ({ page }) => {
 });
 
 test('With Size', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--with-size');
+  await page.goto('/iframe.html?id=components-number-field--with-size');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-with-size.png'
@@ -44,7 +44,7 @@ test('With Size', async ({ page }) => {
 });
 
 test('With Max Length', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--with-max-length');
+  await page.goto('/iframe.html?id=components-number-field--with-max-length');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-with-max-length.png'
@@ -52,7 +52,7 @@ test('With Max Length', async ({ page }) => {
 });
 
 test('With Readonly', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--with-readonly');
+  await page.goto('/iframe.html?id=components-number-field--with-readonly');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-with-readonly.png'
@@ -60,7 +60,7 @@ test('With Readonly', async ({ page }) => {
 });
 
 test('With Start Icon', async ({ page }) => {
-  await page.goto('/iframe.html?id=number-field--with-start-icon');
+  await page.goto('/iframe.html?id=components-number-field--with-start-icon');
 
   expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
     'number-field-with-start-icon.png'

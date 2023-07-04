@@ -7,7 +7,7 @@ test('With value', async ({ browserName, page }) => {
   // FIXME
   test.skip(browserName === 'webkit', 'Progress ring bar animation unstable.');
 
-  await page.goto('/iframe.html?id=progress-ring--with-value');
+  await page.goto('/iframe.html?id=components-progress-ring--with-value');
 
   // Ensure the progress animation is finished
   await page.waitForTimeout(200);

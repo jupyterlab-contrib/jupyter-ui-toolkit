@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=select--default');
+  await page.goto('/iframe.html?id=components-select--default');
 
   expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
     'select-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('WithOpen', async ({ page }) => {
-  await page.goto('/iframe.html?id=select--with-open');
+  await page.goto('/iframe.html?id=components-select--with-open');
 
   expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
     'select-with-open.png'
@@ -20,7 +20,7 @@ test('WithOpen', async ({ page }) => {
 });
 
 test('WithDisabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=select--with-disabled');
+  await page.goto('/iframe.html?id=components-select--with-disabled');
 
   expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
     'select-with-disabled.png'
@@ -28,7 +28,7 @@ test('WithDisabled', async ({ page }) => {
 });
 
 test('WithCustomIndicator', async ({ page }) => {
-  await page.goto('/iframe.html?id=select--with-custom-indicator');
+  await page.goto('/iframe.html?id=components-select--with-custom-indicator');
 
   expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
     'select-with-custom-indicator.png'

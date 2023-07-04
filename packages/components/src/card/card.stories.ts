@@ -5,7 +5,7 @@ import { neutralForegroundRest, typeRampBaseFontSize } from '../design-tokens';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Card',
+  title: 'Components/Card',
   parameters: {
     controls: {
       disabled: true

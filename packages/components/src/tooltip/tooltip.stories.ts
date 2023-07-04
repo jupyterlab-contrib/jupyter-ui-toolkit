@@ -5,7 +5,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Tooltip',
+  title: 'Components/Tooltip',
   argTypes: {
     visible: { control: 'boolean' },
     position: {

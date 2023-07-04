@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Radio',
+  title: 'Components/Radio',
   argTypes: {
     isChecked: { control: 'boolean' },
     isDisabled: { control: 'boolean' },

@@ -7,7 +7,7 @@ import { setTheme } from '../utilities/storybook';
 import { DataGrid } from './index';
 
 export default {
-  title: 'Data Grid',
+  title: 'Components/Data Grid',
   argTypes: {},
   parameters: {
     controls: { disabled: true },

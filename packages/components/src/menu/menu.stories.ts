@@ -5,7 +5,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon, setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Menu',
+  title: 'Components/Menu',
   parameters: {
     controls: {
       disabled: true

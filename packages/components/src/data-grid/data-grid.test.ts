@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=data-grid--default');
+  await page.goto('/iframe.html?id=components-data-grid--default');
 
   expect(await page.locator('jp-data-grid').screenshot()).toMatchSnapshot(
     'data-grid-default.png'

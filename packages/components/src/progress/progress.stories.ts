@@ -5,7 +5,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Progress',
+  title: 'Components/Progress',
   argTypes: {
     min: { control: 'number', min: 0 },
     max: { control: 'number', min: 0 },

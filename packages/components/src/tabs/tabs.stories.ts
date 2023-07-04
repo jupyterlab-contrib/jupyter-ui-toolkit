@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Tabs',
+  title: 'Components/Tabs',
   argTypes: {
     activePanel: { control: 'select', options: [null, 'One', 'Two', 'Three'] },
     activeIndicator: { control: 'boolean' },

@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=tree-item--default');
+  await page.goto('/iframe.html?id=components-tree-item--default');
 
   expect(await page.locator('jp-tree-item').screenshot()).toMatchSnapshot(
     'tree-item-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Selected', async ({ page }) => {
-  await page.goto('/iframe.html?id=tree-item--selected');
+  await page.goto('/iframe.html?id=components-tree-item--selected');
 
   expect(await page.locator('jp-tree-item').screenshot()).toMatchSnapshot(
     'tree-item-selected.png'
@@ -20,7 +20,7 @@ test('Selected', async ({ page }) => {
 });
 
 test('With Before Content', async ({ page }) => {
-  await page.goto('/iframe.html?id=tree-item--with-before-content');
+  await page.goto('/iframe.html?id=components-tree-item--with-before-content');
 
   expect(await page.locator('jp-tree-item').screenshot()).toMatchSnapshot(
     'tree-item-with-before-content.png'
@@ -28,7 +28,7 @@ test('With Before Content', async ({ page }) => {
 });
 
 test('With After Content', async ({ page }) => {
-  await page.goto('/iframe.html?id=tree-item--with-after-content');
+  await page.goto('/iframe.html?id=components-tree-item--with-after-content');
 
   expect(await page.locator('jp-tree-item').screenshot()).toMatchSnapshot(
     'tree-item-with-after-content.png'

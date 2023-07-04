@@ -2,7 +2,7 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
-## 0.10.1
+## 0.10.0
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/v0.9.1...d687dc2f1f656ac2e6782cf8ffc6edcbf6bcf6bb))
 

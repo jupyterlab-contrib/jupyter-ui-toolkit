@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=combobox--default');
+  await page.goto('/iframe.html?id=components-combobox--default');
 
   expect(await page.locator('jp-combobox').screenshot()).toMatchSnapshot(
     'combobox-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=combobox--with-disabled');
+  await page.goto('/iframe.html?id=components-combobox--with-disabled');
 
   expect(await page.locator('jp-combobox').screenshot()).toMatchSnapshot(
     'combobox-disabled.png'
@@ -20,7 +20,7 @@ test('Disabled', async ({ page }) => {
 });
 
 test('Custom Indicator', async ({ page }) => {
-  await page.goto('/iframe.html?id=combobox--with-custom-indicator');
+  await page.goto('/iframe.html?id=components-combobox--with-custom-indicator');
 
   expect(await page.locator('jp-combobox').screenshot()).toMatchSnapshot(
     'combobox-custom-indicator.png'

@@ -4,7 +4,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { setTheme } from '../utilities/storybook';
 
 export default {
-  title: 'Accordion Item',
+  title: 'Components/Accordion Item',
 
   parameters: {
     controls: {

@@ -7,7 +7,7 @@ import { getFaIcon, setTheme } from '../utilities/storybook';
 import { Search } from './index';
 
 export default {
-  title: 'Search',
+  title: 'Components/Search',
   argTypes: {
     label: { control: 'text' },
     placeholder: { control: 'text' },

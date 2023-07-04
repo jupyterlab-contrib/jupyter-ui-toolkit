@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=radio-group--default');
+  await page.goto('/iframe.html?id=components-radio-group--default');
 
   expect(await page.locator('jp-radio-group').screenshot()).toMatchSnapshot(
     'radio-group-default.png'
@@ -12,7 +12,7 @@ test('Default', async ({ page }) => {
 });
 
 test('Vertical', async ({ page }) => {
-  await page.goto('/iframe.html?id=radio-group--vertical');
+  await page.goto('/iframe.html?id=components-radio-group--vertical');
 
   expect(await page.locator('jp-radio-group').screenshot()).toMatchSnapshot(
     'radio-group-vertical.png'
@@ -20,7 +20,7 @@ test('Vertical', async ({ page }) => {
 });
 
 test('Disabled', async ({ page }) => {
-  await page.goto('/iframe.html?id=radio-group--with-disabled');
+  await page.goto('/iframe.html?id=components-radio-group--with-disabled');
 
   expect(await page.locator('jp-radio-group').screenshot()).toMatchSnapshot(
     'radio-group-disabled.png'
@@ -28,7 +28,7 @@ test('Disabled', async ({ page }) => {
 });
 
 test('Read-only', async ({ page }) => {
-  await page.goto('/iframe.html?id=radio-group--with-read-only');
+  await page.goto('/iframe.html?id=components-radio-group--with-read-only');
 
   expect(await page.locator('jp-radio-group').screenshot()).toMatchSnapshot(
     'radio-group-read-only.png'
