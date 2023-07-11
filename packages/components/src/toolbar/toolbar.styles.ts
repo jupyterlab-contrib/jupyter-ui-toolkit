@@ -76,14 +76,12 @@ export const toolbarStyles: FoundationElementTemplate<
       height: 16px;
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        :host(:${focusVisible}) {
-          box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px)
-            ${SystemColors.Highlight};
-          color: ${SystemColors.ButtonText};
-          forced-color-adjust: none;
-        }
-      `
-    )
+    forcedColorsStylesheetBehavior(css`
+      :host(:${focusVisible}) {
+        box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px)
+          ${SystemColors.Highlight};
+        color: ${SystemColors.ButtonText};
+        forced-color-adjust: none;
+      }
+    `)
   );

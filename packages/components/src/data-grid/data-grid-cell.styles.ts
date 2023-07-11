@@ -52,19 +52,17 @@ export const dataGridCellStyles: FoundationElementTemplate<ElementStyles> = (
       outline: calc(${focusStrokeWidth} * 1px) solid ${accentFillFocus};
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        :host {
-          forced-color-adjust: none;
-          border-color: transparent;
-          background: ${SystemColors.Field};
-          color: ${SystemColors.FieldText};
-        }
+    forcedColorsStylesheetBehavior(css`
+      :host {
+        forced-color-adjust: none;
+        border-color: transparent;
+        background: ${SystemColors.Field};
+        color: ${SystemColors.FieldText};
+      }
 
-        :host(:${focusVisible}) {
-          border-color: ${SystemColors.FieldText};
-          box-shadow: 0 0 0 2px inset ${SystemColors.Field};
-        }
-      `
-    )
+      :host(:${focusVisible}) {
+        border-color: ${SystemColors.FieldText};
+        box-shadow: 0 0 0 2px inset ${SystemColors.Field};
+      }
+    `)
   );

@@ -124,13 +124,11 @@ export const tabsStyles: FoundationElementTemplate<
       transition: transform 0.01s ease-in-out;
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        .activeIndicator,
-        :host([orientation='vertical']) .activeIndicator {
-          forced-color-adjust: none;
-          background: ${SystemColors.Highlight};
-        }
-      `
-    )
+    forcedColorsStylesheetBehavior(css`
+      .activeIndicator,
+      :host([orientation='vertical']) .activeIndicator {
+        forced-color-adjust: none;
+        background: ${SystemColors.Highlight};
+      }
+    `)
   );

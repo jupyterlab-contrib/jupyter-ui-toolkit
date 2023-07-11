@@ -13,7 +13,6 @@ import { DateFieldOptions } from './date-field';
 export const dateFieldStyles: FoundationElementTemplate<
   ElementStyles,
   DateFieldOptions
-> = (context, definition) =>
-  css`
-    ${BaseFieldStyles}
-  `;
+> = (context, definition) => css`
+  ${BaseFieldStyles}
+`;

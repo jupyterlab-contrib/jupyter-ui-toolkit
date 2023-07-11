@@ -203,61 +203,57 @@ export const switchStyles: FoundationElementTemplate<
       display: block;
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        .checked-indicator,
-        :host(:not([disabled])) .switch:active .checked-indicator {
-          forced-color-adjust: none;
-          background: ${SystemColors.FieldText};
-        }
-        .switch {
-          forced-color-adjust: none;
-          background: ${SystemColors.Field};
-          border-color: ${SystemColors.FieldText};
-        }
-        :host(:not([disabled])) .switch:hover {
-          background: ${SystemColors.HighlightText};
-          border-color: ${SystemColors.Highlight};
-        }
-        :host([aria-checked='true']) .switch {
-          background: ${SystemColors.Highlight};
-          border-color: ${SystemColors.Highlight};
-        }
-        :host([aria-checked='true']:not([disabled])) .switch:hover,
-        :host(:not([disabled])) .switch:active {
-          background: ${SystemColors.HighlightText};
-          border-color: ${SystemColors.Highlight};
-        }
-        :host([aria-checked='true']) .checked-indicator {
-          background: ${SystemColors.HighlightText};
-        }
-        :host([aria-checked='true']:not([disabled]))
-          .switch:hover
-          .checked-indicator {
-          background: ${SystemColors.Highlight};
-        }
-        :host([disabled]) {
-          opacity: 1;
-        }
-        :host(:${focusVisible}) .switch {
-          border-color: ${SystemColors.Highlight};
-          outline-offset: 2px;
-          outline: solid calc(${focusStrokeWidth} * 1px)
-            ${SystemColors.FieldText};
-        }
-        :host([aria-checked="true"]:${focusVisible}:not([disabled])) .switch {
-          outline: solid calc(${focusStrokeWidth} * 1px)
-            ${SystemColors.FieldText};
-        }
-        :host([disabled]) .checked-indicator {
-          background: ${SystemColors.GrayText};
-        }
-        :host([disabled]) .switch {
-          background: ${SystemColors.Field};
-          border-color: ${SystemColors.GrayText};
-        }
-      `
-    ),
+    forcedColorsStylesheetBehavior(css`
+      .checked-indicator,
+      :host(:not([disabled])) .switch:active .checked-indicator {
+        forced-color-adjust: none;
+        background: ${SystemColors.FieldText};
+      }
+      .switch {
+        forced-color-adjust: none;
+        background: ${SystemColors.Field};
+        border-color: ${SystemColors.FieldText};
+      }
+      :host(:not([disabled])) .switch:hover {
+        background: ${SystemColors.HighlightText};
+        border-color: ${SystemColors.Highlight};
+      }
+      :host([aria-checked='true']) .switch {
+        background: ${SystemColors.Highlight};
+        border-color: ${SystemColors.Highlight};
+      }
+      :host([aria-checked='true']:not([disabled])) .switch:hover,
+      :host(:not([disabled])) .switch:active {
+        background: ${SystemColors.HighlightText};
+        border-color: ${SystemColors.Highlight};
+      }
+      :host([aria-checked='true']) .checked-indicator {
+        background: ${SystemColors.HighlightText};
+      }
+      :host([aria-checked='true']:not([disabled]))
+        .switch:hover
+        .checked-indicator {
+        background: ${SystemColors.Highlight};
+      }
+      :host([disabled]) {
+        opacity: 1;
+      }
+      :host(:${focusVisible}) .switch {
+        border-color: ${SystemColors.Highlight};
+        outline-offset: 2px;
+        outline: solid calc(${focusStrokeWidth} * 1px) ${SystemColors.FieldText};
+      }
+      :host([aria-checked="true"]:${focusVisible}:not([disabled])) .switch {
+        outline: solid calc(${focusStrokeWidth} * 1px) ${SystemColors.FieldText};
+      }
+      :host([disabled]) .checked-indicator {
+        background: ${SystemColors.GrayText};
+      }
+      :host([disabled]) .switch {
+        background: ${SystemColors.Field};
+        border-color: ${SystemColors.GrayText};
+      }
+    `),
     new DirectionalStyleSheetBehavior(
       css`
         .checked-indicator {

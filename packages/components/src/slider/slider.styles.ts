@@ -70,7 +70,8 @@ export const sliderStyles: FoundationElementTemplate<
     }
 
     :host(:${focusVisible}) .thumb-cursor {
-      box-shadow: 0 0 0 2px ${fillColor},
+      box-shadow:
+        0 0 0 2px ${fillColor},
         0 0 0 calc((2 + ${focusStrokeWidth}) * 1px) ${accentFillFocus};
     }
 
@@ -137,39 +138,38 @@ export const sliderStyles: FoundationElementTemplate<
       opacity: ${disabledOpacity};
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        .thumb-cursor {
-          forced-color-adjust: none;
-          border-color: ${SystemColors.FieldText};
-          background: ${SystemColors.FieldText};
-        }
-        .thumb-cursor:hover,
-        .thumb-cursor:active {
-          background: ${SystemColors.Highlight};
-        }
-        .track {
-          forced-color-adjust: none;
-          background: ${SystemColors.FieldText};
-        }
-        :host(:${focusVisible}) .thumb-cursor {
-          border-color: ${SystemColors.Highlight};
-        }
-        :host([disabled]) {
-          opacity: 1;
-        }
-        :host([disabled]) .track,
-        :host([disabled]) .thumb-cursor {
-          forced-color-adjust: none;
-          background: ${SystemColors.GrayText};
-        }
+    forcedColorsStylesheetBehavior(css`
+      .thumb-cursor {
+        forced-color-adjust: none;
+        border-color: ${SystemColors.FieldText};
+        background: ${SystemColors.FieldText};
+      }
+      .thumb-cursor:hover,
+      .thumb-cursor:active {
+        background: ${SystemColors.Highlight};
+      }
+      .track {
+        forced-color-adjust: none;
+        background: ${SystemColors.FieldText};
+      }
+      :host(:${focusVisible}) .thumb-cursor {
+        border-color: ${SystemColors.Highlight};
+      }
+      :host([disabled]) {
+        opacity: 1;
+      }
+      :host([disabled]) .track,
+      :host([disabled]) .thumb-cursor {
+        forced-color-adjust: none;
+        background: ${SystemColors.GrayText};
+      }
 
-        :host(:${focusVisible}) .thumb-cursor {
-          background: ${SystemColors.Highlight};
-          border-color: ${SystemColors.Highlight};
-          box-shadow: 0 0 0 2px ${SystemColors.Field},
-            0 0 0 4px ${SystemColors.FieldText};
-        }
-      `
-    )
+      :host(:${focusVisible}) .thumb-cursor {
+        background: ${SystemColors.Highlight};
+        border-color: ${SystemColors.Highlight};
+        box-shadow:
+          0 0 0 2px ${SystemColors.Field},
+          0 0 0 4px ${SystemColors.FieldText};
+      }
+    `)
   );

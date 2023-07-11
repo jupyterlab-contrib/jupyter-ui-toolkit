@@ -202,67 +202,65 @@ export const selectStyles: FoundationElementTemplate<
       flex: 0 0 auto;
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        :host(:not([disabled]):hover),
-        :host(:not([disabled]):active) {
-          border-color: ${SystemColors.Highlight};
-        }
+    forcedColorsStylesheetBehavior(css`
+      :host(:not([disabled]):hover),
+      :host(:not([disabled]):active) {
+        border-color: ${SystemColors.Highlight};
+      }
 
-        :host(:not([disabled]):${focusVisible}) {
-          background-color: ${SystemColors.ButtonFace};
-          box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px)
-            ${SystemColors.Highlight};
-          color: ${SystemColors.ButtonText};
-          fill: currentcolor;
-          forced-color-adjust: none;
-        }
+      :host(:not([disabled]):${focusVisible}) {
+        background-color: ${SystemColors.ButtonFace};
+        box-shadow: 0 0 0 calc(${focusStrokeWidth} * 1px)
+          ${SystemColors.Highlight};
+        color: ${SystemColors.ButtonText};
+        fill: currentcolor;
+        forced-color-adjust: none;
+      }
 
-        :host(:not([disabled]):${focusVisible}) .listbox {
-          background: ${SystemColors.ButtonFace};
-        }
+      :host(:not([disabled]):${focusVisible}) .listbox {
+        background: ${SystemColors.ButtonFace};
+      }
 
-        :host([disabled]) {
-          border-color: ${SystemColors.GrayText};
-          background-color: ${SystemColors.ButtonFace};
-          color: ${SystemColors.GrayText};
-          fill: currentcolor;
-          opacity: 1;
-          forced-color-adjust: none;
-        }
+      :host([disabled]) {
+        border-color: ${SystemColors.GrayText};
+        background-color: ${SystemColors.ButtonFace};
+        color: ${SystemColors.GrayText};
+        fill: currentcolor;
+        opacity: 1;
+        forced-color-adjust: none;
+      }
 
-        :host([disabled]:hover) {
-          background: ${SystemColors.ButtonFace};
-        }
+      :host([disabled]:hover) {
+        background: ${SystemColors.ButtonFace};
+      }
 
-        :host([disabled]) .control {
-          color: ${SystemColors.GrayText};
-          border-color: ${SystemColors.GrayText};
-        }
+      :host([disabled]) .control {
+        color: ${SystemColors.GrayText};
+        border-color: ${SystemColors.GrayText};
+      }
 
-        :host([disabled]) .control .select-indicator {
-          fill: ${SystemColors.GrayText};
-        }
+      :host([disabled]) .control .select-indicator {
+        fill: ${SystemColors.GrayText};
+      }
 
-        :host(:${focusVisible}) ::slotted([aria-selected="true"][role="option"]),
+      :host(:${focusVisible}) ::slotted([aria-selected="true"][role="option"]),
             :host(:${focusVisible}) ::slotted(option[aria-selected="true"]),
             :host(:${focusVisible}) ::slotted([aria-selected="true"][role="option"]:not([disabled])) {
-          background: ${SystemColors.Highlight};
-          border-color: ${SystemColors.ButtonText};
-          box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
-            ${SystemColors.HighlightText};
-          color: ${SystemColors.HighlightText};
-          fill: currentcolor;
-        }
+        background: ${SystemColors.Highlight};
+        border-color: ${SystemColors.ButtonText};
+        box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+          ${SystemColors.HighlightText};
+        color: ${SystemColors.HighlightText};
+        fill: currentcolor;
+      }
 
-        .start,
-        .end,
-        .indicator,
-        .select-indicator,
-        ::slotted(svg) {
-          color: ${SystemColors.ButtonText};
-          fill: currentcolor;
-        }
-      `
-    )
+      .start,
+      .end,
+      .indicator,
+      .select-indicator,
+      ::slotted(svg) {
+        color: ${SystemColors.ButtonText};
+        fill: currentcolor;
+      }
+    `)
   );

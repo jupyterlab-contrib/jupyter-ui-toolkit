@@ -133,16 +133,14 @@ export const breadcrumbItemStyles: FoundationElementTemplate<
         margin-inline-start: 6px;
     }
 `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        .control:hover .content::before,
+    forcedColorsStylesheetBehavior(css`
+      .control:hover .content::before,
                 .control:${focusVisible} .content::before {
-          background: ${SystemColors.LinkText};
-        }
-        .start,
-        .end {
-          fill: ${SystemColors.ButtonText};
-        }
-      `
-    )
+        background: ${SystemColors.LinkText};
+      }
+      .start,
+      .end {
+        fill: ${SystemColors.ButtonText};
+      }
+    `)
   );

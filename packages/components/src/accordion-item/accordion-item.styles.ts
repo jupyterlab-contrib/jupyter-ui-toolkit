@@ -148,16 +148,14 @@ export const accordionItemStyles: FoundationElementTemplate<
       position: relative;
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        /* prettier-ignore */
-        .button:${focusVisible}::before {
+    forcedColorsStylesheetBehavior(css`
+      /* prettier-ignore */
+      .button:${focusVisible}::before {
           border-color: ${SystemColors.Highlight};
         }
-        :host slot[name='collapsed-icon'],
-        :host([expanded]) slot[name='expanded-icon'] {
-          fill: ${SystemColors.ButtonText};
-        }
-      `
-    )
+      :host slot[name='collapsed-icon'],
+      :host([expanded]) slot[name='expanded-icon'] {
+        fill: ${SystemColors.ButtonText};
+      }
+    `)
   );
