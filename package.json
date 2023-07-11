@@ -41,10 +41,9 @@
     "lerna": "^7.0.0",
     "prettier": "^2.8.8",
     "stylelint": "^15.10.1",
-    "stylelint-config-prettier": "^9.0.4",
-    "stylelint-config-recommended": "^8.0.0",
-    "stylelint-config-standard": "^26.0.0",
-    "stylelint-prettier": "^2.0.0"
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-prettier": "^4.0.0"
   },
   "resolutions": {
     "file-system-cache": "<2.4.0 || >2.4.0"
