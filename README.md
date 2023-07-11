@@ -72,7 +72,7 @@ yarn add @jupyter/web-components
 A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is available on CDN. You can use this script by adding [`type="module"`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) to the script element and then importing from the CDN.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <script

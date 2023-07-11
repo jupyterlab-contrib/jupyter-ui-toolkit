@@ -181,79 +181,73 @@ export const checkboxStyles: FoundationElementTemplate<
       opacity: ${disabledOpacity};
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        .control {
-          forced-color-adjust: none;
-          border-color: ${SystemColors.FieldText};
-          background: ${SystemColors.Field};
-        }
+    forcedColorsStylesheetBehavior(css`
+      .control {
+        forced-color-adjust: none;
+        border-color: ${SystemColors.FieldText};
+        background: ${SystemColors.Field};
+      }
+      .checked-indicator {
+        fill: ${SystemColors.FieldText};
+      }
+      .indeterminate-indicator {
+        background: ${SystemColors.FieldText};
+      }
+      :host(:not([disabled])) .control:hover,
+      .control:active {
+        border-color: ${SystemColors.Highlight};
+        background: ${SystemColors.Field};
+      }
+      :host(:${focusVisible}) .control {
+        outline: calc(${focusStrokeWidth} * 1px) solid ${SystemColors.FieldText};
+        outline-offset: 2px;
+      }
+      :host([aria-checked="true"]:${focusVisible}:not([disabled])) .control {
+        outline: calc(${focusStrokeWidth} * 1px) solid ${SystemColors.FieldText};
+        outline-offset: 2px;
+      }
+      :host([aria-checked='true']) .control {
+        background: ${SystemColors.Highlight};
+        border-color: ${SystemColors.Highlight};
+      }
+      :host([aria-checked='true']:not([disabled])) .control:hover,
+      .control:active {
+        border-color: ${SystemColors.Highlight};
+        background: ${SystemColors.HighlightText};
+      }
+      :host([aria-checked='true']) .checked-indicator {
+        fill: ${SystemColors.HighlightText};
+      }
+      :host([aria-checked='true']:not([disabled]))
+        .control:hover
         .checked-indicator {
-          fill: ${SystemColors.FieldText};
-        }
+        fill: ${SystemColors.Highlight};
+      }
+      :host([aria-checked='true']) .indeterminate-indicator {
+        background: ${SystemColors.HighlightText};
+      }
+      :host([aria-checked='true']) .control:hover .indeterminate-indicator {
+        background: ${SystemColors.Highlight};
+      }
+      :host([disabled]) {
+        opacity: 1;
+      }
+      :host([disabled]) .control {
+        forced-color-adjust: none;
+        border-color: ${SystemColors.GrayText};
+        background: ${SystemColors.Field};
+      }
+      :host([disabled]) .indeterminate-indicator,
+      :host([aria-checked='true'][disabled])
+        .control:hover
         .indeterminate-indicator {
-          background: ${SystemColors.FieldText};
-        }
-        :host(:not([disabled])) .control:hover,
-        .control:active {
-          border-color: ${SystemColors.Highlight};
-          background: ${SystemColors.Field};
-        }
-        :host(:${focusVisible}) .control {
-          outline: calc(${focusStrokeWidth} * 1px) solid
-            ${SystemColors.FieldText};
-          outline-offset: 2px;
-        }
-        :host([aria-checked="true"]:${focusVisible}:not([disabled])) .control {
-          outline: calc(${focusStrokeWidth} * 1px) solid
-            ${SystemColors.FieldText};
-          outline-offset: 2px;
-        }
-        :host([aria-checked='true']) .control {
-          background: ${SystemColors.Highlight};
-          border-color: ${SystemColors.Highlight};
-        }
-        :host([aria-checked='true']:not([disabled])) .control:hover,
-        .control:active {
-          border-color: ${SystemColors.Highlight};
-          background: ${SystemColors.HighlightText};
-        }
-        :host([aria-checked='true']) .checked-indicator {
-          fill: ${SystemColors.HighlightText};
-        }
-        :host([aria-checked='true']:not([disabled]))
-          .control:hover
-          .checked-indicator {
-          fill: ${SystemColors.Highlight};
-        }
-        :host([aria-checked='true']) .indeterminate-indicator {
-          background: ${SystemColors.HighlightText};
-        }
-        :host([aria-checked='true']) .control:hover .indeterminate-indicator {
-          background: ${SystemColors.Highlight};
-        }
-        :host([disabled]) {
-          opacity: 1;
-        }
-        :host([disabled]) .control {
-          forced-color-adjust: none;
-          border-color: ${SystemColors.GrayText};
-          background: ${SystemColors.Field};
-        }
-        :host([disabled]) .indeterminate-indicator,
-        :host([aria-checked='true'][disabled])
-          .control:hover
-          .indeterminate-indicator {
-          forced-color-adjust: none;
-          background: ${SystemColors.GrayText};
-        }
-        :host([disabled]) .checked-indicator,
-        :host([aria-checked='true'][disabled])
-          .control:hover
-          .checked-indicator {
-          forced-color-adjust: none;
-          fill: ${SystemColors.GrayText};
-        }
-      `
-    )
+        forced-color-adjust: none;
+        background: ${SystemColors.GrayText};
+      }
+      :host([disabled]) .checked-indicator,
+      :host([aria-checked='true'][disabled]) .control:hover .checked-indicator {
+        forced-color-adjust: none;
+        fill: ${SystemColors.GrayText};
+      }
+    `)
   );

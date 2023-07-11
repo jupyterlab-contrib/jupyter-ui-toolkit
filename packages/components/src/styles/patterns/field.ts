@@ -147,40 +147,38 @@ export const BaseFieldStyles = css`
     border-color: ${neutralStrokeRest};
   }
 `.withBehaviors(
-  forcedColorsStylesheetBehavior(
-    css`
-      .root,
-      :host([appearance='filled']) .root {
-        forced-color-adjust: none;
-        background: ${SystemColors.Field};
-        border-color: ${SystemColors.FieldText};
-      }
-      :host(:hover:not([disabled])) .root,
-      :host([appearance='filled']:hover:not([disabled])) .root,
-      :host([appearance='filled']:hover) .root {
-        background: ${SystemColors.Field};
-        border-color: ${SystemColors.Highlight};
-      }
-      .start,
-      .end {
-        fill: currentcolor;
-      }
-      :host([disabled]) {
-        opacity: 1;
-      }
-      :host([disabled]) .root,
-      :host([appearance='filled']:hover[disabled]) .root {
-        border-color: ${SystemColors.GrayText};
-        background: ${SystemColors.Field};
-      }
-      :host(:focus-within:enabled) .root {
-        border-color: ${SystemColors.Highlight};
-        box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
-          ${SystemColors.Highlight};
-      }
-      input::placeholder {
-        color: ${SystemColors.GrayText};
-      }
-    `
-  )
+  forcedColorsStylesheetBehavior(css`
+    .root,
+    :host([appearance='filled']) .root {
+      forced-color-adjust: none;
+      background: ${SystemColors.Field};
+      border-color: ${SystemColors.FieldText};
+    }
+    :host(:hover:not([disabled])) .root,
+    :host([appearance='filled']:hover:not([disabled])) .root,
+    :host([appearance='filled']:hover) .root {
+      background: ${SystemColors.Field};
+      border-color: ${SystemColors.Highlight};
+    }
+    .start,
+    .end {
+      fill: currentcolor;
+    }
+    :host([disabled]) {
+      opacity: 1;
+    }
+    :host([disabled]) .root,
+    :host([appearance='filled']:hover[disabled]) .root {
+      border-color: ${SystemColors.GrayText};
+      background: ${SystemColors.Field};
+    }
+    :host(:focus-within:enabled) .root {
+      border-color: ${SystemColors.Highlight};
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+        ${SystemColors.Highlight};
+    }
+    input::placeholder {
+      color: ${SystemColors.GrayText};
+    }
+  `)
 );

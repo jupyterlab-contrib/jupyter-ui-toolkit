@@ -128,36 +128,34 @@ export const tabStyles: FoundationElementTemplate<ElementStyles> = (
     :host(.vertical:hover[aria-selected='true']) {
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        :host {
-          forced-color-adjust: none;
-          border-color: transparent;
-          color: ${SystemColors.ButtonText};
-          fill: currentcolor;
-        }
-        :host(:hover),
-        :host(.vertical:hover),
-        :host([aria-selected='true']:hover) {
-          background: ${SystemColors.Highlight};
-          color: ${SystemColors.HighlightText};
-          fill: currentcolor;
-        }
-        :host([aria-selected='true']) {
-          background: ${SystemColors.HighlightText};
-          color: ${SystemColors.Highlight};
-          fill: currentcolor;
-        }
-        :host(:${focusVisible}) {
-          border-color: ${SystemColors.ButtonText};
-          box-shadow: none;
-        }
-        :host([disabled]),
-        :host([disabled]:hover) {
-          opacity: 1;
-          color: ${SystemColors.GrayText};
-          background: ${SystemColors.ButtonFace};
-        }
-      `
-    )
+    forcedColorsStylesheetBehavior(css`
+      :host {
+        forced-color-adjust: none;
+        border-color: transparent;
+        color: ${SystemColors.ButtonText};
+        fill: currentcolor;
+      }
+      :host(:hover),
+      :host(.vertical:hover),
+      :host([aria-selected='true']:hover) {
+        background: ${SystemColors.Highlight};
+        color: ${SystemColors.HighlightText};
+        fill: currentcolor;
+      }
+      :host([aria-selected='true']) {
+        background: ${SystemColors.HighlightText};
+        color: ${SystemColors.Highlight};
+        fill: currentcolor;
+      }
+      :host(:${focusVisible}) {
+        border-color: ${SystemColors.ButtonText};
+        box-shadow: none;
+      }
+      :host([disabled]),
+      :host([disabled]:hover) {
+        opacity: 1;
+        color: ${SystemColors.GrayText};
+        background: ${SystemColors.ButtonFace};
+      }
+    `)
   );

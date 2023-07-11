@@ -129,28 +129,26 @@ export const optionStyles: FoundationElementTemplate<
       margin-inline-end: 1ch;
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        :host {
-          border-color: transparent;
-          forced-color-adjust: none;
-          color: ${SystemColors.ButtonText};
-          fill: currentcolor;
-        }
+    forcedColorsStylesheetBehavior(css`
+      :host {
+        border-color: transparent;
+        forced-color-adjust: none;
+        color: ${SystemColors.ButtonText};
+        fill: currentcolor;
+      }
 
-        :host(:not([aria-selected='true']):hover),
-        :host([aria-selected='true']) {
-          background: ${SystemColors.Highlight};
-          color: ${SystemColors.HighlightText};
-        }
+      :host(:not([aria-selected='true']):hover),
+      :host([aria-selected='true']) {
+        background: ${SystemColors.Highlight};
+        color: ${SystemColors.HighlightText};
+      }
 
-        :host([disabled]),
-        :host([disabled]:not([aria-selected='true']):hover) {
-          background: ${SystemColors.Canvas};
-          color: ${SystemColors.GrayText};
-          fill: currentcolor;
-          opacity: 1;
-        }
-      `
-    )
+      :host([disabled]),
+      :host([disabled]:not([aria-selected='true']):hover) {
+        background: ${SystemColors.Canvas};
+        color: ${SystemColors.GrayText};
+        fill: currentcolor;
+        opacity: 1;
+      }
+    `)
   );

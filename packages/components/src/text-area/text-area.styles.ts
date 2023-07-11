@@ -134,11 +134,9 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
       border-color: ${neutralStrokeRest};
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        :host([disabled]) {
-          opacity: 1;
-        }
-      `
-    )
+    forcedColorsStylesheetBehavior(css`
+      :host([disabled]) {
+        opacity: 1;
+      }
+    `)
   );

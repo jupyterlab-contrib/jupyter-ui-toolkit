@@ -170,67 +170,61 @@ export const radioStyles: FoundationElementTemplate<
       opacity: ${disabledOpacity};
     }
   `.withBehaviors(
-    forcedColorsStylesheetBehavior(
-      css`
-        .control,
-        :host([aria-checked='true']:not([disabled])) .control {
-          forced-color-adjust: none;
-          border-color: ${SystemColors.FieldText};
-          background: ${SystemColors.Field};
-        }
-        :host(:not([disabled])) .control:hover {
-          border-color: ${SystemColors.Highlight};
-          background: ${SystemColors.Field};
-        }
-        :host([aria-checked='true']:not([disabled])) .control:hover,
-        :host([aria-checked='true']:not([disabled])) .control:active {
-          border-color: ${SystemColors.Highlight};
-          background: ${SystemColors.Highlight};
-        }
-        :host([aria-checked='true']) .checked-indicator {
-          background: ${SystemColors.Highlight};
-          fill: ${SystemColors.Highlight};
-        }
-        :host([aria-checked='true']:not([disabled]))
-          .control:hover
-          .checked-indicator,
-        :host([aria-checked='true']:not([disabled]))
-          .control:active
-          .checked-indicator {
-          background: ${SystemColors.HighlightText};
-          fill: ${SystemColors.HighlightText};
-        }
-        :host(:${focusVisible}) .control {
-          border-color: ${SystemColors.Highlight};
-          outline-offset: 2px;
-          outline: solid calc(${focusStrokeWidth} * 1px)
-            ${SystemColors.FieldText};
-        }
-        :host([aria-checked="true"]:${focusVisible}:not([disabled])) .control {
-          border-color: ${SystemColors.Highlight};
-          outline: solid calc(${focusStrokeWidth} * 1px)
-            ${SystemColors.FieldText};
-        }
-        :host([disabled]) {
-          forced-color-adjust: none;
-          opacity: 1;
-        }
-        :host([disabled]) .label {
-          color: ${SystemColors.GrayText};
-        }
-        :host([disabled]) .control,
-        :host([aria-checked='true'][disabled]) .control:hover,
-        .control:active {
-          background: ${SystemColors.Field};
-          border-color: ${SystemColors.GrayText};
-        }
-        :host([disabled]) .checked-indicator,
-        :host([aria-checked='true'][disabled])
-          .control:hover
-          .checked-indicator {
-          fill: ${SystemColors.GrayText};
-          background: ${SystemColors.GrayText};
-        }
-      `
-    )
+    forcedColorsStylesheetBehavior(css`
+      .control,
+      :host([aria-checked='true']:not([disabled])) .control {
+        forced-color-adjust: none;
+        border-color: ${SystemColors.FieldText};
+        background: ${SystemColors.Field};
+      }
+      :host(:not([disabled])) .control:hover {
+        border-color: ${SystemColors.Highlight};
+        background: ${SystemColors.Field};
+      }
+      :host([aria-checked='true']:not([disabled])) .control:hover,
+      :host([aria-checked='true']:not([disabled])) .control:active {
+        border-color: ${SystemColors.Highlight};
+        background: ${SystemColors.Highlight};
+      }
+      :host([aria-checked='true']) .checked-indicator {
+        background: ${SystemColors.Highlight};
+        fill: ${SystemColors.Highlight};
+      }
+      :host([aria-checked='true']:not([disabled]))
+        .control:hover
+        .checked-indicator,
+      :host([aria-checked='true']:not([disabled]))
+        .control:active
+        .checked-indicator {
+        background: ${SystemColors.HighlightText};
+        fill: ${SystemColors.HighlightText};
+      }
+      :host(:${focusVisible}) .control {
+        border-color: ${SystemColors.Highlight};
+        outline-offset: 2px;
+        outline: solid calc(${focusStrokeWidth} * 1px) ${SystemColors.FieldText};
+      }
+      :host([aria-checked="true"]:${focusVisible}:not([disabled])) .control {
+        border-color: ${SystemColors.Highlight};
+        outline: solid calc(${focusStrokeWidth} * 1px) ${SystemColors.FieldText};
+      }
+      :host([disabled]) {
+        forced-color-adjust: none;
+        opacity: 1;
+      }
+      :host([disabled]) .label {
+        color: ${SystemColors.GrayText};
+      }
+      :host([disabled]) .control,
+      :host([aria-checked='true'][disabled]) .control:hover,
+      .control:active {
+        background: ${SystemColors.Field};
+        border-color: ${SystemColors.GrayText};
+      }
+      :host([disabled]) .checked-indicator,
+      :host([aria-checked='true'][disabled]) .control:hover .checked-indicator {
+        fill: ${SystemColors.GrayText};
+        background: ${SystemColors.GrayText};
+      }
+    `)
   );

@@ -273,71 +273,69 @@ export const treeItemStyles: FoundationElementTemplate<
     }
   `.withBehaviors(
     new DirectionalStyleSheetBehavior(ltr, rtl),
-    forcedColorsStylesheetBehavior(
-      css`
-        :host {
-          forced-color-adjust: none;
-          border-color: transparent;
-          background: ${SystemColors.Field};
-          color: ${SystemColors.FieldText};
-        }
-        :host .content-region .expand-collapse-glyph {
-          fill: ${SystemColors.FieldText};
-        }
-        :host .positioning-region:hover,
-        :host([selected]) .positioning-region {
-          background: ${SystemColors.Highlight};
-        }
-        :host .positioning-region:hover .content-region,
-        :host([selected]) .positioning-region .content-region {
-          color: ${SystemColors.HighlightText};
-        }
-        :host .positioning-region:hover .content-region .expand-collapse-glyph,
-        :host .positioning-region:hover .content-region .start,
-        :host .positioning-region:hover .content-region .end,
-        :host([selected]) .content-region .expand-collapse-glyph,
-        :host([selected]) .content-region .start,
-        :host([selected]) .content-region .end {
-          fill: ${SystemColors.HighlightText};
-        }
-        :host([selected])::after {
-          background: ${SystemColors.Field};
-        }
-        :host(:${focusVisible}) .positioning-region {
-          border-color: ${SystemColors.FieldText};
-          box-shadow: 0 0 0 2px inset ${SystemColors.Field};
-          color: ${SystemColors.FieldText};
-        }
-        :host([disabled]) .content-region,
-        :host([disabled]) .positioning-region:hover .content-region {
-          opacity: 1;
-          color: ${SystemColors.GrayText};
-        }
-        :host([disabled]) .content-region .expand-collapse-glyph,
-        :host([disabled]) .content-region .start,
-        :host([disabled]) .content-region .end,
-        :host([disabled])
-          .positioning-region:hover
-          .content-region
-          .expand-collapse-glyph,
-        :host([disabled]) .positioning-region:hover .content-region .start,
-        :host([disabled]) .positioning-region:hover .content-region .end {
-          fill: ${SystemColors.GrayText};
-        }
-        :host([disabled]) .positioning-region:hover {
-          background: ${SystemColors.Field};
-        }
+    forcedColorsStylesheetBehavior(css`
+      :host {
+        forced-color-adjust: none;
+        border-color: transparent;
+        background: ${SystemColors.Field};
+        color: ${SystemColors.FieldText};
+      }
+      :host .content-region .expand-collapse-glyph {
+        fill: ${SystemColors.FieldText};
+      }
+      :host .positioning-region:hover,
+      :host([selected]) .positioning-region {
+        background: ${SystemColors.Highlight};
+      }
+      :host .positioning-region:hover .content-region,
+      :host([selected]) .positioning-region .content-region {
+        color: ${SystemColors.HighlightText};
+      }
+      :host .positioning-region:hover .content-region .expand-collapse-glyph,
+      :host .positioning-region:hover .content-region .start,
+      :host .positioning-region:hover .content-region .end,
+      :host([selected]) .content-region .expand-collapse-glyph,
+      :host([selected]) .content-region .start,
+      :host([selected]) .content-region .end {
+        fill: ${SystemColors.HighlightText};
+      }
+      :host([selected])::after {
+        background: ${SystemColors.Field};
+      }
+      :host(:${focusVisible}) .positioning-region {
+        border-color: ${SystemColors.FieldText};
+        box-shadow: 0 0 0 2px inset ${SystemColors.Field};
+        color: ${SystemColors.FieldText};
+      }
+      :host([disabled]) .content-region,
+      :host([disabled]) .positioning-region:hover .content-region {
+        opacity: 1;
+        color: ${SystemColors.GrayText};
+      }
+      :host([disabled]) .content-region .expand-collapse-glyph,
+      :host([disabled]) .content-region .start,
+      :host([disabled]) .content-region .end,
+      :host([disabled])
+        .positioning-region:hover
+        .content-region
         .expand-collapse-glyph,
-        .start,
-        .end {
-          fill: ${SystemColors.FieldText};
-        }
-        :host(.nested) .expand-collapse-button:hover {
-          background: ${SystemColors.Field};
-        }
-        :host(.nested) .expand-collapse-button:hover .expand-collapse-glyph {
-          fill: ${SystemColors.FieldText};
-        }
-      `
-    )
+      :host([disabled]) .positioning-region:hover .content-region .start,
+      :host([disabled]) .positioning-region:hover .content-region .end {
+        fill: ${SystemColors.GrayText};
+      }
+      :host([disabled]) .positioning-region:hover {
+        background: ${SystemColors.Field};
+      }
+      .expand-collapse-glyph,
+      .start,
+      .end {
+        fill: ${SystemColors.FieldText};
+      }
+      :host(.nested) .expand-collapse-button:hover {
+        background: ${SystemColors.Field};
+      }
+      :host(.nested) .expand-collapse-button:hover .expand-collapse-glyph {
+        fill: ${SystemColors.FieldText};
+      }
+    `)
   );

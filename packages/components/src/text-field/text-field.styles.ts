@@ -16,12 +16,11 @@ import { BaseFieldStyles } from '../styles/index';
 export const textFieldStyles: FoundationElementTemplate<
   ElementStyles,
   TextFieldOptions
-> = (context, definition) =>
-  css`
-    ${BaseFieldStyles}
+> = (context, definition) => css`
+  ${BaseFieldStyles}
 
-    .start,
+  .start,
     .end {
-      display: flex;
-    }
-  `;
+    display: flex;
+  }
+`;
