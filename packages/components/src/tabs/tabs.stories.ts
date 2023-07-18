@@ -12,7 +12,7 @@ export default {
     activeIndicator: { control: 'boolean' },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] }
   }
-};
+} as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
   const {

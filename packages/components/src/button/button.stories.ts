@@ -9,17 +9,15 @@ export default {
   argTypes: {
     label: { control: 'text' },
     appearance: {
-      control: {
-        type: 'select',
-        options: [
-          'Accent',
-          'Error',
-          'Lightweight',
-          'Neutral',
-          'Outline',
-          'Stealth'
-        ]
-      }
+      control: 'select',
+      options: [
+        'Accent',
+        'Error',
+        'Lightweight',
+        'Neutral',
+        'Outline',
+        'Stealth'
+      ]
     },
     isDisabled: { control: 'boolean' },
     isAutoFocused: { control: 'boolean' },
@@ -32,7 +30,7 @@ export default {
       }
     }
   }
-};
+} as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
   const {

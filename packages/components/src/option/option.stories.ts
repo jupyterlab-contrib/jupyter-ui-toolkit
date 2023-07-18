@@ -16,7 +16,7 @@ export default {
       disabled: true
     }
   }
-};
+} as Meta;
 
 const Template: StoryFn = (args, context): string => {
   const {

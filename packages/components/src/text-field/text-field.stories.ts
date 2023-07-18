@@ -15,10 +15,8 @@ export default {
     maxLength: { control: 'number' },
     size: { control: 'number' },
     type: {
-      control: {
-        type: 'select',
-        options: ['Email', 'Password', 'Tel', 'Text', 'Url']
-      }
+      control: 'select',
+      options: ['Email', 'Password', 'Tel', 'Text', 'Url']
     },
     isReadOnly: { control: 'boolean' },
     isDisabled: { control: 'boolean' },
@@ -33,7 +31,7 @@ export default {
       }
     }
   }
-};
+} as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
   const {
