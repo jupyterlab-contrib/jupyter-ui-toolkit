@@ -25,7 +25,7 @@ export default {
       }
     }
   }
-};
+} as Meta;
 
 const nameList = [
   'William Hartnell',

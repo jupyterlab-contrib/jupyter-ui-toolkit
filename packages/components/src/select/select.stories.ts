@@ -20,7 +20,7 @@ export default {
       }
     }
   }
-};
+} as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
   const {
