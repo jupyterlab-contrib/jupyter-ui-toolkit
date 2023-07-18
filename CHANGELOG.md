@@ -2,6 +2,35 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.10.1
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/v0.10.0...798a00a15d88ed289ecd80e7eaf7d627926e532e))
+
+### Bugs fixed
+
+- Fix jp-toolbar.positioning-region not filling jp-toolbar size [#60](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/60) ([@fcollonval](https://github.com/fcollonval))
+
+### Maintenance and upkeep improvements
+
+- Bump semver from 5.7.1 to 5.7.2 [#59](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/59) ([@dependabot](https://github.com/dependabot))
+- Bump stylelint from 14.16.1 to 15.10.1 [#58](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/58) ([@dependabot](https://github.com/dependabot))
+- Add support for monorepo version bumps [#56](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/56) ([@fcollonval](https://github.com/fcollonval))
+- Bump json5 from 1.0.1 to 1.0.2 [#55](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/55) ([@dependabot](https://github.com/dependabot))
+- Bump loader-utils from 2.0.0 to 2.0.4 [#54](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/54) ([@dependabot](https://github.com/dependabot))
+
+### Documentation improvements
+
+- Fix wrong select controls specification [#61](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/61) ([@fcollonval](https://github.com/fcollonval))
+- Improve the documentation [#57](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/57) ([@fcollonval](https://github.com/fcollonval))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2023-06-28&to=2023-07-18&type=c))
+
+[@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2023-06-28..2023-07-18&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2023-06-28..2023-07-18&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2023-06-28..2023-07-18&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.10.0
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/v0.9.1...d687dc2f1f656ac2e6782cf8ffc6edcbf6bcf6bb))
@@ -35,5 +64,3 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2022-03-21&to=2023-06-28&type=c))
 
 [@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2022-03-21..2023-06-28&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2022-03-21..2023-06-28&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2022-03-21..2023-06-28&type=Issues) | [@Max-ChenFei](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3AMax-ChenFei+updated%3A2022-03-21..2023-06-28&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
