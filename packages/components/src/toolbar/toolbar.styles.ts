@@ -48,6 +48,8 @@ export const toolbarStyles: FoundationElementTemplate<
       display: inline-flex;
       flex-flow: row wrap;
       justify-content: flex-start;
+      width: 100%;
+      height: 100%;
     }
 
     :host([orientation='vertical']) .positioning-region {
