@@ -1,7 +1,10 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import { Anchor as FoundationAnchor, anchorTemplate as template } from '@microsoft/fast-foundation';
+import {
+  Anchor as FoundationAnchor,
+  anchorTemplate as template
+} from '@microsoft/fast-foundation';
 import { Anchor, anchorStyles as styles } from '@microsoft/fast-components';
 
 /**
