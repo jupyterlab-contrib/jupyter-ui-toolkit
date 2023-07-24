@@ -8,7 +8,7 @@ import React from 'react';
 const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
 export const Anchor: React.DetailedHTMLFactory<
-  React.HTMLAttributes<HTMLAnchorElement> & {
+  React.HTMLAttributes<HTMLElement> & {
     appearance?:
       | 'accent'
       | 'lightweight'
@@ -16,6 +16,14 @@ export const Anchor: React.DetailedHTMLFactory<
       | 'outline'
       | 'stealth'
       | 'hypertext';
+    download?: string;
+    href?: string;
+    hreflang?: string;
+    ping?: string;
+    referrerpolicy?: string;
+    rel?: string;
+    target?: '_self' | '_blank' | '_parent' | '_top';
+    type?: string;
   },
   HTMLElement
 > = wrap(jpAnchor()) as any;
