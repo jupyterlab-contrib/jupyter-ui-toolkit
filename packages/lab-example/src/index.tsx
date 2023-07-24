@@ -4,6 +4,7 @@
 import {
   Accordion,
   AccordionItem,
+  Anchor,
   Avatar,
   Badge,
   Breadcrumb,
@@ -254,6 +255,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
             <span className="fa fa-cog"></span>
           </Button>
         </div>
+        <Anchor appearance="outline" href="#">
+          Anchor element
+        </Anchor>
         <Search
           value="Dummy search text"
           onChange={onChange}
@@ -454,6 +458,9 @@ function createNode(): HTMLElement {
         <jp-button appearance="neutral">Button</jp-button>
         <jp-button appearance="stealth" aria-label="Confirm"><span class="fa fa-cog"></span></jp-button>
       </div>
+      <jp-anchor appearance="outline" href="#">
+        Anchor element
+      </jp-anchor>
       <jp-search value="Dummy search text">Search Label</jp-search>
       <jp-text-field value="Populated text">Text Field Label</jp-text-field>
       <jp-number-field value="30">Number Field Label</jp-number-field>

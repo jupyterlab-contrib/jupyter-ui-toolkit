@@ -4,6 +4,7 @@
 import type { Container } from '@microsoft/fast-foundation';
 import { jpAccordion } from './accordion/index';
 import { jpAccordionItem } from './accordion-item/index';
+import { jpAnchor } from './anchor/index';
 import { jpAnchoredRegion } from './anchored-region/index';
 import { jpAvatar } from './avatar/index';
 import { jpBadge } from './badge/index';
@@ -44,6 +45,7 @@ import { jpTreeView } from './tree-view/index';
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Accordion } from './accordion/index';
 import type { AccordionItem } from './accordion-item/index';
+import type { Anchor } from './anchor/index';
 import type { AnchoredRegion } from './anchored-region/index';
 import type { Avatar } from './avatar/index';
 import type { Badge } from './badge/index';
@@ -83,6 +85,7 @@ import type { TreeView } from './tree-view/index';
 export {
   jpAccordion,
   jpAccordionItem,
+  jpAnchor,
   jpAnchoredRegion,
   jpAvatar,
   jpBadge,
@@ -131,6 +134,7 @@ export {
 export const allComponents = {
   jpAccordion,
   jpAccordionItem,
+  jpAnchor,
   jpAnchoredRegion,
   jpAvatar,
   jpBadge,
