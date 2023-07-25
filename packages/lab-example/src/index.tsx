@@ -15,6 +15,7 @@ import {
   DataGrid,
   DateField,
   Divider,
+  Listbox,
   Menu,
   MenuItem,
   NumberField,
@@ -144,6 +145,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     const select = widget.node.querySelector('jp-select');
     select?.addEventListener('change', changeListener('Select'));
+
+    const listbox = widget.node.querySelector('jp-listbox');
+    listbox?.addEventListener('change', changeListener('Listbox'));
 
     const combobox = widget.node.querySelector('jp-combobox');
     combobox?.addEventListener('change', changeListener('Combobox'));
@@ -277,6 +281,14 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
             <Option>Option Label #2</Option>
             <Option>Option Label #3</Option>
           </Select>
+        </div>
+        <div className="jp-FlexColumn">
+          <label>Listbox</label>
+          <Listbox onChange={onChange}>
+            <Option>Option Label #1</Option>
+            <Option>Option Label #2</Option>
+            <Option>Option Label #3</Option>
+          </Listbox>
         </div>
         <div className="jp-FlexColumn">
           <label>Combobox</label>
@@ -469,6 +481,16 @@ function createNode(): HTMLElement {
           <jp-option>Option Label #2</jp-option>
           <jp-option>Option Label #3</jp-option>
         </jp-select>
+      </div>
+      <div class="jp-FlexColumn">
+        <label>
+          Listbox
+        </label>
+        <jp-listbox>
+          <jp-option>Option Label #1</jp-option>
+          <jp-option>Option Label #2</jp-option>
+          <jp-option>Option Label #3</jp-option>
+        </jp-listbox>
       </div>
       <div class="jp-FlexColumn">
         <label>

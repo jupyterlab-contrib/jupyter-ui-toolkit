@@ -15,6 +15,7 @@ export * from './combobox';
 export * from './data-grid';
 export * from './date-field';
 export * from './divider';
+export * from './listbox';
 export * from './menu';
 export * from './menu-item';
 export * from './number-field';

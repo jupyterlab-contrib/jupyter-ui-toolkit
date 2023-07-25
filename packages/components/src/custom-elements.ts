@@ -16,6 +16,7 @@ import { jpCombobox } from './combobox/index';
 import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index';
 import { jpDateField } from './date-field/index';
 import { jpDivider } from './divider/index';
+import { jpListbox } from './listbox/index';
 import { jpMenu } from './menu/index';
 import { jpMenuItem } from './menu-item/index';
 import { jpNumberField } from './number-field/index';
@@ -56,6 +57,7 @@ import type { Combobox } from './combobox/index';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index';
 import type { DateField } from './date-field/index';
 import type { Divider } from './divider/index';
+import type { ListboxElement } from './listbox/index';
 import type { Menu } from './menu/index';
 import type { MenuItem } from './menu-item/index';
 import type { NumberField } from './number-field/index';
@@ -97,6 +99,7 @@ export {
   jpDataGridRow,
   jpDateField,
   jpDivider,
+  jpListbox,
   jpMenu,
   jpMenuItem,
   jpNumberField,
@@ -145,6 +148,7 @@ export const allComponents = {
   jpDataGridRow,
   jpDateField,
   jpDivider,
+  jpListbox,
   jpMenu,
   jpMenuItem,
   jpNumberField,
