@@ -4,6 +4,7 @@
 import argparse
 from packaging.version import parse as parse_version
 from pathlib import Path
+from shutil import which
 from subprocess import run
 
 LERNA_CMD = "yarn run lerna version --no-push --force-publish --no-git-tag-version"
