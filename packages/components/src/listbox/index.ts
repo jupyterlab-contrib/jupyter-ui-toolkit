@@ -5,7 +5,7 @@ import {
   ListboxElement,
   listboxTemplate as template
 } from '@microsoft/fast-foundation';
-import { listboxStyles as styles } from '@microsoft/fast-components';
+import { listboxStyles as styles } from './listbox.styles';
 
 /**
  * The Jupyter listbox Custom Element. Implements, {@link @microsoft/fast-foundation#Listbox}
