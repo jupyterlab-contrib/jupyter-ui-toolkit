@@ -31,7 +31,7 @@ def bump():
     parser.add_argument("spec")
     parser.add_argument("--force", action='store_true')
     args = parser.parse_args()
-    py_version = next_version() if args.spec == "next" else args.version
+    py_version = next_version() if args.spec == "next" else args.spec
 
     # bump the Python version with hatch
     run(f"{HATCH_VERSION} {py_version}", shell=True, check=True, cwd=ROOT)
