@@ -11,6 +11,7 @@ export * from './custom-elements';
 // Export components and classes
 export * from './accordion/index';
 export * from './accordion-item/index';
+export * from './anchor/index';
 export * from './anchored-region/index';
 export * from './avatar/index';
 export * from './badge/index';

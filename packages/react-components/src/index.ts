@@ -3,6 +3,7 @@
 
 export * from './accordion';
 export * from './accordion-item';
+export * from './anchor';
 export * from './anchored-region';
 export * from './avatar';
 export * from './badge';
