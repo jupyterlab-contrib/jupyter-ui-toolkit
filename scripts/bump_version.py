@@ -1,70 +1,66 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 
-import json
+import argparse
+from packaging.version import parse as parse_version
 from pathlib import Path
-from shutil import which
-
-import click
-from jupyter_releaser.util import get_version, run
-from pkg_resources import parse_version  # type: ignore
+from subprocess import run
 
 LERNA_CMD = "yarn run lerna version --no-push --force-publish --no-git-tag-version"
 
 
-@click.command()
-@click.option("--force", default=False, is_flag=True)
-@click.argument("spec", nargs=1)
-def bump(force, spec):
-    status = run("git status --porcelain").strip()
-    if len(status) > 0:
-        raise Exception("Must be in a clean git state with no untracked files")
+ENC = dict(encoding="utf-8")
+HATCH_VERSION = "hatch version"
+ROOT = Path(__file__).parent.parent
 
-    curr = parse_version(get_version())
-    if spec == "next":
-        spec = f"{curr.major}.{curr.minor}."
-        if curr.pre:
-            p, x = curr.pre
-            spec += f"{curr.micro}{p}{x + 1}"
-        else:
-            spec += f"{curr.micro + 1}"
 
-    elif spec == "patch":
-        spec = f"{curr.major}.{curr.minor}."
-        if curr.pre:
-            spec += f"{curr.micro}"
-        else:
-            spec += f"{curr.micro + 1}"
+def get_version():
+    cmd = run([HATCH_VERSION], capture_output=True, shell=True, check=True, cwd=ROOT)
+    return cmd.stdout.decode("utf-8").strip().split("\n")[-1]
 
-    version = parse_version(spec)
 
-    # convert the Python version
-    js_version = f"{version.major}.{version.minor}.{version.micro}"
-    if version.pre:
-        p, x = version.pre
-        p = p.replace("a", "alpha").replace("b", "beta")
-        js_version += f"-{p}.{x}"
+def next_version():
+    v = parse_version(get_version())
+    if v.is_prerelease:
+        return f"{v.major}.{v.minor}.{v.micro}{v.pre[0]}{v.pre[1] + 1}"
+    return f"{v.major}.{v.minor}.{v.micro + 1}"
 
-    # bump the JS packages
-    run(f"{which('yarn')} install")
+
+def bump():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("spec")
+    parser.add_argument("--force", action='store_true')
+    args = parser.parse_args()
+    py_version = next_version() if args.spec == "next" else args.version
+
+    # bump the Python version with hatch
+    run(f"{HATCH_VERSION} {py_version}", shell=True, check=True, cwd=ROOT)
+
+    js_version = (
+        get_version().replace("a", "-alpha.").replace("b", "-beta.").replace("rc", "-rc.")
+    )
+
+    # bump the JS version with lerna
     lerna_cmd = f"{LERNA_CMD} {js_version}"
-    if force:
+    if args.force:
         lerna_cmd += " --yes"
-    run(lerna_cmd)
 
-    HERE = Path(__file__).parent.parent.resolve()
-    path = HERE.joinpath("package.json")
-    if path.exists():
-        with path.open(mode="r") as f:
-            data = json.load(f)
+    run(f"{which('yarn')} install")
+    run(lerna_cmd, shell=True, check=True)
 
-        data["version"] = js_version
+    # HERE = Path(__file__).parent.parent.resolve()
+    # path = HERE.joinpath("package.json")
+    # if path.exists():
+    #     with path.open(mode="r") as f:
+    #         data = json.load(f)
 
-        with path.open(mode="w") as f:
-            json.dump(data, f, indent=2)
+    #     data["version"] = js_version
 
-    else:
-        raise FileNotFoundError(f"Could not find package.json under dir {path!s}")
+    #     with path.open(mode="w") as f:
+    #         json.dump(data, f, indent=2)
+
+    # else:
+    #     raise FileNotFoundError(f"Could not find package.json under dir {path!s}")
 
 
 if __name__ == "__main__":
