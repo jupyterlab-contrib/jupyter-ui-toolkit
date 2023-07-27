@@ -4,7 +4,6 @@
 import argparse
 from packaging.version import parse as parse_version
 from pathlib import Path
-from shutil import which
 from subprocess import run
 
 LERNA_CMD = "yarn run lerna version --no-push --force-publish --no-git-tag-version"
@@ -46,8 +45,8 @@ def bump():
     if args.force:
         lerna_cmd += " --yes"
 
-    run(f"{which('yarn')} install")
-    run(lerna_cmd, shell=True, check=True)
+    run("yarn install", shell=True, check=True, cwd=ROOT)
+    run(lerna_cmd, shell=True, check=True, cwd=ROOT)
 
     # HERE = Path(__file__).parent.parent.resolve()
     # path = HERE.joinpath("package.json")
