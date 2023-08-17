@@ -23,6 +23,7 @@ export * from './checkbox/index';
 export * from './combobox/index';
 export * from './date-field/index';
 export * from './data-grid/index';
+export * from './dialog/index';
 export * from './divider/index';
 export * from './listbox/index';
 export * from './menu/index';
