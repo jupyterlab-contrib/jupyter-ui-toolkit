@@ -13,7 +13,9 @@ const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 export const Combobox: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
     autocomplete?: 'inline' | 'list' | 'both' | 'none';
+    autowidth?: boolean;
     disabled?: boolean;
+    minimal?: boolean;
     name?: string;
     position?: 'above' | 'below';
     placeholder?: 'string';

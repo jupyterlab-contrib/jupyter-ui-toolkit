@@ -13,6 +13,7 @@ export default {
     customIndicator: { control: 'boolean' },
     numberOfChildren: { control: 'number' },
     isMinimal: { control: 'boolean' },
+    hasAutoWidth: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -29,11 +30,14 @@ const Template: StoryFn = (args, context): HTMLElement => {
   } = context;
   setTheme(accent, parameters.backgrounds, backgrounds);
   const container = document.createElement('div');
+
+  const index = args.numberOfChildren ?? 3;
   container.insertAdjacentHTML(
     'afterbegin',
     `<jp-select 
       ${args.isDisabled ? 'disabled' : ''}
       ${args.isMinimal ? 'minimal' : ''}
+      ${args.hasAutoWidth ? 'autowidth' : ''}
     >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
         ${new Array(args.numberOfChildren ?? 3)
@@ -43,6 +47,9 @@ const Template: StoryFn = (args, context): HTMLElement => {
               `<jp-option value="${index}">Option ${index + 1}</jp-option>`
           )
           .join('\n')}
+        <jp-option value="${index}">This is a very long option ${
+          index + 1
+        }</jp-option>
     </jp-select>`
   );
 
@@ -66,6 +73,7 @@ Default.args = {
   customIndicator: false,
   numberOfChildren: 3,
   isMinimal: false,
+  hasAutoWidth: false,
   onChange: action('select-onchange')
 };
 
@@ -73,6 +81,12 @@ export const WithOpen: StoryObj = { render: Template.bind({}) };
 WithOpen.args = {
   ...Default.args,
   isOpen: true
+};
+
+export const WithAutoWidth: StoryObj = { render: Template.bind({}) };
+WithAutoWidth.args = {
+  ...Default.args,
+  hasAutoWidth: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };

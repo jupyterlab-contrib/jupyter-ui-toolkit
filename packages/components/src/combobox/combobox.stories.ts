@@ -14,6 +14,7 @@ export default {
     customIndicator: { control: 'boolean' },
     numberOfChildren: { control: 'number' },
     isMinimal: { control: 'boolean' },
+    hasAutoWidth: { control: 'boolean' },
     autocomplete: {
       control: 'select',
       options: ['none', 'inline', 'list', 'both']
@@ -55,6 +56,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
     `<jp-combobox 
       ${args.isDisabled ? 'disabled' : ''}
       ${args.isMinimal ? 'minimal' : ''}
+      ${args.hasAutoWidth ? 'autowidth' : ''}
       ${args.autocomplete !== 'none' ? `autocomplete=${args.autocomplete}` : ''}
     >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
@@ -90,6 +92,7 @@ Default.args = {
   customIndicator: false,
   numberOfChildren: 10,
   isMinimal: false,
+  hasAutoWidth: false,
   autocomplete: 'none',
   onChange: action('combobox-onchange')
 };
@@ -98,6 +101,12 @@ export const WithOpen: StoryObj = { render: Template.bind({}) };
 WithOpen.args = {
   ...Default.args,
   isOpen: true
+};
+
+export const WithAutoWidth: StoryObj = { render: Template.bind({}) };
+WithAutoWidth.args = {
+  ...Default.args,
+  hasAutoWidth: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
