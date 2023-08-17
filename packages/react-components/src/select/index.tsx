@@ -9,6 +9,7 @@ const { wrap } = provideReactWrapper(React, provideJupyterDesignSystem());
 
 export const Select: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
+    autowidth?: boolean;
     disabled?: boolean;
     minimal?: boolean;
     open?: boolean;

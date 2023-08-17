@@ -58,9 +58,12 @@ export const selectStyles: FoundationElementTemplate<
       height: calc(${heightNumber} * 1px);
       position: relative;
       user-select: none;
-      min-width: 250px;
       outline: none;
       vertical-align: top;
+    }
+
+    :host(:not([autowidth])) {
+      min-width: 250px;
     }
 
     .listbox {
@@ -76,8 +79,11 @@ export const selectStyles: FoundationElementTemplate<
       padding: calc(${designUnit} * 1px) 0;
       overflow-y: auto;
       position: absolute;
-      width: 100%;
       z-index: 1;
+    }
+
+    :host(:not([autowidth])) .listbox {
+      width: 100%;
     }
 
     .listbox[hidden] {
@@ -99,7 +105,6 @@ export const selectStyles: FoundationElementTemplate<
 
     :host([minimal]) {
       --density: -4;
-      min-width: unset;
     }
 
     :host(:not([disabled]):hover) {
