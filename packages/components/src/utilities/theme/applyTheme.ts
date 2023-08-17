@@ -20,6 +20,7 @@ import {
   accentPalette,
   baseLayerLuminance,
   bodyFont,
+  controlCornerRadius,
   neutralPalette,
   strokeWidth,
   typeRampBaseFontSize
@@ -109,6 +110,10 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
   '--jp-border-width': {
     converter: intConverter,
     token: strokeWidth
+  },
+  '--jp-border-radius': {
+    converter: intConverter,
+    token: controlCornerRadius
   },
   '--jp-layout-color1': {
     converter: (value: string, isDark: boolean): Palette<Swatch> | null => {
