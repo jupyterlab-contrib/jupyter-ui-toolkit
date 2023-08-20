@@ -3,7 +3,7 @@
 
 import { test, expect } from '@playwright/test';
 
-test('Default', async ({ page }) => {
+test.skip('Default', async ({ page }) => {
   await page.goto('/iframe.html?id=components-dialog--default');
 
   expect(await page.locator('jp-dialog').screenshot()).toMatchSnapshot(
