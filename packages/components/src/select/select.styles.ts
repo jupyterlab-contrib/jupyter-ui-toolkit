@@ -88,7 +88,7 @@ export const selectStyles: FoundationElementTemplate<
 
     :host([autowidth]) ::slotted([role='option']),
     :host([autowidth]) ::slotted(option) {
-      padding: 0 calc(1em + ${designUnit} * 1.25px);
+      padding: 0 calc(1em + ${designUnit} * 1.25px + 1px);
     }
 
     .listbox[hidden] {
