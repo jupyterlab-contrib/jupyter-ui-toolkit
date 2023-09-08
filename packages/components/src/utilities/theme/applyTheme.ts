@@ -174,16 +174,14 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
  * Applies the current Jupyter theme to the toolkit components.
  */
 function applyCurrentTheme() {
-  if (!document.body.getAttribute(THEME_NAME_BODY_ATTRIBUTE)) {
-    return;
-  }
-
   // Get all the styles applied to the <body> tag in the webview HTML
   // Importantly this includes all the CSS variables associated with the
   // current Jupyter theme
   const styles = getComputedStyle(document.body);
 
   // Set mode
+  // If the body attribute is not define, this will be `false` matching
+  // the usual Jupyter behavior of using light theme by default
   const isDark =
     document.body.getAttribute(THEME_MODE_BODY_ATTRIBUTE) === 'false';
   baseLayerLuminance.setValueFor(
