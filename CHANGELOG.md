@@ -2,6 +2,26 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.13.1
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.13.0...bcf0810aeb66bb189591a60d1ac90737255b33f3))
+
+### Enhancements made
+
+- Style toggle button [#72](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/72) ([@fcollonval](https://github.com/fcollonval))
+
+### Bugs fixed
+
+- Try to read Jupyter CSS properties even if body attribute is not set. [#71](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/71) ([@fcollonval](https://github.com/fcollonval))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2023-08-20&to=2023-09-11&type=c))
+
+[@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2023-08-20..2023-09-11&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2023-08-20..2023-09-11&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.13.0
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.12.0...ee581847829e7250aa1a3c50d4e9999660a6d5fd))
@@ -19,8 +39,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2023-08-18&to=2023-08-20&type=c))
 
 [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2023-08-18..2023-08-20&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2023-08-18..2023-08-20&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.12.0
 
