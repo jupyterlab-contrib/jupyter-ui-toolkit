@@ -3,8 +3,8 @@
 
 import { test, expect } from '@playwright/test';
 
-test('Default', async ({ page }) => {
-  await page.goto('/iframe.html?id=components-button--default');
+test('Accent', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-button--accent');
 
   expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
     'button-default.png'
