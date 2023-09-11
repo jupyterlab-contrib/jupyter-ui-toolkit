@@ -3,6 +3,7 @@ import remarkGfm from 'remark-gfm';
 module.exports = {
   stories: [
     '../docs/**/*.mdx',
+    '../src/**/*.mdx',
     '../src/**/*.stories.mdx',
     '../src/**/*.stories.ts'
   ],

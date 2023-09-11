@@ -2,6 +2,7 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { neutralFillStrongActive } from '@microsoft/fast-components';
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
   ButtonOptions,
@@ -30,6 +31,7 @@ import {
   errorFillFocus,
   errorFillHover,
   errorFillRest,
+  errorForegroundActive,
   focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,
@@ -111,6 +113,11 @@ const BaseButtonStyles = css`
 
   :host(:active) {
     background-color: ${neutralFillActive};
+  }
+
+  :host([aria-pressed='true']) {
+    box-shadow: inset 0px 0px 5px 5px ${neutralFillStrongActive};
+    scale: 0.95;
   }
 
   :host([minimal]) {
@@ -216,6 +223,10 @@ const AccentButtonStyles = css`
     color: ${foregroundOnAccentHover};
   }
 
+  :host([appearance='accent'][aria-pressed='true']) {
+    box-shadow: inset 0px 0px 5px 5px ${accentForegroundActive};
+  }
+
   :host([appearance='accent']:active) .control:active {
     background: ${accentFillActive};
     color: ${foregroundOnAccentActive};
@@ -274,6 +285,10 @@ const ErrorButtonStyles = css`
   :host([appearance='error']:hover) {
     background: ${errorFillHover};
     color: ${foregroundOnAccentHover};
+  }
+
+  :host([appearance='error'][aria-pressed='true']) {
+    box-shadow: inset 0px 0px 5px 5px ${errorForegroundActive};
   }
 
   :host([appearance='error']:active) .control:active {

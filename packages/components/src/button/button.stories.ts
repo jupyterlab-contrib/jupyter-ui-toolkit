@@ -28,6 +28,10 @@ export default {
       table: {
         disable: true
       }
+    },
+    ariaPressed: {
+      control: 'select',
+      options: ['none', 'true', 'false']
     }
   }
 } as Meta;
@@ -46,6 +50,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.isDisabled ? 'disabled' : ''} 
       ${args.isAutoFocused ? 'autofocus' : ''}
       ${args.isMinimal ? 'minimal' : ''}
+      ${args.ariaPressed !== 'none' ? `aria-pressed=${args.ariaPressed}` : ''}
     >${args.startIcon ? getFaIcon('plus', args.label ? 'start' : null) : ''}${
       args.label ?? ''
     }</jp-button
@@ -58,56 +63,64 @@ const Template: StoryFn = (args, context): HTMLElement => {
   return container.firstChild as HTMLElement;
 };
 
-export const Default: StoryObj = { render: Template.bind({}) };
-Default.args = {
+export const Accent: StoryObj = { render: Template.bind({}) };
+Accent.args = {
   label: 'Button Text',
   appearance: 'Accent',
   isDisabled: false,
   isAutoFocused: false,
   isMinimal: false,
   startIcon: false,
+  ariaPressed: 'none',
   onClick: action('button-clicked')
 };
 
 export const Error: StoryObj = { render: Template.bind({}) };
 Error.args = {
-  ...Default.args,
+  ...Accent.args,
   appearance: 'Error'
 };
 
 export const Neutral: StoryObj = { render: Template.bind({}) };
 Neutral.args = {
-  ...Default.args,
+  ...Accent.args,
   appearance: 'Neutral'
 };
 
 export const Lightweight: StoryObj = { render: Template.bind({}) };
 Lightweight.args = {
-  ...Default.args,
+  ...Accent.args,
   appearance: 'Lightweight'
 };
 
 export const WithAutofocus: StoryObj = { render: Template.bind({}) };
 WithAutofocus.args = {
-  ...Default.args,
+  ...Accent.args,
   isAutoFocused: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
-  ...Default.args,
+  ...Accent.args,
   isDisabled: true
 };
 
 export const WithStartIcon: StoryObj = { render: Template.bind({}) };
 WithStartIcon.args = {
-  ...Default.args,
+  ...Accent.args,
   startIcon: true
 };
 
 export const IconOnly: StoryObj = { render: Template.bind({}) };
 IconOnly.args = {
-  ...Default.args,
+  ...Accent.args,
   label: null,
   startIcon: true
+};
+
+export const Toggle: StoryObj = { render: Template.bind({}) };
+Toggle.storyName = 'Toggle button';
+Toggle.args = {
+  ...Accent.args,
+  ariaPressed: 'true'
 };
