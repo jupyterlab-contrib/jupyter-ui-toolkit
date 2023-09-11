@@ -7,6 +7,7 @@ import {
   parseColor,
   rgbToHSL
 } from '@microsoft/fast-colors';
+import { isDark } from '@microsoft/fast-components';
 import { DesignToken } from '@microsoft/fast-foundation';
 import {
   Palette,
@@ -28,6 +29,8 @@ import {
 
 const THEME_NAME_BODY_ATTRIBUTE = 'data-jp-theme-name';
 const THEME_MODE_BODY_ATTRIBUTE = 'data-jp-theme-light';
+// Use to determine the neutral color and possibly if theme is dark
+const BASE_LAYOUT_COLOR = '--jp-layout-color1';
 
 /**
  * Flag to initialized only one listener
@@ -48,7 +51,7 @@ export function addJupyterLabThemeChangeListener(): void {
 function initThemeChangeListener(): void {
   const addObserver = () => {
     const observer = new MutationObserver(() => {
-      applyCurrentTheme();
+      applyJupyterTheme();
     });
     observer.observe(document.body, {
       attributes: true,
@@ -57,7 +60,7 @@ function initThemeChangeListener(): void {
       characterData: false
     });
 
-    applyCurrentTheme();
+    applyJupyterTheme();
   };
 
   if (document.readyState === 'complete') {
@@ -115,7 +118,7 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
     converter: intConverter,
     token: controlCornerRadius
   },
-  '--jp-layout-color1': {
+  [BASE_LAYOUT_COLOR]: {
     converter: (value: string, isDark: boolean): Palette<Swatch> | null => {
       const parsedColor = parseColor(value);
       if (parsedColor) {
@@ -173,20 +176,37 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
 /**
  * Applies the current Jupyter theme to the toolkit components.
  */
-function applyCurrentTheme() {
+export function applyJupyterTheme(): void {
   // Get all the styles applied to the <body> tag in the webview HTML
   // Importantly this includes all the CSS variables associated with the
   // current Jupyter theme
   const styles = getComputedStyle(document.body);
 
   // Set mode
-  // If the body attribute is not define, this will be `false` matching
-  // the usual Jupyter behavior of using light theme by default
-  const isDark =
-    document.body.getAttribute(THEME_MODE_BODY_ATTRIBUTE) === 'false';
+  //   It will look at the body attribute or try to extrapolate
+  const themeMode = document.body.getAttribute(THEME_MODE_BODY_ATTRIBUTE);
+  let isDark_ = false;
+  if (themeMode) {
+    isDark_ = themeMode === 'false';
+  } else {
+    const layoutColor = styles.getPropertyValue(BASE_LAYOUT_COLOR).toString();
+    if (layoutColor) {
+      const parsedColor = parseColor(layoutColor);
+      if (parsedColor) {
+        isDark_ = isDark(
+          SwatchRGB.create(parsedColor.r, parsedColor.g, parsedColor.b)
+        );
+        console.debug(
+          `Theme is ${
+            isDark_ ? 'dark' : 'light'
+          } based on '${BASE_LAYOUT_COLOR}' value: ${layoutColor}.`
+        );
+      }
+    }
+  }
   baseLayerLuminance.setValueFor(
     document.body,
-    isDark ? StandardLuminance.DarkMode : StandardLuminance.LightMode
+    isDark_ ? StandardLuminance.DarkMode : StandardLuminance.LightMode
   );
 
   for (const jpTokenName in tokenMappings) {
@@ -196,7 +216,7 @@ function applyCurrentTheme() {
     if (document.body && value !== '') {
       const parsedValue = (toolkitTokenName.converter ?? ((v: string) => v))(
         value.trim(),
-        isDark
+        isDark_
       );
       if (parsedValue !== null) {
         toolkitTokenName.token.setValueFor(document.body, parsedValue);

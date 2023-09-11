@@ -86,6 +86,8 @@ A pre-bundled script that contains all APIs needed to use Jupyter UI Toolkit is 
 
 The above CDN location points to the latest release of `@jupyter/web-components`. It is advised that when you deploy your site or app, you import the specific version you have developed and tested with.
 
+See the [example](./examples/cdn/index.html) folder for more hints about theming.
+
 ## Documentation
 
 Further documentation can be found in the following places:
