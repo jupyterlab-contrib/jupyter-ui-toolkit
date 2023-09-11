@@ -1,0 +1,73 @@
+import { Canvas, Meta, Primary, Controls, Story } from '@storybook/blocks';
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Stories
+
+### Default
+
+<Canvas>
+    <Story of={ButtonStories.Neutral} />
+</Canvas>
+
+### Error
+
+<Canvas>
+    <Story of={ButtonStories.Error} />
+</Canvas>
+
+### Accent
+
+<Canvas>
+    <Story of={ButtonStories.Accent} />
+</Canvas>
+
+### Lightweight
+
+<Canvas>
+    <Story of={ButtonStories.Lightweight} />
+</Canvas>
+
+### With autofocus
+
+<Canvas>
+    <Story of={ButtonStories.WithAutofocus} />
+</Canvas>
+
+### With disabled
+
+<Canvas>
+    <Story of={ButtonStories.WithDisabled} />
+</Canvas>
+
+### With start icon
+
+<Canvas>
+    <Story of={ButtonStories.WithStartIcon} />
+</Canvas>
+
+### Icon only
+
+<Canvas>
+    <Story of={ButtonStories.IconOnly} />
+</Canvas>
+
+### Toggle button
+
+To define a toggle button, you must set the `aria-pressed` attribute
+to `false` or `true` depending on the state of the button.
+
+> Reference used: https://joshcollinsworth.com/blog/accessible-toggle-buttons
+
+<Canvas>
+    <Story of={ButtonStories.Toggle} />
+</Canvas>

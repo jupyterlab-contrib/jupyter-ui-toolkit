@@ -66,3 +66,11 @@ test('Icon Only', async ({ page }) => {
     'button-icon-only.png'
   );
 });
+
+test('Toggled', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-button--toggle');
+
+  expect(await page.locator('jp-button').screenshot()).toMatchSnapshot(
+    'button-toggle.png'
+  );
+});
