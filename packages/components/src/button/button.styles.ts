@@ -116,8 +116,7 @@ const BaseButtonStyles = css`
   }
 
   :host([aria-pressed='true']) {
-    box-shadow: inset 0px 0px 5px 5px ${neutralFillStrongActive};
-    scale: 0.95;
+    box-shadow: inset 0px 0px 2px 2px ${neutralFillStrongActive};
   }
 
   :host([minimal]) {
@@ -224,7 +223,7 @@ const AccentButtonStyles = css`
   }
 
   :host([appearance='accent'][aria-pressed='true']) {
-    box-shadow: inset 0px 0px 5px 5px ${accentForegroundActive};
+    box-shadow: inset 0px 0px 2px 2px ${accentForegroundActive};
   }
 
   :host([appearance='accent']:active) .control:active {
@@ -288,7 +287,7 @@ const ErrorButtonStyles = css`
   }
 
   :host([appearance='error'][aria-pressed='true']) {
-    box-shadow: inset 0px 0px 5px 5px ${errorForegroundActive};
+    box-shadow: inset 0px 0px 2px 2px ${errorForegroundActive};
   }
 
   :host([appearance='error']:active) .control:active {
