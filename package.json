@@ -1,6 +1,6 @@
 {
     "name": "@jupyter/root-ui-toolkit",
-    "version": "0.13.2",
+    "version": "0.13.3",
     "private": true,
     "description": "UI Toolkit for Jupyter",
     "keywords": [

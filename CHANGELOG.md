@@ -2,6 +2,26 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.13.3
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.13.2...977cca16ab4e8e5382138cc13ccd0469877caa69))
+
+### Bugs fixed
+
+- Fix type for data grid attribute [#76](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/76) ([@fcollonval](https://github.com/fcollonval))
+
+### Maintenance and upkeep improvements
+
+- Bump postcss from 8.4.24 to 8.4.31 [#75](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/75) ([@dependabot](https://github.com/dependabot))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2023-09-12&to=2023-10-26&type=c))
+
+[@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2023-09-12..2023-10-26&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2023-09-12..2023-10-26&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2023-09-12..2023-10-26&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.13.2
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.13.1...7c3fa1e275ac8d7345cff0b1307d8ca880132394))
@@ -15,8 +35,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2023-09-11&to=2023-09-12&type=c))
 
 [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2023-09-11..2023-09-12&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2023-09-11..2023-09-12&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.13.1
 
