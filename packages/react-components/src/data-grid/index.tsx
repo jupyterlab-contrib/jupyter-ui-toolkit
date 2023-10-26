@@ -41,7 +41,7 @@ DataGridRow.displayName = 'Jupyter.DataGridRow';
 export const DataGrid: React.DetailedHTMLFactory<
   React.HTMLAttributes<HTMLElement> & {
     'generate-header'?: 'none' | 'default' | 'sticky';
-    'grid-template-columns'?: 'string';
+    'grid-template-columns'?: string;
   },
   HTMLElement
 > = wrap(jpDataGrid()) as any;
