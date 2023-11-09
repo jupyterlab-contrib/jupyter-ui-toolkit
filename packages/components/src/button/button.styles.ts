@@ -569,7 +569,6 @@ export const buttonStyles: (
     appearanceBehavior(
       'accent',
       css`
-        :host([appearance='accent'][disabled]),
         :host([appearance='accent'][disabled]:hover),
         :host([appearance='accent'][disabled]:active) {
           background: ${accentFillRest};
@@ -661,7 +660,6 @@ export const buttonStyles: (
     appearanceBehavior(
       'stealth',
       css`
-        :host([appearance='stealth'][disabled]),
         :host([appearance='stealth'][disabled]:hover),
         :host([appearance='stealth'][disabled]:active) {
           background: ${neutralFillStealthRest};
