@@ -64,7 +64,6 @@ export {
   designUnit,
   direction,
   DirectionalStyleSheetBehavior,
-  disabledOpacity,
   fillColor,
   focusStrokeInner,
   focusStrokeInnerRecipe,
@@ -173,6 +172,12 @@ export {
 } from '@microsoft/fast-components';
 
 const { create } = DesignToken;
+
+/**
+ * The default disabled opacity.
+ */
+export const disabledOpacity =
+  DesignToken.create<number>('opacity').withDefault(0.4);
 
 /*
  * The error palette is built using the same color algorithm as the accent palette
