@@ -10,6 +10,7 @@ import {
   accentForegroundHoverDelta,
   accentForegroundRestDelta,
   ColorRecipe,
+  disabledOpacity,
   fillColor,
   InteractiveColorRecipe,
   InteractiveSwatchSet,
@@ -64,6 +65,7 @@ export {
   designUnit,
   direction,
   DirectionalStyleSheetBehavior,
+  disabledOpacity,
   fillColor,
   focusStrokeInner,
   focusStrokeInnerRecipe,
@@ -173,11 +175,7 @@ export {
 
 const { create } = DesignToken;
 
-/**
- * The default disabled opacity.
- */
-export const disabledOpacity =
-  DesignToken.create<number>('opacity').withDefault(0.4);
+disabledOpacity.withDefault(0.4);
 
 /*
  * The error palette is built using the same color algorithm as the accent palette
