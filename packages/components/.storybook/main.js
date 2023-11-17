@@ -1,4 +1,4 @@
-import { dirname, join } from "path";
+import { dirname, join } from 'path';
 import remarkGfm from 'remark-gfm';
 
 module.exports = {
@@ -19,9 +19,9 @@ module.exports = {
         }
       }
     },
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-a11y")
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-a11y')
   ],
   webpackFinal: async config => {
     config.module.rules.push(
@@ -45,7 +45,7 @@ module.exports = {
     return config;
   },
   framework: {
-    name: getAbsolutePath("@storybook/html-webpack5"),
+    name: getAbsolutePath('@storybook/html-webpack5'),
     options: {}
   },
   docs: {
@@ -55,5 +55,5 @@ module.exports = {
 };
 
 function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, "package.json")));
+  return dirname(require.resolve(join(value, 'package.json')));
 }
