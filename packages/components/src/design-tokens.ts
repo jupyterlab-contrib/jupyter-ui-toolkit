@@ -175,6 +175,7 @@ export {
 
 const { create } = DesignToken;
 
+// Changing the default to increase contrast
 disabledOpacity.withDefault(0.4);
 
 /*
