@@ -10,6 +10,7 @@ import {
   accentForegroundHoverDelta,
   accentForegroundRestDelta,
   ColorRecipe,
+  disabledOpacity,
   fillColor,
   InteractiveColorRecipe,
   InteractiveSwatchSet,
@@ -173,6 +174,9 @@ export {
 } from '@microsoft/fast-components';
 
 const { create } = DesignToken;
+
+// Changing the default to increase contrast
+disabledOpacity.withDefault(0.4);
 
 /*
  * The error palette is built using the same color algorithm as the accent palette

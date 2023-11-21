@@ -661,12 +661,6 @@ export const buttonStyles: (
     appearanceBehavior(
       'stealth',
       css`
-        :host([appearance='stealth'][disabled]),
-        :host([appearance='stealth'][disabled]:hover),
-        :host([appearance='stealth'][disabled]:active) {
-          background: ${neutralFillStealthRest};
-        }
-
         ${StealthButtonStyles}
       `.withBehaviors(
         forcedColorsStylesheetBehavior(css`
