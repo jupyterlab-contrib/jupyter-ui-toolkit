@@ -569,6 +569,7 @@ export const buttonStyles: (
     appearanceBehavior(
       'accent',
       css`
+        :host([appearance='accent'][disabled]),
         :host([appearance='accent'][disabled]:hover),
         :host([appearance='accent'][disabled]:active) {
           background: ${accentFillRest};
