@@ -33,6 +33,7 @@ import type { Radio } from './radio/index.js';
 import type { RadioGroup } from './radio-group/index.js';
 import type { Search } from './search/index.js';
 import type { Select } from './select/index.js';
+import type {Skeleton} from './skeleton/index.js'
 import type { Slider } from './slider/index.js';
 import type { SliderLabel } from './slider-label/index.js';
 import type { Switch } from './switch/index.js';
@@ -81,6 +82,7 @@ import { jpRadio } from './radio/index.js';
 import { jpRadioGroup } from './radio-group/index.js';
 import { jpSearch } from './search/index.js';
 import { jpSelect } from './select/index.js';
+import { jpSkeleton } from './skeleton/index.js'
 import { jpSlider } from './slider/index.js';
 import { jpSliderLabel } from './slider-label/index.js';
 import { jpSwitch } from './switch/index.js';
@@ -129,6 +131,7 @@ export {
   jpRadioGroup,
   jpSearch,
   jpSelect,
+  jpSkeleton,
   jpSlider,
   jpSliderLabel,
   jpSwitch,
@@ -180,6 +183,7 @@ export const allComponents = {
   jpRadioGroup,
   jpSearch,
   jpSelect,
+  jpSkeleton,
   jpSlider,
   jpSliderLabel,
   jpSwitch,

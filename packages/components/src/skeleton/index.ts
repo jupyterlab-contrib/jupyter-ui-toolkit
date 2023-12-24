@@ -8,9 +8,9 @@ import { skeletonStyles as styles } from "./skeleton.styles.js";
  *
  * @public
  * @remarks
- * Generates HTML Element: `<fast-skeleton>`
+ * Generates HTML Element: `<jp-skeleton>`
  */
-export const fastSkeleton = Skeleton.compose({
+export const jpSkeleton = Skeleton.compose({
     baseName: "skeleton",
     template,
     styles,
