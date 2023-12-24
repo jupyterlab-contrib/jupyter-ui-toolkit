@@ -28,6 +28,7 @@ import type { Menu } from './menu/index.js';
 import type { MenuItem } from './menu-item/index.js';
 import type { NumberField } from './number-field/index.js';
 import type { Option } from './option/index.js';
+import type {Picker} from './picker/index.js'
 import type { Progress } from './progress/index.js';
 import type { ProgressRing } from './progress-ring/index.js';
 import type { Radio } from './radio/index.js';
@@ -78,6 +79,7 @@ import { jpMenu } from './menu/index.js';
 import { jpMenuItem } from './menu-item/index.js';
 import { jpNumberField } from './number-field/index.js';
 import { jpOption } from './option/index.js';
+import {jpPicker, jpPickerList, jpPickerListItem, jpPickerMenu, jpPickerMenuOption} from './picker/index.js'
 import { jpProgress } from './progress/index.js';
 import { jpProgressRing } from './progress-ring/index.js';
 import { jpRadio } from './radio/index.js';
@@ -128,6 +130,11 @@ export {
   jpMenuItem,
   jpNumberField,
   jpOption,
+  jpPicker,
+  jpPickerList,
+  jpPickerListItem,
+  jpPickerMenu,
+  jpPickerMenuOption,
   jpProgress,
   jpProgressRing,
   jpRadio,
@@ -181,6 +188,11 @@ export const allComponents = {
   jpMenuItem,
   jpNumberField,
   jpOption,
+  jpPicker,
+  jpPickerList,
+  jpPickerListItem,
+  jpPickerMenu,
+  jpPickerMenuOption,
   jpProgress,
   jpProgressRing,
   jpRadio,

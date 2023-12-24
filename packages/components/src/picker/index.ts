@@ -25,9 +25,9 @@ import { pickerListItemStyles } from "./picker-list-item.styles.js";
  *
  * @alpha
  * @remarks
- * * Generates HTML Element: `<fast-picker>`
+ * * Generates HTML Element: `<jp-picker>`
  */
-export const fastPicker = Picker.compose({
+export const jpPicker = Picker.compose({
     baseName: "picker",
     template: pickerTemplate,
     styles: pickerStyles,
@@ -60,9 +60,9 @@ export class PickerMenu extends FoundationPickerMenu {
  *
  * @alpha
  * @remarks
- * HTML Element: \<fast-picker-menu\>
+ * HTML Element: \<jp-picker-menu\>
  */
-export const fastPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
+export const jpPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
     baseName: "picker-menu",
     baseClass: FoundationPickerMenu,
     template: pickerMenuTemplate,
@@ -75,9 +75,9 @@ export const fastPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
  *
  * @alpha
  * @remarks
- * HTML Element: \<fast-picker-menu-option\>
+ * HTML Element: \<jp-picker-menu-option\>
  */
-export const fastPickerMenuOption = PickerMenuOption.compose({
+export const jpPickerMenuOption = PickerMenuOption.compose({
     baseName: "picker-menu-option",
     template: pickerMenuOptionTemplate,
     styles: pickerMenuOptionStyles,
@@ -89,10 +89,10 @@ export const fastPickerMenuOption = PickerMenuOption.compose({
  *
  * @alpha
  * @remarks
- * HTML Element: \<fast-picker-list\>
+ * HTML Element: \<jp-picker-list\>
  *
  */
-export const fastPickerList = PickerList.compose({
+export const jpPickerList = PickerList.compose({
     baseName: "picker-list",
     template: pickerListTemplate,
     styles: pickerListStyles,
@@ -103,9 +103,9 @@ export const fastPickerList = PickerList.compose({
  *
  * @alpha
  * @remarks
- * HTML Element: \<fast-picker-list-item\>
+ * HTML Element: \<jp-picker-list-item\>
  */
-export const fastPickerListItem = PickerListItem.compose({
+export const jpPickerListItem = PickerListItem.compose({
     baseName: "picker-list-item",
     template: pickerListItemTemplate,
     styles: pickerListItemStyles,

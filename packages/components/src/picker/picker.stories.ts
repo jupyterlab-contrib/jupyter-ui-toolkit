@@ -61,7 +61,7 @@ const PickerTemplate = `<style>
 <h1>Picker</h1>
 
 <h2>Default</h2>
-<fast-picker
+<jp-picker
 default-selection=""
 selection=""
 options="apples,oranges,bananas,pears,pineapples,strawberries"
@@ -70,10 +70,10 @@ suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select some things"
 placeholder="Select some things"
-></fast-picker>
+></jp-picker>
 
 <h2>Filter query and filter selection off</h2>
-<fast-picker
+<jp-picker
 default-selection=""
 selection=""
 options="apples,oranges,bananas,pears,pineapples,strawberries"
@@ -83,81 +83,81 @@ loading-text="Loading"
 label="Select some things"
 filter-selected="false"
 filter-query="false"
-></fast-picker>
+></jp-picker>
 
 <h2>Preselection</h2>
-<fast-picker
+<jp-picker
 selection="bananas,strawberries"
 options="apples,oranges,bananas,pears,pineapples,strawberries"
 no-suggestions-text="No suggestions available"
 suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select some things"
-></fast-picker>
+></jp-picker>
 
 <h2>Custom menu</h2>
-<fast-picker
+<jp-picker
 default-selection=""
 selection=""
 options="apples,oranges,bananas,pears,pineapples,strawberries"
 label="Select some things"
 >
-<fast-picker-menu>
-    <fast-picker-menu-option slot="header-region">
+<jp-picker-menu>
+    <jp-picker-menu-option slot="header-region">
         pre-option
-    </fast-picker-menu-option>
+    </jp-picker-menu-option>
     <div>Group 1</div>
-    <fast-picker-menu-option value="option 1"></fast-picker-menu-option>
-    <fast-picker-menu-option value="option 2"></fast-picker-menu-option>
+    <jp-picker-menu-option value="option 1"></jp-picker-menu-option>
+    <jp-picker-menu-option value="option 2"></jp-picker-menu-option>
     <div>Group 2</div>
-    <fast-picker-menu-option value="option 3"></fast-picker-menu-option>
-    <fast-picker-menu-option value="option 4"></fast-picker-menu-option>
-    <fast-picker-menu-option slot="footer-region">
+    <jp-picker-menu-option value="option 3"></jp-picker-menu-option>
+    <jp-picker-menu-option value="option 4"></jp-picker-menu-option>
+    <jp-picker-menu-option slot="footer-region">
         post-option
-    </fast-picker-menu-option>
-</fast-picker-menu>
-</fast-picker>
+    </jp-picker-menu-option>
+</jp-picker-menu>
+</jp-picker>
 
 <h2>Custom menu no options</h2>
-<fast-picker default-selection="" selection="" label="Select some things">
-<fast-picker-menu>
-    <fast-picker-menu-option slot="header-region">
+<jp-picker default-selection="" selection="" label="Select some things">
+<jp-picker-menu>
+    <jp-picker-menu-option slot="header-region">
         pre-option
-    </fast-picker-menu-option>
+    </jp-picker-menu-option>
     <div>Group 1</div>
-    <fast-picker-menu-option value="option 1"></fast-picker-menu-option>
-    <fast-picker-menu-option value="option 2"></fast-picker-menu-option>
+    <jp-picker-menu-option value="option 1"></jp-picker-menu-option>
+    <jp-picker-menu-option value="option 2"></jp-picker-menu-option>
     <div>Group 2</div>
-    <fast-picker-menu-option value="option 3"></fast-picker-menu-option>
-    <fast-picker-menu-option value="option 4"></fast-picker-menu-option>
-    <fast-picker-menu-option slot="footer-region">
+    <jp-picker-menu-option value="option 3"></jp-picker-menu-option>
+    <jp-picker-menu-option value="option 4"></jp-picker-menu-option>
+    <jp-picker-menu-option slot="footer-region">
         post-option
-    </fast-picker-menu-option>
-</fast-picker-menu>
-</fast-picker>
+    </jp-picker-menu-option>
+</jp-picker-menu>
+</jp-picker>
 
 <h2>Single item</h2>
-<fast-picker
+<jp-picker
 options="apples,oranges,bananas,pears,pineapples,strawberries"
 max-selected="1"
 no-suggestions-text="No suggestions available"
 suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select people"
-></fast-picker>
+></jp-picker>
 
 <h2>Multiple items, limit to 3</h2>
-<fast-picker
+<jp-picker
 options="apples,oranges,bananas,pears,pineapples,strawberries"
 max-selected="3"
 no-suggestions-text="No suggestions available"
 suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select people"
-></fast-picker>
+></jp-picker>
 
 <h2>Custom content templates</h2>
-<fast-picker
+<jp-picker
 id="customtemplatepicker"
 default-selection=""
 selection=""
@@ -166,10 +166,10 @@ no-suggestions-text="No suggestions available"
 suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select some things"
-></fast-picker>
+></jp-picker>
 
 <h2>Menu above</h2>
-<fast-picker
+<jp-picker
 default-selection=""
 selection=""
 options="apples,oranges,bananas,pears,pineapples,strawberries"
@@ -178,10 +178,10 @@ suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select some things"
 menu-placement="top-fill"
-></fast-picker>
+></jp-picker>
 
 <h2>Menu above or below</h2>
-<fast-picker
+<jp-picker
 default-selection=""
 selection=""
 options="apples,oranges,bananas,pears,pineapples,strawberries"
@@ -190,10 +190,10 @@ suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select some things"
 menu-placement="tallest-fill"
-></fast-picker>
+></jp-picker>
 
 <h2>Menu above or below, not scaling</h2>
-<fast-picker
+<jp-picker
 default-selection=""
 selection=""
 options="apples,oranges,bananas,pears,pineapples,strawberries"
@@ -202,7 +202,7 @@ suggestions-available-text="Suggestions available"
 loading-text="Loading"
 label="Select some things"
 menu-placement="tallest"
-></fast-picker>
+></jp-picker>
 
 <div style="height: 400px; opacity: 0;"></div>
 `
