@@ -21,6 +21,7 @@ import type { Combobox } from './combobox/index.js';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index.js';
 import type { DateField } from './date-field/index.js';
 import type { Dialog } from './dialog/index.js';
+import type {Disclosure} from './disclosure/index.js'
 import type { Divider } from './divider/index.js';
 import type { Listbox } from './listbox/index.js';
 import type { Menu } from './menu/index.js';
@@ -70,6 +71,7 @@ import { jpDateField } from './date-field/index.js';
  */
 // import type { DesignSystemProvider } from "./design-system-provider/index.js";
 import { jpDialog } from './dialog/index.js';
+import { jpDisclosure } from './disclosure/index.js';
 import { jpDivider } from './divider/index.js';
 import { jpListbox } from './listbox/index.js';
 import { jpMenu } from './menu/index.js';
@@ -119,6 +121,7 @@ export {
   jpDataGridRow,
   jpDateField,
   jpDialog,
+  jpDisclosure,
   jpDivider,
   jpListbox,
   jpMenu,
@@ -171,6 +174,7 @@ export const allComponents = {
   jpDataGridRow,
   jpDateField,
   jpDialog,
+  jpDisclosure,
   jpDivider,
   jpListbox,
   jpMenu,
