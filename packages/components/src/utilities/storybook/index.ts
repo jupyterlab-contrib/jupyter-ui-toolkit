@@ -4,7 +4,10 @@
 import { icon, library } from '@fortawesome/fontawesome-svg-core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
 import { parseColor } from '@microsoft/fast-colors';
-import { isDark, PaletteRGB, StandardLuminance, SwatchRGB } from '../../color';
+import { PaletteRGB } from '../../color/palette.js';
+import { SwatchRGB } from '../../color/swatch.js';
+import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js';
+import { isDark } from '../../color/utilities/is-dark.js'
 import { accentPalette, baseLayerLuminance } from '../../design-tokens';
 
 /**

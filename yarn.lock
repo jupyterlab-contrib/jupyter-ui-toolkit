@@ -2267,6 +2267,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     remark-gfm: ^3.0.1
+    resolve-typescript-plugin: ^1.1.5
     rimraf: ^5.0.1
     rollup: ^2.40.0
     rollup-plugin-delete: ^2.0.0
@@ -15738,6 +15739,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"resolve-typescript-plugin@npm:^1.1.5":
+  version: 1.2.0
+  resolution: "resolve-typescript-plugin@npm:1.2.0"
+  dependencies:
+    tslib: 2.3.1
+  peerDependencies:
+    webpack: ^4.0.0 || ^5.0.0
+  checksum: 7f481a8ea409fbadc2d5fa2ed122a52a328bd9510afebe28c942b5fc367cae4bcc4739c3f9ffbb7c2461012061bc08e23d440049448f69f87b191f1be105c7fd
+  languageName: node
+  linkType: hard
+
 "resolve.exports@npm:^2.0.0":
   version: 2.0.2
   resolution: "resolve.exports@npm:2.0.2"
@@ -17369,6 +17381,13 @@ __metadata:
   version: 2.0.1
   resolution: "tslib@npm:2.0.1"
   checksum: 507f32fc24a614c5097d414b622373b6cbb99e305413517e7fd49bef1e63570c0dd15b417ae68152088c3496218e82a5d8c7cd6b48c7a32dcee1a3f7191fff74
+  languageName: node
+  linkType: hard
+
+"tslib@npm:2.3.1":
+  version: 2.3.1
+  resolution: "tslib@npm:2.3.1"
+  checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
   languageName: node
   linkType: hard
 

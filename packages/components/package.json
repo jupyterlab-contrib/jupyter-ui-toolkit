@@ -83,6 +83,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-gfm": "^3.0.1",
+    "resolve-typescript-plugin": "^1.1.5",
     "rimraf": "^5.0.1",
     "rollup": "^2.40.0",
     "rollup-plugin-delete": "^2.0.0",
