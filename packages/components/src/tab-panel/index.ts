@@ -1,11 +1,5 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
-import {
-  TabPanel,
-  tabPanelTemplate as template
-} from '@microsoft/fast-foundation';
-import { tabPanelStyles as styles } from '@microsoft/fast-components';
+import { TabPanel, tabPanelTemplate as template } from "@microsoft/fast-foundation";
+import { tabPanelStyles as styles } from "./tab-panel.styles.js";
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#TabPanel} registration for configuring the component with a DesignSystem.
@@ -17,9 +11,9 @@ import { tabPanelStyles as styles } from '@microsoft/fast-components';
  * Generates HTML Element: `<jp-tab-panel>`
  */
 export const jpTabPanel = TabPanel.compose({
-  baseName: 'tab-panel',
-  template,
-  styles
+    baseName: 'tab-panel',
+    template,
+    styles,
 });
 
 /**

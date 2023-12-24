@@ -1,11 +1,5 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
-import {
-  treeViewTemplate as template,
-  TreeView
-} from '@microsoft/fast-foundation';
-import { treeViewStyles as styles } from '@microsoft/fast-components';
+import { treeViewTemplate as template, TreeView } from "@microsoft/fast-foundation";
+import { treeViewStyles as styles } from "./tree-view.styles.js";
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#TreeView} registration for configuring the component with a DesignSystem.
@@ -18,9 +12,9 @@ import { treeViewStyles as styles } from '@microsoft/fast-components';
  *
  */
 export const jpTreeView = TreeView.compose({
-  baseName: 'tree-view',
-  template,
-  styles
+    baseName: 'tree-view',
+    template,
+    styles
 });
 
 /**

@@ -1,12 +1,32 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
-import { Toolbar } from '@microsoft/fast-components';
 import {
-  Toolbar as FoundationToolbar,
-  toolbarTemplate as template
-} from '@microsoft/fast-foundation';
-import { toolbarStyles as styles } from './toolbar.styles';
+    composedParent,
+    Toolbar as FoundationToolbar,
+    toolbarTemplate as template,
+} from "@microsoft/fast-foundation";
+import { Swatch } from "../color/swatch.js";
+import { fillColor, neutralFillLayerRecipe } from "../design-tokens.js";
+import { toolbarStyles as styles } from "./toolbar.styles.js";
+
+/**
+ * @internal
+ */
+export class Toolbar extends FoundationToolbar {
+    connectedCallback() {
+        super.connectedCallback();
+
+        const parent = composedParent(this);
+
+        if (parent) {
+            fillColor.setValueFor(
+                this,
+                (target: HTMLElement): Swatch =>
+                    neutralFillLayerRecipe
+                        .getValueFor(target)
+                        .evaluate(target, fillColor.getValueFor(parent))
+            );
+        }
+    }
+}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Toolbar} registration for configuring the component with a DesignSystem.
@@ -19,13 +39,13 @@ import { toolbarStyles as styles } from './toolbar.styles';
  *
  */
 export const jpToolbar = Toolbar.compose({
-  baseName: 'toolbar',
-  baseClass: FoundationToolbar,
-  template,
-  styles,
-  shadowOptions: {
-    delegatesFocus: true
-  }
+    baseName: 'toolbar',
+    baseClass: FoundationToolbar,
+    template,
+    styles,
+    shadowOptions: {
+        delegatesFocus: true,
+    },
 });
 
-export { Toolbar, styles as toolbarStyles };
+export { styles as toolbarStyles };

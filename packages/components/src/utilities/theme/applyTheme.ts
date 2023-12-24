@@ -7,15 +7,17 @@ import {
   parseColor,
   rgbToHSL
 } from '@microsoft/fast-colors';
-import { isDark } from '@microsoft/fast-components';
 import { DesignToken } from '@microsoft/fast-foundation';
 import {
   Palette,
   PaletteRGB,
-  StandardLuminance,
+} from '../../color/palette';
+import {
   Swatch,
   SwatchRGB
-} from '../../color';
+} from '../../color/swatch.js';
+import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js';
+import { isDark } from '../../color/utilities/is-dark.js';
 import {
   accentFillHoverDelta,
   accentPalette,

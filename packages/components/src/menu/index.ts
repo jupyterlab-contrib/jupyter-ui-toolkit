@@ -1,8 +1,23 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
+import {
+    Menu as FoundationMenu,
+    menuTemplate as template,
+} from "@microsoft/fast-foundation";
+import { fillColor, neutralLayerFloating } from "../design-tokens.js";
+import { menuStyles as styles } from "./menu.styles.js";
 
-import { Menu, menuTemplate as template } from '@microsoft/fast-foundation';
-import { menuStyles as styles } from '@microsoft/fast-components';
+/**
+ * @public
+ */
+export class Menu extends FoundationMenu {
+    /**
+     * @internal
+     */
+    public connectedCallback(): void {
+        super.connectedCallback();
+
+        fillColor.setValueFor(this, neutralLayerFloating);
+    }
+}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Menu} registration for configuring the component with a DesignSystem.
@@ -14,15 +29,9 @@ import { menuStyles as styles } from '@microsoft/fast-components';
  * Generates HTML Element: `<jp-menu>`
  */
 export const jpMenu = Menu.compose({
-  baseName: 'menu',
-  template,
-  styles
+    baseName: 'menu',
+    template,
+    styles,
 });
-
-/**
- * Base class for Menu
- * @public
- */
-export { Menu };
 
 export { styles as menuStyles };

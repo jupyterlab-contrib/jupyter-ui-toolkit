@@ -1,11 +1,5 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
-import {
-  tooltipTemplate as template,
-  Tooltip
-} from '@microsoft/fast-foundation';
-import { tooltipStyles as styles } from '@microsoft/fast-components';
+import { tooltipTemplate as template, Tooltip } from "@microsoft/fast-foundation";
+import { tooltipStyles as styles } from "./tooltip.styles.js";
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Tooltip} registration for configuring the component with a DesignSystem.
@@ -17,9 +11,9 @@ import { tooltipStyles as styles } from '@microsoft/fast-components';
  * Generates HTML Element: `<jp-tooltip>`
  */
 export const jpTooltip = Tooltip.compose({
-  baseName: 'tooltip',
-  template,
-  styles
+    baseName: 'tooltip',
+    template,
+    styles,
 });
 
 /**

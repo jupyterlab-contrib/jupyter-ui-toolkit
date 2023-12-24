@@ -2,6 +2,14 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css } from '@microsoft/fast-element';
+import {
+  disabledCursor,
+  display,
+  focusVisible,
+  forcedColorsStylesheetBehavior
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillFocus,
   bodyFont,
@@ -21,15 +29,7 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
-import { css } from '@microsoft/fast-element';
-import {
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior
-} from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
+} from '../../design-tokens.js';
 import { heightNumber } from '../size';
 
 export const BaseFieldStyles = css`

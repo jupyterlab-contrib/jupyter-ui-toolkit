@@ -14,9 +14,9 @@ import { tabStyles as styles } from './tab.styles';
  * Generates HTML Element: `<jp-tab>`
  */
 export const jpTab = Tab.compose({
-  baseName: 'tab',
-  template,
-  styles
+    baseName: 'tab',
+    template,
+    styles,
 });
 
 /**

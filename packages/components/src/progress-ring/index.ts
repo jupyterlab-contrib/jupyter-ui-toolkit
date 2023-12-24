@@ -1,12 +1,9 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
 import {
-  BaseProgress as ProgressRing,
-  ProgressRingOptions,
-  progressRingTemplate as template
-} from '@microsoft/fast-foundation';
-import { progressRingStyles as styles } from '@microsoft/fast-components';
+    BaseProgress as ProgressRing,
+    ProgressRingOptions,
+    progressRingTemplate as template,
+} from "@microsoft/fast-foundation";
+import { progressRingStyles as styles } from "./progress-ring.styles.js";
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#BaseProgress} registration for configuring the component with a DesignSystem.
@@ -18,10 +15,10 @@ import { progressRingStyles as styles } from '@microsoft/fast-components';
  * Generates HTML Element: `<jp-progress-ring>`
  */
 export const jpProgressRing = ProgressRing.compose<ProgressRingOptions>({
-  baseName: 'progress-ring',
-  template,
-  styles,
-  indeterminateIndicator: /* html */ `
+    baseName: 'progress-ring',
+    template,
+    styles,
+    indeterminateIndicator: /* html */ `
         <svg class="progress" part="progress" viewBox="0 0 16 16">
             <circle
                 class="background"
@@ -38,7 +35,7 @@ export const jpProgressRing = ProgressRing.compose<ProgressRingOptions>({
                 r="7px"
             ></circle>
         </svg>
-    `
+    `,
 });
 
 /**

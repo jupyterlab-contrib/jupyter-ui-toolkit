@@ -1,16 +1,28 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
+import {
+    SliderLabel as FoundationSliderLabel,
+    sliderLabelTemplate as template,
+} from "@microsoft/fast-foundation";
+import { Orientation } from "@microsoft/fast-web-utilities";
+import {
+    horizontalSliderLabelStyles,
+    sliderLabelStyles as styles,
+    verticalSliderLabelStyles,
+} from "./slider-label.styles.js";
 
-import {
-  horizontalSliderLabelStyles,
-  SliderLabel,
-  sliderLabelStyles as styles,
-  verticalSliderLabelStyles
-} from '@microsoft/fast-components';
-import {
-  SliderLabel as FoundationSliderLabel,
-  sliderLabelTemplate as template
-} from '@microsoft/fast-foundation';
+/**
+ * @internal
+ */
+export class SliderLabel extends FoundationSliderLabel {
+    protected sliderOrientationChanged(): void {
+        if (this.sliderOrientation === Orientation.horizontal) {
+            this.$fastController.addStyles(horizontalSliderLabelStyles);
+            this.$fastController.removeStyles(verticalSliderLabelStyles);
+        } else {
+            this.$fastController.addStyles(verticalSliderLabelStyles);
+            this.$fastController.removeStyles(horizontalSliderLabelStyles);
+        }
+    }
+}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#SliderLabel} registration for configuring the component with a DesignSystem.
@@ -22,15 +34,14 @@ import {
  * Generates HTML Element: `<jp-slider-label>`
  */
 export const jpSliderLabel = SliderLabel.compose({
-  baseName: 'slider-label',
-  baseClass: FoundationSliderLabel,
-  template,
-  styles
+    baseName: 'slider-label',
+    baseClass: FoundationSliderLabel,
+    template,
+    styles,
 });
 
 export {
-  SliderLabel,
-  horizontalSliderLabelStyles,
-  styles as sliderLabelStyles,
-  verticalSliderLabelStyles
+    horizontalSliderLabelStyles,
+    styles as sliderLabelStyles,
+    verticalSliderLabelStyles,
 };

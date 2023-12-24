@@ -1,8 +1,5 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
-import { Dialog, dialogTemplate as template } from '@microsoft/fast-foundation';
-import { dialogStyles as styles } from '@microsoft/fast-components';
+import { Dialog, dialogTemplate as template } from "@microsoft/fast-foundation";
+import { dialogStyles as styles } from "./dialog.styles.js";
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Dialog} registration for configuring the component with a DesignSystem.
@@ -12,12 +9,12 @@ import { dialogStyles as styles } from '@microsoft/fast-components';
  * @public
  * @remarks
  * HTML Element: `<jp-dialog>`
- *
+*
  */
 export const jpDialog = Dialog.compose({
-  baseName: 'dialog',
-  template,
-  styles
+    baseName: 'dialog',
+    template,
+    styles,
 });
 
 /**

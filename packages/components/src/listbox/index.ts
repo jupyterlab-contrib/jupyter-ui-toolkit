@@ -1,32 +1,73 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
+import { css, ElementStyles } from "@microsoft/fast-element";
 import {
-  ListboxElement,
-  listboxTemplate as template
-} from '@microsoft/fast-foundation';
-import { listboxStyles as styles } from './listbox.styles';
+    ListboxElement as FoundationListboxElement,
+    listboxTemplate as template,
+} from "@microsoft/fast-foundation";
+import { listboxStyles as styles } from "./listbox.styles.js";
 
 /**
- * The Jupyter listbox Custom Element. Implements, {@link @microsoft/fast-foundation#Listbox}
- * {@link @microsoft/fast-foundation#ListboxTemplate}
- *
+ * Base class for Listbox.
  *
  * @public
+ */
+export class Listbox extends FoundationListboxElement {
+    /**
+     * An internal stylesheet to hold calculated CSS custom properties.
+     *
+     * @internal
+     */
+    private computedStylesheet?: ElementStyles;
+
+    /**
+     * Updates the component dimensions when the size property is changed.
+     *
+     * @param prev - the previous size value
+     * @param next - the current size value
+     *
+     * @internal
+     */
+    protected sizeChanged(prev: number | undefined, next: number): void {
+        super.sizeChanged(prev, next);
+        this.updateComputedStylesheet();
+    }
+
+    /**
+     * Updates an internal stylesheet with calculated CSS custom properties.
+     *
+     * @internal
+     */
+    protected updateComputedStylesheet(): void {
+        if (this.computedStylesheet) {
+            this.$fastController.removeStyles(this.computedStylesheet);
+        }
+
+        const listboxSize = `${this.size}`;
+
+        this.computedStylesheet = css`
+            :host {
+                --size: ${listboxSize};
+            }
+        `;
+
+        this.$fastController.addStyles(this.computedStylesheet);
+    }
+}
+
+/**
+ * A function that returns a {@link @microsoft/fast-foundation#ListboxElement} registration for configuring the component with a DesignSystem.
+ * Implements {@link @microsoft/fast-foundation#listboxTemplate}
+ *
  * @remarks
- * HTML Element: \<jp-listbox\>
+ * Generates HTML Element: `<jp-listbox>`
+ *
+ * @public
  *
  */
-export const jpListbox = ListboxElement.compose({
-  baseName: 'listbox',
-  template,
-  styles
+export const jpListbox = Listbox.compose({
+    baseName: "listbox",
+    baseClass: FoundationListboxElement,
+    template,
+    styles,
 });
-
-/**
- * Base class for ListBox
- * @public
- */
-export { ListboxElement };
 
 export { styles as listboxStyles };

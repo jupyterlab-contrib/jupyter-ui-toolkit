@@ -1,18 +1,34 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
-
+import { attr } from "@microsoft/fast-element";
 import {
-  TextField as FoundationTextField,
-  textFieldTemplate as template
-} from '@microsoft/fast-foundation';
-import { TextField } from '@microsoft/fast-components';
-import { textFieldStyles as styles } from './text-field.styles';
-
-// TODO
-//   we need to add error/invalid
+    TextField as FoundationTextField,
+    textFieldTemplate as template,
+} from "@microsoft/fast-foundation";
+import { textFieldStyles as styles } from "./text-field.styles.js";
 
 /**
- * A function that returns a TextField registration for configuring the component with a DesignSystem.
+ * Text field appearances
+ * @public
+ */
+export type TextFieldAppearance = "filled" | "outline";
+
+/**
+ * @internal
+ */
+export class TextField extends FoundationTextField {
+    /**
+     * The appearance of the element.
+     *
+     * @public
+     * @remarks
+     * HTML Attribute: appearance
+     */
+    @attr
+    public appearance: TextFieldAppearance = "outline";
+}
+
+/**
+ * A function that returns a {@link @microsoft/fast-foundation#TextField} registration for configuring the component with a DesignSystem.
+ * Implements {@link @microsoft/fast-foundation#textFieldTemplate}
  *
  *
  * @public
@@ -22,19 +38,13 @@ import { textFieldStyles as styles } from './text-field.styles';
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
 export const jpTextField = TextField.compose({
-  baseName: 'text-field',
-  baseClass: FoundationTextField,
-  template,
-  styles,
-  shadowOptions: {
-    delegatesFocus: true
-  }
+    baseName: 'text-field',
+    baseClass: FoundationTextField,
+    template,
+    styles,
+    shadowOptions: {
+        delegatesFocus: true,
+    },
 });
 
-export { TextField, TextFieldAppearance } from '@microsoft/fast-components';
-
-/**
- * Styles for TextField
- * @public
- */
 export { styles as textFieldStyles };

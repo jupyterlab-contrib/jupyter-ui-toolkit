@@ -1,13 +1,7 @@
-// Copyright (c) Jupyter Development Team.
-// Distributed under the terms of the Modified BSD License.
+import { Accordion, accordionTemplate as template } from "@microsoft/fast-foundation";
+import { accordionStyles as styles } from "./accordion.styles.js";
 
-import {
-  Accordion,
-  accordionTemplate as template
-} from '@microsoft/fast-foundation';
-import { accordionStyles as styles } from '@microsoft/fast-components';
-
-export * from '../accordion-item/index';
+export * from "../accordion-item/index.js";
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Accordion} registration for configuring the component with a DesignSystem.
@@ -19,9 +13,9 @@ export * from '../accordion-item/index';
  * Generates HTML Element: `<jp-accordion>`
  */
 export const jpAccordion = Accordion.compose({
-  baseName: 'accordion',
-  template,
-  styles
+    baseName: 'accordion',
+    template,
+    styles
 });
 
 /**

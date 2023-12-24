@@ -1,154 +1,174 @@
-// Copyright (c) Jupyter Development Team.
-// Copyright (c) Microsoft Corporation.
-// Distributed under the terms of the Modified BSD License.
-
+import { css } from "@microsoft/fast-element";
+import type { ElementStyles } from "@microsoft/fast-element";
 import {
-  accentFillActive,
-  accentFillFocus,
-  accentFillHover,
-  accentFillRest,
-  bodyFont,
-  controlCornerRadius,
-  designUnit,
-  disabledOpacity,
-  focusStrokeWidth,
-  foregroundOnAccentActive,
-  foregroundOnAccentFocus,
-  foregroundOnAccentHover,
-  foregroundOnAccentRest,
-  neutralFillHover,
-  neutralForegroundRest,
-  typeRampBaseFontSize,
-  typeRampBaseLineHeight
-} from '@microsoft/fast-components';
-import type { ElementStyles } from '@microsoft/fast-element';
-import { css } from '@microsoft/fast-element';
+    disabledCursor,
+    display,
+    forcedColorsStylesheetBehavior,
+} from "@microsoft/fast-foundation";
 import type {
-  FoundationElementTemplate,
-  ListboxOptionOptions
-} from '@microsoft/fast-foundation';
+    FoundationElementTemplate,
+    ListboxOptionOptions,
+} from "@microsoft/fast-foundation";
+import { SystemColors } from "@microsoft/fast-web-utilities";
 import {
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior
-} from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
-import { heightNumber } from '../styles';
+    accentFillActive,
+    accentFillHover,
+    accentFillRest,
+    bodyFont,
+    controlCornerRadius,
+    designUnit,
+    disabledOpacity,
+    focusStrokeInner,
+    focusStrokeOuter,
+    focusStrokeWidth,
+    foregroundOnAccentActive,
+    foregroundOnAccentHover,
+    foregroundOnAccentRest,
+    neutralFillStealthActive,
+    neutralFillStealthHover,
+    neutralFillStealthRest,
+    neutralForegroundRest,
+    typeRampBaseFontSize,
+    typeRampBaseLineHeight,
+} from "../design-tokens.js";
+import { heightNumber } from "../styles/size.js";
 
 /**
- * Styles for Option
+ * Styles for the {@link @microsoft/fast-components#fastOption | Listbox Option} component.
+ *
+ * @param context - the element definition context
+ * @param definition - the foundation element definition
+ * @returns The element styles for the listbox option component
+ *
  * @public
  */
 export const optionStyles: FoundationElementTemplate<
-  ElementStyles,
-  ListboxOptionOptions
+    ElementStyles,
+    ListboxOptionOptions
 > = (context, definition) =>
-  css`
-    ${display('inline-flex')} :host {
-      align-items: center;
-      font-family: ${bodyFont};
-      border-radius: calc(${controlCornerRadius} * 1px);
-      border: calc(${focusStrokeWidth} * 1px) solid transparent;
-      box-sizing: border-box;
-      color: ${neutralForegroundRest};
-      cursor: pointer;
-      flex: 0 0 auto;
-      fill: currentcolor;
-      font-size: ${typeRampBaseFontSize};
-      height: calc(${heightNumber} * 1px);
-      line-height: ${typeRampBaseLineHeight};
-      margin: 0 calc(${designUnit} * 1px);
-      outline: none;
-      overflow: hidden;
-      padding: 0 calc(${designUnit} * 2.25px);
-      user-select: none;
-      white-space: nowrap;
-    }
+    css`
+        ${display("inline-flex")} :host {
+            align-items: center;
+            font-family: ${bodyFont};
+            border-radius: calc(${controlCornerRadius} * 1px);
+            border: calc(${focusStrokeWidth} * 1px) solid transparent;
+            box-sizing: border-box;
+            background: ${neutralFillStealthRest};
+            color: ${neutralForegroundRest};
+            cursor: pointer;
+            flex: 0 0 auto;
+            fill: currentcolor;
+            font-size: ${typeRampBaseFontSize};
+            height: calc(${heightNumber} * 1px);
+            line-height: ${typeRampBaseLineHeight};
+            margin: 0 calc((${designUnit} - ${focusStrokeWidth}) * 1px);
+            outline: none;
+            overflow: hidden;
+            padding: 0 1ch;
+            user-select: none;
+            white-space: nowrap;
+        }
 
-    /* TODO should we use outline instead of background for focus to support multi-selection */
-    :host(:${focusVisible}) {
-      background: ${accentFillFocus};
-      color: ${foregroundOnAccentFocus};
-    }
+        :host(:not([disabled]):not([aria-selected="true"]):hover) {
+            background: ${neutralFillStealthHover};
+        }
 
-    :host([aria-selected='true']) {
-      background: ${accentFillRest};
-      color: ${foregroundOnAccentRest};
-    }
+        :host(:not([disabled]):not([aria-selected="true"]):active) {
+            background: ${neutralFillStealthActive};
+        }
 
-    :host(:hover) {
-      background: ${accentFillHover};
-      color: ${foregroundOnAccentHover};
-    }
+        :host([aria-selected="true"]) {
+            background: ${accentFillRest};
+            color: ${foregroundOnAccentRest};
+        }
 
-    :host(:active) {
-      background: ${accentFillActive};
-      color: ${foregroundOnAccentActive};
-    }
+        :host(:not([disabled])[aria-selected="true"]:hover) {
+            background: ${accentFillHover};
+            color: ${foregroundOnAccentHover};
+        }
 
-    :host(:not([aria-selected='true']):hover),
-    :host(:not([aria-selected='true']):active) {
-      background: ${neutralFillHover};
-      color: ${neutralForegroundRest};
-    }
+        :host(:not([disabled])[aria-selected="true"]:active) {
+            background: ${accentFillActive};
+            color: ${foregroundOnAccentActive};
+        }
 
-    :host([disabled]) {
-      cursor: ${disabledCursor};
-      opacity: ${disabledOpacity};
-    }
+        :host([disabled]) {
+            cursor: ${disabledCursor};
+            opacity: ${disabledOpacity};
+        }
 
-    :host([disabled]:hover) {
-      background-color: inherit;
-    }
+        .content {
+            grid-column-start: 2;
+            justify-self: start;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-    .content {
-      grid-column-start: 2;
-      justify-self: start;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+        .start,
+        .end,
+        ::slotted(svg) {
+            display: flex;
+        }
 
-    .start,
-    .end,
-    ::slotted(svg) {
-      display: flex;
-    }
+        ::slotted(svg) {
+            /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
+            height: calc(${designUnit} * 4px);
+            width: calc(${designUnit} * 4px);
+        }
 
-    ::slotted(svg) {
-      /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
-      height: calc(${designUnit} * 4px);
-      width: calc(${designUnit} * 4px);
-    }
+        ::slotted([slot="end"]) {
+            margin-inline-start: 1ch;
+        }
 
-    ::slotted([slot='end']) {
-      margin-inline-start: 1ch;
-    }
+        ::slotted([slot="start"]) {
+            margin-inline-end: 1ch;
+        }
 
-    ::slotted([slot='start']) {
-      margin-inline-end: 1ch;
-    }
-  `.withBehaviors(
-    forcedColorsStylesheetBehavior(css`
-      :host {
-        border-color: transparent;
-        forced-color-adjust: none;
-        color: ${SystemColors.ButtonText};
-        fill: currentcolor;
-      }
+        :host([aria-checked="true"][aria-selected="false"]) {
+            border-color: ${focusStrokeOuter};
+        }
 
-      :host(:not([aria-selected='true']):hover),
-      :host([aria-selected='true']) {
-        background: ${SystemColors.Highlight};
-        color: ${SystemColors.HighlightText};
-      }
+        :host([aria-checked="true"][aria-selected="true"]) {
+            border-color: ${focusStrokeOuter};
+            box-shadow: 0 0 0 calc(${focusStrokeWidth} * 2 * 1px) inset
+                ${focusStrokeInner};
+        }
+    `.withBehaviors(
+        forcedColorsStylesheetBehavior(
+            css`
+                :host {
+                    border-color: transparent;
+                    forced-color-adjust: none;
+                    color: ${SystemColors.ButtonText};
+                    fill: currentcolor;
+                }
 
-      :host([disabled]),
-      :host([disabled]:not([aria-selected='true']):hover) {
-        background: ${SystemColors.Canvas};
-        color: ${SystemColors.GrayText};
-        fill: currentcolor;
-        opacity: 1;
-      }
-    `)
-  );
+                :host(:not([aria-selected="true"]):hover),
+                :host([aria-selected="true"]) {
+                    background: ${SystemColors.Highlight};
+                    color: ${SystemColors.HighlightText};
+                }
+
+                :host([disabled]),
+                :host([disabled][aria-selected="false"]:hover) {
+                    background: ${SystemColors.Canvas};
+                    color: ${SystemColors.GrayText};
+                    fill: currentcolor;
+                    opacity: 1;
+                }
+
+                :host([aria-checked="true"][aria-selected="false"]) {
+                    background: ${SystemColors.ButtonFace};
+                    color: ${SystemColors.ButtonText};
+                    border-color: ${SystemColors.ButtonText};
+                }
+
+                :host([aria-checked="true"][aria-selected="true"]),
+                :host([aria-checked="true"][aria-selected="true"]:hover) {
+                    background: ${SystemColors.Highlight};
+                    color: ${SystemColors.HighlightText};
+                    border-color: ${SystemColors.ButtonText};
+                }
+            `
+        )
+    );
