@@ -20,6 +20,7 @@ import type { Checkbox } from './checkbox/index.js';
 import type { Combobox } from './combobox/index.js';
 import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index.js';
 import type { DateField } from './date-field/index.js';
+import type { DesignSystemProvider } from './design-system-provider/index.js';
 import type { Dialog } from './dialog/index.js';
 import type {Disclosure} from './disclosure/index.js'
 import type { Divider } from './divider/index.js';
@@ -67,6 +68,7 @@ import { jpCheckbox } from './checkbox/index.js';
 import { jpCombobox } from './combobox/index.js';
 import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index.js';
 import { jpDateField } from './date-field/index.js';
+import {jpDesignSystemProvider} from './design-system-provider/index.js'
 /**
  * Don't remove. This is needed to prevent api-extractor errors.
  */
@@ -122,6 +124,7 @@ export {
   jpDataGridCell,
   jpDataGridRow,
   jpDateField,
+  jpDesignSystemProvider,
   jpDialog,
   jpDisclosure,
   jpDivider,
@@ -180,6 +183,7 @@ export const allComponents = {
   jpDataGridCell,
   jpDataGridRow,
   jpDateField,
+  jpDesignSystemProvider,
   jpDialog,
   jpDisclosure,
   jpDivider,

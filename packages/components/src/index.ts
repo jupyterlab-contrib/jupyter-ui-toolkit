@@ -31,6 +31,7 @@ export { InteractiveSwatchSet } from "./color/recipe.js";
 export { Swatch, SwatchRGB } from "./color/swatch.js";
 export { isDark } from "./color/utilities/is-dark.js";
 export { StandardLuminance } from "./color/utilities/base-layer-luminance.js";
+export * from "./design-system-provider/index.js";
 export * from "./design-tokens.js";
 export * from "./dialog/index.js";
 export * from "./disclosure/index.js";

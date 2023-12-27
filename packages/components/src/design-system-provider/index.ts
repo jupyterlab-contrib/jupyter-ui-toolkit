@@ -141,7 +141,7 @@ function designToken<T extends string | number | boolean | symbol | {} | any[] |
 }
 
 /**
- * The FAST DesignSystemProvider Element.
+ * The Jupyter DesignSystemProvider Element.
  * @internal
  */
 export class DesignSystemProvider extends FoundationElement {
@@ -1079,9 +1079,9 @@ export const designSystemProviderStyles = (
  * A function that returns a {@link DesignSystemProvider} registration for configuring the component with a DesignSystem.
  * @public
  * @remarks
- * Generates HTML Element: `<fast-design-system-provider>`
+ * Generates HTML Element: `<jp-design-system-provider>`
  */
-export const fastDesignSystemProvider = DesignSystemProvider.compose({
+export const jpDesignSystemProvider = DesignSystemProvider.compose({
     baseName: "design-system-provider",
     template: designSystemProviderTemplate,
     styles: designSystemProviderStyles,

@@ -1,4 +1,4 @@
-import { StoryFn, StoryObj } from "@storybook/html";
+import { Meta, StoryFn, StoryObj } from "@storybook/html";
 import { setTheme } from "../utilities/storybook";
 
 // const optionContentsTemplate: ViewTemplate = html`
@@ -26,9 +26,21 @@ import { setTheme } from "../utilities/storybook";
 export default {
     title: "Components/Picker",
     parameters: {
-        constrols: {expanded:true}
+        controls: {expanded:true}
+    },
+    argsType: {
+        defaultSelection: { control: 'text' },
+        selection: {control: 'text'},
+        options: { control: 'text' },
+        noSuggestionsText: {control: 'text'},
+        suggestionsAvailableText: {control: 'text'},
+        label: {control: 'text'},
+        placeholder: {control: 'text'},
+        maxSelected: {control: 'range', min: 0, max: 20, step: 1},
+        // menuPlacement: {control: 'select', options: ['tallest', 'tallest-fill', 'top-fill']}
+        // loadingText: {control: 'text'}
     }
-};
+} as Meta;
 
 const Template: StoryFn = (args, context): string => {
   const {
@@ -37,172 +49,32 @@ const Template: StoryFn = (args, context): string => {
   } = context;
   setTheme(accent, parameters.backgrounds, backgrounds);
 
-  return PickerTemplate;
+  const max = args.maxSelected ? `max-selected="${args.maxSelected}"` : '';
+
+  return `
+<jp-picker
+  default-selection="${args.defaultSelection}"
+  selection="${args.selection}"
+  options="${args.options}"
+  no-suggestions-text="${args.noSuggestionsText}"
+  suggestions-available-text="${args.suggestionsAvailableText}"
+  loading-text="${args.loadingText ?? 'Loading'}"
+  label="${args.label}"
+  placeholder="${args.placeholder}"
+  ${max}
+></jp-picker>
+  `;
 };
 
 export const Default: StoryObj = { render: Template.bind({})};
 
-
-const PickerTemplate = `<style>
-.div-blue {
-    background: blue;
+Default.args = {
+    defaultSelection: '',
+    selection: '',
+    options: "apples,oranges,bananas,pears,pineapples,strawberries",
+    noSuggestionsText: '',
+    suggestionsAvailableText: '',
+    label: '',
+    placeholder: '',
+    maxSelected: 0
 }
-.div-purple {
-    background: purple;
-}
-@media (forced-colors: active) {
-    .div-blue,
-    .div-purple {
-        background: transparent;
-    }
-}
-</style>
-
-<h1>Picker</h1>
-
-<h2>Default</h2>
-<jp-picker
-default-selection=""
-selection=""
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select some things"
-placeholder="Select some things"
-></jp-picker>
-
-<h2>Filter query and filter selection off</h2>
-<jp-picker
-default-selection=""
-selection=""
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select some things"
-filter-selected="false"
-filter-query="false"
-></jp-picker>
-
-<h2>Preselection</h2>
-<jp-picker
-selection="bananas,strawberries"
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select some things"
-></jp-picker>
-
-<h2>Custom menu</h2>
-<jp-picker
-default-selection=""
-selection=""
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-label="Select some things"
->
-<jp-picker-menu>
-    <jp-picker-menu-option slot="header-region">
-        pre-option
-    </jp-picker-menu-option>
-    <div>Group 1</div>
-    <jp-picker-menu-option value="option 1"></jp-picker-menu-option>
-    <jp-picker-menu-option value="option 2"></jp-picker-menu-option>
-    <div>Group 2</div>
-    <jp-picker-menu-option value="option 3"></jp-picker-menu-option>
-    <jp-picker-menu-option value="option 4"></jp-picker-menu-option>
-    <jp-picker-menu-option slot="footer-region">
-        post-option
-    </jp-picker-menu-option>
-</jp-picker-menu>
-</jp-picker>
-
-<h2>Custom menu no options</h2>
-<jp-picker default-selection="" selection="" label="Select some things">
-<jp-picker-menu>
-    <jp-picker-menu-option slot="header-region">
-        pre-option
-    </jp-picker-menu-option>
-    <div>Group 1</div>
-    <jp-picker-menu-option value="option 1"></jp-picker-menu-option>
-    <jp-picker-menu-option value="option 2"></jp-picker-menu-option>
-    <div>Group 2</div>
-    <jp-picker-menu-option value="option 3"></jp-picker-menu-option>
-    <jp-picker-menu-option value="option 4"></jp-picker-menu-option>
-    <jp-picker-menu-option slot="footer-region">
-        post-option
-    </jp-picker-menu-option>
-</jp-picker-menu>
-</jp-picker>
-
-<h2>Single item</h2>
-<jp-picker
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-max-selected="1"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select people"
-></jp-picker>
-
-<h2>Multiple items, limit to 3</h2>
-<jp-picker
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-max-selected="3"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select people"
-></jp-picker>
-
-<h2>Custom content templates</h2>
-<jp-picker
-id="customtemplatepicker"
-default-selection=""
-selection=""
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select some things"
-></jp-picker>
-
-<h2>Menu above</h2>
-<jp-picker
-default-selection=""
-selection=""
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select some things"
-menu-placement="top-fill"
-></jp-picker>
-
-<h2>Menu above or below</h2>
-<jp-picker
-default-selection=""
-selection=""
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select some things"
-menu-placement="tallest-fill"
-></jp-picker>
-
-<h2>Menu above or below, not scaling</h2>
-<jp-picker
-default-selection=""
-selection=""
-options="apples,oranges,bananas,pears,pineapples,strawberries"
-no-suggestions-text="No suggestions available"
-suggestions-available-text="Suggestions available"
-loading-text="Loading"
-label="Select some things"
-menu-placement="tallest"
-></jp-picker>
-
-<div style="height: 400px; opacity: 0;"></div>
-`
