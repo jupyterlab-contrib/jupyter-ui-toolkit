@@ -7,7 +7,7 @@ import { parseColor } from '@microsoft/fast-colors';
 import { SwatchRGB } from '../../color/swatch.js';
 import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js';
 import { isDark } from '../../color/utilities/is-dark.js'
-import { Story, StoryContext } from '@storybook/html';
+import { StoryContext } from '@storybook/html';
 import {DesignSystemProvider} from '../../design-system-provider/index.js';
 
 /**

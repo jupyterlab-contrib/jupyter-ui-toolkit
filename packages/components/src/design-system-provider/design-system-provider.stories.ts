@@ -1,4 +1,5 @@
 import { Meta, StoryFn, StoryObj } from "@storybook/html";
+import { StandardLuminance } from "../color/utilities/base-layer-luminance";
 
 export default {
     title: "Components/Design System Provider",
@@ -10,13 +11,17 @@ export default {
     presetColors: ['#000000', '#ffffff', '#0078d4', '#107c10', '#5c2d91', '#d83b01', '#f2c812']},
         fillColor: {control: 'color', 
         presetColors: ['#808080', '#73818c', '#718e71', '#7f738c', '#8c7a73', '#0078d4', '#107c10', '#5c2d91', '#d83b01'],},
-        neutralColor: {control: 'color'},
+        neutralColor: {control: 'color'}
     }
 } as Meta;
 
 const Template: StoryFn = (args): string => {
   return `
-<jp-design-system-provider fill-color="${args.fillColor}" accent-color="${args.accentColor}" neutral-color="${args.neutralColor}">
+<jp-design-system-provider
+  fill-color="${args.fillColor}"
+  accent-color="${args.accentColor}"
+  neutral-color="${args.neutralColor}"
+>
   <jp-button appearance="accent">Accent</jp-button><jp-button>Neutral</jp-button>
 </jp-design-system-provider>
   `;
