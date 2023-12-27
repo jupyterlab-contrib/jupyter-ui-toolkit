@@ -1,3 +1,7 @@
+// Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
+// Distributed under the terms of the Modified BSD License.
+
 import { DateField, DateFieldOptions } from './date-field.js';
 import { dateFieldStyles as styles } from './date-field.styles.js';
 import { dateFieldTemplate as template } from './date-field.template.js';

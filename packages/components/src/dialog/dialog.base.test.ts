@@ -1,3 +1,7 @@
+// Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
+// Distributed under the terms of the Modified BSD License.
+
 import type { Dialog as JpDialogType } from '@microsoft/fast-foundation';
 import test, { expect } from '@playwright/test';
 

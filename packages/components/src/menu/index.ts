@@ -1,3 +1,7 @@
+// Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
+// Distributed under the terms of the Modified BSD License.
+
 import {
   Menu as FoundationMenu,
   menuTemplate as template

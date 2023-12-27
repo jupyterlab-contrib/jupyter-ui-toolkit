@@ -1,3 +1,7 @@
+// Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
+// Distributed under the terms of the Modified BSD License.
+
 import { attr } from '@microsoft/fast-element';
 import {
   Disclosure as FoundationDisclosure,

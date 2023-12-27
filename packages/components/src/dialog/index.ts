@@ -1,3 +1,7 @@
+// Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
+// Distributed under the terms of the Modified BSD License.
+
 import { Dialog, dialogTemplate as template } from '@microsoft/fast-foundation';
 import { dialogStyles as styles } from './dialog.styles.js';
 
