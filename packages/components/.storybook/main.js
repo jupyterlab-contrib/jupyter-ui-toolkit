@@ -1,6 +1,6 @@
 import { dirname, join } from 'path';
 import remarkGfm from 'remark-gfm';
-const ResolveTypescriptPlugin = require("resolve-typescript-plugin");
+const ResolveTypescriptPlugin = require('resolve-typescript-plugin');
 
 module.exports = {
   stories: [
@@ -25,7 +25,9 @@ module.exports = {
     getAbsolutePath('@storybook/addon-a11y')
   ],
   webpackFinal: async config => {
-    if(!config.resolve.plugins) { config.resolve.plugins = []}
+    if (!config.resolve.plugins) {
+      config.resolve.plugins = [];
+    }
     config.resolve.plugins.push(new ResolveTypescriptPlugin());
     config.module.rules.push(
       {
