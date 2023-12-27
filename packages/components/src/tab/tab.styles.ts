@@ -16,7 +16,6 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
-  focusStrokeOuter,
   focusStrokeWidth,
   neutralFillActive,
   neutralFillHover,

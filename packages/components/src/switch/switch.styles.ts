@@ -17,8 +17,6 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
-  fillColor,
-  focusStrokeOuter,
   focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,

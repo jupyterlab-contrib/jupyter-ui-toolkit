@@ -38,7 +38,7 @@ export const listboxStyles: FoundationElementTemplate<ElementStyles> = (
   // various formatting bugs.
   // prettier-ignore
   return css`
-        ${!hostContext ? display("inline-flex") : ""}
+        ${!hostContext ? display('inline-flex') : ''}
 
         :host ${hostContext} {
             background: ${fillColor};

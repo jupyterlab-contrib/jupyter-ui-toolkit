@@ -15,7 +15,6 @@ import {
   designUnit,
   disabledOpacity,
   fillColor,
-  focusStrokeOuter,
   focusStrokeWidth,
   neutralForegroundRest,
   neutralStrokeHover,

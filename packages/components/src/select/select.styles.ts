@@ -52,7 +52,7 @@ export const selectStyles: FoundationElementTemplate<
   // various formatting bugs.
   // prettier-ignore
   return css`
-        ${display("inline-flex")}
+        ${display('inline-flex')}
 
         :host {
             --elevation: 14;
@@ -81,7 +81,7 @@ export const selectStyles: FoundationElementTemplate<
                 height: auto;
                 min-width: 0;
             }
-        ` : ""}
+        ` : ''}
 
         ${listboxStyles(context, definition)}
 
@@ -108,7 +108,7 @@ export const selectStyles: FoundationElementTemplate<
                 position: static;
                 z-index: auto;
             }
-        ` : ""}
+        ` : ''}
 
         :host(:not([autowidth])) .listbox {
           width: 100%;

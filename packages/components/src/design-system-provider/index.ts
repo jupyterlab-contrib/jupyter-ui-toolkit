@@ -17,7 +17,6 @@ import {
   FoundationElementDefinition
 } from '@microsoft/fast-foundation';
 import { Direction, SystemColors } from '@microsoft/fast-web-utilities';
-import { Palette } from '../color/palette.js';
 import { Swatch, SwatchRGB } from '../color/swatch.js';
 import {
   accentColor,
@@ -29,7 +28,6 @@ import {
   accentForegroundFocusDelta,
   accentForegroundHoverDelta,
   accentForegroundRestDelta,
-  accentPalette,
   baseHeightMultiplier,
   baseHorizontalSpacingMultiplier,
   baseLayerLuminance,
@@ -58,7 +56,6 @@ import {
   neutralFillStrongFocusDelta,
   neutralFillStrongHoverDelta,
   neutralForegroundRest,
-  neutralPalette,
   neutralStrokeActiveDelta,
   neutralStrokeDividerRestDelta,
   neutralStrokeFocusDelta,
@@ -125,7 +122,15 @@ const backgroundStyles = css`
 );
 
 function designToken<
-  T extends string | number | boolean | symbol | {} | any[] | Uint8Array | null
+  T extends
+    | string
+    | number
+    | boolean
+    | symbol
+    | object
+    | any[]
+    | Uint8Array
+    | null
 >(token: DesignToken<T>) {
   return (source: DesignSystemProvider, key: string) => {
     // @ts-expect-error source as no string index

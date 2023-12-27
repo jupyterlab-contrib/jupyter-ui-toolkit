@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import filesize from 'rollup-plugin-filesize';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import transformTaggedTemplate from 'rollup-plugin-transform-tagged-template';
-import typescript from "rollup-plugin-typescript2";
+import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import del from 'rollup-plugin-delete';
 
@@ -20,12 +20,12 @@ export default [
     onwarn(warning, warn) {
       // The IIFE export doesn't have a namespace since component exports
       // are expected to be top-level objects
-      if (warning.code === "MISSING_NAME_OPTION_FOR_IIFE_EXPORT") {
-          return;
+      if (warning.code === 'MISSING_NAME_OPTION_FOR_IIFE_EXPORT') {
+        return;
       }
 
       warn(warning);
-  },
+    },
     output: [
       {
         file: 'dist/toolkit.js',

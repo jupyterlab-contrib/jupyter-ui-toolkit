@@ -7,15 +7,11 @@ import {
   FoundationElementTemplate
 } from '@microsoft/fast-foundation';
 import {
-  accentFillActive,
   accentFillFocus,
-  accentFillHover,
-  accentFillRest,
   bodyFont,
   controlCornerRadius,
   designUnit,
   disabledOpacity,
-  focusStrokeOuter,
   focusStrokeWidth,
   neutralFillHover,
   neutralFillInputActive,

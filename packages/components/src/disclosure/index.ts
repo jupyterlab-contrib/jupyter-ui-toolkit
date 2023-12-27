@@ -17,11 +17,11 @@ export class Disclosure extends FoundationDisclosure {
   /**
    * Disclosure default height
    */
-  private height: number = 0;
+  private height = 0;
   /**
    * Disclosure height after it's expanded
    */
-  private totalHeight: number = 0;
+  private totalHeight = 0;
 
   public connectedCallback(): void {
     super.connectedCallback();

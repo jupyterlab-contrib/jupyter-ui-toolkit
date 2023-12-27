@@ -125,7 +125,7 @@ export class Select extends FoundationSelect {
    * @internal
    */
   @observable
-  private listboxScrollWidth: string = '';
+  private listboxScrollWidth = '';
 
   /**
    * @internal

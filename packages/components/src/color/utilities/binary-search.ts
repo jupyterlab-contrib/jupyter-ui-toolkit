@@ -4,7 +4,7 @@
 export function binarySearch<T>(
   valuesToSearch: T[] | ReadonlyArray<T>,
   searchCondition: (value: T) => boolean,
-  startIndex: number = 0,
+  startIndex = 0,
   endIndex: number = valuesToSearch.length - 1
 ): T {
   if (endIndex === startIndex) {

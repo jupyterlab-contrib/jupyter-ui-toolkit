@@ -55,7 +55,15 @@ export interface InteractiveColorRecipe {
 const { create } = DesignToken;
 
 function createNonCss<
-  T extends string | number | boolean | symbol | {} | any[] | Uint8Array | null
+  T extends
+    | string
+    | number
+    | boolean
+    | symbol
+    | object
+    | any[]
+    | Uint8Array
+    | null
 >(name: string): DesignToken<T> {
   return DesignToken.create<T>({ name, cssCustomPropertyName: null });
 }
