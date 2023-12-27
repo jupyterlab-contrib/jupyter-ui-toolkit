@@ -1,9 +1,9 @@
-import { DateField, DateFieldOptions } from './date-field';
-import { dateFieldStyles as styles } from './date-field.styles';
-import { dateFieldTemplate as template } from './date-field.template';
+import { DateField, DateFieldOptions } from './date-field.js';
+import { dateFieldStyles as styles } from './date-field.styles.js';
+import { dateFieldTemplate as template } from './date-field.template.js';
 
-export * from './date-field';
-export * from './date-field.template';
+export * from './date-field.js';
+export * from './date-field.template.js';
 
 /**
  * A function that returns a {@link @jupyter/web-components#DateField} registration for configuring the component with a DesignSystem.

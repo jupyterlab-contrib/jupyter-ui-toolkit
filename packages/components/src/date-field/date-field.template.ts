@@ -6,7 +6,7 @@ import {
   whitespaceFilter
 } from '@microsoft/fast-foundation';
 import type { FoundationElementTemplate } from '@microsoft/fast-foundation';
-import type { DateField, DateFieldOptions } from './date-field';
+import type { DateField, DateFieldOptions } from './date-field.js';
 
 /**
  * The template for the {@link @jupyter/web-components#(DateField:class)} component.

@@ -11,7 +11,6 @@
     "playwright.config.ts"
   ],
   "compilerOptions": {
-    "module": "commonjs",
     "sourceMap": true,
     "outDir": "./tests-out"
   }

@@ -7,7 +7,7 @@ import {
   FoundationElementTemplate,
   TextFieldOptions
 } from '@microsoft/fast-foundation';
-import { BaseFieldStyles } from '../styles/index';
+import { BaseFieldStyles } from '../styles/index.js';
 
 /**
  * Styles for Text Field

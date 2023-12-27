@@ -30,7 +30,7 @@ import {
   typeRampBaseFontSize,
   typeRampBaseLineHeight
 } from '../../design-tokens.js';
-import { heightNumber } from '../size';
+import { heightNumber } from '../size.js';
 
 export const BaseFieldStyles = css`
   ${display('inline-block')} :host {

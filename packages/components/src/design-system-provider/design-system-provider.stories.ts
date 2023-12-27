@@ -1,5 +1,4 @@
 import { Meta, StoryFn, StoryObj } from '@storybook/html';
-import { StandardLuminance } from '../color/utilities/base-layer-luminance';
 
 export default {
   title: 'Components/Design System Provider',

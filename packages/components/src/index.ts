@@ -8,7 +8,7 @@
 export {
   addJupyterLabThemeChangeListener,
   applyJupyterTheme
-} from './utilities/theme/applyTheme';
+} from './utilities/theme/applyTheme.js';
 
 export * from './custom-elements.js';
 export * from './jupyter-design-system.js';

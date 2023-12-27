@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+
 import { PaletteRGB } from '../palette.js';
 import { SwatchRGB } from '../swatch.js';
 import { accentBase, middleGrey } from '../utilities/color-constants.js';
@@ -16,7 +16,7 @@ describe('neutralForegroundHint', (): void => {
           neutralPalette.swatches.indexOf(
             neutralForegroundHint(neutralPalette, swatch) as SwatchRGB
           )
-        ).not.to.equal(-1);
+        ).not.toEqual(-1);
       });
     });
 
@@ -29,12 +29,12 @@ describe('neutralForegroundHint', (): void => {
           // retrieveContrast(swatch, neutralForegroundHint_DEPRECATED)
           // Because neutralForegroundHint follows the direction patterns of neutralForeground,
           // a backgroundColor #777777 is impossible to hit 4.5 against.
-        ).to.be.gte(
+        ).toBeGreaterThanOrEqual(
           swatch.toColorString().toUpperCase() === '#777777' ? 4.48 : 4.5
         );
         expect(
           swatch.contrast(neutralForegroundHint(neutralPalette, swatch))
-        ).to.be.lessThan(5);
+        ).toBeLessThan(5);
       });
     });
 });

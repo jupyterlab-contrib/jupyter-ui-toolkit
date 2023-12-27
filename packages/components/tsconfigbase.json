@@ -19,6 +19,6 @@
     "strictNullChecks": true,
     "strictFunctionTypes": false,
     "allowJs": true,
-    "types": ["node", "mocha", "webpack-env"]
+    "types": ["node", "webpack-env"]
   }
 }

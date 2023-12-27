@@ -2,7 +2,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { test, expect } from '@playwright/test';
-import { Tooltip } from './index';
+import { Tooltip } from './index.js';
 
 test('Default', async ({ page }) => {
   await page.goto('/iframe.html?id=components-tooltip--default');

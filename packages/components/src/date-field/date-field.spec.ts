@@ -14,7 +14,7 @@ test('temporary test', () => {
 
 import { DOM } from '@microsoft/fast-element';
 import { fixture } from '@microsoft/fast-foundation/dist/esm/test-utilities/fixture';
-import { DateField, dateFieldTemplate as template } from './index';
+import { DateField, dateFieldTemplate as template } from './index.js';
 
 const JPDateField = DateField.compose({
   baseName: 'date-field',

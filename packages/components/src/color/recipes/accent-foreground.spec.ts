@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { parseColorHexRGB } from '@microsoft/fast-colors';
 import { PaletteRGB } from '../palette.js';
 import { SwatchRGB } from '../swatch.js';
@@ -34,10 +33,10 @@ describe('accentForeground', (): void => {
       0
     );
 
-    expect(lightModeColors.hover.contrast(white)).to.be.greaterThan(
+    expect(lightModeColors.hover.contrast(white)).toBeGreaterThan(
       lightModeColors.rest.contrast(white)
     );
-    expect(darkModeColors.hover.contrast(black)).to.be.greaterThan(
+    expect(darkModeColors.hover.contrast(black)).toBeGreaterThan(
       darkModeColors.rest.contrast(black)
     );
   });
@@ -78,13 +77,13 @@ describe('accentForeground', (): void => {
           expect(
             swatch.contrast(smallColors.rest)
             // There are a few states that are impossible to meet contrast on
-          ).to.be.gte(4.47);
+          ).toBeGreaterThanOrEqual(4.47);
           expect(
             swatch.contrast(smallColors.hover)
             // There are a few states that are impossible to meet contrast on
-          ).to.be.gte(3.7);
-          expect(swatch.contrast(largeColors.rest)).to.be.gte(3);
-          expect(swatch.contrast(largeColors.hover)).to.be.gte(3);
+          ).toBeGreaterThanOrEqual(3.7);
+          expect(swatch.contrast(largeColors.rest)).toBeGreaterThanOrEqual(3);
+          expect(swatch.contrast(largeColors.hover)).toBeGreaterThanOrEqual(3);
         });
       }
     );

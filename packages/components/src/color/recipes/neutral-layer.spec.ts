@@ -1,8 +1,7 @@
-import { expect } from 'chai';
 import { PaletteRGB } from '../palette.js';
 import { StandardLuminance } from '../utilities/base-layer-luminance.js';
 import { middleGrey } from '../utilities/color-constants.js';
-import { neutralLayerFloating } from './neutral-layer-floating';
+import { neutralLayerFloating } from './neutral-layer-floating.js';
 import { neutralLayer1 } from './neutral-layer-1.js';
 import { neutralLayer2 } from './neutral-layer-2.js';
 import { neutralLayer3 } from './neutral-layer-3.js';
@@ -30,12 +29,12 @@ describe('neutralLayer', (): void => {
     it('should return values from 1 when in light mode', (): void => {
       expect(
         neutralLayer1(neutralPalette, StandardLuminance.LightMode)
-      ).to.equal(neutralPalette.get(NeutralPaletteLightModeOffsets.L1));
+      ).toEqual(neutralPalette.get(NeutralPaletteLightModeOffsets.L1));
     });
     it('should return values from 1 when in dark mode', (): void => {
-      expect(
-        neutralLayer1(neutralPalette, StandardLuminance.DarkMode)
-      ).to.equal(neutralPalette.get(NeutralPaletteDarkModeOffsets.L1));
+      expect(neutralLayer1(neutralPalette, StandardLuminance.DarkMode)).toEqual(
+        neutralPalette.get(NeutralPaletteDarkModeOffsets.L1)
+      );
     });
   });
 
@@ -43,12 +42,12 @@ describe('neutralLayer', (): void => {
     it('should return values from 2 when in light mode', (): void => {
       expect(
         neutralLayer2(neutralPalette, StandardLuminance.LightMode, 3, 7, 10, 5)
-      ).to.equal(neutralPalette.get(NeutralPaletteLightModeOffsets.L2));
+      ).toEqual(neutralPalette.get(NeutralPaletteLightModeOffsets.L2));
     });
     it('should return values from 2 when in dark mode', (): void => {
       expect(
         neutralLayer2(neutralPalette, StandardLuminance.DarkMode, 3, 7, 10, 5)
-      ).to.equal(neutralPalette.get(NeutralPaletteDarkModeOffsets.L2));
+      ).toEqual(neutralPalette.get(NeutralPaletteDarkModeOffsets.L2));
     });
   });
 
@@ -56,12 +55,12 @@ describe('neutralLayer', (): void => {
     it('should return values from 3 when in light mode', (): void => {
       expect(
         neutralLayer3(neutralPalette, StandardLuminance.LightMode, 3, 7, 10, 5)
-      ).to.equal(neutralPalette.get(NeutralPaletteLightModeOffsets.L3));
+      ).toEqual(neutralPalette.get(NeutralPaletteLightModeOffsets.L3));
     });
     it('should return values from 3 when in dark mode', (): void => {
       expect(
         neutralLayer3(neutralPalette, StandardLuminance.DarkMode, 3, 7, 10, 5)
-      ).to.equal(neutralPalette.get(NeutralPaletteDarkModeOffsets.L3));
+      ).toEqual(neutralPalette.get(NeutralPaletteDarkModeOffsets.L3));
     });
   });
 
@@ -69,12 +68,12 @@ describe('neutralLayer', (): void => {
     it('should return values from 4 when in light mode', (): void => {
       expect(
         neutralLayer4(neutralPalette, StandardLuminance.LightMode, 3, 7, 10, 5)
-      ).to.equal(neutralPalette.get(NeutralPaletteLightModeOffsets.L4));
+      ).toEqual(neutralPalette.get(NeutralPaletteLightModeOffsets.L4));
     });
     it('should return values from 4 when in dark mode', (): void => {
       expect(
         neutralLayer4(neutralPalette, StandardLuminance.DarkMode, 3, 7, 10, 5)
-      ).to.equal(neutralPalette.get(NeutralPaletteDarkModeOffsets.L4));
+      ).toEqual(neutralPalette.get(NeutralPaletteDarkModeOffsets.L4));
     });
   });
 
@@ -88,7 +87,7 @@ describe('neutralLayer', (): void => {
             3
           ) as SwatchRGB
         )
-      ).to.be.true;
+      ).toEqual(true);
     });
   });
 });
