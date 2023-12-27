@@ -14,13 +14,13 @@ import { tabsStyles as styles } from './tabs.styles';
  * Generates HTML Element: `<jp-tabs>`
  */
 export const jpTabs = Tabs.compose({
-    baseName: 'tabs',
-    template,
-    styles,
+  baseName: 'tabs',
+  template,
+  styles
 });
 
-export * from "../tab/index.js";
-export * from "../tab-panel/index.js";
+export * from '../tab/index.js';
+export * from '../tab-panel/index.js';
 
 /**
  * Base class for Tabs

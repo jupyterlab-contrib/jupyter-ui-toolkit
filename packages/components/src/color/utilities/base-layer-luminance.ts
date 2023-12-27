@@ -1,7 +1,7 @@
-import { SwatchRGB } from "../swatch.js";
+import { SwatchRGB } from '../swatch.js';
 
 export function baseLayerLuminanceSwatch(luminance: number) {
-    return SwatchRGB.create(luminance, luminance, luminance);
+  return SwatchRGB.create(luminance, luminance, luminance);
 }
 
 /**
@@ -10,8 +10,8 @@ export function baseLayerLuminanceSwatch(luminance: number) {
  * @public
  */
 export const StandardLuminance = {
-    LightMode: 1,
-    DarkMode: 0.23,
+  LightMode: 1,
+  DarkMode: 0.23
 } as const;
 
 /**
@@ -19,4 +19,5 @@ export const StandardLuminance = {
  *
  * @public
  */
-export type StandardLuminance = typeof StandardLuminance[keyof typeof StandardLuminance];
+export type StandardLuminance =
+  (typeof StandardLuminance)[keyof typeof StandardLuminance];

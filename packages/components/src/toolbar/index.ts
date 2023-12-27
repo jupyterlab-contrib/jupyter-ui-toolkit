@@ -1,31 +1,31 @@
 import {
-    composedParent,
-    Toolbar as FoundationToolbar,
-    toolbarTemplate as template,
-} from "@microsoft/fast-foundation";
-import { Swatch } from "../color/swatch.js";
-import { fillColor, neutralFillLayerRecipe } from "../design-tokens.js";
-import { toolbarStyles as styles } from "./toolbar.styles.js";
+  composedParent,
+  Toolbar as FoundationToolbar,
+  toolbarTemplate as template
+} from '@microsoft/fast-foundation';
+import { Swatch } from '../color/swatch.js';
+import { fillColor, neutralFillLayerRecipe } from '../design-tokens.js';
+import { toolbarStyles as styles } from './toolbar.styles.js';
 
 /**
  * @internal
  */
 export class Toolbar extends FoundationToolbar {
-    connectedCallback() {
-        super.connectedCallback();
+  connectedCallback() {
+    super.connectedCallback();
 
-        const parent = composedParent(this);
+    const parent = composedParent(this);
 
-        if (parent) {
-            fillColor.setValueFor(
-                this,
-                (target: HTMLElement): Swatch =>
-                    neutralFillLayerRecipe
-                        .getValueFor(target)
-                        .evaluate(target, fillColor.getValueFor(parent))
-            );
-        }
+    if (parent) {
+      fillColor.setValueFor(
+        this,
+        (target: HTMLElement): Swatch =>
+          neutralFillLayerRecipe
+            .getValueFor(target)
+            .evaluate(target, fillColor.getValueFor(parent))
+      );
     }
+  }
 }
 
 /**
@@ -39,13 +39,13 @@ export class Toolbar extends FoundationToolbar {
  *
  */
 export const jpToolbar = Toolbar.compose({
-    baseName: 'toolbar',
-    baseClass: FoundationToolbar,
-    template,
-    styles,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+  baseName: 'toolbar',
+  baseClass: FoundationToolbar,
+  template,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true
+  }
 });
 
 export { styles as toolbarStyles };

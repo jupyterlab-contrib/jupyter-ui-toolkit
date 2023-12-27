@@ -1,29 +1,29 @@
-import { attr } from "@microsoft/fast-element";
+import { attr } from '@microsoft/fast-element';
 import {
-    TextArea as FoundationTextArea,
-    textAreaTemplate as template,
-} from "@microsoft/fast-foundation";
-import { textAreaStyles as styles } from "./text-area.styles.js";
+  TextArea as FoundationTextArea,
+  textAreaTemplate as template
+} from '@microsoft/fast-foundation';
+import { textAreaStyles as styles } from './text-area.styles.js';
 
 /**
  * Text area appearances
  * @public
  */
-export type TextAreaAppearance = "filled" | "outline";
+export type TextAreaAppearance = 'filled' | 'outline';
 
 /**
  * @internal
  */
 export class TextArea extends FoundationTextArea {
-    /**
-     * The appearance of the element.
-     *
-     * @public
-     * @remarks
-     * HTML Attribute: appearance
-     */
-    @attr
-    public appearance: TextAreaAppearance = "outline";
+  /**
+   * The appearance of the element.
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: appearance
+   */
+  @attr
+  public appearance: TextAreaAppearance = 'outline';
 }
 
 /**
@@ -38,13 +38,13 @@ export class TextArea extends FoundationTextArea {
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
 export const jpTextArea = TextArea.compose({
-    baseName: 'text-area',
-    baseClass: FoundationTextArea,
-    template,
-    styles,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+  baseName: 'text-area',
+  baseClass: FoundationTextArea,
+  template,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true
+  }
 });
 
 export { styles as textAreaStyles };

@@ -1,9 +1,9 @@
 import {
-    Slider,
-    SliderOptions,
-    sliderTemplate as template,
-} from "@microsoft/fast-foundation";
-import { sliderStyles as styles } from "./slider.styles.js";
+  Slider,
+  SliderOptions,
+  sliderTemplate as template
+} from '@microsoft/fast-foundation';
+import { sliderStyles as styles } from './slider.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Slider} registration for configuring the component with a DesignSystem.
@@ -15,12 +15,12 @@ import { sliderStyles as styles } from "./slider.styles.js";
  * Generates HTML Element: `<jp-slider>`
  */
 export const jpSlider = Slider.compose<SliderOptions>({
-    baseName: 'slider',
-    template,
-    styles,
-    thumb: /* html */ `
+  baseName: 'slider',
+  template,
+  styles,
+  thumb: /* html */ `
         <div class="thumb-cursor"></div>
-    `,
+    `
 });
 
 /**

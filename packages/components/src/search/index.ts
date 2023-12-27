@@ -1,29 +1,29 @@
-import { attr } from "@microsoft/fast-element";
+import { attr } from '@microsoft/fast-element';
 import {
-    Search as FoundationSearch,
-    searchTemplate as template,
-} from "@microsoft/fast-foundation";
-import { searchStyles as styles } from "./search.styles.js";
+  Search as FoundationSearch,
+  searchTemplate as template
+} from '@microsoft/fast-foundation';
+import { searchStyles as styles } from './search.styles.js';
 
 /**
  * Search appearances
  * @public
  */
-export type SearchAppearance = "filled" | "outline";
+export type SearchAppearance = 'filled' | 'outline';
 
 /**
  * @internal
  */
 export class Search extends FoundationSearch {
-    /**
-     * The appearance of the element.
-     *
-     * @public
-     * @remarks
-     * HTML Attribute: appearance
-     */
-    @attr
-    public appearance: SearchAppearance = "outline";
+  /**
+   * The appearance of the element.
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: appearance
+   */
+  @attr
+  public appearance: SearchAppearance = 'outline';
 }
 
 /**
@@ -38,13 +38,13 @@ export class Search extends FoundationSearch {
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
 export const jpSearch = Search.compose({
-    baseName: 'search',
-    baseClass: FoundationSearch,
-    template,
-    styles,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+  baseName: 'search',
+  baseClass: FoundationSearch,
+  template,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true
+  }
 });
 
 /**

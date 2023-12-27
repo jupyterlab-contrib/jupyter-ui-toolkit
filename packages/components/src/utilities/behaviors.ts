@@ -1,5 +1,5 @@
-import { ElementStyles } from "@microsoft/fast-element";
-import { PropertyStyleSheetBehavior } from "@microsoft/fast-foundation";
+import { ElementStyles } from '@microsoft/fast-element';
+import { PropertyStyleSheetBehavior } from '@microsoft/fast-foundation';
 
 /**
  * Behavior that will conditionally apply a stylesheet based on the elements
@@ -11,5 +11,5 @@ import { PropertyStyleSheetBehavior } from "@microsoft/fast-foundation";
  * @public
  */
 export function appearanceBehavior(value: string, styles: ElementStyles) {
-    return new PropertyStyleSheetBehavior("appearance", value, styles);
+  return new PropertyStyleSheetBehavior('appearance', value, styles);
 }

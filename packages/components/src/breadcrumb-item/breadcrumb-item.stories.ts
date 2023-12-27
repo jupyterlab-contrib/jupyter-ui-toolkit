@@ -18,7 +18,6 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args, context): string => {
-
   return `<jp-breadcrumb-item 
     ${args.href ? 'href="#"' : ''}
     >

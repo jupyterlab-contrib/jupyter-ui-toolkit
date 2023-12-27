@@ -1,9 +1,9 @@
 import {
-    Checkbox,
-    CheckboxOptions,
-    checkboxTemplate as template,
-} from "@microsoft/fast-foundation";
-import { checkboxStyles as styles } from "./checkbox.styles.js";
+  Checkbox,
+  CheckboxOptions,
+  checkboxTemplate as template
+} from '@microsoft/fast-foundation';
+import { checkboxStyles as styles } from './checkbox.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Checkbox} registration for configuring the component with a DesignSystem.
@@ -15,10 +15,10 @@ import { checkboxStyles as styles } from "./checkbox.styles.js";
  * Generates HTML Element: `<jp-checkbox>`
  */
 export const jpCheckbox = Checkbox.compose<CheckboxOptions>({
-    baseName: 'checkbox',
-    template,
-    styles,
-    checkedIndicator: /* html */ `
+  baseName: 'checkbox',
+  template,
+  styles,
+  checkedIndicator: /* html */ `
         <svg
             part="checked-indicator"
             class="checked-indicator"
@@ -32,9 +32,9 @@ export const jpCheckbox = Checkbox.compose<CheckboxOptions>({
             />
         </svg>
     `,
-    indeterminateIndicator: /* html */ `
+  indeterminateIndicator: /* html */ `
         <div part="indeterminate-indicator" class="indeterminate-indicator"></div>
-    `,
+    `
 });
 
 /**

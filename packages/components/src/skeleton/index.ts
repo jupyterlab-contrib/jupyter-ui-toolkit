@@ -1,5 +1,8 @@
-import { Skeleton, skeletonTemplate as template } from "@microsoft/fast-foundation";
-import { skeletonStyles as styles } from "./skeleton.styles.js";
+import {
+  Skeleton,
+  skeletonTemplate as template
+} from '@microsoft/fast-foundation';
+import { skeletonStyles as styles } from './skeleton.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Skeleton} registration for configuring the component with a DesignSystem.
@@ -11,9 +14,9 @@ import { skeletonStyles as styles } from "./skeleton.styles.js";
  * Generates HTML Element: `<jp-skeleton>`
  */
 export const jpSkeleton = Skeleton.compose({
-    baseName: "skeleton",
-    template,
-    styles,
+  baseName: 'skeleton',
+  template,
+  styles
 });
 
 /**

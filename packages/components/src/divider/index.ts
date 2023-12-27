@@ -1,5 +1,8 @@
-import { Divider, dividerTemplate as template } from "@microsoft/fast-foundation";
-import { dividerStyles as styles } from "./divider.styles.js";
+import {
+  Divider,
+  dividerTemplate as template
+} from '@microsoft/fast-foundation';
+import { dividerStyles as styles } from './divider.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Divider} registration for configuring the component with a DesignSystem.
@@ -11,9 +14,9 @@ import { dividerStyles as styles } from "./divider.styles.js";
  * Generates HTML Element: `<jp-divider>`
  */
 export const jpDivider = Divider.compose({
-    baseName: 'divider',
-    template,
-    styles
+  baseName: 'divider',
+  template,
+  styles
 });
 
 /**

@@ -1,5 +1,8 @@
-import { RadioGroup, radioGroupTemplate as template } from "@microsoft/fast-foundation";
-import { radioGroupStyles as styles } from "./radio-group.styles.js";
+import {
+  RadioGroup,
+  radioGroupTemplate as template
+} from '@microsoft/fast-foundation';
+import { radioGroupStyles as styles } from './radio-group.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#RadioGroup} registration for configuring the component with a DesignSystem.
@@ -11,9 +14,9 @@ import { radioGroupStyles as styles } from "./radio-group.styles.js";
  * Generates HTML Element: `<jp-radio-group>`
  */
 export const jpRadioGroup = RadioGroup.compose({
-    baseName: 'radio-group',
-    template,
-    styles,
+  baseName: 'radio-group',
+  template,
+  styles
 });
 
 /**

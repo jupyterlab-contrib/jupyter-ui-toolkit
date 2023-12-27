@@ -1,30 +1,30 @@
-import { ColorRGBA64, rgbToRelativeLuminance } from "@microsoft/fast-colors";
-import { contrast, RelativeLuminance } from "./utilities/relative-luminance.js";
+import { ColorRGBA64, rgbToRelativeLuminance } from '@microsoft/fast-colors';
+import { contrast, RelativeLuminance } from './utilities/relative-luminance.js';
 
 /**
  * Represents a color in a {@link Palette}
  * @public
  */
 export interface Swatch extends RelativeLuminance {
-    toColorString(): string;
-    contrast(target: RelativeLuminance): number;
+  toColorString(): string;
+  contrast(target: RelativeLuminance): number;
 }
 
 /** @public */
 export interface SwatchRGB extends Swatch {
-    r: number;
-    g: number;
-    b: number;
+  r: number;
+  g: number;
+  b: number;
 }
 
 /** @public */
 export const SwatchRGB = Object.freeze({
-    create(r: number, g: number, b: number): SwatchRGB {
-        return new SwatchRGBImpl(r, g, b);
-    },
-    from(obj: { r: number; g: number; b: number }): SwatchRGB {
-        return new SwatchRGBImpl(obj.r, obj.g, obj.b);
-    },
+  create(r: number, g: number, b: number): SwatchRGB {
+    return new SwatchRGBImpl(r, g, b);
+  },
+  from(obj: { r: number; g: number; b: number }): SwatchRGB {
+    return new SwatchRGBImpl(obj.r, obj.g, obj.b);
+  }
 });
 
 /**
@@ -32,47 +32,47 @@ export const SwatchRGB = Object.freeze({
  * @internal
  */
 export function isSwatchRGB(value: { [key: string]: any }): value is SwatchRGB {
-    const test = {
-        r: 0,
-        g: 0,
-        b: 0,
-        toColorString: () => "",
-        contrast: () => 0,
-        relativeLuminance: 0,
-    } satisfies SwatchRGB;
+  const test = {
+    r: 0,
+    g: 0,
+    b: 0,
+    toColorString: () => '',
+    contrast: () => 0,
+    relativeLuminance: 0
+  } satisfies SwatchRGB;
 
-    for (const key in test) {
-        // @ts-expect-error swatch has no index
-        if (typeof test[key] !== typeof value[key]) {
-            return false;
-        }
+  for (const key in test) {
+    // @ts-expect-error swatch has no index
+    if (typeof test[key] !== typeof value[key]) {
+      return false;
     }
+  }
 
-    return true;
+  return true;
 }
 /**
  * A RGB implementation of {@link Swatch}
  * @internal
  */
 class SwatchRGBImpl extends ColorRGBA64 implements Swatch {
-    readonly relativeLuminance: number;
+  readonly relativeLuminance: number;
 
-    /**
-     *
-     * @param red - Red channel expressed as a number between 0 and 1
-     * @param green - Green channel expressed as a number between 0 and 1
-     * @param blue - Blue channel expressed as a number between 0 and 1
-     */
-    constructor(red: number, green: number, blue: number) {
-        super(red, green, blue, 1);
-        this.relativeLuminance = rgbToRelativeLuminance(this);
-    }
+  /**
+   *
+   * @param red - Red channel expressed as a number between 0 and 1
+   * @param green - Green channel expressed as a number between 0 and 1
+   * @param blue - Blue channel expressed as a number between 0 and 1
+   */
+  constructor(red: number, green: number, blue: number) {
+    super(red, green, blue, 1);
+    this.relativeLuminance = rgbToRelativeLuminance(this);
+  }
 
-    public toColorString = this.toStringHexRGB;
-    public contrast = contrast.bind(null, this);
-    public createCSS = this.toColorString;
+  public toColorString = this.toStringHexRGB;
+  public contrast = contrast.bind(null, this);
+  public createCSS = this.toColorString;
 
-    static fromObject(obj: { r: number; g: number; b: number }) {
-        return new SwatchRGBImpl(obj.r, obj.g, obj.b);
-    }
+  static fromObject(obj: { r: number; g: number; b: number }) {
+    return new SwatchRGBImpl(obj.r, obj.g, obj.b);
+  }
 }

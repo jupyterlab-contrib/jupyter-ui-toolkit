@@ -2,9 +2,9 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-    AccordionItem,
-    AccordionItemOptions,
-    accordionItemTemplate as template
+  AccordionItem,
+  AccordionItemOptions,
+  accordionItemTemplate as template
 } from '@microsoft/fast-foundation';
 import { accordionItemStyles as styles } from './accordion-item.styles';
 
@@ -18,10 +18,10 @@ import { accordionItemStyles as styles } from './accordion-item.styles';
  * Generates HTML Element: `<jp-accordion-item>`
  */
 export const jpAccordionItem = AccordionItem.compose<AccordionItemOptions>({
-    baseName: 'accordion-item',
-    template,
-    styles,
-    collapsedIcon: /* html */ `
+  baseName: 'accordion-item',
+  template,
+  styles,
+  collapsedIcon: /* html */ `
         <svg
             width="20"
             height="20"
@@ -35,7 +35,7 @@ export const jpAccordionItem = AccordionItem.compose<AccordionItemOptions>({
             />
         </svg>
     `,
-    expandedIcon: /* html */ `
+  expandedIcon: /* html */ `
         <svg
             width="20"
             height="20"

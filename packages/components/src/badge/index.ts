@@ -1,5 +1,5 @@
-import { Badge, badgeTemplate as template } from "@microsoft/fast-foundation";
-import { badgeStyles as styles } from "./badge.styles.js";
+import { Badge, badgeTemplate as template } from '@microsoft/fast-foundation';
+import { badgeStyles as styles } from './badge.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Badge} registration for configuring the component with a DesignSystem.
@@ -11,9 +11,9 @@ import { badgeStyles as styles } from "./badge.styles.js";
  * Generates HTML Element: `<jp-badge>`
  */
 export const jpBadge = Badge.compose({
-    baseName: 'badge',
-    template,
-    styles
+  baseName: 'badge',
+  template,
+  styles
 });
 
 /**

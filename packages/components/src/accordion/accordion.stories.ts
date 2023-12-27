@@ -3,7 +3,7 @@
 import type { HtmlRenderer, Meta, StoryObj, StoryFn } from '@storybook/html';
 
 export default {
-    title: 'Components/Accordion',
+  title: 'Components/Accordion',
 
   parameters: {
     controls: {

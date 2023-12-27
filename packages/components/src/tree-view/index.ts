@@ -1,5 +1,8 @@
-import { treeViewTemplate as template, TreeView } from "@microsoft/fast-foundation";
-import { treeViewStyles as styles } from "./tree-view.styles.js";
+import {
+  treeViewTemplate as template,
+  TreeView
+} from '@microsoft/fast-foundation';
+import { treeViewStyles as styles } from './tree-view.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#TreeView} registration for configuring the component with a DesignSystem.
@@ -12,9 +15,9 @@ import { treeViewStyles as styles } from "./tree-view.styles.js";
  *
  */
 export const jpTreeView = TreeView.compose({
-    baseName: 'tree-view',
-    template,
-    styles
+  baseName: 'tree-view',
+  template,
+  styles
 });
 
 /**

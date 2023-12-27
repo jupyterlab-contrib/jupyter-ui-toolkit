@@ -22,21 +22,21 @@ import type { DataGrid, DataGridCell, DataGridRow } from './data-grid/index.js';
 import type { DateField } from './date-field/index.js';
 import type { DesignSystemProvider } from './design-system-provider/index.js';
 import type { Dialog } from './dialog/index.js';
-import type {Disclosure} from './disclosure/index.js'
+import type { Disclosure } from './disclosure/index.js';
 import type { Divider } from './divider/index.js';
 import type { Listbox } from './listbox/index.js';
 import type { Menu } from './menu/index.js';
 import type { MenuItem } from './menu-item/index.js';
 import type { NumberField } from './number-field/index.js';
 import type { Option } from './option/index.js';
-import type {Picker} from './picker/index.js'
+import type { Picker } from './picker/index.js';
 import type { Progress } from './progress/index.js';
 import type { ProgressRing } from './progress-ring/index.js';
 import type { Radio } from './radio/index.js';
 import type { RadioGroup } from './radio-group/index.js';
 import type { Search } from './search/index.js';
 import type { Select } from './select/index.js';
-import type {Skeleton} from './skeleton/index.js'
+import type { Skeleton } from './skeleton/index.js';
 import type { Slider } from './slider/index.js';
 import type { SliderLabel } from './slider-label/index.js';
 import type { Switch } from './switch/index.js';
@@ -66,9 +66,13 @@ import { jpButton } from './button/index.js';
 import { jpCard } from './card/index.js';
 import { jpCheckbox } from './checkbox/index.js';
 import { jpCombobox } from './combobox/index.js';
-import { jpDataGrid, jpDataGridCell, jpDataGridRow } from './data-grid/index.js';
+import {
+  jpDataGrid,
+  jpDataGridCell,
+  jpDataGridRow
+} from './data-grid/index.js';
 import { jpDateField } from './date-field/index.js';
-import {jpDesignSystemProvider} from './design-system-provider/index.js'
+import { jpDesignSystemProvider } from './design-system-provider/index.js';
 /**
  * Don't remove. This is needed to prevent api-extractor errors.
  */
@@ -81,14 +85,20 @@ import { jpMenu } from './menu/index.js';
 import { jpMenuItem } from './menu-item/index.js';
 import { jpNumberField } from './number-field/index.js';
 import { jpOption } from './option/index.js';
-import {jpPicker, jpPickerList, jpPickerListItem, jpPickerMenu, jpPickerMenuOption} from './picker/index.js'
+import {
+  jpPicker,
+  jpPickerList,
+  jpPickerListItem,
+  jpPickerMenu,
+  jpPickerMenuOption
+} from './picker/index.js';
 import { jpProgress } from './progress/index.js';
 import { jpProgressRing } from './progress-ring/index.js';
 import { jpRadio } from './radio/index.js';
 import { jpRadioGroup } from './radio-group/index.js';
 import { jpSearch } from './search/index.js';
 import { jpSelect } from './select/index.js';
-import { jpSkeleton } from './skeleton/index.js'
+import { jpSkeleton } from './skeleton/index.js';
 import { jpSlider } from './slider/index.js';
 import { jpSliderLabel } from './slider-label/index.js';
 import { jpSwitch } from './switch/index.js';

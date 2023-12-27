@@ -1,22 +1,22 @@
 import {
-    Menu as FoundationMenu,
-    menuTemplate as template,
-} from "@microsoft/fast-foundation";
-import { fillColor, neutralLayerFloating } from "../design-tokens.js";
-import { menuStyles as styles } from "./menu.styles.js";
+  Menu as FoundationMenu,
+  menuTemplate as template
+} from '@microsoft/fast-foundation';
+import { fillColor, neutralLayerFloating } from '../design-tokens.js';
+import { menuStyles as styles } from './menu.styles.js';
 
 /**
  * @public
  */
 export class Menu extends FoundationMenu {
-    /**
-     * @internal
-     */
-    public connectedCallback(): void {
-        super.connectedCallback();
+  /**
+   * @internal
+   */
+  public connectedCallback(): void {
+    super.connectedCallback();
 
-        fillColor.setValueFor(this, neutralLayerFloating);
-    }
+    fillColor.setValueFor(this, neutralLayerFloating);
+  }
 }
 
 /**
@@ -29,9 +29,9 @@ export class Menu extends FoundationMenu {
  * Generates HTML Element: `<jp-menu>`
  */
 export const jpMenu = Menu.compose({
-    baseName: 'menu',
-    template,
-    styles,
+  baseName: 'menu',
+  template,
+  styles
 });
 
 export { styles as menuStyles };

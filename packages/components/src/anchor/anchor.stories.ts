@@ -4,7 +4,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { getFaIcon } from '../utilities/storybook';
 
 export default {
-    title: 'Components/Anchor',
+  title: 'Components/Anchor',
   argTypes: {
     label: { control: 'text' },
     appearance: {

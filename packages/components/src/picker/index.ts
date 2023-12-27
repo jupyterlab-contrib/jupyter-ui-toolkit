@@ -1,22 +1,22 @@
 import {
-    FoundationElementDefinition,
-    PickerMenu as FoundationPickerMenu,
-    Picker,
-    PickerList,
-    PickerListItem,
-    pickerListItemTemplate,
-    pickerListTemplate,
-    PickerMenuOption,
-    pickerMenuOptionTemplate,
-    pickerMenuTemplate,
-    pickerTemplate,
-} from "@microsoft/fast-foundation";
-import { fillColor, neutralLayerFloating } from "../design-tokens.js";
-import { pickerStyles } from "./picker.styles.js";
-import { pickerMenuStyles } from "./picker-menu.styles.js";
-import { pickerMenuOptionStyles } from "./picker-menu-option.styles.js";
-import { pickerListStyles } from "./picker-list.styles.js";
-import { pickerListItemStyles } from "./picker-list-item.styles.js";
+  FoundationElementDefinition,
+  PickerMenu as FoundationPickerMenu,
+  Picker,
+  PickerList,
+  PickerListItem,
+  pickerListItemTemplate,
+  pickerListTemplate,
+  PickerMenuOption,
+  pickerMenuOptionTemplate,
+  pickerMenuTemplate,
+  pickerTemplate
+} from '@microsoft/fast-foundation';
+import { fillColor, neutralLayerFloating } from '../design-tokens.js';
+import { pickerStyles } from './picker.styles.js';
+import { pickerMenuStyles } from './picker-menu.styles.js';
+import { pickerMenuOptionStyles } from './picker-menu-option.styles.js';
+import { pickerListStyles } from './picker-list.styles.js';
+import { pickerListItemStyles } from './picker-list-item.styles.js';
 
 /**
  * The FAST  Picker Custom Element. Implements {@link @microsoft/fast-foundation#Picker},
@@ -28,10 +28,10 @@ import { pickerListItemStyles } from "./picker-list-item.styles.js";
  * * Generates HTML Element: `<jp-picker>`
  */
 export const jpPicker = Picker.compose({
-    baseName: "picker",
-    template: pickerTemplate,
-    styles: pickerStyles,
-    shadowOptions: {},
+  baseName: 'picker',
+  template: pickerTemplate,
+  styles: pickerStyles,
+  shadowOptions: {}
 });
 
 /**
@@ -44,14 +44,14 @@ export { Picker };
  * @public
  */
 export class PickerMenu extends FoundationPickerMenu {
-    /**
-     * @public
-     */
-    public connectedCallback(): void {
-        fillColor.setValueFor(this, neutralLayerFloating);
+  /**
+   * @public
+   */
+  public connectedCallback(): void {
+    fillColor.setValueFor(this, neutralLayerFloating);
 
-        super.connectedCallback();
-    }
+    super.connectedCallback();
+  }
 }
 
 /**
@@ -63,10 +63,10 @@ export class PickerMenu extends FoundationPickerMenu {
  * HTML Element: \<jp-picker-menu\>
  */
 export const jpPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
-    baseName: "picker-menu",
-    baseClass: FoundationPickerMenu,
-    template: pickerMenuTemplate,
-    styles: pickerMenuStyles,
+  baseName: 'picker-menu',
+  baseClass: FoundationPickerMenu,
+  template: pickerMenuTemplate,
+  styles: pickerMenuStyles
 });
 
 /**
@@ -78,9 +78,9 @@ export const jpPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
  * HTML Element: \<jp-picker-menu-option\>
  */
 export const jpPickerMenuOption = PickerMenuOption.compose({
-    baseName: "picker-menu-option",
-    template: pickerMenuOptionTemplate,
-    styles: pickerMenuOptionStyles,
+  baseName: 'picker-menu-option',
+  template: pickerMenuOptionTemplate,
+  styles: pickerMenuOptionStyles
 });
 
 /**
@@ -93,9 +93,9 @@ export const jpPickerMenuOption = PickerMenuOption.compose({
  *
  */
 export const jpPickerList = PickerList.compose({
-    baseName: "picker-list",
-    template: pickerListTemplate,
-    styles: pickerListStyles,
+  baseName: 'picker-list',
+  template: pickerListTemplate,
+  styles: pickerListStyles
 });
 
 /**
@@ -106,9 +106,14 @@ export const jpPickerList = PickerList.compose({
  * HTML Element: \<jp-picker-list-item\>
  */
 export const jpPickerListItem = PickerListItem.compose({
-    baseName: "picker-list-item",
-    template: pickerListItemTemplate,
-    styles: pickerListItemStyles,
+  baseName: 'picker-list-item',
+  template: pickerListItemTemplate,
+  styles: pickerListItemStyles
 });
 
-export { pickerStyles, pickerListItemStyles, pickerMenuOptionStyles, pickerMenuStyles };
+export {
+  pickerStyles,
+  pickerListItemStyles,
+  pickerMenuOptionStyles,
+  pickerMenuStyles
+};

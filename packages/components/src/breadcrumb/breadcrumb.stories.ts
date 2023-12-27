@@ -19,7 +19,6 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args, context): string => {
-
   return `<jp-breadcrumb>
     ${[1, 2, 3]
       .map(v =>

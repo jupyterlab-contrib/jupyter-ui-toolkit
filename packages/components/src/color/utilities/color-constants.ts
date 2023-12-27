@@ -1,5 +1,5 @@
-import { parseColorHexRGB } from "@microsoft/fast-colors";
-import { SwatchRGB } from "../swatch.js";
+import { parseColorHexRGB } from '@microsoft/fast-colors';
+import { SwatchRGB } from '../swatch.js';
 
 /**
  * @internal
@@ -14,17 +14,16 @@ export const black = SwatchRGB.create(0, 0, 0);
  * @internal
  */
 /* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */
-export const middleGrey = SwatchRGB.from(parseColorHexRGB("#808080")!);
+export const middleGrey = SwatchRGB.from(parseColorHexRGB('#808080')!);
 
 /**
  * @internal
  */
 /* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */
-export const accentBase = SwatchRGB.from(parseColorHexRGB("#DA1A5F")!);
+export const accentBase = SwatchRGB.from(parseColorHexRGB('#DA1A5F')!);
 
 /**
  * @internal
  */
 /* eslint-disable-next-line @typescript-eslint/no-non-null-assertion */
-export const errorBase = SwatchRGB.from(parseColorHexRGB('#D32F2F')!
-);
+export const errorBase = SwatchRGB.from(parseColorHexRGB('#D32F2F')!);

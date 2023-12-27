@@ -1,84 +1,84 @@
-import { attr } from "@microsoft/fast-element";
+import { attr } from '@microsoft/fast-element';
 import {
-    Disclosure as FoundationDisclosure,
-    disclosureTemplate as template,
-} from "@microsoft/fast-foundation";
-import { disclosureStyles as styles } from "./disclosure.styles.js";
+  Disclosure as FoundationDisclosure,
+  disclosureTemplate as template
+} from '@microsoft/fast-foundation';
+import { disclosureStyles as styles } from './disclosure.styles.js';
 /**
  * Types of anchor appearance.
  * @public
  */
-export type DisclosureAppearance = "accent" | "lightweight";
+export type DisclosureAppearance = 'accent' | 'lightweight';
 
 /**
  * @internal
  */
 export class Disclosure extends FoundationDisclosure {
-    /**
-     * Disclosure default height
-     */
-    private height: number = 0;
-    /**
-     * Disclosure height after it's expanded
-     */
-    private totalHeight: number = 0;
+  /**
+   * Disclosure default height
+   */
+  private height: number = 0;
+  /**
+   * Disclosure height after it's expanded
+   */
+  private totalHeight: number = 0;
 
-    public connectedCallback(): void {
-        super.connectedCallback();
-        if (!this.appearance) {
-            this.appearance = "accent";
-        }
+  public connectedCallback(): void {
+    super.connectedCallback();
+    if (!this.appearance) {
+      this.appearance = 'accent';
     }
+  }
 
-    /**
-     * The appearance the anchor should have.
-     *
-     * @public
-     * @remarks
-     * HTML Attribute: appearance
-     */
-    @attr
-    public appearance?: DisclosureAppearance;
-    public appearanceChanged(
-        oldValue: DisclosureAppearance,
-        newValue: DisclosureAppearance
-    ): void {
-        if (oldValue !== newValue) {
-            this.classList.add(newValue);
-            this.classList.remove(oldValue);
-        }
+  /**
+   * The appearance the anchor should have.
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: appearance
+   */
+  @attr
+  public appearance?: DisclosureAppearance;
+  public appearanceChanged(
+    oldValue: DisclosureAppearance,
+    newValue: DisclosureAppearance
+  ): void {
+    if (oldValue !== newValue) {
+      this.classList.add(newValue);
+      this.classList.remove(oldValue);
     }
+  }
 
-    /**
-     * Set disclosure height while transitioning
-     * @override
-     */
-    protected onToggle() {
-        super.onToggle();
-        this.details.style.setProperty("height", `${this.disclosureHeight}px`);
+  /**
+   * Set disclosure height while transitioning
+   * @override
+   */
+  protected onToggle() {
+    super.onToggle();
+    this.details.style.setProperty('height', `${this.disclosureHeight}px`);
+  }
+
+  /**
+   * Calculate disclosure height before and after expanded
+   * @override
+   */
+  protected setup() {
+    super.setup();
+
+    const getCurrentHeight = () => this.details.getBoundingClientRect().height;
+    this.show();
+    this.totalHeight = getCurrentHeight();
+    this.hide();
+    this.height = getCurrentHeight();
+
+    if (this.expanded) {
+      this.show();
     }
+  }
 
-    /**
-     * Calculate disclosure height before and after expanded
-     * @override
-     */
-    protected setup() {
-        super.setup();
-
-        const getCurrentHeight = () => this.details.getBoundingClientRect().height;
-        this.show();
-        this.totalHeight = getCurrentHeight();
-        this.hide();
-        this.height = getCurrentHeight();
-
-        if (this.expanded) {
-            this.show();
-        }
-    }
-
-    get disclosureHeight(): number {
-        return this.expanded ? this.totalHeight : this.height;
-    }
+  get disclosureHeight(): number {
+    return this.expanded ? this.totalHeight : this.height;
+  }
 }
 
 /**
@@ -92,10 +92,10 @@ export class Disclosure extends FoundationDisclosure {
  *
  */
 export const jpDisclosure = Disclosure.compose({
-    baseName: "disclosure",
-    baseClass: FoundationDisclosure,
-    template,
-    styles,
+  baseName: 'disclosure',
+  baseClass: FoundationDisclosure,
+  template,
+  styles
 });
 
 export { styles as disclosureStyles };

@@ -1,14 +1,14 @@
 import {
-    DataGrid,
-    DataGridCell,
-    dataGridCellTemplate,
-    DataGridRow,
-    dataGridRowTemplate,
-    dataGridTemplate,
-} from "@microsoft/fast-foundation";
-import { dataGridStyles } from "./data-grid.styles.js";
-import { dataGridRowStyles } from "./data-grid-row.styles.js";
-import { dataGridCellStyles } from "./data-grid-cell.styles.js";
+  DataGrid,
+  DataGridCell,
+  dataGridCellTemplate,
+  DataGridRow,
+  dataGridRowTemplate,
+  dataGridTemplate
+} from '@microsoft/fast-foundation';
+import { dataGridStyles } from './data-grid.styles.js';
+import { dataGridRowStyles } from './data-grid-row.styles.js';
+import { dataGridCellStyles } from './data-grid-cell.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#DataGridCell} registration for configuring the component with a DesignSystem.
@@ -18,9 +18,9 @@ import { dataGridCellStyles } from "./data-grid-cell.styles.js";
  * Generates HTML Element: `<jp-data-grid-cell>`
  */
 export const jpDataGridCell = DataGridCell.compose({
-    baseName: 'data-grid-cell',
-    template: dataGridCellTemplate,
-    styles: dataGridCellStyles,
+  baseName: 'data-grid-cell',
+  template: dataGridCellTemplate,
+  styles: dataGridCellStyles
 });
 
 /**
@@ -31,9 +31,9 @@ export const jpDataGridCell = DataGridCell.compose({
  * Generates HTML Element: `<jp-data-grid-row>`
  */
 export const jpDataGridRow = DataGridRow.compose({
-    baseName: 'data-grid-row',
-    template: dataGridRowTemplate,
-    styles: dataGridRowStyles,
+  baseName: 'data-grid-row',
+  template: dataGridRowTemplate,
+  styles: dataGridRowStyles
 });
 
 /**
@@ -44,9 +44,9 @@ export const jpDataGridRow = DataGridRow.compose({
  * Generates HTML Element: `<jp-data-grid>`
  */
 export const jpDataGrid = DataGrid.compose({
-    baseName: 'data-grid',
-    template: dataGridTemplate,
-    styles: dataGridStyles,
+  baseName: 'data-grid',
+  template: dataGridTemplate,
+  styles: dataGridStyles
 });
 
 /**

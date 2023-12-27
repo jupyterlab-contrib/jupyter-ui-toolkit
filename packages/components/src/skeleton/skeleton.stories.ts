@@ -1,31 +1,30 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/html";
+import { Meta, StoryFn, StoryObj } from '@storybook/html';
 
 export default {
-    title: "Components/Skeleton",
-    argTypes: {
-        shimmer: {
-            control: 'boolean'
-        }
-    },
-    parameters: {
-        controls: {expand: true },
-        actions: {disabled: true}
-    },
-    decorators: [
-        story => `<div style="display: block;">
+  title: 'Components/Skeleton',
+  argTypes: {
+    shimmer: {
+      control: 'boolean'
+    }
+  },
+  parameters: {
+    controls: { expand: true },
+    actions: { disabled: true }
+  },
+  decorators: [
+    story => `<div style="display: block;">
           ${story()}
         </div>`
-    ]
+  ]
 } as Meta;
 
 const Template: StoryFn = (args): string => {
+  const shimmer = args.shimmer ? 'shimmer' : '';
 
-    const shimmer = args.shimmer ? 'shimmer' : '';
+  // FIXME demonstrate pattern attribute
+  // pattern="https://static.fast.design/assets/skeleton-test-pattern.svg"
 
-    // FIXME demonstrate pattern attribute
-    // pattern="https://static.fast.design/assets/skeleton-test-pattern.svg"
-
-    /* FIXME demonstrate svg as child
+  /* FIXME demonstrate svg as child
     <svg
         style="position: absolute; left: 0; top: 0;"
         id="pattern"
@@ -45,7 +44,7 @@ const Template: StoryFn = (args): string => {
     </svg>
     */
 
-    return `
+  return `
 <jp-skeleton
     style="border-radius: 4px; width: 50px; height: 50px;"
     shape="circle"
@@ -77,10 +76,10 @@ const Template: StoryFn = (args): string => {
     shape="rect"
     ${shimmer}
 ></jp-skeleton>`;
-}
+};
 
-export const Default: StoryObj = {render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 
 Default.args = {
-    shimmer: false
-}
+  shimmer: false
+};

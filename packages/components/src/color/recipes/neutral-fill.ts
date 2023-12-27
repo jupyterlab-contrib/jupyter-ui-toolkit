@@ -1,6 +1,6 @@
-import { Palette } from "../palette.js";
-import { InteractiveSwatchSet } from "../recipe.js";
-import { Swatch } from "../swatch.js";
+import { Palette } from '../palette.js';
+import { InteractiveSwatchSet } from '../recipe.js';
+import { Swatch } from '../swatch.js';
 
 /**
  *
@@ -13,21 +13,21 @@ import { Swatch } from "../swatch.js";
  * @internal
  */
 export function neutralFill(
-    palette: Palette,
-    reference: Swatch,
-    restDelta: number,
-    hoverDelta: number,
-    activeDelta: number,
-    focusDelta: number
+  palette: Palette,
+  reference: Swatch,
+  restDelta: number,
+  hoverDelta: number,
+  activeDelta: number,
+  focusDelta: number
 ): InteractiveSwatchSet {
-    const referenceIndex = palette.closestIndexOf(reference);
-    const threshold = Math.max(restDelta, hoverDelta, activeDelta, focusDelta);
-    const direction = referenceIndex >= threshold ? -1 : 1;
+  const referenceIndex = palette.closestIndexOf(reference);
+  const threshold = Math.max(restDelta, hoverDelta, activeDelta, focusDelta);
+  const direction = referenceIndex >= threshold ? -1 : 1;
 
-    return {
-        rest: palette.get(referenceIndex + direction * restDelta),
-        hover: palette.get(referenceIndex + direction * hoverDelta),
-        active: palette.get(referenceIndex + direction * activeDelta),
-        focus: palette.get(referenceIndex + direction * focusDelta),
-    };
+  return {
+    rest: palette.get(referenceIndex + direction * restDelta),
+    hover: palette.get(referenceIndex + direction * hoverDelta),
+    active: palette.get(referenceIndex + direction * activeDelta),
+    focus: palette.get(referenceIndex + direction * focusDelta)
+  };
 }

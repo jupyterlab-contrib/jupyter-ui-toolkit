@@ -8,10 +8,7 @@ import {
   rgbToHSL
 } from '@microsoft/fast-colors';
 import { DesignToken } from '@microsoft/fast-foundation';
-import {
-  Swatch,
-  SwatchRGB
-} from '../../color/swatch.js';
+import { Swatch, SwatchRGB } from '../../color/swatch.js';
 import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js';
 import { isDark } from '../../color/utilities/is-dark.js';
 import {

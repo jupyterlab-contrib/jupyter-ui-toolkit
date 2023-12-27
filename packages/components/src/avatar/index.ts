@@ -1,10 +1,10 @@
-import { attr, html, when } from "@microsoft/fast-element";
+import { attr, html, when } from '@microsoft/fast-element';
 import {
-    AvatarOptions,
-    Avatar as FoundationAvatar,
-    avatarTemplate as template,
-} from "@microsoft/fast-foundation";
-import { avatarStyles as styles } from "./avatar.styles.js";
+  AvatarOptions,
+  Avatar as FoundationAvatar,
+  avatarTemplate as template
+} from '@microsoft/fast-foundation';
+import { avatarStyles as styles } from './avatar.styles.js';
 
 /**
  * The Jupyter Avatar Class
@@ -12,24 +12,24 @@ import { avatarStyles as styles } from "./avatar.styles.js";
  *
  */
 export class Avatar extends FoundationAvatar {
-    /**
-     * Indicates the Avatar should have an image source
-     *
-     * @public
-     * @remarks
-     * HTML Attribute: src
-     */
-    @attr({ attribute: "src" })
-    public imgSrc: string | undefined;
+  /**
+   * Indicates the Avatar should have an image source
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: src
+   */
+  @attr({ attribute: 'src' })
+  public imgSrc: string | undefined;
 
-    /**
-     * Indicates the Avatar should have alt text
-     *
-     * @public
-     * @remarks
-     * HTML Attribute: alt
-     */
-    @attr public alt: string | undefined;
+  /**
+   * Indicates the Avatar should have alt text
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: alt
+   */
+  @attr public alt: string | undefined;
 }
 
 /**
@@ -38,18 +38,18 @@ export class Avatar extends FoundationAvatar {
  *
  */
 export const imgTemplate = html<Avatar>`
-    ${when(
-        x => x.imgSrc,
-        html`
-            <img
-                src="${x => x.imgSrc}"
-                alt="${x => x.alt}"
-                slot="media"
-                class="media"
-                part="media"
-            />
-        `
-    )}
+  ${when(
+    x => x.imgSrc,
+    html`
+      <img
+        src="${x => x.imgSrc}"
+        alt="${x => x.alt}"
+        slot="media"
+        class="media"
+        part="media"
+      />
+    `
+  )}
 `;
 
 /**
@@ -62,14 +62,14 @@ export const imgTemplate = html<Avatar>`
  * Generates HTML Element: `<jp-avatar>`
  */
 export const jpAvatar = Avatar.compose<AvatarOptions>({
-    baseName: 'avatar',
-    baseClass: FoundationAvatar,
-    template,
-    styles,
-    media: imgTemplate,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+  baseName: 'avatar',
+  baseClass: FoundationAvatar,
+  template,
+  styles,
+  media: imgTemplate,
+  shadowOptions: {
+    delegatesFocus: true
+  }
 });
 
 export { styles as avatarStyles };

@@ -1,29 +1,29 @@
-import { attr } from "@microsoft/fast-element";
+import { attr } from '@microsoft/fast-element';
 import {
-    TextField as FoundationTextField,
-    textFieldTemplate as template,
-} from "@microsoft/fast-foundation";
-import { textFieldStyles as styles } from "./text-field.styles.js";
+  TextField as FoundationTextField,
+  textFieldTemplate as template
+} from '@microsoft/fast-foundation';
+import { textFieldStyles as styles } from './text-field.styles.js';
 
 /**
  * Text field appearances
  * @public
  */
-export type TextFieldAppearance = "filled" | "outline";
+export type TextFieldAppearance = 'filled' | 'outline';
 
 /**
  * @internal
  */
 export class TextField extends FoundationTextField {
-    /**
-     * The appearance of the element.
-     *
-     * @public
-     * @remarks
-     * HTML Attribute: appearance
-     */
-    @attr
-    public appearance: TextFieldAppearance = "outline";
+  /**
+   * The appearance of the element.
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: appearance
+   */
+  @attr
+  public appearance: TextFieldAppearance = 'outline';
 }
 
 /**
@@ -38,13 +38,13 @@ export class TextField extends FoundationTextField {
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
 export const jpTextField = TextField.compose({
-    baseName: 'text-field',
-    baseClass: FoundationTextField,
-    template,
-    styles,
-    shadowOptions: {
-        delegatesFocus: true,
-    },
+  baseName: 'text-field',
+  baseClass: FoundationTextField,
+  template,
+  styles,
+  shadowOptions: {
+    delegatesFocus: true
+  }
 });
 
 export { styles as textFieldStyles };

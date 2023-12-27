@@ -1,4 +1,4 @@
-import { Swatch } from "../swatch.js";
+import { Swatch } from '../swatch.js';
 
 /*
  * A color is in "dark" if there is more contrast between #000000 and a reference
@@ -16,5 +16,5 @@ const target = (-0.1 + Math.sqrt(0.21)) / 2;
  * @public
  */
 export function isDark(color: Swatch): boolean {
-    return color.relativeLuminance <= target;
+  return color.relativeLuminance <= target;
 }

@@ -1,34 +1,34 @@
-import { css, ElementStyles } from "@microsoft/fast-element";
+import { css, ElementStyles } from '@microsoft/fast-element';
 import {
-    forcedColorsStylesheetBehavior,
-    FoundationElementTemplate,
-} from "@microsoft/fast-foundation";
-import { SystemColors } from "@microsoft/fast-web-utilities";
+  forcedColorsStylesheetBehavior,
+  FoundationElementTemplate
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
-    accentFillActive,
-    accentFillRest,
-    bodyFont,
-    controlCornerRadius,
-    designUnit,
-    focusStrokeOuter,
-    neutralFillInputHover,
-    neutralFillInputRest,
-    neutralForegroundRest,
-    strokeWidth,
-    typeRampBaseFontSize,
-    typeRampBaseLineHeight,
-} from "../design-tokens.js";
-import { heightNumber } from "../styles/index.js";
+  accentFillActive,
+  accentFillRest,
+  bodyFont,
+  controlCornerRadius,
+  designUnit,
+  focusStrokeOuter,
+  neutralFillInputHover,
+  neutralFillInputRest,
+  neutralForegroundRest,
+  strokeWidth,
+  typeRampBaseFontSize,
+  typeRampBaseLineHeight
+} from '../design-tokens.js';
+import { heightNumber } from '../styles/index.js';
 
 /**
  * Styles for Picker list
  * @public
  */
 export const pickerListStyles: FoundationElementTemplate<ElementStyles> = (
-    context,
-    definition
+  context,
+  definition
 ) =>
-    css`
+  css`
         :host {
             display: flex;
             flex-direction: row;
@@ -64,19 +64,17 @@ export const pickerListStyles: FoundationElementTemplate<ElementStyles> = (
             box-shadow: 0 0 0 1px ${focusStrokeOuter} inset;
         }
     `.withBehaviors(
-        forcedColorsStylesheetBehavior(
-            css`
-                ::slotted([role="combobox"]:active) {
-                    background: ${SystemColors.Field};
-                    border-color: ${SystemColors.Highlight};
-                }
-                ::slotted([role="combobox"]:focus-within) {
-                    border-color: ${SystemColors.Highlight};
-                    box-shadow: 0 0 0 1px ${SystemColors.Highlight} inset;
-                }
-                ::slotted(input:placeholder) {
-                    color: ${SystemColors.GrayText};
-                }
-            `
-        )
-    );
+    forcedColorsStylesheetBehavior(css`
+      ::slotted([role='combobox']:active) {
+        background: ${SystemColors.Field};
+        border-color: ${SystemColors.Highlight};
+      }
+      ::slotted([role='combobox']:focus-within) {
+        border-color: ${SystemColors.Highlight};
+        box-shadow: 0 0 0 1px ${SystemColors.Highlight} inset;
+      }
+      ::slotted(input:placeholder) {
+        color: ${SystemColors.GrayText};
+      }
+    `)
+  );

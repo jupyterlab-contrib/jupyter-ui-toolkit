@@ -1,16 +1,16 @@
-import { css, ElementStyles } from "@microsoft/fast-element";
-import { FoundationElementTemplate } from "@microsoft/fast-foundation";
+import { css, ElementStyles } from '@microsoft/fast-element';
+import { FoundationElementTemplate } from '@microsoft/fast-foundation';
 
 /**
  * Styles for AnchoredRegion
  * @public
  */
 export const anchoredRegionStyles: FoundationElementTemplate<ElementStyles> = (
-    context,
-    definition
+  context,
+  definition
 ) => css`
-    :host {
-        contain: layout;
-        display: block;
-    }
+  :host {
+    contain: layout;
+    display: block;
+  }
 `;

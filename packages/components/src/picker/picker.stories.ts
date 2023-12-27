@@ -1,26 +1,25 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/html";
+import { Meta, StoryFn, StoryObj } from '@storybook/html';
 
 export default {
-    title: "Components/Picker",
-    parameters: {
-        controls: {expanded:true}
-    },
-    argsType: {
-        defaultSelection: { control: 'text' },
-        selection: {control: 'text'},
-        options: { control: 'text' },
-        noSuggestionsText: {control: 'text'},
-        suggestionsAvailableText: {control: 'text'},
-        label: {control: 'text'},
-        placeholder: {control: 'text'},
-        maxSelected: {control: 'range', min: 0, max: 20, step: 1},
-        // menuPlacement: {control: 'select', options: ['tallest', 'tallest-fill', 'top-fill']}
-        // loadingText: {control: 'text'}
-    }
+  title: 'Components/Picker',
+  parameters: {
+    controls: { expanded: true }
+  },
+  argsType: {
+    defaultSelection: { control: 'text' },
+    selection: { control: 'text' },
+    options: { control: 'text' },
+    noSuggestionsText: { control: 'text' },
+    suggestionsAvailableText: { control: 'text' },
+    label: { control: 'text' },
+    placeholder: { control: 'text' },
+    maxSelected: { control: 'range', min: 0, max: 20, step: 1 }
+    // menuPlacement: {control: 'select', options: ['tallest', 'tallest-fill', 'top-fill']}
+    // loadingText: {control: 'text'}
+  }
 } as Meta;
 
 const Template: StoryFn = (args): string => {
-
   const max = args.maxSelected ? `max-selected="${args.maxSelected}"` : '';
 
   return `
@@ -38,15 +37,15 @@ const Template: StoryFn = (args): string => {
   `;
 };
 
-export const Default: StoryObj = { render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 
 Default.args = {
-    defaultSelection: '',
-    selection: '',
-    options: "apples,oranges,bananas,pears,pineapples,strawberries",
-    noSuggestionsText: '',
-    suggestionsAvailableText: '',
-    label: '',
-    placeholder: '',
-    maxSelected: 0
-}
+  defaultSelection: '',
+  selection: '',
+  options: 'apples,oranges,bananas,pears,pineapples,strawberries',
+  noSuggestionsText: '',
+  suggestionsAvailableText: '',
+  label: '',
+  placeholder: '',
+  maxSelected: 0
+};

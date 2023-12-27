@@ -1,24 +1,26 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/html";
+import { Meta, StoryFn, StoryObj } from '@storybook/html';
 
 export default {
-    title: "Components/Disclosure",
-    argTypes: {
-        expanded: {control: 'boolean', defaultValue: false},
-        appearance: {
-            control: 'radio',
-            options: ['accent', 'lightweight'],
-        },
-        title: {control: 'text'},
-        startIcon: { control: 'boolean' },
-        endIcon: { control: 'boolean' },
-    }
+  title: 'Components/Disclosure',
+  argTypes: {
+    expanded: { control: 'boolean', defaultValue: false },
+    appearance: {
+      control: 'radio',
+      options: ['accent', 'lightweight']
+    },
+    title: { control: 'text' },
+    startIcon: { control: 'boolean' },
+    endIcon: { control: 'boolean' }
+  }
 } as Meta;
 
 const Template: StoryFn = (args, context): string => {
   const expanded = args.expanded ? 'expanded' : '';
 
   return `
-<jp-disclosure title="${args.title}" appearance="${args.appearance}" ${expanded}>
+<jp-disclosure title="${args.title}" appearance="${
+    args.appearance
+  }" ${expanded}>
 ${args.startIcon ? '<span slot="start">⚡️</span>' : ''}
 ${args.endIcon ? '<span slot="end">⚡️</span>' : ''}
 <div>
@@ -32,12 +34,12 @@ ${args.endIcon ? '<span slot="end">⚡️</span>' : ''}
 `;
 };
 
-export const Default: StoryObj = { render: Template.bind({})};
+export const Default: StoryObj = { render: Template.bind({}) };
 
 Default.args = {
-    title: "More about Flash",
-    appearance: 'accent',
-    expanded: false,
-    startIcon: false,
-    endIcon: false
-}
+  title: 'More about Flash',
+  appearance: 'accent',
+  expanded: false,
+  startIcon: false,
+  endIcon: false
+};

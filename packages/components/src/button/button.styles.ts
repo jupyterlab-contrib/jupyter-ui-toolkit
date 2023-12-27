@@ -7,7 +7,7 @@ import {
   ButtonOptions,
   disabledCursor,
   ElementDefinitionContext,
-  forcedColorsStylesheetBehavior,
+  forcedColorsStylesheetBehavior
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
@@ -15,11 +15,17 @@ import {
   accentForegroundRest,
   disabledOpacity,
   errorFillRest,
-  neutralFillRest,
+  neutralFillRest
 } from '../design-tokens.js';
-import { AccentButtonStyles, BaseButtonStyles, ErrorButtonStyles, LightweightButtonStyles, OutlineButtonStyles, StealthButtonStyles } from '../styles/patterns/button.js'
+import {
+  AccentButtonStyles,
+  BaseButtonStyles,
+  ErrorButtonStyles,
+  LightweightButtonStyles,
+  OutlineButtonStyles,
+  StealthButtonStyles
+} from '../styles/patterns/button.js';
 import { appearanceBehavior } from '../utilities/behaviors.js';
-
 
 /**
  * Styles for Button

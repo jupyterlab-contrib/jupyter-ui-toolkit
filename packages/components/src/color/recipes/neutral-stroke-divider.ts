@@ -1,6 +1,6 @@
-import { Swatch } from "../swatch.js";
-import { Palette } from "../palette.js";
-import { directionByIsDark } from "../utilities/direction-by-is-dark.js";
+import { Swatch } from '../swatch.js';
+import { Palette } from '../palette.js';
+import { directionByIsDark } from '../utilities/direction-by-is-dark.js';
 
 /**
  * The neutralStrokeDivider color recipe
@@ -11,11 +11,11 @@ import { directionByIsDark } from "../utilities/direction-by-is-dark.js";
  * @internal
  */
 export function neutralStrokeDivider(
-    palette: Palette,
-    reference: Swatch,
-    delta: number
+  palette: Palette,
+  reference: Swatch,
+  delta: number
 ): Swatch {
-    return palette.get(
-        palette.closestIndexOf(reference) + directionByIsDark(reference) * delta
-    );
+  return palette.get(
+    palette.closestIndexOf(reference) + directionByIsDark(reference) * delta
+  );
 }

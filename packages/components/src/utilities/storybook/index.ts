@@ -6,9 +6,9 @@ import * as icons from '@fortawesome/free-solid-svg-icons';
 import { parseColor } from '@microsoft/fast-colors';
 import { SwatchRGB } from '../../color/swatch.js';
 import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js';
-import { isDark } from '../../color/utilities/is-dark.js'
+import { isDark } from '../../color/utilities/is-dark.js';
 import { StoryContext } from '@storybook/html';
-import {DesignSystemProvider} from '../../design-system-provider/index.js';
+import { DesignSystemProvider } from '../../design-system-provider/index.js';
 
 /**
  * Generate the SVG for a fontawesome icon
@@ -40,7 +40,7 @@ export function getFaIcon(iconName: string, slotName: string | null): string {
  * @returns Wrapped story
  */
 export function withTheme(story: any, context: StoryContext): HTMLElement {
-  const theme = new DesignSystemProvider()
+  const theme = new DesignSystemProvider();
   theme.accentColor = context.globals.accent ?? '#DA1A5F';
 
   const background = context.globals.backgrounds?.value ?? '#252526';
@@ -49,12 +49,15 @@ export function withTheme(story: any, context: StoryContext): HTMLElement {
   const dark = isDark(
     SwatchRGB.create(parsedBackground.r, parsedBackground.g, parsedBackground.b)
   );
-  theme.baseLayerLuminance = dark ? StandardLuminance.DarkMode : StandardLuminance.LightMode
+  theme.baseLayerLuminance = dark
+    ? StandardLuminance.DarkMode
+    : StandardLuminance.LightMode;
 
-  const children = story(context)
-  if(typeof children === 'string') {
-    theme.insertAdjacentHTML('afterbegin', children)
+  const children = story(context);
+  if (typeof children === 'string') {
+    theme.insertAdjacentHTML('afterbegin', children);
   } else {
-  theme.appendChild(children)}
+    theme.appendChild(children);
+  }
   return theme;
 }

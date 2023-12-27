@@ -4,8 +4,8 @@
 
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
-        FoundationElementTemplate,
-    TextFieldOptions
+  FoundationElementTemplate,
+  TextFieldOptions
 } from '@microsoft/fast-foundation';
 import { BaseFieldStyles } from '../styles/index';
 
@@ -14,13 +14,13 @@ import { BaseFieldStyles } from '../styles/index';
  * @public
  */
 export const textFieldStyles: FoundationElementTemplate<
-    ElementStyles,
-    TextFieldOptions
+  ElementStyles,
+  TextFieldOptions
 > = (context, definition) => css`
-    ${BaseFieldStyles}
+  ${BaseFieldStyles}
 
-    .start,
+  .start,
     .end {
-        display: flex;
-        }
+    display: flex;
+  }
 `;

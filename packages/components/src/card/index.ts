@@ -1,31 +1,31 @@
 import {
-    composedParent,
-    Card as FoundationCard,
-    cardTemplate as template,
-} from "@microsoft/fast-foundation";
-import { Swatch } from "../color/swatch.js";
-import { fillColor, neutralFillLayerRecipe } from "../design-tokens.js";
-import { cardStyles as styles } from "./card.styles.js";
+  composedParent,
+  Card as FoundationCard,
+  cardTemplate as template
+} from '@microsoft/fast-foundation';
+import { Swatch } from '../color/swatch.js';
+import { fillColor, neutralFillLayerRecipe } from '../design-tokens.js';
+import { cardStyles as styles } from './card.styles.js';
 
 /**
  * @internal
  */
 export class Card extends FoundationCard {
-    connectedCallback() {
-        super.connectedCallback();
+  connectedCallback() {
+    super.connectedCallback();
 
-        const parent = composedParent(this);
+    const parent = composedParent(this);
 
-        if (parent) {
-            fillColor.setValueFor(
-                this,
-                (target: HTMLElement): Swatch =>
-                    neutralFillLayerRecipe
-                        .getValueFor(target)
-                        .evaluate(target, fillColor.getValueFor(parent))
-            );
-        }
+    if (parent) {
+      fillColor.setValueFor(
+        this,
+        (target: HTMLElement): Swatch =>
+          neutralFillLayerRecipe
+            .getValueFor(target)
+            .evaluate(target, fillColor.getValueFor(parent))
+      );
     }
+  }
 }
 
 /**
@@ -38,10 +38,10 @@ export class Card extends FoundationCard {
  * Generates HTML Element: `<jp-card>`
  */
 export const jpCard = Card.compose({
-    baseName: 'card',
-    baseClass: FoundationCard,
-    template,
-    styles,
+  baseName: 'card',
+  baseClass: FoundationCard,
+  template,
+  styles
 });
 
 export { styles as cardStyles };

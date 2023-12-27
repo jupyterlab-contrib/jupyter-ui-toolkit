@@ -1,57 +1,57 @@
-import type { ElementStyles } from "@microsoft/fast-element";
-import { css } from "@microsoft/fast-element";
+import type { ElementStyles } from '@microsoft/fast-element';
+import { css } from '@microsoft/fast-element';
 import type {
-    FoundationElementTemplate,
-    SelectOptions,
-} from "@microsoft/fast-foundation";
+  FoundationElementTemplate,
+  SelectOptions
+} from '@microsoft/fast-foundation';
 import {
-    disabledCursor,
-    display,
-    focusVisible,
-    forcedColorsStylesheetBehavior,
-    ListboxOption,
-    Select,
-} from "@microsoft/fast-foundation";
-import { SystemColors } from "@microsoft/fast-web-utilities";
+  disabledCursor,
+  display,
+  focusVisible,
+  forcedColorsStylesheetBehavior,
+  ListboxOption,
+  Select
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
-    accentFillActive,
-    accentFillFocus,
-    bodyFont,
-    controlCornerRadius,
-    designUnit,
-    disabledOpacity,
-    focusStrokeWidth,
-    foregroundOnAccentFocus,
-    neutralFillInputActive,
-    neutralFillInputHover,
-    neutralFillInputRest,
-    neutralFillStealthRest,
-    neutralFillStrongHover,
-    neutralFillStrongRest,
-    neutralForegroundRest,
-    strokeWidth,
-    typeRampBaseFontSize,
-    typeRampBaseLineHeight,
-} from "../design-tokens.js";
-import { listboxStyles } from "../listbox/listbox.styles.js";
-import { elevation } from "../styles/elevation.js";
-import { heightNumber } from "../styles/size.js";
+  accentFillActive,
+  accentFillFocus,
+  bodyFont,
+  controlCornerRadius,
+  designUnit,
+  disabledOpacity,
+  focusStrokeWidth,
+  foregroundOnAccentFocus,
+  neutralFillInputActive,
+  neutralFillInputHover,
+  neutralFillInputRest,
+  neutralFillStealthRest,
+  neutralFillStrongHover,
+  neutralFillStrongRest,
+  neutralForegroundRest,
+  strokeWidth,
+  typeRampBaseFontSize,
+  typeRampBaseLineHeight
+} from '../design-tokens.js';
+import { listboxStyles } from '../listbox/listbox.styles.js';
+import { elevation } from '../styles/elevation.js';
+import { heightNumber } from '../styles/size.js';
 
 /**
  * Styles for Select.
  *
  * @public
  */
-export const selectStyles: FoundationElementTemplate<ElementStyles, SelectOptions> = (
-    context,
-    definition
-) => {
-    const selectContext = context.name === context.tagFor(Select);
+export const selectStyles: FoundationElementTemplate<
+  ElementStyles,
+  SelectOptions
+> = (context, definition) => {
+  const selectContext = context.name === context.tagFor(Select);
 
-    // The expression interpolations present in this block cause Prettier to generate
-    // various formatting bugs.
-    // prettier-ignore
-    return css`
+  // The expression interpolations present in this block cause Prettier to generate
+  // various formatting bugs.
+  // prettier-ignore
+  return css`
         ${display("inline-flex")}
 
         :host {
