@@ -1,27 +1,4 @@
 import { Meta, StoryFn, StoryObj } from "@storybook/html";
-import { setTheme } from "../utilities/storybook";
-
-// const optionContentsTemplate: ViewTemplate = html`
-//     <div class="div-blue">
-//         ${x => x.value}
-//     </div>
-// `;
-
-// const itemContentsTemplate: ViewTemplate = html`
-//     <div class="div-purple">
-//         ${x => x.value}
-//     </div>
-// `;
-
-// addons.getChannel().addListener(STORY_RENDERED, (name: string) => {
-//     if (name.toLowerCase().startsWith("picker")) {
-//         const customTemplatePicker = document.getElementById(
-//             "customtemplatepicker"
-//         ) as Picker;
-//         customTemplatePicker.menuOptionContentsTemplate = optionContentsTemplate;
-//         customTemplatePicker.listItemContentsTemplate = itemContentsTemplate;
-//     }
-// });
 
 export default {
     title: "Components/Picker",
@@ -42,12 +19,7 @@ export default {
     }
 } as Meta;
 
-const Template: StoryFn = (args, context): string => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args): string => {
 
   const max = args.maxSelected ? `max-selected="${args.maxSelected}"` : '';
 

@@ -2,7 +2,6 @@
 // Distributed under the terms of the Modified BSD License.
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
-import { setTheme } from '../utilities/storybook';
 
 export default {
   title: 'Components/Dialog',
@@ -33,13 +32,7 @@ export default {
   ]
 } as Meta;
 
-const Template: StoryFn = (args, context): string => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
-
+const Template: StoryFn = (args): string => {
   return `<jp-dialog trap-focus="${args.trapFocus}">
     <div>
       <h2>Dialog heading</h2>

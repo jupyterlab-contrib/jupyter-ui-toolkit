@@ -1,5 +1,4 @@
 import { Meta, StoryFn, StoryObj } from "@storybook/html";
-import { setTheme } from "../utilities/storybook/index.js";
 
 export default {
     title: "Components/Disclosure",
@@ -16,12 +15,6 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args, context): string => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
-
   const expanded = args.expanded ? 'expanded' : '';
 
   return `

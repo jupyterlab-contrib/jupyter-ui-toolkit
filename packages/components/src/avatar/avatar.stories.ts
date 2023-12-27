@@ -1,7 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
-import { setTheme } from '../utilities/storybook';
 
 export default {
   title: 'Components/Avatar',
@@ -34,12 +33,6 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args, context): string => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
-
   return `<jp-avatar
     alt="John's avatar"
     link="#"

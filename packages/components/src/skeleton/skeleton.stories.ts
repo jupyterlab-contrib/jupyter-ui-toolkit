@@ -1,5 +1,4 @@
 import { Meta, StoryFn, StoryObj } from "@storybook/html";
-import { setTheme } from "../utilities/storybook";
 
 export default {
     title: "Components/Skeleton",
@@ -19,12 +18,7 @@ export default {
     ]
 } as Meta;
 
-const Template: StoryFn = (args, context): string => {
-    const {
-      globals: { backgrounds, accent },
-      parameters
-    } = context;
-    setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args): string => {
 
     const shimmer = args.shimmer ? 'shimmer' : '';
 

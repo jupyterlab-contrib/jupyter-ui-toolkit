@@ -2,7 +2,6 @@
 // Distributed under the terms of the Modified BSD License.
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
-import { setTheme } from '../utilities/storybook';
 
 export default {
   title: 'Components/Progress',
@@ -25,12 +24,7 @@ export default {
   ]
 } as Meta;
 
-const Template: StoryFn = (args, context): string => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args): string => {
   return `<jp-progress
     ${typeof args.min === 'number' ? `min="${args.min}"` : ''}
     ${typeof args.max === 'number' ? `max="${args.max}"` : ''}

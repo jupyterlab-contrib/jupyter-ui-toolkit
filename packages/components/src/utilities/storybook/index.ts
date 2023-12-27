@@ -4,11 +4,11 @@
 import { icon, library } from '@fortawesome/fontawesome-svg-core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
 import { parseColor } from '@microsoft/fast-colors';
-import { PaletteRGB } from '../../color/palette.js';
 import { SwatchRGB } from '../../color/swatch.js';
 import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js';
 import { isDark } from '../../color/utilities/is-dark.js'
-import { accentPalette, baseLayerLuminance } from '../../design-tokens';
+import { Story, StoryContext } from '@storybook/html';
+import {DesignSystemProvider} from '../../design-system-provider/index.js';
 
 /**
  * Generate the SVG for a fontawesome icon
@@ -33,43 +33,28 @@ export function getFaIcon(iconName: string, slotName: string | null): string {
 }
 
 /**
- * Set the theme based on the chosen accent color and the background color
+ * Wrap the story within a theme provider.
  *
- * @param accent Global accent parameter
- * @param parameters Storybook parameters
- * @param backgrounds Storybook current background object
+ * @param story Story
+ * @param context Story context
+ * @returns Wrapped story
  */
-export function setTheme(
-  accent: string,
-  parameters: { default: string; values?: { name: string; value: string }[] },
-  backgrounds?: { value?: string }
-): void {
-  backgrounds = backgrounds ?? {};
-  const backgroundColor =
-    backgrounds.value ??
-    parameters.values?.filter(v => v.name === parameters.default)[0].value ??
-    '#252526';
-  const parsedColor = parseColor(backgroundColor)!;
+export function withTheme(story: any, context: StoryContext): HTMLElement {
+  const theme = new DesignSystemProvider()
+  theme.accentColor = context.globals.accent ?? '#DA1A5F';
 
+  const background = context.globals.backgrounds?.value ?? '#252526';
+  theme.fillColor = background;
+  const parsedBackground = parseColor(background)!;
   const dark = isDark(
-    SwatchRGB.create(parsedColor.r, parsedColor.g, parsedColor.b)
+    SwatchRGB.create(parsedBackground.r, parsedBackground.g, parsedBackground.b)
   );
-  baseLayerLuminance.setValueFor(
-    document.body,
-    dark ? StandardLuminance.DarkMode : StandardLuminance.LightMode
-  );
-  const parsedAccentColor = parseColor(accent ?? '#DA1A5F');
+  theme.baseLayerLuminance = dark ? StandardLuminance.DarkMode : StandardLuminance.LightMode
 
-  if (parsedAccentColor) {
-    accentPalette.setValueFor(
-      document.body,
-      PaletteRGB.from(
-        SwatchRGB.create(
-          parsedAccentColor.r,
-          parsedAccentColor.g,
-          parsedAccentColor.b
-        )
-      )
-    );
-  }
+  const children = story(context)
+  if(typeof children === 'string') {
+    theme.insertAdjacentHTML('afterbegin', children)
+  } else {
+  theme.appendChild(children)}
+  return theme;
 }

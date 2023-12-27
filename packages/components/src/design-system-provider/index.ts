@@ -17,6 +17,7 @@ import {
     FoundationElementDefinition,
 } from "@microsoft/fast-foundation";
 import { Direction, SystemColors } from "@microsoft/fast-web-utilities";
+import { Palette } from "../color/palette.js";
 import { Swatch, SwatchRGB } from "../color/swatch.js";
 import {
     accentColor,
@@ -28,6 +29,7 @@ import {
     accentForegroundFocusDelta,
     accentForegroundHoverDelta,
     accentForegroundRestDelta,
+    accentPalette,
     baseHeightMultiplier,
     baseHorizontalSpacingMultiplier,
     baseLayerLuminance,
@@ -56,6 +58,7 @@ import {
     neutralFillStrongFocusDelta,
     neutralFillStrongHoverDelta,
     neutralForegroundRest,
+    neutralPalette,
     neutralStrokeActiveDelta,
     neutralStrokeDividerRestDelta,
     neutralStrokeFocusDelta,
@@ -213,6 +216,28 @@ export class DesignSystemProvider extends FoundationElement {
     })
     @designToken(neutralColor)
     public neutralColor?: Swatch;
+
+    // /**
+    //  * Defines the palette that all neutral color recipes are derived from.
+    //  * This is an array for hexadecimal color strings ordered from light to dark.
+    //  *
+    //  * @remarks
+    //  * HTML attribute: N/A
+    //  */
+    // // @observable
+    // @designToken(neutralPalette)
+    // public neutralPalette: Palette;
+
+    // /**
+    //  * Defines the palette that all accent color recipes are derived from.
+    //  * This is an array for hexadecimal color strings ordered from light to dark.
+    //  *
+    //  * @remarks
+    //  * HTML attribute: N/A
+    //  */
+    // // @observable
+    // @designToken(accentPalette)
+    // public accentPalette: Palette;
 
     /**
      *

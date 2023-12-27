@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
-import { getFaIcon, setTheme } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook';
 
 export default {
   title: 'Components/Breadcrumb',
@@ -19,11 +19,6 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args, context): string => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
 
   return `<jp-breadcrumb>
     ${[1, 2, 3]
