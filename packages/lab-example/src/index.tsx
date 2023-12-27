@@ -15,6 +15,7 @@ import {
   Combobox,
   DataGrid,
   DateField,
+  Disclosure,
   Divider,
   Listbox,
   Menu,
@@ -27,6 +28,7 @@ import {
   RadioGroup,
   Search,
   Select,
+  Skeleton,
   Slider,
   SliderLabel,
   Switch,
@@ -331,6 +333,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           </Checkbox>
         </div>
         <Switch onChange={onChangeConsole}>Switch</Switch>
+        <Disclosure title="Disclosure">
+          <p>Very long blabla</p>
+        </Disclosure>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
         <Avatar shape="circle">JS</Avatar>
@@ -412,6 +417,19 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           generate-header="sticky"
           aria-label="With Sticky Header"
         ></DataGrid>
+
+        <div style={{ display: 'block', width: '100%' }}>
+          <Skeleton
+            shimmer={true}
+            shape="circle"
+            style={{ borderRadius: '4px', width: '50px', height: '50px' }}
+          ></Skeleton>
+          <Skeleton
+            shimmer={true}
+            shape="rect"
+            style={{ borderRadius: '4px', marginTop: '10px', height: '10px' }}
+          ></Skeleton>
+        </div>
 
         <Tabs onChange={onEvent}>
           <Tab id="one">One</Tab>
@@ -530,6 +548,9 @@ function createNode(): HTMLElement {
         <jp-checkbox disabled>Label</jp-checkbox>
       </div>
       <jp-switch>Switch</jp-switch>
+      <jp-disclosure title="Disclosure">
+        <p>Very long blablabla to be disclosed.</p>
+      </jp-disclosure>
     </div>
     <div class="jp-FlexColumn" style="grid-column: 3;">
       <jp-badge>18</jp-badge>
@@ -606,6 +627,19 @@ function createNode(): HTMLElement {
       </jp-accordion>
       
       <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
+
+      <div style="display: block; width: 100%;">
+        <jp-skeleton
+          style="border-radius: 4px; width: 50px; height: 50px;"
+          shape="circle"
+          shimmer
+        ></jp-skeleton>
+        <jp-skeleton
+            style="border-radius: 4px; margin-top: 10px; height: 10px;"
+            shape="rect"
+            shimmer
+        ></jp-skeleton>
+      </div>
 
       <jp-tabs aria-label="Default">
         <jp-tab id="tab-1">Tab 1</jp-tab>
