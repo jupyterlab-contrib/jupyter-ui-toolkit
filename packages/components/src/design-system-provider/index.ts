@@ -225,28 +225,6 @@ export class DesignSystemProvider extends FoundationElement {
   @designToken(neutralColor)
   public neutralColor?: Swatch;
 
-  // /**
-  //  * Defines the palette that all neutral color recipes are derived from.
-  //  * This is an array for hexadecimal color strings ordered from light to dark.
-  //  *
-  //  * @remarks
-  //  * HTML attribute: N/A
-  //  */
-  // // @observable
-  // @designToken(neutralPalette)
-  // public neutralPalette: Palette;
-
-  // /**
-  //  * Defines the palette that all accent color recipes are derived from.
-  //  * This is an array for hexadecimal color strings ordered from light to dark.
-  //  *
-  //  * @remarks
-  //  * HTML attribute: N/A
-  //  */
-  // // @observable
-  // @designToken(accentPalette)
-  // public accentPalette: Palette;
-
   /**
    *
    * The density offset, used with designUnit to calculate height and spacing.
