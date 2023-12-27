@@ -9,9 +9,6 @@ import {
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillFocus,
-  accentForegroundActive,
-  accentForegroundHover,
-  accentForegroundRest,
   bodyFont,
   controlCornerRadius,
   designUnit,
@@ -78,19 +75,19 @@ export const tabStyles: FoundationElementTemplate<ElementStyles> = (
 
     :host([aria-selected='true']) {
       background: ${neutralFillRest};
-      color: ${accentForegroundRest};
+      color: ${neutralForegroundRest};
       fill: currentcolor;
     }
 
     :host([aria-selected='true']:hover) {
       background: ${neutralFillHover};
-      color: ${accentForegroundHover};
+      color: ${neutralForegroundRest};
       fill: currentcolor;
     }
 
     :host([aria-selected='true']:active) {
       background: ${neutralFillActive};
-      color: ${accentForegroundActive};
+      color: ${neutralForegroundRest};
       fill: currentcolor;
     }
 

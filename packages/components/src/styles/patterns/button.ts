@@ -22,6 +22,7 @@ import {
   errorFillHover,
   errorFillRest,
   errorForegroundActive,
+  focusStrokeOuter,
   focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,
@@ -357,7 +358,8 @@ export const HypertextStyles = css`
   }
 
   :host([appearance="hypertext"]) .control:${focusVisible} {
-    border-bottom: calc(${focusStrokeWidth} * 1px) solid ${accentFillFocus};
+    outline-color: transparent;
+    border-bottom: calc(${focusStrokeWidth} * 1px) solid ${focusStrokeOuter};
     margin-bottom: calc(calc(${strokeWidth} - ${focusStrokeWidth}) * 1px);
   }
 `.withBehaviors(

@@ -9,6 +9,7 @@ import {
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
+  accentFillFocus,
   accentFillRest,
   bodyFont,
   controlCornerRadius,
@@ -105,7 +106,7 @@ export const menuItemStyles: FoundationElementTemplate<
     }
 
     :host(:${focusVisible}) {
-      border-color: ${focusStrokeOuter};
+      border-color: ${accentFillFocus};
       background: ${neutralFillStealthFocus};
       color: ${neutralForegroundRest};
     }

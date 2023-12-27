@@ -12,6 +12,7 @@ import {
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import { Swatch } from '../color/swatch.js';
 import {
+  accentFillFocus,
   accentForegroundRest,
   baseHeightMultiplier,
   bodyFont,
@@ -19,7 +20,6 @@ import {
   density,
   designUnit,
   disabledOpacity,
-  focusStrokeOuter,
   focusStrokeWidth,
   neutralFillActive,
   neutralFillHover,
@@ -140,8 +140,9 @@ export const treeItemStyles: FoundationElementTemplate<
     }
 
     :host(:${focusVisible}) .positioning-region {
-      border: ${focusStrokeOuter} calc(${strokeWidth} * 1px) solid;
-      border-radius: calc(${controlCornerRadius} * 1px);
+      border-color: ${accentFillFocus};
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+        ${accentFillFocus} inset;
       color: ${neutralForegroundRest};
     }
 
@@ -151,6 +152,7 @@ export const treeItemStyles: FoundationElementTemplate<
       box-sizing: border-box;
       background: ${neutralFillStealthRest};
       border: transparent calc(${strokeWidth} * 1px) solid;
+      border-radius: calc(${controlCornerRadius} * 1px);
       height: calc((${heightNumber} + 1) * 1px);
     }
 
@@ -174,6 +176,7 @@ export const treeItemStyles: FoundationElementTemplate<
       align-items: center;
       white-space: nowrap;
       width: 100%;
+      min-width: 0;
       height: calc(${heightNumber} * 1px);
       margin-inline-start: calc(${designUnit} * 2px + 8px);
       font-size: ${typeRampBaseFontSize};
@@ -276,8 +279,8 @@ export const treeItemStyles: FoundationElementTemplate<
 
     :host([selected])::after {
       /* The background needs to be calculated based on the selected background state
-                for this control. We currently have no way of changing that, so setting to
-                accent-foreground-rest for the time being */
+         for this control. We currently have no way of changing that, so setting to
+         accent-foreground-rest for the time being */
       background: ${accentForegroundRest};
       border-radius: calc(${controlCornerRadius} * 1px);
       content: '';

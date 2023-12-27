@@ -146,9 +146,8 @@ export const radioStyles: FoundationElementTemplate<
     }
 
     :host([aria-checked="true"]:${focusVisible}:not([disabled])) .control {
-      box-shadow:
-        0 0 0 2px ${fillColor},
-        0 0 0 4px ${focusStrokeOuter};
+      outline-offset: 2px;
+      outline: solid calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
     }
 
     :host([disabled]) .label,

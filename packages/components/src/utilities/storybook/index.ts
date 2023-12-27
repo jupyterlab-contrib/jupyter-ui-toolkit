@@ -41,6 +41,7 @@ export function getFaIcon(iconName: string, slotName: string | null): string {
  */
 export function withTheme(story: any, context: StoryContext): HTMLElement {
   const theme = new DesignSystemProvider();
+  theme.style.width = '100%';
   theme.accentColor = context.globals.accent ?? '#DA1A5F';
 
   const background = context.globals.backgrounds?.value ?? '#252526';
@@ -53,7 +54,7 @@ export function withTheme(story: any, context: StoryContext): HTMLElement {
     ? StandardLuminance.DarkMode
     : StandardLuminance.LightMode;
 
-  const children = story(context);
+  const children = story();
   if (typeof children === 'string') {
     theme.insertAdjacentHTML('afterbegin', children);
   } else {
