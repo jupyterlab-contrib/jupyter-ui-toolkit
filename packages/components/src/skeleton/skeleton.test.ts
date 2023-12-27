@@ -6,7 +6,7 @@ import { test, expect } from '@playwright/test';
 test('Default', async ({ page }) => {
   await page.goto('/iframe.html?id=components-skeleton--default');
 
-  expect(await page.locator('jp-skeleton').screenshot()).toMatchSnapshot(
-    'skeleton-default.png'
-  );
+  expect(
+    await page.getByTestId('skeleton-container').screenshot()
+  ).toMatchSnapshot('skeleton-default.png');
 });

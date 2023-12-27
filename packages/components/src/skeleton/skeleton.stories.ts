@@ -12,7 +12,7 @@ export default {
     actions: { disabled: true }
   },
   decorators: [
-    story => `<div style="display: block;">
+    story => `<div data-testid="skeleton-container" style="display: block;">
           ${story()}
         </div>`
   ]
