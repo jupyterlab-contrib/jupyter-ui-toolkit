@@ -9,22 +9,18 @@ import {
 } from '@microsoft/fast-colors';
 import { DesignToken } from '@microsoft/fast-foundation';
 import {
-  Palette,
-  PaletteRGB,
-} from '../../color/palette';
-import {
   Swatch,
   SwatchRGB
 } from '../../color/swatch.js';
 import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js';
 import { isDark } from '../../color/utilities/is-dark.js';
 import {
+  accentColor,
   accentFillHoverDelta,
-  accentPalette,
   baseLayerLuminance,
   bodyFont,
   controlCornerRadius,
-  neutralPalette,
+  neutralColor,
   strokeWidth,
   typeRampBaseFontSize
 } from '../../design-tokens';
@@ -121,7 +117,7 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
     token: controlCornerRadius
   },
   [BASE_LAYOUT_COLOR]: {
-    converter: (value: string, isDark: boolean): Palette<Swatch> | null => {
+    converter: (value: string, isDark: boolean): Swatch | null => {
       const parsedColor = parseColor(value);
       if (parsedColor) {
         const hsl = rgbToHSL(parsedColor);
@@ -133,17 +129,15 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
         });
         const correctedRGB = hslToRGB(correctedHSL!);
 
-        return PaletteRGB.from(
-          SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b)
-        );
+        return SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b);
       } else {
         return null;
       }
     },
-    token: neutralPalette
+    token: neutralColor
   },
   '--jp-brand-color1': {
-    converter: (value: string, isDark: boolean): Palette<Swatch> | null => {
+    converter: (value: string, isDark: boolean): Swatch | null => {
       const parsedColor = parseColor(value);
       if (parsedColor) {
         const hsl = rgbToHSL(parsedColor);
@@ -158,14 +152,12 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
         });
         const correctedRGB = hslToRGB(correctedHSL!);
 
-        return PaletteRGB.from(
-          SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b)
-        );
+        return SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b);
       } else {
         return null;
       }
     },
-    token: accentPalette
+    token: accentColor
   },
   '--jp-ui-font-family': {
     token: bodyFont
