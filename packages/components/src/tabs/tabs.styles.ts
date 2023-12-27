@@ -110,10 +110,9 @@ export const tabsStyles: FoundationElementTemplate<
       grid-row: 1;
       width: 4px;
       height: 100%;
-      margin-inline-end: 10px;
+      margin-inline-end: 0px;
       align-self: center;
       background: ${accentFillRest};
-      margin-top: 0;
       border-radius: calc(${controlCornerRadius} * 1px) 0 0
         calc(${controlCornerRadius} * 1px);
     }
