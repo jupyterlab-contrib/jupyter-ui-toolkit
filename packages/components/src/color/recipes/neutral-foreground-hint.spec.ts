@@ -1,4 +1,3 @@
-
 import { PaletteRGB } from '../palette.js';
 import { SwatchRGB } from '../swatch.js';
 import { accentBase, middleGrey } from '../utilities/color-constants.js';

@@ -23,8 +23,8 @@ test.describe('jpAnchor', () => {
   });
 
   test('receive focus when focused programatically', async ({ page }) => {
-    const element = page.locator('jp-anchor')
-    await element.waitFor()
+    const element = page.locator('jp-anchor');
+    await element.waitFor();
     await element.focus();
 
     expect(await page.evaluate(() => document.activeElement?.id)).toEqual(
