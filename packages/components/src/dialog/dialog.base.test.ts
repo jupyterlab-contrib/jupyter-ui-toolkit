@@ -5,7 +5,10 @@ type JpDialog = HTMLElement & JpDialogType;
 
 test.describe('JpDialog', () => {
   test.beforeEach(async ({ page }) => {
+    await page.goto('/iframe.html?id=components-dialog--default');
+    await page.locator('body.sb-show-main').waitFor();
     await page.evaluate(() => {
+      document.body.innerHTML = '';
       const element = document.createElement('jp-dialog') as JpDialog;
       element.id = 'testelement';
 
@@ -28,6 +31,9 @@ test.describe('JpDialog', () => {
 
   // jpDialog should focus on the first element
   test('should focus on first element', async ({ page }) => {
+    await page.locator('jp-dialog').waitFor({ state: 'attached' });
+    await page.waitForTimeout(500);
+
     expect(await page.evaluate(() => document.activeElement?.id)).toEqual(
       'button1'
     );
@@ -35,6 +41,9 @@ test.describe('JpDialog', () => {
 
   // jpDialog should trap focus
   test('should trap focus', async ({ page }) => {
+    await page.locator('jp-dialog').waitFor({ state: 'attached' });
+    await page.waitForTimeout(500);
+
     expect
       .soft(await page.evaluate(() => document.activeElement?.id))
       .toEqual('button1');

@@ -8,7 +8,10 @@ type jpListbox = HTMLElement & FASTListboxType;
 
 test.describe('jpListbox', () => {
   test.beforeEach(async ({ page }) => {
+    await page.goto('/iframe.html?id=components-listbox--default');
+    await page.locator('body.sb-show-main').waitFor();
     await page.evaluate(() => {
+      document.body.innerHTML = '';
       const element = document.createElement('jp-listbox') as jpListbox;
 
       for (let i = 1; i <= 3; i++) {
@@ -32,6 +35,7 @@ test.describe('jpListbox', () => {
   test.describe('should change the `selectedIndex` when focused and receives keyboard interaction', () => {
     test('via arrow down key', async ({ page }) => {
       const element = page.locator('jp-listbox');
+      element.waitFor();
 
       expect(
         await element.evaluate<number, jpListbox>(node => node.selectedIndex)
@@ -46,6 +50,7 @@ test.describe('jpListbox', () => {
 
     test('via arrow up key', async ({ page }) => {
       const element = page.locator('jp-listbox');
+      element.waitFor();
 
       await element.evaluate<number, jpListbox>(
         node => (node.selectedIndex = 1)
@@ -64,6 +69,7 @@ test.describe('jpListbox', () => {
 
     test('via home key', async ({ page }) => {
       const element = page.locator('jp-listbox');
+      element.waitFor();
 
       await element.evaluate<number, jpListbox>(
         node => (node.selectedIndex = 2)
@@ -82,6 +88,7 @@ test.describe('jpListbox', () => {
 
     test('via end key', async ({ page }) => {
       const element = page.locator('jp-listbox');
+      element.waitFor();
 
       expect(
         await element.evaluate<number, jpListbox>(node => node.selectedIndex)

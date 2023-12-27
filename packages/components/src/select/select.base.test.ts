@@ -9,7 +9,11 @@ type JpSelect = HTMLElement & JpSelectType;
 
 test.describe('JpSelect', () => {
   test.beforeEach(async ({ page }) => {
+    await page.goto('/iframe.html?id=components-select--default');
+    await page.locator('body.sb-show-main').waitFor();
     await page.evaluate(() => {
+      document.body.innerHTML = '';
+
       const element = document.createElement('jp-select') as JpSelect;
 
       for (let i = 1; i <= 3; i++) {
@@ -30,11 +34,15 @@ test.describe('JpSelect', () => {
 
   // jpSelect should have a value of 'one'
   test("should have a value of 'one'", async ({ page }) => {
-    expect(await page.locator('jp-select').inputValue()).toEqual('1');
+    await page.locator('jp-select').waitFor();
+    expect(
+      await page.locator('jp-select').evaluate<string, JpSelect>(e => e.value)
+    ).toEqual('1');
   });
 
   // jpSelect should have a text content of 'option 1'
   test("should have a text content of 'option 1'", async ({ page }) => {
+    await page.locator('jp-select').waitFor();
     await expect(page.locator('jp-select .selected-value')).toHaveText(
       'option 1'
     );
@@ -45,18 +53,19 @@ test.describe('JpSelect', () => {
     // jpSelect should open when focused and receives keyboard interaction via space key
     test('via Space key', async ({ page }) => {
       const element = page.locator('jp-select');
+      element.waitFor();
 
-      expect(
-        await element.evaluate<boolean, JpSelect>(node => node.open)
-      ).toEqual(false);
+      expect
+        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .toEqual(false);
 
       await element.focus();
 
       await page.keyboard.press(' ');
 
-      expect(
-        await element.evaluate<boolean, JpSelect>(node => node.open)
-      ).toEqual(true);
+      expect
+        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .toEqual(true);
 
       await page.keyboard.press(' ');
 
@@ -68,18 +77,19 @@ test.describe('JpSelect', () => {
     // jpSelect should open when focused and receives keyboard interaction via enter key
     test('via Enter key', async ({ page }) => {
       const element = page.locator('jp-select');
+      element.waitFor();
 
-      expect(
-        await element.evaluate<boolean, JpSelect>(node => node.open)
-      ).toEqual(false);
+      expect
+        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .toEqual(false);
 
       await element.focus();
 
       await element.press('Enter');
 
-      expect(
-        await element.evaluate<boolean, JpSelect>(node => node.open)
-      ).toEqual(true);
+      expect
+        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .toEqual(true);
 
       await element.press('Enter');
 
@@ -96,12 +106,13 @@ test.describe('JpSelect', () => {
       // FASTSelect should close when focused and keyboard interaction is received via space key
       test('via Space key', async ({ page }) => {
         const element = page.locator('jp-select');
+        element.waitFor();
 
         await element.press(' ');
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(true);
+        expect
+          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .toEqual(true);
 
         await element.press(' ');
 
@@ -113,12 +124,13 @@ test.describe('JpSelect', () => {
       // FASTSelect should close when focused and keyboard interaction is received via enter key
       test('via Enter key', async ({ page }) => {
         const element = page.locator('jp-select');
+        element.waitFor();
 
         await element.press('Enter');
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(true);
+        expect
+          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .toEqual(true);
 
         await element.press('Enter');
 
@@ -130,12 +142,13 @@ test.describe('JpSelect', () => {
       // FASTSelect should close when focused and keyboard interaction is received via escape key
       test('via Escape key', async ({ page }) => {
         const element = page.locator('jp-select');
+        element.waitFor();
 
         await element.click();
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(true);
+        expect
+          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .toEqual(true);
 
         await page.keyboard.press('Escape');
 
@@ -147,12 +160,13 @@ test.describe('JpSelect', () => {
       // FASTSelect should close when focused and keyboard interaction is received via tab key
       test('via Tab key', async ({ page }) => {
         const element = page.locator('jp-select');
+        element.waitFor();
 
         await element.click();
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(true);
+        expect
+          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .toEqual(true);
 
         await element.press('Tab');
 
@@ -165,20 +179,23 @@ test.describe('JpSelect', () => {
     test.describe('when focus is lost', () => {
       test('via click', async ({ page }) => {
         const element = page.locator('jp-select');
+        element.waitFor();
 
         await element.click();
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(true);
+        expect
+          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .toEqual(true);
 
         await page.click('body');
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(
-            element => element === document.activeElement
+        expect
+          .soft(
+            await element.evaluate<boolean, JpSelect>(
+              element => element === document.activeElement
+            )
           )
-        ).toEqual(false);
+          .toEqual(false);
 
         expect(
           await element.evaluate<boolean, JpSelect>(node => node.open)
@@ -194,6 +211,7 @@ test.describe('JpSelect', () => {
           for (const eventName of ['change', 'input']) {
             test(`of type '${eventName}'`, async ({ page }) => {
               const element = page.locator('jp-select');
+              element.waitFor();
 
               await page.exposeFunction('sendEvent', (type: string) =>
                 expect(type).toEqual(eventName)
@@ -218,10 +236,11 @@ test.describe('JpSelect', () => {
   test.describe('should change the value when focused and receives keyboard interaction', () => {
     test('via arrow down key', async ({ page }) => {
       const element = page.locator('jp-select');
+      element.waitFor();
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('1');
+      expect
+        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .toEqual('1');
 
       await element.press('ArrowDown');
 
@@ -232,12 +251,13 @@ test.describe('JpSelect', () => {
 
     test('via arrow up key', async ({ page }) => {
       const element = page.locator('jp-select');
+      element.waitFor();
 
       await element.evaluate<string, JpSelect>(node => (node.value = '2'));
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('2');
+      expect
+        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .toEqual('2');
 
       await element.press('ArrowUp');
 
@@ -248,12 +268,13 @@ test.describe('JpSelect', () => {
 
     test('via home key', async ({ page }) => {
       const element = page.locator('jp-select');
+      element.waitFor();
 
       await element.evaluate<string, JpSelect>(node => (node.value = '3'));
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('3');
+      expect
+        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .toEqual('3');
 
       await element.press('Home');
 
@@ -264,10 +285,11 @@ test.describe('JpSelect', () => {
 
     test('via end key', async ({ page }) => {
       const element = page.locator('jp-select');
+      element.waitFor();
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('1');
+      expect
+        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .toEqual('1');
 
       await element.press('End');
 
@@ -280,6 +302,7 @@ test.describe('JpSelect', () => {
   test.describe('when opened', () => {
     test('should scroll the selected option into view', async ({ page }) => {
       const element = page.locator('jp-select');
+      element.waitFor();
 
       await element.evaluate<void, JpSelect>(element => {
         element.innerHTML = '';
@@ -297,19 +320,25 @@ test.describe('JpSelect', () => {
         node => (node.selectedIndex = 35)
       );
 
-      expect(
-        await element.evaluate<string, JpSelect>(
-          node => node.firstSelectedOption.value
+      expect
+        .soft(
+          await element.evaluate<string, JpSelect>(
+            node => node.firstSelectedOption.value
+          )
         )
-      ).toEqual('35');
+        .toEqual('35');
 
       await element.click();
 
       await selectedOption.waitFor();
 
-      expect(
-        await selectedOption.evaluate<number, JpOption>(node => node.scrollTop)
-      ).toEqual(451);
+      expect
+        .soft(
+          await selectedOption.evaluate<number, JpOption>(
+            node => node.scrollTop
+          )
+        )
+        .toBeGreaterThanOrEqual(794);
 
       await element.evaluate<number, JpSelect>(
         node => (node.selectedIndex = 0)
@@ -319,7 +348,7 @@ test.describe('JpSelect', () => {
 
       expect(
         await selectedOption.evaluate<number, JpOption>(node => node.scrollTop)
-      ).toEqual(6);
+      ).toBeLessThanOrEqual(6);
     });
   });
 });

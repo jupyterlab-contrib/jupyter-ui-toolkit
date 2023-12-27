@@ -5,7 +5,9 @@ type jpAnchor = HTMLElement & jpAnchorType;
 
 test.describe('jpAnchor', () => {
   test.beforeEach(async ({ page }) => {
+    await page.goto('/iframe.html?id=components-anchor--default');
     await page.evaluate(() => {
+      document.body.innerHTML = '';
       const element = document.createElement('jp-anchor') as jpAnchor;
       element.href = '#';
       element.textContent = 'Hello';
@@ -21,10 +23,12 @@ test.describe('jpAnchor', () => {
   });
 
   test('receive focus when focused programatically', async ({ page }) => {
-    await page.locator('jp-anchor').focus();
+    const element = page.locator('jp-anchor')
+    await element.waitFor()
+    await element.focus();
 
     expect(await page.evaluate(() => document.activeElement?.id)).toEqual(
-      await page.locator('jp-anchor').getAttribute('id')
+      await element.getAttribute('id')
     );
   });
 });

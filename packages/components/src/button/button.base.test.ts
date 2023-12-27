@@ -5,8 +5,11 @@ type jpButton = HTMLElement & jpButtonType;
 
 test.describe('jpButton', () => {
   test.beforeEach(async ({ page }) => {
+    await page.goto('/iframe.html?id=components-button--accent');
+    await page.locator('body.sb-show-main').waitFor();
 
     await page.evaluate(() => {
+      document.body.innerHTML = '';
       const element = document.createElement('jp-button') as jpButton;
       element.textContent = 'Hello';
       element.id = 'Button1';
@@ -21,10 +24,12 @@ test.describe('jpButton', () => {
   });
 
   test('receive focus when focused programatically', async ({ page }) => {
-    await page.locator('jp-button').focus();
+    const element = page.locator('jp-button');
+    element.waitFor();
+    await element.focus();
 
     expect(await page.evaluate(() => document.activeElement?.id)).toEqual(
-      await page.locator('jp-button').getAttribute('id')
+      await element.getAttribute('id')
     );
   });
 });
