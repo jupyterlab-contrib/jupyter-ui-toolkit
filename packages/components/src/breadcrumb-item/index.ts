@@ -1,4 +1,5 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import {
@@ -6,10 +7,10 @@ import {
   BreadcrumbItemOptions,
   breadcrumbItemTemplate as template
 } from '@microsoft/fast-foundation';
-import { breadcrumbItemStyles as styles } from './breadcrumb-item.styles';
+import { breadcrumbItemStyles as styles } from './breadcrumb-item.styles.js';
 
 /**
- * A function that returns a BreadcrumbItem registration for configuring the component with a DesignSystem.
+ * A function that returns a {@link @microsoft/fast-foundation#BreadcrumbItem} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#breadcrumbItemTemplate}
  *
  *

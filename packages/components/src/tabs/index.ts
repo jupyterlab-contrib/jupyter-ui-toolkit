@@ -19,8 +19,8 @@ export const jpTabs = Tabs.compose({
   styles
 });
 
-export * from '../tab';
-export * from '../tab-panel';
+export * from '../tab/index.js';
+export * from '../tab-panel/index.js';
 
 /**
  * Base class for Tabs

@@ -6,10 +6,11 @@ import {
   ListboxOption,
   listboxOptionTemplate as template
 } from '@microsoft/fast-foundation';
-import { optionStyles as styles } from './option.styles';
+import { optionStyles as styles } from './option.styles.js';
 
 /**
- * A function that returns a Option registration for configuring the component with a DesignSystem.
+ * A function that returns a {@link @microsoft/fast-foundation#ListboxOption} registration for configuring the component with a DesignSystem.
+ * Implements {@link @microsoft/fast-foundation#listboxOptionTemplate}
  *
  *
  * @public

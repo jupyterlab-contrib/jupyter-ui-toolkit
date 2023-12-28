@@ -5,11 +5,10 @@
       "@babel/preset-env",
       {
         "targets": {
-          "chrome": 100
+          "node": "current"
         }
       }
-    ],
-    "@babel/preset-typescript"
+    ]
   ],
   "plugins": []
 }

@@ -15,6 +15,7 @@ import {
   Combobox,
   DataGrid,
   DateField,
+  Disclosure,
   Divider,
   Listbox,
   Menu,
@@ -27,6 +28,7 @@ import {
   RadioGroup,
   Search,
   Select,
+  Skeleton,
   Slider,
   SliderLabel,
   Switch,
@@ -191,7 +193,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     app.restored.then(() => {
       app.shell.add(widget, 'main');
-      app.shell.add(reactWidget, 'main', { mode: 'split-bottom' });
+      app.shell.add(reactWidget, 'main', { mode: 'split-right' });
       app.shell.activateById(widget.id);
 
       const dataGrid: WebDataGrid | null =
@@ -250,10 +252,13 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
       <div className="jp-FlexColumn" style={{ gridColumn: 1 }}>
         <div className="jp-FlexRow">
           <Button appearance="accent" onClick={onClick}>
-            Button
+            Accent
           </Button>
           <Button appearance="neutral" onClick={onClick}>
-            Button
+            Default
+          </Button>
+          <Button appearance="error" onClick={onClick}>
+            Error
           </Button>
           <Button appearance="stealth" aria-label="Confirm" onClick={onClick}>
             <span className="fa fa-cog"></span>
@@ -331,6 +336,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           </Checkbox>
         </div>
         <Switch onChange={onChangeConsole}>Switch</Switch>
+        <Disclosure title="Disclosure">
+          <p>Very long blabla</p>
+        </Disclosure>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 3 }}>
         <Avatar shape="circle">JS</Avatar>
@@ -413,6 +421,19 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           aria-label="With Sticky Header"
         ></DataGrid>
 
+        <div style={{ display: 'block', width: '100%' }}>
+          <Skeleton
+            shimmer={true}
+            shape="circle"
+            style={{ borderRadius: '4px', width: '50px', height: '50px' }}
+          ></Skeleton>
+          <Skeleton
+            shimmer={true}
+            shape="rect"
+            style={{ borderRadius: '4px', marginTop: '10px', height: '10px' }}
+          ></Skeleton>
+        </div>
+
         <Tabs onChange={onEvent}>
           <Tab id="one">One</Tab>
           <Tab id="two">Two</Tab>
@@ -466,8 +487,9 @@ function createNode(): HTMLElement {
 <div class="jp-Grid">
     <div class="jp-FlexColumn" style="grid-column: 1;">
       <div class="jp-FlexRow">
-        <jp-button appearance="accent">Button</jp-button>
-        <jp-button appearance="neutral">Button</jp-button>
+        <jp-button appearance="accent">Accent</jp-button>
+        <jp-button appearance="neutral">Default</jp-button>
+        <jp-button appearance="error">Error</jp-button>
         <jp-button appearance="stealth" aria-label="Confirm"><span class="fa fa-cog"></span></jp-button>
       </div>
       <jp-anchor appearance="outline" href="#">
@@ -530,6 +552,9 @@ function createNode(): HTMLElement {
         <jp-checkbox disabled>Label</jp-checkbox>
       </div>
       <jp-switch>Switch</jp-switch>
+      <jp-disclosure title="Disclosure">
+        <p>Very long blablabla to be disclosed.</p>
+      </jp-disclosure>
     </div>
     <div class="jp-FlexColumn" style="grid-column: 3;">
       <jp-badge>18</jp-badge>
@@ -606,6 +631,19 @@ function createNode(): HTMLElement {
       </jp-accordion>
       
       <jp-data-grid id="basic-grid" generate-header="sticky" aria-label="With Sticky Header"></jp-data-grid>
+
+      <div style="display: block; width: 100%;">
+        <jp-skeleton
+          style="border-radius: 4px; width: 50px; height: 50px;"
+          shape="circle"
+          shimmer
+        ></jp-skeleton>
+        <jp-skeleton
+            style="border-radius: 4px; margin-top: 10px; height: 10px;"
+            shape="rect"
+            shimmer
+        ></jp-skeleton>
+      </div>
 
       <jp-tabs aria-label="Default">
         <jp-tab id="tab-1">Tab 1</jp-tab>

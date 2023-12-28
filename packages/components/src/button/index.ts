@@ -7,7 +7,7 @@ import {
   Button as FoundationButton,
   buttonTemplate as template
 } from '@microsoft/fast-foundation';
-import { buttonStyles } from './button.styles';
+import { buttonStyles as styles } from './button.styles.js';
 
 /**
  * Types of button appearance.
@@ -15,7 +15,6 @@ import { buttonStyles } from './button.styles';
  */
 export type ButtonAppearance =
   | 'accent'
-  | 'error'
   | 'lightweight'
   | 'neutral'
   | 'outline'
@@ -33,7 +32,7 @@ export class Button extends FoundationButton {
    * HTML Attribute: appearance
    */
   @attr
-  public appearance: ButtonAppearance;
+  public appearance: ButtonAppearance = 'neutral';
 
   /**
    * Whether the button has a compact layout or not.
@@ -44,13 +43,6 @@ export class Button extends FoundationButton {
    */
   @attr({ attribute: 'minimal', mode: 'boolean' })
   public minimal: boolean;
-
-  public connectedCallback(): void {
-    super.connectedCallback();
-    if (!this.appearance) {
-      this.appearance = 'neutral';
-    }
-  }
 
   /**
    * Applies 'icon-only' class when there is only an SVG in the default slot
@@ -79,11 +71,13 @@ export class Button extends FoundationButton {
 }
 
 /**
- * The button component registration.
+ * A function that returns a {@link @microsoft/fast-foundation#Button} registration for configuring the component with a DesignSystem.
+ * Implements {@link @microsoft/fast-foundation#buttonTemplate}
+ *
  *
  * @public
  * @remarks
- * Generated HTML Element: `<jp-button>`
+ * Generates HTML Element: `<jp-button>`
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
@@ -91,8 +85,10 @@ export const jpButton = Button.compose({
   baseName: 'button',
   baseClass: FoundationButton,
   template,
-  styles: buttonStyles,
+  styles,
   shadowOptions: {
     delegatesFocus: true
   }
 });
+
+export { styles as buttonStyles };

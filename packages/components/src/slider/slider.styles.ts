@@ -14,6 +14,7 @@ import {
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillFocus,
+  accentForegroundRest,
   controlCornerRadius,
   designUnit,
   disabledOpacity,
@@ -22,8 +23,23 @@ import {
   neutralForegroundRest,
   neutralStrokeHover,
   neutralStrokeRest
-} from '../design-tokens';
-import { heightNumber } from '../styles/index';
+} from '../design-tokens.js';
+import {
+  DirectionalStyleSheetBehavior,
+  heightNumber
+} from '../styles/index.js';
+
+const ltr = css`
+  .track-start {
+    left: 0;
+  }
+`;
+
+const rtl = css`
+  .track-start {
+    right: 0;
+  }
+`;
 
 /**
  * Styles for Slider
@@ -97,6 +113,13 @@ export const sliderStyles: FoundationElementTemplate<
     .thumb-cursor:active {
       background: ${neutralForegroundRest};
     }
+    .track-start {
+      background: ${accentForegroundRest};
+      position: absolute;
+      height: 100%;
+      left: 0;
+      border-radius: calc(${controlCornerRadius} * 1px);
+    }
     :host([orientation='horizontal']) .thumb-container {
       transform: translateX(calc(var(--thumb-size) * 0.5px))
         translateY(calc(var(--thumb-translate) * 1px));
@@ -126,9 +149,14 @@ export const sliderStyles: FoundationElementTemplate<
       border-radius: calc(${controlCornerRadius} * 1px);
     }
     :host([orientation='vertical']) {
-      height: calc(var(--jp-slider-height) * 1px);
+      height: calc(var(--fast-slider-height) * 1px);
       min-height: calc(var(--thumb-size) * 1px);
       min-width: calc(${designUnit} * 20px);
+    }
+    :host([orientation='vertical']) .track-start {
+      height: auto;
+      width: 100%;
+      top: 0;
     }
     :host([disabled]),
     :host([readonly]) {
@@ -138,6 +166,7 @@ export const sliderStyles: FoundationElementTemplate<
       opacity: ${disabledOpacity};
     }
   `.withBehaviors(
+    new DirectionalStyleSheetBehavior(ltr, rtl),
     forcedColorsStylesheetBehavior(css`
       .thumb-cursor {
         forced-color-adjust: none;

@@ -3,8 +3,8 @@
 
 import { css, ElementStyles } from '@microsoft/fast-element';
 import type { FoundationElementTemplate } from '@microsoft/fast-foundation';
-import { BaseFieldStyles } from '../styles/index';
-import { DateFieldOptions } from './date-field';
+import { BaseFieldStyles } from '../styles/index.js';
+import { DateFieldOptions } from './date-field.js';
 
 /**
  * Styles for Date Field

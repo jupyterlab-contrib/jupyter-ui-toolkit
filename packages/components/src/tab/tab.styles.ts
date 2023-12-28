@@ -2,6 +2,15 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css, ElementStyles } from '@microsoft/fast-element';
+import {
+  disabledCursor,
+  display,
+  focusVisible,
+  forcedColorsStylesheetBehavior,
+  FoundationElementTemplate
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillFocus,
   bodyFont,
@@ -18,17 +27,8 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
-import { css, ElementStyles } from '@microsoft/fast-element';
-import {
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior,
-  FoundationElementTemplate
-} from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
-import { heightNumber } from '../styles';
+} from '../design-tokens.js';
+import { heightNumber } from '../styles/size.js';
 
 /**
  * Styles for Tab
@@ -52,8 +52,8 @@ export const tabStyles: FoundationElementTemplate<ElementStyles> = (
         calc(${controlCornerRadius} * 1px);
       border: calc(${strokeWidth} * 1px) solid transparent;
       align-items: center;
-      grid-row: 2;
       justify-content: center;
+      grid-row: 2;
       cursor: pointer;
     }
 

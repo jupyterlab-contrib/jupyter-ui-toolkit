@@ -1,4 +1,5 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import {
@@ -9,8 +10,9 @@ import {
   dataGridRowTemplate,
   dataGridTemplate
 } from '@microsoft/fast-foundation';
-import { dataGridStyles, dataGridRowStyles } from '@microsoft/fast-components';
-import { dataGridCellStyles } from './data-grid-cell.styles';
+import { dataGridStyles } from './data-grid.styles.js';
+import { dataGridRowStyles } from './data-grid-row.styles.js';
+import { dataGridCellStyles } from './data-grid-cell.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#DataGridCell} registration for configuring the component with a DesignSystem.

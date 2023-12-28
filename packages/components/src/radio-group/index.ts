@@ -1,11 +1,12 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import {
   RadioGroup,
   radioGroupTemplate as template
 } from '@microsoft/fast-foundation';
-import { radioGroupStyles as styles } from '@microsoft/fast-components';
+import { radioGroupStyles as styles } from './radio-group.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#RadioGroup} registration for configuring the component with a DesignSystem.

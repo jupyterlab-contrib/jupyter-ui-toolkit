@@ -20,7 +20,6 @@ import {
   bodyFont,
   controlCornerRadius,
   designUnit,
-  DirectionalStyleSheetBehavior,
   disabledOpacity,
   focusStrokeWidth,
   foregroundOnAccentActive,
@@ -36,8 +35,11 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
-import { heightNumber } from '../styles/index';
+} from '../design-tokens.js';
+import {
+  DirectionalStyleSheetBehavior,
+  heightNumber
+} from '../styles/index.js';
 
 /**
  * Styles for Switch
@@ -133,10 +135,7 @@ export const switchStyles: FoundationElementTemplate<
 
     .label {
       color: ${neutralForegroundRest};
-
-      ${
-        /* Need to discuss with Brian how HorizontalSpacingNumber can work. https://github.com/microsoft/fast/issues/2766 */ ''
-      } margin-inline-end: calc(${designUnit} * 2px + 2px);
+      margin-inline-end: calc(${designUnit} * 2px + 2px);
       font-size: ${typeRampBaseFontSize};
       line-height: ${typeRampBaseLineHeight};
       cursor: pointer;

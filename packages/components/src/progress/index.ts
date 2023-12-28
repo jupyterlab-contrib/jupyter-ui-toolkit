@@ -1,4 +1,5 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import {
@@ -6,7 +7,7 @@ import {
   ProgressOptions,
   progressTemplate as template
 } from '@microsoft/fast-foundation';
-import { progressStyles as styles } from '@microsoft/fast-components';
+import { progressStyles as styles } from './progress.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#BaseProgress} registration for configuring the component with a DesignSystem.

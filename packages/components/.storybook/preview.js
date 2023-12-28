@@ -1,7 +1,8 @@
 import * as JupyterComponents from '../src/index-rollup';
-// import type {Preview} from '@storybook/web-components';
 import { themes } from '@storybook/theming';
+import { withTheme } from '../src/utilities/storybook';
 
+// Ensure the components are not tree shaked.
 JupyterComponents;
 
 const parameters = {
@@ -50,7 +51,8 @@ const globalTypes = {
 
 const preview = {
   parameters,
-  globalTypes
+  globalTypes,
+  decorators: [withTheme]
 };
 
 export default preview;

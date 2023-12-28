@@ -15,8 +15,8 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
-import { selectStyles } from '../select/select.styles';
+} from '../design-tokens.js';
+import { selectStyles } from '../select/select.styles.js';
 
 /**
  * Styles for Combobox
@@ -57,9 +57,9 @@ export const comboboxStyles: FoundationElementTemplate<
   }
 
   .selected-value:hover,
-  .selected-value:${focusVisible},
-  .selected-value:disabled,
-  .selected-value:active {
+    .selected-value:${focusVisible},
+    .selected-value:disabled,
+    .selected-value:active {
     outline: none;
   }
 `;

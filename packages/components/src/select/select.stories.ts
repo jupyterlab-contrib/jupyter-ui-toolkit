@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon, setTheme } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook';
 
 export default {
   title: 'Components/Select',
@@ -24,11 +24,6 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
   const container = document.createElement('div');
 
   const index = args.numberOfChildren ?? 3;

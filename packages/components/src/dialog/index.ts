@@ -1,8 +1,9 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import { Dialog, dialogTemplate as template } from '@microsoft/fast-foundation';
-import { dialogStyles as styles } from '@microsoft/fast-components';
+import { dialogStyles as styles } from './dialog.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Dialog} registration for configuring the component with a DesignSystem.

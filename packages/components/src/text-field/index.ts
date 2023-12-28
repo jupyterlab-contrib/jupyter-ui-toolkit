@@ -1,18 +1,38 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { attr } from '@microsoft/fast-element';
 import {
   TextField as FoundationTextField,
   textFieldTemplate as template
 } from '@microsoft/fast-foundation';
-import { TextField } from '@microsoft/fast-components';
-import { textFieldStyles as styles } from './text-field.styles';
-
-// TODO
-//   we need to add error/invalid
+import { textFieldStyles as styles } from './text-field.styles.js';
 
 /**
- * A function that returns a TextField registration for configuring the component with a DesignSystem.
+ * Text field appearances
+ * @public
+ */
+export type TextFieldAppearance = 'filled' | 'outline';
+
+/**
+ * @internal
+ */
+export class TextField extends FoundationTextField {
+  /**
+   * The appearance of the element.
+   *
+   * @public
+   * @remarks
+   * HTML Attribute: appearance
+   */
+  @attr
+  public appearance: TextFieldAppearance = 'outline';
+}
+
+/**
+ * A function that returns a {@link @microsoft/fast-foundation#TextField} registration for configuring the component with a DesignSystem.
+ * Implements {@link @microsoft/fast-foundation#textFieldTemplate}
  *
  *
  * @public
@@ -31,10 +51,4 @@ export const jpTextField = TextField.compose({
   }
 });
 
-export { TextField, TextFieldAppearance } from '@microsoft/fast-components';
-
-/**
- * Styles for TextField
- * @public
- */
 export { styles as textFieldStyles };

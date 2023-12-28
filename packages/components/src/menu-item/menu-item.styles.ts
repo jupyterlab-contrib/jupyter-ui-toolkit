@@ -1,4 +1,5 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import { css, ElementStyles } from '@microsoft/fast-element';
@@ -12,25 +13,29 @@ import {
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
+  accentFillFocus,
   accentFillRest,
   bodyFont,
   controlCornerRadius,
   designUnit,
-  DirectionalStyleSheetBehavior,
   disabledOpacity,
-  focusStrokeOuter,
   focusStrokeWidth,
   foregroundOnAccentRest,
+  neutralFillRest,
+  neutralFillStealthActive,
+  neutralFillStealthFocus,
+  neutralFillStealthHover,
   neutralFillStealthRest,
   neutralForegroundHint,
   neutralForegroundRest,
-  neutralLayer2,
-  neutralLayer3,
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
-import { heightNumber } from '../styles/index';
+} from '../design-tokens.js';
+import {
+  DirectionalStyleSheetBehavior,
+  heightNumber
+} from '../styles/index.js';
 
 /**
  * Styles for Menu item
@@ -55,6 +60,7 @@ export const menuItemStyles: FoundationElementTemplate<
       padding: 0;
       margin: 0 calc(${designUnit} * 1px);
       white-space: nowrap;
+      background: ${neutralFillStealthRest};
       color: ${neutralForegroundRest};
       fill: currentcolor;
       cursor: pointer;
@@ -103,20 +109,23 @@ export const menuItemStyles: FoundationElementTemplate<
     }
 
     :host(:${focusVisible}) {
-      border-color: ${focusStrokeOuter};
-      background: ${neutralLayer3};
+      border-color: ${accentFillFocus};
+      background: ${neutralFillStealthFocus};
       color: ${neutralForegroundRest};
     }
 
     :host(:hover) {
-      background: ${neutralLayer3};
+      background: ${neutralFillStealthHover};
       color: ${neutralForegroundRest};
     }
 
+    :host(:active) {
+      background: ${neutralFillStealthActive};
+    }
+
     :host([aria-checked='true']),
-    :host(:active),
     :host(.expanded) {
-      background: ${neutralLayer2};
+      background: ${neutralFillRest};
       color: ${neutralForegroundRest};
     }
 

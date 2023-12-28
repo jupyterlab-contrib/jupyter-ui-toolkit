@@ -1,4 +1,5 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import {
@@ -6,7 +7,7 @@ import {
   SwitchOptions,
   switchTemplate as template
 } from '@microsoft/fast-foundation';
-import { switchStyles as styles } from './switch.styles';
+import { switchStyles as styles } from './switch.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Switch} registration for configuring the component with a DesignSystem.
@@ -22,8 +23,8 @@ export const jpSwitch = Switch.compose<SwitchOptions>({
   template,
   styles,
   switch: /* html */ `
-    <span class="checked-indicator" part="checked-indicator"></span>
-  `
+        <span class="checked-indicator" part="checked-indicator"></span>
+    `
 });
 
 /**

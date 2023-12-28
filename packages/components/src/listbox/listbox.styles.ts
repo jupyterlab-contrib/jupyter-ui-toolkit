@@ -23,8 +23,8 @@ import {
   focusStrokeWidth,
   neutralStrokeRest,
   strokeWidth
-} from '@microsoft/fast-components';
-import { heightNumber } from '../styles/size';
+} from '../design-tokens.js';
+import { heightNumber } from '../styles/size.js';
 
 /**
  * Styles for Listbox
@@ -54,7 +54,7 @@ export const listboxStyles: FoundationElementTemplate<ElementStyles> = (
         }
 
         ${!hostContext ? css`
-            :host(:${focusVisible}:not([disabled])) {
+:host(:${focusVisible}:not([disabled])) {
                 outline: none;
             }
 

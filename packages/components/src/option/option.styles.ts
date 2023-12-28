@@ -2,42 +2,48 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css } from '@microsoft/fast-element';
+import type { ElementStyles } from '@microsoft/fast-element';
+import {
+  disabledCursor,
+  display,
+  forcedColorsStylesheetBehavior
+} from '@microsoft/fast-foundation';
+import type {
+  FoundationElementTemplate,
+  ListboxOptionOptions
+} from '@microsoft/fast-foundation';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillActive,
-  accentFillFocus,
   accentFillHover,
   accentFillRest,
   bodyFont,
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  focusStrokeInner,
+  focusStrokeOuter,
   focusStrokeWidth,
   foregroundOnAccentActive,
-  foregroundOnAccentFocus,
   foregroundOnAccentHover,
   foregroundOnAccentRest,
-  neutralFillHover,
+  neutralFillStealthActive,
+  neutralFillStealthHover,
+  neutralFillStealthRest,
   neutralForegroundRest,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '@microsoft/fast-components';
-import type { ElementStyles } from '@microsoft/fast-element';
-import { css } from '@microsoft/fast-element';
-import type {
-  FoundationElementTemplate,
-  ListboxOptionOptions
-} from '@microsoft/fast-foundation';
-import {
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior
-} from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
-import { heightNumber } from '../styles';
+} from '../design-tokens.js';
+import { heightNumber } from '../styles/size.js';
 
 /**
- * Styles for Option
+ * Styles for the {@link @microsoft/fast-components#fastOption | Listbox Option} component.
+ *
+ * @param context - the element definition context
+ * @param definition - the foundation element definition
+ * @returns The element styles for the listbox option component
+ *
  * @public
  */
 export const optionStyles: FoundationElementTemplate<
@@ -51,6 +57,7 @@ export const optionStyles: FoundationElementTemplate<
       border-radius: calc(${controlCornerRadius} * 1px);
       border: calc(${focusStrokeWidth} * 1px) solid transparent;
       box-sizing: border-box;
+      background: ${neutralFillStealthRest};
       color: ${neutralForegroundRest};
       cursor: pointer;
       flex: 0 0 auto;
@@ -58,18 +65,20 @@ export const optionStyles: FoundationElementTemplate<
       font-size: ${typeRampBaseFontSize};
       height: calc(${heightNumber} * 1px);
       line-height: ${typeRampBaseLineHeight};
-      margin: 0 calc(${designUnit} * 1px);
+      margin: 0 calc((${designUnit} - ${focusStrokeWidth}) * 1px);
       outline: none;
       overflow: hidden;
-      padding: 0 calc(${designUnit} * 2.25px);
+      padding: 0 1ch;
       user-select: none;
       white-space: nowrap;
     }
 
-    /* TODO should we use outline instead of background for focus to support multi-selection */
-    :host(:${focusVisible}) {
-      background: ${accentFillFocus};
-      color: ${foregroundOnAccentFocus};
+    :host(:not([disabled]):not([aria-selected='true']):hover) {
+      background: ${neutralFillStealthHover};
+    }
+
+    :host(:not([disabled]):not([aria-selected='true']):active) {
+      background: ${neutralFillStealthActive};
     }
 
     :host([aria-selected='true']) {
@@ -77,29 +86,19 @@ export const optionStyles: FoundationElementTemplate<
       color: ${foregroundOnAccentRest};
     }
 
-    :host(:hover) {
+    :host(:not([disabled])[aria-selected='true']:hover) {
       background: ${accentFillHover};
       color: ${foregroundOnAccentHover};
     }
 
-    :host(:active) {
+    :host(:not([disabled])[aria-selected='true']:active) {
       background: ${accentFillActive};
       color: ${foregroundOnAccentActive};
-    }
-
-    :host(:not([aria-selected='true']):hover),
-    :host(:not([aria-selected='true']):active) {
-      background: ${neutralFillHover};
-      color: ${neutralForegroundRest};
     }
 
     :host([disabled]) {
       cursor: ${disabledCursor};
       opacity: ${disabledOpacity};
-    }
-
-    :host([disabled]:hover) {
-      background-color: inherit;
     }
 
     .content {
@@ -128,6 +127,16 @@ export const optionStyles: FoundationElementTemplate<
     ::slotted([slot='start']) {
       margin-inline-end: 1ch;
     }
+
+    :host([aria-checked='true'][aria-selected='false']) {
+      border-color: ${focusStrokeOuter};
+    }
+
+    :host([aria-checked='true'][aria-selected='true']) {
+      border-color: ${focusStrokeOuter};
+      box-shadow: 0 0 0 calc(${focusStrokeWidth} * 2 * 1px) inset
+        ${focusStrokeInner};
+    }
   `.withBehaviors(
     forcedColorsStylesheetBehavior(css`
       :host {
@@ -144,11 +153,24 @@ export const optionStyles: FoundationElementTemplate<
       }
 
       :host([disabled]),
-      :host([disabled]:not([aria-selected='true']):hover) {
+      :host([disabled][aria-selected='false']:hover) {
         background: ${SystemColors.Canvas};
         color: ${SystemColors.GrayText};
         fill: currentcolor;
         opacity: 1;
+      }
+
+      :host([aria-checked='true'][aria-selected='false']) {
+        background: ${SystemColors.ButtonFace};
+        color: ${SystemColors.ButtonText};
+        border-color: ${SystemColors.ButtonText};
+      }
+
+      :host([aria-checked='true'][aria-selected='true']),
+      :host([aria-checked='true'][aria-selected='true']:hover) {
+        background: ${SystemColors.Highlight};
+        color: ${SystemColors.HighlightText};
+        border-color: ${SystemColors.ButtonText};
       }
     `)
   );

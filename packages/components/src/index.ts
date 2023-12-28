@@ -1,48 +1,61 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
+/**
+ * Export all custom element definitions.
+ */
+
 export {
   addJupyterLabThemeChangeListener,
   applyJupyterTheme
-} from './utilities/theme/applyTheme';
+} from './utilities/theme/applyTheme.js';
 
-export * from './color';
-export * from './design-tokens';
-export * from './jupyter-design-system';
-export * from './custom-elements';
-
-// Export components and classes
-export * from './accordion/index';
-export * from './accordion-item/index';
-export * from './anchor/index';
-export * from './anchored-region/index';
-export * from './avatar/index';
-export * from './badge/index';
-export * from './breadcrumb/index';
-export * from './breadcrumb-item/index';
-export * from './button/index';
-export * from './card/index';
-export * from './checkbox/index';
-export * from './combobox/index';
-export * from './date-field/index';
-export * from './data-grid/index';
-export * from './dialog/index';
-export * from './divider/index';
-export * from './listbox/index';
-export * from './menu/index';
-export * from './menu-item/index';
-export * from './number-field/index';
-export * from './option/index';
-export * from './progress/index';
-export * from './radio/index';
-export * from './radio-group/index';
-export * from './search/index';
-export * from './select/index';
-export * from './slider-label/index';
-export * from './tab-panel/index';
-export * from './tab/index';
-export * from './tabs/index';
-export * from './text-area/index';
-export * from './text-field/index';
-export * from './toolbar/index';
-export * from './tooltip/index';
+export * from './custom-elements.js';
+export * from './jupyter-design-system.js';
+export * from './accordion/index.js';
+export * from './anchor/index.js';
+export * from './anchored-region/index.js';
+export * from './avatar/index.js';
+export * from './badge/index.js';
+export * from './breadcrumb/index.js';
+export * from './breadcrumb-item/index.js';
+export * from './button/index.js';
+export * from './card/index.js';
+export * from './checkbox/index.js';
+export * from './combobox/index.js';
+export * from './data-grid/index.js';
+export * from './design-system-provider/index.js';
+export { Palette, PaletteRGB } from './color/palette.js';
+export { InteractiveSwatchSet } from './color/recipe.js';
+export { Swatch, SwatchRGB } from './color/swatch.js';
+export { isDark } from './color/utilities/is-dark.js';
+export { StandardLuminance } from './color/utilities/base-layer-luminance.js';
+export * from './design-system-provider/index.js';
+export * from './design-tokens.js';
+export * from './dialog/index.js';
+export * from './disclosure/index.js';
+export * from './divider/index.js';
+export * from './listbox/index.js';
+export * from './menu/index.js';
+export * from './menu-item/index.js';
+export * from './number-field/index.js';
+export * from './option/index.js';
+export * from './picker/index.js';
+export * from './progress/index.js';
+export * from './progress-ring/index.js';
+export * from './radio/index.js';
+export * from './radio-group/index.js';
+export * from './search/index.js';
+export * from './select/index.js';
+export * from './skeleton/index.js';
+export * from './slider/index.js';
+export * from './slider-label/index.js';
+export * from './styles/direction.js';
+export * from './switch/index.js';
+export * from './tabs/index.js';
+export * from './text-area/index.js';
+export * from './text-field/index.js';
+export * from './toolbar/index.js';
+export * from './tooltip/index.js';
+export * from './tree-view/index.js';
+export * from './tree-item/index.js';

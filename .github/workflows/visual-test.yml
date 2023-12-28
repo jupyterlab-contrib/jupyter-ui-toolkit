@@ -6,10 +6,17 @@ on:
   pull_request:
     branches: main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   visual-test:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/pw-browsers
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -21,7 +28,8 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
       - name: Setup yarn cache
         uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
@@ -32,7 +40,16 @@ jobs:
             yarn-
 
       - name: Install Dependencies 📥
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
         run: yarn install
+
+      - name: Set up browser cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/pw-browsers
+          key: ${{ runner.os }}-${{ hashFiles('ui-tests/yarn.lock') }}
 
       - name: Install Playwright Browsers
         run: yarn run playwright install --with-deps
@@ -55,4 +72,4 @@ jobs:
           name: jupyter-ui-test
           path: |
             packages/components/test-assets/
-            packages/components/tests-out/**/*-snapshots/*
+            packages/components/src/**/*-snapshots/*

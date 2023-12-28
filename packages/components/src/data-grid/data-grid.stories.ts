@@ -2,8 +2,6 @@
 // Distributed under the terms of the Modified BSD License.
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
-
-import { setTheme } from '../utilities/storybook';
 import { DataGrid } from './index';
 
 export default {
@@ -17,12 +15,7 @@ export default {
   }
 } as Meta;
 
-const Template: StoryFn = (args, context): string => {
-  const {
-    globals: { backgrounds, accent },
-    parameters
-  } = context;
-  setTheme(accent, parameters.backgrounds, backgrounds);
+const Template: StoryFn = (args): string => {
   //   return `<jp-data-grid grid-template-columns="1fr 1fr">
   //     <jp-data-grid-row>
   //         <jp-data-grid-cell grid-column="1">1.1</jp-data-grid-cell>

@@ -1,10 +1,10 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import { allComponents } from './custom-elements';
-import { provideJupyterDesignSystem } from './jupyter-design-system';
+import { allComponents } from './custom-elements.js';
+import { provideJupyterDesignSystem } from './jupyter-design-system.js';
 
-export * from './index';
+export * from './index.js';
 
 /**
  * The global Jupyter Design System.

@@ -2,6 +2,14 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
+import { css, ElementStyles } from '@microsoft/fast-element';
+import {
+  disabledCursor,
+  display,
+  focusVisible,
+  forcedColorsStylesheetBehavior,
+  FoundationElementTemplate
+} from '@microsoft/fast-foundation';
 import {
   accentFillFocus,
   bodyFont,
@@ -22,16 +30,8 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
-import { css, ElementStyles } from '@microsoft/fast-element';
-import {
-  disabledCursor,
-  display,
-  focusVisible,
-  forcedColorsStylesheetBehavior,
-  FoundationElementTemplate
-} from '@microsoft/fast-foundation';
-import { heightNumber } from '../styles/index';
+} from '../design-tokens.js';
+import { heightNumber } from '../styles/index.js';
 
 /**
  * Styles for Text Area
@@ -132,6 +132,14 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
     }
     :host([disabled]) .control {
       border-color: ${neutralStrokeRest};
+    }
+
+    :host([cols]) {
+      width: initial;
+    }
+
+    :host([rows]) .control {
+      height: initial;
     }
   `.withBehaviors(
     forcedColorsStylesheetBehavior(css`

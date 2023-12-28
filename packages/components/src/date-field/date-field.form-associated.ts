@@ -1,3 +1,6 @@
+// Copyright (c) Jupyter Development Team.
+// Distributed under the terms of the Modified BSD License.
+
 import { FormAssociated, FoundationElement } from '@microsoft/fast-foundation';
 
 class _DateField extends FoundationElement {}

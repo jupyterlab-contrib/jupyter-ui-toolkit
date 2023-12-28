@@ -1,0 +1,32 @@
+{
+  "extends": "./tsconfigbase.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "lib",
+    "lib": ["dom", "es6"],
+    "pretty": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": false,
+    "types": ["jest", "node", "webpack-env"]
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "src/**/*.stories.ts",
+    "src/**/*.stories.mdx",
+    "src/**/fixtures/",
+    "src/utilities/storybook/",
+    "playwright.config.ts"
+  ]
+}

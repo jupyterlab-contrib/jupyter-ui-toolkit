@@ -34,9 +34,8 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
-import { heightNumber } from '../styles/index';
-
+} from '../design-tokens.js';
+import { heightNumber } from '../styles/index.js';
 /**
  * Styles for Radio
  * @public
@@ -52,7 +51,7 @@ export const radioStyles: FoundationElementTemplate<
       outline: none;
       margin: calc(${designUnit} * 1px) 0;
       /* Chromium likes to select label text or the default slot when
-         the radio is clicked. Maybe there is a better solution here? */
+                the radio is clicked. Maybe there is a better solution here? */
       user-select: none;
       position: relative;
       flex-direction: row;
@@ -74,8 +73,6 @@ export const radioStyles: FoundationElementTemplate<
     .label {
       font-family: ${bodyFont};
       color: ${neutralForegroundRest};
-      /* Need to discuss with Brian how HorizontalSpacingNumber can work.
-            https://github.com/microsoft/fast/issues/2766 */
       padding-inline-start: calc(${designUnit} * 2px + 2px);
       margin-inline-end: calc(${designUnit} * 2px + 2px);
       cursor: pointer;

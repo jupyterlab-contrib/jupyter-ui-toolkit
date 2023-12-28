@@ -1,11 +1,12 @@
 // Copyright (c) Jupyter Development Team.
+// Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
 import {
   tooltipTemplate as template,
   Tooltip
 } from '@microsoft/fast-foundation';
-import { tooltipStyles as styles } from '@microsoft/fast-components';
+import { tooltipStyles as styles } from './tooltip.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Tooltip} registration for configuring the component with a DesignSystem.

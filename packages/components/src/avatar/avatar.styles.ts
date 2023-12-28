@@ -15,11 +15,10 @@ import {
   controlCornerRadius,
   density,
   designUnit,
-  DirectionalStyleSheetBehavior,
-  foregroundOnAccentRest,
   neutralForegroundRest,
   typeRampBaseFontSize
-} from '../design-tokens';
+} from '../design-tokens.js';
+import { DirectionalStyleSheetBehavior } from '../styles/direction.js';
 
 const rtl: FoundationElementTemplate<ElementStyles, AvatarOptions> = (
   context,
@@ -104,7 +103,6 @@ export const avatarStyles: FoundationElementTemplate<
               var(--avatar-size, var(--avatar-size-default))
           ) / var(--avatar-text-ratio)
       );
-      color: ${foregroundOnAccentRest};
       line-height: var(--avatar-size, var(--avatar-size-default));
       display: block;
       min-height: var(--avatar-size, var(--avatar-size-default));

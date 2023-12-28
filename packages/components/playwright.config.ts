@@ -3,7 +3,7 @@ import { PlaywrightTestConfig, devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  testMatch: 'tests-out/**/*.test.js',
+  testMatch: 'src/**/*.test.ts',
   webServer: {
     command: 'yarn run start:ci',
     url: 'http://localhost:6006/iframe.html?id=accordion--default',

@@ -3,12 +3,12 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { css, ElementStyles } from '@microsoft/fast-element';
+import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   focusVisible,
   forcedColorsStylesheetBehavior,
   FoundationElementTemplate
 } from '@microsoft/fast-foundation';
-import { SystemColors } from '@microsoft/fast-web-utilities';
 import {
   accentFillFocus,
   bodyFont,
@@ -16,10 +16,9 @@ import {
   designUnit,
   focusStrokeWidth,
   neutralForegroundRest,
-  strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
+} from '../design-tokens.js';
 
 /**
  * Styles for Data Grid cell
@@ -37,8 +36,8 @@ export const dataGridCellStyles: FoundationElementTemplate<ElementStyles> = (
       font-family: ${bodyFont};
       font-size: ${typeRampBaseFontSize};
       line-height: ${typeRampBaseLineHeight};
-      border: transparent calc(${strokeWidth} * 1px) solid;
       font-weight: 400;
+      border: transparent calc(${focusStrokeWidth} * 1px) solid;
       overflow: hidden;
       white-space: nowrap;
       border-radius: calc(${controlCornerRadius} * 1px);
@@ -50,6 +49,7 @@ export const dataGridCellStyles: FoundationElementTemplate<ElementStyles> = (
 
     :host(:${focusVisible}) {
       outline: calc(${focusStrokeWidth} * 1px) solid ${accentFillFocus};
+      color: ${neutralForegroundRest};
     }
   `.withBehaviors(
     forcedColorsStylesheetBehavior(css`
@@ -63,6 +63,7 @@ export const dataGridCellStyles: FoundationElementTemplate<ElementStyles> = (
       :host(:${focusVisible}) {
         border-color: ${SystemColors.FieldText};
         box-shadow: 0 0 0 2px inset ${SystemColors.Field};
+        color: ${SystemColors.FieldText};
       }
     `)
   );

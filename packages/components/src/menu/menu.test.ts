@@ -6,7 +6,7 @@ import { test, expect } from '@playwright/test';
 test('Default', async ({ page }) => {
   await page.goto('/iframe.html?id=components-menu--default');
 
-  expect(
-    await page.locator('#storybook-root > jp-menu').screenshot()
-  ).toMatchSnapshot('menu-default.png');
+  expect(await page.locator('jp-menu').first().screenshot()).toMatchSnapshot(
+    'menu-default.png'
+  );
 });

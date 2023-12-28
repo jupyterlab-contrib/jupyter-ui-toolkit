@@ -9,21 +9,21 @@ import {
   FoundationElementTemplate,
   TextFieldOptions
 } from '@microsoft/fast-foundation';
-import { Swatch } from '../color';
+import { Swatch } from '../color/swatch.js';
 import {
   bodyFont,
   controlCornerRadius,
   density,
+  designUnit,
   neutralFillRecipe,
   neutralFillStealthActive,
   neutralFillStealthHover,
   neutralFillStealthRecipe,
   neutralForegroundRest,
   typeRampBaseFontSize,
-  typeRampBaseLineHeight,
-  designUnit
-} from '../design-tokens';
-import { BaseFieldStyles, heightNumber } from '../styles/index';
+  typeRampBaseLineHeight
+} from '../design-tokens.js';
+import { BaseFieldStyles, heightNumber } from '../styles/index.js';
 
 const clearButtonHover = DesignToken.create<Swatch>(
   'clear-button-hover'
@@ -111,6 +111,7 @@ export const searchStyles: FoundationElementTemplate<
   .end {
     display: flex;
     margin: 1px;
+    fill: currentcolor;
   }
 
   ::slotted([slot='end']) {
@@ -119,10 +120,13 @@ export const searchStyles: FoundationElementTemplate<
 
   .end {
     margin-inline-end: 1px;
+    height: calc(100% - 2px);
   }
 
   ::slotted(svg) {
     /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
+    width: 16px;
+    height: 16px;
     margin-inline-end: 11px;
     margin-inline-start: 11px;
     margin-top: auto;

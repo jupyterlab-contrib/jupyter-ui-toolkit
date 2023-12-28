@@ -14,7 +14,7 @@ import {
   TreeItemOptions
 } from '@microsoft/fast-foundation';
 import { SystemColors } from '@microsoft/fast-web-utilities';
-import type { Swatch } from '../color';
+import { Swatch } from '../color/swatch.js';
 import {
   accentFillFocus,
   accentForegroundRest,
@@ -23,9 +23,10 @@ import {
   controlCornerRadius,
   density,
   designUnit,
-  DirectionalStyleSheetBehavior,
   disabledOpacity,
   focusStrokeWidth,
+  neutralFillActive,
+  neutralFillHover,
   neutralFillRecipe,
   neutralFillRest,
   neutralFillStealthActive,
@@ -36,8 +37,11 @@ import {
   strokeWidth,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
-import { heightNumber } from '../styles/index';
+} from '../design-tokens.js';
+import {
+  DirectionalStyleSheetBehavior,
+  heightNumber
+} from '../styles/index.js';
 
 const ltr = css`
   .expand-collapse-glyph {
@@ -105,6 +109,20 @@ export const treeItemStyles: FoundationElementTemplate<
   TreeItemOptions
 > = (context, definition) =>
   css`
+    /**
+     * This animation exists because when tree item children are conditionally loaded
+     * there is a visual bug where the DOM exists but styles have not yet been applied (essentially FOUC).
+     * This subtle animation provides a ever so slight timing adjustment for loading that solves the issue.
+     */
+    @keyframes treeItemLoading {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
     ${display('block')} :host {
       contain: content;
       position: relative;
@@ -136,6 +154,7 @@ export const treeItemStyles: FoundationElementTemplate<
       display: flex;
       position: relative;
       box-sizing: border-box;
+      background: ${neutralFillStealthRest};
       border: transparent calc(${strokeWidth} * 1px) solid;
       border-radius: calc(${controlCornerRadius} * 1px);
       height: calc((${heightNumber} + 1) * 1px);
@@ -148,11 +167,11 @@ export const treeItemStyles: FoundationElementTemplate<
       flex-shrink: 0;
     }
 
-    .positioning-region:hover {
+    :host(:not([disabled])) .positioning-region:hover {
       background: ${neutralFillStealthHover};
     }
 
-    .positioning-region:active {
+    :host(:not([disabled])) .positioning-region:active {
       background: ${neutralFillStealthActive};
     }
 
@@ -170,7 +189,6 @@ export const treeItemStyles: FoundationElementTemplate<
     }
 
     .items {
-      display: none;
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
       font-size: calc(1em + (${designUnit} + 16) * 1px);
     }
@@ -224,7 +242,9 @@ export const treeItemStyles: FoundationElementTemplate<
     }
 
     :host([expanded]) > .items {
-      display: block;
+      animation: treeItemLoading ease-in 10ms;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
     }
 
     :host([disabled]) .content-region {
@@ -241,7 +261,7 @@ export const treeItemStyles: FoundationElementTemplate<
       position: absolute;
     }
 
-    :host(.nested) .expand-collapse-button:hover {
+    :host(.nested:not([disabled])) .expand-collapse-button:hover {
       background: ${expandCollapseHoverBehavior};
     }
 
@@ -249,14 +269,22 @@ export const treeItemStyles: FoundationElementTemplate<
       background: ${neutralFillRest};
     }
 
-    :host([selected]) .expand-collapse-button:hover {
+    :host([selected]:not([disabled])) .positioning-region:hover {
+      background: ${neutralFillHover};
+    }
+
+    :host([selected]:not([disabled])) .positioning-region:active {
+      background: ${neutralFillActive};
+    }
+
+    :host([selected]:not([disabled])) .expand-collapse-button:hover {
       background: ${selectedExpandCollapseHoverBehavior};
     }
 
     :host([selected])::after {
       /* The background needs to be calculated based on the selected background state
-            for this control. We currently have no way of changing that, so setting to
-            accent-foreground-rest for the time being */
+         for this control. We currently have no way of changing that, so setting to
+         accent-foreground-rest for the time being */
       background: ${accentForegroundRest};
       border-radius: calc(${controlCornerRadius} * 1px);
       content: '';

@@ -18,8 +18,8 @@ import {
   neutralForegroundRest,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens';
-import { heightNumber } from '../styles/index';
+} from '../design-tokens.js';
+import { heightNumber } from '../styles/index.js';
 
 /**
  * Styles for Tabs
@@ -116,6 +116,7 @@ export const tabsStyles: FoundationElementTemplate<
       height: 100%;
       margin-inline-end: 0px;
       align-self: center;
+      background: ${accentFillRest};
       border-radius: calc(${controlCornerRadius} * 1px) 0 0
         calc(${controlCornerRadius} * 1px);
     }
