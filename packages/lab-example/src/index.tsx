@@ -193,7 +193,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     app.restored.then(() => {
       app.shell.add(widget, 'main');
-      app.shell.add(reactWidget, 'main', { mode: 'split-bottom' });
+      app.shell.add(reactWidget, 'main', { mode: 'split-right' });
       app.shell.activateById(widget.id);
 
       const dataGrid: WebDataGrid | null =
@@ -252,10 +252,13 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
       <div className="jp-FlexColumn" style={{ gridColumn: 1 }}>
         <div className="jp-FlexRow">
           <Button appearance="accent" onClick={onClick}>
-            Button
+            Accent
           </Button>
           <Button appearance="neutral" onClick={onClick}>
-            Button
+            Default
+          </Button>
+          <Button appearance="error" onClick={onClick}>
+            Error
           </Button>
           <Button appearance="stealth" aria-label="Confirm" onClick={onClick}>
             <span className="fa fa-cog"></span>
@@ -484,8 +487,9 @@ function createNode(): HTMLElement {
 <div class="jp-Grid">
     <div class="jp-FlexColumn" style="grid-column: 1;">
       <div class="jp-FlexRow">
-        <jp-button appearance="accent">Button</jp-button>
-        <jp-button appearance="neutral">Button</jp-button>
+        <jp-button appearance="accent">Accent</jp-button>
+        <jp-button appearance="neutral">Default</jp-button>
+        <jp-button appearance="error">Error</jp-button>
         <jp-button appearance="stealth" aria-label="Confirm"><span class="fa fa-cog"></span></jp-button>
       </div>
       <jp-anchor appearance="outline" href="#">

@@ -17,6 +17,7 @@ import {
   baseLayerLuminance,
   bodyFont,
   controlCornerRadius,
+  errorColor,
   neutralColor,
   strokeWidth,
   typeRampBaseFontSize
@@ -155,6 +156,29 @@ const tokenMappings: { [key: string]: IConverter<any> } = {
       }
     },
     token: accentColor
+  },
+  '--jp-error-color1': {
+    converter: (value: string, isDark: boolean): Swatch | null => {
+      const parsedColor = parseColor(value);
+      if (parsedColor) {
+        const hsl = rgbToHSL(parsedColor);
+        // Correct luminance to get error fill closer
+        const direction = isDark ? 1 : -1;
+        const correctedHSL = ColorHSL.fromObject({
+          h: hsl.h,
+          s: hsl.s,
+          l:
+            hsl.l +
+            (direction * accentFillHoverDelta.getValueFor(document.body)) / 94.0
+        });
+        const correctedRGB = hslToRGB(correctedHSL!);
+
+        return SwatchRGB.create(correctedRGB.r, correctedRGB.g, correctedRGB.b);
+      } else {
+        return null;
+      }
+    },
+    token: errorColor
   },
   '--jp-ui-font-family': {
     token: bodyFont

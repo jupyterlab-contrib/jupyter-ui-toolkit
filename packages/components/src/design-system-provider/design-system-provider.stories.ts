@@ -35,7 +35,8 @@ export default {
         '#d83b01'
       ]
     },
-    neutralColor: { control: 'color' }
+    neutralColor: { control: 'color' },
+    errorColor: { control: 'color' }
   }
 } as Meta;
 
@@ -45,8 +46,9 @@ const Template: StoryFn = (args): string => {
   fill-color="${args.fillColor}"
   accent-color="${args.accentColor}"
   neutral-color="${args.neutralColor}"
+  error-color="${args.errorColor}"
 >
-  <jp-button appearance="accent">Accent</jp-button><jp-button>Neutral</jp-button>
+  <jp-button appearance="accent">Accent</jp-button><jp-button>Neutral</jp-button><jp-button appearance="error">Error</jp-button>
 </jp-design-system-provider>
   `;
 };
@@ -56,5 +58,6 @@ export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   neutralColor: '#808080',
   accentColor: '#DA1A5F',
-  fillColor: '#3b3b3b'
+  fillColor: '#3b3b3b',
+  errorColor: '#D32F2F'
 };

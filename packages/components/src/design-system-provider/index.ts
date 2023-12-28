@@ -40,6 +40,7 @@ import {
   designUnit,
   direction,
   disabledOpacity,
+  errorColor,
   fillColor,
   focusStrokeWidth,
   neutralColor,
@@ -228,6 +229,19 @@ export class DesignSystemProvider extends FoundationElement {
   })
   @designToken(neutralColor)
   public neutralColor?: Swatch;
+
+  /**
+   * Set the error color
+   * @remarks
+   * HTML attribute: error-color
+   */
+  @attr({
+    attribute: 'error-color',
+    converter: swatchConverter,
+    mode: 'fromView'
+  })
+  @designToken(errorColor)
+  public errorColor?: Swatch;
 
   /**
    *

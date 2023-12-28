@@ -16,6 +16,7 @@ export const DesignSystemProvider: React.DetailedHTMLFactory<
     'fill-color'?: string;
     'accent-color'?: string;
     'neutral-color'?: string;
+    'error-color'?: string;
     density?: number;
     'design-unit'?: number;
     direction?: 'ltr' | 'rtl';

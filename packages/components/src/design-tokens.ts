@@ -1029,13 +1029,17 @@ export const heightNumberAsToken = DesignToken.create<number>({
  * The delta used are those of the accent palette.
  */
 
+/** @public */
+export const errorColor = create<Swatch>('error-color').withDefault(errorBase);
+
 /**
  * Error palette
+ * @public
  */
-export const errorPalette = create<Palette>({
-  name: 'error-palette',
-  cssCustomPropertyName: null
-}).withDefault(PaletteRGB.from(errorBase));
+export const errorPalette = createNonCss<Palette>('error-palette').withDefault(
+  (element: HTMLElement) =>
+    PaletteRGB.from(errorColor.getValueFor(element) as SwatchRGB)
+);
 
 // Error Fill
 /** @public */
