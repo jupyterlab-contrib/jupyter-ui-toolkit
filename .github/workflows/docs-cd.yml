@@ -1,31 +1,46 @@
 name: docs
 
 on:
-    push:
-        branches:
-            - main
-
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+      
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
+  group: "pages"
+  cancel-in-progress: false
+        
 jobs:
-    deploy-docs:
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
-        steps:
-            - name: Checkout 🛎️
-              uses: actions/checkout@v3
+  deploy-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+      
+      - name: Install Dependencies 📥
+        run: yarn install
+      
+      - name: Build Docs 🔧
+        run: yarn run build:docs
+        working-directory: packages/components
 
-            - name: Install Dependencies 📥
-              run: yarn install
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-            - name: Build Docs 🔧
-              run: yarn run build:docs
-              working-directory: packages/components
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: packages/components/storybook-static
 
-            - name: Deploy Docs 🚀
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                  branch: gh-pages
-                  folder: packages/components/storybook-static
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
