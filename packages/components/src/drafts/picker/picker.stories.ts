@@ -27,7 +27,7 @@ const Template: StoryFn = (args): string => {
   const max = args.maxSelected ? `max-selected="${args.maxSelected}"` : '';
 
   return `
-<jp-picker
+<jp-draft-picker
   default-selection="${args.defaultSelection}"
   selection="${args.selection}"
   options="${args.options}"
@@ -37,7 +37,7 @@ const Template: StoryFn = (args): string => {
   label="${args.label}"
   placeholder="${args.placeholder}"
   ${max}
-></jp-picker>
+></jp-draft-picker>
   `;
 };
 

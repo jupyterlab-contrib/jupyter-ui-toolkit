@@ -24,8 +24,8 @@ import {
   neutralForegroundRest,
   typeRampBaseFontSize,
   typeRampBaseLineHeight
-} from '../design-tokens.js';
-import { heightNumber } from '../styles/index.js';
+} from '../../design-tokens.js';
+import { heightNumber } from '../../styles/index.js';
 
 /**
  * Styles for Picker list item

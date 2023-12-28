@@ -29,7 +29,6 @@ import type { Menu } from './menu/index.js';
 import type { MenuItem } from './menu-item/index.js';
 import type { NumberField } from './number-field/index.js';
 import type { Option } from './option/index.js';
-import type { Picker } from './picker/index.js';
 import type { Progress } from './progress/index.js';
 import type { ProgressRing } from './progress-ring/index.js';
 import type { Radio } from './radio/index.js';
@@ -49,6 +48,8 @@ import type { Toolbar } from './toolbar/index.js';
 import type { Tooltip } from './tooltip/index.js';
 import type { TreeItem } from './tree-item/index.js';
 import type { TreeView } from './tree-view/index.js';
+
+import type { Picker } from './drafts/picker/index.js';
 
 /**
  * Export all custom element definitions
@@ -85,13 +86,6 @@ import { jpMenu } from './menu/index.js';
 import { jpMenuItem } from './menu-item/index.js';
 import { jpNumberField } from './number-field/index.js';
 import { jpOption } from './option/index.js';
-import {
-  jpPicker,
-  jpPickerList,
-  jpPickerListItem,
-  jpPickerMenu,
-  jpPickerMenuOption
-} from './picker/index.js';
 import { jpProgress } from './progress/index.js';
 import { jpProgressRing } from './progress-ring/index.js';
 import { jpRadio } from './radio/index.js';
@@ -111,6 +105,14 @@ import { jpToolbar } from './toolbar/index.js';
 import { jpTooltip } from './tooltip/index.js';
 import { jpTreeItem } from './tree-item/index.js';
 import { jpTreeView } from './tree-view/index.js';
+
+import {
+  jpPicker,
+  jpPickerList,
+  jpPickerListItem,
+  jpPickerMenu,
+  jpPickerMenuOption
+} from './drafts/picker/index.js';
 
 // When adding new components, make sure to add the component to the `allComponents` object
 // in addition to exporting the component by name. Ideally we would be able to just add
