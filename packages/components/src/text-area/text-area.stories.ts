@@ -4,6 +4,7 @@
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { TextArea } from './index';
+import { withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Text Area',
@@ -12,21 +13,30 @@ export default {
     placeholder: { control: 'text' },
     value: { control: 'text' },
     maxLength: { control: 'number' },
-    isReadOnly: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
     resize: {
       control: 'select',
       options: ['none', 'both', 'vertical', 'horizontal']
     },
+    errorMessage: { control: 'text' },
+    inForm: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: [withForm]
 } as Meta;
 
 const Template: StoryFn = (args): HTMLElement => {
@@ -41,22 +51,26 @@ const Template: StoryFn = (args): HTMLElement => {
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
       resize="${args.resize}"
+      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
     >
       ${args.label}
     </jp-text-area>`
   );
 
-  const textField = container.firstChild as TextArea;
+  const textArea = container.firstChild as TextArea;
 
   if (args.value) {
-    textField.value = args.value;
+    textArea.value = args.value;
   }
 
   if (args.onChange) {
-    textField.addEventListener('change', args.onChange);
+    textArea.addEventListener('change', args.onChange);
+  }
+  if (args.onInvalid) {
+    textArea.addEventListener('invalid', args.onInvalid);
   }
 
-  return textField;
+  return textArea;
 };
 
 export const Default: StoryObj = { render: Template.bind({}) };
@@ -66,11 +80,14 @@ Default.args = {
   value: '',
   maxLength: '',
   resize: 'none',
-  isReadOnly: false,
-  isDisabled: false,
-  isAutoFocused: false,
+  readonly: false,
+  disabled: false,
+  autofocus: false,
   appearance: 'outline',
-  onChange: action('text-area-onchange')
+  errorMessage: '',
+  onChange: action('change'),
+  onInvalid: action('invalid'),
+  inForm: false
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -102,4 +119,10 @@ export const WithReadonly: StoryObj = { render: Template.bind({}) };
 WithReadonly.args = {
   ...Default.args,
   readonly: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  errorMessage: 'Invalid text area value'
 };

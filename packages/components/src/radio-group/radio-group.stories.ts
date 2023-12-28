@@ -3,20 +3,30 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
+import { withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Radio Group',
   argTypes: {
-    isDisabled: { control: 'boolean' },
-    isReadOnly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    readonly: { control: 'boolean' },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },
+    errorMessage: { control: 'text' },
+    inForm: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: [withForm]
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -25,8 +35,9 @@ const Template: StoryFn = (args, context): HTMLElement => {
     'afterbegin',
     `<jp-radio-group
       orientation=${args.orientation}
-      ${args.isDisabled ? 'disabled' : ''}
-      ${args.isReadOnly ? 'readonly' : ''}
+      ${args.disabled ? 'disabled' : ''}
+      ${args.readonly ? 'readonly' : ''}
+      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
     >
       <label slot="label" style="color: var(--neutral-foreground-rest)">Fruit</label>
       <jp-radio value="apples">Apples</jp-radio>
@@ -46,16 +57,22 @@ const Template: StoryFn = (args, context): HTMLElement => {
   if (args.onChange) {
     radioGroup.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    radioGroup.addEventListener('invalid', args.onInvalid);
+  }
 
   return radioGroup;
 };
 
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
-  isDisabled: false,
-  isReadOnly: false,
+  disabled: false,
+  readonly: false,
   orientation: 'horizontal',
-  onChange: action('radio-onchange')
+  errorMessage: '',
+  onChange: action('change'),
+  onInvalid: action('invalid'),
+  inForm: false
 };
 
 export const Vertical: StoryObj = { render: Template.bind({}) };
@@ -67,11 +84,17 @@ Vertical.args = {
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
 };
 
 export const WithReadOnly: StoryObj = { render: Template.bind({}) };
 WithReadOnly.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  errorMessage: 'Invalid radio group'
 };

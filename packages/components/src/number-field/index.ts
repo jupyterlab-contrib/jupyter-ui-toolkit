@@ -9,6 +9,7 @@ import {
   numberFieldTemplate as template
 } from '@microsoft/fast-foundation';
 import { numberFieldStyles as styles } from './number-field.styles.js';
+import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Number field appearances
@@ -19,7 +20,7 @@ export type NumberFieldAppearance = 'filled' | 'outline';
 /**
  * @internal
  */
-export class NumberField extends FoundationNumberField {
+export class NumberField extends ErrorMessageMixin(FoundationNumberField) {
   /**
    * The appearance of the element.
    *

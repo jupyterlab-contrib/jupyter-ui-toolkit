@@ -58,3 +58,11 @@ test('With Search Icon', async ({ page }) => {
     'search-with-search-icon.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-search--with-error');
+
+  expect(await page.locator('jp-search').screenshot()).toMatchSnapshot(
+    'search-error.png'
+  );
+});

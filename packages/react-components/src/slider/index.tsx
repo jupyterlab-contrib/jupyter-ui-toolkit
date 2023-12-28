@@ -17,6 +17,7 @@ export const Slider: React.DetailedHTMLFactory<
     orientation?: 'horizontal' | 'vertical';
     disabled?: boolean;
     readonly?: boolean;
+    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpSlider(), { events: { onChange: 'change' } }) as any;

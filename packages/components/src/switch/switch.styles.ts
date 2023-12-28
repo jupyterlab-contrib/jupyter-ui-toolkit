@@ -21,6 +21,10 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  errorFillActive,
+  errorFillFocus,
+  errorFillHover,
+  errorFillRest,
   focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,
@@ -89,17 +93,26 @@ export const switchStyles: FoundationElementTemplate<
       border: calc(${strokeWidth} * 1px) solid ${neutralStrokeRest};
     }
 
+    :host(.invalid) .switch {
+      border-color: ${errorFillRest};
+    }
+
     .switch:hover {
       background: ${neutralFillInputHover};
       border-color: ${neutralStrokeHover};
       cursor: pointer;
     }
 
-    host([disabled]) .switch:hover,
-    host([readonly]) .switch:hover {
+    :host([disabled]) .switch:hover,
+    :host([readonly]) .switch:hover {
       background: ${neutralFillInputHover};
       border-color: ${neutralStrokeHover};
       cursor: ${disabledCursor};
+    }
+
+    :host(.invalid[disabled]) .switch:hover,
+    :host(.invalid[readonly]) .switch:hover {
+      border-color: ${errorFillHover};
     }
 
     :host(:not([disabled])) .switch:active {
@@ -107,9 +120,17 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${neutralStrokeActive};
     }
 
+    :host(.invalid:not([disabled])) .switch:active {
+      border-color: ${errorFillActive};
+    }
+
     :host(:${focusVisible}) .switch {
       outline-offset: 2px;
       outline: solid calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
+    }
+
+    :host(.invalid:${focusVisible}) .switch {
+      outline-color: ${errorFillFocus};
     }
 
     .checked-indicator {
@@ -165,6 +186,16 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${accentFillHover};
     }
 
+    :host(.invalid[aria-checked='true']) .switch {
+      background-color: ${errorFillRest};
+      border-color: ${errorFillRest};
+    }
+
+    :host(.invalid[aria-checked='true']:not([disabled])) .switch:hover {
+      background-color: ${errorFillHover};
+      border-color: ${errorFillHover};
+    }
+
     :host([aria-checked='true']:not([disabled]))
       .switch:hover
       .checked-indicator {
@@ -176,6 +207,11 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${accentFillActive};
     }
 
+    :host(.invalid[aria-checked='true']:not([disabled])) .switch:active {
+      background-color: ${errorFillActive};
+      border-color: ${errorFillActive};
+    }
+
     :host([aria-checked='true']:not([disabled]))
       .switch:active
       .checked-indicator {
@@ -184,6 +220,10 @@ export const switchStyles: FoundationElementTemplate<
 
     :host([aria-checked="true"]:${focusVisible}:not([disabled])) .switch {
       outline: solid calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
+    }
+
+    :host(.invalid[aria-checked="true"]:${focusVisible}:not([disabled])) .switch {
+      outline-color: ${errorFillFocus};
     }
 
     .unchecked-message {
@@ -212,6 +252,9 @@ export const switchStyles: FoundationElementTemplate<
         forced-color-adjust: none;
         background: ${SystemColors.Field};
         border-color: ${SystemColors.FieldText};
+      }
+      :host(.invalid) .switch {
+        border-style: dashed;
       }
       :host(:not([disabled])) .switch:hover {
         background: ${SystemColors.HighlightText};

@@ -3,24 +3,33 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
+import { getFaIcon, withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Select',
   argTypes: {
-    isOpen: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
+    open: { control: 'boolean' },
+    disabled: { control: 'boolean' },
     customIndicator: { control: 'boolean' },
     numberOfChildren: { control: 'number' },
-    isMinimal: { control: 'boolean' },
-    hasAutoWidth: { control: 'boolean' },
+    minimal: { control: 'boolean' },
+    autowidth: { control: 'boolean' },
+    errorMessage: { control: 'text' },
+    inForm: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: [withForm]
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -30,9 +39,10 @@ const Template: StoryFn = (args, context): HTMLElement => {
   container.insertAdjacentHTML(
     'afterbegin',
     `<jp-select 
-      ${args.isDisabled ? 'disabled' : ''}
-      ${args.isMinimal ? 'minimal' : ''}
-      ${args.hasAutoWidth ? 'autowidth' : ''}
+      ${args.disabled ? 'disabled' : ''}
+      ${args.minimal ? 'minimal' : ''}
+      ${args.autowidth ? 'autowidth' : ''}
+      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
     >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
         ${new Array(args.numberOfChildren ?? 3)
@@ -50,12 +60,15 @@ const Template: StoryFn = (args, context): HTMLElement => {
 
   const select = container.firstChild as HTMLElement;
 
-  if (args.isOpen) {
+  if (args.open) {
     select.setAttribute('open', '');
   }
 
   if (args.onChange) {
     select.addEventListener('change', args.onChange);
+  }
+  if (args.onInvalid) {
+    select.addEventListener('invalid', args.onInvalid);
   }
 
   return select;
@@ -63,35 +76,44 @@ const Template: StoryFn = (args, context): HTMLElement => {
 
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
-  isOpen: false,
-  isDisabled: false,
+  open: false,
+  disabled: false,
   customIndicator: false,
   numberOfChildren: 3,
-  isMinimal: false,
-  hasAutoWidth: false,
-  onChange: action('select-onchange')
+  minimal: false,
+  autowidth: false,
+  errorMessage: '',
+  onChange: action('change'),
+  onInvalid: action('invalid'),
+  inForm: false
 };
 
 export const WithOpen: StoryObj = { render: Template.bind({}) };
 WithOpen.args = {
   ...Default.args,
-  isOpen: true
+  open: true
 };
 
 export const WithAutoWidth: StoryObj = { render: Template.bind({}) };
 WithAutoWidth.args = {
   ...Default.args,
-  hasAutoWidth: true
+  autowidth: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
 };
 
 export const WithCustomIndicator: StoryObj = { render: Template.bind({}) };
 WithCustomIndicator.args = {
   ...Default.args,
   customIndicator: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  errorMessage: 'Invalid select value'
 };

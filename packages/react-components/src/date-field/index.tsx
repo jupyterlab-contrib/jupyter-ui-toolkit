@@ -25,6 +25,7 @@ export const DateField: React.DetailedHTMLFactory<
     required?: boolean;
     step?: number;
     value?: string;
+    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpDateField(), {

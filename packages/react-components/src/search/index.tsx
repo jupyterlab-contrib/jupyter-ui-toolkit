@@ -24,6 +24,7 @@ export const Search: React.DetailedHTMLFactory<
     required?: boolean;
     size?: number;
     value?: string;
+    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpSearch(), {

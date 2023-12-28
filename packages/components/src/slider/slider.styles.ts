@@ -18,6 +18,8 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  errorFillFocus,
+  errorFillRest,
   fillColor,
   focusStrokeWidth,
   neutralForegroundRest,
@@ -91,6 +93,12 @@ export const sliderStyles: FoundationElementTemplate<
         0 0 0 calc((2 + ${focusStrokeWidth}) * 1px) ${accentFillFocus};
     }
 
+    :host(.invalid:${focusVisible}) .thumb-cursor {
+      box-shadow:
+        0 0 0 2px ${fillColor},
+        0 0 0 calc((2 + ${focusStrokeWidth}) * 1px) ${errorFillFocus};
+    }
+
     .thumb-container {
       position: absolute;
       height: calc(var(--thumb-size) * 1px);
@@ -119,6 +127,9 @@ export const sliderStyles: FoundationElementTemplate<
       height: 100%;
       left: 0;
       border-radius: calc(${controlCornerRadius} * 1px);
+    }
+    :host(.invalid) .track-start {
+      background-color: ${errorFillRest};
     }
     :host([orientation='horizontal']) .thumb-container {
       transform: translateX(calc(var(--thumb-size) * 0.5px))

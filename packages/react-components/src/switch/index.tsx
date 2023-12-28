@@ -14,6 +14,7 @@ export const Switch: React.DetailedHTMLFactory<
     name?: string;
     required?: boolean;
     readonly?: boolean;
+    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpSwitch(), { events: { onChange: 'change' } }) as any;

@@ -66,3 +66,11 @@ test('With Start Icon', async ({ page }) => {
     'number-field-with-start-icon.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-number-field--with-error');
+
+  expect(await page.locator('jp-number-field').screenshot()).toMatchSnapshot(
+    'number-field-error.png'
+  );
+});

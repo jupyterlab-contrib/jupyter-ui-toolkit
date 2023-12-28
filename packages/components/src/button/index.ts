@@ -15,6 +15,7 @@ import { buttonStyles as styles } from './button.styles.js';
  */
 export type ButtonAppearance =
   | 'accent'
+  | 'error'
   | 'lightweight'
   | 'neutral'
   | 'outline'

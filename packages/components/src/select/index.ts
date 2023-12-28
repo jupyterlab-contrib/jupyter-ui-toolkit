@@ -14,12 +14,13 @@ import {
   neutralLayerFloating
 } from '../design-tokens.js';
 import { selectStyles as styles } from './select.styles.js';
+import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Base class for Select.
  * @public
  */
-export class Select extends FoundationSelect {
+export class Select extends ErrorMessageMixin(FoundationSelect) {
   /**
    * Whether the select has a compact layout or not.
    *

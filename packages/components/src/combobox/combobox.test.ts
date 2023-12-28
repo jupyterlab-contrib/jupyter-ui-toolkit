@@ -26,3 +26,11 @@ test('Custom Indicator', async ({ page }) => {
     'combobox-custom-indicator.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-combobox--with-error');
+
+  expect(await page.locator('jp-combobox').screenshot()).toMatchSnapshot(
+    'combobox-error.png'
+  );
+});

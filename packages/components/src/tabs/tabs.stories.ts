@@ -7,8 +7,8 @@ import { action } from '@storybook/addon-actions';
 export default {
   title: 'Components/Tabs',
   argTypes: {
-    activePanel: { control: 'select', options: [null, 'One', 'Two', 'Three'] },
-    activeIndicator: { control: 'boolean' },
+    activeid: { control: 'select', options: [null, 'One', 'Two', 'Three'] },
+    activeindicator: { control: 'boolean' },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] }
   }
 } as Meta;
@@ -18,8 +18,8 @@ const Template: StoryFn = (args, context): HTMLElement => {
   container.insertAdjacentHTML(
     'afterbegin',
     `<jp-tabs 
-    ${!args.activeIndicator && 'activeindicator="false"'}
-    ${args.activePanel ? `activeid=Tab${args.activePanel}` : ''}
+    ${!args.activeindicator && 'activeindicator="false"'}
+    ${args.activeid ? `activeid=Tab${args.activeid}` : ''}
     orientation="${args.orientation}"
   >
     <jp-tab id="TabOne">Tab one</jp-tab>
@@ -48,8 +48,8 @@ const Template: StoryFn = (args, context): HTMLElement => {
 
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
-  activePanel: null,
-  activeIndicator: true,
+  activeid: null,
+  activeindicator: true,
   orientation: 'horizontal',
   onChange: action('tabs-onchange')
 };
@@ -63,5 +63,5 @@ Vertical.args = {
 export const WithoutIndicator: StoryObj = { render: Template.bind({}) };
 WithoutIndicator.args = {
   ...Default.args,
-  activeIndicator: false
+  activeindicator: false
 };

@@ -21,6 +21,10 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  errorFillActive,
+  errorFillFocus,
+  errorFillHover,
+  errorFillRest,
   focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,
@@ -66,6 +70,10 @@ export const checkboxStyles: FoundationElementTemplate<
       background: ${neutralFillInputRest};
       outline: none;
       cursor: pointer;
+    }
+
+    :host(.invalid) .control {
+      border-color: ${errorFillRest};
     }
 
     .label {
@@ -116,9 +124,21 @@ export const checkboxStyles: FoundationElementTemplate<
       border-color: ${neutralStrokeActive};
     }
 
+    :host(.invalid:not([disabled])) .control:hover {
+      border-color: ${errorFillHover};
+    }
+
+    :host(.invalid:not([disabled])) .control:active {
+      border-color: ${errorFillActive};
+    }
+
     :host(:${focusVisible}) .control {
       outline: calc(${focusStrokeWidth} * 1px) solid ${accentFillFocus};
       outline-offset: 2px;
+    }
+
+    :host(.invalid:${focusVisible}) .control {
+      outline-color: ${errorFillFocus};
     }
 
     :host([aria-checked='true']) .control {
@@ -129,6 +149,16 @@ export const checkboxStyles: FoundationElementTemplate<
     :host([aria-checked='true']:not([disabled])) .control:hover {
       background: ${accentFillHover};
       border: calc(${strokeWidth} * 1px) solid ${accentFillHover};
+    }
+
+    :host(.invalid[aria-checked='true']) .control {
+      background-color: ${errorFillRest};
+      border-color: ${errorFillRest};
+    }
+
+    :host(.invalid[aria-checked='true']:not([disabled])) .control:hover {
+      background-color: ${errorFillHover};
+      border-color: ${errorFillHover};
     }
 
     :host([aria-checked='true']:not([disabled]))
@@ -148,6 +178,11 @@ export const checkboxStyles: FoundationElementTemplate<
       border: calc(${strokeWidth} * 1px) solid ${accentFillActive};
     }
 
+    :host(.invalid[aria-checked='true']:not([disabled])) .control:active {
+      background-color: ${errorFillActive};
+      border-color: ${errorFillActive};
+    }
+
     :host([aria-checked='true']:not([disabled]))
       .control:active
       .checked-indicator {
@@ -163,6 +198,10 @@ export const checkboxStyles: FoundationElementTemplate<
     :host([aria-checked="true"]:${focusVisible}:not([disabled])) .control {
       outline: calc(${focusStrokeWidth} * 1px) solid ${accentFillFocus};
       outline-offset: 2px;
+    }
+
+    :host(.invalid[aria-checked="true"]:${focusVisible}:not([disabled])) .control {
+      outline-color: ${errorFillFocus};
     }
 
     :host([disabled]) .label,
@@ -186,6 +225,9 @@ export const checkboxStyles: FoundationElementTemplate<
         forced-color-adjust: none;
         border-color: ${SystemColors.FieldText};
         background: ${SystemColors.Field};
+      }
+      :host(.invalid) .control {
+        border-style: dashed;
       }
       .checked-indicator {
         fill: ${SystemColors.FieldText};

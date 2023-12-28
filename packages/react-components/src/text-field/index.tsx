@@ -28,6 +28,7 @@ export const TextField: React.DetailedHTMLFactory<
     spellcheck?: boolean;
     type?: 'text' | 'email' | 'password' | 'tel' | 'url';
     value?: string;
+    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpTextField(), {

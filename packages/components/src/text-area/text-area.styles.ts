@@ -16,6 +16,10 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  errorFillActive,
+  errorFillFocus,
+  errorFillHover,
+  errorFillRest,
   focusStrokeWidth,
   neutralFillHover,
   neutralFillInputActive,
@@ -64,14 +68,26 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
       resize: none;
     }
 
+    :host(.invalid) .control {
+      border-color: ${errorFillRest};
+    }
+
     .control:hover:enabled {
       background: ${neutralFillInputHover};
       border-color: ${neutralFillStrongHover};
     }
 
+    :host(.invalid) .control:hover:enabled {
+      border-color: ${errorFillHover};
+    }
+
     .control:active:enabled {
       background: ${neutralFillInputActive};
       border-color: ${neutralFillStrongActive};
+    }
+
+    :host(.invalid) .control:active:enabled {
+      border-color: ${errorFillActive};
     }
 
     .control:hover,
@@ -85,6 +101,12 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
       border-color: ${accentFillFocus};
       box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
         ${accentFillFocus};
+    }
+
+    :host(.invalid:focus-within) .control {
+      border-color: ${errorFillFocus};
+      box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+        ${errorFillFocus};
     }
 
     :host([appearance='filled']) .control {
@@ -145,6 +167,10 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
     forcedColorsStylesheetBehavior(css`
       :host([disabled]) {
         opacity: 1;
+      }
+
+      :host(.invalid) .control {
+        border-style: dashed;
       }
     `)
   );

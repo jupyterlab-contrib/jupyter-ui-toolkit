@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
+import { getFaIcon, withForm } from '../utilities/storybook';
 import { NumberField } from './index';
 
 export default {
@@ -14,9 +14,9 @@ export default {
     value: { control: 'number' },
     maxLength: { control: 'number' },
     size: { control: 'number' },
-    isReadOnly: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     endIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
@@ -25,8 +25,15 @@ export default {
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: [withForm]
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -41,6 +48,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.disabled ? 'disabled' : ''}
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
+      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -57,6 +65,9 @@ const Template: StoryFn = (args, context): HTMLElement => {
   if (args.onChange) {
     numberField.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    numberField.addEventListener('invalid', args.onInvalid);
+  }
 
   return numberField;
 };
@@ -68,13 +79,16 @@ Default.args = {
   value: '',
   maxLength: '',
   size: '',
-  isReadOnly: false,
-  isDisabled: false,
-  isAutoFocused: false,
+  readonly: false,
+  disabled: false,
+  autofocus: false,
   startIcon: false,
   endIcon: false,
   appearance: 'outline',
-  onChange: action('number-field-onchange')
+  errorMessage: '',
+  onChange: action('change'),
+  onInvalid: action('invalid'),
+  inForm: false
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -125,4 +139,10 @@ export const WithEndIcon: StoryObj = { render: Template.bind({}) };
 WithEndIcon.args = {
   ...Default.args,
   endIcon: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  errorMessage: 'Invalid number value'
 };

@@ -29,3 +29,11 @@ test('With Disabled', async ({ browserName, page }) => {
     'slider-with-disabled.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-slider--with-error');
+
+  expect(await page.locator('jp-slider').screenshot()).toMatchSnapshot(
+    'slider-error.png'
+  );
+});

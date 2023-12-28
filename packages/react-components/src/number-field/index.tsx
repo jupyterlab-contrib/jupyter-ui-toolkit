@@ -29,6 +29,7 @@ export const NumberField: React.DetailedHTMLFactory<
     size?: number;
     step?: number;
     value?: string;
+    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpNumberField(), {

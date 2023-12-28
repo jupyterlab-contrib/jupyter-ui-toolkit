@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
+import { getFaIcon, withForm } from '../utilities/storybook';
 import { DateField } from './index';
 
 export default {
@@ -11,9 +11,9 @@ export default {
   argTypes: {
     label: { control: 'text' },
     value: { control: 'number' },
-    isReadOnly: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     endIcon: { control: 'boolean' },
     onChange: {
@@ -21,8 +21,15 @@ export default {
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: [withForm]
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -33,6 +40,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.readonly ? 'readonly=""' : ''}
       ${args.disabled ? 'disabled=""' : ''}
       ${args.autofocus ? 'autofocus' : ''}
+      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -49,6 +57,9 @@ const Template: StoryFn = (args, context): HTMLElement => {
   if (args.onChange) {
     dateField.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    dateField.addEventListener('invalid', args.onInvalid);
+  }
 
   return dateField;
 };
@@ -57,12 +68,15 @@ export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   label: 'Date Field Label',
   value: '',
-  isReadOnly: false,
-  isDisabled: false,
-  isAutoFocused: false,
+  readonly: false,
+  disabled: false,
+  autofocus: false,
   startIcon: false,
   endIcon: false,
-  onChange: action('date-field-onchange')
+  errorMessage: '',
+  onChange: action('change'),
+  onInvalid: action('invalid'),
+  inForm: false
 };
 
 export const WithAutofocus: StoryObj = { render: Template.bind({}) };
@@ -93,4 +107,10 @@ export const WithEndIcon: StoryObj = { render: Template.bind({}) };
 WithEndIcon.args = {
   ...Default.args,
   endIcon: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  errorMessage: 'Invalid date value'
 };

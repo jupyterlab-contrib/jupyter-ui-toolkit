@@ -42,3 +42,11 @@ test('With Start Icon', async ({ page }) => {
     'date-field-with-start-icon.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-date-field--with-error');
+
+  expect(await page.locator('jp-date-field').screenshot()).toMatchSnapshot(
+    'date-field-error.png'
+  );
+});

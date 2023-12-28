@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
+import { getFaIcon, withForm } from '../utilities/storybook';
 import { Search } from './index';
 
 export default {
@@ -14,18 +14,27 @@ export default {
     value: { control: 'text' },
     maxLength: { control: 'number' },
     size: { control: 'number' },
-    isReadOnly: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
     searchIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
+    errorMessage: { control: 'text' },
+    inForm: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: [withForm]
 } as Meta;
 
 const Template: StoryFn = (args): HTMLElement => {
@@ -40,6 +49,7 @@ const Template: StoryFn = (args): HTMLElement => {
         ${args.disabled ? 'disabled' : ''}
         ${args.autofocus ? 'autofocus' : ''}
         appearance="${args.appearance}"
+        ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
       >
         ${args.label}
         ${args.searchIcon ? getFaIcon('search', 'end') : ''}
@@ -55,6 +65,9 @@ const Template: StoryFn = (args): HTMLElement => {
   if (args.onChange) {
     search.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    search.addEventListener('invalid', args.onInvalid);
+  }
 
   return search;
 };
@@ -66,12 +79,15 @@ Default.args = {
   value: '',
   maxLength: '',
   size: '',
-  isReadOnly: false,
-  isDisabled: false,
-  isAutoFocused: false,
+  readonly: false,
+  disabled: false,
+  autofocus: false,
   appearance: 'outline',
   searchIcon: false,
-  onChange: action('search-onchange')
+  errorMessage: '',
+  onChange: action('change'),
+  onInvalid: action('invalid'),
+  inForm: false
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -116,4 +132,10 @@ export const WithSearchIcon: StoryObj = { render: Template.bind({}) };
 WithSearchIcon.args = {
   ...Default.args,
   searchIcon: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  errorMessage: 'Invalid search value'
 };

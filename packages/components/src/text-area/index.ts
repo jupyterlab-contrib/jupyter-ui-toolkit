@@ -8,6 +8,7 @@ import {
   textAreaTemplate as template
 } from '@microsoft/fast-foundation';
 import { textAreaStyles as styles } from './text-area.styles.js';
+import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Text area appearances
@@ -18,7 +19,7 @@ export type TextAreaAppearance = 'filled' | 'outline';
 /**
  * @internal
  */
-export class TextArea extends FoundationTextArea {
+export class TextArea extends ErrorMessageMixin(FoundationTextArea) {
   /**
    * The appearance of the element.
    *

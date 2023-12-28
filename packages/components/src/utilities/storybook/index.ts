@@ -9,6 +9,7 @@ import { StandardLuminance } from '../../color/utilities/base-layer-luminance.js
 import { isDark } from '../../color/utilities/is-dark.js';
 import { StoryContext } from '@storybook/html';
 import { DesignSystemProvider } from '../../design-system-provider/index.js';
+import type { Button } from '../../button/index.js';
 
 /**
  * Generate the SVG for a fontawesome icon
@@ -61,4 +62,30 @@ export function withTheme(story: any, context: StoryContext): HTMLElement {
     theme.appendChild(children);
   }
   return theme;
+}
+
+/**
+ * Wrap the story within a form.
+ *
+ * @param story Story
+ * @param context Story context
+ * @returns Wrapped story
+ */
+export function withForm(story: any, context: StoryContext): any {
+  if (context.args.inForm) {
+    const form = document.createElement('form');
+    form.action = document.location.pathname;
+    form.method = 'get';
+    const button = document.createElement('jp-button') as Button;
+    button.textContent = 'Validate';
+    button.type = 'submit';
+    button.appearance = 'outline';
+    const st = story() as HTMLElement;
+    st.addEventListener('invalid', () => {
+      button.appearance = 'error';
+    });
+    form.append(st, button);
+    return form;
+  }
+  return story();
 }
