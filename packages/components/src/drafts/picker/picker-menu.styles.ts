@@ -13,8 +13,8 @@ import {
   designUnit,
   fillColor,
   strokeWidth
-} from '../design-tokens.js';
-import { elevation } from '../styles/index.js';
+} from '../../design-tokens.js';
+import { elevation } from '../../styles/index.js';
 
 /**
  * Styles for Picker menu

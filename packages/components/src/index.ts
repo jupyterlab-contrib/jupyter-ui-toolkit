@@ -40,7 +40,6 @@ export * from './menu/index.js';
 export * from './menu-item/index.js';
 export * from './number-field/index.js';
 export * from './option/index.js';
-export * from './picker/index.js';
 export * from './progress/index.js';
 export * from './progress-ring/index.js';
 export * from './radio/index.js';
@@ -59,3 +58,6 @@ export * from './toolbar/index.js';
 export * from './tooltip/index.js';
 export * from './tree-view/index.js';
 export * from './tree-item/index.js';
+
+// Draft components
+export * from './drafts/picker/index.js';

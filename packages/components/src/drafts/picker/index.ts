@@ -15,7 +15,7 @@ import {
   pickerMenuTemplate,
   pickerTemplate
 } from '@microsoft/fast-foundation';
-import { fillColor, neutralLayerFloating } from '../design-tokens.js';
+import { fillColor, neutralLayerFloating } from '../../design-tokens.js';
 import { pickerStyles } from './picker.styles.js';
 import { pickerMenuStyles } from './picker-menu.styles.js';
 import { pickerMenuOptionStyles } from './picker-menu-option.styles.js';
@@ -29,10 +29,10 @@ import { pickerListItemStyles } from './picker-list-item.styles.js';
  *
  * @alpha
  * @remarks
- * * Generates HTML Element: `<jp-picker>`
+ * * Generates HTML Element: `<jp-draft-picker>`
  */
 export const jpPicker = Picker.compose({
-  baseName: 'picker',
+  baseName: 'draft-picker',
   template: pickerTemplate,
   styles: pickerStyles,
   shadowOptions: {}
@@ -64,10 +64,10 @@ export class PickerMenu extends FoundationPickerMenu {
  *
  * @alpha
  * @remarks
- * HTML Element: \<jp-picker-menu\>
+ * HTML Element: \<jp-draft-picker-menu\>
  */
 export const jpPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
-  baseName: 'picker-menu',
+  baseName: 'draft-picker-menu',
   baseClass: FoundationPickerMenu,
   template: pickerMenuTemplate,
   styles: pickerMenuStyles
@@ -79,10 +79,10 @@ export const jpPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
  *
  * @alpha
  * @remarks
- * HTML Element: \<jp-picker-menu-option\>
+ * HTML Element: \<jp-draft-picker-menu-option\>
  */
 export const jpPickerMenuOption = PickerMenuOption.compose({
-  baseName: 'picker-menu-option',
+  baseName: 'draft-picker-menu-option',
   template: pickerMenuOptionTemplate,
   styles: pickerMenuOptionStyles
 });
@@ -93,11 +93,11 @@ export const jpPickerMenuOption = PickerMenuOption.compose({
  *
  * @alpha
  * @remarks
- * HTML Element: \<jp-picker-list\>
+ * HTML Element: \<jp-draft-picker-list\>
  *
  */
 export const jpPickerList = PickerList.compose({
-  baseName: 'picker-list',
+  baseName: 'draft-picker-list',
   template: pickerListTemplate,
   styles: pickerListStyles
 });
@@ -107,10 +107,10 @@ export const jpPickerList = PickerList.compose({
  *
  * @alpha
  * @remarks
- * HTML Element: \<jp-picker-list-item\>
+ * HTML Element: \<jp-draft-picker-list-item\>
  */
 export const jpPickerListItem = PickerListItem.compose({
-  baseName: 'picker-list-item',
+  baseName: 'draft-picker-list-item',
   template: pickerListItemTemplate,
   styles: pickerListItemStyles
 });

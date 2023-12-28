@@ -9,8 +9,8 @@ import {
   designUnit,
   fillColor,
   typeRampBaseFontSize
-} from '../design-tokens.js';
-import { heightNumber } from '../styles/index.js';
+} from '../../design-tokens.js';
+import { heightNumber } from '../../styles/index.js';
 
 /**
  * Styles for Picker

@@ -24,7 +24,6 @@ export * from './menu';
 export * from './menu-item';
 export * from './number-field';
 export * from './option';
-export * from './picker';
 export * from './progress';
 export * from './progress-ring';
 export * from './radio';
@@ -44,3 +43,5 @@ export * from './toolbar';
 export * from './tooltip';
 export * from './tree-item';
 export * from './tree-view';
+
+export * from './drafts/picker';
