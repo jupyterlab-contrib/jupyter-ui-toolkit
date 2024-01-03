@@ -68,7 +68,7 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
       resize: none;
     }
 
-    :host(.invalid) .control {
+    :host([aria-invalid='true']) .control {
       border-color: ${errorFillRest};
     }
 
@@ -77,7 +77,7 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
       border-color: ${neutralFillStrongHover};
     }
 
-    :host(.invalid) .control:hover:enabled {
+    :host([aria-invalid='true']) .control:hover:enabled {
       border-color: ${errorFillHover};
     }
 
@@ -86,7 +86,7 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
       border-color: ${neutralFillStrongActive};
     }
 
-    :host(.invalid) .control:active:enabled {
+    :host([aria-invalid='true']) .control:active:enabled {
       border-color: ${errorFillActive};
     }
 
@@ -103,7 +103,7 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
         ${accentFillFocus};
     }
 
-    :host(.invalid:focus-within) .control {
+    :host([aria-invalid='true']:focus-within) .control {
       border-color: ${errorFillFocus};
       box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
         ${errorFillFocus};
@@ -169,7 +169,7 @@ export const textAreaStyles: FoundationElementTemplate<ElementStyles> = (
         opacity: 1;
       }
 
-      :host(.invalid) .control {
+      :host([aria-invalid='true']) .control {
         border-style: dashed;
       }
     `)

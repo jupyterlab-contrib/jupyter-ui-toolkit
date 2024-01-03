@@ -45,7 +45,7 @@ export const comboboxStyles: FoundationElementTemplate<
       ${accentFillFocus};
   }
 
-  :host(.invalid:focus-within:not([disabled])) {
+  :host([aria-invalid='true']:focus-within:not([disabled])) {
     border-color: ${errorFillFocus};
     box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
       ${errorFillFocus};

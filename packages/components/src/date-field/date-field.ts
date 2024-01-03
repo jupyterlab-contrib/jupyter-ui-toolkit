@@ -17,7 +17,6 @@ import {
 import type { FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { FormAssociatedDateField } from './date-field.form-associated';
 import { nullableDateConverter } from '../converters';
-import { ErrorMessageMixin } from '../validation';
 
 /**
  * Number field appearances
@@ -353,4 +352,4 @@ export class DateField extends FormAssociatedDateField {
  * @internal
  */
 export interface DateField extends StartEnd, DelegatesARIATextbox {}
-applyMixins(DateField, StartEnd, DelegatesARIATextbox, ErrorMessageMixin);
+applyMixins(DateField, StartEnd, DelegatesARIATextbox);

@@ -18,7 +18,6 @@ export const Checkbox: React.DetailedHTMLFactory<
     required?: boolean;
     disabled?: boolean;
     readonly?: boolean;
-    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpCheckbox(), { events: { onChange: 'change' } }) as any;

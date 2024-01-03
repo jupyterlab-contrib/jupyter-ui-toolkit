@@ -93,7 +93,7 @@ export const sliderStyles: FoundationElementTemplate<
         0 0 0 calc((2 + ${focusStrokeWidth}) * 1px) ${accentFillFocus};
     }
 
-    :host(.invalid:${focusVisible}) .thumb-cursor {
+    :host([aria-invalid='true']:${focusVisible}) .thumb-cursor {
       box-shadow:
         0 0 0 2px ${fillColor},
         0 0 0 calc((2 + ${focusStrokeWidth}) * 1px) ${errorFillFocus};
@@ -128,7 +128,7 @@ export const sliderStyles: FoundationElementTemplate<
       left: 0;
       border-radius: calc(${controlCornerRadius} * 1px);
     }
-    :host(.invalid) .track-start {
+    :host([aria-invalid='true']) .track-start {
       background-color: ${errorFillRest};
     }
     :host([orientation='horizontal']) .thumb-container {

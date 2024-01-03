@@ -3,7 +3,6 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Radio Group',
@@ -11,8 +10,7 @@ export default {
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },
-    errorMessage: { control: 'text' },
-    inForm: { control: 'boolean' },
+    invalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -26,7 +24,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -37,7 +35,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       orientation=${args.orientation}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       <label slot="label" style="color: var(--neutral-foreground-rest)">Fruit</label>
       <jp-radio value="apples">Apples</jp-radio>
@@ -69,10 +67,9 @@ Default.args = {
   disabled: false,
   readonly: false,
   orientation: 'horizontal',
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const Vertical: StoryObj = { render: Template.bind({}) };
@@ -96,5 +93,5 @@ WithReadOnly.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid radio group'
+  invalid: true
 };

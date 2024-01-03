@@ -3,7 +3,6 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Slider',
@@ -12,8 +11,7 @@ export default {
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
-    errorMessage: { control: 'text' },
-    inForm: { control: 'boolean' },
+    invalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -27,7 +25,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -39,7 +37,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.orientation ? `orientation="${args.orientation}"` : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       <jp-slider-label position="0">0%</jp-slider-label>
       <jp-slider-label position="10">10%</jp-slider-label>
@@ -66,10 +64,9 @@ Default.args = {
   disabled: false,
   readonly: false,
   value: 70,
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const Vertical: StoryObj = { render: Template.bind({}) };
@@ -87,5 +84,5 @@ WithDisabled.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid slider value'
+  invalid: true
 };

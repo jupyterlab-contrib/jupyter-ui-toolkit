@@ -8,7 +8,6 @@ import {
   RadioOptions
 } from '@microsoft/fast-foundation';
 import { radioStyles as styles } from './radio.styles.js';
-import { ErrorMessageMixin } from '../validation.js';
 import { ViewTemplate, html, slotted } from '@microsoft/fast-element';
 
 export const radioTemplate: FoundationElementTemplate<
@@ -45,7 +44,7 @@ export const radioTemplate: FoundationElementTemplate<
  * Base class for Radio
  * @public
  */
-export class Radio extends ErrorMessageMixin(BaseRadio) {}
+export class Radio extends BaseRadio {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Radio} registration for configuring the component with a DesignSystem.

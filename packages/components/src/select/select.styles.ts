@@ -77,7 +77,7 @@ export const selectStyles: FoundationElementTemplate<
     vertical-align: top;
   }
 
-  :host(.invalid) {
+  :host([aria-invalid='true']) {
     border-color: ${errorFillRest};
   }
   
@@ -156,7 +156,7 @@ export const selectStyles: FoundationElementTemplate<
     border-color: ${neutralFillStrongHover};
   }
   
-  :host(.invalid:not([disabled]):hover) {
+  :host([aria-invalid='true']:not([disabled]):hover) {
     border-color: ${errorFillHover};
   }
   
@@ -166,7 +166,7 @@ export const selectStyles: FoundationElementTemplate<
     ${accentFillFocus};
   }
   
-  :host(.invalid:${focusVisible}) {
+  :host([aria-invalid='true']:${focusVisible}) {
     border-color: ${errorFillFocus};
     box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
     ${errorFillFocus};
@@ -179,9 +179,9 @@ export const selectStyles: FoundationElementTemplate<
     ${accentFillFocus};
   }
   
-  :host(.invalid:not([size]):not([multiple]):not([open]):${focusVisible}),
-  :host(.invalid[multiple]:${focusVisible}),
-  :host(.invalid[size]:${focusVisible}) {
+  :host([aria-invalid='true']:not([size]):not([multiple]):not([open]):${focusVisible}),
+  :host([aria-invalid='true'][multiple]:${focusVisible}),
+  :host([aria-invalid='true'][size]:${focusVisible}) {
     box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
     ${errorFillFocus};
   }
@@ -285,7 +285,7 @@ export const selectStyles: FoundationElementTemplate<
         border-color: ${SystemColors.Highlight};
       }
 
-      :host(.invalid) {
+      :host([aria-invalid='true']) {
         border-style: dashed;
       }
       

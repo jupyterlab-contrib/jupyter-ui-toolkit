@@ -8,7 +8,6 @@ import {
   searchTemplate as template
 } from '@microsoft/fast-foundation';
 import { searchStyles as styles } from './search.styles.js';
-import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Search appearances
@@ -19,7 +18,7 @@ export type SearchAppearance = 'filled' | 'outline';
 /**
  * @internal
  */
-export class Search extends ErrorMessageMixin(FoundationSearch) {
+export class Search extends FoundationSearch {
   /**
    * The appearance of the element.
    *

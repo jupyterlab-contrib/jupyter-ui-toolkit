@@ -20,7 +20,6 @@ export const Combobox: React.DetailedHTMLFactory<
     position?: 'above' | 'below';
     placeholder?: 'string';
     value?: 'string';
-    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpCombobox(), {

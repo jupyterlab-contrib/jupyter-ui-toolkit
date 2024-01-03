@@ -7,7 +7,7 @@ import {
   radioGroupTemplate as template
 } from '@microsoft/fast-foundation';
 import { radioGroupStyles as styles } from './radio-group.styles.js';
-import { Observable, attr } from '@microsoft/fast-element';
+import { Observable } from '@microsoft/fast-element';
 
 /**
  * Base class for RadioGroup
@@ -22,26 +22,21 @@ export class RadioGroup extends BaseRadioGroup {
     const handler = {
       handleChange(source: RadioGroup, propertyName: string) {
         if (propertyName === 'slottedRadioButtons') {
-          source.errorMessageChanged();
+          source.ariaInvalidChanged();
         }
       }
     };
 
     notifier.subscribe(handler, 'slottedRadioButtons');
   }
-  /**
-   * Custom error message externally settable
-   *
-   * @remarks
-   * HTML Attribute: error-message
-   */
-  @attr({ attribute: 'error-message' })
-  errorMessage: string;
 
-  errorMessageChanged(): void {
+  ariaInvalidChanged(): void {
     if (this.slottedRadioButtons) {
       this.slottedRadioButtons.forEach(radio => {
-        radio.setAttribute('error-message', this.errorMessage);
+        radio.setAttribute(
+          'aria-invalid',
+          this.getAttribute('aria-invalid') ?? 'false'
+        );
       });
     }
   }

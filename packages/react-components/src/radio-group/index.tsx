@@ -17,7 +17,6 @@ export const RadioGroup: React.DetailedHTMLFactory<
     orientation?: 'horizontal' | 'vertical';
     readonly?: boolean;
     value?: string;
-    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpRadioGroup(), { events: { onChange: 'change' } }) as any;

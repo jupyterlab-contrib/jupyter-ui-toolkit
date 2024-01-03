@@ -8,13 +8,12 @@ import {
   sliderTemplate as template
 } from '@microsoft/fast-foundation';
 import { sliderStyles as styles } from './slider.styles.js';
-import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Base class for Slider
  * @public
  */
-export class Slider extends ErrorMessageMixin(BaseSlider) {}
+export class Slider extends BaseSlider {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Slider} registration for configuring the component with a DesignSystem.

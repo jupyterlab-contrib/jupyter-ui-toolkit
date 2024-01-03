@@ -93,7 +93,7 @@ export const switchStyles: FoundationElementTemplate<
       border: calc(${strokeWidth} * 1px) solid ${neutralStrokeRest};
     }
 
-    :host(.invalid) .switch {
+    :host([aria-invalid='true']) .switch {
       border-color: ${errorFillRest};
     }
 
@@ -110,8 +110,8 @@ export const switchStyles: FoundationElementTemplate<
       cursor: ${disabledCursor};
     }
 
-    :host(.invalid[disabled]) .switch:hover,
-    :host(.invalid[readonly]) .switch:hover {
+    :host([aria-invalid='true'][disabled]) .switch:hover,
+    :host([aria-invalid='true'][readonly]) .switch:hover {
       border-color: ${errorFillHover};
     }
 
@@ -120,7 +120,7 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${neutralStrokeActive};
     }
 
-    :host(.invalid:not([disabled])) .switch:active {
+    :host([aria-invalid='true']:not([disabled])) .switch:active {
       border-color: ${errorFillActive};
     }
 
@@ -129,7 +129,7 @@ export const switchStyles: FoundationElementTemplate<
       outline: solid calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
     }
 
-    :host(.invalid:${focusVisible}) .switch {
+    :host([aria-invalid='true']:${focusVisible}) .switch {
       outline-color: ${errorFillFocus};
     }
 
@@ -186,12 +186,12 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${accentFillHover};
     }
 
-    :host(.invalid[aria-checked='true']) .switch {
+    :host([aria-invalid='true'][aria-checked='true']) .switch {
       background-color: ${errorFillRest};
       border-color: ${errorFillRest};
     }
 
-    :host(.invalid[aria-checked='true']:not([disabled])) .switch:hover {
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled])) .switch:hover {
       background-color: ${errorFillHover};
       border-color: ${errorFillHover};
     }
@@ -207,7 +207,7 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${accentFillActive};
     }
 
-    :host(.invalid[aria-checked='true']:not([disabled])) .switch:active {
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled])) .switch:active {
       background-color: ${errorFillActive};
       border-color: ${errorFillActive};
     }
@@ -222,7 +222,7 @@ export const switchStyles: FoundationElementTemplate<
       outline: solid calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
     }
 
-    :host(.invalid[aria-checked="true"]:${focusVisible}:not([disabled])) .switch {
+    :host([aria-invalid='true'][aria-checked="true"]:${focusVisible}:not([disabled])) .switch {
       outline-color: ${errorFillFocus};
     }
 
@@ -253,7 +253,7 @@ export const switchStyles: FoundationElementTemplate<
         background: ${SystemColors.Field};
         border-color: ${SystemColors.FieldText};
       }
-      :host(.invalid) .switch {
+      :host([aria-invalid='true']) .switch {
         border-style: dashed;
       }
       :host(:not([disabled])) .switch:hover {

@@ -55,7 +55,7 @@ export const BaseFieldStyles = css`
     height: calc(${heightNumber} * 1px);
   }
 
-  :host(.invalid) .root {
+  :host([aria-invalid='true']) .root {
     border-color: ${errorFillRest};
   }
 
@@ -121,7 +121,7 @@ export const BaseFieldStyles = css`
     border-color: ${neutralFillStrongHover};
   }
 
-  :host(.invalid:hover:not([disabled])) .root {
+  :host([aria-invalid='true']:hover:not([disabled])) .root {
     border-color: ${errorFillHover};
   }
 
@@ -130,7 +130,7 @@ export const BaseFieldStyles = css`
     border-color: ${neutralFillStrongActive};
   }
 
-  :host(.invalid:active:not([disabled])) .root {
+  :host([aria-invalid='true']:active:not([disabled])) .root {
     border-color: ${errorFillActive};
   }
 
@@ -140,7 +140,7 @@ export const BaseFieldStyles = css`
       ${accentFillFocus};
   }
 
-  :host(.invalid:focus-within:not([disabled])) .root {
+  :host([aria-invalid='true']:focus-within:not([disabled])) .root {
     border-color: ${errorFillFocus};
     box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
       ${errorFillFocus};
@@ -176,7 +176,7 @@ export const BaseFieldStyles = css`
       background: ${SystemColors.Field};
       border-color: ${SystemColors.FieldText};
     }
-    :host(.invalid) .root {
+    :host([aria-invalid='true']) .root {
       border-style: dashed;
     }
     :host(:hover:not([disabled])) .root,

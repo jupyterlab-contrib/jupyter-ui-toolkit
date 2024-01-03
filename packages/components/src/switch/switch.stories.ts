@@ -4,7 +4,6 @@
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { Switch } from './index';
-import { withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Switch',
@@ -14,8 +13,7 @@ export default {
     checked: { control: 'boolean' },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
-    errorMessage: { control: 'text' },
-    inForm: { control: 'boolean' },
+    invalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -29,7 +27,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -40,7 +38,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.checked ? 'checked' : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       ${args.label}
       ${
@@ -71,10 +69,9 @@ Default.args = {
   disabled: false,
   readonly: false,
   withMessages: false,
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const WithChecked: StoryObj = { render: Template.bind({}) };
@@ -104,5 +101,5 @@ WithMessages.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid switch value'
+  invalid: true
 };

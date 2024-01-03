@@ -15,7 +15,6 @@ export const Select: React.DetailedHTMLFactory<
     open?: boolean;
     position?: 'above' | 'below';
     value?: string;
-    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpSelect(), {

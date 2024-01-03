@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon, withForm } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook';
 
 export default {
   title: 'Components/Select',
@@ -14,8 +14,7 @@ export default {
     numberOfChildren: { control: 'number' },
     minimal: { control: 'boolean' },
     autowidth: { control: 'boolean' },
-    errorMessage: { control: 'text' },
-    inForm: { control: 'boolean' },
+    invalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -29,7 +28,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -42,7 +41,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.disabled ? 'disabled' : ''}
       ${args.minimal ? 'minimal' : ''}
       ${args.autowidth ? 'autowidth' : ''}
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
         ${new Array(args.numberOfChildren ?? 3)
@@ -82,10 +81,9 @@ Default.args = {
   numberOfChildren: 3,
   minimal: false,
   autowidth: false,
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const WithOpen: StoryObj = { render: Template.bind({}) };
@@ -115,5 +113,5 @@ WithCustomIndicator.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid select value'
+  invalid: true
 };

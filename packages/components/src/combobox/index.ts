@@ -10,13 +10,12 @@ import {
 } from '@microsoft/fast-foundation';
 import { heightNumberAsToken } from '../design-tokens.js';
 import { comboboxStyles as styles } from './combobox.styles.js';
-import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Base class for Combobox.
  * @public
  */
-export class Combobox extends ErrorMessageMixin(FoundationCombobox) {
+export class Combobox extends FoundationCombobox {
   /**
    * Whether the combobox has a compact layout or not.
    *

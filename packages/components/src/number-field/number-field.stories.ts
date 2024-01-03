@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon, withForm } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook';
 import { NumberField } from './index';
 
 export default {
@@ -33,7 +33,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -48,7 +48,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.disabled ? 'disabled' : ''}
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -85,10 +85,9 @@ Default.args = {
   startIcon: false,
   endIcon: false,
   appearance: 'outline',
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -144,5 +143,5 @@ WithEndIcon.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid number value'
+  invalid: true
 };

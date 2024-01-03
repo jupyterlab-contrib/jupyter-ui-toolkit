@@ -4,7 +4,6 @@
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { TextArea } from './index';
-import { withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Text Area',
@@ -21,8 +20,7 @@ export default {
       control: 'select',
       options: ['none', 'both', 'vertical', 'horizontal']
     },
-    errorMessage: { control: 'text' },
-    inForm: { control: 'boolean' },
+    invalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -36,7 +34,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args): HTMLElement => {
@@ -51,7 +49,7 @@ const Template: StoryFn = (args): HTMLElement => {
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
       resize="${args.resize}"
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       ${args.label}
     </jp-text-area>`
@@ -84,10 +82,9 @@ Default.args = {
   disabled: false,
   autofocus: false,
   appearance: 'outline',
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -124,5 +121,5 @@ WithReadonly.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid text area value'
+  invalid: true
 };

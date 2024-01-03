@@ -8,13 +8,12 @@ import {
   switchTemplate as template
 } from '@microsoft/fast-foundation';
 import { switchStyles as styles } from './switch.styles.js';
-import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Base class for Switch
  * @public
  */
-export class Switch extends ErrorMessageMixin(BaseSwitch) {}
+export class Switch extends BaseSwitch {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Switch} registration for configuring the component with a DesignSystem.

@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon, withForm } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook';
 import { DateField } from './index';
 
 export default {
@@ -29,7 +29,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -40,7 +40,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.readonly ? 'readonly=""' : ''}
       ${args.disabled ? 'disabled=""' : ''}
       ${args.autofocus ? 'autofocus' : ''}
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -73,10 +73,9 @@ Default.args = {
   autofocus: false,
   startIcon: false,
   endIcon: false,
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const WithAutofocus: StoryObj = { render: Template.bind({}) };
@@ -112,5 +111,5 @@ WithEndIcon.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid date value'
+  invalid: true
 };

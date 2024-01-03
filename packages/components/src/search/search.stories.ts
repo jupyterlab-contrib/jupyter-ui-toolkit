@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon, withForm } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook';
 import { Search } from './index';
 
 export default {
@@ -19,8 +19,7 @@ export default {
     autofocus: { control: 'boolean' },
     searchIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
-    errorMessage: { control: 'text' },
-    inForm: { control: 'boolean' },
+    invalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -34,7 +33,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args): HTMLElement => {
@@ -49,7 +48,7 @@ const Template: StoryFn = (args): HTMLElement => {
         ${args.disabled ? 'disabled' : ''}
         ${args.autofocus ? 'autofocus' : ''}
         appearance="${args.appearance}"
-        ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+        ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
       >
         ${args.label}
         ${args.searchIcon ? getFaIcon('search', 'end') : ''}
@@ -84,10 +83,9 @@ Default.args = {
   autofocus: false,
   appearance: 'outline',
   searchIcon: false,
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -137,5 +135,5 @@ WithSearchIcon.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid search value'
+  invalid: true
 };

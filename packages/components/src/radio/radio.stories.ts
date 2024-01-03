@@ -3,7 +3,6 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { withForm } from '../utilities/storybook';
 
 export default {
   title: 'Components/Radio',
@@ -11,8 +10,7 @@ export default {
     checked: { control: 'boolean' },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
-    errorMessage: { control: 'text' },
-    inForm: { control: 'boolean' },
+    invalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -26,7 +24,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -37,7 +35,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.checked ? 'checked' : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
       value="value"
     >
       Radio element
@@ -61,10 +59,9 @@ Default.args = {
   checked: false,
   disabled: false,
   readonly: false,
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
-  inForm: false
+  onInvalid: action('invalid')
 };
 
 export const WithChecked: StoryObj = { render: Template.bind({}) };
@@ -88,5 +85,5 @@ WithReadOnly.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid radio value'
+  invalid: true
 };

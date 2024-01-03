@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon, withForm } from '../utilities/storybook';
+import { getFaIcon,  } from '../utilities/storybook';
 import { Combobox } from './index';
 
 export default {
@@ -32,7 +32,7 @@ export default {
       }
     }
   },
-  decorators: [withForm]
+  decorators: []
 } as Meta;
 
 const nameList = [
@@ -60,7 +60,7 @@ const Template: StoryFn = (args): HTMLElement => {
       ${args.minimal ? 'minimal' : ''}
       ${args.autowidth ? 'autowidth' : ''}
       ${args.autocomplete !== 'none' ? `autocomplete=${args.autocomplete}` : ''}
-      ${args.errorMessage ? `error-message="${args.errorMessage}"` : ''}
+      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
     >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
         ${new Array(args.numberOfChildren ?? 10)
@@ -100,10 +100,9 @@ Default.args = {
   minimal: false,
   autowidth: false,
   autocomplete: 'none',
-  errorMessage: '',
+  invalid: false,
   onChange: action('change'),
   onInvalid: action('invalid'),
-  inForm: false
 };
 
 export const WithOpen: StoryObj = { render: Template.bind({}) };
@@ -133,5 +132,5 @@ WithCustomIndicator.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  errorMessage: 'Invalid combobox value'
+  invalid: true
 };

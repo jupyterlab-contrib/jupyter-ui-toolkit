@@ -28,7 +28,6 @@ export const TextArea: React.DetailedHTMLFactory<
     resize?: 'none' | 'both' | 'horizontal' | 'vertical';
     spellcheck?: boolean;
     value?: string;
-    'error-message'?: string;
   },
   HTMLElement
 > = wrap(jpTextArea(), {

@@ -8,7 +8,6 @@ import {
   textFieldTemplate as template
 } from '@microsoft/fast-foundation';
 import { textFieldStyles as styles } from './text-field.styles.js';
-import { ErrorMessageMixin } from '../validation.js';
 
 /**
  * Text field appearances
@@ -19,7 +18,7 @@ export type TextFieldAppearance = 'filled' | 'outline';
 /**
  * @internal
  */
-export class TextField extends ErrorMessageMixin(FoundationTextField) {
+export class TextField extends FoundationTextField {
   /**
    * The appearance of the element.
    *

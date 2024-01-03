@@ -8,7 +8,6 @@ import {
   FoundationElementTemplate
 } from '@microsoft/fast-foundation';
 import { checkboxStyles as styles } from './checkbox.styles.js';
-import { ErrorMessageMixin } from '../validation.js';
 import { ViewTemplate, html, slotted } from '@microsoft/fast-element';
 
 /**
@@ -53,7 +52,7 @@ export const checkboxTemplate: FoundationElementTemplate<
  * Base class for Checkbox
  * @public
  */
-export class Checkbox extends ErrorMessageMixin(BaseCheckbox) {
+export class Checkbox extends BaseCheckbox {
   indeterminateChanged(prev: boolean, next: boolean): void {
     if (this.indeterminate) {
       this.classList.add('indeterminate');
