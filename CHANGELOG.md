@@ -2,6 +2,33 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.14.0
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.13.3...a82d22721a7a6556431b2d6c68c9a70d8188bd58))
+
+### Enhancements made
+
+- Internalize @microsoft/fast-components [#80](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/80) ([@fcollonval](https://github.com/fcollonval))
+
+### Bugs fixed
+
+- Change disabled button style [#77](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/77) ([@brichet](https://github.com/brichet))
+
+### Maintenance and upkeep improvements
+
+- Move picker to drafts [#83](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/83) ([@fcollonval](https://github.com/fcollonval))
+- Deploy to GitHub Pages with GitHub Actions [#82](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/82) ([@fcollonval](https://github.com/fcollonval))
+- Bump axios from 1.4.0 to 1.6.1 [#78](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/78) ([@dependabot](https://github.com/dependabot))
+- Bump typescript to 4.9.5 [#63](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/63) ([@fcollonval](https://github.com/fcollonval))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2023-10-26&to=2024-01-03&type=c))
+
+[@brichet](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Abrichet+updated%3A2023-10-26..2024-01-03&type=Issues) | [@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2023-10-26..2024-01-03&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2023-10-26..2024-01-03&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2023-10-26..2024-01-03&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.13.3
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.13.2...977cca16ab4e8e5382138cc13ccd0469877caa69))
@@ -19,8 +46,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2023-09-12&to=2023-10-26&type=c))
 
 [@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2023-09-12..2023-10-26&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2023-09-12..2023-10-26&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2023-09-12..2023-10-26&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.13.2
 
