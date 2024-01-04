@@ -10,16 +10,24 @@ export default {
   argTypes: {
     label: { control: 'text' },
     withMessages: { control: 'boolean' },
-    isChecked: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isReadOnly: { control: 'boolean' },
+    checked: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -27,9 +35,10 @@ const Template: StoryFn = (args, context): HTMLElement => {
   container.insertAdjacentHTML(
     'afterbegin',
     `<jp-switch 
-      ${args.isChecked ? 'checked' : ''}
-      ${args.isDisabled ? 'disabled' : ''}
-      ${args.isReadOnly ? 'readonly' : ''}
+      ${args.checked ? 'checked' : ''}
+      ${args.disabled ? 'disabled' : ''}
+      ${args.readonly ? 'readonly' : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.label}
       ${
@@ -46,6 +55,9 @@ const Template: StoryFn = (args, context): HTMLElement => {
   if (args.onChange) {
     switch_.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    switch_.addEventListener('invalid', args.onInvalid);
+  }
 
   return switch_;
 };
@@ -53,33 +65,41 @@ const Template: StoryFn = (args, context): HTMLElement => {
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   label: 'Feature',
-  isChecked: false,
-  isDisabled: false,
-  isReadOnly: false,
+  checked: false,
+  disabled: false,
+  readonly: false,
   withMessages: false,
-  onChange: action('switch-onchange')
+  ariaInvalid: false,
+  onChange: action('change'),
+  onInvalid: action('invalid')
 };
 
 export const WithChecked: StoryObj = { render: Template.bind({}) };
 WithChecked.args = {
   ...Default.args,
-  isChecked: true
+  checked: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
 };
 
 export const WithReadOnly: StoryObj = { render: Template.bind({}) };
 WithReadOnly.args = {
   ...Default.args,
-  isReadOnly: true
+  readonly: true
 };
 
 export const WithMessages: StoryObj = { render: Template.bind({}) };
 WithMessages.args = {
   ...Default.args,
   withMessages: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  ariaInvalid: true
 };

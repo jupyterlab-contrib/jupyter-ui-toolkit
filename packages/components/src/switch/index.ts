@@ -3,11 +3,17 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  Switch,
+  Switch as BaseSwitch,
   SwitchOptions,
   switchTemplate as template
 } from '@microsoft/fast-foundation';
 import { switchStyles as styles } from './switch.styles.js';
+
+/**
+ * Base class for Switch
+ * @public
+ */
+export class Switch extends BaseSwitch {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Switch} registration for configuring the component with a DesignSystem.
@@ -20,17 +26,12 @@ import { switchStyles as styles } from './switch.styles.js';
  */
 export const jpSwitch = Switch.compose<SwitchOptions>({
   baseName: 'switch',
+  baseClass: BaseSwitch,
   template,
   styles,
   switch: /* html */ `
         <span class="checked-indicator" part="checked-indicator"></span>
     `
 });
-
-/**
- * Base class for Switch
- * @public
- */
-export { Switch };
 
 export { styles as switchStyles };

@@ -12,25 +12,33 @@ export default {
     label: { control: 'text' },
     placeholder: { control: 'text' },
     value: { control: 'text' },
-    maxLength: { control: 'number' },
+    maxlength: { control: 'number' },
     size: { control: 'number' },
     type: {
       control: 'select',
       options: ['Email', 'Password', 'Tel', 'Text', 'Url']
     },
-    isReadOnly: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     endIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args): HTMLElement => {
@@ -39,13 +47,14 @@ const Template: StoryFn = (args): HTMLElement => {
     'afterbegin',
     `<jp-text-field 
       ${args.placeholder ? `placeholder="${args.placeholder}"` : ''}
-      ${args.maxLength ? `maxlength="${args.maxLength}"` : ''}
+      ${args.maxlength ? `maxlength="${args.maxlength}"` : ''}
       ${args.size ? `size="${args.size}"` : ''}
       ${args.type ? `type="${args.type.toLowerCase()}"` : ''}
       ${args.readonly ? 'readonly' : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -62,6 +71,9 @@ const Template: StoryFn = (args): HTMLElement => {
   if (args.onChange) {
     textField.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    textField.addEventListener('invalid', args.onInvalid);
+  }
 
   return textField;
 };
@@ -71,16 +83,18 @@ Default.args = {
   label: 'Text Field Label',
   placeholder: '',
   value: '',
-  maxLength: '',
+  maxlength: '',
   size: '',
   type: 'Text',
-  isReadOnly: false,
-  isDisabled: false,
-  isAutoFocused: false,
+  readonly: false,
+  disabled: false,
+  autofocus: false,
   startIcon: false,
   endIcon: false,
   appearance: 'outline',
-  onChange: action('text-field-onchange')
+  ariaInvalid: false,
+  onChange: action('change'),
+  onInvalid: action('invalid')
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -119,7 +133,7 @@ export const WithMaxLength: StoryObj = { render: Template.bind({}) };
 WithMaxLength.args = {
   ...Default.args,
   placeholder: 'This text field can only contain a maximum of 10 characters',
-  maxLength: 10
+  maxlength: 10
 };
 
 export const WithReadonly: StoryObj = { render: Template.bind({}) };
@@ -138,4 +152,10 @@ export const WithEndIcon: StoryObj = { render: Template.bind({}) };
 WithEndIcon.args = {
   ...Default.args,
   endIcon: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  ariaInvalid: true
 };

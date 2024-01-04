@@ -19,9 +19,9 @@ export default {
         'Stealth'
       ]
     },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
-    isMinimal: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
+    minimal: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     onClick: {
       action: 'clicked',
@@ -42,9 +42,9 @@ const Template: StoryFn = (args): HTMLElement => {
     'afterbegin',
     `<jp-button 
       ${args.appearance ? `appearance=${args.appearance.toLowerCase()}` : ''}
-      ${args.isDisabled ? 'disabled' : ''} 
-      ${args.isAutoFocused ? 'autofocus' : ''}
-      ${args.isMinimal ? 'minimal' : ''}
+      ${args.disabled ? 'disabled' : ''} 
+      ${args.autofocus ? 'autofocus' : ''}
+      ${args.minimal ? 'minimal' : ''}
       ${args.ariaPressed !== 'none' ? `aria-pressed=${args.ariaPressed}` : ''}
     >${args.startIcon ? getFaIcon('plus', args.label ? 'start' : null) : ''}${
       args.label ?? ''
@@ -62,9 +62,9 @@ export const Accent: StoryObj = { render: Template.bind({}) };
 Accent.args = {
   label: 'Button Text',
   appearance: 'Accent',
-  isDisabled: false,
-  isAutoFocused: false,
-  isMinimal: false,
+  disabled: false,
+  autofocus: false,
+  minimal: false,
   startIcon: false,
   ariaPressed: 'none',
   onClick: action('button-clicked')
@@ -91,13 +91,13 @@ Lightweight.args = {
 export const WithAutofocus: StoryObj = { render: Template.bind({}) };
 WithAutofocus.args = {
   ...Accent.args,
-  isAutoFocused: true
+  autofocus: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Accent.args,
-  isDisabled: true
+  disabled: true
 };
 
 export const WithStartIcon: StoryObj = { render: Template.bind({}) };

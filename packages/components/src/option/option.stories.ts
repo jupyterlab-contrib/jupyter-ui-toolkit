@@ -7,8 +7,8 @@ export default {
   title: 'Components/Option',
   argTypes: {
     label: { control: 'text' },
-    isDisabled: { control: 'boolean' },
-    isSelected: { control: 'boolean' }
+    disabled: { control: 'boolean' },
+    selected: { control: 'boolean' }
   },
   parameters: {
     actions: {
@@ -19,8 +19,8 @@ export default {
 
 const Template: StoryFn = (args): string => {
   return `<jp-option 
-    ${args.isDisabled ? 'disabled' : ''}
-    ${args.isSelected ? 'selected' : ''}
+    ${args.disabled ? 'disabled' : ''}
+    ${args.selected ? 'selected' : ''}
   >
     ${args.label}
   </jp-option>`;
@@ -29,18 +29,18 @@ const Template: StoryFn = (args): string => {
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   label: 'Option Label',
-  isDisabled: false,
-  isSelected: false
+  disabled: false,
+  selected: false
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
 };
 
 export const WithSelected: StoryObj = { render: Template.bind({}) };
 WithSelected.args = {
   ...Default.args,
-  isSelected: true
+  selected: true
 };

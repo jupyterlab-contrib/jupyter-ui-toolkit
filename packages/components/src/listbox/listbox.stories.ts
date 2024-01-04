@@ -6,7 +6,7 @@ import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 export default {
   title: 'Components/Listbox',
   argTypes: {
-    isDisabled: { control: 'boolean' },
+    disabled: { control: 'boolean' },
     multiple: { control: 'boolean' }
   },
   parameters: {
@@ -18,7 +18,7 @@ export default {
 
 const Template: StoryFn = (args, context): string => {
   return `<jp-listbox
-    ${args.isDisabled ? 'disabled' : ''}
+    ${args.disabled ? 'disabled' : ''}
     ${args.multiple ? 'multiple' : ''}
   >
     <jp-option value="1">Option 1</jp-option>
@@ -29,12 +29,12 @@ const Template: StoryFn = (args, context): string => {
 
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
-  isDisabled: false,
+  disabled: false,
   multiple: false
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
 };

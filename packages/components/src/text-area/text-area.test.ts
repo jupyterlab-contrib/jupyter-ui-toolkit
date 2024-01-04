@@ -50,3 +50,11 @@ test('With Readonly', async ({ page }) => {
     'text-area-with-readonly.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-text-area--with-error');
+
+  expect(await page.locator('jp-text-area').screenshot()).toMatchSnapshot(
+    'text-area-error.png'
+  );
+});

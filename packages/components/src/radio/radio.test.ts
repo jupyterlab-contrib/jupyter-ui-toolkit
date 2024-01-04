@@ -34,3 +34,11 @@ test('Read-only', async ({ page }) => {
     'radio-read-only.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-radio--with-error');
+
+  expect(await page.locator('jp-radio').screenshot()).toMatchSnapshot(
+    'radio-error.png'
+  );
+});

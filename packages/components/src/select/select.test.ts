@@ -34,3 +34,11 @@ test('WithCustomIndicator', async ({ page }) => {
     'select-with-custom-indicator.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-select--with-error');
+
+  expect(await page.locator('jp-select').screenshot()).toMatchSnapshot(
+    'select-error.png'
+  );
+});

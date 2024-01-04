@@ -16,6 +16,10 @@ import {
   controlCornerRadius,
   designUnit,
   disabledOpacity,
+  errorFillActive,
+  errorFillFocus,
+  errorFillHover,
+  errorFillRest,
   focusStrokeWidth,
   neutralFillHover,
   neutralFillInputHover,
@@ -49,6 +53,10 @@ export const BaseFieldStyles = css`
     border-radius: calc(${controlCornerRadius} * 1px);
     border: calc(${strokeWidth} * 1px) solid ${neutralFillStrongRest};
     height: calc(${heightNumber} * 1px);
+  }
+
+  :host([aria-invalid='true']) .root {
+    border-color: ${errorFillRest};
   }
 
   .control {
@@ -113,15 +121,29 @@ export const BaseFieldStyles = css`
     border-color: ${neutralFillStrongHover};
   }
 
+  :host([aria-invalid='true']:hover:not([disabled])) .root {
+    border-color: ${errorFillHover};
+  }
+
   :host(:active:not([disabled])) .root {
     background: ${neutralFillInputHover};
     border-color: ${neutralFillStrongActive};
+  }
+
+  :host([aria-invalid='true']:active:not([disabled])) .root {
+    border-color: ${errorFillActive};
   }
 
   :host(:focus-within:not([disabled])) .root {
     border-color: ${accentFillFocus};
     box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
       ${accentFillFocus};
+  }
+
+  :host([aria-invalid='true']:focus-within:not([disabled])) .root {
+    border-color: ${errorFillFocus};
+    box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+      ${errorFillFocus};
   }
 
   :host([appearance='filled']) .root {
@@ -153,6 +175,9 @@ export const BaseFieldStyles = css`
       forced-color-adjust: none;
       background: ${SystemColors.Field};
       border-color: ${SystemColors.FieldText};
+    }
+    :host([aria-invalid='true']) .root {
+      border-style: dashed;
     }
     :host(:hover:not([disabled])) .root,
     :host([appearance='filled']:hover:not([disabled])) .root,

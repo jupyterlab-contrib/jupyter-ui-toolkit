@@ -34,3 +34,11 @@ test('With Messages', async ({ page }) => {
     'switch-with-messages.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-switch--with-error');
+
+  expect(await page.locator('jp-switch').screenshot()).toMatchSnapshot(
+    'switch-error.png'
+  );
+});

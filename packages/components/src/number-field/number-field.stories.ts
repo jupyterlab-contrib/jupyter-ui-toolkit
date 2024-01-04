@@ -14,19 +14,27 @@ export default {
     value: { control: 'number' },
     maxLength: { control: 'number' },
     size: { control: 'number' },
-    isReadOnly: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
     startIcon: { control: 'boolean' },
     endIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -41,6 +49,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.disabled ? 'disabled' : ''}
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -57,6 +66,9 @@ const Template: StoryFn = (args, context): HTMLElement => {
   if (args.onChange) {
     numberField.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    numberField.addEventListener('invalid', args.onInvalid);
+  }
 
   return numberField;
 };
@@ -68,13 +80,15 @@ Default.args = {
   value: '',
   maxLength: '',
   size: '',
-  isReadOnly: false,
-  isDisabled: false,
-  isAutoFocused: false,
+  readonly: false,
+  disabled: false,
+  autofocus: false,
   startIcon: false,
   endIcon: false,
   appearance: 'outline',
-  onChange: action('number-field-onchange')
+  ariaInvalid: false,
+  onChange: action('change'),
+  onInvalid: action('invalid')
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -125,4 +139,10 @@ export const WithEndIcon: StoryObj = { render: Template.bind({}) };
 WithEndIcon.args = {
   ...Default.args,
   endIcon: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  ariaInvalid: true
 };

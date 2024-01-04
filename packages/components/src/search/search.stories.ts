@@ -14,18 +14,26 @@ export default {
     value: { control: 'text' },
     maxLength: { control: 'number' },
     size: { control: 'number' },
-    isReadOnly: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isAutoFocused: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    autofocus: { control: 'boolean' },
     searchIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args): HTMLElement => {
@@ -40,6 +48,7 @@ const Template: StoryFn = (args): HTMLElement => {
         ${args.disabled ? 'disabled' : ''}
         ${args.autofocus ? 'autofocus' : ''}
         appearance="${args.appearance}"
+        ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
       >
         ${args.label}
         ${args.searchIcon ? getFaIcon('search', 'end') : ''}
@@ -55,6 +64,9 @@ const Template: StoryFn = (args): HTMLElement => {
   if (args.onChange) {
     search.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    search.addEventListener('invalid', args.onInvalid);
+  }
 
   return search;
 };
@@ -66,12 +78,14 @@ Default.args = {
   value: '',
   maxLength: '',
   size: '',
-  isReadOnly: false,
-  isDisabled: false,
-  isAutoFocused: false,
+  readonly: false,
+  disabled: false,
+  autofocus: false,
   appearance: 'outline',
   searchIcon: false,
-  onChange: action('search-onchange')
+  ariaInvalid: false,
+  onChange: action('change'),
+  onInvalid: action('invalid')
 };
 
 export const WithPlaceholder: StoryObj = { render: Template.bind({}) };
@@ -116,4 +130,10 @@ export const WithSearchIcon: StoryObj = { render: Template.bind({}) };
 WithSearchIcon.args = {
   ...Default.args,
   searchIcon: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  ariaInvalid: true
 };

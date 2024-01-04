@@ -7,16 +7,24 @@ import { action } from '@storybook/addon-actions';
 export default {
   title: 'Components/Radio',
   argTypes: {
-    isChecked: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isReadOnly: { control: 'boolean' },
+    checked: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    readonly: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args, context): HTMLElement => {
@@ -24,9 +32,10 @@ const Template: StoryFn = (args, context): HTMLElement => {
   container.insertAdjacentHTML(
     'afterbegin',
     `<jp-radio
-      ${args.isChecked ? 'checked' : ''}
-      ${args.isDisabled ? 'disabled' : ''}
-      ${args.isReadOnly ? 'readonly' : ''}
+      ${args.checked ? 'checked' : ''}
+      ${args.disabled ? 'disabled' : ''}
+      ${args.readonly ? 'readonly' : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
       value="value"
     >
       Radio element
@@ -38,32 +47,43 @@ const Template: StoryFn = (args, context): HTMLElement => {
   if (args.onChange) {
     radio.addEventListener('change', args.onChange);
   }
+  if (args.onInvalid) {
+    radio.addEventListener('invalid', args.onInvalid);
+  }
 
   return radio;
 };
 
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
-  isChecked: false,
-  isDisabled: false,
-  isReadOnly: false,
-  onChange: action('radio-onchange')
+  checked: false,
+  disabled: false,
+  readonly: false,
+  ariaInvalid: false,
+  onChange: action('change'),
+  onInvalid: action('invalid')
 };
 
 export const WithChecked: StoryObj = { render: Template.bind({}) };
 WithChecked.args = {
   ...Default.args,
-  isChecked: true
+  checked: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
 };
 
 export const WithReadOnly: StoryObj = { render: Template.bind({}) };
 WithReadOnly.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  ariaInvalid: true
 };

@@ -20,6 +20,10 @@ import {
   bodyFont,
   designUnit,
   disabledOpacity,
+  errorFillActive,
+  errorFillFocus,
+  errorFillHover,
+  errorFillRest,
   focusStrokeWidth,
   foregroundOnAccentActive,
   foregroundOnAccentHover,
@@ -70,6 +74,10 @@ export const radioStyles: FoundationElementTemplate<
       cursor: pointer;
     }
 
+    :host([aria-invalid='true']) .control {
+      border-color: ${errorFillRest};
+    }
+
     .label {
       font-family: ${bodyFont};
       color: ${neutralForegroundRest};
@@ -109,13 +117,25 @@ export const radioStyles: FoundationElementTemplate<
       border-color: ${neutralStrokeHover};
     }
 
+    :host([aria-invalid='true']:not([disabled])) .control:hover {
+      border-color: ${errorFillHover};
+    }
+
     :host(:not([disabled])) .control:active {
       background: ${neutralFillInputActive};
       border-color: ${neutralStrokeActive};
     }
 
+    :host([aria-invalid='true']:not([disabled])) .control:active {
+      border-color: ${errorFillActive};
+    }
+
     :host(:${focusVisible}) .control {
       outline: solid calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
+    }
+
+    :host([aria-invalid='true']:${focusVisible}) .control {
+      outline-color: ${errorFillFocus};
     }
 
     :host([aria-checked='true']) .control {
@@ -123,9 +143,20 @@ export const radioStyles: FoundationElementTemplate<
       border: calc(${strokeWidth} * 1px) solid ${accentFillRest};
     }
 
+    :host([aria-invalid='true'][aria-checked='true']) .control {
+      background-color: ${errorFillRest};
+      border-color: ${errorFillRest};
+    }
+
     :host([aria-checked='true']:not([disabled])) .control:hover {
       background: ${accentFillHover};
       border: calc(${strokeWidth} * 1px) solid ${accentFillHover};
+    }
+
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled]))
+      .control:hover {
+      background-color: ${errorFillHover};
+      border-color: ${errorFillHover};
     }
 
     :host([aria-checked='true']:not([disabled]))
@@ -140,6 +171,12 @@ export const radioStyles: FoundationElementTemplate<
       border: calc(${strokeWidth} * 1px) solid ${accentFillActive};
     }
 
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled]))
+      .control:active {
+      background-color: ${errorFillActive};
+      border-color: ${errorFillActive};
+    }
+
     :host([aria-checked='true']:not([disabled]))
       .control:active
       .checked-indicator {
@@ -150,6 +187,10 @@ export const radioStyles: FoundationElementTemplate<
     :host([aria-checked="true"]:${focusVisible}:not([disabled])) .control {
       outline-offset: 2px;
       outline: solid calc(${focusStrokeWidth} * 1px) ${accentFillFocus};
+    }
+
+    :host([aria-invalid='true'][aria-checked="true"]:${focusVisible}:not([disabled])) .control {
+      outline-color: ${errorFillFocus};
     }
 
     :host([disabled]) .label,
@@ -173,6 +214,9 @@ export const radioStyles: FoundationElementTemplate<
         forced-color-adjust: none;
         border-color: ${SystemColors.FieldText};
         background: ${SystemColors.Field};
+      }
+      :host([aria-invalid='true']) {
+        border-style: dashed;
       }
       :host(:not([disabled])) .control:hover {
         border-color: ${SystemColors.Highlight};

@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-import type { StoryFn, Meta, StoryObj } from '@storybook/html';
+import type { Meta, StoryFn, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
 import { Checkbox } from './index';
 
@@ -8,16 +8,24 @@ export default {
   title: 'Components/Checkbox',
   argTypes: {
     label: { control: 'text' },
-    isChecked: { control: 'boolean' },
-    isDisabled: { control: 'boolean' },
-    isIndeterminate: { control: 'boolean' },
+    checked: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    indeterminate: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
         disable: true
       }
+    },
+    onInvalid: {
+      action: 'invalid',
+      table: {
+        disable: true
+      }
     }
-  }
+  },
+  decorators: []
 } as Meta;
 
 const Template: StoryFn = (args): HTMLElement => {
@@ -25,8 +33,9 @@ const Template: StoryFn = (args): HTMLElement => {
   container.insertAdjacentHTML(
     'afterbegin',
     `<jp-checkbox 
-      ${args.isChecked ? 'checked' : ''}
-      ${args.isDisabled ? 'disabled' : ''}
+      ${args.checked ? 'checked' : ''}
+      ${args.disabled ? 'disabled' : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.label}
     </jp-checkbox>`
@@ -34,12 +43,15 @@ const Template: StoryFn = (args): HTMLElement => {
 
   const checkbox = container.firstChild as Checkbox;
 
-  if (args.isIndeterminate) {
+  if (args.indeterminate) {
     checkbox.indeterminate = true;
   }
 
   if (args.onChange) {
     checkbox.addEventListener('change', args.onChange);
+  }
+  if (args.onInvalid) {
+    checkbox.addEventListener('invalid', args.onInvalid);
   }
 
   return checkbox;
@@ -48,26 +60,34 @@ const Template: StoryFn = (args): HTMLElement => {
 export const Default: StoryObj = { render: Template.bind({}) };
 Default.args = {
   label: 'Checkbox',
-  isChecked: false,
-  isDisabled: false,
-  isIndeterminate: false,
-  onChange: action('checkbox-onchange')
+  checked: false,
+  disabled: false,
+  indeterminate: false,
+  ariaInvalid: false,
+  onChange: action('change'),
+  onInvalid: action('invalid')
 };
 
 export const WithChecked: StoryObj = { render: Template.bind({}) };
 WithChecked.args = {
   ...Default.args,
-  isChecked: true
+  checked: true
 };
 
 export const WithDisabled: StoryObj = { render: Template.bind({}) };
 WithDisabled.args = {
   ...Default.args,
-  isDisabled: true
+  disabled: true
 };
 
 export const WithIndeterminate: StoryObj = { render: Template.bind({}) };
 WithIndeterminate.args = {
   ...Default.args,
-  isIndeterminate: true
+  indeterminate: true
+};
+
+export const WithError: StoryObj = { render: Template.bind({}) };
+WithError.args = {
+  ...Default.args,
+  ariaInvalid: true
 };

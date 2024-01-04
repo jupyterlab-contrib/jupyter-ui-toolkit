@@ -11,6 +11,7 @@ import {
 } from '@microsoft/fast-foundation';
 import {
   accentFillFocus,
+  errorFillFocus,
   focusStrokeWidth,
   strokeWidth,
   typeRampBaseFontSize,
@@ -42,6 +43,12 @@ export const comboboxStyles: FoundationElementTemplate<
     border-color: ${accentFillFocus};
     box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
       ${accentFillFocus};
+  }
+
+  :host([aria-invalid='true']:focus-within:not([disabled])) {
+    border-color: ${errorFillFocus};
+    box-shadow: 0 0 0 calc((${focusStrokeWidth} - ${strokeWidth}) * 1px)
+      ${errorFillFocus};
   }
 
   .selected-value {

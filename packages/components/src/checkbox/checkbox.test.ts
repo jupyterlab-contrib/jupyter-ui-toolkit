@@ -34,3 +34,11 @@ test('Indeterminate', async ({ page }) => {
     'checkbox-indeterminate.png'
   );
 });
+
+test('Error', async ({ page }) => {
+  await page.goto('/iframe.html?id=components-checkbox--with-error');
+
+  expect(await page.locator('jp-checkbox').screenshot()).toMatchSnapshot(
+    'checkbox-error.png'
+  );
+});
