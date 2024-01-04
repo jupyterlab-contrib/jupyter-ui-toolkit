@@ -19,7 +19,7 @@ export default {
     autofocus: { control: 'boolean' },
     searchIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -48,7 +48,7 @@ const Template: StoryFn = (args): HTMLElement => {
         ${args.disabled ? 'disabled' : ''}
         ${args.autofocus ? 'autofocus' : ''}
         appearance="${args.appearance}"
-        ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+        ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
       >
         ${args.label}
         ${args.searchIcon ? getFaIcon('search', 'end') : ''}
@@ -83,7 +83,7 @@ Default.args = {
   autofocus: false,
   appearance: 'outline',
   searchIcon: false,
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -135,5 +135,5 @@ WithSearchIcon.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

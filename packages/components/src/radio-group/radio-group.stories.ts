@@ -10,7 +10,7 @@ export default {
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -35,7 +35,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       orientation=${args.orientation}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       <label slot="label" style="color: var(--neutral-foreground-rest)">Fruit</label>
       <jp-radio value="apples">Apples</jp-radio>
@@ -67,7 +67,7 @@ Default.args = {
   disabled: false,
   readonly: false,
   orientation: 'horizontal',
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -93,5 +93,5 @@ WithReadOnly.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

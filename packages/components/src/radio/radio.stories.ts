@@ -10,7 +10,7 @@ export default {
     checked: { control: 'boolean' },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -35,7 +35,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.checked ? 'checked' : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
       value="value"
     >
       Radio element
@@ -59,7 +59,7 @@ Default.args = {
   checked: false,
   disabled: false,
   readonly: false,
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -85,5 +85,5 @@ WithReadOnly.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

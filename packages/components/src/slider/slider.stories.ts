@@ -11,7 +11,7 @@ export default {
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -37,7 +37,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.orientation ? `orientation="${args.orientation}"` : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       <jp-slider-label position="0">0%</jp-slider-label>
       <jp-slider-label position="10">10%</jp-slider-label>
@@ -64,7 +64,7 @@ Default.args = {
   disabled: false,
   readonly: false,
   value: 70,
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -84,5 +84,5 @@ WithDisabled.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

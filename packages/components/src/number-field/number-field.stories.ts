@@ -20,6 +20,7 @@ export default {
     startIcon: { control: 'boolean' },
     endIcon: { control: 'boolean' },
     appearance: { control: 'radio', options: ['outline', 'filled'] },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -48,7 +49,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.disabled ? 'disabled' : ''}
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.startIcon ? getFaIcon('search', 'start') : ''}
       ${args.label}
@@ -85,7 +86,7 @@ Default.args = {
   startIcon: false,
   endIcon: false,
   appearance: 'outline',
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -143,5 +144,5 @@ WithEndIcon.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

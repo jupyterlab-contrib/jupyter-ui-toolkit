@@ -11,7 +11,7 @@ export default {
     checked: { control: 'boolean' },
     disabled: { control: 'boolean' },
     indeterminate: { control: 'boolean' },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -35,7 +35,7 @@ const Template: StoryFn = (args): HTMLElement => {
     `<jp-checkbox 
       ${args.checked ? 'checked' : ''}
       ${args.disabled ? 'disabled' : ''}
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.label}
     </jp-checkbox>`
@@ -63,7 +63,7 @@ Default.args = {
   checked: false,
   disabled: false,
   indeterminate: false,
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -89,5 +89,5 @@ WithIndeterminate.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

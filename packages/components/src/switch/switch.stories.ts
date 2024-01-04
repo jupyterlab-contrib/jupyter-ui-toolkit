@@ -13,7 +13,7 @@ export default {
     checked: { control: 'boolean' },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean' },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -38,7 +38,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.checked ? 'checked' : ''}
       ${args.disabled ? 'disabled' : ''}
       ${args.readonly ? 'readonly' : ''}
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.label}
       ${
@@ -69,7 +69,7 @@ Default.args = {
   disabled: false,
   readonly: false,
   withMessages: false,
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -101,5 +101,5 @@ WithMessages.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

@@ -19,6 +19,7 @@ export default {
       control: 'select',
       options: ['none', 'inline', 'list', 'both']
     },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -60,7 +61,7 @@ const Template: StoryFn = (args): HTMLElement => {
       ${args.minimal ? 'minimal' : ''}
       ${args.autowidth ? 'autowidth' : ''}
       ${args.autocomplete !== 'none' ? `autocomplete=${args.autocomplete}` : ''}
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
         ${new Array(args.numberOfChildren ?? 10)
@@ -100,7 +101,7 @@ Default.args = {
   minimal: false,
   autowidth: false,
   autocomplete: 'none',
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid'),
 };
@@ -132,5 +133,5 @@ WithCustomIndicator.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

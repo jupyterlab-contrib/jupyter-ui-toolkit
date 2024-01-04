@@ -14,7 +14,7 @@ export default {
     numberOfChildren: { control: 'number' },
     minimal: { control: 'boolean' },
     autowidth: { control: 'boolean' },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -41,7 +41,7 @@ const Template: StoryFn = (args, context): HTMLElement => {
       ${args.disabled ? 'disabled' : ''}
       ${args.minimal ? 'minimal' : ''}
       ${args.autowidth ? 'autowidth' : ''}
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.customIndicator ? getFaIcon('sliders-h', 'indicator') : ''}
         ${new Array(args.numberOfChildren ?? 3)
@@ -81,7 +81,7 @@ Default.args = {
   numberOfChildren: 3,
   minimal: false,
   autowidth: false,
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -113,5 +113,5 @@ WithCustomIndicator.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };

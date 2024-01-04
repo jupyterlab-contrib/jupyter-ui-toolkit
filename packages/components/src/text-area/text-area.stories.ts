@@ -20,7 +20,7 @@ export default {
       control: 'select',
       options: ['none', 'both', 'vertical', 'horizontal']
     },
-    invalid: { control: 'boolean' },
+    ariaInvalid: { control: 'boolean' },
     onChange: {
       action: 'changed',
       table: {
@@ -49,7 +49,7 @@ const Template: StoryFn = (args): HTMLElement => {
       ${args.autofocus ? 'autofocus' : ''}
       appearance="${args.appearance}"
       resize="${args.resize}"
-      ${args.invalid ? `aria-invalid="${args.invalid}"` : ''}
+      ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
       ${args.label}
     </jp-text-area>`
@@ -82,7 +82,7 @@ Default.args = {
   disabled: false,
   autofocus: false,
   appearance: 'outline',
-  invalid: false,
+  ariaInvalid: false,
   onChange: action('change'),
   onInvalid: action('invalid')
 };
@@ -121,5 +121,5 @@ WithReadonly.args = {
 export const WithError: StoryObj = { render: Template.bind({}) };
 WithError.args = {
   ...Default.args,
-  invalid: true
+  ariaInvalid: true
 };
