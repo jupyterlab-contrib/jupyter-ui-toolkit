@@ -153,7 +153,8 @@ export const radioStyles: FoundationElementTemplate<
       border: calc(${strokeWidth} * 1px) solid ${accentFillHover};
     }
 
-    :host([aria-invalid='true'][aria-checked='true']:not([disabled])) .control:hover {
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled]))
+      .control:hover {
       background-color: ${errorFillHover};
       border-color: ${errorFillHover};
     }
@@ -170,7 +171,8 @@ export const radioStyles: FoundationElementTemplate<
       border: calc(${strokeWidth} * 1px) solid ${accentFillActive};
     }
 
-    :host([aria-invalid='true'][aria-checked='true']:not([disabled])) .control:active {
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled]))
+      .control:active {
       background-color: ${errorFillActive};
       border-color: ${errorFillActive};
     }

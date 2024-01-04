@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon,  } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook';
 import { Combobox } from './index';
 
 export default {
@@ -103,7 +103,7 @@ Default.args = {
   autocomplete: 'none',
   ariaInvalid: false,
   onChange: action('change'),
-  onInvalid: action('invalid'),
+  onInvalid: action('invalid')
 };
 
 export const WithOpen: StoryObj = { render: Template.bind({}) };

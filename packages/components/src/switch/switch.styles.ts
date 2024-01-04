@@ -191,7 +191,8 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${errorFillRest};
     }
 
-    :host([aria-invalid='true'][aria-checked='true']:not([disabled])) .switch:hover {
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled]))
+      .switch:hover {
       background-color: ${errorFillHover};
       border-color: ${errorFillHover};
     }
@@ -207,7 +208,8 @@ export const switchStyles: FoundationElementTemplate<
       border-color: ${accentFillActive};
     }
 
-    :host([aria-invalid='true'][aria-checked='true']:not([disabled])) .switch:active {
+    :host([aria-invalid='true'][aria-checked='true']:not([disabled]))
+      .switch:active {
       background-color: ${errorFillActive};
       border-color: ${errorFillActive};
     }
