@@ -2,7 +2,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { Tabs, tabsTemplate as template } from '@microsoft/fast-foundation';
-import { tabsStyles as styles } from './tabs.styles';
+import { tabsStyles as styles } from './tabs.styles.js';
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Tabs} registration for configuring the component with a DesignSystem.

@@ -15,8 +15,8 @@ import {
   DelegatesARIATextbox
 } from '@microsoft/fast-foundation';
 import type { FoundationElementDefinition } from '@microsoft/fast-foundation';
-import { FormAssociatedDateField } from './date-field.form-associated';
-import { nullableDateConverter } from '../converters';
+import { FormAssociatedDateField } from './date-field.form-associated.js';
+import { nullableDateConverter } from '../converters.js';
 
 /**
  * Number field appearances
