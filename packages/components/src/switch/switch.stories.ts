@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { Switch } from './index';
+import { Switch } from './index.js';
 
 export default {
   title: 'Components/Switch',

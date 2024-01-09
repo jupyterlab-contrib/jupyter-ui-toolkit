@@ -8,7 +8,7 @@ test('temporary test', () => {
 
 /* TODO FIXME
     jupyter-ui-toolkit/node_modules/@microsoft/fast-element/dist/esm/index.js:1
-    ({"Object.<anonymous>":function(module,exports,require,__dirname,__filename,jest){export * from "./platform";
+    ({"Object.<anonymous>":function(module,exports,require,`${process.platform === 'win32' ? '' : '/'}${/file:\/{2,3}(.+)\/[^/]/.exec(import.meta.url)![1]}`,`${process.platform === 'win32' ? '' : '/'}${/file:\/{2,3}(.+)/.exec(import.meta.url)![1]}`,jest){export * from "./platform";
 
     SyntaxError: Unexpected token 'export'
 

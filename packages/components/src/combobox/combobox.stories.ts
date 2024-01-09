@@ -3,8 +3,8 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
-import { Combobox } from './index';
+import { getFaIcon } from '../utilities/storybook/index.js';
+import { Combobox } from './index.js';
 
 export default {
   title: 'Components/Combobox',

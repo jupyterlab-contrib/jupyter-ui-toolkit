@@ -21,7 +21,7 @@ import {
   neutralColor,
   strokeWidth,
   typeRampBaseFontSize
-} from '../../design-tokens';
+} from '../../design-tokens.js';
 
 const THEME_NAME_BODY_ATTRIBUTE = 'data-jp-theme-name';
 const THEME_MODE_BODY_ATTRIBUTE = 'data-jp-theme-light';
