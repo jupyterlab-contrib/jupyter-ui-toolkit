@@ -33,7 +33,7 @@
     "deploy:docs": "yarn run build:docs && gh-pages -d storybook-static",
     "doc": "api-extractor run --local",
     "prettier:check": "prettier --config ../../.prettierrc --check \"src/**/*.ts\"",
-    "prettier": "prettier --config ../../.prettierrc --write \"src/**/*.ts\"",
+    "prettier": "tsc-esm-fix --src=\"src\" --ext=\".js\" && prettier --config ../../.prettierrc --write \"src/**/*.ts\"",
     "eslint:check": "eslint . --ext .ts",
     "eslint": "eslint . --ext .ts --fix",
     "prepublishOnly": "rimraf README.md && cp ../../README.md . && yarn run build",
@@ -91,6 +91,7 @@
     "storybook": "^7.5.3",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
+    "tsc-esm-fix": "^2.20.21",
     "tslib": "^2.6.0",
     "typescript": "~5.2.2",
     "webpack": "^5.0.0"

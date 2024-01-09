@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
-import { getFaIcon } from '../utilities/storybook';
+import { getFaIcon } from '../utilities/storybook/index.js';
 
 export default {
   title: 'Components/Tree Item',

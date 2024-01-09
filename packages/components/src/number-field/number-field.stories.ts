@@ -3,8 +3,8 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { getFaIcon } from '../utilities/storybook';
-import { NumberField } from './index';
+import { getFaIcon } from '../utilities/storybook/index.js';
+import { NumberField } from './index.js';
 
 export default {
   title: 'Components/Number Field',

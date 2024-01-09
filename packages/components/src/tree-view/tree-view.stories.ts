@@ -3,7 +3,7 @@
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { TreeView } from './index';
+import { TreeView } from './index.js';
 
 export default {
   title: 'Components/Tree View',

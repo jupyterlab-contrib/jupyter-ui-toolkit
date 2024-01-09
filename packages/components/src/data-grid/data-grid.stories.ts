@@ -2,7 +2,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
-import { DataGrid } from './index';
+import { DataGrid } from './index.js';
 
 export default {
   title: 'Components/Data Grid',

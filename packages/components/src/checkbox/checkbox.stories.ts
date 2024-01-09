@@ -2,7 +2,7 @@
 // Distributed under the terms of the Modified BSD License.
 import type { Meta, StoryFn, StoryObj } from '@storybook/html';
 import { action } from '@storybook/addon-actions';
-import { Checkbox } from './index';
+import { Checkbox } from './index.js';
 
 export default {
   title: 'Components/Checkbox',
