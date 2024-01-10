@@ -1,6 +1,6 @@
 {
   "name": "@jupyter/react-components",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "description": "A component library for building extensions in Jupyter frontends.",
   "homepage": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit#readme",
   "license": "BSD-3-Clause",
@@ -32,7 +32,7 @@
     "prepublishOnly": "rimraf README.md && cp ../../README.md . && yarn run build"
   },
   "dependencies": {
-    "@jupyter/web-components": "^0.15.0",
+    "@jupyter/web-components": "^0.15.1",
     "@microsoft/fast-react-wrapper": "^0.3.22",
     "react": ">=17.0.0 <19.0.0"
   },
