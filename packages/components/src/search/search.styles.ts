@@ -49,14 +49,6 @@ export const searchStyles: FoundationElementTemplate<
 > = (context, definition) => css`
   ${BaseFieldStyles}
 
-  .control {
-    padding: 0;
-    padding-inline-start: calc(${designUnit} * 2px + 1px);
-    padding-inline-end: calc(
-      (${designUnit} * 2px) + (${heightNumber} * 1px) + 1px
-    );
-  }
-
   .control::-webkit-search-cancel-button {
     -webkit-appearance: none;
   }
