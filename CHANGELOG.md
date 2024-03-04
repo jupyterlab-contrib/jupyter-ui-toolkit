@@ -2,6 +2,27 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.15.3
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.15.2...82b273e829f017430c7753be2a088736b27d30c8))
+
+### Bugs fixed
+
+- Remove padding for close button [#90](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/90) ([@fcollonval](https://github.com/fcollonval))
+
+### Maintenance and upkeep improvements
+
+- Refactor to define a single wrap method [#91](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/91) ([@fcollonval](https://github.com/fcollonval))
+- Bump ip from 2.0.0 to 2.0.1 [#89](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/89) ([@dependabot](https://github.com/dependabot))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-01-24&to=2024-03-03&type=c))
+
+[@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2024-01-24..2024-03-03&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-01-24..2024-03-03&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2024-01-24..2024-03-03&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.15.2
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.15.1...0e699a7df4367bf2bbdffbb67c4f0b1563049b75))
@@ -15,8 +36,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-01-10&to=2024-01-24&type=c))
 
 [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-01-10..2024-01-24&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.15.1
 
