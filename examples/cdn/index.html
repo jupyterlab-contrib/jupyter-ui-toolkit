@@ -21,28 +21,30 @@
         body {
             background-color: var(--neutral-layer-1);
         }
-
-        #theme-mode>span {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background-image: url('https://unpkg.com/@mdi/svg/svg/brightness-6.svg');
-            background-color: var(--neutral-foreground-rest);
-            mix-blend-mode: difference;
-        }
     </style>
 </head>
 
-<body data-theme-mode="dark">
+<body data-theme-mode="light">
     <jp-button appearance="accent" onclick="alert('Accent button pressed')">Click me!</jp-button>
     <jp-button onclick="alert('Neutral button pressed')">Click me!</jp-button>
-    <jp-button id="theme-mode">
-        <span></span>
-    </jp-button>
+    <jp-button id="theme-mode"></jp-button>
 
     <script type="module">
         // Apply JupyterLab theme
         import { applyJupyterTheme } from 'https://unpkg.com/@jupyter/web-components/dist/toolkit.min.js';
+
+        // Inject icon in theme mode button
+        fetch('https://unpkg.com/@mdi/svg@7.2.96/svg/brightness-6.svg')
+            .then(
+                r => r.text()
+            )
+            .then(
+                brightness6 => {
+                    document.querySelector('#theme-mode').insertAdjacentHTML('afterbegin', brightness6)
+                }
+            );
+
+        applyJupyterTheme();
 
         function switchThemeMode(th) {
             const mode = document.body.getAttribute('data-theme-mode');
@@ -58,7 +60,6 @@
             );
             applyJupyterTheme();
         }
-        switchThemeMode();
 
         document.querySelector('#theme-mode').addEventListener('click', () => {
             switchThemeMode();
