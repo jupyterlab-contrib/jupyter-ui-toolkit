@@ -41,6 +41,8 @@ export const BaseFieldStyles = css`
     font-family: ${bodyFont};
     outline: none;
     user-select: none;
+    /* Ensure to display focus highlight */
+    margin: calc((${focusStrokeWidth} - ${strokeWidth}) * 1px);
   }
 
   .root {
@@ -73,6 +75,10 @@ export const BaseFieldStyles = css`
     padding: 0 calc(${designUnit} * 2px + 1px);
     font-size: ${typeRampBaseFontSize};
     line-height: ${typeRampBaseLineHeight};
+  }
+
+  .control:placeholder-shown {
+    text-overflow: ellipsis;
   }
 
   .control:hover,
