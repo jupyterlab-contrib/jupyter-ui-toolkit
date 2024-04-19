@@ -80,14 +80,6 @@
   "styleModule": "style/index.js",
   "jupyterlab": {
     "extension": true,
-    "outputDir": "../../jupyter_ui_demo/labextension",
-    "sharedPackages": {
-      "@jupyter/react-components": {
-        "singleton": true
-      },
-      "@jupyter/web-components": {
-        "singleton": true
-      }
-    }
+    "outputDir": "../../jupyter_ui_demo/labextension"
   }
 }
