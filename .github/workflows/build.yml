@@ -57,6 +57,8 @@ jobs:
           python -m pip install .
 
           jupyter labextension list 2>&1 | grep -ie "jupyter-ui-demo.*enabled"
+
+          npx playwright install-deps
           python -m jupyterlab.browser_check
 
           pip install build
