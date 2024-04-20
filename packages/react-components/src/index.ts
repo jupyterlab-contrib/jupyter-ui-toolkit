@@ -1,8 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-export * from './wrap';
-
 export * from './accordion';
 export * from './accordion-item';
 export * from './anchor';
