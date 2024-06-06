@@ -4,7 +4,7 @@
 
 import { attr } from '@microsoft/fast-element';
 import {
-  NumberField as FoundationNumberField,
+  NumberField,
   NumberFieldOptions,
   numberFieldTemplate as template
 } from '@microsoft/fast-foundation';
@@ -17,9 +17,12 @@ import { numberFieldStyles as styles } from './number-field.styles.js';
 export type NumberFieldAppearance = 'filled' | 'outline';
 
 /**
- * @internal
+ * Number field class
+ *
+ * @public
+ * @tagname jp-number-field
  */
-export class NumberField extends FoundationNumberField {
+class JupyterNumberField extends NumberField {
   /**
    * The appearance of the element.
    *
@@ -42,9 +45,9 @@ export class NumberField extends FoundationNumberField {
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpNumberField = NumberField.compose<NumberFieldOptions>({
+export const jpNumberField = JupyterNumberField.compose<NumberFieldOptions>({
   baseName: 'number-field',
-  baseClass: FoundationNumberField,
+  baseClass: NumberField,
   styles,
   template,
   shadowOptions: {
@@ -58,4 +61,4 @@ export const jpNumberField = NumberField.compose<NumberFieldOptions>({
     `
 });
 
-export { styles as numberFieldStyles };
+export { JupyterNumberField as NumberField, styles as numberFieldStyles };

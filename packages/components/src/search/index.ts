@@ -3,10 +3,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { attr } from '@microsoft/fast-element';
-import {
-  Search as FoundationSearch,
-  searchTemplate as template
-} from '@microsoft/fast-foundation';
+import { Search, searchTemplate as template } from '@microsoft/fast-foundation';
 import { searchStyles as styles } from './search.styles.js';
 
 /**
@@ -16,9 +13,12 @@ import { searchStyles as styles } from './search.styles.js';
 export type SearchAppearance = 'filled' | 'outline';
 
 /**
- * @internal
+ * Search field class
+ *
+ * @public
+ * @tagname jp-search
  */
-export class Search extends FoundationSearch {
+class JupyterSearch extends Search {
   /**
    * The appearance of the element.
    *
@@ -41,9 +41,9 @@ export class Search extends FoundationSearch {
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpSearch = Search.compose({
+export const jpSearch = JupyterSearch.compose({
   baseName: 'search',
-  baseClass: FoundationSearch,
+  baseClass: Search,
   template,
   styles,
   shadowOptions: {
@@ -51,8 +51,4 @@ export const jpSearch = Search.compose({
   }
 });
 
-/**
- * Styles for Search
- * @public
- */
-export const searchStyles = styles;
+export { JupyterSearch as Search, styles as searchStyles };

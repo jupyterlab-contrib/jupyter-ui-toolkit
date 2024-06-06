@@ -4,7 +4,7 @@
 
 import { attr, css, ElementStyles, observable } from '@microsoft/fast-element';
 import {
-  Select as FoundationSelect,
+  Select,
   SelectOptions,
   selectTemplate as template
 } from '@microsoft/fast-foundation';
@@ -16,10 +16,11 @@ import {
 import { selectStyles as styles } from './select.styles.js';
 
 /**
- * Base class for Select.
+ * Select class
  * @public
+ * @tagname jp-select
  */
-export class Select extends FoundationSelect {
+class JupyterSelect extends Select {
   /**
    * Whether the select has a compact layout or not.
    *
@@ -252,9 +253,9 @@ export class Select extends FoundationSelect {
  * Generates HTML Element: `<jp-select>`
  *
  */
-export const jpSelect = Select.compose<SelectOptions>({
+export const jpSelect = JupyterSelect.compose<SelectOptions>({
   baseName: 'select',
-  baseClass: FoundationSelect,
+  baseClass: Select,
   template,
   styles,
   indicator: /* html */ `
@@ -271,4 +272,4 @@ export const jpSelect = Select.compose<SelectOptions>({
     `
 });
 
-export { styles as selectStyles };
+export { JupyterSelect as Select, styles as selectStyles };

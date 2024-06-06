@@ -3,7 +3,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  SliderLabel as FoundationSliderLabel,
+  SliderLabel,
   sliderLabelTemplate as template
 } from '@microsoft/fast-foundation';
 import { Orientation } from '@microsoft/fast-web-utilities';
@@ -14,9 +14,12 @@ import {
 } from './slider-label.styles.js';
 
 /**
- * @internal
+ * Slider label class
+ *
+ * @public
+ * @tagname jp-slider-label
  */
-export class SliderLabel extends FoundationSliderLabel {
+class JupyterSliderLabel extends SliderLabel {
   protected sliderOrientationChanged(): void {
     if (this.sliderOrientation === Orientation.horizontal) {
       this.$fastController.addStyles(horizontalSliderLabelStyles);
@@ -37,14 +40,15 @@ export class SliderLabel extends FoundationSliderLabel {
  * @remarks
  * Generates HTML Element: `<jp-slider-label>`
  */
-export const jpSliderLabel = SliderLabel.compose({
+export const jpSliderLabel = JupyterSliderLabel.compose({
   baseName: 'slider-label',
-  baseClass: FoundationSliderLabel,
+  baseClass: SliderLabel,
   template,
   styles
 });
 
 export {
+  JupyterSliderLabel as SliderLabel,
   horizontalSliderLabelStyles,
   styles as sliderLabelStyles,
   verticalSliderLabelStyles

@@ -5,6 +5,14 @@ import { Tab, tabTemplate as template } from '@microsoft/fast-foundation';
 import { tabStyles as styles } from './tab.styles.js';
 
 /**
+ * Tab class
+ *
+ * @public
+ * @tagname jp-tab
+ */
+class JupyterTab extends Tab {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#Tab} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#tabTemplate}
  *
@@ -13,16 +21,11 @@ import { tabStyles as styles } from './tab.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-tab>`
  */
-export const jpTab = Tab.compose({
+export const jpTab = JupyterTab.compose({
   baseName: 'tab',
+  baseClass: Tab,
   template,
   styles
 });
 
-/**
- * Base class for Tab
- * @public
- */
-export { Tab };
-
-export { styles as tabStyles };
+export { JupyterTab as Tab, styles as tabStyles };

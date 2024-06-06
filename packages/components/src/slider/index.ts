@@ -3,17 +3,18 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  Slider as BaseSlider,
+  Slider,
   SliderOptions,
   sliderTemplate as template
 } from '@microsoft/fast-foundation';
 import { sliderStyles as styles } from './slider.styles.js';
 
 /**
- * Base class for Slider
+ * Slider class
  * @public
+ * @tagname jp-slider
  */
-export class Slider extends BaseSlider {}
+class JupyterSlider extends Slider {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Slider} registration for configuring the component with a DesignSystem.
@@ -24,9 +25,9 @@ export class Slider extends BaseSlider {}
  * @remarks
  * Generates HTML Element: `<jp-slider>`
  */
-export const jpSlider = Slider.compose<SliderOptions>({
+export const jpSlider = JupyterSlider.compose<SliderOptions>({
   baseName: 'slider',
-  baseClass: BaseSlider,
+  baseClass: Slider,
   template,
   styles,
   thumb: /* html */ `
@@ -34,4 +35,4 @@ export const jpSlider = Slider.compose<SliderOptions>({
     `
 });
 
-export { styles as sliderStyles };
+export { JupyterSlider as Slider, styles as sliderStyles };

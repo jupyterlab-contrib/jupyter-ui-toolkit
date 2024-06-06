@@ -9,6 +9,14 @@ import {
 import { skeletonStyles as styles } from './skeleton.styles.js';
 
 /**
+ * Skeleton class
+ *
+ * @public
+ * @tagname jp-skeleton
+ */
+class JupyterSkeleton extends Skeleton {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#Skeleton} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#skeletonTemplate}
  *
@@ -17,16 +25,11 @@ import { skeletonStyles as styles } from './skeleton.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-skeleton>`
  */
-export const jpSkeleton = Skeleton.compose({
+export const jpSkeleton = JupyterSkeleton.compose({
   baseName: 'skeleton',
+  baseClass: Skeleton,
   template,
   styles
 });
 
-/**
- * Base class for Skeleton
- * @public
- */
-export { Skeleton };
-
-export { styles as skeletonStyles };
+export { JupyterSkeleton as Skeleton, styles as skeletonStyles };

@@ -4,7 +4,7 @@
 
 import {
   FoundationElementDefinition,
-  PickerMenu as FoundationPickerMenu,
+  PickerMenu,
   Picker,
   PickerList,
   PickerListItem,
@@ -23,7 +23,15 @@ import { pickerListStyles } from './picker-list.styles.js';
 import { pickerListItemStyles } from './picker-list-item.styles.js';
 
 /**
- * The FAST  Picker Custom Element. Implements {@link @microsoft/fast-foundation#Picker},
+ * Picker class
+ * @alpha
+ * @public
+ * @tagname jp-draft-picker
+ */
+class JupyterPicker extends Picker {}
+
+/**
+ * The FAST Picker Custom Element. Implements {@link @microsoft/fast-foundation#Picker},
  * {@link @microsoft/fast-foundation#PickerTemplate}
  *
  *
@@ -31,23 +39,22 @@ import { pickerListItemStyles } from './picker-list-item.styles.js';
  * @remarks
  * * Generates HTML Element: `<jp-draft-picker>`
  */
-export const jpPicker = Picker.compose({
+export const jpPicker = JupyterPicker.compose({
   baseName: 'draft-picker',
+  baseClass: Picker,
   template: pickerTemplate,
   styles: pickerStyles,
   shadowOptions: {}
 });
 
 /**
- * Base class for Picker
+ * Picker menu class
+ *
  * @alpha
- */
-export { Picker };
-
-/**
  * @public
+ * @tagname jp-draft-picker-menu
  */
-export class PickerMenu extends FoundationPickerMenu {
+class JupyterPickerMenu extends PickerMenu {
   /**
    * @public
    */
@@ -66,12 +73,22 @@ export class PickerMenu extends FoundationPickerMenu {
  * @remarks
  * HTML Element: \<jp-draft-picker-menu\>
  */
-export const jpPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
-  baseName: 'draft-picker-menu',
-  baseClass: FoundationPickerMenu,
-  template: pickerMenuTemplate,
-  styles: pickerMenuStyles
-});
+export const jpPickerMenu =
+  JupyterPickerMenu.compose<FoundationElementDefinition>({
+    baseName: 'draft-picker-menu',
+    baseClass: PickerMenu,
+    template: pickerMenuTemplate,
+    styles: pickerMenuStyles
+  });
+
+/**
+ * Picker menu options class
+ *
+ * @alpha
+ * @public
+ * @tagname jp-draft-picker-menu-option
+ */
+class JupyterPickerMenuOption extends PickerMenuOption {}
 
 /**
  *  Component that displays available picker menu options
@@ -81,11 +98,21 @@ export const jpPickerMenu = PickerMenu.compose<FoundationElementDefinition>({
  * @remarks
  * HTML Element: \<jp-draft-picker-menu-option\>
  */
-export const jpPickerMenuOption = PickerMenuOption.compose({
+export const jpPickerMenuOption = JupyterPickerMenuOption.compose({
   baseName: 'draft-picker-menu-option',
+  baseClass: PickerMenuOption,
   template: pickerMenuOptionTemplate,
   styles: pickerMenuOptionStyles
 });
+
+/**
+ * Picker list class
+ *
+ * @alpha
+ * @public
+ * @tagname jp-draft-picker-list
+ */
+class JupyterPickerList extends PickerList {}
 
 /**
  * Component that displays the list of selected picker items along
@@ -96,11 +123,21 @@ export const jpPickerMenuOption = PickerMenuOption.compose({
  * HTML Element: \<jp-draft-picker-list\>
  *
  */
-export const jpPickerList = PickerList.compose({
+export const jpPickerList = JupyterPickerList.compose({
   baseName: 'draft-picker-list',
+  baseClass: PickerList,
   template: pickerListTemplate,
   styles: pickerListStyles
 });
+
+/**
+ * Picker list item class
+ *
+ * @alpha
+ * @public
+ * @tagname jp-draft-picker-list-item
+ */
+class JupyterPickerListItem extends PickerListItem {}
 
 /**
  * Component that displays selected items
@@ -109,13 +146,19 @@ export const jpPickerList = PickerList.compose({
  * @remarks
  * HTML Element: \<jp-draft-picker-list-item\>
  */
-export const jpPickerListItem = PickerListItem.compose({
+export const jpPickerListItem = JupyterPickerListItem.compose({
   baseName: 'draft-picker-list-item',
+  baseClass: PickerListItem,
   template: pickerListItemTemplate,
   styles: pickerListItemStyles
 });
 
 export {
+  JupyterPicker as Picker,
+  JupyterPickerMenu as PickerMenu,
+  JupyterPickerMenuOption as PickerMenuOption,
+  JupyterPickerList as PickerList,
+  JupyterPickerListItem as PickerListItem,
   pickerStyles,
   pickerListItemStyles,
   pickerMenuOptionStyles,

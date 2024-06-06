@@ -3,17 +3,18 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  Switch as BaseSwitch,
+  Switch,
   SwitchOptions,
   switchTemplate as template
 } from '@microsoft/fast-foundation';
 import { switchStyles as styles } from './switch.styles.js';
 
 /**
- * Base class for Switch
+ * Switch class
  * @public
+ * @tagname jp-switch
  */
-export class Switch extends BaseSwitch {}
+class JupyterSwitch extends Switch {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Switch} registration for configuring the component with a DesignSystem.
@@ -24,9 +25,9 @@ export class Switch extends BaseSwitch {}
  * @remarks
  * Generates HTML Element: `<jp-switch>`
  */
-export const jpSwitch = Switch.compose<SwitchOptions>({
+export const jpSwitch = JupyterSwitch.compose<SwitchOptions>({
   baseName: 'switch',
-  baseClass: BaseSwitch,
+  baseClass: Switch,
   template,
   styles,
   switch: /* html */ `
@@ -34,4 +35,4 @@ export const jpSwitch = Switch.compose<SwitchOptions>({
     `
 });
 
-export { styles as switchStyles };
+export { JupyterSwitch as Switch, styles as switchStyles };

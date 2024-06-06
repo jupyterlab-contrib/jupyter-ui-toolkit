@@ -9,6 +9,14 @@ import {
 import { tabPanelStyles as styles } from './tab-panel.styles.js';
 
 /**
+ * Tab panel class
+ *
+ * @public
+ * @tagname jp-tab-panel
+ */
+class JupyterTabPanel extends TabPanel {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#TabPanel} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#tabPanelTemplate}
  *
@@ -17,16 +25,11 @@ import { tabPanelStyles as styles } from './tab-panel.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-tab-panel>`
  */
-export const jpTabPanel = TabPanel.compose({
+export const jpTabPanel = JupyterTabPanel.compose({
   baseName: 'tab-panel',
+  baseClass: TabPanel,
   template,
   styles
 });
 
-/**
- * Base class for TabPanel
- * @public
- */
-export { TabPanel };
-
-export { styles as tabPanelStyles };
+export { JupyterTabPanel as TabPanel, styles as tabPanelStyles };

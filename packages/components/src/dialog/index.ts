@@ -6,6 +6,14 @@ import { Dialog, dialogTemplate as template } from '@microsoft/fast-foundation';
 import { dialogStyles as styles } from './dialog.styles.js';
 
 /**
+ * Dialog class
+ *
+ * @public
+ * @tagname jp-dialog
+ */
+class JupyterDialog extends Dialog {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#Dialog} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#dialogTemplate}
  *
@@ -15,16 +23,11 @@ import { dialogStyles as styles } from './dialog.styles.js';
  * HTML Element: `<jp-dialog>`
  *
  */
-export const jpDialog = Dialog.compose({
+export const jpDialog = JupyterDialog.compose({
   baseName: 'dialog',
+  baseClass: Dialog,
   template,
   styles
 });
 
-/**
- * Base class for Dialog
- * @public
- */
-export { Dialog };
-
-export { styles as dialogStyles };
+export { JupyterDialog as Dialog, styles as dialogStyles };

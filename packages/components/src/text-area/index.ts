@@ -4,7 +4,7 @@
 
 import { attr } from '@microsoft/fast-element';
 import {
-  TextArea as FoundationTextArea,
+  TextArea,
   textAreaTemplate as template
 } from '@microsoft/fast-foundation';
 import { textAreaStyles as styles } from './text-area.styles.js';
@@ -16,9 +16,12 @@ import { textAreaStyles as styles } from './text-area.styles.js';
 export type TextAreaAppearance = 'filled' | 'outline';
 
 /**
- * @internal
+ * Textarea class
+ *
+ * @public
+ * @tagname jp-text-area
  */
-export class TextArea extends FoundationTextArea {
+class JupyterTextArea extends TextArea {
   /**
    * The appearance of the element.
    *
@@ -41,9 +44,9 @@ export class TextArea extends FoundationTextArea {
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpTextArea = TextArea.compose({
+export const jpTextArea = JupyterTextArea.compose({
   baseName: 'text-area',
-  baseClass: FoundationTextArea,
+  baseClass: TextArea,
   template,
   styles,
   shadowOptions: {
@@ -51,4 +54,4 @@ export const jpTextArea = TextArea.compose({
   }
 });
 
-export { styles as textAreaStyles };
+export { JupyterTextArea as TextArea, styles as textAreaStyles };

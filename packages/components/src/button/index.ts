@@ -3,10 +3,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { attr } from '@microsoft/fast-element';
-import {
-  Button as FoundationButton,
-  buttonTemplate as template
-} from '@microsoft/fast-foundation';
+import { Button, buttonTemplate as template } from '@microsoft/fast-foundation';
 import { buttonStyles as styles } from './button.styles.js';
 
 /**
@@ -22,9 +19,12 @@ export type ButtonAppearance =
   | 'stealth';
 
 /**
- * @internal
+ * Button class
+ *
+ * @public
+ * @tagname jp-button
  */
-export class Button extends FoundationButton {
+class JupyterButton extends Button {
   /**
    * The appearance the button should have.
    *
@@ -82,14 +82,16 @@ export class Button extends FoundationButton {
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpButton = Button.compose({
+export const jpButton = JupyterButton.compose({
   baseName: 'button',
-  baseClass: FoundationButton,
+  baseClass: Button,
   template,
   styles,
   shadowOptions: {
     delegatesFocus: true
   }
 });
+
+export { JupyterButton as Button };
 
 export { styles as buttonStyles };

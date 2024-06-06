@@ -10,6 +10,14 @@ import {
 import { treeItemStyles as styles } from './tree-item.styles.js';
 
 /**
+ * Tree item class
+ *
+ * @public
+ * @tagname jp-tree-item
+ */
+class JupyterTreeItem extends TreeItem {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#TreeItem} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#treeItemTemplate}
  *
@@ -19,8 +27,9 @@ import { treeItemStyles as styles } from './tree-item.styles.js';
  * Generates HTML Element: `<jp-tree-item>`
  *
  */
-export const jpTreeItem = TreeItem.compose<TreeItemOptions>({
+export const jpTreeItem = JupyterTreeItem.compose<TreeItemOptions>({
   baseName: 'tree-item',
+  baseClass: TreeItem,
   template,
   styles,
   expandCollapseGlyph: /* html */ `
@@ -36,10 +45,4 @@ export const jpTreeItem = TreeItem.compose<TreeItemOptions>({
     `
 });
 
-/**
- * Base class for TreeItem
- * @public
- */
-export { TreeItem };
-
-export { styles as treeItemStyles };
+export { JupyterTreeItem as TreeItem, styles as treeItemStyles };

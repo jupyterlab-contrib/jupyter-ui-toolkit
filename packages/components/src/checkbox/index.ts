@@ -3,7 +3,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  Checkbox as BaseCheckbox,
+  Checkbox,
   CheckboxOptions,
   FoundationElementTemplate
 } from '@microsoft/fast-foundation';
@@ -15,7 +15,7 @@ import { ViewTemplate, html, slotted } from '@microsoft/fast-element';
  * @public
  */
 export const checkboxTemplate: FoundationElementTemplate<
-  ViewTemplate<Checkbox>,
+  ViewTemplate<JupyterCheckbox>,
   CheckboxOptions
 > = (context, definition) => html`
   <template
@@ -49,10 +49,12 @@ export const checkboxTemplate: FoundationElementTemplate<
 `;
 
 /**
- * Base class for Checkbox
+ * Checkbox class
+ *
  * @public
+ * @tagname jp-checkbox
  */
-export class Checkbox extends BaseCheckbox {
+class JupyterCheckbox extends Checkbox {
   indeterminateChanged(prev: boolean, next: boolean): void {
     if (this.indeterminate) {
       this.classList.add('indeterminate');
@@ -71,9 +73,9 @@ export class Checkbox extends BaseCheckbox {
  * @remarks
  * Generates HTML Element: `<jp-checkbox>`
  */
-export const jpCheckbox = Checkbox.compose<CheckboxOptions>({
+export const jpCheckbox = JupyterCheckbox.compose<CheckboxOptions>({
   baseName: 'checkbox',
-  baseClass: BaseCheckbox,
+  baseClass: Checkbox,
   template: checkboxTemplate,
   styles,
   checkedIndicator: /* html */ `
@@ -94,5 +96,7 @@ export const jpCheckbox = Checkbox.compose<CheckboxOptions>({
         <div part="indeterminate-indicator" class="indeterminate-indicator"></div>
     `
 });
+
+export { JupyterCheckbox as Checkbox };
 
 export { styles as checkboxStyles };

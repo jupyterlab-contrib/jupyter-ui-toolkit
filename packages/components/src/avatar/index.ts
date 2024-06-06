@@ -5,17 +5,18 @@
 import { attr, html, when } from '@microsoft/fast-element';
 import {
   AvatarOptions,
-  Avatar as FoundationAvatar,
+  Avatar,
   avatarTemplate as template
 } from '@microsoft/fast-foundation';
 import { avatarStyles as styles } from './avatar.styles.js';
 
 /**
- * The Jupyter Avatar Class
- * @public
+ * Jupyter Avatar Class
  *
+ * @public
+ * @tagname jp-avatar
  */
-export class Avatar extends FoundationAvatar {
+class JupyterAvatar extends Avatar {
   /**
    * Indicates the Avatar should have an image source
    *
@@ -41,7 +42,7 @@ export class Avatar extends FoundationAvatar {
  *  @public
  *
  */
-export const imgTemplate = html<Avatar>`
+export const imgTemplate = html<JupyterAvatar>`
   ${when(
     x => x.imgSrc,
     html`
@@ -65,9 +66,9 @@ export const imgTemplate = html<Avatar>`
  * @remarks
  * Generates HTML Element: `<jp-avatar>`
  */
-export const jpAvatar = Avatar.compose<AvatarOptions>({
+export const jpAvatar = JupyterAvatar.compose<AvatarOptions>({
   baseName: 'avatar',
-  baseClass: FoundationAvatar,
+  baseClass: Avatar,
   template,
   styles,
   media: imgTemplate,
@@ -75,5 +76,7 @@ export const jpAvatar = Avatar.compose<AvatarOptions>({
     delegatesFocus: true
   }
 });
+
+export { JupyterAvatar as Avatar };
 
 export { styles as avatarStyles };

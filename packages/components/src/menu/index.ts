@@ -2,17 +2,17 @@
 // Copyright (c) Microsoft Corporation.
 // Distributed under the terms of the Modified BSD License.
 
-import {
-  Menu as FoundationMenu,
-  menuTemplate as template
-} from '@microsoft/fast-foundation';
+import { Menu, menuTemplate as template } from '@microsoft/fast-foundation';
 import { fillColor, neutralLayerFloating } from '../design-tokens.js';
 import { menuStyles as styles } from './menu.styles.js';
 
 /**
+ * Menu class
+ *
  * @public
+ * @tagname jp-menu
  */
-export class Menu extends FoundationMenu {
+class JupyterMenu extends Menu {
   /**
    * @internal
    */
@@ -32,10 +32,11 @@ export class Menu extends FoundationMenu {
  * @remarks
  * Generates HTML Element: `<jp-menu>`
  */
-export const jpMenu = Menu.compose({
+export const jpMenu = JupyterMenu.compose({
   baseName: 'menu',
+  baseClass: Menu,
   template,
   styles
 });
 
-export { styles as menuStyles };
+export { JupyterMenu as Menu, styles as menuStyles };

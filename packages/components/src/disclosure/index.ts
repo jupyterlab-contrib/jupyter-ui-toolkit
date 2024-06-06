@@ -4,7 +4,7 @@
 
 import { attr } from '@microsoft/fast-element';
 import {
-  Disclosure as FoundationDisclosure,
+  Disclosure,
   disclosureTemplate as template
 } from '@microsoft/fast-foundation';
 import { disclosureStyles as styles } from './disclosure.styles.js';
@@ -15,9 +15,12 @@ import { disclosureStyles as styles } from './disclosure.styles.js';
 export type DisclosureAppearance = 'accent' | 'lightweight';
 
 /**
- * @internal
+ * Disclosure class
+ *
+ * @public
+ * @tagname jp-disclosure
  */
-export class Disclosure extends FoundationDisclosure {
+class JupyterDisclosure extends Disclosure {
   /**
    * Disclosure default height
    */
@@ -95,11 +98,11 @@ export class Disclosure extends FoundationDisclosure {
  * Generates HTML Element: `<jp-Disclosure>`
  *
  */
-export const jpDisclosure = Disclosure.compose({
+export const jpDisclosure = JupyterDisclosure.compose({
   baseName: 'disclosure',
-  baseClass: FoundationDisclosure,
+  baseClass: Disclosure,
   template,
   styles
 });
 
-export { styles as disclosureStyles };
+export { JupyterDisclosure as Disclosure, styles as disclosureStyles };

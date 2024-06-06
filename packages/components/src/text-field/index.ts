@@ -4,7 +4,7 @@
 
 import { attr } from '@microsoft/fast-element';
 import {
-  TextField as FoundationTextField,
+  TextField,
   textFieldTemplate as template
 } from '@microsoft/fast-foundation';
 import { textFieldStyles as styles } from './text-field.styles.js';
@@ -16,9 +16,12 @@ import { textFieldStyles as styles } from './text-field.styles.js';
 export type TextFieldAppearance = 'filled' | 'outline';
 
 /**
- * @internal
+ * Text field class
+ *
+ * @public
+ * @tagname jp-text-field
  */
-export class TextField extends FoundationTextField {
+class JupyterTextField extends TextField {
   /**
    * The appearance of the element.
    *
@@ -41,9 +44,9 @@ export class TextField extends FoundationTextField {
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpTextField = TextField.compose({
+export const jpTextField = JupyterTextField.compose({
   baseName: 'text-field',
-  baseClass: FoundationTextField,
+  baseClass: TextField,
   template,
   styles,
   shadowOptions: {
@@ -51,4 +54,4 @@ export const jpTextField = TextField.compose({
   }
 });
 
-export { styles as textFieldStyles };
+export { JupyterTextField as TextField, styles as textFieldStyles };

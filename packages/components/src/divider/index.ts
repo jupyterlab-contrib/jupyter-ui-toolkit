@@ -9,6 +9,14 @@ import {
 import { dividerStyles as styles } from './divider.styles.js';
 
 /**
+ * Divider class
+ *
+ * @public
+ * @tagname jp-divider
+ */
+class JupyterDivider extends Divider {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#Divider} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#dividerTemplate}
  *
@@ -17,16 +25,11 @@ import { dividerStyles as styles } from './divider.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-divider>`
  */
-export const jpDivider = Divider.compose({
+export const jpDivider = JupyterDivider.compose({
   baseName: 'divider',
+  baseClass: Divider,
   template,
   styles
 });
 
-/**
- * Base class for Divider
- * @public
- */
-export { Divider };
-
-export { styles as dividerStyles };
+export { JupyterDivider as Divider, styles as dividerStyles };

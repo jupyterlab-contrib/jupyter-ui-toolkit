@@ -3,10 +3,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import { attr } from '@microsoft/fast-element';
-import {
-  Anchor as FoundationAnchor,
-  anchorTemplate as template
-} from '@microsoft/fast-foundation';
+import { Anchor, anchorTemplate as template } from '@microsoft/fast-foundation';
 import { ButtonAppearance } from '../button/index.js';
 import { anchorStyles as styles } from './anchor.styles.js';
 
@@ -17,10 +14,11 @@ import { anchorStyles as styles } from './anchor.styles.js';
 export type AnchorAppearance = ButtonAppearance | 'hypertext';
 
 /**
- * Base class for Anchor
+ * Anchor class
  * @public
+ * @tagname jp-anchor
  */
-export class Anchor extends FoundationAnchor {
+class JupyterAnchor extends Anchor {
   /**
    * The appearance the anchor should have.
    *
@@ -80,14 +78,16 @@ export class Anchor extends FoundationAnchor {
  *
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/delegatesFocus | delegatesFocus}
  */
-export const jpAnchor = Anchor.compose({
+export const jpAnchor = JupyterAnchor.compose({
   baseName: 'anchor',
-  baseClass: FoundationAnchor,
+  baseClass: Anchor,
   template,
   styles,
   shadowOptions: {
     delegatesFocus: true
   }
 });
+
+export { JupyterAnchor as Anchor };
 
 export { styles as anchorStyles };

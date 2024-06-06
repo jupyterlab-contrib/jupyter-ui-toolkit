@@ -9,6 +9,14 @@ import {
 import { treeViewStyles as styles } from './tree-view.styles.js';
 
 /**
+ * Tree view class
+ *
+ * @public
+ * @tagname jp-tree-view
+ */
+class JupyterTreeView extends TreeView {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#TreeView} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#treeViewTemplate}
  *
@@ -18,16 +26,11 @@ import { treeViewStyles as styles } from './tree-view.styles.js';
  * Generates HTML Element: `<jp-tree-view>`
  *
  */
-export const jpTreeView = TreeView.compose({
+export const jpTreeView = JupyterTreeView.compose({
   baseName: 'tree-view',
+  baseClass: TreeView,
   template,
   styles
 });
 
-/**
- * Base class for TreeView
- * @public
- */
-export { TreeView };
-
-export { styles as treeViewStyles };
+export { JupyterTreeView as TreeView, styles as treeViewStyles };
