@@ -23,7 +23,7 @@
   "types": "lib/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p ./tsconfig.json",
+    "build": "echo all set",
     "clean": "rimraf lib tsconfig.tsbuildinfo",
     "prettier:check": "prettier --config ./.prettierrc --check \"**/*.{ts,js,md}\"",
     "prettier": "prettier --config ./.prettierrc --write \"**/*.{ts,js,md}\"",

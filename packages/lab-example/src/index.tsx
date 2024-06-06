@@ -14,14 +14,14 @@ import {
   Checkbox,
   Combobox,
   DataGrid,
-  DateField,
+  // DateField,
   Disclosure,
   Divider,
   Listbox,
   Menu,
   MenuItem,
   NumberField,
-  Option,
+  ListboxOption as Option,
   Progress,
   ProgressRing,
   Radio,
@@ -38,9 +38,9 @@ import {
   TextArea,
   TextField,
   Toolbar,
-  Tooltip,
-  TreeItem,
-  TreeView
+  Tooltip
+  // TreeItem,
+  // TreeView
 } from '@jupyter/react-components';
 import {
   addJupyterLabThemeChangeListener,
@@ -280,9 +280,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         <NumberField value="10" onChange={onChange}>
           Number Field Label
         </NumberField>
-        <DateField value="2021-09-12" onChange={onChange}>
+{/*        <DateField value="2021-09-12" onChange={onChange}>
           Date Field Label
-        </DateField>
+  </DateField> */}
         <div className="jp-FlexColumn">
           <label>Select</label>
           <Select onChange={onChange}>
@@ -443,7 +443,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <TabPanel id="panelThree">This is panel three content.</TabPanel>
         </Tabs>
 
-        <TreeView>
+       {` <TreeView>
           {/* @ts-expect-error unknown event onExpand */}
           <TreeItem onSelect={onEvent} onExpand={onEvent}>
             Root item 1
@@ -473,7 +473,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
             <TreeItem>Nested item 3</TreeItem>
           </TreeItem>
           <TreeItem>Root item 3</TreeItem>
-        </TreeView>
+        </TreeView>`}
       </div>
     </div>
   );
