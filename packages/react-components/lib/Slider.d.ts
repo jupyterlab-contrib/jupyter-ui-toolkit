@@ -1,35 +1,35 @@
-import { Slider as SliderElement } from "@jupyter/web-components";
+import { Slider as SliderElement } from '@jupyter/web-components';
 
 export type { SliderElement };
 
 export interface SliderProps
   extends Pick<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "name"
-    | "required"
-    | "value"
-    | "disabled"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'name'
+    | 'required'
+    | 'value'
+    | 'disabled'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** When true, the control will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
 
   /** The orientation of the slider. */
-  orientation?: SliderElement["orientation"];
+  orientation?: SliderElement['orientation'];
 
   /** The selection mode. */
-  mode?: SliderElement["mode"];
+  mode?: SliderElement['mode'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -56,36 +56,36 @@ export interface SliderProps
   tabIndex?: number;
 
   /** When true, the control will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute} for more information. */
-  readOnly?: SliderElement["readOnly"];
+  readOnly?: SliderElement['readOnly'];
 
   /** The value property, typed as a number. */
-  valueAsNumber?: SliderElement["valueAsNumber"];
+  valueAsNumber?: SliderElement['valueAsNumber'];
 
   /** Custom function that generates a string for the component's "aria-valuetext" attribute based on the current value. */
-  valueTextFormatter?: SliderElement["valueTextFormatter"];
+  valueTextFormatter?: SliderElement['valueTextFormatter'];
 
   /** The minimum allowed value. */
-  min?: SliderElement["min"];
+  min?: SliderElement['min'];
 
   /** The maximum allowed value. */
-  max?: SliderElement["max"];
+  max?: SliderElement['max'];
 
   /** Value to increment or decrement via arrow keys, mouse click or drag. */
-  step?: SliderElement["step"];
+  step?: SliderElement['step'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: SliderElement["$presentation"];
+  $presentation?: SliderElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: SliderElement["template"];
+  template?: SliderElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: SliderElement["styles"];
+  styles?: SliderElement['styles'];
 
   /** Fires a custom 'change' event when the slider value changes */
   onChange?: (event: CustomEvent) => void;

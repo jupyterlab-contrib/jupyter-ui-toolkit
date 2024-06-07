@@ -1,30 +1,30 @@
-import { DataGridCell as DataGridCellElement } from "@jupyter/web-components";
+import { DataGridCell as DataGridCellElement } from '@jupyter/web-components';
 
 export type { DataGridCellElement };
 
 export interface DataGridCellProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The type of cell */
-  cellType?: DataGridCellElement["cellType"];
+  cellType?: DataGridCellElement['cellType'];
 
   /** The column index of the cell.
 This will be applied to the css grid-column-index value
 applied to the cell */
-  gridColumn?: DataGridCellElement["gridColumn"];
+  gridColumn?: DataGridCellElement['gridColumn'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -51,24 +51,24 @@ applied to the cell */
   tabIndex?: number;
 
   /** The base data for the parent row */
-  rowData?: DataGridCellElement["rowData"];
+  rowData?: DataGridCellElement['rowData'];
 
   /** The base data for the column */
-  columnDefinition?: DataGridCellElement["columnDefinition"];
+  columnDefinition?: DataGridCellElement['columnDefinition'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: DataGridCellElement["$presentation"];
+  $presentation?: DataGridCellElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: DataGridCellElement["template"];
+  template?: DataGridCellElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: DataGridCellElement["styles"];
+  styles?: DataGridCellElement['styles'];
 
   /** Fires a custom 'cell-focused' event when focus is on the cell or its contents */
   onCellFocused?: (event: CustomEvent) => void;

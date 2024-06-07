@@ -1,28 +1,28 @@
-import { Disclosure as DisclosureElement } from "@jupyter/web-components";
+import { Disclosure as DisclosureElement } from '@jupyter/web-components';
 
 export type { DisclosureElement };
 
 export interface DisclosureProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The appearance the anchor should have. */
-  appearance?: DisclosureElement["appearance"];
+  appearance?: DisclosureElement['appearance'];
 
   /** Invoker title */
-  title?: DisclosureElement["title"];
+  title?: DisclosureElement['title'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -49,21 +49,21 @@ export interface DisclosureProps
   tabIndex?: number;
 
   /** Determines if the element should show the extra content or not. */
-  expanded?: DisclosureElement["expanded"];
+  expanded?: DisclosureElement['expanded'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: DisclosureElement["$presentation"];
+  $presentation?: DisclosureElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: DisclosureElement["template"];
+  template?: DisclosureElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: DisclosureElement["styles"];
+  styles?: DisclosureElement['styles'];
 
   /** fires a toggle event when the summary is toggled */
   onToggle?: (event: CustomEvent) => void;

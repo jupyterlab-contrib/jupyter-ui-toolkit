@@ -2,11 +2,14 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useEffect,
-} from "react";
-import { provideJupyterDesignSystem, jpPickerMenu } from "@jupyter/web-components";
+  useEffect
+} from 'react';
+import {
+  provideJupyterDesignSystem,
+  jpPickerMenu
+} from '@jupyter/web-components';
 provideJupyterDesignSystem().register(jpPickerMenu());
-import { useProperties } from "./react-utils.js";
+import { useProperties } from './react-utils.js';
 
 export const PickerMenu = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -21,21 +24,21 @@ export const PickerMenu = forwardRef((props, forwardedRef) => {
   /** Properties - run whenever a property has changed */
   useProperties(
     ref,
-    "suggestionsAvailableText",
+    'suggestionsAvailableText',
     props.suggestionsAvailableText
   );
-  useProperties(ref, "$presentation", props.$presentation);
-  useProperties(ref, "template", props.template);
-  useProperties(ref, "styles", props.styles);
+  useProperties(ref, '$presentation', props.$presentation);
+  useProperties(ref, 'template', props.template);
+  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
     compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition),
+      ref.current.compose(this_, elementDefinition)
   }));
 
   return React.createElement(
-    "jp-draft-picker-menu",
+    'jp-draft-picker-menu',
     {
       ref,
       ...filteredProps,
@@ -44,7 +47,7 @@ export const PickerMenu = forwardRef((props, forwardedRef) => {
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      style: { ...props.style },
+      style: { ...props.style }
     },
     props.children
   );

@@ -1,25 +1,25 @@
-import { PickerMenuOption as PickerMenuOptionElement } from "@jupyter/web-components";
+import { PickerMenuOption as PickerMenuOptionElement } from '@jupyter/web-components';
 
 export type { PickerMenuOptionElement };
 
 export interface PickerMenuOptionProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The underlying string value of the item */
-  value?: PickerMenuOptionElement["value"];
+  value?: PickerMenuOptionElement['value'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -46,21 +46,21 @@ export interface PickerMenuOptionProps
   tabIndex?: number;
 
   /** The template used to render the contents of the list item */
-  contentsTemplate?: PickerMenuOptionElement["contentsTemplate"];
+  contentsTemplate?: PickerMenuOptionElement['contentsTemplate'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: PickerMenuOptionElement["$presentation"];
+  $presentation?: PickerMenuOptionElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: PickerMenuOptionElement["template"];
+  template?: PickerMenuOptionElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: PickerMenuOptionElement["styles"];
+  styles?: PickerMenuOptionElement['styles'];
 }
 
 /**

@@ -2,11 +2,11 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useEffect,
-} from "react";
-import { provideJupyterDesignSystem, jpButton } from "@jupyter/web-components";
+  useEffect
+} from 'react';
+import { provideJupyterDesignSystem, jpButton } from '@jupyter/web-components';
 provideJupyterDesignSystem().register(jpButton());
-import { useProperties } from "./react-utils.js";
+import { useProperties } from './react-utils.js';
 
 export const Button = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -29,12 +29,12 @@ export const Button = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, "autofocus", props.autofocus);
-  useProperties(ref, "formnovalidate", props.formnovalidate);
-  useProperties(ref, "defaultSlottedContent", props.defaultSlottedContent);
-  useProperties(ref, "$presentation", props.$presentation);
-  useProperties(ref, "template", props.template);
-  useProperties(ref, "styles", props.styles);
+  useProperties(ref, 'autofocus', props.autofocus);
+  useProperties(ref, 'formnovalidate', props.formnovalidate);
+  useProperties(ref, 'defaultSlottedContent', props.defaultSlottedContent);
+  useProperties(ref, '$presentation', props.$presentation);
+  useProperties(ref, 'template', props.template);
+  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
@@ -42,11 +42,11 @@ export const Button = forwardRef((props, forwardedRef) => {
       ref.current.defaultSlottedContentChanged(oldValue, newValue),
     validate: () => ref.current.validate(),
     compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition),
+      ref.current.compose(this_, elementDefinition)
   }));
 
   return React.createElement(
-    "jp-button",
+    'jp-button',
     {
       ref,
       ...filteredProps,
@@ -62,8 +62,8 @@ export const Button = forwardRef((props, forwardedRef) => {
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      minimal: props.minimal ? "" : undefined,
-      style: { ...props.style },
+      minimal: props.minimal ? '' : undefined,
+      style: { ...props.style }
     },
     props.children
   );

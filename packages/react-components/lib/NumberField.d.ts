@@ -1,26 +1,26 @@
-import { NumberField as NumberFieldElement } from "@jupyter/web-components";
+import { NumberField as NumberFieldElement } from '@jupyter/web-components';
 
 export type { NumberFieldElement };
 
 export interface NumberFieldProps
   extends Pick<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "name"
-    | "required"
-    | "value"
-    | "disabled"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'name'
+    | 'required'
+    | 'value'
+    | 'disabled'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** When true, the control will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
@@ -29,13 +29,13 @@ export interface NumberFieldProps
   hideStep?: boolean;
 
   /** The appearance of the element. */
-  appearance?: NumberFieldElement["appearance"];
+  appearance?: NumberFieldElement['appearance'];
 
   /** Sets the placeholder value of the element, generally used to provide a hint to the user. */
-  placeholder?: NumberFieldElement["placeholder"];
+  placeholder?: NumberFieldElement['placeholder'];
 
   /** Allows associating a https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist | datalist to the element by https://developer.mozilla.org/en-US/docs/Web/API/Element/id. */
-  list?: NumberFieldElement["list"];
+  list?: NumberFieldElement['list'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -62,45 +62,45 @@ export interface NumberFieldProps
   tabIndex?: number;
 
   /** When true, the control will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute} for more information. */
-  readOnly?: NumberFieldElement["readOnly"];
+  readOnly?: NumberFieldElement['readOnly'];
 
   /** Indicates that this element should get focus after the page finishes loading. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautofocus | autofocus HTML attribute} for more information. */
-  autofocus?: NumberFieldElement["autofocus"];
+  autofocus?: NumberFieldElement['autofocus'];
 
   /** The maximum number of characters a user can enter. */
-  maxlength?: NumberFieldElement["maxlength"];
+  maxlength?: NumberFieldElement['maxlength'];
 
   /** The minimum number of characters a user can enter. */
-  minlength?: NumberFieldElement["minlength"];
+  minlength?: NumberFieldElement['minlength'];
 
   /** Sets the width of the element to a specified number of characters. */
-  size?: NumberFieldElement["size"];
+  size?: NumberFieldElement['size'];
 
   /** Amount to increment or decrement the value by */
-  step?: NumberFieldElement["step"];
+  step?: NumberFieldElement['step'];
 
   /** The maximum the value can be */
-  max?: NumberFieldElement["max"];
+  max?: NumberFieldElement['max'];
 
   /** The minimum the value can be */
-  min?: NumberFieldElement["min"];
+  min?: NumberFieldElement['min'];
 
   /** The value property, typed as a number. */
-  valueAsNumber?: NumberFieldElement["valueAsNumber"];
+  valueAsNumber?: NumberFieldElement['valueAsNumber'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: NumberFieldElement["$presentation"];
+  $presentation?: NumberFieldElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: NumberFieldElement["template"];
+  template?: NumberFieldElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: NumberFieldElement["styles"];
+  styles?: NumberFieldElement['styles'];
 
   /** Fires a custom 'input' event when the value has changed */
   onInput?: (event: CustomEvent) => void;

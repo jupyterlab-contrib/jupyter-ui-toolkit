@@ -1,31 +1,31 @@
-import { Skeleton as SkeletonElement } from "@jupyter/web-components";
+import { Skeleton as SkeletonElement } from '@jupyter/web-components';
 
 export type { SkeletonElement };
 
 export interface SkeletonProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Indicates the Skeleton should have a filled style. */
-  fill?: SkeletonElement["fill"];
+  fill?: SkeletonElement['fill'];
 
   /** Indicates what the shape of the Skeleton should be. */
-  shape?: SkeletonElement["shape"];
+  shape?: SkeletonElement['shape'];
 
   /** Indicates that the component can accept a pattern URL. */
-  pattern?: SkeletonElement["pattern"];
+  pattern?: SkeletonElement['pattern'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -52,21 +52,21 @@ export interface SkeletonProps
   tabIndex?: number;
 
   /** Indicates that the component has an activated shimmer effect */
-  shimmer?: SkeletonElement["shimmer"];
+  shimmer?: SkeletonElement['shimmer'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: SkeletonElement["$presentation"];
+  $presentation?: SkeletonElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: SkeletonElement["template"];
+  template?: SkeletonElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: SkeletonElement["styles"];
+  styles?: SkeletonElement['styles'];
 }
 
 /**

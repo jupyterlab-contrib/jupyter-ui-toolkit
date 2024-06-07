@@ -1,26 +1,26 @@
-import { Accordion as AccordionElement } from "@jupyter/web-components";
+import { Accordion as AccordionElement } from '@jupyter/web-components';
 
 export type { AccordionElement };
 
 export interface AccordionProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Controls the expand mode of the Accordion, either allowing
 single or multiple item expansion. */
-  expandMode?: AccordionElement["expandmode"];
+  expandMode?: AccordionElement['expandmode'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -48,17 +48,17 @@ single or multiple item expansion. */
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: AccordionElement["$presentation"];
+  $presentation?: AccordionElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: AccordionElement["template"];
+  template?: AccordionElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: AccordionElement["styles"];
+  styles?: AccordionElement['styles'];
 
   /** Fires a custom 'change' event when the active item changes */
   onChange?: (event: CustomEvent) => void;

@@ -1,46 +1,46 @@
-import { BreadcrumbItem as BreadcrumbItemElement } from "@jupyter/web-components";
+import { BreadcrumbItem as BreadcrumbItemElement } from '@jupyter/web-components';
 
 export type { BreadcrumbItemElement };
 
 export interface BreadcrumbItemProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Prompts the user to save the linked URL. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  download?: BreadcrumbItemElement["download"];
+  download?: BreadcrumbItemElement['download'];
 
   /** The URL the hyperlink references. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  href?: BreadcrumbItemElement["href"];
+  href?: BreadcrumbItemElement['href'];
 
   /** Hints at the language of the referenced resource. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  hreflang?: BreadcrumbItemElement["hreflang"];
+  hreflang?: BreadcrumbItemElement['hreflang'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  ping?: BreadcrumbItemElement["ping"];
+  ping?: BreadcrumbItemElement['ping'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  referrerpolicy?: BreadcrumbItemElement["referrerpolicy"];
+  referrerpolicy?: BreadcrumbItemElement['referrerpolicy'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  rel?: BreadcrumbItemElement["rel"];
+  rel?: BreadcrumbItemElement['rel'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  target?: BreadcrumbItemElement["target"];
+  target?: BreadcrumbItemElement['target'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  type?: BreadcrumbItemElement["type"];
+  type?: BreadcrumbItemElement['type'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -67,21 +67,21 @@ export interface BreadcrumbItemProps
   tabIndex?: number;
 
   /** References the root element */
-  control?: BreadcrumbItemElement["control"];
+  control?: BreadcrumbItemElement['control'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: BreadcrumbItemElement["$presentation"];
+  $presentation?: BreadcrumbItemElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: BreadcrumbItemElement["template"];
+  template?: BreadcrumbItemElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: BreadcrumbItemElement["styles"];
+  styles?: BreadcrumbItemElement['styles'];
 }
 
 /**

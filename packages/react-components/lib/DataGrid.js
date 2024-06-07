@@ -2,11 +2,14 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useEffect,
-} from "react";
-import { provideJupyterDesignSystem, jpDataGrid } from "@jupyter/web-components";
+  useEffect
+} from 'react';
+import {
+  provideJupyterDesignSystem,
+  jpDataGrid
+} from '@jupyter/web-components';
 provideJupyterDesignSystem().register(jpDataGrid());
-import { useProperties } from "./react-utils.js";
+import { useProperties } from './react-utils.js';
 
 export const DataGrid = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -29,39 +32,39 @@ export const DataGrid = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, "rowsData", props.rowsData);
-  useProperties(ref, "columnDefinitions", props.columnDefinitions);
-  useProperties(ref, "rowItemTemplate", props.rowItemTemplate);
-  useProperties(ref, "cellItemTemplate", props.cellItemTemplate);
-  useProperties(ref, "headerCellItemTemplate", props.headerCellItemTemplate);
-  useProperties(ref, "focusRowIndex", props.focusRowIndex);
-  useProperties(ref, "focusColumnIndex", props.focusColumnIndex);
-  useProperties(ref, "rowElementTag", props.rowElementTag);
-  useProperties(ref, "$presentation", props.$presentation);
-  useProperties(ref, "template", props.template);
-  useProperties(ref, "styles", props.styles);
+  useProperties(ref, 'rowsData', props.rowsData);
+  useProperties(ref, 'columnDefinitions', props.columnDefinitions);
+  useProperties(ref, 'rowItemTemplate', props.rowItemTemplate);
+  useProperties(ref, 'cellItemTemplate', props.cellItemTemplate);
+  useProperties(ref, 'headerCellItemTemplate', props.headerCellItemTemplate);
+  useProperties(ref, 'focusRowIndex', props.focusRowIndex);
+  useProperties(ref, 'focusColumnIndex', props.focusColumnIndex);
+  useProperties(ref, 'rowElementTag', props.rowElementTag);
+  useProperties(ref, '$presentation', props.$presentation);
+  useProperties(ref, 'template', props.template);
+  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
     compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition),
+      ref.current.compose(this_, elementDefinition)
   }));
 
   return React.createElement(
-    "jp-data-grid",
+    'jp-data-grid',
     {
       ref,
       ...filteredProps,
-      "generate-header": props.generateHeader || props["generate-header"],
-      "grid-template-columns":
-        props.gridTemplateColumns || props["grid-template-columns"],
+      'generate-header': props.generateHeader || props['generate-header'],
+      'grid-template-columns':
+        props.gridTemplateColumns || props['grid-template-columns'],
       class: props.className,
       exportparts: props.exportparts,
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      "no-tabbing": props.noTabbing ? "" : undefined,
-      style: { ...props.style },
+      'no-tabbing': props.noTabbing ? '' : undefined,
+      style: { ...props.style }
     },
     props.children
   );

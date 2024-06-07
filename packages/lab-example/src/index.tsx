@@ -37,7 +37,7 @@ import {
   Tabs,
   TextArea,
   TextField,
-  Toolbar,
+  Toolbar
   // Tooltip
   // TreeItem,
   // TreeView
@@ -280,7 +280,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         <NumberField value="10" onChange={onChange}>
           Number Field Label
         </NumberField>
-{/*        <DateField value="2021-09-12" onChange={onChange}>
+        {/*        <DateField value="2021-09-12" onChange={onChange}>
           Date Field Label
   </DateField> */}
         <div className="jp-FlexColumn">
@@ -443,7 +443,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <TabPanel id="panelThree">This is panel three content.</TabPanel>
         </Tabs>
 
-       {` <TreeView>
+        {` <TreeView>
           {/* @ts-expect-error unknown event onExpand */}
           <TreeItem onSelect={onEvent} onExpand={onEvent}>
             Root item 1

@@ -1,22 +1,22 @@
-import { AnchoredRegion as AnchoredRegionElement } from "@jupyter/web-components";
+import { AnchoredRegion as AnchoredRegionElement } from '@jupyter/web-components';
 
 export type { AnchoredRegionElement };
 
 export interface AnchoredRegionProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Whether the region remains in the viewport (ie. detaches from the anchor) on the horizontal axis */
   horizontalViewportLock?: boolean;
@@ -36,45 +36,45 @@ Fixed placement allows the region to break out of parent containers, */
   fixedPlacement?: boolean;
 
   /** The HTML ID of the anchor element this region is positioned relative to */
-  anchor?: AnchoredRegionElement["anchor"];
+  anchor?: AnchoredRegionElement['anchor'];
 
   /** The HTML ID of the viewport element this region is positioned relative to */
-  viewport?: AnchoredRegionElement["viewport"];
+  viewport?: AnchoredRegionElement['viewport'];
 
   /** Sets what logic the component uses to determine horizontal placement.
 'locktodefault' forces the default position
 'dynamic' decides placement based on available space
 'uncontrolled' does not control placement on the horizontal axis */
-  horizontalPositioningMode?: AnchoredRegionElement["horizontalPositioningMode"];
+  horizontalPositioningMode?: AnchoredRegionElement['horizontalPositioningMode'];
 
   /** The default horizontal position of the region relative to the anchor element */
-  horizontalDefaultPosition?: AnchoredRegionElement["horizontalDefaultPosition"];
+  horizontalDefaultPosition?: AnchoredRegionElement['horizontalDefaultPosition'];
 
   /** How narrow the space allocated to the default position has to be before the widest area
 is selected for layout */
-  horizontalThreshold?: AnchoredRegionElement["horizontalThreshold"];
+  horizontalThreshold?: AnchoredRegionElement['horizontalThreshold'];
 
   /** Defines how the width of the region is calculated */
-  horizontalScaling?: AnchoredRegionElement["horizontalScaling"];
+  horizontalScaling?: AnchoredRegionElement['horizontalScaling'];
 
   /** Sets what logic the component uses to determine vertical placement.
 'locktodefault' forces the default position
 'dynamic' decides placement based on available space
 'uncontrolled' does not control placement on the vertical axis */
-  verticalPositioningMode?: AnchoredRegionElement["verticalPositioningMode"];
+  verticalPositioningMode?: AnchoredRegionElement['verticalPositioningMode'];
 
   /** The default vertical position of the region relative to the anchor element */
-  verticalDefaultPosition?: AnchoredRegionElement["verticalDefaultPosition"];
+  verticalDefaultPosition?: AnchoredRegionElement['verticalDefaultPosition'];
 
   /** How short the space allocated to the default position has to be before the tallest area
 is selected for layout */
-  verticalThreshold?: AnchoredRegionElement["verticalThreshold"];
+  verticalThreshold?: AnchoredRegionElement['verticalThreshold'];
 
   /** Defines how the height of the region is calculated */
-  verticalScaling?: AnchoredRegionElement["verticalScaling"];
+  verticalScaling?: AnchoredRegionElement['verticalScaling'];
 
   /** Defines what triggers the anchored region to revaluate positioning */
-  autoUpdateMode?: AnchoredRegionElement["autoUpdateMode"];
+  autoUpdateMode?: AnchoredRegionElement['autoUpdateMode'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -101,33 +101,33 @@ is selected for layout */
   tabIndex?: number;
 
   /** The HTML element being used as the anchor */
-  anchorElement?: AnchoredRegionElement["anchorElement"];
+  anchorElement?: AnchoredRegionElement['anchorElement'];
 
   /** The HTML element being used as the viewport */
-  viewportElement?: AnchoredRegionElement["viewportElement"];
+  viewportElement?: AnchoredRegionElement['viewportElement'];
 
   /** indicates the current horizontal position of the region */
-  verticalPosition?: AnchoredRegionElement["verticalPosition"];
+  verticalPosition?: AnchoredRegionElement['verticalPosition'];
 
   /** indicates the current vertical position of the region */
-  horizontalPosition?: AnchoredRegionElement["horizontalPosition"];
+  horizontalPosition?: AnchoredRegionElement['horizontalPosition'];
 
   /** update position */
-  update?: AnchoredRegionElement["update"];
+  update?: AnchoredRegionElement['update'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: AnchoredRegionElement["$presentation"];
+  $presentation?: AnchoredRegionElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: AnchoredRegionElement["template"];
+  template?: AnchoredRegionElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: AnchoredRegionElement["styles"];
+  styles?: AnchoredRegionElement['styles'];
 
   /** Fires a custom 'loaded' event when the region is loaded and visible */
   onLoaded?: (event: CustomEvent) => void;

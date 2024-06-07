@@ -1,26 +1,26 @@
-import { Picker as PickerElement } from "@jupyter/web-components";
+import { Picker as PickerElement } from '@jupyter/web-components';
 
 export type { PickerElement };
 
 export interface PickerProps
   extends Pick<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "name"
-    | "required"
-    | "value"
-    | "disabled"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'name'
+    | 'required'
+    | 'value'
+    | 'disabled'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Whether the component should remove an option from the list when it is in the selection */
   filterSelected?: boolean;
@@ -29,34 +29,34 @@ export interface PickerProps
   filterQuery?: boolean;
 
   /** Currently selected items. Comma delineated string ie. "apples,oranges". */
-  selection?: PickerElement["selection"];
+  selection?: PickerElement['selection'];
 
   /** Currently available options. Comma delineated string ie. "apples,oranges". */
-  options?: PickerElement["options"];
+  options?: PickerElement['options'];
 
   /** The maximum number of items that can be selected. */
-  maxSelected?: PickerElement["maxSelected"];
+  maxSelected?: PickerElement['maxSelected'];
 
   /** The text to present to assistive technolgies when no suggestions are available. */
-  noSuggestionsText?: PickerElement["noSuggestionsText"];
+  noSuggestionsText?: PickerElement['noSuggestionsText'];
 
   /** The text to present to assistive technolgies when suggestions are available. */
-  suggestionsAvailableText?: PickerElement["suggestionsAvailableText"];
+  suggestionsAvailableText?: PickerElement['suggestionsAvailableText'];
 
   /** The text to present to assistive technologies when suggestions are loading. */
-  loadingText?: PickerElement["loadingText"];
+  loadingText?: PickerElement['loadingText'];
 
   /** Applied to the aria-label attribute of the input element */
-  label?: PickerElement["label"];
+  label?: PickerElement['label'];
 
   /** Applied to the aria-labelledby attribute of the input element */
-  labelledby?: PickerElement["labelledBy"];
+  labelledby?: PickerElement['labelledBy'];
 
   /** Applied to the placeholder attribute of the input element */
-  placeholder?: PickerElement["placeholder"];
+  placeholder?: PickerElement['placeholder'];
 
   /** Controls menu placement */
-  menuPlacement?: PickerElement["menuPlacement"];
+  menuPlacement?: PickerElement['menuPlacement'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -83,52 +83,52 @@ export interface PickerProps
   tabIndex?: number;
 
   /** Whether to display a loading state if the menu is opened. */
-  showLoading?: PickerElement["showLoading"];
+  showLoading?: PickerElement['showLoading'];
 
   /** Template used to generate selected items.
 This is used in a repeat directive. */
-  listItemTemplate?: PickerElement["listItemTemplate"];
+  listItemTemplate?: PickerElement['listItemTemplate'];
 
   /** Default template to use for selected items (usually specified in the component template).
 This is used in a repeat directive. */
-  defaultListItemTemplate?: PickerElement["defaultListItemTemplate"];
+  defaultListItemTemplate?: PickerElement['defaultListItemTemplate'];
 
   /** Template to use for available options.
 This is used in a repeat directive. */
-  menuOptionTemplate?: PickerElement["menuOptionTemplate"];
+  menuOptionTemplate?: PickerElement['menuOptionTemplate'];
 
   /** Default template to use for available options (usually specified in the template).
 This is used in a repeat directive. */
-  defaultMenuOptionTemplate?: PickerElement["defaultMenuOptionTemplate"];
+  defaultMenuOptionTemplate?: PickerElement['defaultMenuOptionTemplate'];
 
   /** Template to use for the contents of a selected list item */
-  listItemContentsTemplate?: PickerElement["listItemContentsTemplate"];
+  listItemContentsTemplate?: PickerElement['listItemContentsTemplate'];
 
   /** Template to use for the contents of menu options */
-  menuOptionContentsTemplate?: PickerElement["menuOptionContentsTemplate"];
+  menuOptionContentsTemplate?: PickerElement['menuOptionContentsTemplate'];
 
   /** Current list of options in array form */
-  optionsList?: PickerElement["optionsList"];
+  optionsList?: PickerElement['optionsList'];
 
   /** The text value currently in the input field */
-  query?: PickerElement["query"];
+  query?: PickerElement['query'];
 
   /** Reference to the placeholder element for the repeat directive */
-  itemsPlaceholderElement?: PickerElement["itemsPlaceholderElement"];
+  itemsPlaceholderElement?: PickerElement['itemsPlaceholderElement'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: PickerElement["$presentation"];
+  $presentation?: PickerElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: PickerElement["template"];
+  template?: PickerElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: PickerElement["styles"];
+  styles?: PickerElement['styles'];
 }
 
 /**

@@ -2,11 +2,14 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useEffect,
-} from "react";
-import { provideJupyterDesignSystem, jpNumberField } from "@jupyter/web-components";
+  useEffect
+} from 'react';
+import {
+  provideJupyterDesignSystem,
+  jpNumberField
+} from '@jupyter/web-components';
 provideJupyterDesignSystem().register(jpNumberField());
-import { useEventListener, useProperties } from "./react-utils.js";
+import { useEventListener, useProperties } from './react-utils.js';
 
 export const NumberField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -32,22 +35,22 @@ export const NumberField = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
-  useEventListener(ref, "input", props.onInput);
-  useEventListener(ref, "change", props.onChange);
+  useEventListener(ref, 'input', props.onInput);
+  useEventListener(ref, 'change', props.onChange);
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, "readOnly", props.readOnly);
-  useProperties(ref, "autofocus", props.autofocus);
-  useProperties(ref, "maxlength", props.maxlength);
-  useProperties(ref, "minlength", props.minlength);
-  useProperties(ref, "size", props.size);
-  useProperties(ref, "step", props.step);
-  useProperties(ref, "max", props.max);
-  useProperties(ref, "min", props.min);
-  useProperties(ref, "valueAsNumber", props.valueAsNumber);
-  useProperties(ref, "$presentation", props.$presentation);
-  useProperties(ref, "template", props.template);
-  useProperties(ref, "styles", props.styles);
+  useProperties(ref, 'readOnly', props.readOnly);
+  useProperties(ref, 'autofocus', props.autofocus);
+  useProperties(ref, 'maxlength', props.maxlength);
+  useProperties(ref, 'minlength', props.minlength);
+  useProperties(ref, 'size', props.size);
+  useProperties(ref, 'step', props.step);
+  useProperties(ref, 'max', props.max);
+  useProperties(ref, 'min', props.min);
+  useProperties(ref, 'valueAsNumber', props.valueAsNumber);
+  useProperties(ref, '$presentation', props.$presentation);
+  useProperties(ref, 'template', props.template);
+  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
@@ -56,11 +59,11 @@ export const NumberField = forwardRef((props, forwardedRef) => {
     stepDown: () => ref.current.stepDown(),
     select: () => ref.current.select(),
     compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition),
+      ref.current.compose(this_, elementDefinition)
   }));
 
   return React.createElement(
-    "jp-number-field",
+    'jp-number-field',
     {
       ref,
       ...filteredProps,
@@ -72,9 +75,9 @@ export const NumberField = forwardRef((props, forwardedRef) => {
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      readonly: props.readonly ? "" : undefined,
-      "hide-step": props.hideStep ? "" : undefined,
-      style: { ...props.style },
+      readonly: props.readonly ? '' : undefined,
+      'hide-step': props.hideStep ? '' : undefined,
+      style: { ...props.style }
     },
     props.children
   );

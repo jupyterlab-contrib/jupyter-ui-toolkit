@@ -1,25 +1,25 @@
-import { PickerListItem as PickerListItemElement } from "@jupyter/web-components";
+import { PickerListItem as PickerListItemElement } from '@jupyter/web-components';
 
 export type { PickerListItemElement };
 
 export interface PickerListItemProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The underlying string value of the item */
-  value?: PickerListItemElement["value"];
+  value?: PickerListItemElement['value'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -46,21 +46,21 @@ export interface PickerListItemProps
   tabIndex?: number;
 
   /** The template used to render the contents of the list item */
-  contentsTemplate?: PickerListItemElement["contentsTemplate"];
+  contentsTemplate?: PickerListItemElement['contentsTemplate'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: PickerListItemElement["$presentation"];
+  $presentation?: PickerListItemElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: PickerListItemElement["template"];
+  template?: PickerListItemElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: PickerListItemElement["styles"];
+  styles?: PickerListItemElement['styles'];
 }
 
 /**

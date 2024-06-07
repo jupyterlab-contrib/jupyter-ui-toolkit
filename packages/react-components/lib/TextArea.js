@@ -2,11 +2,14 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useEffect,
-} from "react";
-import { provideJupyterDesignSystem, jpTextArea } from "@jupyter/web-components";
+  useEffect
+} from 'react';
+import {
+  provideJupyterDesignSystem,
+  jpTextArea
+} from '@jupyter/web-components';
 provideJupyterDesignSystem().register(jpTextArea());
-import { useEventListener, useProperties } from "./react-utils.js";
+import { useEventListener, useProperties } from './react-utils.js';
 
 export const TextArea = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -31,31 +34,31 @@ export const TextArea = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
-  useEventListener(ref, "change", props.onChange);
-  useEventListener(ref, "input", props.onInput);
+  useEventListener(ref, 'change', props.onChange);
+  useEventListener(ref, 'input', props.onInput);
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, "readOnly", props.readOnly);
-  useProperties(ref, "autofocus", props.autofocus);
-  useProperties(ref, "maxlength", props.maxlength);
-  useProperties(ref, "minlength", props.minlength);
-  useProperties(ref, "cols", props.cols);
-  useProperties(ref, "rows", props.rows);
-  useProperties(ref, "spellcheck", props.spellcheck);
-  useProperties(ref, "$presentation", props.$presentation);
-  useProperties(ref, "template", props.template);
-  useProperties(ref, "styles", props.styles);
+  useProperties(ref, 'readOnly', props.readOnly);
+  useProperties(ref, 'autofocus', props.autofocus);
+  useProperties(ref, 'maxlength', props.maxlength);
+  useProperties(ref, 'minlength', props.minlength);
+  useProperties(ref, 'cols', props.cols);
+  useProperties(ref, 'rows', props.rows);
+  useProperties(ref, 'spellcheck', props.spellcheck);
+  useProperties(ref, '$presentation', props.$presentation);
+  useProperties(ref, 'template', props.template);
+  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
     select: () => ref.current.select(),
     validate: () => ref.current.validate(),
     compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition),
+      ref.current.compose(this_, elementDefinition)
   }));
 
   return React.createElement(
-    "jp-text-area",
+    'jp-text-area',
     {
       ref,
       ...filteredProps,
@@ -70,7 +73,7 @@ export const TextArea = forwardRef((props, forwardedRef) => {
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      style: { ...props.style },
+      style: { ...props.style }
     },
     props.children
   );

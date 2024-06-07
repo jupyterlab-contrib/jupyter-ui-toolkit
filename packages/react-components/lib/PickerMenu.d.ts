@@ -1,22 +1,22 @@
-import { PickerMenu as PickerMenuElement } from "@jupyter/web-components";
+import { PickerMenu as PickerMenuElement } from '@jupyter/web-components';
 
 export type { PickerMenuElement };
 
 export interface PickerMenuProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -44,21 +44,21 @@ export interface PickerMenuProps
 
   /** Text to display to assistive technology when
 suggestions are available */
-  suggestionsAvailableText?: PickerMenuElement["suggestionsAvailableText"];
+  suggestionsAvailableText?: PickerMenuElement['suggestionsAvailableText'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: PickerMenuElement["$presentation"];
+  $presentation?: PickerMenuElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: PickerMenuElement["template"];
+  template?: PickerMenuElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: PickerMenuElement["styles"];
+  styles?: PickerMenuElement['styles'];
 }
 
 /**

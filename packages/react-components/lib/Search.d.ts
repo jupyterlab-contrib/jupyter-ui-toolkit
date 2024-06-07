@@ -1,41 +1,41 @@
-import { Search as SearchElement } from "@jupyter/web-components";
+import { Search as SearchElement } from '@jupyter/web-components';
 
 export type { SearchElement };
 
 export interface SearchProps
   extends Pick<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "name"
-    | "required"
-    | "value"
-    | "disabled"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'name'
+    | 'required'
+    | 'value'
+    | 'disabled'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** When true, the control will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
 
   /** The appearance of the element. */
-  appearance?: SearchElement["appearance"];
+  appearance?: SearchElement['appearance'];
 
   /** Sets the placeholder value of the element, generally used to provide a hint to the user. */
-  placeholder?: SearchElement["placeholder"];
+  placeholder?: SearchElement['placeholder'];
 
   /** Allows associating a https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist | datalist to the element by https://developer.mozilla.org/en-US/docs/Web/API/Element/id. */
-  list?: SearchElement["list"];
+  list?: SearchElement['list'];
 
   /** A regular expression that the value must match to pass validation. */
-  pattern?: SearchElement["pattern"];
+  pattern?: SearchElement['pattern'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -62,36 +62,36 @@ export interface SearchProps
   tabIndex?: number;
 
   /** When true, the control will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute} for more information. */
-  readOnly?: SearchElement["readOnly"];
+  readOnly?: SearchElement['readOnly'];
 
   /** Indicates that this element should get focus after the page finishes loading. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautofocus | autofocus HTML attribute} for more information. */
-  autofocus?: SearchElement["autofocus"];
+  autofocus?: SearchElement['autofocus'];
 
   /** The maximum number of characters a user can enter. */
-  maxlength?: SearchElement["maxlength"];
+  maxlength?: SearchElement['maxlength'];
 
   /** The minimum number of characters a user can enter. */
-  minlength?: SearchElement["minlength"];
+  minlength?: SearchElement['minlength'];
 
   /** Sets the width of the element to a specified number of characters. */
-  size?: SearchElement["size"];
+  size?: SearchElement['size'];
 
   /** Controls whether or not to enable spell checking for the input field, or if the default spell checking configuration should be used. */
-  spellcheck?: SearchElement["spellcheck"];
+  spellcheck?: SearchElement['spellcheck'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: SearchElement["$presentation"];
+  $presentation?: SearchElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: SearchElement["template"];
+  template?: SearchElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: SearchElement["styles"];
+  styles?: SearchElement['styles'];
 
   /** Fires a custom 'change' event when the value has changed */
   onChange?: (event: CustomEvent) => void;

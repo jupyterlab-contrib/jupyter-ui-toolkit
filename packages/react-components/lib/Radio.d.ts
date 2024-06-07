@@ -1,27 +1,27 @@
-import { Radio as RadioElement } from "@jupyter/web-components";
+import { Radio as RadioElement } from '@jupyter/web-components';
 
 export type { RadioElement };
 
 export interface RadioProps
   extends Pick<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "name"
-    | "required"
-    | "value"
-    | "disabled"
-    | "checked"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'name'
+    | 'required'
+    | 'value'
+    | 'disabled'
+    | 'checked'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** When true, the control will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
@@ -51,24 +51,24 @@ export interface RadioProps
   tabIndex?: number;
 
   /** When true, the control will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute} for more information. */
-  readOnly?: RadioElement["readOnly"];
+  readOnly?: RadioElement['readOnly'];
 
   /** The name of the radio. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname | name attribute} for more info. */
-  name?: RadioElement["name"];
+  name?: RadioElement['name'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: RadioElement["$presentation"];
+  $presentation?: RadioElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: RadioElement["template"];
+  template?: RadioElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: RadioElement["styles"];
+  styles?: RadioElement['styles'];
 
   /** Emits a custom change event when the checked state changes */
   onChange?: (event: CustomEvent) => void;

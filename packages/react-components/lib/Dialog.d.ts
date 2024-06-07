@@ -1,34 +1,34 @@
-import { Dialog as DialogElement } from "@jupyter/web-components";
+import { Dialog as DialogElement } from '@jupyter/web-components';
 
 export type { DialogElement };
 
 export interface DialogProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Indicates that the dialog should trap focus. */
   trapFocus?: boolean;
 
   /** The id of the element describing the dialog. */
-  ariaDescribedby?: DialogElement["ariaDescribedby"];
+  ariaDescribedby?: DialogElement['ariaDescribedby'];
 
   /** The id of the element labeling the dialog. */
-  ariaLabelledby?: DialogElement["ariaLabelledby"];
+  ariaLabelledby?: DialogElement['ariaLabelledby'];
 
   /** The label surfaced to assistive technologies. */
-  ariaLabel?: DialogElement["ariaLabel"];
+  ariaLabel?: DialogElement['ariaLabel'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -56,24 +56,24 @@ export interface DialogProps
 
   /** Indicates the element is modal. When modal, user mouse interaction will be limited to the contents of the element by a modal
 overlay.  Clicks on the overlay will cause the dialog to emit a "dismiss" event. */
-  modal?: DialogElement["modal"];
+  modal?: DialogElement['modal'];
 
   /** The hidden state of the element. */
-  hidden?: DialogElement["hidden"];
+  hidden?: DialogElement['hidden'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: DialogElement["$presentation"];
+  $presentation?: DialogElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: DialogElement["template"];
+  template?: DialogElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: DialogElement["styles"];
+  styles?: DialogElement['styles'];
 
   /** Fires a custom 'cancel' event when the modal overlay is clicked */
   onCancel?: (event: CustomEvent) => void;

@@ -1,40 +1,40 @@
-import { Avatar as AvatarElement } from "@jupyter/web-components";
+import { Avatar as AvatarElement } from '@jupyter/web-components';
 
 export type { AvatarElement };
 
 export interface AvatarProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Indicates the Avatar should have an image source */
-  src?: AvatarElement["imgSrc"];
+  src?: AvatarElement['imgSrc'];
 
   /** Indicates the Avatar should have alt text */
-  alt?: AvatarElement["alt"];
+  alt?: AvatarElement['alt'];
 
   /** Indicates the Avatar should have a color fill. */
-  fill?: AvatarElement["fill"];
+  fill?: AvatarElement['fill'];
 
   /** Indicates the Avatar should have a text color. */
-  color?: AvatarElement["color"];
+  color?: AvatarElement['color'];
 
   /** Indicates the Avatar should have url link */
-  link?: AvatarElement["link"];
+  link?: AvatarElement['link'];
 
   /** Indicates the Avatar shape should be. By default it will be set to "circle". */
-  shape?: AvatarElement["shape"];
+  shape?: AvatarElement['shape'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -62,17 +62,17 @@ export interface AvatarProps
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: AvatarElement["$presentation"];
+  $presentation?: AvatarElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: AvatarElement["template"];
+  template?: AvatarElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: AvatarElement["styles"];
+  styles?: AvatarElement['styles'];
 }
 
 /**

@@ -1,28 +1,28 @@
-import { Badge as BadgeElement } from "@jupyter/web-components";
+import { Badge as BadgeElement } from '@jupyter/web-components';
 
 export type { BadgeElement };
 
 export interface BadgeProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Indicates the badge should have a filled style. */
-  fill?: BadgeElement["fill"];
+  fill?: BadgeElement['fill'];
 
   /** Indicates the badge should have a filled style. */
-  color?: BadgeElement["color"];
+  color?: BadgeElement['color'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -49,21 +49,21 @@ export interface BadgeProps
   tabIndex?: number;
 
   /** Indicates the element should be circular */
-  circular?: BadgeElement["circular"];
+  circular?: BadgeElement['circular'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: BadgeElement["$presentation"];
+  $presentation?: BadgeElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: BadgeElement["template"];
+  template?: BadgeElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: BadgeElement["styles"];
+  styles?: BadgeElement['styles'];
 }
 
 /**

@@ -1,22 +1,22 @@
-import { Combobox as ComboboxElement } from "@jupyter/web-components";
+import { Combobox as ComboboxElement } from '@jupyter/web-components';
 
 export type { ComboboxElement };
 
 export interface ComboboxProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Whether the combobox has a compact layout or not. */
   autowidth?: boolean;
@@ -28,13 +28,13 @@ export interface ComboboxProps
   open?: boolean;
 
   /** The autocomplete attribute. */
-  autocomplete?: ComboboxElement["autocomplete"];
+  autocomplete?: ComboboxElement['autocomplete'];
 
   /** Sets the placeholder value of the element, generally used to provide a hint to the user. */
-  placeholder?: ComboboxElement["placeholder"];
+  placeholder?: ComboboxElement['placeholder'];
 
   /** The placement for the listbox when the combobox is open. */
-  position?: ComboboxElement["position"];
+  position?: ComboboxElement['position'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -61,42 +61,42 @@ export interface ComboboxProps
   tabIndex?: number;
 
   /** Whether the combobox has a compact layout or not. */
-  autoWidth?: ComboboxElement["autoWidth"];
+  autoWidth?: ComboboxElement['autoWidth'];
 
   /** The collection of currently filtered options. */
-  filteredOptions?: ComboboxElement["filteredOptions"];
+  filteredOptions?: ComboboxElement['filteredOptions'];
 
   /** The list of options. */
-  options?: ComboboxElement["options"];
+  options?: ComboboxElement['options'];
 
   /** The value property. */
-  value?: ComboboxElement["value"];
+  value?: ComboboxElement['value'];
 
   /** The number of options. */
-  length?: ComboboxElement["length"];
+  length?: ComboboxElement['length'];
 
   /** The disabled state of the listbox. */
-  disabled?: ComboboxElement["disabled"];
+  disabled?: ComboboxElement['disabled'];
 
   /** The index of the selected option. */
-  selectedIndex?: ComboboxElement["selectedIndex"];
+  selectedIndex?: ComboboxElement['selectedIndex'];
 
   /** A collection of the selected options. */
-  selectedOptions?: ComboboxElement["selectedOptions"];
+  selectedOptions?: ComboboxElement['selectedOptions'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: ComboboxElement["$presentation"];
+  $presentation?: ComboboxElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: ComboboxElement["template"];
+  template?: ComboboxElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: ComboboxElement["styles"];
+  styles?: ComboboxElement['styles'];
 
   /** Fires a custom 'change' event when the value updates */
   onChange?: (event: CustomEvent) => void;

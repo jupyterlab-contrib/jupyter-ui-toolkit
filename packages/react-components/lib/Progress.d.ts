@@ -1,22 +1,22 @@
-import { Progress as ProgressElement } from "@jupyter/web-components";
+import { Progress as ProgressElement } from '@jupyter/web-components';
 
 export type { ProgressElement };
 
 export interface ProgressProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -43,30 +43,30 @@ export interface ProgressProps
   tabIndex?: number;
 
   /** The value of the progress */
-  value?: ProgressElement["value"];
+  value?: ProgressElement['value'];
 
   /** The minimum value */
-  min?: ProgressElement["min"];
+  min?: ProgressElement['min'];
 
   /** The maximum value */
-  max?: ProgressElement["max"];
+  max?: ProgressElement['max'];
 
   /** Indicates the progress is paused */
-  paused?: ProgressElement["paused"];
+  paused?: ProgressElement['paused'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: ProgressElement["$presentation"];
+  $presentation?: ProgressElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: ProgressElement["template"];
+  template?: ProgressElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: ProgressElement["styles"];
+  styles?: ProgressElement['styles'];
 }
 
 /**

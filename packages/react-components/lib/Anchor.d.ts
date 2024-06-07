@@ -1,49 +1,49 @@
-import { Anchor as AnchorElement } from "@jupyter/web-components";
+import { Anchor as AnchorElement } from '@jupyter/web-components';
 
 export type { AnchorElement };
 
 export interface AnchorProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The appearance the anchor should have. */
-  appearance?: AnchorElement["appearance"];
+  appearance?: AnchorElement['appearance'];
 
   /** Prompts the user to save the linked URL. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  download?: AnchorElement["download"];
+  download?: AnchorElement['download'];
 
   /** The URL the hyperlink references. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  href?: AnchorElement["href"];
+  href?: AnchorElement['href'];
 
   /** Hints at the language of the referenced resource. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  hreflang?: AnchorElement["hreflang"];
+  hreflang?: AnchorElement['hreflang'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  ping?: AnchorElement["ping"];
+  ping?: AnchorElement['ping'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  referrerpolicy?: AnchorElement["referrerpolicy"];
+  referrerpolicy?: AnchorElement['referrerpolicy'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  rel?: AnchorElement["rel"];
+  rel?: AnchorElement['rel'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  target?: AnchorElement["target"];
+  target?: AnchorElement['target'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
-  type?: AnchorElement["type"];
+  type?: AnchorElement['type'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -70,21 +70,21 @@ export interface AnchorProps
   tabIndex?: number;
 
   /** References the root element */
-  control?: AnchorElement["control"];
+  control?: AnchorElement['control'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: AnchorElement["$presentation"];
+  $presentation?: AnchorElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: AnchorElement["template"];
+  template?: AnchorElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: AnchorElement["styles"];
+  styles?: AnchorElement['styles'];
 }
 
 /**

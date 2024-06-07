@@ -1,46 +1,46 @@
-import { Button as ButtonElement } from "@jupyter/web-components";
+import { Button as ButtonElement } from '@jupyter/web-components';
 
 export type { ButtonElement };
 
 export interface ButtonProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Whether the button has a compact layout or not. */
   minimal?: boolean;
 
   /** The appearance the button should have. */
-  appearance?: ButtonElement["appearance"];
+  appearance?: ButtonElement['appearance'];
 
   /** The id of a form to associate the element to. */
-  form?: ButtonElement["form"];
+  form?: ButtonElement['form'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button | <button> element for more details. */
-  formaction?: ButtonElement["formaction"];
+  formaction?: ButtonElement['formaction'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button | <button> element for more details. */
-  formenctype?: ButtonElement["formenctype"];
+  formenctype?: ButtonElement['formenctype'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button | <button> element for more details. */
-  formmethod?: ButtonElement["formmethod"];
+  formmethod?: ButtonElement['formmethod'];
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button | <button> element for more details. */
-  formtarget?: ButtonElement["formtarget"];
+  formtarget?: ButtonElement['formtarget'];
 
   /** The button type. */
-  type?: ButtonElement["type"];
+  type?: ButtonElement['type'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -67,28 +67,28 @@ export interface ButtonProps
   tabIndex?: number;
 
   /** Determines if the element should receive document focus on page load. */
-  autofocus?: ButtonElement["autofocus"];
+  autofocus?: ButtonElement['autofocus'];
 
   /** See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button | <button> element} for more details. */
-  formnovalidate?: ButtonElement["formnovalidate"];
+  formnovalidate?: ButtonElement['formnovalidate'];
 
   /** 
 Default slotted content */
-  defaultSlottedContent?: ButtonElement["defaultSlottedContent"];
+  defaultSlottedContent?: ButtonElement['defaultSlottedContent'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: ButtonElement["$presentation"];
+  $presentation?: ButtonElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: ButtonElement["template"];
+  template?: ButtonElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: ButtonElement["styles"];
+  styles?: ButtonElement['styles'];
 }
 
 /**

@@ -1,32 +1,32 @@
-import { DataGrid as DataGridElement } from "@jupyter/web-components";
+import { DataGrid as DataGridElement } from '@jupyter/web-components';
 
 export type { DataGridElement };
 
 export interface DataGridProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** When true the component will not add itself to the tab queue.
 Default is false. */
   noTabbing?: boolean;
 
   /** Whether the grid should automatically generate a header row and its type */
-  generateHeader?: DataGridElement["generateHeader"];
+  generateHeader?: DataGridElement['generateHeader'];
 
   /** String that gets applied to the the css gridTemplateColumns attribute of child rows */
-  gridTemplateColumns?: DataGridElement["gridTemplateColumns"];
+  gridTemplateColumns?: DataGridElement['gridTemplateColumns'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -53,48 +53,48 @@ Default is false. */
   tabIndex?: number;
 
   /** The data being displayed in the grid */
-  rowsData?: DataGridElement["rowsData"];
+  rowsData?: DataGridElement['rowsData'];
 
   /** The column definitions of the grid */
-  columnDefinitions?: DataGridElement["columnDefinitions"];
+  columnDefinitions?: DataGridElement['columnDefinitions'];
 
   /** The template to use for the programmatic generation of rows */
-  rowItemTemplate?: DataGridElement["rowItemTemplate"];
+  rowItemTemplate?: DataGridElement['rowItemTemplate'];
 
   /** The template used to render cells in generated rows. */
-  cellItemTemplate?: DataGridElement["cellItemTemplate"];
+  cellItemTemplate?: DataGridElement['cellItemTemplate'];
 
   /** The template used to render header cells in generated rows. */
-  headerCellItemTemplate?: DataGridElement["headerCellItemTemplate"];
+  headerCellItemTemplate?: DataGridElement['headerCellItemTemplate'];
 
   /** The index of the row that will receive focus the next time the
 grid is focused. This value changes as focus moves to different
 rows within the grid.  Changing this value when focus is already
 within the grid moves focus to the specified row. */
-  focusRowIndex?: DataGridElement["focusRowIndex"];
+  focusRowIndex?: DataGridElement['focusRowIndex'];
 
   /** The index of the column that will receive focus the next time the
 grid is focused. This value changes as focus moves to different rows
 within the grid.  Changing this value when focus is already within
 the grid moves focus to the specified column. */
-  focusColumnIndex?: DataGridElement["focusColumnIndex"];
+  focusColumnIndex?: DataGridElement['focusColumnIndex'];
 
   /** Set by the component templates. */
-  rowElementTag?: DataGridElement["rowElementTag"];
+  rowElementTag?: DataGridElement['rowElementTag'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: DataGridElement["$presentation"];
+  $presentation?: DataGridElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: DataGridElement["template"];
+  template?: DataGridElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: DataGridElement["styles"];
+  styles?: DataGridElement['styles'];
 }
 
 /**

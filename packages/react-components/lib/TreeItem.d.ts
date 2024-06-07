@@ -1,22 +1,22 @@
-import { TreeItem as TreeItemElement } from "@jupyter/web-components";
+import { TreeItem as TreeItemElement } from '@jupyter/web-components';
 
 export type { TreeItemElement };
 
 export interface TreeItemProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -43,30 +43,30 @@ export interface TreeItemProps
   tabIndex?: number;
 
   /** When true, the control will be appear expanded by user interaction. */
-  expanded?: TreeItemElement["expanded"];
+  expanded?: TreeItemElement['expanded'];
 
   /** When true, the control will appear selected by user interaction. */
-  selected?: TreeItemElement["selected"];
+  selected?: TreeItemElement['selected'];
 
   /** When true, the control will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled | disabled HTML attribute} for more information. */
-  disabled?: TreeItemElement["disabled"];
+  disabled?: TreeItemElement['disabled'];
 
   /** Whether the tree is nested */
-  isNestedItem?: TreeItemElement["isNestedItem"];
+  isNestedItem?: TreeItemElement['isNestedItem'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: TreeItemElement["$presentation"];
+  $presentation?: TreeItemElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: TreeItemElement["template"];
+  template?: TreeItemElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: TreeItemElement["styles"];
+  styles?: TreeItemElement['styles'];
 
   /** Fires a custom 'expanded-change' event when the expanded state changes */
   onExpandedChange?: (event: CustomEvent) => void;

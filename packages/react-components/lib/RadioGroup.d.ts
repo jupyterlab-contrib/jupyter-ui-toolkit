@@ -1,22 +1,22 @@
-import { RadioGroup as RadioGroupElement } from "@jupyter/web-components";
+import { RadioGroup as RadioGroupElement } from '@jupyter/web-components';
 
 export type { RadioGroupElement };
 
 export interface RadioGroupProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** When true, the child radios will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
@@ -26,13 +26,13 @@ export interface RadioGroupProps
 
   /** The name of the radio group. Setting this value will set the name value
 for all child radio elements. */
-  name?: RadioGroupElement["name"];
+  name?: RadioGroupElement['name'];
 
   /** The value of the checked radio */
-  value?: RadioGroupElement["value"];
+  value?: RadioGroupElement['value'];
 
   /** The orientation of the group */
-  orientation?: RadioGroupElement["orientation"];
+  orientation?: RadioGroupElement['orientation'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -59,21 +59,21 @@ for all child radio elements. */
   tabIndex?: number;
 
   /** When true, the child radios will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute} for more information. */
-  readOnly?: RadioGroupElement["readOnly"];
+  readOnly?: RadioGroupElement['readOnly'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: RadioGroupElement["$presentation"];
+  $presentation?: RadioGroupElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: RadioGroupElement["template"];
+  template?: RadioGroupElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: RadioGroupElement["styles"];
+  styles?: RadioGroupElement['styles'];
 
   /** Fires a custom 'change' event when the value changes */
   onChange?: (event: CustomEvent) => void;

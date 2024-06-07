@@ -1,26 +1,26 @@
-import { Select as SelectElement } from "@jupyter/web-components";
+import { Select as SelectElement } from '@jupyter/web-components';
 
 export type { SelectElement };
 
 export interface SelectProps
   extends Pick<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "name"
-    | "required"
-    | "value"
-    | "disabled"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'name'
+    | 'required'
+    | 'value'
+    | 'disabled'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** Whether the select has a compact layout or not. */
   autowidth?: boolean;
@@ -32,7 +32,7 @@ export interface SelectProps
   open?: boolean;
 
   /** Reflects the placement for the listbox when the select is open. */
-  position?: SelectElement["position"];
+  position?: SelectElement['position'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -59,48 +59,48 @@ export interface SelectProps
   tabIndex?: number;
 
   /** Whether the select has a compact layout or not. */
-  autoWidth?: SelectElement["autoWidth"];
+  autoWidth?: SelectElement['autoWidth'];
 
   /** The value property. */
-  value?: SelectElement["value"];
+  value?: SelectElement['value'];
 
   /** The value displayed on the button. */
-  displayValue?: SelectElement["displayValue"];
+  displayValue?: SelectElement['displayValue'];
 
   /** Indicates if the listbox is in multi-selection mode. */
-  multiple?: SelectElement["multiple"];
+  multiple?: SelectElement['multiple'];
 
   /** The maximum number of options to display. */
-  size?: SelectElement["size"];
+  size?: SelectElement['size'];
 
   /** The number of options. */
-  length?: SelectElement["length"];
+  length?: SelectElement['length'];
 
   /** The list of options. */
-  options?: SelectElement["options"];
+  options?: SelectElement['options'];
 
   /** The disabled state of the listbox. */
-  disabled?: SelectElement["disabled"];
+  disabled?: SelectElement['disabled'];
 
   /** The index of the selected option. */
-  selectedIndex?: SelectElement["selectedIndex"];
+  selectedIndex?: SelectElement['selectedIndex'];
 
   /** A collection of the selected options. */
-  selectedOptions?: SelectElement["selectedOptions"];
+  selectedOptions?: SelectElement['selectedOptions'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: SelectElement["$presentation"];
+  $presentation?: SelectElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: SelectElement["template"];
+  template?: SelectElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: SelectElement["styles"];
+  styles?: SelectElement['styles'];
 
   /** Fires a custom 'input' event when the value updates */
   onInput?: (event: CustomEvent) => void;

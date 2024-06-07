@@ -1,27 +1,27 @@
-import { Checkbox as CheckboxElement } from "@jupyter/web-components";
+import { Checkbox as CheckboxElement } from '@jupyter/web-components';
 
 export type { CheckboxElement };
 
 export interface CheckboxProps
   extends Pick<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "name"
-    | "required"
-    | "value"
-    | "disabled"
-    | "checked"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'name'
+    | 'required'
+    | 'value'
+    | 'disabled'
+    | 'checked'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** When true, the control will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
@@ -51,24 +51,24 @@ export interface CheckboxProps
   tabIndex?: number;
 
   /** When true, the control will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute} for more information. */
-  readOnly?: CheckboxElement["readOnly"];
+  readOnly?: CheckboxElement['readOnly'];
 
   /** The indeterminate state of the control */
-  indeterminate?: CheckboxElement["indeterminate"];
+  indeterminate?: CheckboxElement['indeterminate'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: CheckboxElement["$presentation"];
+  $presentation?: CheckboxElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: CheckboxElement["template"];
+  template?: CheckboxElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: CheckboxElement["styles"];
+  styles?: CheckboxElement['styles'];
 
   /** Emits a custom change event when the checked state changes */
   onChange?: (event: CustomEvent) => void;

@@ -1,28 +1,28 @@
-import { Tabs as TabsElement } from "@jupyter/web-components";
+import { Tabs as TabsElement } from '@jupyter/web-components';
 
 export type { TabsElement };
 
 export interface TabsProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The orientation */
-  orientation?: TabsElement["orientation"];
+  orientation?: TabsElement['orientation'];
 
   /** The id of the active tab */
-  activeid?: TabsElement["activeid"];
+  activeid?: TabsElement['activeid'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -49,24 +49,24 @@ export interface TabsProps
   tabIndex?: number;
 
   /** Whether or not to show the active indicator */
-  activeindicator?: TabsElement["activeindicator"];
+  activeindicator?: TabsElement['activeindicator'];
 
   /** A reference to the active tab */
-  activetab?: TabsElement["activetab"];
+  activetab?: TabsElement['activetab'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: TabsElement["$presentation"];
+  $presentation?: TabsElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: TabsElement["template"];
+  template?: TabsElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: TabsElement["styles"];
+  styles?: TabsElement['styles'];
 
   /** Fires a custom 'change' event when a tab is clicked or during keyboard navigation */
   onChange?: (event: CustomEvent) => void;

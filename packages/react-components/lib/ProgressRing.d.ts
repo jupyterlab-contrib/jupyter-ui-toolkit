@@ -1,22 +1,22 @@
-import { ProgressRing as ProgressRingElement } from "@jupyter/web-components";
+import { ProgressRing as ProgressRingElement } from '@jupyter/web-components';
 
 export type { ProgressRingElement };
 
 export interface ProgressRingProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -43,30 +43,30 @@ export interface ProgressRingProps
   tabIndex?: number;
 
   /** The value of the progress */
-  value?: ProgressRingElement["value"];
+  value?: ProgressRingElement['value'];
 
   /** The minimum value */
-  min?: ProgressRingElement["min"];
+  min?: ProgressRingElement['min'];
 
   /** The maximum value */
-  max?: ProgressRingElement["max"];
+  max?: ProgressRingElement['max'];
 
   /** Indicates the progress is paused */
-  paused?: ProgressRingElement["paused"];
+  paused?: ProgressRingElement['paused'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: ProgressRingElement["$presentation"];
+  $presentation?: ProgressRingElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: ProgressRingElement["template"];
+  template?: ProgressRingElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: ProgressRingElement["styles"];
+  styles?: ProgressRingElement['styles'];
 }
 
 /**

@@ -1,25 +1,25 @@
-import { MenuItem as MenuItemElement } from "@jupyter/web-components";
+import { MenuItem as MenuItemElement } from '@jupyter/web-components';
 
 export type { MenuItemElement };
 
 export interface MenuItemProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The role of the element. */
-  role?: MenuItemElement["role"];
+  role?: MenuItemElement['role'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -46,27 +46,27 @@ export interface MenuItemProps
   tabIndex?: number;
 
   /** The disabled state of the element. */
-  disabled?: MenuItemElement["disabled"];
+  disabled?: MenuItemElement['disabled'];
 
   /** The expanded state of the element. */
-  expanded?: MenuItemElement["expanded"];
+  expanded?: MenuItemElement['expanded'];
 
   /** The checked value of the element. */
-  checked?: MenuItemElement["checked"];
+  checked?: MenuItemElement['checked'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: MenuItemElement["$presentation"];
+  $presentation?: MenuItemElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: MenuItemElement["template"];
+  template?: MenuItemElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: MenuItemElement["styles"];
+  styles?: MenuItemElement['styles'];
 
   /** Fires a custom 'expanded-change' event when the expanded state changes */
   onExpandedChange?: (event: CustomEvent) => void;

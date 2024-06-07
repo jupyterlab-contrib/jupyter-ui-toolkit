@@ -1,22 +1,22 @@
-import { Card as CardElement } from "@jupyter/web-components";
+import { Card as CardElement } from '@jupyter/web-components';
 
 export type { CardElement };
 
 export interface CardProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -44,17 +44,17 @@ export interface CardProps
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: CardElement["$presentation"];
+  $presentation?: CardElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: CardElement["template"];
+  template?: CardElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: CardElement["styles"];
+  styles?: CardElement['styles'];
 }
 
 /**

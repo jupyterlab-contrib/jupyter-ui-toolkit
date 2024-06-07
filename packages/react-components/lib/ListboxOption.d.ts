@@ -1,29 +1,29 @@
-import { Option as ListboxOptionElement } from "@jupyter/web-components";
+import { Option as ListboxOptionElement } from '@jupyter/web-components';
 
 export type { ListboxOptionElement };
 
 export interface ListboxOptionProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
-    | "children"
-    | "dir"
-    | "hidden"
-    | "id"
-    | "lang"
-    | "slot"
-    | "tabIndex"
-    | "title"
-    | "translate"
-    | "onClick"
-    | "onFocus"
-    | "onBlur"
+    | 'children'
+    | 'dir'
+    | 'hidden'
+    | 'id'
+    | 'lang'
+    | 'slot'
+    | 'tabIndex'
+    | 'title'
+    | 'translate'
+    | 'onClick'
+    | 'onFocus'
+    | 'onBlur'
   > {
   /** The selected attribute value. This sets the initial selected value. */
   selected?: boolean;
 
   /** The initial value of the option. This value sets the `value` property
 only when the `value` property has not been explicitly set. */
-  value?: ListboxOptionElement["value"];
+  value?: ListboxOptionElement['value'];
 
   /** A space-separated list of the classes of the element. Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method `Document.getElementsByClassName()`. */
   className?: string;
@@ -52,36 +52,36 @@ only when the `value` property has not been explicitly set. */
   /** The checked state is used when the parent listbox is in multiple selection mode.
 To avoid accessibility conflicts, the checked state should not be present in
 single selection mode. */
-  checked?: ListboxOptionElement["checked"];
+  checked?: ListboxOptionElement['checked'];
 
   /** The default slotted content. */
-  content?: ListboxOptionElement["content"];
+  content?: ListboxOptionElement['content'];
 
   /** The defaultSelected state of the option. */
-  defaultSelected?: ListboxOptionElement["defaultSelected"];
+  defaultSelected?: ListboxOptionElement['defaultSelected'];
 
   /** The disabled state of the option. */
-  disabled?: ListboxOptionElement["disabled"];
+  disabled?: ListboxOptionElement['disabled'];
 
   /** The selected attribute value. This sets the initial selected value. */
-  selectedAttribute?: ListboxOptionElement["selectedAttribute"];
+  selectedAttribute?: ListboxOptionElement['selectedAttribute'];
 
   /** Track whether the value has been changed from the initial value */
-  dirtyValue?: ListboxOptionElement["dirtyValue"];
+  dirtyValue?: ListboxOptionElement['dirtyValue'];
 
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: ListboxOptionElement["$presentation"];
+  $presentation?: ListboxOptionElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: ListboxOptionElement["template"];
+  template?: ListboxOptionElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: ListboxOptionElement["styles"];
+  styles?: ListboxOptionElement['styles'];
 }
 
 /**

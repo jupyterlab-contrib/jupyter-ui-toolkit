@@ -2,11 +2,14 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useEffect,
-} from "react";
-import { provideJupyterDesignSystem, jpAnchoredRegion } from "@jupyter/web-components";
+  useEffect
+} from 'react';
+import {
+  provideJupyterDesignSystem,
+  jpAnchoredRegion
+} from '@jupyter/web-components';
 provideJupyterDesignSystem().register(jpAnchoredRegion());
-import { useEventListener, useProperties } from "./react-utils.js";
+import { useEventListener, useProperties } from './react-utils.js';
 
 export const AnchoredRegion = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -39,59 +42,59 @@ export const AnchoredRegion = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
-  useEventListener(ref, "loaded", props.onLoaded);
-  useEventListener(ref, "positionchange", props.onPositionchange);
+  useEventListener(ref, 'loaded', props.onLoaded);
+  useEventListener(ref, 'positionchange', props.onPositionchange);
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, "anchorElement", props.anchorElement);
-  useProperties(ref, "viewportElement", props.viewportElement);
-  useProperties(ref, "verticalPosition", props.verticalPosition);
-  useProperties(ref, "horizontalPosition", props.horizontalPosition);
-  useProperties(ref, "update", props.update);
-  useProperties(ref, "$presentation", props.$presentation);
-  useProperties(ref, "template", props.template);
-  useProperties(ref, "styles", props.styles);
+  useProperties(ref, 'anchorElement', props.anchorElement);
+  useProperties(ref, 'viewportElement', props.viewportElement);
+  useProperties(ref, 'verticalPosition', props.verticalPosition);
+  useProperties(ref, 'horizontalPosition', props.horizontalPosition);
+  useProperties(ref, 'update', props.update);
+  useProperties(ref, '$presentation', props.$presentation);
+  useProperties(ref, 'template', props.template);
+  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
     compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition),
+      ref.current.compose(this_, elementDefinition)
   }));
 
   return React.createElement(
-    "jp-anchored-region",
+    'jp-anchored-region',
     {
       ref,
       ...filteredProps,
       anchor: props.anchor,
       viewport: props.viewport,
-      "horizontal-positioning-mode":
-        props.horizontalPositioningMode || props["horizontal-positioning-mode"],
-      "horizontal-default-position":
-        props.horizontalDefaultPosition || props["horizontal-default-position"],
-      "horizontal-threshold":
-        props.horizontalThreshold || props["horizontal-threshold"],
-      "horizontal-scaling":
-        props.horizontalScaling || props["horizontal-scaling"],
-      "vertical-positioning-mode":
-        props.verticalPositioningMode || props["vertical-positioning-mode"],
-      "vertical-default-position":
-        props.verticalDefaultPosition || props["vertical-default-position"],
-      "vertical-threshold":
-        props.verticalThreshold || props["vertical-threshold"],
-      "vertical-scaling": props.verticalScaling || props["vertical-scaling"],
-      "auto-update-mode": props.autoUpdateMode || props["auto-update-mode"],
+      'horizontal-positioning-mode':
+        props.horizontalPositioningMode || props['horizontal-positioning-mode'],
+      'horizontal-default-position':
+        props.horizontalDefaultPosition || props['horizontal-default-position'],
+      'horizontal-threshold':
+        props.horizontalThreshold || props['horizontal-threshold'],
+      'horizontal-scaling':
+        props.horizontalScaling || props['horizontal-scaling'],
+      'vertical-positioning-mode':
+        props.verticalPositioningMode || props['vertical-positioning-mode'],
+      'vertical-default-position':
+        props.verticalDefaultPosition || props['vertical-default-position'],
+      'vertical-threshold':
+        props.verticalThreshold || props['vertical-threshold'],
+      'vertical-scaling': props.verticalScaling || props['vertical-scaling'],
+      'auto-update-mode': props.autoUpdateMode || props['auto-update-mode'],
       class: props.className,
       exportparts: props.exportparts,
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      "horizontal-viewport-lock": props.horizontalViewportLock ? "" : undefined,
-      "horizontal-inset": props.horizontalInset ? "" : undefined,
-      "vertical-viewport-lock": props.verticalViewportLock ? "" : undefined,
-      "vertical-inset": props.verticalInset ? "" : undefined,
-      "fixed-placement": props.fixedPlacement ? "" : undefined,
-      style: { ...props.style },
+      'horizontal-viewport-lock': props.horizontalViewportLock ? '' : undefined,
+      'horizontal-inset': props.horizontalInset ? '' : undefined,
+      'vertical-viewport-lock': props.verticalViewportLock ? '' : undefined,
+      'vertical-inset': props.verticalInset ? '' : undefined,
+      'fixed-placement': props.fixedPlacement ? '' : undefined,
+      style: { ...props.style }
     },
     props.children
   );

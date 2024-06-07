@@ -2,11 +2,14 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useRef,
-  useEffect,
-} from "react";
-import { provideJupyterDesignSystem, jpDisclosure } from "@jupyter/web-components";
+  useEffect
+} from 'react';
+import {
+  provideJupyterDesignSystem,
+  jpDisclosure
+} from '@jupyter/web-components';
 provideJupyterDesignSystem().register(jpDisclosure());
-import { useEventListener, useProperties } from "./react-utils.js";
+import { useEventListener, useProperties } from './react-utils.js';
 
 export const Disclosure = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -21,13 +24,13 @@ export const Disclosure = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
-  useEventListener(ref, "toggle", props.onToggle);
+  useEventListener(ref, 'toggle', props.onToggle);
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, "expanded", props.expanded);
-  useProperties(ref, "$presentation", props.$presentation);
-  useProperties(ref, "template", props.template);
-  useProperties(ref, "styles", props.styles);
+  useProperties(ref, 'expanded', props.expanded);
+  useProperties(ref, '$presentation', props.$presentation);
+  useProperties(ref, 'template', props.template);
+  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
@@ -37,11 +40,11 @@ export const Disclosure = forwardRef((props, forwardedRef) => {
     hide: () => ref.current.hide(),
     toggle: () => ref.current.toggle(),
     compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition),
+      ref.current.compose(this_, elementDefinition)
   }));
 
   return React.createElement(
-    "jp-disclosure",
+    'jp-disclosure',
     {
       ref,
       ...filteredProps,
@@ -52,7 +55,7 @@ export const Disclosure = forwardRef((props, forwardedRef) => {
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      style: { ...props.style },
+      style: { ...props.style }
     },
     props.children
   );
