@@ -4,7 +4,7 @@ export type { TextFieldElement };
 
 export interface TextFieldProps
   extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLInputElement>,
     | "children"
     | "dir"
     | "hidden"
@@ -14,6 +14,10 @@ export interface TextFieldProps
     | "tabIndex"
     | "title"
     | "translate"
+    | "name"
+    | "required"
+    | "value"
+    | "disabled"
     | "onClick"
     | "onFocus"
     | "onBlur"
@@ -94,6 +98,9 @@ the associated presentation or custom element definition. */
 
   /** Fires a custom 'change' event when the value has changed */
   onChange?: (event: CustomEvent) => void;
+
+  /** Fires a custom 'input' event when the value has changed */
+  onInput?: (event: CustomEvent) => void;
 }
 
 /**

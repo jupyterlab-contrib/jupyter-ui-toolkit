@@ -4,7 +4,7 @@ export type { CheckboxElement };
 
 export interface CheckboxProps
   extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLInputElement>,
     | "children"
     | "dir"
     | "hidden"
@@ -14,6 +14,11 @@ export interface CheckboxProps
     | "tabIndex"
     | "title"
     | "translate"
+    | "name"
+    | "required"
+    | "value"
+    | "disabled"
+    | "checked"
     | "onClick"
     | "onFocus"
     | "onBlur"

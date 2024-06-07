@@ -46,8 +46,8 @@ export const Slider = forwardRef((props, forwardedRef) => {
     decrement: () => ref.current.decrement(),
     setThumbPositionForOrientation: (direction) =>
       ref.current.setThumbPositionForOrientation(direction),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

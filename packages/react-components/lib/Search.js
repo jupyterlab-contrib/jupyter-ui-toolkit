@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import { provideJupyterDesignSystem, jpSearch } from "@jupyter/web-components";
 provideJupyterDesignSystem().register(jpSearch());
-import { useProperties } from "./react-utils.js";
+import { useEventListener, useProperties } from "./react-utils.js";
 
 export const Search = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -28,6 +28,10 @@ export const Search = forwardRef((props, forwardedRef) => {
     ...filteredProps
   } = props;
 
+  /** Event listeners - run once */
+  useEventListener(ref, "change", props.onChange);
+  useEventListener(ref, "input", props.onInput);
+
   /** Properties - run whenever a property has changed */
   useProperties(ref, "readOnly", props.readOnly);
   useProperties(ref, "autofocus", props.autofocus);
@@ -43,8 +47,8 @@ export const Search = forwardRef((props, forwardedRef) => {
   useImperativeHandle(forwardedRef, () => ({
     validate: () => ref.current.validate(),
     handleClearInput: () => ref.current.handleClearInput(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

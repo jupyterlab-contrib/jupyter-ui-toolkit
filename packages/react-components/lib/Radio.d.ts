@@ -4,7 +4,7 @@ export type { RadioElement };
 
 export interface RadioProps
   extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLInputElement>,
     | "children"
     | "dir"
     | "hidden"
@@ -14,6 +14,11 @@ export interface RadioProps
     | "tabIndex"
     | "title"
     | "translate"
+    | "name"
+    | "required"
+    | "value"
+    | "disabled"
+    | "checked"
     | "onClick"
     | "onFocus"
     | "onBlur"

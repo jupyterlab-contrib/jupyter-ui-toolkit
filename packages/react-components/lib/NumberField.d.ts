@@ -4,7 +4,7 @@ export type { NumberFieldElement };
 
 export interface NumberFieldProps
   extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLInputElement>,
     | "children"
     | "dir"
     | "hidden"
@@ -14,6 +14,10 @@ export interface NumberFieldProps
     | "tabIndex"
     | "title"
     | "translate"
+    | "name"
+    | "required"
+    | "value"
+    | "disabled"
     | "onClick"
     | "onFocus"
     | "onBlur"

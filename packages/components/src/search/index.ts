@@ -17,6 +17,9 @@ export type SearchAppearance = 'filled' | 'outline';
  *
  * @public
  * @tagname jp-search
+ *
+ * @fires input - Fires a custom 'input' event when the value has changed
+ * @fires change - Fires a custom 'change' event when the value has changed
  */
 class JupyterSearch extends Search {
   /**

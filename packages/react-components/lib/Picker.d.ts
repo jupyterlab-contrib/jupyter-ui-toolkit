@@ -4,7 +4,7 @@ export type { PickerElement };
 
 export interface PickerProps
   extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLInputElement>,
     | "children"
     | "dir"
     | "hidden"
@@ -14,6 +14,10 @@ export interface PickerProps
     | "tabIndex"
     | "title"
     | "translate"
+    | "name"
+    | "required"
+    | "value"
+    | "disabled"
     | "onClick"
     | "onFocus"
     | "onBlur"
@@ -46,7 +50,7 @@ export interface PickerProps
   label?: PickerElement["label"];
 
   /** Applied to the aria-labelledby attribute of the input element */
-  labelledby?: PickerElement["labelledby"];
+  labelledby?: PickerElement["labelledBy"];
 
   /** Applied to the placeholder attribute of the input element */
   placeholder?: PickerElement["placeholder"];

@@ -76,8 +76,8 @@ export const Picker = forwardRef((props, forwardedRef) => {
     handleRegionLoaded: (e) => ref.current.handleRegionLoaded(e),
     handleItemInvoke: (e) => ref.current.handleItemInvoke(e),
     handleOptionInvoke: (e) => ref.current.handleOptionInvoke(e),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

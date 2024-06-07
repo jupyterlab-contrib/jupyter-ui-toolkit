@@ -39,8 +39,8 @@ export const ListboxOption = forwardRef((props, forwardedRef) => {
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
     checkedChanged: (prev, next) => ref.current.checkedChanged(prev, next),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

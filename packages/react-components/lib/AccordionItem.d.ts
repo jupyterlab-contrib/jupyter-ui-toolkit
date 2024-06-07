@@ -20,7 +20,7 @@ export interface AccordionItemProps
   > {
   /** Configures the https://www.w3.org/TR/wai-aria-1.1/#aria-level | level of the
 heading element. */
-  headingLevel?: AccordionItemElement["headingLevel"];
+  headingLevel?: AccordionItemElement["headinglevel"];
 
   /** The item ID */
   id?: AccordionItemElement["id"];

@@ -16,6 +16,8 @@ import { comboboxStyles as styles } from './combobox.styles.js';
  *
  * @public
  * @tagname jp-combobox
+ *
+ * @fires input - Fires a custom 'input' event when the value has changed
  */
 class JupyterCombobox extends Combobox {
   /**

@@ -58,8 +58,8 @@ export const Select = forwardRef((props, forwardedRef) => {
     multipleChanged: (prev, next) => ref.current.multipleChanged(prev, next),
     setSelectedOptions: () => ref.current.setSelectedOptions(),
     selectFirstOption: () => ref.current.selectFirstOption(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

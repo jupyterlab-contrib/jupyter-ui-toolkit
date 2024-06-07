@@ -100,6 +100,8 @@ the associated presentation or custom element definition. */
 
   /** Fires a custom 'change' event when the value updates */
   onChange?: (event: CustomEvent) => void;
+
+  onInput?: (event: CustomEvent) => void;
 }
 
 /**

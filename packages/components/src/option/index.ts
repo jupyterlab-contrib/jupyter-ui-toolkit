@@ -14,7 +14,7 @@ import { optionStyles as styles } from './option.styles.js';
  * @public
  * @tagname jp-option
  */
-class JupyterListboxOption extends ListboxOption {}
+class JupyterOption extends ListboxOption {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#ListboxOption} registration for configuring the component with a DesignSystem.
@@ -26,11 +26,11 @@ class JupyterListboxOption extends ListboxOption {}
  * Generates HTML Element: `<jp-option>`
  *
  */
-export const jpOption = JupyterListboxOption.compose({
+export const jpOption = JupyterOption.compose({
   baseName: 'option',
   baseClass: ListboxOption,
   template,
   styles
 });
 
-export { JupyterListboxOption as Option, styles as optionStyles };
+export { JupyterOption as Option, styles as optionStyles };

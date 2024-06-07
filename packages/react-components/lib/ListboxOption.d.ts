@@ -1,4 +1,4 @@
-import { ListboxOption as ListboxOptionElement } from "@jupyter/web-components";
+import { Option as ListboxOptionElement } from "@jupyter/web-components";
 
 export type { ListboxOptionElement };
 

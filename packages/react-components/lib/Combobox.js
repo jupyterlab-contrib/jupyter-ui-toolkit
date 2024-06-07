@@ -33,6 +33,7 @@ export const Combobox = forwardRef((props, forwardedRef) => {
 
   /** Event listeners - run once */
   useEventListener(ref, "change", props.onChange);
+  useEventListener(ref, "input", props.onInput);
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, "autoWidth", props.autoWidth);
@@ -56,8 +57,8 @@ export const Combobox = forwardRef((props, forwardedRef) => {
     setPositioning: (force) => ref.current.setPositioning(force),
     selectFirstOption: () => ref.current.selectFirstOption(),
     setSelectedOptions: () => ref.current.setSelectedOptions(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

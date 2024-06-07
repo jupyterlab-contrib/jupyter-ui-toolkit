@@ -20,7 +20,6 @@ function renameClassElement() {
   };
 }
 
-
 export default {
   fast: true,
   // outdir: 'dist',

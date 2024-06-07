@@ -41,8 +41,8 @@ export const Button = forwardRef((props, forwardedRef) => {
     defaultSlottedContentChanged: (oldValue, newValue) =>
       ref.current.defaultSlottedContentChanged(oldValue, newValue),
     validate: () => ref.current.validate(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

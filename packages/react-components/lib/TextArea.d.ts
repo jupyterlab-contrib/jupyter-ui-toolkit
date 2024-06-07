@@ -4,7 +4,7 @@ export type { TextAreaElement };
 
 export interface TextAreaProps
   extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLTextAreaElement>,
     | "children"
     | "dir"
     | "hidden"
@@ -14,6 +14,10 @@ export interface TextAreaProps
     | "tabIndex"
     | "title"
     | "translate"
+    | "name"
+    | "required"
+    | "value"
+    | "disabled"
     | "onClick"
     | "onFocus"
     | "onBlur"
@@ -98,6 +102,9 @@ the associated presentation or custom element definition. */
 
   /** Emits a custom 'change' event when the textarea emits a change event */
   onChange?: (event: CustomEvent) => void;
+
+  /** Emits a custom 'input' event when the textarea emits a change event */
+  onInput?: (event: CustomEvent) => void;
 }
 
 /**

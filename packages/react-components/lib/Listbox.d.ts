@@ -76,6 +76,9 @@ the associated presentation or custom element definition. */
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
   styles?: ListboxElement["styles"];
+
+  /** Fires a custom 'change' event when the value has changed */
+  onChange?: (event: CustomEvent) => void;
 }
 
 /**

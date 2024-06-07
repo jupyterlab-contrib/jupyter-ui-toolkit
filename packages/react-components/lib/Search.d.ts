@@ -4,7 +4,7 @@ export type { SearchElement };
 
 export interface SearchProps
   extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
+    React.AllHTMLAttributes<HTMLInputElement>,
     | "children"
     | "dir"
     | "hidden"
@@ -14,6 +14,10 @@ export interface SearchProps
     | "tabIndex"
     | "title"
     | "translate"
+    | "name"
+    | "required"
+    | "value"
+    | "disabled"
     | "onClick"
     | "onFocus"
     | "onBlur"
@@ -88,6 +92,12 @@ the associated presentation or custom element definition. */
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
   styles?: SearchElement["styles"];
+
+  /** Fires a custom 'change' event when the value has changed */
+  onChange?: (event: CustomEvent) => void;
+
+  /** Fires a custom 'input' event when the value has changed */
+  onInput?: (event: CustomEvent) => void;
 }
 
 /**

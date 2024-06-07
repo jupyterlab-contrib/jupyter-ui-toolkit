@@ -19,7 +19,7 @@ export interface AvatarProps
     | "onBlur"
   > {
   /** Indicates the Avatar should have an image source */
-  src?: AvatarElement["src"];
+  src?: AvatarElement["imgSrc"];
 
   /** Indicates the Avatar should have alt text */
   alt?: AvatarElement["alt"];

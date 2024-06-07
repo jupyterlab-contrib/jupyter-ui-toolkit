@@ -38,7 +38,7 @@ import {
   TextArea,
   TextField,
   Toolbar,
-  Tooltip
+  // Tooltip
   // TreeItem,
   // TreeView
 } from '@jupyter/react-components';
@@ -229,9 +229,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
 };
 
 function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
-  const [tooltipAnchor, setTooltipAnchor] = React.useState<HTMLElement | null>(
-    null
-  );
+  // const [tooltipAnchor, setTooltipAnchor] = React.useState<HTMLElement | null>(
+  //   null
+  // );
 
   const onEvent = (event: any) => {
     console.log(event);
@@ -310,7 +310,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
         <TextArea>Text Area Label</TextArea>
-        <Slider min="0" max="100" onChange={onChangeConsole}>
+        <Slider min={0} max={100} onChange={onChangeConsole}>
           <SliderLabel position="0">0%</SliderLabel>
           <SliderLabel position="50">50%</SliderLabel>
           <SliderLabel position="100">100%</SliderLabel>
@@ -366,14 +366,14 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         <div className="jp-FlexColumn">
           <label>Tooltip</label>
           {/* Use callback ref to react to the component mount */}
-          <Button
+          {/* <Button
             ref={(anchor: HTMLElement) => {
               setTooltipAnchor(anchor);
             }}
           >
             Anchor
           </Button>
-          <Tooltip anchorElement={tooltipAnchor}>React tooltip</Tooltip>
+          <Tooltip anchorElement={tooltipAnchor}>React tooltip</Tooltip> */}
         </div>
 
         <Menu>

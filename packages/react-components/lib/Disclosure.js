@@ -36,8 +36,8 @@ export const Disclosure = forwardRef((props, forwardedRef) => {
     show: () => ref.current.show(),
     hide: () => ref.current.hide(),
     toggle: () => ref.current.toggle(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

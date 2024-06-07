@@ -21,8 +21,8 @@ export const Menu = forwardRef((props, forwardedRef) => {
   useImperativeHandle(forwardedRef, () => ({
     focus: () => ref.current.focus(),
     collapseExpandedItem: () => ref.current.collapseExpandedItem(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

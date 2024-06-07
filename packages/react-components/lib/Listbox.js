@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import { provideJupyterDesignSystem, jpListbox } from "@jupyter/web-components";
 provideJupyterDesignSystem().register(jpListbox());
-import { useProperties } from "./react-utils.js";
+import { useEventListener, useProperties } from "./react-utils.js";
 
 export const Listbox = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
@@ -24,6 +24,9 @@ export const Listbox = forwardRef((props, forwardedRef) => {
     ...filteredProps
   } = props;
 
+  /** Event listeners - run once */
+  useEventListener(ref, "change", props.onChange);
+
   /** Properties - run whenever a property has changed */
   useProperties(ref, "multiple", props.multiple);
   useProperties(ref, "size", props.size);
@@ -40,8 +43,8 @@ export const Listbox = forwardRef((props, forwardedRef) => {
   useImperativeHandle(forwardedRef, () => ({
     setSelectedOptions: () => ref.current.setSelectedOptions(),
     selectFirstOption: () => ref.current.selectFirstOption(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

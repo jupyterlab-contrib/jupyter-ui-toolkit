@@ -55,8 +55,8 @@ export const NumberField = forwardRef((props, forwardedRef) => {
     stepUp: () => ref.current.stepUp(),
     stepDown: () => ref.current.stepDown(),
     select: () => ref.current.select(),
-    compose: (this, elementDefinition) =>
-      ref.current.compose(this, elementDefinition),
+    compose: (this_, elementDefinition) =>
+      ref.current.compose(this_, elementDefinition),
   }));
 
   return React.createElement(

@@ -14,6 +14,8 @@ import { listboxStyles as styles } from './listbox.styles.js';
  *
  * @public
  * @tagname jp-listbox
+ *
+ * @fires change - Fires a custom 'change' event when the value has changed
  */
 class JupyterListbox extends ListboxElement {
   /**
