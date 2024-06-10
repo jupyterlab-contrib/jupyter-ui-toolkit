@@ -22,7 +22,7 @@ function renameClassElement() {
 
 export default {
   fast: true,
-  // outdir: 'dist',
+  outdir: 'dist',
   dependencies: true,
   globs: ['src/**/index.ts'],
   exclude: ['src/index.ts', 'src/styles', 'src/utilities'],

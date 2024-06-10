@@ -101,5 +101,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "customElements": "dist/custom-elements.json"
 }
