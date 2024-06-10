@@ -30,10 +30,7 @@ export const BreadcrumbItem = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'control', props.control);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-breadcrumb-item',

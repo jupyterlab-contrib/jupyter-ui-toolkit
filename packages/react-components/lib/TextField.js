@@ -42,12 +42,7 @@ export const TextField = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'spellcheck', props.spellcheck);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    select: () => ref.current.select(),
-    validate: () => ref.current.validate(),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-text-field',

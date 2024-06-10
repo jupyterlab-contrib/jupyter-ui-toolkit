@@ -46,17 +46,7 @@ export const Combobox = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'selectedOptions', props.selectedOptions);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    autoWidthChanged: (prev, next) => ref.current.autoWidthChanged(prev, next),
-    setAutoWidth: () => ref.current.setAutoWidth(),
-    validate: () => ref.current.validate(),
-    filterOptions: () => ref.current.filterOptions(),
-    setPositioning: force => ref.current.setPositioning(force),
-    selectFirstOption: () => ref.current.selectFirstOption(),
-    setSelectedOptions: () => ref.current.setSelectedOptions(),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-combobox',

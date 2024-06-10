@@ -27,15 +27,7 @@ export const Disclosure = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'expanded', props.expanded);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    onToggle: () => ref.current.onToggle(),
-    setup: () => ref.current.setup(),
-    show: () => ref.current.show(),
-    hide: () => ref.current.hide(),
-    toggle: () => ref.current.toggle(),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-disclosure',

@@ -45,16 +45,7 @@ export const Select = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'selectedOptions', props.selectedOptions);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    autoWidthChanged: (prev, next) => ref.current.autoWidthChanged(prev, next),
-    setAutoWidth: () => ref.current.setAutoWidth(),
-    setPositioning: () => ref.current.setPositioning(),
-    multipleChanged: (prev, next) => ref.current.multipleChanged(prev, next),
-    setSelectedOptions: () => ref.current.setSelectedOptions(),
-    selectFirstOption: () => ref.current.selectFirstOption(),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-select',

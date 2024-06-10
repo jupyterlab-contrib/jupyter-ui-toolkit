@@ -34,12 +34,7 @@ export const Listbox = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'selectedOptions', props.selectedOptions);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    setSelectedOptions: () => ref.current.setSelectedOptions(),
-    selectFirstOption: () => ref.current.selectFirstOption(),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-listbox',

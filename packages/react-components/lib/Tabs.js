@@ -26,11 +26,7 @@ export const Tabs = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'activetab', props.activetab);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    adjust: adjustment => ref.current.adjust(adjustment),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-tabs',

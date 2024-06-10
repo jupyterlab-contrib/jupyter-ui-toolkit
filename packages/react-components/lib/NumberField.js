@@ -47,14 +47,7 @@ export const NumberField = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'valueAsNumber', props.valueAsNumber);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    validate: () => ref.current.validate(),
-    stepUp: () => ref.current.stepUp(),
-    stepDown: () => ref.current.stepDown(),
-    select: () => ref.current.select(),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-number-field',

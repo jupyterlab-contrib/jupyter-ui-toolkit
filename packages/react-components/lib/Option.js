@@ -26,11 +26,7 @@ export const Option = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'dirtyValue', props.dirtyValue);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    checkedChanged: (prev, next) => ref.current.checkedChanged(prev, next),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-option',

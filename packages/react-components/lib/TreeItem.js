@@ -32,11 +32,7 @@ export const TreeItem = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'isNestedItem', props.isNestedItem);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    focusItem: el => ref.current.focusItem(el),
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-tree-item',

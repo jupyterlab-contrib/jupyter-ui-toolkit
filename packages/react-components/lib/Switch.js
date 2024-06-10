@@ -23,10 +23,7 @@ export const Switch = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'readOnly', props.readOnly);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
-  useImperativeHandle(forwardedRef, () => ({
-    compose: (this_, elementDefinition) =>
-      ref.current.compose(this_, elementDefinition)
-  }));
+  useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
     'jp-switch',
