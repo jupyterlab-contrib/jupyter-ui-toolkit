@@ -25,10 +25,10 @@
   "scripts": {
     "build": "echo all set",
     "clean": "rimraf lib tsconfig.tsbuildinfo",
-    "prettier:check": "prettier --config ./.prettierrc --check \"**/*.{ts,js,md}\"",
-    "prettier": "prettier --config ./.prettierrc --write \"**/*.{ts,js,md}\"",
-    "eslint:check": "eslint . --ext .ts,.tsx",
-    "eslint": "eslint . --ext .ts,.tsx --fix",
+    "prettier:check": "prettier --config ../../.prettierrc --check \"**/*.{ts,js,md}\"",
+    "prettier": "prettier --config ../../.prettierrc --write \"**/*.{ts,js,md}\"",
+    "eslint:check": "eslint . --ext .js",
+    "eslint": "eslint . --ext .js --fix",
     "prepublishOnly": "rimraf README.md && cp ../../README.md . && yarn run build"
   },
   "dependencies": {

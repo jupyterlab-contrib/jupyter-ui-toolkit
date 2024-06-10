@@ -35,8 +35,8 @@ export const Combobox = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
-  useEventListener(ref, 'change', props.onChange);
   useEventListener(ref, 'input', props.onInput);
+  useEventListener(ref, 'change', props.onChange);
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'autoWidth', props.autoWidth);

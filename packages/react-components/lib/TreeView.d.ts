@@ -1,8 +1,8 @@
-import { TabPanel as TabPanelElement } from '@jupyter/web-components';
+import { TreeView as TreeViewElement } from '@jupyter/web-components';
 
-export type { TabPanelElement };
+export type { TreeViewElement };
 
-export interface TabPanelProps
+export interface TreeViewProps
   extends Pick<
     React.AllHTMLAttributes<HTMLElement>,
     | 'children'
@@ -25,23 +25,30 @@ export interface TabPanelProps
     | 'onFocus'
     | 'onBlur'
   > {
+  /** /**
+  When true, the control will be appear expanded by user interaction. */
+  renderCollapsedNodes?: boolean;
+
+  /** The currently selected tree item */
+  currentSelected?: TreeViewElement['currentSelected'];
+
   /** A property which resolves the ComponentPresentation instance
 for the current component. */
-  $presentation?: TabPanelElement['$presentation'];
+  $presentation?: TreeViewElement['$presentation'];
 
   /** Sets the template of the element instance. When undefined,
 the element will attempt to resolve the template from
 the associated presentation or custom element definition. */
-  template?: TabPanelElement['template'];
+  template?: TreeViewElement['template'];
 
   /** Sets the default styles for the element instance. When undefined,
 the element will attempt to resolve default styles from
 the associated presentation or custom element definition. */
-  styles?: TabPanelElement['styles'];
+  styles?: TreeViewElement['styles'];
 }
 
 /**
- * Tab panel class
+ * Tree view class
  * ---
  *
  *
@@ -51,6 +58,6 @@ the associated presentation or custom element definition. */
  *     ) => FoundationElementRegistry<T, K>_** - Defines an element registry function with a set of element definition defaults.
  *
  * ### **Slots:**
- *  - _default_ - The default slot for the tabpanel content
+ *  - _default_ - The default slot for tree items
  */
-export const TabPanel: React.ForwardRefExoticComponent<TabPanelProps>;
+export const TreeView: React.ForwardRefExoticComponent<TreeViewProps>;

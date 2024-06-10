@@ -34,8 +34,8 @@ export const TextArea = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
+  useEventListener(ref, 'select', props.onSelect);
   useEventListener(ref, 'change', props.onChange);
-  useEventListener(ref, 'input', props.onInput);
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'readOnly', props.readOnly);

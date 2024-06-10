@@ -29,7 +29,7 @@ export default {
   plugins: [
     renameClassElement(),
     customElementReactWrapperPlugin({
-      outdir: '../react-components/src',
+      outdir: '../react-components/lib',
       modulePath: (className, tagName) => '@jupyter/web-components'
     })
   ]

@@ -2417,7 +2417,6 @@ __metadata:
   resolution: "@jupyter/react-components@workspace:packages/react-components"
   dependencies:
     "@jupyter/web-components": ^0.15.3
-    "@microsoft/fast-react-wrapper": ^0.3.22
     "@types/react": ^18.2.0
     "@typescript-eslint/eslint-plugin": ^5.60.0
     eslint: ^8.43.0
@@ -3092,18 +3091,6 @@ __metadata:
     tabbable: ^5.2.0
     tslib: ^1.13.0
   checksum: e979cd500aaba28090e8d9cdc6192933db01803c13288c11aded89aa54da6f0a70256ff2f249754b1c95d9abad369a18401e1df98d672e2823b83cf4cd88ad55
-  languageName: node
-  linkType: hard
-
-"@microsoft/fast-react-wrapper@npm:^0.3.22":
-  version: 0.3.22
-  resolution: "@microsoft/fast-react-wrapper@npm:0.3.22"
-  dependencies:
-    "@microsoft/fast-element": ^1.12.0
-    "@microsoft/fast-foundation": ^2.49.4
-  peerDependencies:
-    react: ">=16.9.0"
-  checksum: 6c7c0992dbaf91b32bc53b9d7ac21c7c8a89e6f45cc1b015cea1d1f3e766184ac7cea159479e34ddd30c347291cd5939e8d55696712086187deae37687054328
   languageName: node
   linkType: hard
 

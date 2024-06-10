@@ -1,14 +1,9 @@
-import React, {
-  forwardRef,
-  useImperativeHandle,
-  useRef,
-  useEffect
-} from 'react';
-import { provideJupyterDesignSystem, jpOption } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpOption());
+import { jpOption, provideJupyterDesignSystem } from '@jupyter/web-components';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpOption());
 
-export const ListboxOption = forwardRef((props, forwardedRef) => {
+export const Option = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
     selected,

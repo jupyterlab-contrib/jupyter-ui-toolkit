@@ -20,6 +20,8 @@ export type TextFieldAppearance = 'filled' | 'outline';
  *
  * @public
  * @tagname jp-text-field
+ *
+ * @fires select - Emits a custom 'select' event when the textarea emits a select event
  */
 class JupyterTextField extends TextField {
   /**
