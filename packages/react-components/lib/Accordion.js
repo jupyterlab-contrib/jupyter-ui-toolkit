@@ -13,16 +13,13 @@ import { useEventListener, useProperties } from './react-utils.js';
 
 export const Accordion = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { expandMode, $presentation, template, styles, ...filteredProps } =
+  const { expandMode, ...filteredProps } =
     props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

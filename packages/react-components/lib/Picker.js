@@ -33,9 +33,6 @@ export const Picker = forwardRef((props, forwardedRef) => {
     optionsList,
     query,
     itemsPlaceholderElement,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -62,9 +59,6 @@ export const Picker = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'optionsList', props.optionsList);
   useProperties(ref, 'query', props.query);
   useProperties(ref, 'itemsPlaceholderElement', props.itemsPlaceholderElement);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

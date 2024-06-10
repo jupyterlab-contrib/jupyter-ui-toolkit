@@ -3,28 +3,12 @@ import { Tabs as TabsElement } from '@jupyter/web-components';
 export type { TabsElement };
 
 export interface TabsProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<TabsElement>;
+
   /** The orientation */
   orientation?: TabsElement['orientation'];
 
@@ -36,20 +20,6 @@ export interface TabsProps
 
   /** A reference to the active tab */
   activetab?: TabsElement['activetab'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: TabsElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: TabsElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: TabsElement['styles'];
 
   /** Fires a custom 'change' event when a tab is clicked or during keyboard navigation */
   onChange?: (event: CustomEvent) => void;

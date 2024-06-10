@@ -27,9 +27,6 @@ export const TextArea = forwardRef((props, forwardedRef) => {
     cols,
     rows,
     spellcheck,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -45,9 +42,6 @@ export const TextArea = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'cols', props.cols);
   useProperties(ref, 'rows', props.rows);
   useProperties(ref, 'spellcheck', props.spellcheck);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

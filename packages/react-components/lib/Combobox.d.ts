@@ -3,28 +3,12 @@ import { Combobox as ComboboxElement } from '@jupyter/web-components';
 export type { ComboboxElement };
 
 export interface ComboboxProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange' | 'onInput'> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<ComboboxElement>;
+
   /** Whether the combobox has a compact layout or not. */
   autowidth?: boolean;
 
@@ -66,20 +50,6 @@ export interface ComboboxProps
 
   /** A collection of the selected options. */
   selectedOptions?: ComboboxElement['selectedOptions'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: ComboboxElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: ComboboxElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: ComboboxElement['styles'];
 
   /** Fires a custom 'input' event when the value has changed */
   onInput?: (event: CustomEvent) => void;

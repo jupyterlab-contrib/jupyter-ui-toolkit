@@ -3,32 +3,12 @@ import { Slider as SliderElement } from '@jupyter/web-components';
 export type { SliderElement };
 
 export interface SliderProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLInputElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'name'
-    | 'required'
-    | 'value'
-    | 'disabled'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends Omit<React.AllHTMLAttributes<HTMLInputElement>, 'onChange'> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<SliderElement>;
+
   /** When true, the control will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
 
@@ -55,20 +35,6 @@ export interface SliderProps
 
   /** Value to increment or decrement via arrow keys, mouse click or drag. */
   step?: SliderElement['step'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: SliderElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: SliderElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: SliderElement['styles'];
 
   /** Fires a custom 'change' event when the slider value changes */
   onChange?: (event: CustomEvent) => void;

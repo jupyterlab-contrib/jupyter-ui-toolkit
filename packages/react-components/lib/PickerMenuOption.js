@@ -16,17 +16,11 @@ export const PickerMenuOption = forwardRef((props, forwardedRef) => {
   const {
     value,
     contentsTemplate,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'contentsTemplate', props.contentsTemplate);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

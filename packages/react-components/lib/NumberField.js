@@ -28,9 +28,6 @@ export const NumberField = forwardRef((props, forwardedRef) => {
     max,
     min,
     valueAsNumber,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -48,9 +45,6 @@ export const NumberField = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'max', props.max);
   useProperties(ref, 'min', props.min);
   useProperties(ref, 'valueAsNumber', props.valueAsNumber);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

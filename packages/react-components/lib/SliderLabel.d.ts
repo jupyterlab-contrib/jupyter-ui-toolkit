@@ -2,29 +2,12 @@ import { SliderLabel as SliderLabelElement } from '@jupyter/web-components';
 
 export type { SliderLabelElement };
 
-export interface SliderLabelProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface SliderLabelProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<SliderLabelElement>;
+
   /** Hides the tick mark. */
   hideMark?: boolean;
 
@@ -33,20 +16,6 @@ export interface SliderLabelProps
 
   /** The position of the label relative to the min and max value of the parent @microsoft/fast-foundation#(Slider:class). */
   position?: SliderLabelElement['position'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: SliderLabelElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: SliderLabelElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: SliderLabelElement['styles'];
 }
 
 /**

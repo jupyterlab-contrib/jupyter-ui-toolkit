@@ -14,9 +14,6 @@ export const Option = forwardRef((props, forwardedRef) => {
     disabled,
     selectedAttribute,
     dirtyValue,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -27,9 +24,6 @@ export const Option = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'disabled', props.disabled);
   useProperties(ref, 'selectedAttribute', props.selectedAttribute);
   useProperties(ref, 'dirtyValue', props.dirtyValue);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

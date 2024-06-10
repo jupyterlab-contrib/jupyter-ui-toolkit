@@ -15,9 +15,6 @@ export const PickerMenu = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
     suggestionsAvailableText,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -27,9 +24,6 @@ export const PickerMenu = forwardRef((props, forwardedRef) => {
     'suggestionsAvailableText',
     props.suggestionsAvailableText
   );
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

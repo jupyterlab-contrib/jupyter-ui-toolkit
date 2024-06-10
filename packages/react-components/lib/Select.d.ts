@@ -3,32 +3,15 @@ import { Select as SelectElement } from '@jupyter/web-components';
 export type { SelectElement };
 
 export interface SelectProps
-  extends Pick<
+  extends Omit<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'name'
-    | 'required'
-    | 'value'
-    | 'disabled'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
+    'onChange' | 'onInput'
   > {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<SelectElement>;
+
   /** Whether the select has a compact layout or not. */
   autowidth?: boolean;
 
@@ -70,20 +53,6 @@ export interface SelectProps
 
   /** A collection of the selected options. */
   selectedOptions?: SelectElement['selectedOptions'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: SelectElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: SelectElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: SelectElement['styles'];
 
   /** Fires a custom 'input' event when the value updates */
   onInput?: (event: CustomEvent) => void;

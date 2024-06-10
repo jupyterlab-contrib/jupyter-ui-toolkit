@@ -2,29 +2,12 @@ import { Dialog as DialogElement } from '@jupyter/web-components';
 
 export type { DialogElement };
 
-export interface DialogProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface DialogProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<DialogElement>;
+
   /** Indicates that the dialog should trap focus. */
   trapFocus?: boolean;
 
@@ -43,20 +26,6 @@ overlay.  Clicks on the overlay will cause the dialog to emit a "dismiss" event.
 
   /** The hidden state of the element. */
   hidden?: DialogElement['hidden'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: DialogElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: DialogElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: DialogElement['styles'];
 
   /** Fires a custom 'cancel' event when the modal overlay is clicked */
   onCancel?: (event: CustomEvent) => void;

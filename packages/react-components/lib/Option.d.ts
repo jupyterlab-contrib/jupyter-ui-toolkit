@@ -2,29 +2,12 @@ import { Option as OptionElement } from '@jupyter/web-components';
 
 export type { OptionElement };
 
-export interface OptionProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface OptionProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<OptionElement>;
+
   /** The selected attribute value. This sets the initial selected value. */
   selected?: boolean;
 
@@ -37,9 +20,6 @@ To avoid accessibility conflicts, the checked state should not be present in
 single selection mode. */
   checked?: OptionElement['checked'];
 
-  /** The default slotted content. */
-  content?: OptionElement['content'];
-
   /** The defaultSelected state of the option. */
   defaultSelected?: OptionElement['defaultSelected'];
 
@@ -51,20 +31,6 @@ single selection mode. */
 
   /** Track whether the value has been changed from the initial value */
   dirtyValue?: OptionElement['dirtyValue'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: OptionElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: OptionElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: OptionElement['styles'];
 }
 
 /**

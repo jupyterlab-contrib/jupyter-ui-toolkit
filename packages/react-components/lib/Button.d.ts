@@ -3,28 +3,12 @@ import { Button as ButtonElement } from '@jupyter/web-components';
 export type { ButtonElement };
 
 export interface ButtonProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'form'> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<ButtonElement>;
+
   /** Whether the button has a compact layout or not. */
   minimal?: boolean;
 
@@ -54,24 +38,6 @@ export interface ButtonProps
 
   /** See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button | <button> element} for more details. */
   formnovalidate?: ButtonElement['formnovalidate'];
-
-  /** 
-Default slotted content */
-  defaultSlottedContent?: ButtonElement['defaultSlottedContent'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: ButtonElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: ButtonElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: ButtonElement['styles'];
 }
 
 /**

@@ -3,28 +3,12 @@ import { MenuItem as MenuItemElement } from '@jupyter/web-components';
 export type { MenuItemElement };
 
 export interface MenuItemProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
+    /**
+     * Allows getting a ref to the component instance.
+     */
+    ref?: React.Ref<MenuItemElement>;
+  
   /** The role of the element. */
   role?: MenuItemElement['role'];
 
@@ -36,20 +20,6 @@ export interface MenuItemProps
 
   /** The checked value of the element. */
   checked?: MenuItemElement['checked'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: MenuItemElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: MenuItemElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: MenuItemElement['styles'];
 
   /** Fires a custom 'expanded-change' event when the expanded state changes */
   onExpandedChange?: (event: CustomEvent) => void;

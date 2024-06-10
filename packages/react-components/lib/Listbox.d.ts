@@ -2,29 +2,12 @@ import { Listbox as ListboxElement } from '@jupyter/web-components';
 
 export type { ListboxElement };
 
-export interface ListboxProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface ListboxProps extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<ListboxElement>;
+
   /** Indicates if the listbox is in multi-selection mode. */
   multiple?: ListboxElement['multiple'];
 
@@ -45,20 +28,6 @@ export interface ListboxProps
 
   /** A collection of the selected options. */
   selectedOptions?: ListboxElement['selectedOptions'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: ListboxElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: ListboxElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: ListboxElement['styles'];
 
   /** Fires a custom 'change' event when the value has changed */
   onChange?: (event: CustomEvent) => void;

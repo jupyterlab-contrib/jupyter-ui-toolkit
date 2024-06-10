@@ -3,28 +3,11 @@ import { AnchoredRegion as AnchoredRegionElement } from '@jupyter/web-components
 export type { AnchoredRegionElement };
 
 export interface AnchoredRegionProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<AnchoredRegionElement>;
   /** Whether the region remains in the viewport (ie. detaches from the anchor) on the horizontal axis */
   horizontalViewportLock?: boolean;
 
@@ -97,20 +80,6 @@ is selected for layout */
 
   /** update position */
   update?: AnchoredRegionElement['update'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: AnchoredRegionElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: AnchoredRegionElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: AnchoredRegionElement['styles'];
 
   /** Fires a custom 'loaded' event when the region is loaded and visible */
   onLoaded?: (event: CustomEvent) => void;

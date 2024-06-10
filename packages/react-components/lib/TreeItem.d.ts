@@ -2,29 +2,12 @@ import { TreeItem as TreeItemElement } from '@jupyter/web-components';
 
 export type { TreeItemElement };
 
-export interface TreeItemProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface TreeItemProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<TreeItemElement>;
+
   /** When true, the control will be appear expanded by user interaction. */
   expanded?: TreeItemElement['expanded'];
 
@@ -36,20 +19,6 @@ export interface TreeItemProps
 
   /** Whether the tree is nested */
   isNestedItem?: TreeItemElement['isNestedItem'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: TreeItemElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: TreeItemElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: TreeItemElement['styles'];
 
   /** Fires a custom 'expanded-change' event when the expanded state changes */
   onExpandedChange?: (event: CustomEvent) => void;

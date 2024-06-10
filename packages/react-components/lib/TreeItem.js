@@ -18,9 +18,6 @@ export const TreeItem = forwardRef((props, forwardedRef) => {
     selected,
     disabled,
     isNestedItem,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -33,9 +30,6 @@ export const TreeItem = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'selected', props.selected);
   useProperties(ref, 'disabled', props.disabled);
   useProperties(ref, 'isNestedItem', props.isNestedItem);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

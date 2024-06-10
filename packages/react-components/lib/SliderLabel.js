@@ -17,16 +17,10 @@ export const SliderLabel = forwardRef((props, forwardedRef) => {
     hideMark,
     disabled,
     position,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

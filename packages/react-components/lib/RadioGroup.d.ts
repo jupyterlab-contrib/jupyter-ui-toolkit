@@ -3,28 +3,12 @@ import { RadioGroup as RadioGroupElement } from '@jupyter/web-components';
 export type { RadioGroupElement };
 
 export interface RadioGroupProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<RadioGroupElement>;
+
   /** When true, the child radios will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
 
@@ -43,20 +27,6 @@ for all child radio elements. */
 
   /** When true, the child radios will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute} for more information. */
   readOnly?: RadioGroupElement['readOnly'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: RadioGroupElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: RadioGroupElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: RadioGroupElement['styles'];
 
   /** Fires a custom 'change' event when the value changes */
   onChange?: (event: CustomEvent) => void;

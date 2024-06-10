@@ -3,51 +3,20 @@ import { AccordionItem as AccordionItemElement } from '@jupyter/web-components';
 export type { AccordionItemElement };
 
 export interface AccordionItemProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<AccordionItemElement>;
   /** Configures the https://www.w3.org/TR/wai-aria-1.1/#aria-level | level of the
 heading element. */
-  headingLevel?: AccordionItemElement['headingLevel'];
+  headingLevel?: AccordionItemElement['headinglevel'];
 
   /** The item ID */
   id?: AccordionItemElement['id'];
 
   /** Expands or collapses the item. */
   expanded?: AccordionItemElement['expanded'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: AccordionItemElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: AccordionItemElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: AccordionItemElement['styles'];
 
   /** Fires a custom 'change' event when the button is invoked */
   onChange?: (event: CustomEvent) => void;

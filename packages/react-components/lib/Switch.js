@@ -13,9 +13,6 @@ export const Switch = forwardRef((props, forwardedRef) => {
   const {
     readonly,
     readOnly,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -24,9 +21,6 @@ export const Switch = forwardRef((props, forwardedRef) => {
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'readOnly', props.readOnly);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

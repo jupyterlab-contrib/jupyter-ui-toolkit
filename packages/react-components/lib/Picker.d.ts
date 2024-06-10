@@ -2,33 +2,12 @@ import { Picker as PickerElement } from '@jupyter/web-components';
 
 export type { PickerElement };
 
-export interface PickerProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLInputElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'name'
-    | 'required'
-    | 'value'
-    | 'disabled'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface PickerProps extends React.AllHTMLAttributes<HTMLInputElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<PickerElement>;
+
   /** Whether the component should remove an option from the list when it is in the selection */
   filterSelected?: boolean;
 
@@ -57,7 +36,7 @@ export interface PickerProps
   label?: PickerElement['label'];
 
   /** Applied to the aria-labelledby attribute of the input element */
-  labelledby?: PickerElement['labelledby'];
+  labelledby?: PickerElement['labelledBy'];
 
   /** Applied to the placeholder attribute of the input element */
   placeholder?: PickerElement['placeholder'];
@@ -98,24 +77,12 @@ This is used in a repeat directive. */
 
   /** Reference to the placeholder element for the repeat directive */
   itemsPlaceholderElement?: PickerElement['itemsPlaceholderElement'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: PickerElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: PickerElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: PickerElement['styles'];
 }
 
 /**
  * Picker class
+ *
+ * @alpha
  * ---
  *
  *

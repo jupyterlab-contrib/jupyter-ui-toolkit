@@ -3,28 +3,12 @@ import { BreadcrumbItem as BreadcrumbItemElement } from '@jupyter/web-components
 export type { BreadcrumbItemElement };
 
 export interface BreadcrumbItemProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<BreadcrumbItemElement>;
+
   /** Prompts the user to save the linked URL. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
   download?: BreadcrumbItemElement['download'];
 
@@ -48,23 +32,6 @@ export interface BreadcrumbItemProps
 
   /** See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a | <a> element  for more information. */
   type?: BreadcrumbItemElement['type'];
-
-  /** References the root element */
-  control?: BreadcrumbItemElement['control'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: BreadcrumbItemElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: BreadcrumbItemElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: BreadcrumbItemElement['styles'];
 }
 
 /**

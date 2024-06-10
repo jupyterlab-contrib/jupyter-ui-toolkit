@@ -25,9 +25,6 @@ export const DataGrid = forwardRef((props, forwardedRef) => {
     focusRowIndex,
     focusColumnIndex,
     rowElementTag,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -40,9 +37,6 @@ export const DataGrid = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'focusRowIndex', props.focusRowIndex);
   useProperties(ref, 'focusColumnIndex', props.focusColumnIndex);
   useProperties(ref, 'rowElementTag', props.rowElementTag);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

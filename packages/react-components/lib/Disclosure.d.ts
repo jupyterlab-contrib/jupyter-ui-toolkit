@@ -3,28 +3,12 @@ import { Disclosure as DisclosureElement } from '@jupyter/web-components';
 export type { DisclosureElement };
 
 export interface DisclosureProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends React.AllHTMLAttributes<HTMLElement> {
+    /**
+     * Allows getting a ref to the component instance.
+     */
+    ref?: React.Ref<DisclosureElement>;
+  
   /** The appearance the anchor should have. */
   appearance?: DisclosureElement['appearance'];
 
@@ -33,20 +17,6 @@ export interface DisclosureProps
 
   /** Determines if the element should show the extra content or not. */
   expanded?: DisclosureElement['expanded'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: DisclosureElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: DisclosureElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: DisclosureElement['styles'];
 
   /** fires a toggle event when the summary is toggled */
   onToggle?: (event: CustomEvent) => void;

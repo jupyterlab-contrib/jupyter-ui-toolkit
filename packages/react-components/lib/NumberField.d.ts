@@ -3,32 +3,15 @@ import { NumberField as NumberFieldElement } from '@jupyter/web-components';
 export type { NumberFieldElement };
 
 export interface NumberFieldProps
-  extends Pick<
+  extends Omit<
     React.AllHTMLAttributes<HTMLInputElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'name'
-    | 'required'
-    | 'value'
-    | 'disabled'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
+    'onChange' | 'onInput'
   > {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<NumberFieldElement>;
+
   /** When true, the control will be immutable by user interaction. See https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/readonly | readonly HTML attribute for more information. */
   readonly?: boolean;
 
@@ -70,20 +53,6 @@ export interface NumberFieldProps
 
   /** The value property, typed as a number. */
   valueAsNumber?: NumberFieldElement['valueAsNumber'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: NumberFieldElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: NumberFieldElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: NumberFieldElement['styles'];
 
   /** Fires a custom 'input' event when the value has changed */
   onInput?: (event: CustomEvent) => void;

@@ -2,31 +2,13 @@ import { Avatar as AvatarElement } from '@jupyter/web-components';
 
 export type { AvatarElement };
 
-export interface AvatarProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface AvatarProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<AvatarElement>;
   /** Indicates the Avatar should have an image source */
-  src?: AvatarElement['src'];
+  src?: AvatarElement['imgSrc'];
 
   /** Indicates the Avatar should have alt text */
   alt?: AvatarElement['alt'];
@@ -42,20 +24,6 @@ export interface AvatarProps
 
   /** Indicates the Avatar shape should be. By default it will be set to "circle". */
   shape?: AvatarElement['shape'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: AvatarElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: AvatarElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: AvatarElement['styles'];
 }
 
 /**

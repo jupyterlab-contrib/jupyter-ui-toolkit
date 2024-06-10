@@ -14,9 +14,6 @@ export const Radio = forwardRef((props, forwardedRef) => {
     readonly,
     readOnly,
     name,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -26,9 +23,6 @@ export const Radio = forwardRef((props, forwardedRef) => {
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'readOnly', props.readOnly);
   useProperties(ref, 'name', props.name);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

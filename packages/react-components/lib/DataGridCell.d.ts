@@ -3,28 +3,12 @@ import { DataGridCell as DataGridCellElement } from '@jupyter/web-components';
 export type { DataGridCellElement };
 
 export interface DataGridCellProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends React.AllHTMLAttributes<HTMLElement> {
+    /**
+     * Allows getting a ref to the component instance.
+     */
+    ref?: React.Ref<DataGridCellElement>;
+  
   /** The type of cell */
   cellType?: DataGridCellElement['cellType'];
 
@@ -38,20 +22,6 @@ applied to the cell */
 
   /** The base data for the column */
   columnDefinition?: DataGridCellElement['columnDefinition'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: DataGridCellElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: DataGridCellElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: DataGridCellElement['styles'];
 
   /** Fires a custom 'cell-focused' event when focus is on the cell or its contents */
   onCellFocused?: (event: CustomEvent) => void;

@@ -22,9 +22,6 @@ export const Button = forwardRef((props, forwardedRef) => {
     autofocus,
     formnovalidate,
     defaultSlottedContent,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -32,9 +29,6 @@ export const Button = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'autofocus', props.autofocus);
   useProperties(ref, 'formnovalidate', props.formnovalidate);
   useProperties(ref, 'defaultSlottedContent', props.defaultSlottedContent);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

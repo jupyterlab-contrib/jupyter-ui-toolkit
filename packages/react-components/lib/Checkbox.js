@@ -17,9 +17,6 @@ export const Checkbox = forwardRef((props, forwardedRef) => {
     readonly,
     readOnly,
     indeterminate,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -29,9 +26,6 @@ export const Checkbox = forwardRef((props, forwardedRef) => {
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'readOnly', props.readOnly);
   useProperties(ref, 'indeterminate', props.indeterminate);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

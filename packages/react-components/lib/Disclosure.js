@@ -17,9 +17,6 @@ export const Disclosure = forwardRef((props, forwardedRef) => {
     appearance,
     title,
     expanded,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -28,9 +25,6 @@ export const Disclosure = forwardRef((props, forwardedRef) => {
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'expanded', props.expanded);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

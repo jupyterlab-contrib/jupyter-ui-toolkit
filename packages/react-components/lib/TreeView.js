@@ -12,17 +12,11 @@ export const TreeView = forwardRef((props, forwardedRef) => {
   const {
     renderCollapsedNodes,
     currentSelected,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'currentSelected', props.currentSelected);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

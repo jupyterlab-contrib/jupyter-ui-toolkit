@@ -18,9 +18,6 @@ export const ProgressRing = forwardRef((props, forwardedRef) => {
     min,
     max,
     paused,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -29,9 +26,6 @@ export const ProgressRing = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'min', props.min);
   useProperties(ref, 'max', props.max);
   useProperties(ref, 'paused', props.paused);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

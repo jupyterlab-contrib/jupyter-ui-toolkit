@@ -2,29 +2,12 @@ import { DataGridRow as DataGridRowElement } from '@jupyter/web-components';
 
 export type { DataGridRowElement };
 
-export interface DataGridRowProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface DataGridRowProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<DataGridRowElement>;
+
   /** String that gets applied to the the css gridTemplateColumns attribute for the row */
   gridTemplateColumns?: DataGridRowElement['gridTemplateColumns'];
 
@@ -46,20 +29,6 @@ export interface DataGridRowProps
   /** The index of the row in the parent grid.
 This is typically set programmatically by the parent grid. */
   rowIndex?: DataGridRowElement['rowIndex'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: DataGridRowElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: DataGridRowElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: DataGridRowElement['styles'];
 
   /** Fires a custom 'row-focused' event when focus is on an element (usually a cell or its contents) in the row */
   onRowFocused?: (event: CustomEvent) => void;

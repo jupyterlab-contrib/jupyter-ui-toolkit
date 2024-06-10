@@ -15,9 +15,6 @@ export const Tabs = forwardRef((props, forwardedRef) => {
     activeid,
     activeindicator,
     activetab,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -27,9 +24,6 @@ export const Tabs = forwardRef((props, forwardedRef) => {
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'activeindicator', props.activeindicator);
   useProperties(ref, 'activetab', props.activetab);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

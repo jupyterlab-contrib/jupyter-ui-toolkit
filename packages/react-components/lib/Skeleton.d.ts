@@ -2,29 +2,12 @@ import { Skeleton as SkeletonElement } from '@jupyter/web-components';
 
 export type { SkeletonElement };
 
-export interface SkeletonProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface SkeletonProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<SkeletonElement>;
+
   /** Indicates the Skeleton should have a filled style. */
   fill?: SkeletonElement['fill'];
 
@@ -36,20 +19,6 @@ export interface SkeletonProps
 
   /** Indicates that the component has an activated shimmer effect */
   shimmer?: SkeletonElement['shimmer'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: SkeletonElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: SkeletonElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: SkeletonElement['styles'];
 }
 
 /**

@@ -18,9 +18,6 @@ export const MenuItem = forwardRef((props, forwardedRef) => {
     disabled,
     expanded,
     checked,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -32,9 +29,6 @@ export const MenuItem = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'disabled', props.disabled);
   useProperties(ref, 'expanded', props.expanded);
   useProperties(ref, 'checked', props.checked);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

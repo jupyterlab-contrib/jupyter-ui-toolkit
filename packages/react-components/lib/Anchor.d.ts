@@ -3,28 +3,11 @@ import { Anchor as AnchorElement } from '@jupyter/web-components';
 export type { AnchorElement };
 
 export interface AnchorProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+  extends     React.AllHTMLAttributes<HTMLElement> {
+    /**
+     * Allows getting a ref to the component instance.
+     */
+    ref?: React.Ref<AnchorElement>;
   /** The appearance the anchor should have. */
   appearance?: AnchorElement['appearance'];
 
@@ -54,20 +37,6 @@ export interface AnchorProps
 
   /** References the root element */
   control?: AnchorElement['control'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: AnchorElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: AnchorElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: AnchorElement['styles'];
 }
 
 /**

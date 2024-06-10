@@ -19,9 +19,6 @@ export const Tooltip = forwardRef((props, forwardedRef) => {
     autoUpdateMode,
     visible,
     anchorElement,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -31,9 +28,6 @@ export const Tooltip = forwardRef((props, forwardedRef) => {
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'visible', props.visible);
   useProperties(ref, 'anchorElement', props.anchorElement);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

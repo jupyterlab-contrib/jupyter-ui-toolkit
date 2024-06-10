@@ -2,29 +2,12 @@ import { Tooltip as TooltipElement } from '@jupyter/web-components';
 
 export type { TooltipElement };
 
-export interface TooltipProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface TooltipProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<TooltipElement>;
+
   /** Controls if the tooltip will always remain fully in the viewport on the horizontal axis */
   horizontalViewportLock?: boolean;
 
@@ -53,20 +36,6 @@ If undefined tooltip is shown when anchor element is hovered */
   /** the html element currently being used as anchor.
 Setting this directly overrides the anchor attribute. */
   anchorElement?: TooltipElement['anchorElement'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: TooltipElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: TooltipElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: TooltipElement['styles'];
 
   /** Fires a custom 'dismiss' event when the tooltip is visible and escape key is pressed */
   onDismiss?: (event: CustomEvent) => void;

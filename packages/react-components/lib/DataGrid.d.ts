@@ -2,29 +2,12 @@ import { DataGrid as DataGridElement } from '@jupyter/web-components';
 
 export type { DataGridElement };
 
-export interface DataGridProps
-  extends Pick<
-    React.AllHTMLAttributes<HTMLElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
-  > {
+export interface DataGridProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<DataGridElement>;
+
   /** When true the component will not add itself to the tab queue.
 Default is false. */
   noTabbing?: boolean;
@@ -64,20 +47,6 @@ the grid moves focus to the specified column. */
 
   /** Set by the component templates. */
   rowElementTag?: DataGridElement['rowElementTag'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: DataGridElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: DataGridElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: DataGridElement['styles'];
 }
 
 /**

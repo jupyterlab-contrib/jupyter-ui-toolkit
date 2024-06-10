@@ -3,32 +3,15 @@ import { TextArea as TextAreaElement } from '@jupyter/web-components';
 export type { TextAreaElement };
 
 export interface TextAreaProps
-  extends Pick<
+  extends Omit<
     React.AllHTMLAttributes<HTMLTextAreaElement>,
-    | 'children'
-    | 'className'
-    | 'dir'
-    | 'exportparts'
-    | 'htmlFor'
-    | 'hidden'
-    | 'id'
-    | 'key'
-    | 'lang'
-    | 'part'
-    | 'ref'
-    | 'slot'
-    | 'style'
-    | 'tabIndex'
-    | 'title'
-    | 'translate'
-    | 'name'
-    | 'required'
-    | 'value'
-    | 'disabled'
-    | 'onClick'
-    | 'onFocus'
-    | 'onBlur'
+    'form' | 'onChange' | 'onSelect'
   > {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<TextAreaElement>;
+
   /** The appearance of the element. */
   appearance?: TextAreaElement['appearance'];
 
@@ -68,20 +51,6 @@ export interface TextAreaProps
   /** Sets if the element is eligible for spell checking
 but the UA. */
   spellcheck?: TextAreaElement['spellcheck'];
-
-  /** A property which resolves the ComponentPresentation instance
-for the current component. */
-  $presentation?: TextAreaElement['$presentation'];
-
-  /** Sets the template of the element instance. When undefined,
-the element will attempt to resolve the template from
-the associated presentation or custom element definition. */
-  template?: TextAreaElement['template'];
-
-  /** Sets the default styles for the element instance. When undefined,
-the element will attempt to resolve default styles from
-the associated presentation or custom element definition. */
-  styles?: TextAreaElement['styles'];
 
   /** Emits a custom 'select' event when the textarea emits a select event */
   onSelect?: (event: CustomEvent) => void;

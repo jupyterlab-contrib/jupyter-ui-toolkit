@@ -21,7 +21,7 @@ import {
   Menu,
   MenuItem,
   NumberField,
-  ListboxOption as Option,
+  Option,
   Progress,
   ProgressRing,
   Radio,
@@ -37,10 +37,10 @@ import {
   Tabs,
   TextArea,
   TextField,
-  Toolbar
-  // Tooltip
-  // TreeItem,
-  // TreeView
+  Toolbar,
+  Tooltip,
+  TreeItem,
+  TreeView
 } from '@jupyter/react-components';
 import {
   addJupyterLabThemeChangeListener,
@@ -229,9 +229,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
 };
 
 function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
-  // const [tooltipAnchor, setTooltipAnchor] = React.useState<HTMLElement | null>(
-  //   null
-  // );
+  const [tooltipAnchor, setTooltipAnchor] = React.useState<HTMLElement | null>(
+    null
+  );
 
   const onEvent = (event: any) => {
     console.log(event);
@@ -366,14 +366,14 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         <div className="jp-FlexColumn">
           <label>Tooltip</label>
           {/* Use callback ref to react to the component mount */}
-          {/* <Button
-            ref={(anchor: HTMLElement) => {
+          <Button
+            ref={anchor => {
               setTooltipAnchor(anchor);
             }}
           >
             Anchor
           </Button>
-          <Tooltip anchorElement={tooltipAnchor}>React tooltip</Tooltip> */}
+          <Tooltip anchorElement={tooltipAnchor}>React tooltip</Tooltip>
         </div>
 
         <Menu>
@@ -442,8 +442,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <TabPanel id="panelTwo">This is panel two content.</TabPanel>
           <TabPanel id="panelThree">This is panel three content.</TabPanel>
         </Tabs>
-
-        {` <TreeView>
+        <TreeView>
           {/* @ts-expect-error unknown event onExpand */}
           <TreeItem onSelect={onEvent} onExpand={onEvent}>
             Root item 1
@@ -473,7 +472,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
             <TreeItem>Nested item 3</TreeItem>
           </TreeItem>
           <TreeItem>Root item 3</TreeItem>
-        </TreeView>`}
+        </TreeView>
       </div>
     </div>
   );

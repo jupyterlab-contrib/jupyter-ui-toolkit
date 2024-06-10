@@ -10,13 +10,10 @@ import { useProperties } from './react-utils.js';
 
 export const Tab = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { disabled, $presentation, template, styles, ...filteredProps } = props;
+  const { disabled, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'disabled', props.disabled);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

@@ -18,9 +18,6 @@ export const DataGridCell = forwardRef((props, forwardedRef) => {
     gridColumn,
     rowData,
     columnDefinition,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -30,9 +27,6 @@ export const DataGridCell = forwardRef((props, forwardedRef) => {
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'rowData', props.rowData);
   useProperties(ref, 'columnDefinition', props.columnDefinition);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({

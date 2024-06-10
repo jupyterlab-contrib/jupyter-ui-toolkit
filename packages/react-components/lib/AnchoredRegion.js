@@ -35,9 +35,6 @@ export const AnchoredRegion = forwardRef((props, forwardedRef) => {
     verticalPosition,
     horizontalPosition,
     update,
-    $presentation,
-    template,
-    styles,
     ...filteredProps
   } = props;
 
@@ -51,9 +48,6 @@ export const AnchoredRegion = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'verticalPosition', props.verticalPosition);
   useProperties(ref, 'horizontalPosition', props.horizontalPosition);
   useProperties(ref, 'update', props.update);
-  useProperties(ref, '$presentation', props.$presentation);
-  useProperties(ref, 'template', props.template);
-  useProperties(ref, 'styles', props.styles);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ({
