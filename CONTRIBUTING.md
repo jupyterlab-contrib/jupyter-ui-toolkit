@@ -30,6 +30,25 @@ cd packages/components
 yarn start
 ```
 
+### React components
+
+The react components wrapper are initialized using [custom-element-react-wrappers](https://github.com/break-stuff/cem-tools/tree/main/packages/react-wrappers).
+The initialization can be reproduced by running in `packages/components` the script `yarn run build:react`.
+Unfortunately the initial code needs lots of changes to be usable in this case:
+
+- Changing the typing to inherit from `React.AllHTMLAttributes` - minus some event handlers that needs to be overridden.
+- Changing `useImperativeHandle` to expose the full HTMLElement using:
+
+```js
+useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
+```
+
+- Remove internal fast-specific properties like `$presentation`, `styles` and `template`.
+- The tag name, the properties and the events are extracted from the doc string of
+  the element class definition in `packages/components`. You may need to add some
+  new doc tags to get all the properties and events.
+
+
 ### JupyterLab demo extension
 
 To test locally the JupyterLab demo extension, using `conda` package manager:

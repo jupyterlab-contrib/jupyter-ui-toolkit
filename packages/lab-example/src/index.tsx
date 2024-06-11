@@ -240,8 +240,14 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
   const onChange = (event: any) => {
     alert(`React on React change event: ${event?.target?.value}`);
   };
+  const onConsole = (event: any) => {
+    console.log('React on react event: ', event);
+  };
   const onChangeConsole = (event: any) => {
     console.log(`React on React change event: ${event?.target?.value}`);
+  };
+  const onCheckedConsole = (event: any) => {
+    console.log(`React on React change event: ${event?.target?.checked}`);
   };
   const onClick = () => {
     alert('Reacting on React click event.');
@@ -274,10 +280,14 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         >
           Search Label
         </Search>
-        <TextField value="Populated text" onChange={onChange}>
+        <TextField
+          value="Populated text"
+          onChange={onChange}
+          onInput={onChangeConsole}
+        >
           Text Field Label
         </TextField>
-        <NumberField value="10" onChange={onChange}>
+        <NumberField value="10" onChange={onChange} onInput={onChangeConsole}>
           Number Field Label
         </NumberField>
         {/*        <DateField value="2021-09-12" onChange={onChange}>
@@ -301,7 +311,7 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </div>
         <div className="jp-FlexColumn">
           <label>Combobox</label>
-          <Combobox onChange={onChange} onInput={onChangeConsole}>
+          <Combobox onChange={onChange} onInput={onConsole}>
             <Option>Option Label #1</Option>
             <Option>Option Label #2</Option>
             <Option>Option Label #3</Option>
@@ -327,15 +337,15 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </RadioGroup>
         <div className="jp-FlexColumn">
           <label>Checkboxes</label>
-          <Checkbox onChange={onChangeConsole} checked>
+          <Checkbox onChange={onCheckedConsole} checked>
             Label
           </Checkbox>
-          <Checkbox onChange={onChangeConsole}>Label</Checkbox>
-          <Checkbox onChange={onChangeConsole} disabled>
+          <Checkbox onChange={onCheckedConsole}>Label</Checkbox>
+          <Checkbox onChange={onCheckedConsole} disabled>
             Label
           </Checkbox>
         </div>
-        <Switch onChange={onChangeConsole}>Switch</Switch>
+        <Switch onChange={onCheckedConsole}>Switch</Switch>
         <Disclosure title="Disclosure">
           <p>Very long blabla</p>
         </Disclosure>
@@ -378,10 +388,12 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
 
         <Menu>
           <MenuItem role="menuitemcheckbox">Menu item 1</MenuItem>
-          <MenuItem>
+          <MenuItem onExpand={onConsole} onChange={onConsole}>
             Menu item 2
             <Menu>
-              <MenuItem role="menuitemcheckbox">Checkbox 1</MenuItem>
+              <MenuItem role="menuitemcheckbox" onChange={onConsole}>
+                Checkbox 1
+              </MenuItem>
               <MenuItem>Nested Menu item 1.1</MenuItem>
               <MenuItem>Nested Menu item 1.2</MenuItem>
               <MenuItem>Nested Menu item 1.3</MenuItem>

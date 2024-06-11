@@ -6,24 +6,15 @@ import React, {
 } from 'react';
 import {
   provideJupyterDesignSystem,
-  jpNumberField
+  jpDateField
 } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpNumberField());
+provideJupyterDesignSystem().register(jpDateField());
 import { useEventListener, useProperties } from './react-utils.js';
 
-export const NumberField = forwardRef((props, forwardedRef) => {
+export const DateField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
-    readonly,
-    hideStep,
-    appearance,
-    placeholder,
-    list,
-    readOnly,
     autofocus,
-    maxlength,
-    minlength,
-    size,
     step,
     max,
     min,
@@ -35,11 +26,7 @@ export const NumberField = forwardRef((props, forwardedRef) => {
   useEventListener(ref, 'change', props.onChange);
 
   /** Properties - run whenever a property has changed */
-  useProperties(ref, 'readOnly', props.readOnly);
   useProperties(ref, 'autofocus', props.autofocus);
-  useProperties(ref, 'maxlength', props.maxlength);
-  useProperties(ref, 'minlength', props.minlength);
-  useProperties(ref, 'size', props.size);
   useProperties(ref, 'step', props.step);
   useProperties(ref, 'max', props.max);
   useProperties(ref, 'min', props.min);
@@ -48,20 +35,15 @@ export const NumberField = forwardRef((props, forwardedRef) => {
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
   return React.createElement(
-    'jp-number-field',
+    'jp-date-field',
     {
       ref,
       ...filteredProps,
-      appearance: props.appearance,
-      placeholder: props.placeholder,
-      list: props.list,
       class: props.className,
       exportparts: props.exportparts,
       for: props.htmlFor,
       part: props.part,
       tabindex: props.tabIndex,
-      readonly: props.readonly ? '' : undefined,
-      'hide-step': props.hideStep ? '' : undefined,
       style: { ...props.style }
     },
     props.children

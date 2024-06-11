@@ -2,7 +2,7 @@ import { TreeItem as TreeItemElement } from '@jupyter/web-components';
 
 export type { TreeItemElement };
 
-export interface TreeItemProps extends React.AllHTMLAttributes<HTMLElement> {
+export interface TreeItemProps extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onSelect' >{
   /**
    * Allows getting a ref to the component instance.
    */
