@@ -152,5 +152,3 @@ playwright-report/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-
-!**/custom-elements.json
