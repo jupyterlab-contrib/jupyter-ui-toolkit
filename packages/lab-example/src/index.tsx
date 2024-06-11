@@ -14,7 +14,7 @@ import {
   Checkbox,
   Combobox,
   DataGrid,
-  // DateField,
+  DateField,
   Disclosure,
   Divider,
   Listbox,
@@ -290,9 +290,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         <NumberField value="10" onChange={onChange} onInput={onChangeConsole}>
           Number Field Label
         </NumberField>
-        {/*        <DateField value="2021-09-12" onChange={onChange}>
+        <DateField value="2021-09-12" onChange={onChange}>
           Date Field Label
-  </DateField> */}
+        </DateField>
         <div className="jp-FlexColumn">
           <label>Select</label>
           <Select onChange={onChange}>
@@ -319,7 +319,9 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
         </div>
       </div>
       <div className="jp-FlexColumn" style={{ gridColumn: 2 }}>
-        <TextArea>Text Area Label</TextArea>
+        <TextArea onChange={onChangeConsole} onSelect={onConsole}>
+          Text Area Label
+        </TextArea>
         <Slider min={0} max={100} onChange={onChangeConsole}>
           <SliderLabel position="0">0%</SliderLabel>
           <SliderLabel position="50">50%</SliderLabel>

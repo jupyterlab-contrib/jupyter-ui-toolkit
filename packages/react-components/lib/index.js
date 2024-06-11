@@ -10,6 +10,7 @@ export * from './Button.js';
 export * from './Card.js';
 export * from './Checkbox.js';
 export * from './Combobox.js';
+export * from './DateField.js';
 export * from './DataGridCell.js';
 export * from './DataGridRow.js';
 export * from './DataGrid.js';

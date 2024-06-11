@@ -5,7 +5,7 @@ export type { DateFieldElement };
 export interface DateFieldProps
   extends Omit<
     React.AllHTMLAttributes<HTMLInputElement>,
-    'onChange' | 'onInput'
+    'onChange' | 'onInput' | 'max' | 'min'
   > {
   /**
    * Allows getting a ref to the component instance.
@@ -17,9 +17,6 @@ export interface DateFieldProps
 
   /** The appearance of the element. */
   appearance?: DateFieldElement['appearance'];
-
-  /** Sets the placeholder value of the element, generally used to provide a hint to the user. */
-  placeholder?: DateFieldElement['placeholder'];
 
   /** Allows associating a https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist | datalist to the element by https://developer.mozilla.org/en-US/docs/Web/API/Element/id. */
   list?: DateFieldElement['list'];
