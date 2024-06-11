@@ -8,7 +8,7 @@ export interface TreeViewProps extends React.AllHTMLAttributes<HTMLElement> {
    */
   ref?: React.Ref<TreeViewElement>;
 
-  /** /**
+  /**
   When true, the control will be appear expanded by user interaction. */
   renderCollapsedNodes?: boolean;
 

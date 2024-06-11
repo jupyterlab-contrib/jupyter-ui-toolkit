@@ -21,10 +21,10 @@ export interface TreeItemProps extends React.AllHTMLAttributes<HTMLElement> {
   isNestedItem?: TreeItemElement['isNestedItem'];
 
   /** Fires a custom 'expanded-change' event when the expanded state changes */
-  onExpandedChange?: (event: CustomEvent) => void;
+  onExpand?: (event: CustomEvent) => void;
 
   /** Fires a custom 'selected-change' event when the selected state changes */
-  onSelectedChange?: (event: CustomEvent) => void;
+  onSelect?: (event: CustomEvent) => void;
 }
 
 /**

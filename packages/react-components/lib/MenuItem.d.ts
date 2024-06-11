@@ -22,7 +22,7 @@ export interface MenuItemProps
   checked?: MenuItemElement['checked'];
 
   /** Fires a custom 'expanded-change' event when the expanded state changes */
-  onExpandedChange?: (event: CustomEvent) => void;
+  onExpand?: (event: CustomEvent) => void;
 
   /** Fires a custom 'change' event when a non-submenu item with a role of `menuitemcheckbox`, `menuitemradio`, or `menuitem` is invoked */
   onChange?: (event: CustomEvent) => void;

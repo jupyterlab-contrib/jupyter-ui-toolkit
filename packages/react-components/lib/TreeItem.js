@@ -22,8 +22,8 @@ export const TreeItem = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
-  useEventListener(ref, 'expanded-change', props.onExpandedChange);
-  useEventListener(ref, 'selected-change', props.onSelectedChange);
+  useEventListener(ref, 'expanded-change', props.onExpand);
+  useEventListener(ref, 'selected-change', props.onSelect);
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'expanded', props.expanded);

@@ -22,7 +22,7 @@ export const MenuItem = forwardRef((props, forwardedRef) => {
   } = props;
 
   /** Event listeners - run once */
-  useEventListener(ref, 'expanded-change', props.onExpandedChange);
+  useEventListener(ref, 'expanded-change', props.onExpand);
   useEventListener(ref, 'change', props.onChange);
 
   /** Properties - run whenever a property has changed */

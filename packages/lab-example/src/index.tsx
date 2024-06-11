@@ -443,7 +443,6 @@ function Artwork(props: { dataRef: React.Ref<WebDataGrid> }): JSX.Element {
           <TabPanel id="panelThree">This is panel three content.</TabPanel>
         </Tabs>
         <TreeView>
-          {/* @ts-expect-error unknown event onExpand */}
           <TreeItem onSelect={onEvent} onExpand={onEvent}>
             Root item 1
             <TreeItem expanded>
