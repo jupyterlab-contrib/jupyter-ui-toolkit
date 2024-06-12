@@ -3,7 +3,7 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  Radio as BaseRadio,
+  Radio,
   FoundationElementTemplate,
   RadioOptions
 } from '@microsoft/fast-foundation';
@@ -11,7 +11,7 @@ import { radioStyles as styles } from './radio.styles.js';
 import { ViewTemplate, html, slotted } from '@microsoft/fast-element';
 
 export const radioTemplate: FoundationElementTemplate<
-  ViewTemplate<Radio>,
+  ViewTemplate<JupyterRadio>,
   RadioOptions
 > = (context, definition) => html`
   <template
@@ -41,10 +41,11 @@ export const radioTemplate: FoundationElementTemplate<
 `;
 
 /**
- * Base class for Radio
+ * Radio class
  * @public
+ * @tagname jp-radio
  */
-export class Radio extends BaseRadio {}
+class JupyterRadio extends Radio {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Radio} registration for configuring the component with a DesignSystem.
@@ -55,9 +56,9 @@ export class Radio extends BaseRadio {}
  * @remarks
  * Generates HTML Element: `<jp-radio>`
  */
-export const jpRadio = Radio.compose<RadioOptions>({
+export const jpRadio = JupyterRadio.compose<RadioOptions>({
   baseName: 'radio',
-  baseClass: BaseRadio,
+  baseClass: Radio,
   template: radioTemplate,
   styles,
   checkedIndicator: /* html */ `
@@ -65,4 +66,4 @@ export const jpRadio = Radio.compose<RadioOptions>({
     `
 });
 
-export { styles as radioStyles };
+export { JupyterRadio as Radio, styles as radioStyles };

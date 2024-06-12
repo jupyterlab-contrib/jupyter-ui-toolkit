@@ -37,6 +37,10 @@ const INVALID_DATE = 'Invalid Date';
  * Based largely on the {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date | <input type="date" /> element }.
  *
  * @public
+ * @tagname jp-date-field
+ *
+ * @fires input - Fires a custom 'input' event when the value has changed
+ * @fires change - Fires a custom 'change' event when the value has changed
  */
 export class DateField extends FormAssociatedDateField {
   /**

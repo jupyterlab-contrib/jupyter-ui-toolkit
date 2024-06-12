@@ -23,6 +23,7 @@ export * from './button/index.js';
 export * from './card/index.js';
 export * from './checkbox/index.js';
 export * from './combobox/index.js';
+export * from './date-field/index.js';
 export * from './data-grid/index.js';
 export * from './design-system-provider/index.js';
 export { Palette, PaletteRGB } from './color/palette.js';

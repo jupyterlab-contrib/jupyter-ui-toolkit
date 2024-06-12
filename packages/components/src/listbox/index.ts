@@ -4,17 +4,20 @@
 
 import { css, ElementStyles } from '@microsoft/fast-element';
 import {
-  ListboxElement as FoundationListboxElement,
+  ListboxElement,
   listboxTemplate as template
 } from '@microsoft/fast-foundation';
 import { listboxStyles as styles } from './listbox.styles.js';
 
 /**
- * Base class for Listbox.
+ * Listbox class
  *
  * @public
+ * @tagname jp-listbox
+ *
+ * @fires change - Fires a custom 'change' event when the value has changed
  */
-export class Listbox extends FoundationListboxElement {
+class JupyterListbox extends ListboxElement {
   /**
    * An internal stylesheet to hold calculated CSS custom properties.
    *
@@ -67,11 +70,11 @@ export class Listbox extends FoundationListboxElement {
  * @public
  *
  */
-export const jpListbox = Listbox.compose({
+export const jpListbox = JupyterListbox.compose({
   baseName: 'listbox',
-  baseClass: FoundationListboxElement,
+  baseClass: ListboxElement,
   template,
   styles
 });
 
-export { styles as listboxStyles };
+export { JupyterListbox as Listbox, styles as listboxStyles };

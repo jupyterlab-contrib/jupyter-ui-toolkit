@@ -3,11 +3,19 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  BaseProgress as ProgressRing,
+  BaseProgress,
   ProgressRingOptions,
   progressRingTemplate as template
 } from '@microsoft/fast-foundation';
 import { progressRingStyles as styles } from './progress-ring.styles.js';
+
+/**
+ * Progress ring class
+ *
+ * @public
+ * @tagname jp-progress-ring
+ */
+class JupyterProgressRing extends BaseProgress {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#BaseProgress} registration for configuring the component with a DesignSystem.
@@ -18,8 +26,9 @@ import { progressRingStyles as styles } from './progress-ring.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-progress-ring>`
  */
-export const jpProgressRing = ProgressRing.compose<ProgressRingOptions>({
+export const jpProgressRing = JupyterProgressRing.compose<ProgressRingOptions>({
   baseName: 'progress-ring',
+  baseClass: BaseProgress,
   template,
   styles,
   indeterminateIndicator: /* html */ `
@@ -42,10 +51,4 @@ export const jpProgressRing = ProgressRing.compose<ProgressRingOptions>({
     `
 });
 
-/**
- * Base class for ProgressRing
- * @public
- */
-export { ProgressRing };
-
-export { styles as progressRingStyles };
+export { JupyterProgressRing as ProgressRing, styles as progressRingStyles };

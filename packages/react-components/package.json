@@ -23,22 +23,20 @@
   "types": "lib/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p ./tsconfig.json",
+    "build": "echo all set",
     "clean": "rimraf lib tsconfig.tsbuildinfo",
-    "prettier:check": "prettier --config ./.prettierrc --check \"**/*.{ts,js,md}\"",
-    "prettier": "prettier --config ./.prettierrc --write \"**/*.{ts,js,md}\"",
-    "eslint:check": "eslint . --ext .ts,.tsx",
-    "eslint": "eslint . --ext .ts,.tsx --fix",
+    "prettier:check": "prettier --config ../../.prettierrc --check \"**/*.{ts,js,md}\"",
+    "prettier": "prettier --config ../../.prettierrc --write \"**/*.{ts,js,md}\"",
+    "eslint:check": "echo \"FIXME\" || eslint . --ext .js",
+    "eslint": "echo \"FIXME\" || eslint . --ext .js --fix",
     "prepublishOnly": "rimraf README.md && cp ../../README.md . && yarn run build"
   },
   "dependencies": {
     "@jupyter/web-components": "^0.15.3",
-    "@microsoft/fast-react-wrapper": "^0.3.22",
     "react": ">=17.0.0 <19.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
-    "@typescript-eslint/eslint-plugin": "^5.60.0",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.25.2",

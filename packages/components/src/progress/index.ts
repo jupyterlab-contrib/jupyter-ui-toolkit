@@ -3,11 +3,19 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  BaseProgress as Progress,
+  BaseProgress,
   ProgressOptions,
   progressTemplate as template
 } from '@microsoft/fast-foundation';
 import { progressStyles as styles } from './progress.styles.js';
+
+/**
+ * Progress bar class
+ *
+ * @public
+ * @tagname jp-progress
+ */
+class JupyterProgress extends BaseProgress {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#BaseProgress} registration for configuring the component with a DesignSystem.
@@ -18,8 +26,9 @@ import { progressStyles as styles } from './progress.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-progress>`
  */
-export const jpProgress = Progress.compose<ProgressOptions>({
+export const jpProgress = JupyterProgress.compose<ProgressOptions>({
   baseName: 'progress',
+  baseClass: BaseProgress,
   template,
   styles,
   indeterminateIndicator1: /* html */ `
@@ -30,10 +39,4 @@ export const jpProgress = Progress.compose<ProgressOptions>({
     `
 });
 
-/**
- * Base class for Progress
- * @public
- */
-export { Progress };
-
-export { styles as progressStyles };
+export { JupyterProgress as Progress, styles as progressStyles };

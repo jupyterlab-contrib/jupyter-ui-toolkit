@@ -15,17 +15,34 @@ import { dataGridRowStyles } from './data-grid-row.styles.js';
 import { dataGridCellStyles } from './data-grid-cell.styles.js';
 
 /**
+ * DataGridCell class
+ *
+ * @public
+ * @tagname jp-data-grid-cell
+ */
+class JupyterDataGridCell extends DataGridCell {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#DataGridCell} registration for configuring the component with a DesignSystem.
  *
  * @public
  * @remarks
  * Generates HTML Element: `<jp-data-grid-cell>`
  */
-export const jpDataGridCell = DataGridCell.compose({
+export const jpDataGridCell = JupyterDataGridCell.compose({
   baseName: 'data-grid-cell',
+  baseClass: DataGridCell,
   template: dataGridCellTemplate,
   styles: dataGridCellStyles
 });
+
+/**
+ * DataGridRow class
+ *
+ * @public
+ * @tagname jp-data-grid-row
+ */
+class JupyterDataGridRow extends DataGridRow {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#DataGridRow} registration for configuring the component with a DesignSystem.
@@ -34,11 +51,20 @@ export const jpDataGridCell = DataGridCell.compose({
  * @remarks
  * Generates HTML Element: `<jp-data-grid-row>`
  */
-export const jpDataGridRow = DataGridRow.compose({
+export const jpDataGridRow = JupyterDataGridRow.compose({
   baseName: 'data-grid-row',
+  baseClass: DataGridRow,
   template: dataGridRowTemplate,
   styles: dataGridRowStyles
 });
+
+/**
+ * DataGrid class
+ *
+ * @public
+ * @tagname jp-data-grid
+ */
+class JupyterDataGrid extends DataGrid {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#DataGrid} registration for configuring the component with a DesignSystem.
@@ -47,28 +73,18 @@ export const jpDataGridRow = DataGridRow.compose({
  * @remarks
  * Generates HTML Element: `<jp-data-grid>`
  */
-export const jpDataGrid = DataGrid.compose({
+export const jpDataGrid = JupyterDataGrid.compose({
   baseName: 'data-grid',
+  baseClass: DataGrid,
   template: dataGridTemplate,
   styles: dataGridStyles
 });
 
-/**
- * Base class for DataGrid
- * @public
- */
-export { DataGrid };
-
-/**
- * Base class for DataGridRow
- * @public
- */
-export { DataGridRow };
-
-/**
- * Base class for DataGridCell
- * @public
- */
-export { DataGridCell };
-
-export { dataGridCellStyles, dataGridStyles, dataGridRowStyles };
+export {
+  JupyterDataGrid as DataGrid,
+  JupyterDataGridRow as DataGridRow,
+  JupyterDataGridCell as DataGridCell,
+  dataGridCellStyles,
+  dataGridStyles,
+  dataGridRowStyles
+};

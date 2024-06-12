@@ -6,6 +6,14 @@ import { Badge, badgeTemplate as template } from '@microsoft/fast-foundation';
 import { badgeStyles as styles } from './badge.styles.js';
 
 /**
+ * Badge class
+ *
+ * @public
+ * @tagname jp-badge
+ */
+class JupyterBadge extends Badge {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#Badge} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#badgeTemplate}
  *
@@ -14,16 +22,13 @@ import { badgeStyles as styles } from './badge.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-badge>`
  */
-export const jpBadge = Badge.compose({
+export const jpBadge = JupyterBadge.compose({
   baseName: 'badge',
+  baseClass: Badge,
   template,
   styles
 });
 
-/**
- * Base class for Badge
- * @public
- */
-export { Badge };
+export { JupyterBadge as Badge };
 
 export { styles as badgeStyles };

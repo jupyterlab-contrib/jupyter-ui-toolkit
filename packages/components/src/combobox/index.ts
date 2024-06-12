@@ -5,17 +5,21 @@
 import { attr, css, ElementStyles } from '@microsoft/fast-element';
 import type { ComboboxOptions } from '@microsoft/fast-foundation';
 import {
-  Combobox as FoundationCombobox,
+  Combobox,
   comboboxTemplate as template
 } from '@microsoft/fast-foundation';
 import { heightNumberAsToken } from '../design-tokens.js';
 import { comboboxStyles as styles } from './combobox.styles.js';
 
 /**
- * Base class for Combobox.
+ * Combobox class
+ *
  * @public
+ * @tagname jp-combobox
+ *
+ * @fires input - Fires a custom 'input' event when the value has changed
  */
-export class Combobox extends FoundationCombobox {
+class JupyterCombobox extends Combobox {
   /**
    * Whether the combobox has a compact layout or not.
    *
@@ -145,9 +149,9 @@ export class Combobox extends FoundationCombobox {
  * Generates HTML Element: `<jp-combobox>`
  *
  */
-export const jpCombobox = Combobox.compose<ComboboxOptions>({
+export const jpCombobox = JupyterCombobox.compose<ComboboxOptions>({
   baseName: 'combobox',
-  baseClass: FoundationCombobox,
+  baseClass: Combobox,
   template,
   styles,
   shadowOptions: {
@@ -166,5 +170,7 @@ export const jpCombobox = Combobox.compose<ComboboxOptions>({
         </svg>
     `
 });
+
+export { JupyterCombobox as Combobox };
 
 export { styles as comboboxStyles };

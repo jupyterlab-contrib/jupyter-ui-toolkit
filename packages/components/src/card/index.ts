@@ -4,7 +4,7 @@
 
 import {
   composedParent,
-  Card as FoundationCard,
+  Card,
   cardTemplate as template
 } from '@microsoft/fast-foundation';
 import { Swatch } from '../color/swatch.js';
@@ -12,9 +12,12 @@ import { fillColor, neutralFillLayerRecipe } from '../design-tokens.js';
 import { cardStyles as styles } from './card.styles.js';
 
 /**
- * @internal
+ * Card class
+ *
+ * @public
+ * @tagname jp-card
  */
-export class Card extends FoundationCard {
+class JupyterCard extends Card {
   connectedCallback() {
     super.connectedCallback();
 
@@ -41,11 +44,13 @@ export class Card extends FoundationCard {
  * @remarks
  * Generates HTML Element: `<jp-card>`
  */
-export const jpCard = Card.compose({
+export const jpCard = JupyterCard.compose({
   baseName: 'card',
-  baseClass: FoundationCard,
+  baseClass: Card,
   template,
   styles
 });
+
+export { JupyterCard as Card };
 
 export { styles as cardStyles };

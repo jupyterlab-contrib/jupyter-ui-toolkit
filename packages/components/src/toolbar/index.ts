@@ -260,7 +260,7 @@ export class FoundationToolbar extends FoundationElement {
     const previousFocusedElement = this.focusableElements?.[this.activeIndex];
 
     this.focusableElements = this.allSlottedItems.reduce(
-      Toolbar.reduceFocusableItems,
+      FoundationToolbar.reduceFocusableItems,
       []
     );
 
@@ -326,7 +326,10 @@ export class FoundationToolbar extends FoundationElement {
 
     if (element.childElementCount) {
       return elements.concat(
-        Array.from(element.children).reduce(Toolbar.reduceFocusableItems, [])
+        Array.from(element.children).reduce(
+          FoundationToolbar.reduceFocusableItems,
+          []
+        )
       );
     }
 
@@ -388,7 +391,8 @@ export interface FoundationToolbar extends StartEnd, DelegatesARIAToolbar {}
 applyMixins(FoundationToolbar, StartEnd, DelegatesARIAToolbar);
 
 /**
- * @internal
+ * @public
+ * @tagname jp-toolbar
  */
 export class Toolbar extends FoundationToolbar {
   connectedCallback() {

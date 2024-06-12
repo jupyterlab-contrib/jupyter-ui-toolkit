@@ -25,8 +25,9 @@
   "scripts": {
     "start": "storybook dev -p 6006",
     "start:ci": "storybook dev -p 6006 --ci --quiet",
-    "build": "rollup -c && tsc -p ./tsconfig.json",
+    "build": "rollup -c && tsc -p ./tsconfig.json && custom-elements-manifest analyze",
     "build:docs": "storybook build",
+    "build:react": "BUILD_REACT=1 custom-elements-manifest analyze",
     "clean": "yarn clean:lib && yarn clean:test",
     "clean:lib": "rimraf dist",
     "clean:test": "rimraf test-results tests-out/**/*.js tests-out/**/*.js.map tsconfig.playwright.tsbuildinfo",
@@ -49,6 +50,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
+    "@custom-elements-manifest/analyzer": "^0.10.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@microsoft/api-extractor": "^7.36.0",
@@ -69,6 +71,7 @@
     "@types/node": "^18.0.0",
     "@types/webpack-env": "^1.15.2",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "custom-element-react-wrappers": "^1.6.0",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.25.2",
@@ -98,5 +101,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "customElements": "dist/custom-elements.json"
 }

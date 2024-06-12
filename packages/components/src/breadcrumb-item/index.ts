@@ -10,6 +10,14 @@ import {
 import { breadcrumbItemStyles as styles } from './breadcrumb-item.styles.js';
 
 /**
+ * Breadcrumb item class
+ *
+ * @public
+ * @tagname jp-breadcrumb-item
+ */
+class JupyterBreadcrumbItem extends BreadcrumbItem {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#BreadcrumbItem} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#breadcrumbItemTemplate}
  *
@@ -18,20 +26,18 @@ import { breadcrumbItemStyles as styles } from './breadcrumb-item.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-breadcrumb-item>`
  */
-export const jpBreadcrumbItem = BreadcrumbItem.compose<BreadcrumbItemOptions>({
-  baseName: 'breadcrumb-item',
-  template,
-  styles,
-  separator: '/',
-  shadowOptions: {
-    delegatesFocus: true
-  }
-});
+export const jpBreadcrumbItem =
+  JupyterBreadcrumbItem.compose<BreadcrumbItemOptions>({
+    baseName: 'breadcrumb-item',
+    baseClass: BreadcrumbItem,
+    template,
+    styles,
+    separator: '/',
+    shadowOptions: {
+      delegatesFocus: true
+    }
+  });
 
-/**
- * Base class for BreadcrumbItem
- * @public
- */
-export { BreadcrumbItem };
+export { JupyterBreadcrumbItem as BreadcrumbItem };
 
 export { styles as breadcrumbItemStyles };

@@ -10,6 +10,14 @@ import {
 import { accordionItemStyles as styles } from './accordion-item.styles.js';
 
 /**
+ * Accordion item class
+ *
+ * @public
+ * @tagname jp-accordion-item
+ */
+class JupyterAccordionItem extends AccordionItem {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#AccordionItem} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#accordionItemTemplate}
  *
@@ -18,11 +26,13 @@ import { accordionItemStyles as styles } from './accordion-item.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-accordion-item>`
  */
-export const jpAccordionItem = AccordionItem.compose<AccordionItemOptions>({
-  baseName: 'accordion-item',
-  template,
-  styles,
-  collapsedIcon: /* html */ `
+export const jpAccordionItem =
+  JupyterAccordionItem.compose<AccordionItemOptions>({
+    baseName: 'accordion-item',
+    baseClass: AccordionItem,
+    template,
+    styles,
+    collapsedIcon: /* html */ `
         <svg
             width="20"
             height="20"
@@ -36,7 +46,7 @@ export const jpAccordionItem = AccordionItem.compose<AccordionItemOptions>({
             />
         </svg>
     `,
-  expandedIcon: /* html */ `
+    expandedIcon: /* html */ `
         <svg
             width="20"
             height="20"
@@ -51,12 +61,8 @@ export const jpAccordionItem = AccordionItem.compose<AccordionItemOptions>({
             />
         </svg>
     `
-});
+  });
 
-/**
- * Base class for Accordion item
- * @public
- */
-export { AccordionItem };
+export { JupyterAccordionItem as AccordionItem };
 
 export { styles as accordionItemStyles };

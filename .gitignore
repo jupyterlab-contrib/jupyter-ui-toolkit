@@ -1,5 +1,6 @@
 *.bundle.*
 lib/
+!packages/react-components/lib/
 node_modules/
 *.log
 .eslintcache
@@ -30,11 +31,10 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+**/dist/*
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/

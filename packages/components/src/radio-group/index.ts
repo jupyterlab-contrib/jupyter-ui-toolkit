@@ -3,24 +3,25 @@
 // Distributed under the terms of the Modified BSD License.
 
 import {
-  RadioGroup as BaseRadioGroup,
+  RadioGroup,
   radioGroupTemplate as template
 } from '@microsoft/fast-foundation';
 import { radioGroupStyles as styles } from './radio-group.styles.js';
 import { Observable } from '@microsoft/fast-element';
 
 /**
- * Base class for RadioGroup
+ * RadioGroup class
  * @public
+ * @tagname jp-radio-group
  */
-export class RadioGroup extends BaseRadioGroup {
+class JupyterRadioGroup extends RadioGroup {
   constructor() {
     super();
 
     // FIXME work around for private slottedRadioButtonsChanged
     const notifier = Observable.getNotifier(this);
     const handler = {
-      handleChange(source: RadioGroup, propertyName: string) {
+      handleChange(source: JupyterRadioGroup, propertyName: string) {
         if (propertyName === 'slottedRadioButtons') {
           source.ariaInvalidChanged();
         }
@@ -51,11 +52,11 @@ export class RadioGroup extends BaseRadioGroup {
  * @remarks
  * Generates HTML Element: `<jp-radio-group>`
  */
-export const jpRadioGroup = RadioGroup.compose({
+export const jpRadioGroup = JupyterRadioGroup.compose({
   baseName: 'radio-group',
-  baseClass: BaseRadioGroup,
+  baseClass: RadioGroup,
   template,
   styles
 });
 
-export { styles as radioGroupStyles };
+export { JupyterRadioGroup as RadioGroup, styles as radioGroupStyles };

@@ -10,6 +10,14 @@ import {
 import { menuItemStyles as styles } from './menu-item.styles.js';
 
 /**
+ * Menu item class
+ *
+ * @public
+ * @tagname jp-menu-item
+ */
+class JupyterMenuItem extends MenuItem {}
+
+/**
  * A function that returns a {@link @microsoft/fast-foundation#MenuItem} registration for configuring the component with a DesignSystem.
  * Implements {@link @microsoft/fast-foundation#menuItemTemplate}
  *
@@ -18,8 +26,9 @@ import { menuItemStyles as styles } from './menu-item.styles.js';
  * @remarks
  * Generates HTML Element: `<jp-menu-item>`
  */
-export const jpMenuItem = MenuItem.compose<MenuItemOptions>({
+export const jpMenuItem = JupyterMenuItem.compose<MenuItemOptions>({
   baseName: 'menu-item',
+  baseClass: MenuItem,
   template,
   styles,
   checkboxIndicator: /* html */ `
@@ -53,10 +62,4 @@ export const jpMenuItem = MenuItem.compose<MenuItemOptions>({
     `
 });
 
-/**
- * Base class for MenuItem
- * @public
- */
-export { MenuItem };
-
-export { styles as menuItemStyles };
+export { JupyterMenuItem as MenuItem, styles as menuItemStyles };
