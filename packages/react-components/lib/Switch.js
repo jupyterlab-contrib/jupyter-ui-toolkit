@@ -1,20 +1,16 @@
+import { jpSwitch, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpSwitch } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpSwitch());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpSwitch());
 
 export const Switch = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    readonly,
-    readOnly,
-    ...filteredProps
-  } = props;
+  const { readonly, readOnly, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);

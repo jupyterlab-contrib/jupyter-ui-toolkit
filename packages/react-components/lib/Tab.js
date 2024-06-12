@@ -1,12 +1,12 @@
+import { jpTab, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpTab } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpTab());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpTab());
 
 export const Tab = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

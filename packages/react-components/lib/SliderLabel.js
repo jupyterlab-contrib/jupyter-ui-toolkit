@@ -1,24 +1,19 @@
+import {
+  jpSliderLabel,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpSliderLabel
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpSliderLabel());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpSliderLabel());
 
 export const SliderLabel = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    hideMark,
-    disabled,
-    position,
-    ...filteredProps
-  } = props;
+  const { hideMark, disabled, position, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
 

@@ -1,12 +1,12 @@
+import { jpMenu, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpMenu } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpMenu());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpMenu());
 
 export const Menu = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

@@ -1,25 +1,19 @@
+import {
+  jpMenuItem,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpMenuItem
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpMenuItem());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpMenuItem());
 
 export const MenuItem = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    role,
-    disabled,
-    expanded,
-    checked,
-    ...filteredProps
-  } = props;
+  const { role, disabled, expanded, checked, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'expanded-change', props.onExpand);

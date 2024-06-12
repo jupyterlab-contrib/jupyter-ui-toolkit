@@ -1,12 +1,12 @@
+import { jpTooltip, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpTooltip } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpTooltip());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpTooltip());
 
 export const Tooltip = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

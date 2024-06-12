@@ -1,25 +1,19 @@
+import {
+  jpDateField,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpDateField
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpDateField());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpDateField());
 
 export const DateField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    autofocus,
-    step,
-    max,
-    min,
-    ...filteredProps
-  } = props;
+  const { autofocus, step, max, min, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'input', props.onInput);

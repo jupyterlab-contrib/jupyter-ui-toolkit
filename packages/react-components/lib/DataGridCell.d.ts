@@ -4,11 +4,11 @@ export type { DataGridCellElement };
 
 export interface DataGridCellProps
   extends React.AllHTMLAttributes<HTMLElement> {
-    /**
-     * Allows getting a ref to the component instance.
-     */
-    ref?: React.Ref<DataGridCellElement>;
-  
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<DataGridCellElement>;
+
   /** The type of cell */
   cellType?: DataGridCellElement['cellType'];
 

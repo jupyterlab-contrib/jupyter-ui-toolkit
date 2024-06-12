@@ -1,22 +1,19 @@
+import {
+  jpPickerMenu,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpPickerMenu
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpPickerMenu());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpPickerMenu());
 
 export const PickerMenu = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    suggestionsAvailableText,
-    ...filteredProps
-  } = props;
+  const { suggestionsAvailableText, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(

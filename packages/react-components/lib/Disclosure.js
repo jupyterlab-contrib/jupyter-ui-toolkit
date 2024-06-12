@@ -1,24 +1,19 @@
+import {
+  jpDisclosure,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpDisclosure
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpDisclosure());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpDisclosure());
 
 export const Disclosure = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    appearance,
-    title,
-    expanded,
-    ...filteredProps
-  } = props;
+  const { appearance, title, expanded, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'toggle', props.onToggle);

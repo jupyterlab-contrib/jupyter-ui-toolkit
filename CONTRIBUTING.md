@@ -48,7 +48,6 @@ useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
   the element class definition in `packages/components`. You may need to add some
   new doc tags to get all the properties and events.
 
-
 ### JupyterLab demo extension
 
 To test locally the JupyterLab demo extension, using `conda` package manager:

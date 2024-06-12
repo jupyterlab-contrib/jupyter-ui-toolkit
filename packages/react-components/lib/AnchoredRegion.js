@@ -1,15 +1,15 @@
+import {
+  jpAnchoredRegion,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpAnchoredRegion
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpAnchoredRegion());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpAnchoredRegion());
 
 export const AnchoredRegion = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

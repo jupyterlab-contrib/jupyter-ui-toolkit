@@ -2,12 +2,11 @@ import { Anchor as AnchorElement } from '@jupyter/web-components';
 
 export type { AnchorElement };
 
-export interface AnchorProps
-  extends     React.AllHTMLAttributes<HTMLElement> {
-    /**
-     * Allows getting a ref to the component instance.
-     */
-    ref?: React.Ref<AnchorElement>;
+export interface AnchorProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<AnchorElement>;
   /** The appearance the anchor should have. */
   appearance?: AnchorElement['appearance'];
 

@@ -1,21 +1,16 @@
+import { jpBadge, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpBadge } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpBadge());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpBadge());
 
 export const Badge = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    fill,
-    color,
-    circular,
-    ...filteredProps
-  } = props;
+  const { fill, color, circular, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'circular', props.circular);

@@ -1,25 +1,19 @@
+import {
+  jpSkeleton,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpSkeleton
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpSkeleton());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpSkeleton());
 
 export const Skeleton = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    fill,
-    shape,
-    pattern,
-    shimmer,
-    ...filteredProps
-  } = props;
+  const { fill, shape, pattern, shimmer, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'shimmer', props.shimmer);

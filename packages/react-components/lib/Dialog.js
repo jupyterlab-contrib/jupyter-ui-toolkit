@@ -1,12 +1,12 @@
+import { jpDialog, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpDialog } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpDialog());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpDialog());
 
 export const Dialog = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

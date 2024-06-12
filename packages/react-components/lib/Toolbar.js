@@ -1,12 +1,12 @@
+import { jpToolbar, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpToolbar } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpToolbar());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpToolbar());
 
 export const Toolbar = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

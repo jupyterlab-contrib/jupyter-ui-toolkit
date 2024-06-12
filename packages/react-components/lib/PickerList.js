@@ -1,15 +1,15 @@
+import {
+  jpPickerList,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpPickerList
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpPickerList());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpPickerList());
 
 export const PickerList = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

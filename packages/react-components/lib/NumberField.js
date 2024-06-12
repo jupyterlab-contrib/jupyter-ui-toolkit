@@ -1,15 +1,15 @@
+import {
+  jpNumberField,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpNumberField
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpNumberField());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpNumberField());
 
 export const NumberField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

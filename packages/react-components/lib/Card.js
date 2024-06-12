@@ -1,12 +1,12 @@
+import { jpCard, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpCard } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpCard());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpCard());
 
 export const Card = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

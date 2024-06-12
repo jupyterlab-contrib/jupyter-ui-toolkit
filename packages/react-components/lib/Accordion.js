@@ -1,20 +1,19 @@
+import {
+  jpAccordion,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpAccordion
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpAccordion());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpAccordion());
 
 export const Accordion = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { expandMode, ...filteredProps } =
-    props;
+  const { expandMode, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);

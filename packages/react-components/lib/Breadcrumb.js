@@ -1,15 +1,15 @@
+import {
+  jpBreadcrumb,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpBreadcrumb
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpBreadcrumb());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpBreadcrumb());
 
 export const Breadcrumb = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

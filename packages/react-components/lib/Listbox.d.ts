@@ -2,7 +2,8 @@ import { Listbox as ListboxElement } from '@jupyter/web-components';
 
 export type { ListboxElement };
 
-export interface ListboxProps extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
+export interface ListboxProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
   /**
    * Allows getting a ref to the component instance.
    */

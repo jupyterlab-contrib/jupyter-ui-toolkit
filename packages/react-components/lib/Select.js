@@ -1,12 +1,12 @@
+import { jpSelect, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpSelect } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpSelect());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpSelect());
 
 export const Select = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

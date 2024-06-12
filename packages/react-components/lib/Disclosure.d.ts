@@ -2,13 +2,12 @@ import { Disclosure as DisclosureElement } from '@jupyter/web-components';
 
 export type { DisclosureElement };
 
-export interface DisclosureProps
-  extends React.AllHTMLAttributes<HTMLElement> {
-    /**
-     * Allows getting a ref to the component instance.
-     */
-    ref?: React.Ref<DisclosureElement>;
-  
+export interface DisclosureProps extends React.AllHTMLAttributes<HTMLElement> {
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<DisclosureElement>;
+
   /** The appearance the anchor should have. */
   appearance?: DisclosureElement['appearance'];
 

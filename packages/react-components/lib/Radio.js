@@ -1,21 +1,16 @@
+import { jpRadio, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpRadio } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpRadio());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpRadio());
 
 export const Radio = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    readonly,
-    readOnly,
-    name,
-    ...filteredProps
-  } = props;
+  const { readonly, readOnly, name, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);

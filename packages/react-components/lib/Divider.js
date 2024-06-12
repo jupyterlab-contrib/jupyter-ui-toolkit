@@ -1,20 +1,16 @@
+import { jpDivider, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpDivider } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpDivider());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpDivider());
 
 export const Divider = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    role,
-    orientation,
-    ...filteredProps
-  } = props;
+  const { role, orientation, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
 

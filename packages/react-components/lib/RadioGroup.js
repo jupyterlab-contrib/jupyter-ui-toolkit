@@ -1,15 +1,15 @@
+import {
+  jpRadioGroup,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpRadioGroup
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpRadioGroup());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpRadioGroup());
 
 export const RadioGroup = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

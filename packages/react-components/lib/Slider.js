@@ -1,12 +1,12 @@
+import { jpSlider, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpSlider } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpSlider());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpSlider());
 
 export const Slider = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

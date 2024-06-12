@@ -1,12 +1,12 @@
+import { jpAnchor, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpAnchor } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpAnchor());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpAnchor());
 
 export const Anchor = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

@@ -1,12 +1,12 @@
+import { jpButton, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpButton } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpButton());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpButton());
 
 export const Button = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

@@ -1,25 +1,20 @@
+import {
+  jpTreeItem,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpTreeItem
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpTreeItem());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpTreeItem());
 
 export const TreeItem = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    expanded,
-    selected,
-    disabled,
-    isNestedItem,
-    ...filteredProps
-  } = props;
+  const { expanded, selected, disabled, isNestedItem, ...filteredProps } =
+    props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'expanded-change', props.onExpand);

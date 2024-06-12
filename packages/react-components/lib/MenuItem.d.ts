@@ -4,11 +4,11 @@ export type { MenuItemElement };
 
 export interface MenuItemProps
   extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange'> {
-    /**
-     * Allows getting a ref to the component instance.
-     */
-    ref?: React.Ref<MenuItemElement>;
-  
+  /**
+   * Allows getting a ref to the component instance.
+   */
+  ref?: React.Ref<MenuItemElement>;
+
   /** The role of the element. */
   role?: MenuItemElement['role'];
 

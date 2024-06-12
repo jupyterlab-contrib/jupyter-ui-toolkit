@@ -1,24 +1,19 @@
+import {
+  jpCheckbox,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpCheckbox
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpCheckbox());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpCheckbox());
 
 export const Checkbox = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    readonly,
-    readOnly,
-    indeterminate,
-    ...filteredProps
-  } = props;
+  const { readonly, readOnly, indeterminate, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);

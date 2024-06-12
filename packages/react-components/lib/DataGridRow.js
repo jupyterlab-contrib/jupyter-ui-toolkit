@@ -1,15 +1,15 @@
+import {
+  jpDataGridRow,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpDataGridRow
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpDataGridRow());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpDataGridRow());
 
 export const DataGridRow = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

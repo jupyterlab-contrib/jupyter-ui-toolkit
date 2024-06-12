@@ -1,25 +1,20 @@
+import {
+  jpDataGridCell,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpDataGridCell
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpDataGridCell());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpDataGridCell());
 
 export const DataGridCell = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    cellType,
-    gridColumn,
-    rowData,
-    columnDefinition,
-    ...filteredProps
-  } = props;
+  const { cellType, gridColumn, rowData, columnDefinition, ...filteredProps } =
+    props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'cell-focused', props.onCellFocused);

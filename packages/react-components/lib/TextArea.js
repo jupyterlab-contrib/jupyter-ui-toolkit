@@ -1,15 +1,15 @@
+import {
+  jpTextArea,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpTextArea
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpTextArea());
 import { useEventListener, useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpTextArea());
 
 export const TextArea = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);

@@ -9,11 +9,7 @@ provideJupyterDesignSystem().register(jpTreeView());
 
 export const TreeView = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    renderCollapsedNodes,
-    currentSelected,
-    ...filteredProps
-  } = props;
+  const { renderCollapsedNodes, currentSelected, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'currentSelected', props.currentSelected);

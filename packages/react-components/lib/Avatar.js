@@ -1,24 +1,16 @@
+import { jpAvatar, provideJupyterDesignSystem } from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import { provideJupyterDesignSystem, jpAvatar } from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpAvatar());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpAvatar());
 
 export const Avatar = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    src,
-    alt,
-    fill,
-    color,
-    link,
-    shape,
-    ...filteredProps
-  } = props;
+  const { src, alt, fill, color, link, shape, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
 

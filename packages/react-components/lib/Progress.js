@@ -1,25 +1,19 @@
+import {
+  jpProgress,
+  provideJupyterDesignSystem
+} from '@jupyter/web-components';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
-  useRef,
-  useEffect
+  useRef
 } from 'react';
-import {
-  provideJupyterDesignSystem,
-  jpProgress
-} from '@jupyter/web-components';
-provideJupyterDesignSystem().register(jpProgress());
 import { useProperties } from './react-utils.js';
+provideJupyterDesignSystem().register(jpProgress());
 
 export const Progress = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const {
-    value,
-    min,
-    max,
-    paused,
-    ...filteredProps
-  } = props;
+  const { value, min, max, paused, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'value', props.value);
