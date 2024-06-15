@@ -98,6 +98,12 @@ export const controlCornerRadius = create<number>(
 export const density = create<number>('density').withDefault(0);
 /** @public */
 export const designUnit = create<number>('design-unit').withDefault(4);
+/**
+ * Adds to the density on specified element.
+ *
+ * @private
+ */
+export const elementScale = create<number>('element-scale').withDefault(0);
 /** @public */
 export const direction = create<Direction>('direction').withDefault(
   Direction.ltr

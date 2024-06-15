@@ -1,4 +1,4 @@
-import { Button as ButtonElement } from '@jupyter/web-components';
+import { Button as ButtonElement, type ButtonScale } from '@jupyter/web-components';
 
 export type { ButtonElement };
 
@@ -9,8 +9,15 @@ export interface ButtonProps
    */
   ref?: React.Ref<ButtonElement>;
 
-  /** Whether the button has a compact layout or not. */
+  /** Whether the button has a compact layout or not.
+   * @deprecated Use {@link scale} equals to `xsmall` instead.
+   */
   minimal?: boolean;
+
+  /**
+   * Scale the element compared to the theme size.
+   */
+  scale?: ButtonScale;
 
   /** The appearance the button should have. */
   appearance?: ButtonElement['appearance'];

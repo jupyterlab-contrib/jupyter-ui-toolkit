@@ -1,4 +1,4 @@
-import { Combobox as ComboboxElement } from '@jupyter/web-components';
+import { Combobox as ComboboxElement, type ComboboxScale } from '@jupyter/web-components';
 
 export type { ComboboxElement };
 
@@ -12,8 +12,15 @@ export interface ComboboxProps
   /** Whether the combobox has a compact layout or not. */
   autowidth?: boolean;
 
-  /** Whether the combobox has a compact layout or not. */
+  /** Whether the combobox has a compact layout or not.
+   * @deprecated Use {@link scale} equals to `xsmall` instead.
+   */
   minimal?: boolean;
+
+  /**
+   * Scale the element compared to the theme size.
+   */
+  scale?: ComboboxScale;
 
   /** The open attribute. */
   open?: boolean;

@@ -25,9 +25,10 @@
   "scripts": {
     "start": "storybook dev -p 6006",
     "start:ci": "storybook dev -p 6006 --ci --quiet",
-    "build": "rollup -c && tsc -p ./tsconfig.json && custom-elements-manifest analyze",
+    "build": "rollup -c && tsc -p ./tsconfig.json",
+    "build:cem": "custom-elements-manifest analyze",
     "build:docs": "storybook build",
-    "build:react": "BUILD_REACT=1 custom-elements-manifest analyze",
+    "build:react": "BUILD_REACT=1 yarn run build:cem",
     "clean": "yarn clean:lib && yarn clean:test",
     "clean:lib": "rimraf dist",
     "clean:test": "rimraf test-results tests-out/**/*.js tests-out/**/*.js.map tsconfig.playwright.tsbuildinfo",

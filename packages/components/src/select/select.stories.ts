@@ -12,7 +12,11 @@ export default {
     disabled: { control: 'boolean' },
     customIndicator: { control: 'boolean' },
     numberOfChildren: { control: 'number' },
-    minimal: { control: 'boolean' },
+    scale: {
+      control: 'select',
+      options: ['xsmall', 'small', 'medium', 'large', 'xlarge']
+    },
+    size: { control: 'number' },
     autowidth: { control: 'boolean' },
     ariaInvalid: { control: 'boolean' },
     onChange: {
@@ -39,7 +43,8 @@ const Template: StoryFn = (args, context): HTMLElement => {
     'afterbegin',
     `<jp-select 
       ${args.disabled ? 'disabled' : ''}
-      ${args.minimal ? 'minimal' : ''}
+      ${args.scale ? `scale=${args.scale}` : ''}
+      ${args.size > 0 ? `size=${args.size}` : ''}
       ${args.autowidth ? 'autowidth' : ''}
       ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
     >
@@ -79,7 +84,8 @@ Default.args = {
   disabled: false,
   customIndicator: false,
   numberOfChildren: 3,
-  minimal: false,
+  scale: 'medium',
+  size: 0,
   autowidth: false,
   ariaInvalid: false,
   onChange: action('change'),

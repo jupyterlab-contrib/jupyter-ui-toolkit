@@ -4,296 +4,169 @@
 
 ```ts
 
-import { accentColor } from '@microsoft/fast-components';
-import { accentFillActive } from '@microsoft/fast-components';
-import { accentFillActiveDelta } from '@microsoft/fast-components';
-import { accentFillFocus } from '@microsoft/fast-components';
-import { accentFillFocusDelta } from '@microsoft/fast-components';
-import { accentFillHover } from '@microsoft/fast-components';
-import { accentFillHoverDelta } from '@microsoft/fast-components';
-import { accentFillRecipe } from '@microsoft/fast-components';
-import { accentFillRest } from '@microsoft/fast-components';
-import { accentFillRestDelta } from '@microsoft/fast-components';
-import { accentForegroundActive } from '@microsoft/fast-components';
-import { accentForegroundActiveDelta } from '@microsoft/fast-components';
-import { accentForegroundFocus } from '@microsoft/fast-components';
-import { accentForegroundFocusDelta } from '@microsoft/fast-components';
-import { accentForegroundHover } from '@microsoft/fast-components';
-import { accentForegroundHoverDelta } from '@microsoft/fast-components';
-import { accentForegroundRecipe } from '@microsoft/fast-components';
-import { accentForegroundRest } from '@microsoft/fast-components';
-import { accentForegroundRestDelta } from '@microsoft/fast-components';
-import { accentPalette } from '@microsoft/fast-components';
-import { Accordion } from '@microsoft/fast-foundation';
-import { AccordionItem } from '@microsoft/fast-foundation';
+import { Accordion as Accordion_2 } from '@microsoft/fast-foundation';
+import { AccordionItem as AccordionItem_2 } from '@microsoft/fast-foundation';
 import { AccordionItemOptions } from '@microsoft/fast-foundation';
-import { accordionStyles } from '@microsoft/fast-components';
-import { AnchoredRegion } from '@microsoft/fast-foundation';
-import { anchoredRegionStyles } from '@microsoft/fast-components';
-import { Avatar } from '@microsoft/fast-components';
+import { Anchor as Anchor_2 } from '@microsoft/fast-foundation';
+import { AnchoredRegion as AnchoredRegion_2 } from '@microsoft/fast-foundation';
+import { AnchorOptions } from '@microsoft/fast-foundation';
+import { ARIAGlobalStatesAndProperties } from '@microsoft/fast-foundation';
+import { Avatar as Avatar_2 } from '@microsoft/fast-foundation';
 import { AvatarOptions } from '@microsoft/fast-foundation';
-import { Badge } from '@microsoft/fast-foundation';
-import { baseHeightMultiplier } from '@microsoft/fast-components';
-import { baseHorizontalSpacingMultiplier } from '@microsoft/fast-components';
-import { baseLayerLuminance } from '@microsoft/fast-components';
-import { bodyFont } from '@microsoft/fast-components';
-import { Breadcrumb } from '@microsoft/fast-foundation';
-import { BreadcrumbItem } from '@microsoft/fast-foundation';
+import { Badge as Badge_2 } from '@microsoft/fast-foundation';
+import { BaseProgress } from '@microsoft/fast-foundation';
+import { Behavior } from '@microsoft/fast-element';
+import { Breadcrumb as Breadcrumb_2 } from '@microsoft/fast-foundation';
+import { BreadcrumbItem as BreadcrumbItem_2 } from '@microsoft/fast-foundation';
 import { BreadcrumbItemOptions } from '@microsoft/fast-foundation';
-import { breadcrumbStyles } from '@microsoft/fast-components';
 import { Button as Button_2 } from '@microsoft/fast-foundation';
-import { Card } from '@microsoft/fast-components';
+import { ButtonOptions } from '@microsoft/fast-foundation';
 import { Card as Card_2 } from '@microsoft/fast-foundation';
-import { cardStyles } from '@microsoft/fast-components';
-import { Checkbox } from '@microsoft/fast-foundation';
+import { Checkbox as Checkbox_2 } from '@microsoft/fast-foundation';
 import { CheckboxOptions } from '@microsoft/fast-foundation';
-import { ColorRecipe } from '@microsoft/fast-components';
-import { ColorRGBA64 } from '@microsoft/fast-colors';
 import { Combobox as Combobox_2 } from '@microsoft/fast-foundation';
 import { ComboboxOptions } from '@microsoft/fast-foundation';
 import { Constructable } from '@microsoft/fast-element';
 import type { Container } from '@microsoft/fast-foundation';
-import { controlCornerRadius } from '@microsoft/fast-components';
 import { CSSDesignToken } from '@microsoft/fast-foundation';
-import { DataGrid } from '@microsoft/fast-foundation';
-import { DataGridCell } from '@microsoft/fast-foundation';
-import { DataGridRow } from '@microsoft/fast-foundation';
-import { dataGridRowStyles } from '@microsoft/fast-components';
-import { dataGridStyles } from '@microsoft/fast-components';
+import { DataGrid as DataGrid_2 } from '@microsoft/fast-foundation';
+import { DataGridCell as DataGridCell_2 } from '@microsoft/fast-foundation';
+import { DataGridRow as DataGridRow_2 } from '@microsoft/fast-foundation';
 import { DelegatesARIATextbox } from '@microsoft/fast-foundation';
-import { density } from '@microsoft/fast-components';
 import { DesignSystem } from '@microsoft/fast-foundation';
 import { DesignToken } from '@microsoft/fast-foundation';
-import { designUnit } from '@microsoft/fast-components';
-import { direction } from '@microsoft/fast-components';
-import { DirectionalStyleSheetBehavior } from '@microsoft/fast-components';
-import { disabledOpacity } from '@microsoft/fast-components';
-import { Divider } from '@microsoft/fast-foundation';
-import { dividerStyles } from '@microsoft/fast-components';
+import { Dialog as Dialog_2 } from '@microsoft/fast-foundation';
+import { Direction } from '@microsoft/fast-web-utilities';
+import { Disclosure as Disclosure_2 } from '@microsoft/fast-foundation';
+import { Divider as Divider_2 } from '@microsoft/fast-foundation';
+import { ElementDefinitionContext } from '@microsoft/fast-foundation';
 import { ElementStyles } from '@microsoft/fast-element';
-import { fillColor } from '@microsoft/fast-components';
-import { focusStrokeInner } from '@microsoft/fast-components';
-import { focusStrokeInnerRecipe } from '@microsoft/fast-components';
-import { focusStrokeOuter } from '@microsoft/fast-components';
-import { focusStrokeOuterRecipe } from '@microsoft/fast-components';
-import { focusStrokeWidth } from '@microsoft/fast-components';
-import { foregroundOnAccentActive } from '@microsoft/fast-components';
-import { foregroundOnAccentActiveLarge } from '@microsoft/fast-components';
-import { foregroundOnAccentFocus } from '@microsoft/fast-components';
-import { foregroundOnAccentFocusLarge } from '@microsoft/fast-components';
-import { foregroundOnAccentHover } from '@microsoft/fast-components';
-import { foregroundOnAccentHoverLarge } from '@microsoft/fast-components';
-import { foregroundOnAccentLargeRecipe } from '@microsoft/fast-components';
-import { foregroundOnAccentRecipe } from '@microsoft/fast-components';
-import { foregroundOnAccentRest } from '@microsoft/fast-components';
-import { foregroundOnAccentRestLarge } from '@microsoft/fast-components';
+import { FASTElement } from '@microsoft/fast-element';
 import { FormAssociated } from '@microsoft/fast-foundation';
 import { FoundationElement } from '@microsoft/fast-foundation';
 import { FoundationElementDefinition } from '@microsoft/fast-foundation';
 import { FoundationElementRegistry } from '@microsoft/fast-foundation';
 import { FoundationElementTemplate } from '@microsoft/fast-foundation';
-import { horizontalSliderLabelStyles } from '@microsoft/fast-components';
-import { imgTemplate } from '@microsoft/fast-components';
-import { InteractiveColorRecipe } from '@microsoft/fast-components';
-import { InteractiveSwatchSet } from '@microsoft/fast-components';
-import { isDark } from '@microsoft/fast-components';
 import { ListboxElement } from '@microsoft/fast-foundation';
+import { ListboxOption } from '@microsoft/fast-foundation';
 import { ListboxOptionOptions } from '@microsoft/fast-foundation';
-import { listboxStyles } from '@microsoft/fast-components';
-import { Menu } from '@microsoft/fast-foundation';
-import { MenuItem } from '@microsoft/fast-foundation';
+import { Menu as Menu_2 } from '@microsoft/fast-foundation';
+import { MenuItem as MenuItem_2 } from '@microsoft/fast-foundation';
 import { MenuItemOptions } from '@microsoft/fast-foundation';
-import { menuStyles } from '@microsoft/fast-components';
-import { neutralColor } from '@microsoft/fast-components';
-import { neutralFillActive } from '@microsoft/fast-components';
-import { neutralFillActiveDelta } from '@microsoft/fast-components';
-import { neutralFillFocus } from '@microsoft/fast-components';
-import { neutralFillFocusDelta } from '@microsoft/fast-components';
-import { neutralFillHover } from '@microsoft/fast-components';
-import { neutralFillHoverDelta } from '@microsoft/fast-components';
-import { neutralFillInputActive } from '@microsoft/fast-components';
-import { neutralFillInputActiveDelta } from '@microsoft/fast-components';
-import { neutralFillInputFocus } from '@microsoft/fast-components';
-import { neutralFillInputFocusDelta } from '@microsoft/fast-components';
-import { neutralFillInputHover } from '@microsoft/fast-components';
-import { neutralFillInputHoverDelta } from '@microsoft/fast-components';
-import { neutralFillInputRecipe } from '@microsoft/fast-components';
-import { neutralFillInputRest } from '@microsoft/fast-components';
-import { neutralFillInputRestDelta } from '@microsoft/fast-components';
-import { neutralFillLayerRecipe } from '@microsoft/fast-components';
-import { neutralFillLayerRest } from '@microsoft/fast-components';
-import { neutralFillLayerRestDelta } from '@microsoft/fast-components';
-import { neutralFillRecipe } from '@microsoft/fast-components';
-import { neutralFillRest } from '@microsoft/fast-components';
-import { neutralFillRestDelta } from '@microsoft/fast-components';
-import { neutralFillStealthActive } from '@microsoft/fast-components';
-import { neutralFillStealthActiveDelta } from '@microsoft/fast-components';
-import { neutralFillStealthFocus } from '@microsoft/fast-components';
-import { neutralFillStealthFocusDelta } from '@microsoft/fast-components';
-import { neutralFillStealthHover } from '@microsoft/fast-components';
-import { neutralFillStealthHoverDelta } from '@microsoft/fast-components';
-import { neutralFillStealthRecipe } from '@microsoft/fast-components';
-import { neutralFillStealthRest } from '@microsoft/fast-components';
-import { neutralFillStealthRestDelta } from '@microsoft/fast-components';
-import { neutralFillStrongActive } from '@microsoft/fast-components';
-import { neutralFillStrongActiveDelta } from '@microsoft/fast-components';
-import { neutralFillStrongFocus } from '@microsoft/fast-components';
-import { neutralFillStrongFocusDelta } from '@microsoft/fast-components';
-import { neutralFillStrongHover } from '@microsoft/fast-components';
-import { neutralFillStrongHoverDelta } from '@microsoft/fast-components';
-import { neutralFillStrongRecipe } from '@microsoft/fast-components';
-import { neutralFillStrongRest } from '@microsoft/fast-components';
-import { neutralFillStrongRestDelta } from '@microsoft/fast-components';
-import { neutralForegroundHint } from '@microsoft/fast-components';
-import { neutralForegroundHintRecipe } from '@microsoft/fast-components';
-import { neutralForegroundRecipe } from '@microsoft/fast-components';
-import { neutralForegroundRest } from '@microsoft/fast-components';
-import { neutralLayer1 } from '@microsoft/fast-components';
-import { neutralLayer1Recipe } from '@microsoft/fast-components';
-import { neutralLayer2 } from '@microsoft/fast-components';
-import { neutralLayer2Recipe } from '@microsoft/fast-components';
-import { neutralLayer3 } from '@microsoft/fast-components';
-import { neutralLayer3Recipe } from '@microsoft/fast-components';
-import { neutralLayer4 } from '@microsoft/fast-components';
-import { neutralLayer4Recipe } from '@microsoft/fast-components';
-import { neutralLayerCardContainer } from '@microsoft/fast-components';
-import { neutralLayerCardContainerRecipe } from '@microsoft/fast-components';
-import { neutralLayerFloating } from '@microsoft/fast-components';
-import { neutralLayerFloatingRecipe } from '@microsoft/fast-components';
-import { neutralPalette } from '@microsoft/fast-components';
-import { neutralStrokeActive } from '@microsoft/fast-components';
-import { neutralStrokeActiveDelta } from '@microsoft/fast-components';
-import { neutralStrokeDividerRecipe } from '@microsoft/fast-components';
-import { neutralStrokeDividerRest } from '@microsoft/fast-components';
-import { neutralStrokeDividerRestDelta } from '@microsoft/fast-components';
-import { neutralStrokeFocus } from '@microsoft/fast-components';
-import { neutralStrokeFocusDelta } from '@microsoft/fast-components';
-import { neutralStrokeHover } from '@microsoft/fast-components';
-import { neutralStrokeHoverDelta } from '@microsoft/fast-components';
-import { neutralStrokeRecipe } from '@microsoft/fast-components';
-import { neutralStrokeRest } from '@microsoft/fast-components';
-import { neutralStrokeRestDelta } from '@microsoft/fast-components';
-import { NumberField } from '@microsoft/fast-components';
-import { NumberFieldAppearance } from '@microsoft/fast-components';
+import { NumberField as NumberField_2 } from '@microsoft/fast-foundation';
 import { NumberFieldOptions } from '@microsoft/fast-foundation';
-import { ListboxOption as Option_2 } from '@microsoft/fast-foundation';
+import { Orientation } from '@microsoft/fast-web-utilities';
 import { OverrideFoundationElementDefinition } from '@microsoft/fast-foundation';
-import { Palette } from '@microsoft/fast-components';
-import { PaletteRGB } from '@microsoft/fast-components';
-import { BaseProgress as Progress } from '@microsoft/fast-foundation';
+import { Picker as Picker_2 } from '@microsoft/fast-foundation';
+import { PickerList as PickerList_2 } from '@microsoft/fast-foundation';
+import { PickerListItem as PickerListItem_2 } from '@microsoft/fast-foundation';
+import { PickerMenu as PickerMenu_2 } from '@microsoft/fast-foundation';
+import { PickerMenuOption as PickerMenuOption_2 } from '@microsoft/fast-foundation';
 import { ProgressOptions } from '@microsoft/fast-foundation';
 import { ProgressRingOptions } from '@microsoft/fast-foundation';
-import { progressStyles } from '@microsoft/fast-components';
-import { Radio } from '@microsoft/fast-foundation';
-import { RadioGroup } from '@microsoft/fast-foundation';
-import { radioGroupStyles } from '@microsoft/fast-components';
+import { Radio as Radio_2 } from '@microsoft/fast-foundation';
+import { RadioGroup as RadioGroup_2 } from '@microsoft/fast-foundation';
 import { RadioOptions } from '@microsoft/fast-foundation';
-import { Recipe } from '@microsoft/fast-components';
-import { Search } from '@microsoft/fast-components';
 import { Search as Search_2 } from '@microsoft/fast-foundation';
-import { SearchAppearance } from '@microsoft/fast-components';
 import { SearchOptions } from '@microsoft/fast-foundation';
 import { Select as Select_2 } from '@microsoft/fast-foundation';
 import { SelectOptions } from '@microsoft/fast-foundation';
-import { SliderLabel } from '@microsoft/fast-components';
+import { Skeleton as Skeleton_2 } from '@microsoft/fast-foundation';
+import { Slider as Slider_2 } from '@microsoft/fast-foundation';
 import { SliderLabel as SliderLabel_2 } from '@microsoft/fast-foundation';
-import { sliderLabelStyles } from '@microsoft/fast-components';
 import { SliderOptions } from '@microsoft/fast-foundation';
-import { StandardLuminance } from '@microsoft/fast-components';
 import { StartEnd } from '@microsoft/fast-foundation';
 import { StartEndOptions } from '@microsoft/fast-foundation';
-import { strokeWidth } from '@microsoft/fast-components';
-import { Swatch } from '@microsoft/fast-components';
-import { SwatchRGB } from '@microsoft/fast-components';
+import { Switch as Switch_2 } from '@microsoft/fast-foundation';
 import { SwitchOptions } from '@microsoft/fast-foundation';
-import { Tab } from '@microsoft/fast-foundation';
-import { TabPanel } from '@microsoft/fast-foundation';
-import { tabPanelStyles } from '@microsoft/fast-components';
-import { Tabs } from '@microsoft/fast-foundation';
+import { Tab as Tab_2 } from '@microsoft/fast-foundation';
+import { TabPanel as TabPanel_2 } from '@microsoft/fast-foundation';
+import { Tabs as Tabs_2 } from '@microsoft/fast-foundation';
 import { TabsOptions } from '@microsoft/fast-foundation';
-import { TextArea } from '@microsoft/fast-components';
 import { TextArea as TextArea_2 } from '@microsoft/fast-foundation';
-import { TextAreaAppearance } from '@microsoft/fast-components';
-import { TextField } from '@microsoft/fast-components';
 import { TextField as TextField_2 } from '@microsoft/fast-foundation';
-import { TextFieldAppearance } from '@microsoft/fast-components';
 import { TextFieldOptions } from '@microsoft/fast-foundation';
-import { Toolbar } from '@microsoft/fast-components';
 import { Toolbar as Toolbar_2 } from '@microsoft/fast-foundation';
-import { ToolbarOptions } from '@microsoft/fast-foundation';
-import { Tooltip } from '@microsoft/fast-foundation';
-import { tooltipStyles } from '@microsoft/fast-components';
+import { ToolbarOptions as ToolbarOptions_2 } from '@microsoft/fast-foundation';
+import { Tooltip as Tooltip_2 } from '@microsoft/fast-foundation';
+import { TreeItem as TreeItem_2 } from '@microsoft/fast-foundation';
 import { TreeItemOptions } from '@microsoft/fast-foundation';
-import { TreeView } from '@microsoft/fast-foundation';
-import { typeRampBaseFontSize } from '@microsoft/fast-components';
-import { typeRampBaseLineHeight } from '@microsoft/fast-components';
-import { typeRampMinus1FontSize } from '@microsoft/fast-components';
-import { typeRampMinus1LineHeight } from '@microsoft/fast-components';
-import { typeRampMinus2FontSize } from '@microsoft/fast-components';
-import { typeRampMinus2LineHeight } from '@microsoft/fast-components';
-import { typeRampPlus1FontSize } from '@microsoft/fast-components';
-import { typeRampPlus1LineHeight } from '@microsoft/fast-components';
-import { typeRampPlus2FontSize } from '@microsoft/fast-components';
-import { typeRampPlus2LineHeight } from '@microsoft/fast-components';
-import { typeRampPlus3FontSize } from '@microsoft/fast-components';
-import { typeRampPlus3LineHeight } from '@microsoft/fast-components';
-import { typeRampPlus4FontSize } from '@microsoft/fast-components';
-import { typeRampPlus4LineHeight } from '@microsoft/fast-components';
-import { typeRampPlus5FontSize } from '@microsoft/fast-components';
-import { typeRampPlus5LineHeight } from '@microsoft/fast-components';
-import { typeRampPlus6FontSize } from '@microsoft/fast-components';
-import { typeRampPlus6LineHeight } from '@microsoft/fast-components';
-import { verticalSliderLabelStyles } from '@microsoft/fast-components';
+import { TreeView as TreeView_2 } from '@microsoft/fast-foundation';
 import { ViewTemplate } from '@microsoft/fast-element';
 
-export { accentColor }
+// @public (undocumented)
+export const accentColor: CSSDesignToken<Swatch>;
 
-export { accentFillActive }
+// @public (undocumented)
+export const accentFillActive: CSSDesignToken<Swatch>;
 
-export { accentFillActiveDelta }
+// @public (undocumented)
+export const accentFillActiveDelta: DesignToken<number>;
 
-export { accentFillFocus }
+// @public (undocumented)
+export const accentFillFocus: CSSDesignToken<Swatch>;
 
-export { accentFillFocusDelta }
+// @public (undocumented)
+export const accentFillFocusDelta: DesignToken<number>;
 
-export { accentFillHover }
+// @public (undocumented)
+export const accentFillHover: CSSDesignToken<Swatch>;
 
-export { accentFillHoverDelta }
+// @public (undocumented)
+export const accentFillHoverDelta: DesignToken<number>;
 
-export { accentFillRecipe }
+// @public (undocumented)
+export const accentFillRecipe: DesignToken<InteractiveColorRecipe>;
 
-export { accentFillRest }
+// @public (undocumented)
+export const accentFillRest: CSSDesignToken<Swatch>;
 
-export { accentFillRestDelta }
+// @public (undocumented)
+export const accentFillRestDelta: DesignToken<number>;
 
-export { accentForegroundActive }
+// @public (undocumented)
+export const accentForegroundActive: CSSDesignToken<Swatch>;
 
-export { accentForegroundActiveDelta }
+// @public (undocumented)
+export const accentForegroundActiveDelta: DesignToken<number>;
 
-export { accentForegroundFocus }
+// @public (undocumented)
+export const accentForegroundFocus: CSSDesignToken<Swatch>;
 
-export { accentForegroundFocusDelta }
+// @public (undocumented)
+export const accentForegroundFocusDelta: DesignToken<number>;
 
-export { accentForegroundHover }
+// @public (undocumented)
+export const accentForegroundHover: CSSDesignToken<Swatch>;
 
-export { accentForegroundHoverDelta }
+// @public (undocumented)
+export const accentForegroundHoverDelta: DesignToken<number>;
 
-export { accentForegroundRecipe }
+// @public (undocumented)
+export const accentForegroundRecipe: DesignToken<InteractiveColorRecipe>;
 
-export { accentForegroundRest }
+// @public (undocumented)
+export const accentForegroundRest: CSSDesignToken<Swatch>;
 
-export { accentForegroundRestDelta }
+// @public (undocumented)
+export const accentForegroundRestDelta: DesignToken<number>;
 
-export { accentPalette }
+// @public (undocumented)
+export const accentPalette: DesignToken<Palette<Swatch>>;
 
-export { Accordion }
+// @public
+export class Accordion extends Accordion_2 {
+}
 
-export { AccordionItem }
+// @public
+export class AccordionItem extends AccordionItem_2 {
+}
 
 // @public
 export const accordionItemStyles: FoundationElementTemplate<ElementStyles, AccordionItemOptions>;
 
-export { accordionStyles }
+// @public
+export const accordionStyles: FoundationElementTemplate<ElementStyles>;
 
 // @public
 export function addJupyterLabThemeChangeListener(): void;
@@ -302,41 +175,66 @@ export function addJupyterLabThemeChangeListener(): void;
 export const allComponents: {
     jpAccordion: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Accordion, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Accordion_2;
+    template: FoundationElementTemplate<ViewTemplate<Accordion_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Accordion, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Accordion_2;
+    template: FoundationElementTemplate<ViewTemplate<Accordion_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof Accordion>;
     jpAccordionItem: (overrideDefinition?: OverrideFoundationElementDefinition<AccordionItemOptions> | undefined) => FoundationElementRegistry<AccordionItemOptions, Constructable<FoundationElement>>;
-    jpAnchoredRegion: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    jpAnchor: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<AnchoredRegion, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Anchor_2;
+    template: FoundationElementTemplate<ViewTemplate<Anchor_2, any>, AnchorOptions>;
+    styles: FoundationElementTemplate<ElementStyles, AnchorOptions>;
+    shadowOptions: {
+    delegatesFocus: true;
+    };
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<AnchoredRegion, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Anchor_2;
+    template: FoundationElementTemplate<ViewTemplate<Anchor_2, any>, AnchorOptions>;
+    styles: FoundationElementTemplate<ElementStyles, AnchorOptions>;
+    shadowOptions: {
+    delegatesFocus: true;
+    };
+    }, typeof Anchor>;
+    jpAnchoredRegion: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: AnchoredRegion_2;
+    template: FoundationElementTemplate<ViewTemplate<AnchoredRegion_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: AnchoredRegion_2;
+    template: FoundationElementTemplate<ViewTemplate<AnchoredRegion_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof AnchoredRegion>;
     jpAvatar: (overrideDefinition?: OverrideFoundationElementDefinition<AvatarOptions> | undefined) => FoundationElementRegistry<AvatarOptions, Constructable<FoundationElement>>;
     jpBadge: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Badge, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Badge_2;
+    template: FoundationElementTemplate<ViewTemplate<Badge_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Badge, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Badge_2;
+    template: FoundationElementTemplate<ViewTemplate<Badge_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof Badge>;
     jpBreadcrumb: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Breadcrumb, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Breadcrumb_2;
+    template: FoundationElementTemplate<ViewTemplate<Breadcrumb_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Breadcrumb, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Breadcrumb_2;
+    template: FoundationElementTemplate<ViewTemplate<Breadcrumb_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof Breadcrumb>;
     jpBreadcrumbItem: (overrideDefinition?: OverrideFoundationElementDefinition<BreadcrumbItemOptions> | undefined) => FoundationElementRegistry<BreadcrumbItemOptions, Constructable<FoundationElement>>;
     jpButton: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Button>;
@@ -344,92 +242,178 @@ export const allComponents: {
     baseName: string;
     baseClass: Card_2;
     template: FoundationElementTemplate<ViewTemplate<Card_2, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
     baseClass: Card_2;
     template: FoundationElementTemplate<ViewTemplate<Card_2, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof Card>;
     jpCheckbox: (overrideDefinition?: OverrideFoundationElementDefinition<CheckboxOptions> | undefined) => FoundationElementRegistry<CheckboxOptions, Constructable<FoundationElement>>;
     jpCombobox: (overrideDefinition?: OverrideFoundationElementDefinition<ComboboxOptions> | undefined) => FoundationElementRegistry<ComboboxOptions, Constructable<FoundationElement>>;
     jpDataGrid: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<DataGrid, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: DataGrid_2;
+    template: FoundationElementTemplate<ViewTemplate<DataGrid_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<DataGrid, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: DataGrid_2;
+    template: FoundationElementTemplate<ViewTemplate<DataGrid_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof DataGrid>;
     jpDataGridCell: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<DataGridCell, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: DataGridCell_2;
+    template: FoundationElementTemplate<ViewTemplate<DataGridCell_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<DataGridCell, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: DataGridCell_2;
+    template: FoundationElementTemplate<ViewTemplate<DataGridCell_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof DataGridCell>;
     jpDataGridRow: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<DataGridRow, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: DataGridRow_2;
+    template: FoundationElementTemplate<ViewTemplate<DataGridRow_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<DataGridRow, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: DataGridRow_2;
+    template: FoundationElementTemplate<ViewTemplate<DataGridRow_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof DataGridRow>;
     jpDateField: (overrideDefinition?: OverrideFoundationElementDefinition<DateFieldOptions> | undefined) => FoundationElementRegistry<DateFieldOptions, Constructable<FoundationElement>>;
-    jpDivider: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    jpDesignSystemProvider: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DesignSystemProvider>;
+    jpDialog: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Divider, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Dialog_2;
+    template: FoundationElementTemplate<ViewTemplate<Dialog_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Divider, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Dialog_2;
+    template: FoundationElementTemplate<ViewTemplate<Dialog_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }, typeof Dialog>;
+    jpDisclosure: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: Disclosure_2;
+    template: FoundationElementTemplate<ViewTemplate<Disclosure_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: Disclosure_2;
+    template: FoundationElementTemplate<ViewTemplate<Disclosure_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }, typeof Disclosure>;
+    jpDivider: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: Divider_2;
+    template: FoundationElementTemplate<ViewTemplate<Divider_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: Divider_2;
+    template: FoundationElementTemplate<ViewTemplate<Divider_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof Divider>;
     jpListbox: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
+    baseClass: ListboxElement;
     template: FoundationElementTemplate<ViewTemplate<ListboxElement, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
+    baseClass: ListboxElement;
     template: FoundationElementTemplate<ViewTemplate<ListboxElement, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
-    }, typeof ListboxElement>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }, typeof Listbox>;
     jpMenu: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Menu, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Menu_2;
+    template: FoundationElementTemplate<ViewTemplate<Menu_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Menu, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Menu_2;
+    template: FoundationElementTemplate<ViewTemplate<Menu_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof Menu>;
     jpMenuItem: (overrideDefinition?: OverrideFoundationElementDefinition<MenuItemOptions> | undefined) => FoundationElementRegistry<MenuItemOptions, Constructable<FoundationElement>>;
     jpNumberField: (overrideDefinition?: OverrideFoundationElementDefinition<NumberFieldOptions> | undefined) => FoundationElementRegistry<NumberFieldOptions, Constructable<FoundationElement>>;
     jpOption: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+    baseClass: ListboxOption;
+    template: FoundationElementTemplate<ViewTemplate<ListboxOption, any>, ListboxOptionOptions>;
     styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+    baseClass: ListboxOption;
+    template: FoundationElementTemplate<ViewTemplate<ListboxOption, any>, ListboxOptionOptions>;
     styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
     }, typeof Option_2>;
+    jpPicker: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: Picker_2;
+    template: FoundationElementTemplate<ViewTemplate<Picker_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    shadowOptions: {};
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: Picker_2;
+    template: FoundationElementTemplate<ViewTemplate<Picker_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    shadowOptions: {};
+    }, typeof Picker>;
+    jpPickerList: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: PickerList_2;
+    template: FoundationElementTemplate<ViewTemplate<PickerList_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: PickerList_2;
+    template: FoundationElementTemplate<ViewTemplate<PickerList_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }, PickerList>;
+    jpPickerListItem: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: PickerListItem_2;
+    template: FoundationElementTemplate<ViewTemplate<PickerListItem_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: PickerListItem_2;
+    template: FoundationElementTemplate<ViewTemplate<PickerListItem_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }, PickerListItem>;
+    jpPickerMenu: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, Constructable<FoundationElement>>;
+    jpPickerMenuOption: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: PickerMenuOption_2;
+    template: FoundationElementTemplate<ViewTemplate<PickerMenuOption_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: PickerMenuOption_2;
+    template: FoundationElementTemplate<ViewTemplate<PickerMenuOption_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }, PickerMenuOption>;
     jpProgress: (overrideDefinition?: OverrideFoundationElementDefinition<ProgressOptions> | undefined) => FoundationElementRegistry<ProgressOptions, Constructable<FoundationElement>>;
     jpProgressRing: (overrideDefinition?: OverrideFoundationElementDefinition<ProgressRingOptions> | undefined) => FoundationElementRegistry<ProgressRingOptions, Constructable<FoundationElement>>;
     jpRadio: (overrideDefinition?: OverrideFoundationElementDefinition<RadioOptions> | undefined) => FoundationElementRegistry<RadioOptions, Constructable<FoundationElement>>;
     jpRadioGroup: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<RadioGroup, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: RadioGroup_2;
+    template: FoundationElementTemplate<ViewTemplate<RadioGroup_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<RadioGroup, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: RadioGroup_2;
+    template: FoundationElementTemplate<ViewTemplate<RadioGroup_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof RadioGroup>;
     jpSearch: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
@@ -449,51 +433,68 @@ export const allComponents: {
     };
     }, typeof Search>;
     jpSelect: (overrideDefinition?: OverrideFoundationElementDefinition<SelectOptions> | undefined) => FoundationElementRegistry<SelectOptions, Constructable<FoundationElement>>;
+    jpSkeleton: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+    baseName: string;
+    baseClass: Skeleton_2;
+    template: FoundationElementTemplate<ViewTemplate<Skeleton_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }> | undefined) => FoundationElementRegistry<    {
+    baseName: string;
+    baseClass: Skeleton_2;
+    template: FoundationElementTemplate<ViewTemplate<Skeleton_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
+    }, typeof Skeleton>;
     jpSlider: (overrideDefinition?: OverrideFoundationElementDefinition<SliderOptions> | undefined) => FoundationElementRegistry<SliderOptions, Constructable<FoundationElement>>;
     jpSliderLabel: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
     baseClass: SliderLabel_2;
     template: FoundationElementTemplate<ViewTemplate<SliderLabel_2, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
     baseClass: SliderLabel_2;
     template: FoundationElementTemplate<ViewTemplate<SliderLabel_2, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof SliderLabel>;
     jpSwitch: (overrideDefinition?: OverrideFoundationElementDefinition<SwitchOptions> | undefined) => FoundationElementRegistry<SwitchOptions, Constructable<FoundationElement>>;
     jpTab: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Tab, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Tab_2;
+    template: FoundationElementTemplate<ViewTemplate<Tab_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Tab, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: Tab_2;
+    template: FoundationElementTemplate<ViewTemplate<Tab_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof Tab>;
     jpTabPanel: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<TabPanel, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: TabPanel_2;
+    template: FoundationElementTemplate<ViewTemplate<TabPanel_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<TabPanel, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: TabPanel_2;
+    template: FoundationElementTemplate<ViewTemplate<TabPanel_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof TabPanel>;
     jpTabs: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Tabs, any>, TabsOptions>;
+    baseClass: Tabs_2;
+    template: FoundationElementTemplate<ViewTemplate<Tabs_2, any>, TabsOptions>;
     styles: FoundationElementTemplate<ElementStyles, TabsOptions>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<Tabs, any>, TabsOptions>;
+    baseClass: Tabs_2;
+    template: FoundationElementTemplate<ViewTemplate<Tabs_2, any>, TabsOptions>;
     styles: FoundationElementTemplate<ElementStyles, TabsOptions>;
     }, typeof Tabs>;
     jpTextArea: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
     baseClass: TextArea_2;
     template: FoundationElementTemplate<ViewTemplate<TextArea_2, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     shadowOptions: {
     delegatesFocus: true;
     };
@@ -501,7 +502,7 @@ export const allComponents: {
     baseName: string;
     baseClass: TextArea_2;
     template: FoundationElementTemplate<ViewTemplate<TextArea_2, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     shadowOptions: {
     delegatesFocus: true;
     };
@@ -525,17 +526,17 @@ export const allComponents: {
     }, typeof TextField>;
     jpToolbar: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    baseClass: Toolbar_2;
-    template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions>;
-    styles: FoundationElementTemplate<ElementStyles, ToolbarOptions>;
+    baseClass: FoundationToolbar;
+    template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions_2>;
+    styles: FoundationElementTemplate<ElementStyles, ToolbarOptions_2>;
     shadowOptions: {
     delegatesFocus: true;
     };
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    baseClass: Toolbar_2;
-    template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions>;
-    styles: FoundationElementTemplate<ElementStyles, ToolbarOptions>;
+    baseClass: FoundationToolbar;
+    template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions_2>;
+    styles: FoundationElementTemplate<ElementStyles, ToolbarOptions_2>;
     shadowOptions: {
     delegatesFocus: true;
     };
@@ -544,111 +545,179 @@ export const allComponents: {
     jpTreeItem: (overrideDefinition?: OverrideFoundationElementDefinition<TreeItemOptions> | undefined) => FoundationElementRegistry<TreeItemOptions, Constructable<FoundationElement>>;
     jpTreeView: (overrideDefinition?: OverrideFoundationElementDefinition<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<TreeView, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: TreeView_2;
+    template: FoundationElementTemplate<ViewTemplate<TreeView_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }> | undefined) => FoundationElementRegistry<    {
     baseName: string;
-    template: FoundationElementTemplate<ViewTemplate<TreeView, any>, FoundationElementDefinition>;
-    styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+    baseClass: TreeView_2;
+    template: FoundationElementTemplate<ViewTemplate<TreeView_2, any>, FoundationElementDefinition>;
+    styles: FoundationElementTemplate<ElementStyles>;
     }, typeof TreeView>;
-    register(container?: Container | undefined, ...rest: any[]): void;
+    register(container?: Container, ...rest: any[]): void;
 };
 
-export { AnchoredRegion }
+// @public
+export class Anchor extends Anchor_2 {
+    appearance?: AnchorAppearance;
+    // (undocumented)
+    appearanceChanged(oldValue: AnchorAppearance, newValue: AnchorAppearance): void;
+    // (undocumented)
+    connectedCallback(): void;
+    // @internal
+    defaultSlottedContentChanged(oldValue: any, newValue: any): void;
+}
 
-export { anchoredRegionStyles }
+// @public
+export type AnchorAppearance = ButtonAppearance | 'hypertext';
 
-export { Avatar }
+// @public
+export class AnchoredRegion extends AnchoredRegion_2 {
+}
+
+// @public
+export const anchoredRegionStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export const anchorStyles: FoundationElementTemplate<ElementStyles, AnchorOptions>;
+
+// @public
+export function applyJupyterTheme(): void;
+
+// @public
+export class Avatar extends Avatar_2 {
+    alt: string | undefined;
+    imgSrc: string | undefined;
+}
 
 // @public
 export const avatarStyles: FoundationElementTemplate<ElementStyles, AvatarOptions>;
 
-export { Badge }
+// @public
+export class Badge extends Badge_2 {
+}
 
 // @public
 export const badgeStyles: FoundationElementTemplate<ElementStyles>;
 
 // @public (undocumented)
-export const baseErrorColor: ColorRGBA64;
-
-export { baseHeightMultiplier }
-
-export { baseHorizontalSpacingMultiplier }
-
-export { baseLayerLuminance }
+export const baseHeightMultiplier: CSSDesignToken<number>;
 
 // @public (undocumented)
-export const black: SwatchRGB;
+export const baseHorizontalSpacingMultiplier: CSSDesignToken<number>;
 
-export { bodyFont }
+// @public (undocumented)
+export const baseLayerLuminance: CSSDesignToken<number>;
 
-export { Breadcrumb }
+// @public (undocumented)
+export const bodyFont: CSSDesignToken<string>;
 
-export { BreadcrumbItem }
+// @public
+export class Breadcrumb extends Breadcrumb_2 {
+}
+
+// @public
+export class BreadcrumbItem extends BreadcrumbItem_2 {
+}
 
 // @public
 export const breadcrumbItemStyles: FoundationElementTemplate<ElementStyles, BreadcrumbItemOptions>;
 
-export { breadcrumbStyles }
+// @public
+export const breadcrumbStyles: FoundationElementTemplate<ElementStyles>;
 
-// Warning: (ae-internal-missing-underscore) The name "Button" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal (undocumented)
+// @public
 export class Button extends Button_2 {
-    // @public
     appearance: ButtonAppearance;
-    // (undocumented)
-    connectedCallback(): void;
-    // @public
     defaultSlottedContentChanged(oldValue: HTMLElement[], newValue: HTMLElement[]): void;
-    // @public
+    // @deprecated
     minimal: boolean;
+    scale?: ButtonScale;
 }
 
 // @public
 export type ButtonAppearance = 'accent' | 'error' | 'lightweight' | 'neutral' | 'outline' | 'stealth';
 
-export { Card }
+// @public
+export type ButtonScale = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
-export { cardStyles }
+// @public
+export const buttonStyles: (context: ElementDefinitionContext, definition: ButtonOptions) => ElementStyles;
 
-export { Checkbox }
+// @public
+export class Card extends Card_2 {
+    // (undocumented)
+    connectedCallback(): void;
+}
+
+// @public
+export const cardStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export class Checkbox extends Checkbox_2 {
+    // (undocumented)
+    indeterminateChanged(prev: boolean, next: boolean): void;
+}
 
 // @public
 export const checkboxStyles: FoundationElementTemplate<ElementStyles, CheckboxOptions>;
 
-export { ColorRecipe }
+// @public
+export const checkboxTemplate: FoundationElementTemplate<ViewTemplate<Checkbox>, CheckboxOptions>;
+
+// @public (undocumented)
+export interface ColorRecipe {
+    // (undocumented)
+    evaluate(element: HTMLElement, reference?: Swatch): Swatch;
+}
 
 // @public
 export class Combobox extends Combobox_2 {
+    autoWidth: boolean;
+    protected autoWidthChanged(prev: boolean | undefined, next: boolean): void;
+    // @internal @override
+    connectedCallback(): void;
+    // @internal (undocumented)
+    protected maxHeightChanged(prev: number | undefined, next: number): void;
+    // @deprecated
     minimal: boolean;
+    scale?: ComboboxScale;
+    protected setAutoWidth(): void;
+    // @internal
+    slottedOptionsChanged(prev: Element[] | undefined, next: Element[]): void;
+    // @internal
+    protected updateComputedStylesheet(): void;
 }
+
+// @public
+export type ComboboxScale = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
 // @public
 export const comboboxStyles: FoundationElementTemplate<ElementStyles, ComboboxOptions>;
 
 // @public (undocumented)
-export enum ContrastTarget {
-    // (undocumented)
-    large = 7,
-    // (undocumented)
-    normal = 4.5
+export const controlCornerRadius: CSSDesignToken<number>;
+
+// @public
+export class DataGrid extends DataGrid_2 {
 }
 
-export { controlCornerRadius }
-
-export { DataGrid }
-
-export { DataGridCell }
+// @public
+export class DataGridCell extends DataGridCell_2 {
+}
 
 // @public
 export const dataGridCellStyles: FoundationElementTemplate<ElementStyles>;
 
-export { DataGridRow }
+// @public
+export class DataGridRow extends DataGridRow_2 {
+}
 
-export { dataGridRowStyles }
+// @public
+export const dataGridRowStyles: FoundationElementTemplate<ElementStyles>;
 
-export { dataGridStyles }
+// @public
+export const dataGridStyles: FoundationElementTemplate<ElementStyles>;
 
 // Warning: (ae-forgotten-export) The symbol "FormAssociatedDateField" needs to be exported by the entry point index.d.ts
 // Warning: (ae-internal-mixed-release-tag) Mixed release tags are not allowed for "DateField" because one of its declarations is marked as @internal
@@ -706,28 +775,157 @@ export const dateFieldStyles: FoundationElementTemplate<ElementStyles, DateField
 // @public
 export const dateFieldTemplate: FoundationElementTemplate<ViewTemplate<DateField>, DateFieldOptions>;
 
-export { density }
+// Warning: (ae-internal-mixed-release-tag) Mixed release tags are not allowed for "DelegatesARIAToolbar" because one of its declarations is marked as @internal
+//
+// @public
+export class DelegatesARIAToolbar {
+    ariaLabel: string | null;
+    ariaLabelledby: string | null;
+}
 
-export { designUnit }
-
-export { direction }
-
-export { DirectionalStyleSheetBehavior }
-
-export { disabledOpacity }
-
-export { Divider }
-
-export { dividerStyles }
+// @internal
+export interface DelegatesARIAToolbar extends ARIAGlobalStatesAndProperties {
+}
 
 // @public (undocumented)
-export const errorBase: SwatchRGB;
+export const density: CSSDesignToken<number>;
+
+// Warning: (ae-internal-missing-underscore) The name "DesignSystemProvider" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal
+export class DesignSystemProvider extends FoundationElement {
+    constructor();
+    accentColor?: Swatch;
+    accentFillActiveDelta?: number;
+    accentFillFocusDelta?: number;
+    accentFillHoverDelta?: number;
+    accentFillRestDelta?: number;
+    accentForegroundActiveDelta?: number;
+    accentForegroundFocusDelta?: number;
+    accentForegroundHoverDelta?: number;
+    accentForegroundRestDelta?: number;
+    baseHeightMultiplier?: number;
+    baseHorizontalSpacingMultiplier?: number;
+    baseLayerLuminance?: number;
+    controlCornerRadius?: number;
+    density?: number;
+    designUnit?: number;
+    direction?: Direction;
+    disabledOpacity?: number;
+    errorColor?: Swatch;
+    fillColor?: Swatch;
+    focusStrokeWidth?: number;
+    neutralColor?: Swatch;
+    neutralFillActiveDelta?: number;
+    neutralFillFocusDelta?: number;
+    neutralFillHoverDelta?: number;
+    neutralFillInputActiveDelta?: number;
+    neutralFillInputFocusDelta?: number;
+    neutralFillInputHoverDelta?: number;
+    neutralFillInputRestDelta?: number;
+    neutralFillLayerRestDelta?: number;
+    neutralFillRestDelta?: number;
+    neutralFillStealthActiveDelta?: number;
+    neutralFillStealthFocusDelta?: number;
+    neutralFillStealthHoverDelta?: number;
+    neutralFillStealthRestDelta?: number;
+    neutralFillStrongActiveDelta?: number;
+    neutralFillStrongFocusDelta?: number;
+    neutralFillStrongHoverDelta?: number;
+    neutralStrokeActiveDelta?: number;
+    neutralStrokeDividerRestDelta?: number;
+    neutralStrokeFocusDelta?: number;
+    neutralStrokeHoverDelta?: number;
+    neutralStrokeRestDelta?: number;
+    noPaint: boolean;
+    strokeWidth?: number;
+    typeRampBaseFontSize?: string;
+    typeRampBaseLineHeight?: string;
+    typeRampMinus1FontSize?: string;
+    typeRampMinus1LineHeight?: string;
+    typeRampMinus2FontSize?: string;
+    typeRampMinus2LineHeight?: string;
+    typeRampPlus1FontSize?: string;
+    typeRampPlus1LineHeight?: string;
+    typeRampPlus2FontSize?: string;
+    typeRampPlus2LineHeight?: string;
+    typeRampPlus3FontSize?: string;
+    typeRampPlus3LineHeight?: string;
+    typeRampPlus4FontSize?: string;
+    typeRampPlus4LineHeight?: string;
+    typeRampPlus5FontSize?: string;
+    typeRampPlus5LineHeight?: string;
+    typeRampPlus6FontSize?: string;
+    typeRampPlus6LineHeight?: string;
+}
+
+// @public
+export const designSystemProviderStyles: (context: ElementDefinitionContext, definition: FoundationElementDefinition) => ElementStyles;
+
+// @public
+export const designSystemProviderTemplate: (context: ElementDefinitionContext, definition: FoundationElementDefinition) => ViewTemplate<any, any>;
+
+// @public (undocumented)
+export const designUnit: CSSDesignToken<number>;
+
+// @public
+export class Dialog extends Dialog_2 {
+}
+
+// @public
+export const dialogStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public (undocumented)
+export const direction: CSSDesignToken<Direction>;
+
+// @public
+export class DirectionalStyleSheetBehavior implements Behavior {
+    constructor(ltr: ElementStyles | null, rtl: ElementStyles | null);
+    // @internal (undocumented)
+    bind(source: FASTElement & HTMLElement): void;
+    // @internal (undocumented)
+    unbind(source: FASTElement & HTMLElement): void;
+}
+
+// @public (undocumented)
+export const disabledOpacity: CSSDesignToken<number>;
+
+// @public
+export class Disclosure extends Disclosure_2 {
+    appearance?: DisclosureAppearance;
+    // (undocumented)
+    appearanceChanged(oldValue: DisclosureAppearance, newValue: DisclosureAppearance): void;
+    // (undocumented)
+    connectedCallback(): void;
+    // (undocumented)
+    get disclosureHeight(): number;
+    // @override
+    protected onToggle(): void;
+    // @override
+    protected setup(): void;
+}
+
+// @public
+export type DisclosureAppearance = 'accent' | 'lightweight';
+
+// @public
+export const disclosureStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export class Divider extends Divider_2 {
+}
+
+// @public
+export const dividerStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export const elementScale: CSSDesignToken<number>;
+
+// @public (undocumented)
+export const errorColor: CSSDesignToken<Swatch>;
 
 // @public (undocumented)
 export const errorFillActive: CSSDesignToken<Swatch>;
-
-// @public (undocumented)
-export function errorFillAlgorithm(palette: Palette, neutralPalette: Palette, reference: Swatch, hoverDelta: number, activeDelta: number, focusDelta: number, neutralFillRestDelta: number, neutralFillHoverDelta: number, neutralFillActiveDelta: number): InteractiveSwatchSet;
 
 // @public (undocumented)
 export const errorFillFocus: CSSDesignToken<Swatch>;
@@ -744,11 +942,6 @@ export const errorFillRest: CSSDesignToken<Swatch>;
 // @public (undocumented)
 export const errorForegroundActive: CSSDesignToken<Swatch>;
 
-// Warning: (ae-internal-missing-underscore) The name "errorForegroundAlgorithm" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal (undocumented)
-export function errorForegroundAlgorithm(palette: Palette, reference: Swatch, contrastTarget: number, restDelta: number, hoverDelta: number, activeDelta: number, focusDelta: number): InteractiveSwatchSet;
-
 // @public (undocumented)
 export const errorForegroundFocus: CSSDesignToken<Swatch>;
 
@@ -764,48 +957,59 @@ export const errorForegroundRest: CSSDesignToken<Swatch>;
 // @public
 export const errorPalette: DesignToken<Palette<Swatch>>;
 
-export { fillColor }
+// @public (undocumented)
+export const fillColor: CSSDesignToken<Swatch>;
 
-export { focusStrokeInner }
+// @public (undocumented)
+export const focusStrokeInner: CSSDesignToken<Swatch>;
 
-export { focusStrokeInnerRecipe }
+// @public (undocumented)
+export const focusStrokeInnerRecipe: DesignToken<ColorRecipe>;
 
-export { focusStrokeOuter }
+// @public (undocumented)
+export const focusStrokeOuter: CSSDesignToken<Swatch>;
 
-export { focusStrokeOuterRecipe }
+// @public (undocumented)
+export const focusStrokeOuterRecipe: DesignToken<ColorRecipe>;
 
-export { focusStrokeWidth }
+// @public (undocumented)
+export const focusStrokeWidth: CSSDesignToken<number>;
 
-export { foregroundOnAccentActive }
+// @public (undocumented)
+export const foregroundOnAccentActive: CSSDesignToken<Swatch>;
 
-export { foregroundOnAccentActiveLarge }
+// @public (undocumented)
+export const foregroundOnAccentActiveLarge: CSSDesignToken<Swatch>;
 
-export { foregroundOnAccentFocus }
+// @public (undocumented)
+export const foregroundOnAccentFocus: CSSDesignToken<Swatch>;
 
-export { foregroundOnAccentFocusLarge }
+// @public (undocumented)
+export const foregroundOnAccentFocusLarge: CSSDesignToken<Swatch>;
 
-export { foregroundOnAccentHover }
+// @public (undocumented)
+export const foregroundOnAccentHover: CSSDesignToken<Swatch>;
 
-export { foregroundOnAccentHoverLarge }
+// @public (undocumented)
+export const foregroundOnAccentHoverLarge: CSSDesignToken<Swatch>;
 
-export { foregroundOnAccentLargeRecipe }
+// @public (undocumented)
+export const foregroundOnAccentLargeRecipe: DesignToken<ColorRecipe>;
 
-export { foregroundOnAccentRecipe }
+// @public (undocumented)
+export const foregroundOnAccentRecipe: DesignToken<ColorRecipe>;
 
-export { foregroundOnAccentRest }
+// @public (undocumented)
+export const foregroundOnAccentRest: CSSDesignToken<Swatch>;
 
-export { foregroundOnAccentRestLarge }
+// @public (undocumented)
+export const foregroundOnAccentRestLarge: CSSDesignToken<Swatch>;
 
 // @public (undocumented)
 export const foregroundOnErrorActive: CSSDesignToken<Swatch>;
 
 // @public (undocumented)
 export const foregroundOnErrorActiveLarge: CSSDesignToken<Swatch>;
-
-// Warning: (ae-internal-missing-underscore) The name "foregroundOnErrorAlgorithm" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal (undocumented)
-export function foregroundOnErrorAlgorithm(reference: Swatch, contrastTarget: number): Swatch;
 
 // @public (undocumented)
 export const foregroundOnErrorFocus: CSSDesignToken<Swatch>;
@@ -831,39 +1035,116 @@ export const foregroundOnErrorRest: CSSDesignToken<Swatch>;
 // @public (undocumented)
 export const foregroundOnErrorRestLarge: CSSDesignToken<Swatch>;
 
-export { horizontalSliderLabelStyles }
+// Warning: (ae-internal-mixed-release-tag) Mixed release tags are not allowed for "FoundationToolbar" because one of its declarations is marked as @internal
+//
+// @public
+export class FoundationToolbar extends FoundationElement {
+    // @internal
+    get activeIndex(): number;
+    set activeIndex(value: number);
+    // @internal
+    protected get allSlottedItems(): (HTMLElement | Node)[];
+    // (undocumented)
+    childItems: Element[];
+    // (undocumented)
+    protected childItemsChanged(prev: undefined | Element[], next: Element[]): void;
+    // @internal (undocumented)
+    connectedCallback(): void;
+    // @internal
+    direction: Direction;
+    // @internal
+    focusinHandler(e: FocusEvent): boolean | void;
+    // @internal
+    keydownHandler(e: KeyboardEvent): boolean | void;
+    // @internal
+    mouseDownHandler(e: MouseEvent): boolean | void;
+    orientation: Orientation;
+    // @internal
+    protected reduceFocusableElements(): void;
+    // @internal
+    slottedItems: HTMLElement[];
+    // (undocumented)
+    protected slottedItemsChanged(): void;
+    // @internal
+    slottedLabel: HTMLElement[];
+}
 
-export { imgTemplate }
+// @internal (undocumented)
+export interface FoundationToolbar extends StartEnd, DelegatesARIAToolbar {
+}
 
-export { InteractiveColorRecipe }
+// @public
+export const heightNumberAsToken: DesignToken<number>;
 
-export { InteractiveSwatchSet }
+// @public
+export const horizontalSliderLabelStyles: ElementStyles;
 
-export { isDark }
+// @public
+export const imgTemplate: ViewTemplate<Avatar, any>;
+
+// @public (undocumented)
+export interface InteractiveColorRecipe {
+    // (undocumented)
+    evaluate(element: HTMLElement, reference?: Swatch): InteractiveSwatchSet;
+}
+
+// @public (undocumented)
+export interface InteractiveSwatchSet {
+    active: Swatch;
+    focus: Swatch;
+    hover: Swatch;
+    rest: Swatch;
+}
+
+// @public
+export function isDark(color: Swatch): boolean;
 
 // @public
 export const jpAccordion: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Accordion, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Accordion_2;
+template: FoundationElementTemplate<ViewTemplate<Accordion_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Accordion, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Accordion_2;
+template: FoundationElementTemplate<ViewTemplate<Accordion_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof Accordion>;
 
 // @public
 export const jpAccordionItem: (overrideDefinition?: OverrideFoundationElementDefinition<AccordionItemOptions> | undefined) => FoundationElementRegistry<AccordionItemOptions, Constructable<FoundationElement>>;
 
+// @public
+export const jpAnchor: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof Anchor_2;
+template: FoundationElementTemplate<ViewTemplate<Anchor_2, any>, AnchorOptions>;
+styles: FoundationElementTemplate<ElementStyles, AnchorOptions>;
+shadowOptions: {
+delegatesFocus: true;
+};
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof Anchor_2;
+template: FoundationElementTemplate<ViewTemplate<Anchor_2, any>, AnchorOptions>;
+styles: FoundationElementTemplate<ElementStyles, AnchorOptions>;
+shadowOptions: {
+delegatesFocus: true;
+};
+}, typeof Anchor>;
+
 // @beta
 export const jpAnchoredRegion: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<AnchoredRegion, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof AnchoredRegion_2;
+template: FoundationElementTemplate<ViewTemplate<AnchoredRegion_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<AnchoredRegion, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof AnchoredRegion_2;
+template: FoundationElementTemplate<ViewTemplate<AnchoredRegion_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof AnchoredRegion>;
 
 // @public
@@ -872,30 +1153,32 @@ export const jpAvatar: (overrideDefinition?: OverrideFoundationElementDefinition
 // @public
 export const jpBadge: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Badge, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Badge_2;
+template: FoundationElementTemplate<ViewTemplate<Badge_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Badge, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Badge_2;
+template: FoundationElementTemplate<ViewTemplate<Badge_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof Badge>;
 
 // @public
 export const jpBreadcrumb: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Breadcrumb, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Breadcrumb_2;
+template: FoundationElementTemplate<ViewTemplate<Breadcrumb_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Breadcrumb, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Breadcrumb_2;
+template: FoundationElementTemplate<ViewTemplate<Breadcrumb_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof Breadcrumb>;
 
 // @public
 export const jpBreadcrumbItem: (overrideDefinition?: OverrideFoundationElementDefinition<BreadcrumbItemOptions> | undefined) => FoundationElementRegistry<BreadcrumbItemOptions, Constructable<FoundationElement>>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "jpButton" is marked as @public, but its signature references "Button" which is marked as @internal
-//
 // @public
 export const jpButton: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof Button>;
 
@@ -904,12 +1187,12 @@ export const jpCard: (overrideDefinition?: OverrideFoundationElementDefinition< 
 baseName: string;
 baseClass: typeof Card_2;
 template: FoundationElementTemplate<ViewTemplate<Card_2, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
 baseClass: typeof Card_2;
 template: FoundationElementTemplate<ViewTemplate<Card_2, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof Card>;
 
 // @public
@@ -921,70 +1204,113 @@ export const jpCombobox: (overrideDefinition?: OverrideFoundationElementDefiniti
 // @public
 export const jpDataGrid: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<DataGrid, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof DataGrid_2;
+template: FoundationElementTemplate<ViewTemplate<DataGrid_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<DataGrid, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof DataGrid_2;
+template: FoundationElementTemplate<ViewTemplate<DataGrid_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof DataGrid>;
 
 // @public
 export const jpDataGridCell: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<DataGridCell, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof DataGridCell_2;
+template: FoundationElementTemplate<ViewTemplate<DataGridCell_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<DataGridCell, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof DataGridCell_2;
+template: FoundationElementTemplate<ViewTemplate<DataGridCell_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof DataGridCell>;
 
 // @public
 export const jpDataGridRow: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<DataGridRow, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof DataGridRow_2;
+template: FoundationElementTemplate<ViewTemplate<DataGridRow_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<DataGridRow, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof DataGridRow_2;
+template: FoundationElementTemplate<ViewTemplate<DataGridRow_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof DataGridRow>;
 
 // @public
 export const jpDateField: (overrideDefinition?: OverrideFoundationElementDefinition<DateFieldOptions> | undefined) => FoundationElementRegistry<DateFieldOptions, Constructable<FoundationElement>>;
 
+// Warning: (ae-incompatible-release-tags) The symbol "jpDesignSystemProvider" is marked as @public, but its signature references "DesignSystemProvider" which is marked as @internal
+//
+// @public
+export const jpDesignSystemProvider: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, typeof DesignSystemProvider>;
+
+// @public
+export const jpDialog: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof Dialog_2;
+template: FoundationElementTemplate<ViewTemplate<Dialog_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof Dialog_2;
+template: FoundationElementTemplate<ViewTemplate<Dialog_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}, typeof Dialog>;
+
+// @public
+export const jpDisclosure: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof Disclosure_2;
+template: FoundationElementTemplate<ViewTemplate<Disclosure_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof Disclosure_2;
+template: FoundationElementTemplate<ViewTemplate<Disclosure_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}, typeof Disclosure>;
+
 // @public
 export const jpDivider: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Divider, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Divider_2;
+template: FoundationElementTemplate<ViewTemplate<Divider_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Divider, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Divider_2;
+template: FoundationElementTemplate<ViewTemplate<Divider_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof Divider>;
 
 // @public
 export const jpListbox: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
+baseClass: typeof ListboxElement;
 template: FoundationElementTemplate<ViewTemplate<ListboxElement, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
+baseClass: typeof ListboxElement;
 template: FoundationElementTemplate<ViewTemplate<ListboxElement, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
-}, typeof ListboxElement>;
+styles: FoundationElementTemplate<ElementStyles>;
+}, typeof Listbox>;
 
 // @public
 export const jpMenu: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Menu, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Menu_2;
+template: FoundationElementTemplate<ViewTemplate<Menu_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Menu, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Menu_2;
+template: FoundationElementTemplate<ViewTemplate<Menu_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof Menu>;
 
 // @public
@@ -996,13 +1322,72 @@ export const jpNumberField: (overrideDefinition?: OverrideFoundationElementDefin
 // @public
 export const jpOption: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+baseClass: typeof ListboxOption;
+template: FoundationElementTemplate<ViewTemplate<ListboxOption, any>, ListboxOptionOptions>;
 styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Option_2, any>, ListboxOptionOptions>;
+baseClass: typeof ListboxOption;
+template: FoundationElementTemplate<ViewTemplate<ListboxOption, any>, ListboxOptionOptions>;
 styles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
 }, typeof Option_2>;
+
+// @alpha
+export const jpPicker: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof Picker_2;
+template: FoundationElementTemplate<ViewTemplate<Picker_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+shadowOptions: {};
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof Picker_2;
+template: FoundationElementTemplate<ViewTemplate<Picker_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+shadowOptions: {};
+}, typeof Picker>;
+
+// @alpha
+export const jpPickerList: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof PickerList_2;
+template: FoundationElementTemplate<ViewTemplate<PickerList_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof PickerList_2;
+template: FoundationElementTemplate<ViewTemplate<PickerList_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}, typeof PickerList>;
+
+// @alpha
+export const jpPickerListItem: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof PickerListItem_2;
+template: FoundationElementTemplate<ViewTemplate<PickerListItem_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof PickerListItem_2;
+template: FoundationElementTemplate<ViewTemplate<PickerListItem_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}, typeof PickerListItem>;
+
+// @alpha
+export const jpPickerMenu: (overrideDefinition?: OverrideFoundationElementDefinition<FoundationElementDefinition> | undefined) => FoundationElementRegistry<FoundationElementDefinition, Constructable<FoundationElement>>;
+
+// @alpha
+export const jpPickerMenuOption: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof PickerMenuOption_2;
+template: FoundationElementTemplate<ViewTemplate<PickerMenuOption_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof PickerMenuOption_2;
+template: FoundationElementTemplate<ViewTemplate<PickerMenuOption_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}, typeof PickerMenuOption>;
 
 // @public
 export const jpProgress: (overrideDefinition?: OverrideFoundationElementDefinition<ProgressOptions> | undefined) => FoundationElementRegistry<ProgressOptions, Constructable<FoundationElement>>;
@@ -1016,12 +1401,14 @@ export const jpRadio: (overrideDefinition?: OverrideFoundationElementDefinition<
 // @public
 export const jpRadioGroup: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<RadioGroup, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof RadioGroup_2;
+template: FoundationElementTemplate<ViewTemplate<RadioGroup_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<RadioGroup, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof RadioGroup_2;
+template: FoundationElementTemplate<ViewTemplate<RadioGroup_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof RadioGroup>;
 
 // @public
@@ -1047,6 +1434,19 @@ delegatesFocus: true;
 export const jpSelect: (overrideDefinition?: OverrideFoundationElementDefinition<SelectOptions> | undefined) => FoundationElementRegistry<SelectOptions, Constructable<FoundationElement>>;
 
 // @public
+export const jpSkeleton: (overrideDefinition?: OverrideFoundationElementDefinition<    {
+baseName: string;
+baseClass: typeof Skeleton_2;
+template: FoundationElementTemplate<ViewTemplate<Skeleton_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}> | undefined) => FoundationElementRegistry<    {
+baseName: string;
+baseClass: typeof Skeleton_2;
+template: FoundationElementTemplate<ViewTemplate<Skeleton_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
+}, typeof Skeleton>;
+
+// @public
 export const jpSlider: (overrideDefinition?: OverrideFoundationElementDefinition<SliderOptions> | undefined) => FoundationElementRegistry<SliderOptions, Constructable<FoundationElement>>;
 
 // @public
@@ -1054,12 +1454,12 @@ export const jpSliderLabel: (overrideDefinition?: OverrideFoundationElementDefin
 baseName: string;
 baseClass: typeof SliderLabel_2;
 template: FoundationElementTemplate<ViewTemplate<SliderLabel_2, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
 baseClass: typeof SliderLabel_2;
 template: FoundationElementTemplate<ViewTemplate<SliderLabel_2, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof SliderLabel>;
 
 // @public
@@ -1068,33 +1468,39 @@ export const jpSwitch: (overrideDefinition?: OverrideFoundationElementDefinition
 // @public
 export const jpTab: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Tab, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Tab_2;
+template: FoundationElementTemplate<ViewTemplate<Tab_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Tab, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof Tab_2;
+template: FoundationElementTemplate<ViewTemplate<Tab_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof Tab>;
 
 // @public
 export const jpTabPanel: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<TabPanel, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof TabPanel_2;
+template: FoundationElementTemplate<ViewTemplate<TabPanel_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<TabPanel, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof TabPanel_2;
+template: FoundationElementTemplate<ViewTemplate<TabPanel_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof TabPanel>;
 
 // @public
 export const jpTabs: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Tabs, any>, TabsOptions>;
+baseClass: typeof Tabs_2;
+template: FoundationElementTemplate<ViewTemplate<Tabs_2, any>, TabsOptions>;
 styles: FoundationElementTemplate<ElementStyles, TabsOptions>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<Tabs, any>, TabsOptions>;
+baseClass: typeof Tabs_2;
+template: FoundationElementTemplate<ViewTemplate<Tabs_2, any>, TabsOptions>;
 styles: FoundationElementTemplate<ElementStyles, TabsOptions>;
 }, typeof Tabs>;
 
@@ -1103,7 +1509,7 @@ export const jpTextArea: (overrideDefinition?: OverrideFoundationElementDefiniti
 baseName: string;
 baseClass: typeof TextArea_2;
 template: FoundationElementTemplate<ViewTemplate<TextArea_2, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 shadowOptions: {
 delegatesFocus: true;
 };
@@ -1111,7 +1517,7 @@ delegatesFocus: true;
 baseName: string;
 baseClass: typeof TextArea_2;
 template: FoundationElementTemplate<ViewTemplate<TextArea_2, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 shadowOptions: {
 delegatesFocus: true;
 };
@@ -1139,17 +1545,17 @@ delegatesFocus: true;
 // @public
 export const jpToolbar: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-baseClass: typeof Toolbar_2;
-template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions>;
-styles: FoundationElementTemplate<ElementStyles, ToolbarOptions>;
+baseClass: typeof FoundationToolbar;
+template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions_2>;
+styles: FoundationElementTemplate<ElementStyles, ToolbarOptions_2>;
 shadowOptions: {
 delegatesFocus: true;
 };
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-baseClass: typeof Toolbar_2;
-template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions>;
-styles: FoundationElementTemplate<ElementStyles, ToolbarOptions>;
+baseClass: typeof FoundationToolbar;
+template: FoundationElementTemplate<ViewTemplate<Toolbar_2, any>, ToolbarOptions_2>;
+styles: FoundationElementTemplate<ElementStyles, ToolbarOptions_2>;
 shadowOptions: {
 delegatesFocus: true;
 };
@@ -1164,233 +1570,494 @@ export const jpTreeItem: (overrideDefinition?: OverrideFoundationElementDefiniti
 // @public
 export const jpTreeView: (overrideDefinition?: OverrideFoundationElementDefinition<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<TreeView, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof TreeView_2;
+template: FoundationElementTemplate<ViewTemplate<TreeView_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }> | undefined) => FoundationElementRegistry<    {
 baseName: string;
-template: FoundationElementTemplate<ViewTemplate<TreeView, any>, FoundationElementDefinition>;
-styles: FoundationElementTemplate<ElementStyles, FoundationElementDefinition>;
+baseClass: typeof TreeView_2;
+template: FoundationElementTemplate<ViewTemplate<TreeView_2, any>, FoundationElementDefinition>;
+styles: FoundationElementTemplate<ElementStyles>;
 }, typeof TreeView>;
 
-export { ListboxElement }
+// @public
+export class Listbox extends ListboxElement {
+    // @internal
+    protected sizeChanged(prev: number | undefined, next: number): void;
+    // @internal
+    protected updateComputedStylesheet(): void;
+}
 
-export { listboxStyles }
+// @public
+export const listboxStyles: FoundationElementTemplate<ElementStyles>;
 
-export { Menu }
+// @public
+export class Menu extends Menu_2 {
+    // @internal (undocumented)
+    connectedCallback(): void;
+}
 
-export { MenuItem }
+// @public
+export class MenuItem extends MenuItem_2 {
+}
 
 // @public
 export const menuItemStyles: FoundationElementTemplate<ElementStyles, MenuItemOptions>;
 
-export { menuStyles }
+// @public
+export const menuStyles: FoundationElementTemplate<ElementStyles>;
 
-export { neutralColor }
+// @public (undocumented)
+export const neutralColor: CSSDesignToken<Swatch>;
 
-export { neutralFillActive }
+// @public (undocumented)
+export const neutralFillActive: CSSDesignToken<Swatch>;
 
-export { neutralFillActiveDelta }
+// @public (undocumented)
+export const neutralFillActiveDelta: DesignToken<number>;
 
-export { neutralFillFocus }
+// @public (undocumented)
+export const neutralFillFocus: CSSDesignToken<Swatch>;
 
-export { neutralFillFocusDelta }
+// @public (undocumented)
+export const neutralFillFocusDelta: DesignToken<number>;
 
-export { neutralFillHover }
+// @public (undocumented)
+export const neutralFillHover: CSSDesignToken<Swatch>;
 
-export { neutralFillHoverDelta }
+// @public (undocumented)
+export const neutralFillHoverDelta: DesignToken<number>;
 
-export { neutralFillInputActive }
+// @public (undocumented)
+export const neutralFillInputActive: CSSDesignToken<Swatch>;
 
-export { neutralFillInputActiveDelta }
+// @public (undocumented)
+export const neutralFillInputActiveDelta: DesignToken<number>;
 
-export { neutralFillInputFocus }
+// @public (undocumented)
+export const neutralFillInputFocus: CSSDesignToken<Swatch>;
 
-export { neutralFillInputFocusDelta }
+// @public (undocumented)
+export const neutralFillInputFocusDelta: DesignToken<number>;
 
-export { neutralFillInputHover }
+// @public (undocumented)
+export const neutralFillInputHover: CSSDesignToken<Swatch>;
 
-export { neutralFillInputHoverDelta }
+// @public (undocumented)
+export const neutralFillInputHoverDelta: DesignToken<number>;
 
-export { neutralFillInputRecipe }
+// @public (undocumented)
+export const neutralFillInputRecipe: DesignToken<InteractiveColorRecipe>;
 
-export { neutralFillInputRest }
+// @public (undocumented)
+export const neutralFillInputRest: CSSDesignToken<Swatch>;
 
-export { neutralFillInputRestDelta }
+// @public (undocumented)
+export const neutralFillInputRestDelta: DesignToken<number>;
 
-export { neutralFillLayerRecipe }
+// @public (undocumented)
+export const neutralFillLayerRecipe: DesignToken<ColorRecipe>;
 
-export { neutralFillLayerRest }
+// @public (undocumented)
+export const neutralFillLayerRest: CSSDesignToken<Swatch>;
 
-export { neutralFillLayerRestDelta }
+// @public (undocumented)
+export const neutralFillLayerRestDelta: DesignToken<number>;
 
-export { neutralFillRecipe }
+// @public (undocumented)
+export const neutralFillRecipe: DesignToken<InteractiveColorRecipe>;
 
-export { neutralFillRest }
+// @public (undocumented)
+export const neutralFillRest: CSSDesignToken<Swatch>;
 
-export { neutralFillRestDelta }
+// @public (undocumented)
+export const neutralFillRestDelta: DesignToken<number>;
 
-export { neutralFillStealthActive }
+// @public (undocumented)
+export const neutralFillStealthActive: CSSDesignToken<Swatch>;
 
-export { neutralFillStealthActiveDelta }
+// @public (undocumented)
+export const neutralFillStealthActiveDelta: DesignToken<number>;
 
-export { neutralFillStealthFocus }
+// @public (undocumented)
+export const neutralFillStealthFocus: CSSDesignToken<Swatch>;
 
-export { neutralFillStealthFocusDelta }
+// @public (undocumented)
+export const neutralFillStealthFocusDelta: DesignToken<number>;
 
-export { neutralFillStealthHover }
+// @public (undocumented)
+export const neutralFillStealthHover: CSSDesignToken<Swatch>;
 
-export { neutralFillStealthHoverDelta }
+// @public (undocumented)
+export const neutralFillStealthHoverDelta: DesignToken<number>;
 
-export { neutralFillStealthRecipe }
+// @public (undocumented)
+export const neutralFillStealthRecipe: DesignToken<InteractiveColorRecipe>;
 
-export { neutralFillStealthRest }
+// @public (undocumented)
+export const neutralFillStealthRest: CSSDesignToken<Swatch>;
 
-export { neutralFillStealthRestDelta }
+// @public (undocumented)
+export const neutralFillStealthRestDelta: DesignToken<number>;
 
-export { neutralFillStrongActive }
+// @public (undocumented)
+export const neutralFillStrongActive: CSSDesignToken<Swatch>;
 
-export { neutralFillStrongActiveDelta }
+// @public (undocumented)
+export const neutralFillStrongActiveDelta: DesignToken<number>;
 
-export { neutralFillStrongFocus }
+// @public (undocumented)
+export const neutralFillStrongFocus: CSSDesignToken<Swatch>;
 
-export { neutralFillStrongFocusDelta }
+// @public (undocumented)
+export const neutralFillStrongFocusDelta: DesignToken<number>;
 
-export { neutralFillStrongHover }
+// @public (undocumented)
+export const neutralFillStrongHover: CSSDesignToken<Swatch>;
 
-export { neutralFillStrongHoverDelta }
+// @public (undocumented)
+export const neutralFillStrongHoverDelta: DesignToken<number>;
 
-export { neutralFillStrongRecipe }
+// @public (undocumented)
+export const neutralFillStrongRecipe: DesignToken<InteractiveColorRecipe>;
 
-export { neutralFillStrongRest }
+// @public (undocumented)
+export const neutralFillStrongRest: CSSDesignToken<Swatch>;
 
-export { neutralFillStrongRestDelta }
+// @public (undocumented)
+export const neutralFillStrongRestDelta: DesignToken<number>;
 
-export { neutralForegroundHint }
+// @public (undocumented)
+export const neutralForegroundHint: CSSDesignToken<Swatch>;
 
-export { neutralForegroundHintRecipe }
+// @public (undocumented)
+export const neutralForegroundHintRecipe: DesignToken<ColorRecipe>;
 
-export { neutralForegroundRecipe }
+// @public (undocumented)
+export const neutralForegroundRecipe: DesignToken<ColorRecipe>;
 
-export { neutralForegroundRest }
+// @public (undocumented)
+export const neutralForegroundRest: CSSDesignToken<Swatch>;
 
-export { neutralLayer1 }
+// @public (undocumented)
+export const neutralLayer1: CSSDesignToken<Swatch>;
 
-export { neutralLayer1Recipe }
+// @public (undocumented)
+export const neutralLayer1Recipe: DesignToken<ColorRecipe>;
 
-export { neutralLayer2 }
+// @public (undocumented)
+export const neutralLayer2: CSSDesignToken<Swatch>;
 
-export { neutralLayer2Recipe }
+// @public (undocumented)
+export const neutralLayer2Recipe: DesignToken<ColorRecipe>;
 
-export { neutralLayer3 }
+// @public (undocumented)
+export const neutralLayer3: CSSDesignToken<Swatch>;
 
-export { neutralLayer3Recipe }
+// @public (undocumented)
+export const neutralLayer3Recipe: DesignToken<ColorRecipe>;
 
-export { neutralLayer4 }
+// @public (undocumented)
+export const neutralLayer4: CSSDesignToken<Swatch>;
 
-export { neutralLayer4Recipe }
+// @public (undocumented)
+export const neutralLayer4Recipe: DesignToken<ColorRecipe>;
 
-export { neutralLayerCardContainer }
+// @public (undocumented)
+export const neutralLayerCardContainer: CSSDesignToken<Swatch>;
 
-export { neutralLayerCardContainerRecipe }
+// @public (undocumented)
+export const neutralLayerCardContainerRecipe: DesignToken<ColorRecipe>;
 
-export { neutralLayerFloating }
+// @public (undocumented)
+export const neutralLayerFloating: CSSDesignToken<Swatch>;
 
-export { neutralLayerFloatingRecipe }
+// @public (undocumented)
+export const neutralLayerFloatingRecipe: DesignToken<ColorRecipe>;
 
-export { neutralPalette }
+// @public (undocumented)
+export const neutralPalette: DesignToken<Palette<Swatch>>;
 
-export { neutralStrokeActive }
+// @public (undocumented)
+export const neutralStrokeActive: CSSDesignToken<Swatch>;
 
-export { neutralStrokeActiveDelta }
+// @public (undocumented)
+export const neutralStrokeActiveDelta: DesignToken<number>;
 
-export { neutralStrokeDividerRecipe }
+// @public (undocumented)
+export const neutralStrokeDividerRecipe: DesignToken<ColorRecipe>;
 
-export { neutralStrokeDividerRest }
+// @public (undocumented)
+export const neutralStrokeDividerRest: CSSDesignToken<Swatch>;
 
-export { neutralStrokeDividerRestDelta }
+// @public (undocumented)
+export const neutralStrokeDividerRestDelta: DesignToken<number>;
 
-export { neutralStrokeFocus }
+// @public (undocumented)
+export const neutralStrokeFocus: CSSDesignToken<Swatch>;
 
-export { neutralStrokeFocusDelta }
+// @public (undocumented)
+export const neutralStrokeFocusDelta: DesignToken<number>;
 
-export { neutralStrokeHover }
+// @public (undocumented)
+export const neutralStrokeHover: CSSDesignToken<Swatch>;
 
-export { neutralStrokeHoverDelta }
+// @public (undocumented)
+export const neutralStrokeHoverDelta: DesignToken<number>;
 
-export { neutralStrokeRecipe }
+// @public (undocumented)
+export const neutralStrokeRecipe: DesignToken<InteractiveColorRecipe>;
 
-export { neutralStrokeRest }
+// @public (undocumented)
+export const neutralStrokeRest: CSSDesignToken<Swatch>;
 
-export { neutralStrokeRestDelta }
+// @public (undocumented)
+export const neutralStrokeRestDelta: DesignToken<number>;
 
-export { NumberField }
+// @public
+export class NumberField extends NumberField_2 {
+    appearance: NumberFieldAppearance;
+}
 
-export { NumberFieldAppearance }
+// @public
+export type NumberFieldAppearance = 'filled' | 'outline';
 
 // @public
 export const numberFieldStyles: FoundationElementTemplate<ElementStyles, NumberFieldOptions>;
 
+// @public
+class Option_2 extends ListboxOption {
+}
 export { Option_2 as Option }
 
 // @public
 export const optionStyles: FoundationElementTemplate<ElementStyles, ListboxOptionOptions>;
 
-export { Palette }
+// @public
+export interface Palette<T extends Swatch = Swatch> {
+    // Warning: (ae-forgotten-export) The symbol "RelativeLuminance" needs to be exported by the entry point index.d.ts
+    closestIndexOf(reference: RelativeLuminance): number;
+    colorContrast(reference: Swatch, contrast: number, initialIndex?: number, direction?: 1 | -1): T;
+    get(index: number): T;
+    // (undocumented)
+    readonly source: T;
+    // (undocumented)
+    readonly swatches: ReadonlyArray<T>;
+}
 
-export { PaletteRGB }
+// @public (undocumented)
+export type PaletteRGB = Palette<SwatchRGB>;
 
-export { Progress }
+// @public (undocumented)
+export const PaletteRGB: Readonly<{
+    create: typeof create;
+    from: typeof from;
+}>;
 
-export { progressStyles }
+// @public
+export class Picker extends Picker_2 {
+}
+
+// @public
+export class PickerList extends PickerList_2 {
+}
+
+// @public
+export class PickerListItem extends PickerListItem_2 {
+}
+
+// @public
+export const pickerListItemStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export class PickerMenu extends PickerMenu_2 {
+    // (undocumented)
+    connectedCallback(): void;
+}
+
+// @public
+export class PickerMenuOption extends PickerMenuOption_2 {
+}
+
+// @public
+export const pickerMenuOptionStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export const pickerMenuStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export const pickerStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export class Progress extends BaseProgress {
+}
+
+// @public
+export class ProgressRing extends BaseProgress {
+}
+
+// @public
+export const progressRingStyles: FoundationElementTemplate<ElementStyles, ProgressRingOptions>;
+
+// @public
+export const progressStyles: FoundationElementTemplate<ElementStyles, ProgressOptions>;
 
 // @public
 export function provideJupyterDesignSystem(element?: HTMLElement): DesignSystem;
 
-export { Radio }
+// @public
+export class Radio extends Radio_2 {
+}
 
-export { RadioGroup }
+// @public
+export class RadioGroup extends RadioGroup_2 {
+    constructor();
+    // (undocumented)
+    ariaInvalidChanged(): void;
+}
 
-export { radioGroupStyles }
+// @public
+export const radioGroupStyles: FoundationElementTemplate<ElementStyles>;
 
 // @public
 export const radioStyles: FoundationElementTemplate<ElementStyles, RadioOptions>;
 
-export { Recipe }
+// @public (undocumented)
+export const radioTemplate: FoundationElementTemplate<ViewTemplate<Radio>, RadioOptions>;
 
-export { Search }
+// @public @deprecated (undocumented)
+export interface Recipe<T> {
+    // (undocumented)
+    evaluate(element: HTMLElement, reference?: Swatch): T;
+}
 
-export { SearchAppearance }
+// @public
+export class Search extends Search_2 {
+    appearance: SearchAppearance;
+}
+
+// @public
+export type SearchAppearance = 'filled' | 'outline';
 
 // @public (undocumented)
 export const searchStyles: FoundationElementTemplate<ElementStyles, TextFieldOptions>;
 
 // @public
 export class Select extends Select_2 {
+    autoWidth: boolean;
+    protected autoWidthChanged(prev: boolean | undefined, next: boolean): void;
+    // @internal (undocumented)
+    connectedCallback(): void;
+    // @internal (undocumented)
+    protected listboxScrollWidthChanged(): void;
+    // @internal
+    protected maxHeightChanged(prev: number | undefined, next: number): void;
+    // @deprecated
     minimal: boolean;
+    // @internal @override
+    multipleChanged(prev: boolean | undefined, next: boolean): void;
+    scale?: SelectScale;
+    protected setAutoWidth(): void;
+    // (undocumented)
+    setPositioning(): void;
+    // @internal @override
+    protected sizeChanged(prev: number | undefined, next: number): void;
+    // @internal
+    slottedOptionsChanged(prev: Element[] | undefined, next: Element[]): void;
+    // @internal
+    protected updateComputedStylesheet(): void;
 }
+
+// @public
+export type SelectScale = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
 
 // @public
 export const selectStyles: FoundationElementTemplate<ElementStyles, SelectOptions>;
 
-export { SliderLabel }
+// @public
+export class Skeleton extends Skeleton_2 {
+}
 
-export { sliderLabelStyles }
+// @public
+export const skeletonStyles: FoundationElementTemplate<ElementStyles>;
 
-export { StandardLuminance }
+// @public
+export class Slider extends Slider_2 {
+}
 
-export { strokeWidth }
+// @public
+export class SliderLabel extends SliderLabel_2 {
+    // (undocumented)
+    protected sliderOrientationChanged(): void;
+}
 
-export { Swatch }
+// @public
+export const sliderLabelStyles: FoundationElementTemplate<ElementStyles>;
 
-export { SwatchRGB }
+// @public
+export const sliderStyles: FoundationElementTemplate<ElementStyles, SliderOptions>;
 
-export { Tab }
+// @public
+export const StandardLuminance: {
+    readonly LightMode: 1;
+    readonly DarkMode: 0.23;
+};
 
-export { TabPanel }
+// @public
+export type StandardLuminance = (typeof StandardLuminance)[keyof typeof StandardLuminance];
 
-export { tabPanelStyles }
+// @public (undocumented)
+export const strokeWidth: CSSDesignToken<number>;
 
-export { Tabs }
+// @public
+export interface Swatch extends RelativeLuminance {
+    // (undocumented)
+    contrast(target: RelativeLuminance): number;
+    // (undocumented)
+    toColorString(): string;
+}
+
+// @public (undocumented)
+export interface SwatchRGB extends Swatch {
+    // (undocumented)
+    b: number;
+    // (undocumented)
+    g: number;
+    // (undocumented)
+    r: number;
+}
+
+// @public (undocumented)
+export const SwatchRGB: Readonly<{
+    create(r: number, g: number, b: number): SwatchRGB;
+    from(obj: {
+        r: number;
+        g: number;
+        b: number;
+    }): SwatchRGB;
+}>;
+
+// @public
+export class Switch extends Switch_2 {
+}
+
+// @public
+export const switchStyles: FoundationElementTemplate<ElementStyles, SwitchOptions>;
+
+// @public
+export class Tab extends Tab_2 {
+}
+
+// @public
+export class TabPanel extends TabPanel_2 {
+}
+
+// @public
+export const tabPanelStyles: FoundationElementTemplate<ElementStyles>;
+
+// @public
+export class Tabs extends Tabs_2 {
+}
 
 // @public
 export const tabsStyles: FoundationElementTemplate<ElementStyles, TabsOptions>;
@@ -1398,73 +2065,123 @@ export const tabsStyles: FoundationElementTemplate<ElementStyles, TabsOptions>;
 // @public
 export const tabStyles: FoundationElementTemplate<ElementStyles>;
 
-export { TextArea }
+// @public
+export class TextArea extends TextArea_2 {
+    appearance: TextAreaAppearance;
+}
 
-export { TextAreaAppearance }
+// @public
+export type TextAreaAppearance = 'filled' | 'outline';
 
 // @public
 export const textAreaStyles: FoundationElementTemplate<ElementStyles>;
 
-export { TextField }
+// @public
+export class TextField extends TextField_2 {
+    appearance: TextFieldAppearance;
+}
 
-export { TextFieldAppearance }
+// @public
+export type TextFieldAppearance = 'filled' | 'outline';
 
 // @public
 export const textFieldStyles: FoundationElementTemplate<ElementStyles, TextFieldOptions>;
 
-export { Toolbar }
+// @public
+export class Toolbar extends FoundationToolbar {
+    // (undocumented)
+    connectedCallback(): void;
+}
 
 // @public
-export const toolbarStyles: FoundationElementTemplate<ElementStyles, ToolbarOptions>;
+export type ToolbarOptions = FoundationElementDefinition & StartEndOptions;
 
-export { Tooltip }
+// @public
+export const toolbarStyles: FoundationElementTemplate<ElementStyles, ToolbarOptions_2>;
 
-export { tooltipStyles }
+// @public
+export class Tooltip extends Tooltip_2 {
+}
 
-export { typeRampBaseFontSize }
+// @public
+export const tooltipStyles: (context: ElementDefinitionContext, definition: FoundationElementDefinition) => ElementStyles;
 
-export { typeRampBaseLineHeight }
+// @public
+export class TreeItem extends TreeItem_2 {
+}
 
-export { typeRampMinus1FontSize }
+// @public
+export const treeItemStyles: FoundationElementTemplate<ElementStyles, TreeItemOptions>;
 
-export { typeRampMinus1LineHeight }
+// @public
+export class TreeView extends TreeView_2 {
+}
 
-export { typeRampMinus2FontSize }
-
-export { typeRampMinus2LineHeight }
-
-export { typeRampPlus1FontSize }
-
-export { typeRampPlus1LineHeight }
-
-export { typeRampPlus2FontSize }
-
-export { typeRampPlus2LineHeight }
-
-export { typeRampPlus3FontSize }
-
-export { typeRampPlus3LineHeight }
-
-export { typeRampPlus4FontSize }
-
-export { typeRampPlus4LineHeight }
-
-export { typeRampPlus5FontSize }
-
-export { typeRampPlus5LineHeight }
-
-export { typeRampPlus6FontSize }
-
-export { typeRampPlus6LineHeight }
-
-export { verticalSliderLabelStyles }
+// @public
+export const treeViewStyles: FoundationElementTemplate<ElementStyles>;
 
 // @public (undocumented)
-export const white: SwatchRGB;
+export const typeRampBaseFontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampBaseLineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampMinus1FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampMinus1LineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampMinus2FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampMinus2LineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus1FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus1LineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus2FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus2LineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus3FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus3LineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus4FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus4LineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus5FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus5LineHeight: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus6FontSize: CSSDesignToken<string>;
+
+// @public (undocumented)
+export const typeRampPlus6LineHeight: CSSDesignToken<string>;
+
+// @public
+export const verticalSliderLabelStyles: ElementStyles;
 
 // Warnings were encountered during analysis:
 //
-// dist/dts/custom-elements.d.ts:109:5 - (ae-incompatible-release-tags) The symbol "jpButton" is marked as @public, but its signature references "Button" which is marked as @internal
+// dist/dts/color/palette.d.ts:48:5 - (ae-forgotten-export) The symbol "create" needs to be exported by the entry point index.d.ts
+// dist/dts/color/palette.d.ts:49:5 - (ae-forgotten-export) The symbol "from" needs to be exported by the entry point index.d.ts
+// dist/dts/custom-elements.d.ts:200:5 - (ae-incompatible-release-tags) The symbol "jpDesignSystemProvider" is marked as @public, but its signature references "DesignSystemProvider" which is marked as @internal
 
 // (No @packageDocumentation comment for this package)
 

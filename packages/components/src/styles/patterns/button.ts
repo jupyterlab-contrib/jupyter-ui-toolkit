@@ -21,6 +21,7 @@ import {
   controlCornerRadius,
   density,
   designUnit,
+  elementScale,
   errorFillActive,
   errorFillFocus,
   errorFillHover,
@@ -75,7 +76,11 @@ export const BaseButtonStyles = css`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 0 calc((10 + (${designUnit} * 2 * ${density})) * 1px);
+    padding: 0
+      max(
+        1px,
+        calc((10 + (${designUnit} * 2 * (${density} + ${elementScale})))) * 1px
+      );
     white-space: nowrap;
     outline: none;
     text-decoration: none;
@@ -101,12 +106,25 @@ export const BaseButtonStyles = css`
     box-shadow: inset 0px 0px 2px 2px ${neutralFillStrongActive};
   }
 
-  :host([minimal]) {
-    --density: -4;
+  :host([minimal]),
+  :host([scale='xsmall']) {
+    --element-scale: -4;
   }
 
-  :host([minimal]) .control {
-    padding: 1px;
+  :host([scale='small']) {
+    --element-scale: -2;
+  }
+
+  :host([scale='medium']) {
+    --element-scale: 1;
+  }
+
+  :host([scale='large']) {
+    --element-scale: 2;
+  }
+
+  :host([scale='xlarge']) {
+    --element-scale: 4;
   }
 
   /* prettier-ignore */
