@@ -55,6 +55,9 @@ export function withTheme(story: any, context: StoryContext): HTMLElement {
     ? StandardLuminance.DarkMode
     : StandardLuminance.LightMode;
 
+  const density = context.globals.density;
+  theme.density = density;
+
   const children = story();
   if (typeof children === 'string') {
     theme.insertAdjacentHTML('afterbegin', children);

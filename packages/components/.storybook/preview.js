@@ -34,17 +34,36 @@ const parameters = {
 
 const globalTypes = {
   accent: {
-    name: 'Accent',
+    name: 'Accent color',
     description: 'Theme accent color for components',
     defaultValue: '#006CBE',
     toolbar: {
+      title: 'Accent color',
       icon: 'paintbrush',
       // Array of plain string values or MenuItem shape (see below)
       items: [
         { value: '#006CBE', right: '🔵', title: 'blue' },
         { value: '#DA1A5F', title: 'pink' },
         { value: '#f2c812', title: 'yellow' }
-      ]
+      ],
+      dynamicTitle: true
+    }
+  },
+  density: {
+    name: 'Density',
+    description: 'UI element density',
+    defaultValue: 0,
+    toolbar: {
+      title: 'Density',
+      icon: 'grow',
+      items: [
+        { value: -4, title: 'xsmall' },
+        { value: -2, title: 'small' },
+        { value: 0, title: 'medium' },
+        { value: 2, title: 'large' },
+        { value: 4, title: 'xlarge' }
+      ],
+      dynamicTitle: true
     }
   }
 };
