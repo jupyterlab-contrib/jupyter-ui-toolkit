@@ -13,7 +13,10 @@ export default {
     disabled: { control: 'boolean' },
     customIndicator: { control: 'boolean' },
     numberOfChildren: { control: 'number' },
-    minimal: { control: 'boolean' },
+    scale: {
+      control: 'select',
+      options: ['xsmall', 'small', 'medium', 'large', 'xlarge']
+    },
     autowidth: { control: 'boolean' },
     autocomplete: {
       control: 'select',
@@ -58,7 +61,7 @@ const Template: StoryFn = (args): HTMLElement => {
     'afterbegin',
     `<jp-combobox 
       ${args.disabled ? 'disabled' : ''}
-      ${args.minimal ? 'minimal' : ''}
+      ${args.scale ? `scale=${args.scale}` : ''}
       ${args.autowidth ? 'autowidth' : ''}
       ${args.autocomplete !== 'none' ? `autocomplete=${args.autocomplete}` : ''}
       ${args.ariaInvalid ? `aria-invalid="${args.ariaInvalid}"` : ''}
@@ -98,7 +101,7 @@ Default.args = {
   disabled: false,
   customIndicator: false,
   numberOfChildren: 10,
-  minimal: false,
+  scale: 'medium',
   autowidth: false,
   autocomplete: 'none',
   ariaInvalid: false,

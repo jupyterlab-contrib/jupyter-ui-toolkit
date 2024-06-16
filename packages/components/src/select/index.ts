@@ -16,6 +16,11 @@ import {
 import { selectStyles as styles } from './select.styles.js';
 
 /**
+ * Scale locally an element.
+ */
+export type SelectScale = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+
+/**
  * Select class
  * @public
  * @tagname jp-select
@@ -73,10 +78,19 @@ class JupyterSelect extends Select {
    *
    * @public
    * @remarks
+   *
+   * @deprecated Use {@link scale} `xsmall` instead
+   *
    * HTML Attribute: minimal
    */
   @attr({ attribute: 'minimal', mode: 'boolean' })
   public minimal: boolean;
+
+  /**
+   * Scale the element compared to the theme size.
+   */
+  @attr
+  public scale?: SelectScale;
 
   /**
    * An internal stylesheet to hold calculated CSS custom properties.

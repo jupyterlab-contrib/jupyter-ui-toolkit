@@ -7,6 +7,11 @@ import { Button, buttonTemplate as template } from '@microsoft/fast-foundation';
 import { buttonStyles as styles } from './button.styles.js';
 
 /**
+ * Scale locally an element.
+ */
+export type ButtonScale = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+
+/**
  * Types of button appearance.
  * @public
  */
@@ -40,10 +45,18 @@ class JupyterButton extends Button {
    *
    * @public
    * @remarks
+   *
+   * @deprecated Use {@link scale} `xsmall` instead
    * HTML Attribute: minimal
    */
   @attr({ attribute: 'minimal', mode: 'boolean' })
   public minimal: boolean;
+
+  /**
+   * Scale the element compared to the theme size.
+   */
+  @attr
+  public scale?: ButtonScale;
 
   /**
    * Applies 'icon-only' class when there is only an SVG in the default slot

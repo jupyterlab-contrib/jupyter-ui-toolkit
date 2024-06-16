@@ -12,6 +12,11 @@ import { heightNumberAsToken } from '../design-tokens.js';
 import { comboboxStyles as styles } from './combobox.styles.js';
 
 /**
+ * Scale locally an element.
+ */
+export type ComboboxScale = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+
+/**
  * Combobox class
  *
  * @public
@@ -35,10 +40,19 @@ class JupyterCombobox extends Combobox {
    *
    * @public
    * @remarks
+   *
+   * @deprecated Use {@link scale} `xsmall` instead
+   *
    * HTML Attribute: minimal
    */
   @attr({ attribute: 'minimal', mode: 'boolean' })
   public minimal: boolean;
+
+  /**
+   * Scale the element compared to the theme size.
+   */
+  @attr
+  public scale?: ComboboxScale;
 
   /**
    * The connected callback for this FASTElement.

@@ -1,4 +1,7 @@
-import { Select as SelectElement } from '@jupyter/web-components';
+import {
+  Select as SelectElement,
+  type SelectScale
+} from '@jupyter/web-components';
 
 export type { SelectElement };
 
@@ -15,8 +18,15 @@ export interface SelectProps
   /** Whether the select has a compact layout or not. */
   autowidth?: boolean;
 
-  /** Whether the select has a compact layout or not. */
+  /** Whether the select has a compact layout or not.
+   * @deprecated Use {@link scale} equals to `xsmall` instead.
+   */
   minimal?: boolean;
+
+  /**
+   * Scale the element compared to the theme size.
+   */
+  scale?: SelectScale;
 
   /** The open attribute. */
   open?: boolean;

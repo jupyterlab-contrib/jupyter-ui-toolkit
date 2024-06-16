@@ -21,7 +21,10 @@ export default {
     },
     disabled: { control: 'boolean' },
     autofocus: { control: 'boolean' },
-    minimal: { control: 'boolean' },
+    scale: {
+      control: 'select',
+      options: ['xsmall', 'small', 'medium', 'large', 'xlarge']
+    },
     startIcon: { control: 'boolean' },
     onClick: {
       action: 'clicked',
@@ -44,7 +47,7 @@ const Template: StoryFn = (args): HTMLElement => {
       ${args.appearance ? `appearance=${args.appearance.toLowerCase()}` : ''}
       ${args.disabled ? 'disabled' : ''} 
       ${args.autofocus ? 'autofocus' : ''}
-      ${args.minimal ? 'minimal' : ''}
+      ${args.scale ? `scale=${args.scale}` : ''}
       ${args.ariaPressed !== 'none' ? `aria-pressed=${args.ariaPressed}` : ''}
     >${args.startIcon ? getFaIcon('plus', args.label ? 'start' : null) : ''}${
       args.label ?? ''
@@ -64,7 +67,7 @@ Accent.args = {
   appearance: 'Accent',
   disabled: false,
   autofocus: false,
-  minimal: false,
+  scale: 'medium',
   startIcon: false,
   ariaPressed: 'none',
   onClick: action('button-clicked')

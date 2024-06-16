@@ -146,9 +146,26 @@ export const selectStyles: FoundationElementTemplate<
     padding: 0 calc(${designUnit} * 2.25px);
     width: 100%;
   }
-  
-  :host([minimal]) {
-    --density: -4;
+
+  :host([minimal]),
+  :host([scale='xsmall']) {
+    --element-scale: -4;
+  }
+
+  :host([scale='small']) {
+    --element-scale: -2;
+  }
+
+  :host([scale='medium']) {
+    --element-scale: 0;
+  }
+
+  :host([scale='large']) {
+    --element-scale: 2;
+  }
+
+  :host([scale='xlarge']) {
+    --element-scale: 4;
   }
   
   :host(:not([disabled]):hover) {
