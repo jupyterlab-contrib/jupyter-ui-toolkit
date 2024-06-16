@@ -2,6 +2,36 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.16.0
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.15.3...b4fdf7afa1d4f769f8a9a7ba256961596365fbcd))
+
+### Enhancements made
+
+- Make expand glyph size changing with density [#104](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/104) ([@fcollonval](https://github.com/fcollonval))
+- Add size attribute to the button [#102](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/102) ([@fcollonval](https://github.com/fcollonval))
+
+### Bugs fixed
+
+- Drop fast react wrapper [#100](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/100) ([@fcollonval](https://github.com/fcollonval))
+- Add tiny margin to input so that the focus highlight is visible by default [#96](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/96) ([@fcollonval](https://github.com/fcollonval))
+
+### Maintenance and upkeep improvements
+
+- Bump braces from 3.0.2 to 3.0.3 [#101](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/101) ([@dependabot](https://github.com/dependabot))
+- Bump ejs from 3.1.9 to 3.1.10 [#99](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/99) ([@dependabot](https://github.com/dependabot))
+- Bump express from 4.18.2 to 4.19.2 [#94](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/94) ([@dependabot](https://github.com/dependabot))
+- Bump webpack-dev-middleware from 6.1.1 to 6.1.2 [#93](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/93) ([@dependabot](https://github.com/dependabot))
+- Bump follow-redirects from 1.15.4 to 1.15.6 [#92](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/92) ([@dependabot](https://github.com/dependabot))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-03-04&to=2024-06-16&type=c))
+
+[@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2024-03-04..2024-06-16&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-03-04..2024-06-16&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2024-03-04..2024-06-16&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.15.3
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.15.2...82b273e829f017430c7753be2a088736b27d30c8))
@@ -20,8 +50,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-01-24&to=2024-03-03&type=c))
 
 [@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2024-01-24..2024-03-03&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-01-24..2024-03-03&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2024-01-24..2024-03-03&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.15.2
 
