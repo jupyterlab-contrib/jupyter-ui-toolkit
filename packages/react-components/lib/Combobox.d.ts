@@ -1,4 +1,7 @@
-import { Combobox as ComboboxElement, type ComboboxScale } from '@jupyter/web-components';
+import {
+  Combobox as ComboboxElement,
+  type ComboboxScale
+} from '@jupyter/web-components';
 
 export type { ComboboxElement };
 

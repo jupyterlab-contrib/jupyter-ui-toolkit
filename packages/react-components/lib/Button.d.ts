@@ -1,4 +1,7 @@
-import { Button as ButtonElement, type ButtonScale } from '@jupyter/web-components';
+import {
+  Button as ButtonElement,
+  type ButtonScale
+} from '@jupyter/web-components';
 
 export type { ButtonElement };
 

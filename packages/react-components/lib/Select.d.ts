@@ -1,4 +1,7 @@
-import { Select as SelectElement, type SelectScale } from '@jupyter/web-components';
+import {
+  Select as SelectElement,
+  type SelectScale
+} from '@jupyter/web-components';
 
 export type { SelectElement };
 
