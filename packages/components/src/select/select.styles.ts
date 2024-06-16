@@ -157,7 +157,7 @@ export const selectStyles: FoundationElementTemplate<
   }
 
   :host([scale='medium']) {
-    --element-scale: 1;
+    --element-scale: 0;
   }
 
   :host([scale='large']) {
