@@ -17,6 +17,7 @@ import {
   accentFillRest,
   bodyFont,
   controlCornerRadius,
+  density,
   designUnit,
   disabledOpacity,
   focusStrokeWidth,
@@ -30,7 +31,8 @@ import {
   neutralForegroundRest,
   strokeWidth,
   typeRampBaseFontSize,
-  typeRampBaseLineHeight
+  typeRampBaseLineHeight,
+  typeRampPlus1FontSize
 } from '../design-tokens.js';
 import {
   DirectionalStyleSheetBehavior,
@@ -148,8 +150,8 @@ export const menuItemStyles: FoundationElementTemplate<
 
     .expand-collapse-glyph {
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
-      width: 16px;
-      height: 16px;
+      width: calc((16 + ${density}) * 1px);
+      height: calc((16 + ${density}) * 1px);
       fill: currentcolor;
     }
 
@@ -170,6 +172,12 @@ export const menuItemStyles: FoundationElementTemplate<
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
       width: 16px;
       height: 16px;
+
+      /* Something like that would do if the typography is adaptive
+      font-size: inherit;
+      width: ${typeRampPlus1FontSize};
+      height: ${typeRampPlus1FontSize};
+      */
     }
 
     :host(:hover) .start,
