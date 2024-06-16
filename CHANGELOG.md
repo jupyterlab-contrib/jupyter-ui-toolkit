@@ -9,7 +9,7 @@
 ### Enhancements made
 
 - Make expand glyph size changing with density [#104](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/104) ([@fcollonval](https://github.com/fcollonval))
-- Add size attribute to the button [#102](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/102) ([@fcollonval](https://github.com/fcollonval))
+- Add scale attribute to button, combobox and select [#102](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/102) ([@fcollonval](https://github.com/fcollonval))
 
 ### Bugs fixed
 
