@@ -1,12 +1,12 @@
 import { dirname, join } from 'path';
 import remarkGfm from 'remark-gfm';
-const ResolveTypescriptPlugin = require('resolve-typescript-plugin');
+import { default as ResolveTypescriptPlugin} from 'resolve-typescript-plugin';
 
-module.exports = {
+const config = {
   stories: [
     '../docs/**/*.mdx',
     '../src/**/*.mdx',
-    '../src/**/*.stories.mdx',
+    '../src/**/*.mdx',
     '../src/**/*.stories.ts'
   ],
   addons: [
@@ -15,14 +15,16 @@ module.exports = {
       options: {
         mdxPluginOptions: {
           mdxCompileOptions: {
-            remarkPlugins: [remarkGfm]
+    // FIXME
+    //         remarkPlugins: [remarkGfm]
           }
         }
       }
     },
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
-    getAbsolutePath('@storybook/addon-a11y')
+    getAbsolutePath('@storybook/addon-a11y'),
+    '@storybook/addon-webpack5-compiler-swc'
   ],
   webpackFinal: async config => {
     if (!config.resolve.plugins) {
@@ -54,7 +56,6 @@ module.exports = {
     options: {}
   },
   docs: {
-    autodocs: true,
     defaultName: 'Documentation'
   }
 };
@@ -62,3 +63,5 @@ module.exports = {
 function getAbsolutePath(value) {
   return dirname(require.resolve(join(value, 'package.json')));
 }
+
+export default config;

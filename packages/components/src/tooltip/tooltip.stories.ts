@@ -14,7 +14,7 @@ export default {
     delay: {
       description: 'Delay to display the tooltip (in ms)',
       table: {
-        defaultValue: { summary: 300 }
+        defaultValue: { summary: '300' }
       },
       control: { type: 'range', min: 0, max: 2000, step: 100 }
     }

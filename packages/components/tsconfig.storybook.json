@@ -4,7 +4,6 @@
   "exclude": [
     "node_modules",
     "src/**/*.spec.ts",
-    "src/**/*.stories.mdx",
     "src/**/*.test.ts",
     "playwright.config.ts"
   ]
