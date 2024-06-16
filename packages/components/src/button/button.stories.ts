@@ -6,6 +6,7 @@ import { getFaIcon } from '../utilities/storybook/index.js';
 
 export default {
   title: 'Components/Button',
+  tags: ['!autodocs'],
   argTypes: {
     label: { control: 'text' },
     appearance: {

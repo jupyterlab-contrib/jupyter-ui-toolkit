@@ -6,7 +6,7 @@ import { withTheme } from '../src/utilities/storybook';
 JupyterComponents;
 
 const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
+  // actions: { argTypesRegex: '^on[A-Z].*' },
   options: {
     storySort: {
       order: ['Docs', 'Library']
@@ -71,7 +71,8 @@ const globalTypes = {
 const preview = {
   parameters,
   globalTypes,
-  decorators: [withTheme]
+  decorators: [withTheme],
+  tags: ['autodocs']
 };
 
 export default preview;

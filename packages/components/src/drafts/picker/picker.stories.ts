@@ -5,7 +5,8 @@
 import { Meta, StoryFn, StoryObj } from '@storybook/html';
 
 export default {
-  title: 'Components/Picker',
+  title: 'Drafts/Picker',
+  tags: ['!autodocs'],
   parameters: {
     controls: { expanded: true }
   },

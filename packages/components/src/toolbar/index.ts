@@ -75,6 +75,7 @@ const ToolbarArrowKeyMap = Object.freeze({
  *
  * @public
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class FoundationToolbar extends FoundationElement {
   /**
    * The internal index of the currently focused element.
@@ -353,6 +354,7 @@ export class FoundationToolbar extends FoundationElement {
  *
  * @public
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class DelegatesARIAToolbar {
   /**
    * The id of the element labeling the toolbar.
@@ -380,13 +382,14 @@ export class DelegatesARIAToolbar {
  * TODO: https://github.com/microsoft/fast/issues/3317
  * @internal
  */
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging, @typescript-eslint/no-empty-interface
 export interface DelegatesARIAToolbar extends ARIAGlobalStatesAndProperties {}
 applyMixins(DelegatesARIAToolbar, ARIAGlobalStatesAndProperties);
 
 /**
  * @internal
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export interface FoundationToolbar extends StartEnd, DelegatesARIAToolbar {}
 applyMixins(FoundationToolbar, StartEnd, DelegatesARIAToolbar);
 

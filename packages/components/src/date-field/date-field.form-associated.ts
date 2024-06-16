@@ -3,8 +3,9 @@
 
 import { FormAssociated, FoundationElement } from '@microsoft/fast-foundation';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 class _DateField extends FoundationElement {}
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging, @typescript-eslint/no-empty-interface
 interface _DateField extends FormAssociated {}
 
 /**

@@ -42,6 +42,7 @@ const INVALID_DATE = 'Invalid Date';
  * @fires input - Fires a custom 'input' event when the value has changed
  * @fires change - Fires a custom 'change' event when the value has changed
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class DateField extends FormAssociatedDateField {
   /**
    * The appearance of the element.
@@ -355,5 +356,6 @@ export class DateField extends FormAssociatedDateField {
  * TODO: https://github.com/microsoft/fast/issues/3317
  * @internal
  */
+// eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export interface DateField extends StartEnd, DelegatesARIATextbox {}
 applyMixins(DateField, StartEnd, DelegatesARIATextbox);
