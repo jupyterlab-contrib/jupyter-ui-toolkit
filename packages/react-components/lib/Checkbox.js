@@ -13,7 +13,15 @@ provideJupyterDesignSystem().register(jpCheckbox());
 
 export const Checkbox = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { readonly, readOnly, indeterminate, checked, disabled, required, ...filteredProps } = props;
+  const {
+    readonly,
+    readOnly,
+    indeterminate,
+    checked,
+    disabled,
+    required,
+    ...filteredProps
+  } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);

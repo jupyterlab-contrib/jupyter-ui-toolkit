@@ -13,8 +13,7 @@ provideJupyterDesignSystem().register(jpTreeItem());
 
 export const TreeItem = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { expanded, selected, disabled, ...filteredProps } =
-    props;
+  const { expanded, selected, disabled, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'expanded-change', props.onExpand);
