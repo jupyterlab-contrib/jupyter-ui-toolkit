@@ -13,8 +13,7 @@ provideJupyterDesignSystem().register(jpTreeItem());
 
 export const TreeItem = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { expanded, selected, disabled, isNestedItem, ...filteredProps } =
-    props;
+  const { expanded, selected, disabled, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'expanded-change', props.onExpand);
@@ -24,7 +23,6 @@ export const TreeItem = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'expanded', props.expanded);
   useProperties(ref, 'selected', props.selected);
   useProperties(ref, 'disabled', props.disabled);
-  useProperties(ref, 'isNestedItem', props.isNestedItem);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);

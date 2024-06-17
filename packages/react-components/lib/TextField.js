@@ -26,6 +26,8 @@ export const TextField = forwardRef((props, forwardedRef) => {
     minlength,
     size,
     spellcheck,
+    disabled,
+    required,
     ...filteredProps
   } = props;
 
@@ -40,6 +42,8 @@ export const TextField = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'minlength', props.minlength);
   useProperties(ref, 'size', props.size);
   useProperties(ref, 'spellcheck', props.spellcheck);
+  useProperties(ref, 'disabled', props.disabled);
+  useProperties(ref, 'required', props.required);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);

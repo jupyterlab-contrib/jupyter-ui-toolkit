@@ -18,9 +18,6 @@ export interface TreeItemProps
   /** When true, the control will be immutable by user interaction. See {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled | disabled HTML attribute} for more information. */
   disabled?: TreeItemElement['disabled'];
 
-  /** Whether the tree is nested */
-  isNestedItem?: TreeItemElement['isNestedItem'];
-
   /** Fires a custom 'expanded-change' event when the expanded state changes */
   onExpand?: (event: CustomEvent) => void;
 

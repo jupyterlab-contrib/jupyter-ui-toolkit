@@ -13,7 +13,8 @@ provideJupyterDesignSystem().register(jpDateField());
 
 export const DateField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { autofocus, step, max, min, ...filteredProps } = props;
+  const { autofocus, step, max, min, disabled, required, ...filteredProps } =
+    props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'input', props.onInput);
@@ -24,6 +25,8 @@ export const DateField = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'step', props.step);
   useProperties(ref, 'max', props.max);
   useProperties(ref, 'min', props.min);
+  useProperties(ref, 'disabled', props.disabled);
+  useProperties(ref, 'required', props.required);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
