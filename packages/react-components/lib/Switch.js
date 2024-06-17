@@ -10,13 +10,16 @@ provideJupyterDesignSystem().register(jpSwitch());
 
 export const Switch = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { readonly, readOnly, ...filteredProps } = props;
+  const { readonly, readOnly, checked, disabled, required, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'readOnly', props.readOnly);
+  useProperties(ref, 'checked', props.checked);
+  useProperties(ref, 'disabled', props.disabled);
+  useProperties(ref, 'required', props.required);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);

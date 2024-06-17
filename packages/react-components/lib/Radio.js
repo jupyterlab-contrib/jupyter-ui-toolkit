@@ -10,7 +10,15 @@ provideJupyterDesignSystem().register(jpRadio());
 
 export const Radio = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { readonly, readOnly, name, ...filteredProps } = props;
+  const {
+    readonly,
+    readOnly,
+    name,
+    checked,
+    disabled,
+    required,
+    ...filteredProps
+  } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);
@@ -18,6 +26,9 @@ export const Radio = forwardRef((props, forwardedRef) => {
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'readOnly', props.readOnly);
   useProperties(ref, 'name', props.name);
+  useProperties(ref, 'checked', props.checked);
+  useProperties(ref, 'disabled', props.disabled);
+  useProperties(ref, 'required', props.required);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);

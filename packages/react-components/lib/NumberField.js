@@ -27,6 +27,8 @@ export const NumberField = forwardRef((props, forwardedRef) => {
     step,
     max,
     min,
+    disabled,
+    required,
     ...filteredProps
   } = props;
 
@@ -43,6 +45,8 @@ export const NumberField = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'step', props.step);
   useProperties(ref, 'max', props.max);
   useProperties(ref, 'min', props.min);
+  useProperties(ref, 'disabled', props.disabled);
+  useProperties(ref, 'required', props.required);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);

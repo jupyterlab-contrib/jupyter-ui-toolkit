@@ -20,6 +20,8 @@ export const Slider = forwardRef((props, forwardedRef) => {
     min,
     max,
     step,
+    disabled,
+    required,
     ...filteredProps
   } = props;
 
@@ -33,6 +35,8 @@ export const Slider = forwardRef((props, forwardedRef) => {
   useProperties(ref, 'min', props.min);
   useProperties(ref, 'max', props.max);
   useProperties(ref, 'step', props.step);
+  useProperties(ref, 'disabled', props.disabled);
+  useProperties(ref, 'required', props.required);
 
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
