@@ -2,7 +2,12 @@ import {
   jpTreeView,
   provideJupyterDesignSystem
 } from '@jupyter/web-components';
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import React, {
+  forwardRef,
+  useLayoutEffect,
+  useImperativeHandle,
+  useRef
+} from 'react';
 import { useProperties } from './react-utils.js';
 
 provideJupyterDesignSystem().register(jpTreeView());
@@ -10,6 +15,12 @@ provideJupyterDesignSystem().register(jpTreeView());
 export const TreeView = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const { renderCollapsedNodes, currentSelected, ...filteredProps } = props;
+
+  useLayoutEffect(() => {
+    // Dirty fix using private API to force refresh of nested flag on
+    // first level of tree items.
+    ref?.setItems();
+  }, [ref]);
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'currentSelected', props.currentSelected);
