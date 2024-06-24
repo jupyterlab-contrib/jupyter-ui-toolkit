@@ -13,8 +13,16 @@ provideJupyterDesignSystem().register(jpDateField());
 
 export const DateField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { autofocus, step, max, min, disabled, required, ...filteredProps } =
-    props;
+  const {
+    className,
+    autofocus,
+    step,
+    max,
+    min,
+    disabled,
+    required,
+    ...filteredProps
+  } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'input', props.onInput);

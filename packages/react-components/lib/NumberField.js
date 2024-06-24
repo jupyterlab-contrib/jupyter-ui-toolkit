@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpNumberField());
 export const NumberField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     readonly,
     hideStep,
     appearance,

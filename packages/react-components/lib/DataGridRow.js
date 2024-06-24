@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpDataGridRow());
 export const DataGridRow = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     gridTemplateColumns,
     rowType,
     rowData,

@@ -10,7 +10,7 @@ provideJupyterDesignSystem().register(jpDivider());
 
 export const Divider = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { role, orientation, ...filteredProps } = props;
+  const { className, role, orientation, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
 

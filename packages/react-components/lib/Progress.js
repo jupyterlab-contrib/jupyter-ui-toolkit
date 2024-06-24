@@ -13,7 +13,7 @@ provideJupyterDesignSystem().register(jpProgress());
 
 export const Progress = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { value, min, max, paused, ...filteredProps } = props;
+  const { className, value, min, max, paused, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'value', props.value);

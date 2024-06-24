@@ -13,7 +13,7 @@ provideJupyterDesignSystem().register(jpSliderLabel());
 
 export const SliderLabel = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { hideMark, disabled, position, ...filteredProps } = props;
+  const { className, hideMark, disabled, position, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
 

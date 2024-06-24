@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpCheckbox());
 export const Checkbox = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     readonly,
     readOnly,
     indeterminate,

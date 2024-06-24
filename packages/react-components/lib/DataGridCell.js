@@ -13,8 +13,14 @@ provideJupyterDesignSystem().register(jpDataGridCell());
 
 export const DataGridCell = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { cellType, gridColumn, rowData, columnDefinition, ...filteredProps } =
-    props;
+  const {
+    className,
+    cellType,
+    gridColumn,
+    rowData,
+    columnDefinition,
+    ...filteredProps
+  } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'cell-focused', props.onCellFocused);

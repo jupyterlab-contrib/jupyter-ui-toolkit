@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpButton());
 export const Button = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     minimal,
     appearance,
     form,

@@ -10,7 +10,8 @@ provideJupyterDesignSystem().register(jpAvatar());
 
 export const Avatar = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { src, alt, fill, color, link, shape, ...filteredProps } = props;
+  const { className, src, alt, fill, color, link, shape, ...filteredProps } =
+    props;
 
   /** Properties - run whenever a property has changed */
 

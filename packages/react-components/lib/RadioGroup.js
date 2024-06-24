@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpRadioGroup());
 export const RadioGroup = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     readonly,
     disabled,
     name,

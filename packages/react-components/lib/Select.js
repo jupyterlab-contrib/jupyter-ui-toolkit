@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpSelect());
 export const Select = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     autowidth,
     minimal,
     open,

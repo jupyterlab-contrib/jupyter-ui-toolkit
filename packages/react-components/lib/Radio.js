@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpRadio());
 export const Radio = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     readonly,
     readOnly,
     name,

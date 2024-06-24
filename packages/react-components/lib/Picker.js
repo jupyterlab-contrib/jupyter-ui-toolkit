@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpPicker());
 export const Picker = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     filterSelected,
     filterQuery,
     selection,

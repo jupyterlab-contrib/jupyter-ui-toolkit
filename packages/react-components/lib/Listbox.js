@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpListbox());
 export const Listbox = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     multiple,
     size,
     length,

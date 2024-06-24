@@ -13,7 +13,7 @@ provideJupyterDesignSystem().register(jpTabPanel());
 
 export const TabPanel = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { ...filteredProps } = props;
+  const { className, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
 

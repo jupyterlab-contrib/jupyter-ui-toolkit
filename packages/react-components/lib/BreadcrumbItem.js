@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpBreadcrumbItem());
 export const BreadcrumbItem = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     download,
     href,
     hreflang,

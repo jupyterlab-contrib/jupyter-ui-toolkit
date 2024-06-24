@@ -10,7 +10,7 @@ provideJupyterDesignSystem().register(jpBadge());
 
 export const Badge = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { fill, color, circular, ...filteredProps } = props;
+  const { className, fill, color, circular, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'circular', props.circular);

@@ -13,7 +13,7 @@ provideJupyterDesignSystem().register(jpPickerMenuOption());
 
 export const PickerMenuOption = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { value, contentsTemplate, ...filteredProps } = props;
+  const { className, value, contentsTemplate, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'contentsTemplate', props.contentsTemplate);

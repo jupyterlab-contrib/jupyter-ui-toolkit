@@ -13,7 +13,7 @@ provideJupyterDesignSystem().register(jpDisclosure());
 
 export const Disclosure = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { appearance, title, expanded, ...filteredProps } = props;
+  const { className, appearance, title, expanded, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'toggle', props.onToggle);
