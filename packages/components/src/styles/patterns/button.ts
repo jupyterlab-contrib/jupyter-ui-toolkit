@@ -552,6 +552,15 @@ export const StealthButtonStyles = css`
   :host([appearance='stealth']) .control:${focusVisible} {
     outline-color: ${accentFillFocus};
   }
+
+  /* Make the focus outline displayed within the button if
+     it is in a start or end slot; e.g. in a tree item
+     This will make the focus outline bounded within the container.
+   */
+  :host([appearance='stealth'][slot="end"]) .control:${focusVisible},
+  :host([appearance='stealth'][slot="start"]) .control:${focusVisible} {
+    outline-offset: -2px;
+  }
 `.withBehaviors(
   forcedColorsStylesheetBehavior(css`
     :host([appearance='stealth']),
