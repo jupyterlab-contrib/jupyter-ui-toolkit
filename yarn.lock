@@ -2412,11 +2412,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jupyter/react-components@^0.16.1, @jupyter/react-components@workspace:packages/react-components":
+"@jupyter/react-components@^0.16.2, @jupyter/react-components@workspace:packages/react-components":
   version: 0.0.0-use.local
   resolution: "@jupyter/react-components@workspace:packages/react-components"
   dependencies:
-    "@jupyter/web-components": ^0.16.1
+    "@jupyter/web-components": ^0.16.2
     "@types/react": ^18.2.0
     eslint: ^8.43.0
     eslint-config-prettier: ^8.8.0
@@ -2446,7 +2446,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jupyter/web-components@^0.16.1, @jupyter/web-components@workspace:packages/components":
+"@jupyter/web-components@^0.16.2, @jupyter/web-components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@jupyter/web-components@workspace:packages/components"
   dependencies:
@@ -12585,8 +12585,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jupyter-ui-demo@workspace:packages/lab-example"
   dependencies:
-    "@jupyter/react-components": ^0.16.1
-    "@jupyter/web-components": ^0.16.1
+    "@jupyter/react-components": ^0.16.2
+    "@jupyter/web-components": ^0.16.2
     "@jupyterlab/application": ^3.1.0 || ^4.0.0
     "@jupyterlab/apputils": ^3.0.0 || ^4.0.0
     "@jupyterlab/builder": ^4.0.0

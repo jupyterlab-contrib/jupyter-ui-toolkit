@@ -2,6 +2,24 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.16.2
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.16.1...ed200750808b9ecc1b4c88d8de18e126291df70b))
+
+### Bugs fixed
+
+- Make focus outline an inset for slotted stealth button [#110](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/110) ([@fcollonval](https://github.com/fcollonval))
+- Fix treeview glitches [#109](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/109) ([@fcollonval](https://github.com/fcollonval))
+- Prevent adding classname attribute for react wrapped components [#108](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/108) ([@fcollonval](https://github.com/fcollonval))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-06-18&to=2024-06-25&type=c))
+
+[@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-06-18..2024-06-25&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2024-06-18..2024-06-25&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.16.1
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.16.0...9d79b02edeb0581b1fbd2cdcaa6fc3237bf2cb64))
@@ -19,8 +37,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-06-16&to=2024-06-18&type=c))
 
 [@dependabot](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Adependabot+updated%3A2024-06-16..2024-06-18&type=Issues) | [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-06-16..2024-06-18&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2024-06-16..2024-06-18&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.16.0
 
