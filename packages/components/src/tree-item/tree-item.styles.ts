@@ -44,6 +44,12 @@ import {
   heightNumber
 } from '../styles/index.js';
 
+/**
+ * Tree item expand collapse button size CSS Partial
+ * @public
+ */
+export const expandCollapseButtonSize = cssPartial`(((${baseHeightMultiplier} + ${density}) * 0.5 + 2) * ${designUnit})`;
+
 const ltr = css`
   .expand-collapse-glyph {
     transform: rotate(0deg);
@@ -51,7 +57,7 @@ const ltr = css`
   :host(.nested) .expand-collapse-button {
     left: var(
       --expand-collapse-button-nested-width,
-      calc(${heightNumber} * -1px)
+      calc((${expandCollapseButtonSize} + 6) * -1px)
     );
   }
   :host([selected])::after {
@@ -69,7 +75,7 @@ const rtl = css`
   :host(.nested) .expand-collapse-button {
     right: var(
       --expand-collapse-button-nested-width,
-      calc(${heightNumber} * -1px)
+      calc((${expandCollapseButtonSize} + 6) * -1px)
     );
   }
   :host([selected])::after {
@@ -79,12 +85,6 @@ const rtl = css`
     transform: rotate(90deg);
   }
 `;
-
-/**
- * Tree item expand collapse button size CSS Partial
- * @public
- */
-export const expandCollapseButtonSize = cssPartial`((${baseHeightMultiplier} / 2) * ${designUnit}) + ((${designUnit} * ${density}) / 2)`;
 
 const expandCollapseHoverBehavior = DesignToken.create<Swatch>(
   'tree-item-expand-collapse-hover'
@@ -132,7 +132,6 @@ export const treeItemStyles: FoundationElementTemplate<
       background: ${neutralFillStealthRest};
       cursor: pointer;
       font-family: ${bodyFont};
-      --expand-collapse-button-size: calc(${heightNumber} * 1px);
       --tree-item-nested-width: 0;
     }
 
@@ -199,8 +198,8 @@ export const treeItemStyles: FoundationElementTemplate<
       border: none;
       outline: none;
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
-      width: calc((${expandCollapseButtonSize} + (${designUnit} * 2)) * 1px);
-      height: calc((${expandCollapseButtonSize} + (${designUnit} * 2)) * 1px);
+      width: calc(${expandCollapseButtonSize} * 1px);
+      height: calc(${expandCollapseButtonSize} * 1px);
       padding: 0;
       display: flex;
       justify-content: center;
@@ -261,7 +260,8 @@ export const treeItemStyles: FoundationElementTemplate<
 
     :host(.nested) .content-region {
       position: relative;
-      margin-inline-start: var(--expand-collapse-button-size);
+      /* Add left margin to collapse button size */
+      margin-inline-start: calc((${expandCollapseButtonSize} + 6) * 1px);
     }
 
     :host(.nested) .expand-collapse-button {
@@ -304,7 +304,9 @@ export const treeItemStyles: FoundationElementTemplate<
 
     ::slotted(${context.tagFor(TreeItem)}) {
       --tree-item-nested-width: 1em;
-      --expand-collapse-button-nested-width: calc(${heightNumber} * -1px);
+      --expand-collapse-button-nested-width: calc(
+        (${expandCollapseButtonSize} + 6) * -1px
+      );
     }
   `.withBehaviors(
     new DirectionalStyleSheetBehavior(ltr, rtl),
