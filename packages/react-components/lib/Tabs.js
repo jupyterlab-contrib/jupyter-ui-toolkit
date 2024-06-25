@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpTabs());
 export const Tabs = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     orientation,
     activeid,
     activeindicator,

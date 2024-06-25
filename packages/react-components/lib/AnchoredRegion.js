@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpAnchoredRegion());
 export const AnchoredRegion = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     horizontalViewportLock,
     horizontalInset,
     verticalViewportLock,

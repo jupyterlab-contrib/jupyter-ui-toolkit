@@ -3,7 +3,7 @@ import {
   type SelectScale
 } from '@jupyter/web-components';
 
-export type { SelectElement };
+export type { SelectElement, SelectScale };
 
 export interface SelectProps
   extends Omit<

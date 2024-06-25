@@ -13,7 +13,7 @@ provideJupyterDesignSystem().register(jpAccordion());
 
 export const Accordion = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { expandMode, ...filteredProps } = props;
+  const { className, expandMode, ...filteredProps } = props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'change', props.onChange);

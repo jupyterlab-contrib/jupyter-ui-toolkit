@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpTooltip());
 export const Tooltip = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     horizontalViewportLock,
     verticalViewportLock,
     anchor,

@@ -13,7 +13,7 @@ provideJupyterDesignSystem().register(jpSkeleton());
 
 export const Skeleton = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { fill, shape, pattern, shimmer, ...filteredProps } = props;
+  const { className, fill, shape, pattern, shimmer, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'shimmer', props.shimmer);

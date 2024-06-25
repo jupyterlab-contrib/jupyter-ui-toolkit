@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpSlider());
 export const Slider = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     readonly,
     orientation,
     mode,

@@ -13,7 +13,8 @@ provideJupyterDesignSystem().register(jpMenuItem());
 
 export const MenuItem = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { role, disabled, expanded, checked, ...filteredProps } = props;
+  const { className, role, disabled, expanded, checked, ...filteredProps } =
+    props;
 
   /** Event listeners - run once */
   useEventListener(ref, 'expanded-change', props.onExpand);

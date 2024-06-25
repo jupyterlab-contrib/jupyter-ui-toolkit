@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpTextField());
 export const TextField = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     readonly,
     appearance,
     placeholder,

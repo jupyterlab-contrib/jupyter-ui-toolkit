@@ -10,7 +10,7 @@ provideJupyterDesignSystem().register(jpMenu());
 
 export const Menu = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { ...filteredProps } = props;
+  const { className, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
 

@@ -14,6 +14,7 @@ provideJupyterDesignSystem().register(jpTextArea());
 export const TextArea = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     appearance,
     resize,
     form,

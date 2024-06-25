@@ -2,18 +2,14 @@ import {
   jpCombobox,
   provideJupyterDesignSystem
 } from '@jupyter/web-components';
-import React, {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef
-} from 'react';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import { useEventListener, useProperties } from './react-utils.js';
 provideJupyterDesignSystem().register(jpCombobox());
 
 export const Combobox = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     autowidth,
     minimal,
     open,

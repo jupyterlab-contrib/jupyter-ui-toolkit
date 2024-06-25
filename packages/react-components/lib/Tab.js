@@ -10,7 +10,7 @@ provideJupyterDesignSystem().register(jpTab());
 
 export const Tab = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
-  const { disabled, ...filteredProps } = props;
+  const { className, disabled, ...filteredProps } = props;
 
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'disabled', props.disabled);

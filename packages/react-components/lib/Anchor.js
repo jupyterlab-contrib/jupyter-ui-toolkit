@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpAnchor());
 export const Anchor = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     appearance,
     download,
     href,

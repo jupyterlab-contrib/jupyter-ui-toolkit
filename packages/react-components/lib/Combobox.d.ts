@@ -3,7 +3,7 @@ import {
   type ComboboxScale
 } from '@jupyter/web-components';
 
-export type { ComboboxElement };
+export type { ComboboxElement, ComboboxScale };
 
 export interface ComboboxProps
   extends Omit<React.AllHTMLAttributes<HTMLElement>, 'onChange' | 'onInput'> {

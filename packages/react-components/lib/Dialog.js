@@ -11,6 +11,7 @@ provideJupyterDesignSystem().register(jpDialog());
 export const Dialog = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     trapFocus,
     ariaDescribedby,
     ariaLabelledby,

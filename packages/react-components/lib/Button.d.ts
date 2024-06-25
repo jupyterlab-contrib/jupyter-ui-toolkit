@@ -1,9 +1,10 @@
 import {
   Button as ButtonElement,
-  type ButtonScale
+  type ButtonScale,
+  type ButtonAppearance
 } from '@jupyter/web-components';
 
-export type { ButtonElement };
+export type { ButtonAppearance, ButtonElement, ButtonScale };
 
 export interface ButtonProps
   extends Omit<React.AllHTMLAttributes<HTMLElement>, 'form'> {

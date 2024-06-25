@@ -6,6 +6,7 @@ provideJupyterDesignSystem().register(jpOption());
 export const Option = forwardRef((props, forwardedRef) => {
   const ref = useRef(null);
   const {
+    className,
     selected,
     value,
     checked,
