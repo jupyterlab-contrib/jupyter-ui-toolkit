@@ -57,7 +57,12 @@ const ltr = css`
   :host(.nested) .expand-collapse-button {
     left: var(
       --expand-collapse-button-nested-width,
-      calc((${expandCollapseButtonSize} + 6) * -1px)
+      calc(
+        (
+            ${expandCollapseButtonSize} +
+              ((${baseHeightMultiplier} + ${density}) * 1.25)
+          ) * -1px
+      )
     );
   }
   :host([selected])::after {
@@ -75,7 +80,12 @@ const rtl = css`
   :host(.nested) .expand-collapse-button {
     right: var(
       --expand-collapse-button-nested-width,
-      calc((${expandCollapseButtonSize} + 6) * -1px)
+      calc(
+        (
+            ${expandCollapseButtonSize} +
+              ((${baseHeightMultiplier} + ${density}) * 1.25)
+          ) * -1px
+      )
     );
   }
   :host([selected])::after {
@@ -261,7 +271,12 @@ export const treeItemStyles: FoundationElementTemplate<
     :host(.nested) .content-region {
       position: relative;
       /* Add left margin to collapse button size */
-      margin-inline-start: calc((${expandCollapseButtonSize} + 6) * 1px);
+      margin-inline-start: calc(
+        (
+            ${expandCollapseButtonSize} +
+              ((${baseHeightMultiplier} + ${density}) * 1.25)
+          ) * 1px
+      );
     }
 
     :host(.nested) .expand-collapse-button {
@@ -305,7 +320,10 @@ export const treeItemStyles: FoundationElementTemplate<
     ::slotted(${context.tagFor(TreeItem)}) {
       --tree-item-nested-width: 1em;
       --expand-collapse-button-nested-width: calc(
-        (${expandCollapseButtonSize} + 6) * -1px
+        (
+            ${expandCollapseButtonSize} +
+              ((${baseHeightMultiplier} + ${density}) * 1.25)
+          ) * -1px
       );
     }
   `.withBehaviors(
