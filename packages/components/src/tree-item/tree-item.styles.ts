@@ -142,6 +142,7 @@ export const treeItemStyles: FoundationElementTemplate<
       background: ${neutralFillStealthRest};
       cursor: pointer;
       font-family: ${bodyFont};
+      --expand-collapse-button-size: calc(${expandCollapseButtonSize} * 1px);
       --tree-item-nested-width: 0;
     }
 
@@ -208,8 +209,8 @@ export const treeItemStyles: FoundationElementTemplate<
       border: none;
       outline: none;
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
-      width: calc(${expandCollapseButtonSize} * 1px);
-      height: calc(${expandCollapseButtonSize} * 1px);
+      width: var(--expand-collapse-button-size);
+      height: var(--expand-collapse-button-size);
       padding: 0;
       display: flex;
       justify-content: center;
@@ -272,10 +273,7 @@ export const treeItemStyles: FoundationElementTemplate<
       position: relative;
       /* Add left margin to collapse button size */
       margin-inline-start: calc(
-        (
-            ${expandCollapseButtonSize} +
-              ((${baseHeightMultiplier} + ${density}) * 1.25)
-          ) * 1px
+        var(--expand-collapse-button-size) + (${baseHeightMultiplier} + ${density}) * 1.25* 1px
       );
     }
 
@@ -320,10 +318,7 @@ export const treeItemStyles: FoundationElementTemplate<
     ::slotted(${context.tagFor(TreeItem)}) {
       --tree-item-nested-width: 1em;
       --expand-collapse-button-nested-width: calc(
-        (
-            ${expandCollapseButtonSize} +
-              ((${baseHeightMultiplier} + ${density}) * 1.25)
-          ) * -1px
+        var(--expand-collapse-button-size) + (${baseHeightMultiplier} + ${density}) * 1.25* 1px
       );
     }
   `.withBehaviors(
