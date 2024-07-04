@@ -2,6 +2,30 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.16.3
+
+([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.16.2...3ad672ab95e2790af2340a5b6ba8e6b630c2a1c4))
+
+### Enhancements made
+
+- Keep the background color transparent on hover for stealth buttons [#115](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/115) ([@fcollonval](https://github.com/fcollonval))
+
+### Bugs fixed
+
+- Fix react custom event listener [#112](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/112) ([@fcollonval](https://github.com/fcollonval))
+
+### Maintenance and upkeep improvements
+
+- Update release workflows [#114](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/pull/114) ([@fcollonval](https://github.com/fcollonval))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-06-25&to=2024-07-04&type=c))
+
+[@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-06-25..2024-07-04&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2024-06-25..2024-07-04&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.16.2
 
 ([Full Changelog](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/compare/@jupyter/react-components@0.16.1...ed200750808b9ecc1b4c88d8de18e126291df70b))
@@ -17,8 +41,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/graphs/contributors?from=2024-06-18&to=2024-06-25&type=c))
 
 [@fcollonval](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Afcollonval+updated%3A2024-06-18..2024-06-25&type=Issues) | [@github-actions](https://github.com/search?q=repo%3Ajupyterlab-contrib%2Fjupyter-ui-toolkit+involves%3Agithub-actions+updated%3A2024-06-18..2024-06-25&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.16.1
 
