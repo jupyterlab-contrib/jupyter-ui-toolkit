@@ -319,8 +319,10 @@ export const treeItemStyles: FoundationElementTemplate<
     ::slotted(${context.tagFor(TreeItem)}) {
       --tree-item-nested-width: 1em;
       --expand-collapse-button-nested-width: calc(
-        var(--expand-collapse-button-size) +
-          (${baseHeightMultiplier} + ${density}) * 1.25 * 1px
+        (
+            var(--expand-collapse-button-size) +
+              (${baseHeightMultiplier} + ${density}) * 1.25
+          ) * -1px
       );
     }
   `.withBehaviors(
