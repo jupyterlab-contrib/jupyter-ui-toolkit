@@ -537,7 +537,9 @@ export const OutlineButtonStyles = css`
  * @internal
  */
 export const StealthButtonStyles = css`
-  :host([appearance='stealth']) {
+  :host([appearance='stealth']),
+  :host([appearance='stealth'][disabled]:active),
+  :host([appearance='stealth'][disabled]:hover) {
     background: transparent;
   }
 
