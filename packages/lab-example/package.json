@@ -80,6 +80,22 @@
   "styleModule": "style/index.js",
   "jupyterlab": {
     "extension": true,
-    "outputDir": "../../jupyter_ui_demo/labextension"
+    "outputDir": "../../jupyter_ui_demo/labextension",
+    "@jupyter/react-components": {
+      "bundled": true,
+      "singleton": true
+    },
+    "@jupyter/web-components": {
+      "bundled": true,
+      "singleton": true
+    },
+    "@microsoft/fast-element": {
+      "bundled": true,
+      "singleton": true
+    },
+    "@microsoft/fast-foundation": {
+      "bundled": true,
+      "singleton": true
+    }
   }
 }
