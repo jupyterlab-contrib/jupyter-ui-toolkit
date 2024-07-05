@@ -36,7 +36,7 @@ const Template: StoryFn = (args): HTMLElement => {
         <jp-tree-item>Nested item 3</jp-tree-item>
       </jp-tree-item>
       <jp-tree-item expanded>
-        Root item 2
+        Root <em style="padding: 0 0.2rem;">item</em> 2
         <jp-tree-item>
           Flowers
           <jp-tree-item disabled>Daisy</jp-tree-item>
