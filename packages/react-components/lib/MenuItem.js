@@ -28,13 +28,22 @@ export const MenuItem = forwardRef((props, forwardedRef) => {
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
+  // Add web component internal classes on top of `className`
+  let allClasses = className ?? '';
+  if (ref.current) {
+    allClasses += ` indent-${ref.current.startColumnCount}`;
+    if (ref.current.expanded) {
+      allClasses += ' expanded';
+    }
+  }
+
   return React.createElement(
     'jp-menu-item',
     {
       ref,
       ...filteredProps,
       role: props.role,
-      class: props.className,
+      class: allClasses.trim(),
       exportparts: props.exportparts,
       for: props.htmlFor,
       part: props.part,

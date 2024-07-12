@@ -37,12 +37,18 @@ export const Checkbox = forwardRef((props, forwardedRef) => {
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
+  // Add web component internal classes on top of `className`
+  let allClasses = className ?? '';
+  if (ref.current?.indeterminate) {
+    allClasses += ' indeterminate';
+  }
+
   return React.createElement(
     'jp-checkbox',
     {
       ref,
       ...filteredProps,
-      class: props.className,
+      class: allClasses.trim(),
       exportparts: props.exportparts,
       for: props.htmlFor,
       part: props.part,
