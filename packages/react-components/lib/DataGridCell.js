@@ -32,6 +32,12 @@ export const DataGridCell = forwardRef((props, forwardedRef) => {
   /** Methods - uses `useImperativeHandle` hook to pass ref to component */
   useImperativeHandle(forwardedRef, () => ref.current, [ref.current]);
 
+  // Add web component internal classes on top of `className`
+  let allClasses = className ?? '';
+  if (ref.current?.cellType === 'columnheader') {
+    allClasses += ' column-header';
+  }
+
   return React.createElement(
     'jp-data-grid-cell',
     {
@@ -39,7 +45,7 @@ export const DataGridCell = forwardRef((props, forwardedRef) => {
       ...filteredProps,
       'cell-type': props.cellType || props['cell-type'],
       'grid-column': props.gridColumn || props['grid-column'],
-      class: props.className,
+      class: allClasses.trim(),
       exportparts: props.exportparts,
       for: props.htmlFor,
       part: props.part,
