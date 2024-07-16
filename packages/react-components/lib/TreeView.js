@@ -17,6 +17,12 @@ export const TreeView = forwardRef((props, forwardedRef) => {
   const { className, renderCollapsedNodes, currentSelected, ...filteredProps } =
     props;
 
+  useLayoutEffect(() => {
+    // Fix using private API to force refresh of nested flag on
+    // first level of tree items.
+    ref.current?.setItems();
+  }, [ref.current]);
+
   /** Properties - run whenever a property has changed */
   useProperties(ref, 'currentSelected', props.currentSelected);
 
