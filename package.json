@@ -61,5 +61,8 @@
             "selector-no-vendor-prefix": null,
             "value-no-vendor-prefix": null
         }
+    },
+    "dependencies": {
+        "@jupyter/web-components": "^0.15.3"
     }
 }
