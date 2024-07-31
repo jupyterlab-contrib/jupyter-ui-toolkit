@@ -1,7 +1,3 @@
-// Copyright (c) Jupyter Development Team.
-// Copyright (c) Microsoft Corporation.
-// Distributed under the terms of the Modified BSD License.
-
 import {
   FASTElement,
   customElement,
@@ -32,17 +28,42 @@ export class Icon extends FASTElement {
   @attr name: string;
 
   private static iconsMap = new Map<string, string>();
+  private static _defaultIcon: string = Icon.defaultIcon();
 
   /**
-   *Register a new icon.
+   * Register a new icon.
    *
    * @param options { name: Icon unique name, svgStr: Icon SVG as string }
    */
   static register(options: { name: string; svgStr: string }): void {
     if (Icon.iconsMap.has(options.name)) {
-      throw new Error(`Icon with name ${options.name} is already defined`);
+      console.warn(
+        `Redefining previously loaded icon svgStr. name: ${
+          options.name
+        }, svgStrOld: ${Icon.iconsMap.get(options.name)}, svgStr: ${
+          options.svgStr
+        }`
+      );
     }
     Icon.iconsMap.set(options.name, options.svgStr);
+
+    // Rerender all existing icons with the same name
+    document
+      .querySelectorAll(`jp-icon[name="${options.name}"]`)
+      .forEach(node => {
+        const element = node as HTMLElement;
+        element.setAttribute('name', '');
+        element.setAttribute('name', options.name);
+      });
+  }
+
+  /**
+   * Set a new default icon.
+   *
+   * @param svgStr The SVG string to be used as the default icon.
+   */
+  static setDefaultIcon(svgStr: string): void {
+    Icon._defaultIcon = svgStr;
   }
 
   /**
@@ -52,7 +73,7 @@ export class Icon extends FASTElement {
    * icon names.
    */
   static defaultIcon(): string {
-    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" fill="currentColor"/></svg>';
+    return Icon._defaultIcon;
   }
 
   /**
