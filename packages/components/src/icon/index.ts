@@ -50,7 +50,7 @@ export class Icon extends FASTElement {
     // Rerender all existing icons with the same name
     document
       .querySelectorAll(`jp-icon[name="${options.name}"]`)
-      .forEach(node => {
+      .forEach((node: HTMLElement) => {
         const element = node as HTMLElement;
         element.setAttribute('name', '');
         element.setAttribute('name', options.name);
