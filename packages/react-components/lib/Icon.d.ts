@@ -1,4 +1,7 @@
-import { Icon as IconElement, type IconDefinition } from '@jupyter/web-components';
+import {
+  Icon as IconElement,
+  type IconDefinition
+} from '@jupyter/web-components';
 
 export type { IconElement, IconDefinition };
 
