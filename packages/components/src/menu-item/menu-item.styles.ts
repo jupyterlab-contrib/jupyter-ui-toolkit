@@ -144,7 +144,8 @@ export const menuItemStyles: FoundationElementTemplate<
 
     :host([disabled]:hover) .start,
     :host([disabled]:hover) .end,
-    :host([disabled]:hover)::slotted(svg) {
+    :host([disabled]:hover)::slotted(svg),
+    :host([disabled]:hover)::slotted(jp-icon) {
       fill: ${neutralForegroundRest};
     }
 
@@ -168,7 +169,8 @@ export const menuItemStyles: FoundationElementTemplate<
       justify-content: center;
     }
 
-    ::slotted(svg) {
+    ::slotted(svg),
+    ::slotted(jp-icon) {
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
       width: 16px;
       height: 16px;
@@ -183,9 +185,11 @@ export const menuItemStyles: FoundationElementTemplate<
     :host(:hover) .start,
     :host(:hover) .end,
     :host(:hover)::slotted(svg),
+    :host(:hover)::slotted(jp-icon),
     :host(:active) .start,
     :host(:active) .end,
-    :host(:active)::slotted(svg) {
+    :host(:active)::slotted(svg),
+    :host(:active)::slotted(jp-icon) {
       fill: ${neutralForegroundRest};
     }
 
@@ -331,9 +335,11 @@ export const menuItemStyles: FoundationElementTemplate<
       :host(:hover) .start,
       :host(:hover) .end,
       :host(:hover)::slotted(svg),
+      :host(:hover)::slotted(jp-icon),
       :host(:active) .start,
       :host(:active) .end,
-      :host(:active)::slotted(svg) {
+      :host(:active)::slotted(svg),
+      :host(:active)::slotted(jp-icon) {
         fill: ${SystemColors.HighlightText};
       }
 
@@ -356,7 +362,8 @@ export const menuItemStyles: FoundationElementTemplate<
       :host([disabled]:hover),
       :host([disabled]:hover) .start,
       :host([disabled]:hover) .end,
-      :host([disabled]:hover)::slotted(svg) {
+      :host([disabled]:hover)::slotted(svg),
+      :host([disabled]:hover)::slotted(jp-icon) {
         background: ${SystemColors.Canvas};
         color: ${SystemColors.GrayText};
         fill: currentcolor;

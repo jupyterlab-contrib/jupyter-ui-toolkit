@@ -281,7 +281,8 @@ export const selectStyles: FoundationElementTemplate<
   .end,
   .indicator,
   .select-indicator,
-  ::slotted(svg) {
+  ::slotted(svg), 
+  ::slotted(jp-icon) {
     /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
     fill: currentcolor;
     height: 1em;
@@ -355,7 +356,8 @@ export const selectStyles: FoundationElementTemplate<
       .end,
       .indicator,
       .select-indicator,
-      ::slotted(svg) {
+      ::slotted(svg),
+      ::slotted(jp-icon) {
         color: ${SystemColors.ButtonText};
         fill: currentcolor;
       }

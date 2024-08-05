@@ -115,7 +115,8 @@ export const searchStyles: FoundationElementTemplate<
     height: calc(100% - 2px);
   }
 
-  ::slotted(svg) {
+  ::slotted(svg),
+  ::slotted(jp-icon) {
     /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
     width: 16px;
     height: 16px;

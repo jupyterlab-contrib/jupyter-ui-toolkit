@@ -17,6 +17,7 @@ export * from './DataGrid.js';
 export * from './Dialog.js';
 export * from './Disclosure.js';
 export * from './Divider.js';
+export * from './Icon.js';
 export * from './Listbox.js';
 export * from './MenuItem.js';
 export * from './Menu.js';

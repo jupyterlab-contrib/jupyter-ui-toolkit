@@ -148,7 +148,8 @@ export const BaseButtonStyles = css`
     line-height: 0;
   }
 
-  ::slotted(svg) {
+  ::slotted(svg),
+  ::slotted(jp-icon) {
     ${
       /* Glyph size and margin-left is temporary -
            replace when adaptive typography is figured out */ ''

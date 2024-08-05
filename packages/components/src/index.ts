@@ -36,6 +36,7 @@ export * from './design-tokens.js';
 export * from './dialog/index.js';
 export * from './disclosure/index.js';
 export * from './divider/index.js';
+export * from './icon/index.js';
 export * from './listbox/index.js';
 export * from './menu/index.js';
 export * from './menu-item/index.js';

@@ -48,7 +48,9 @@ jobs:
             yarn-
 
       - name: Install dependencies
-        run: python -m pip install -U jupyterlab~=4.0
+        # Use JLab 4.0.x branch because otherwise this will not bring
+        # the current toolkit version but the core version one.
+        run: python -m pip install -U jupyterlab~=4.0.0
       - name: Build the extension
         run: |
           set -eux
@@ -94,6 +96,6 @@ jobs:
           sudo rm -rf $(which node)
           sudo rm -rf $(which node)
           pip install myextension.tar.gz
-          pip install jupyterlab
+          pip install "jupyterlab~=4.0.0"
           jupyter labextension list 2>&1 | grep -ie "jupyter-ui-demo.*enabled"
           python -m jupyterlab.browser_check --no-browser-test

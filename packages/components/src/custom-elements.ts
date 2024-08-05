@@ -24,6 +24,7 @@ import type { DesignSystemProvider } from './design-system-provider/index.js';
 import type { Dialog } from './dialog/index.js';
 import type { Disclosure } from './disclosure/index.js';
 import type { Divider } from './divider/index.js';
+import type { Icon } from './icon/index.js';
 import type { Listbox } from './listbox/index.js';
 import type { Menu } from './menu/index.js';
 import type { MenuItem } from './menu-item/index.js';

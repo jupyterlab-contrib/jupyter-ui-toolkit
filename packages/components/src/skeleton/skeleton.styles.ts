@@ -76,7 +76,8 @@ export const skeletonStyles: FoundationElementTemplate<ElementStyles> = (
       z-index: 1;
     }
 
-    ::slotted(svg) {
+    ::slotted(svg),
+    ::slotted(jp-icon) {
       z-index: 2;
     }
 
