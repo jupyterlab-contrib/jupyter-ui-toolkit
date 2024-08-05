@@ -110,11 +110,13 @@ export const optionStyles: FoundationElementTemplate<
 
     .start,
     .end,
-    ::slotted(svg) {
+    ::slotted(svg),
+    ::slotted(jp-icon) {
       display: flex;
     }
 
-    ::slotted(svg) {
+    ::slotted(svg),
+    ::slotted(jp-icon) {
       /* TODO: adaptive typography https://github.com/microsoft/fast/issues/2432 */
       height: calc(${designUnit} * 4px);
       width: calc(${designUnit} * 4px);

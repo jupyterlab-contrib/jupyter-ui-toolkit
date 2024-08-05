@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-import { icon, library } from '@fortawesome/fontawesome-svg-core';
+import { config, icon, library } from '@fortawesome/fontawesome-svg-core';
 import * as icons from '@fortawesome/free-solid-svg-icons';
 import { parseColor } from '@microsoft/fast-colors';
 import { SwatchRGB } from '../../color/swatch.js';
@@ -10,6 +10,9 @@ import { isDark } from '../../color/utilities/is-dark.js';
 import { StoryContext } from '@storybook/html';
 import { DesignSystemProvider } from '../../design-system-provider/index.js';
 import type { Button } from '../../button/index.js';
+import { Icon } from '../../icon/index.js';
+
+config.autoAddCss = false;
 
 /**
  * Generate the SVG for a fontawesome icon
@@ -25,12 +28,10 @@ export function getFaIcon(iconName: string, slotName: string | null): string {
     .reduce((agg, part) => agg + part, 'fa');
   library.add((icons as any)[objectName]);
   const theIcon = icon({ prefix: 'fas', iconName: iconName as icons.IconName });
-
-  const copy = theIcon!.node.item(0)!.cloneNode(true) as HTMLElement;
-  if (slotName) {
-    copy.setAttribute('slot', slotName);
-  }
-  return copy.outerHTML;
+  Icon.register({ name: iconName, svgStr: theIcon.html[0] });
+  return `<jp-icon name="${iconName}"${
+    slotName ? ` slot="${slotName}"` : ''
+  }></jp-icon>`;
 }
 
 /**

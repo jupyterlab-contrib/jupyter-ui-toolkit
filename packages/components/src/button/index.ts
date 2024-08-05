@@ -5,6 +5,7 @@
 import { attr } from '@microsoft/fast-element';
 import { Button, buttonTemplate as template } from '@microsoft/fast-foundation';
 import { buttonStyles as styles } from './button.styles.js';
+import { Icon } from '../icon/index.js';
 
 /**
  * Scale locally an element.
@@ -73,9 +74,8 @@ class JupyterButton extends Button {
     );
     if (
       slottedElements.length === 1 &&
-      (slottedElements[0] instanceof SVGElement ||
-        slottedElements[0].classList.contains('fa') ||
-        slottedElements[0].classList.contains('fas'))
+      (slottedElements[0] instanceof Icon ||
+        slottedElements[0] instanceof SVGElement)
     ) {
       this.control.classList.add('icon-only');
     } else {
