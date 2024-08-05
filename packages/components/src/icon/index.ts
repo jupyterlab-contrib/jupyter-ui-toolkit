@@ -2,6 +2,20 @@ import { FASTElement, customElement, attr } from '@microsoft/fast-element';
 import { iconStyles as styles } from './icon.styles';
 
 /**
+ * Icon definition
+ */
+export interface IconDefinition {
+  /**
+   * Icon unique name
+   */
+  name: string;
+  /**
+   * Icon SVG as string
+   */
+  svgStr: string;
+}
+
+/**
  * Icon component
  *
  * Icon must first be registered: `Icon.register({ name, svgStr });`
@@ -23,9 +37,9 @@ export class Icon extends FASTElement {
   /**
    * Register a new icon.
    *
-   * @param options { name: Icon unique name, svgStr: Icon SVG as string }
+   * @param options Icon definition
    */
-  static register(options: { name: string; svgStr: string }): void {
+  static register(options: IconDefinition): void {
     if (Icon.iconsMap.has(options.name)) {
       console.warn(
         `Redefining previously loaded icon svgStr. name: ${
@@ -47,7 +61,7 @@ export class Icon extends FASTElement {
   }
 
   /**
-   * Set a new default icon.
+   * Set the default icon.
    *
    * @param svgStr The SVG string to be used as the default icon.
    */

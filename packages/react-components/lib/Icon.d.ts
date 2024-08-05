@@ -1,6 +1,6 @@
-import { Icon as IconElement } from '@jupyter/web-components';
+import { Icon as IconElement, type IconDefinition } from '@jupyter/web-components';
 
-export type { IconElement as BadgeElement };
+export type { IconElement, IconDefinition };
 
 export interface IconProps extends React.HTMLAttributes<HTMLElement> {
   /**
@@ -16,4 +16,17 @@ export interface IconProps extends React.HTMLAttributes<HTMLElement> {
  * Icon class
  * ---
  */
-export const Icon: React.ForwardRefExoticComponent<IconProps>;
+export const Icon: React.ForwardRefExoticComponent<IconProps> & {
+  /**
+   * Register a new icon.
+   *
+   * @param options Icon definition
+   */
+  register(options: IconDefinition): void;
+  /**
+   * Set the default icon.
+   *
+   * @param svgStr The SVG string to be used as the default icon.
+   */
+  setDefaultIcon(svgStr: string): void;
+};
