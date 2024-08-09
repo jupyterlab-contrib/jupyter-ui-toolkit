@@ -219,8 +219,7 @@ export function applyJupyterTheme(): void {
       }
     }
   }
-  baseLayerLuminance.setValueFor(
-    document.body,
+  baseLayerLuminance.withDefault(
     isDark_ ? StandardLuminance.DarkMode : StandardLuminance.LightMode
   );
 
@@ -234,7 +233,7 @@ export function applyJupyterTheme(): void {
         isDark_
       );
       if (parsedValue !== null) {
-        toolkitTokenName.token.setValueFor(document.body, parsedValue);
+        toolkitTokenName.token.withDefault(parsedValue);
       } else {
         console.error(
           `Fail to parse value '${value}' for '${jpTokenName}' as FAST design token.`
