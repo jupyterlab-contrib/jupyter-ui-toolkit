@@ -15,7 +15,6 @@ import {
   StartEnd,
   StartEndOptions,
   applyMixins,
-  composedParent,
   getDirection,
   toolbarTemplate as template
 } from '@microsoft/fast-foundation';
@@ -26,8 +25,6 @@ import {
   limit
 } from '@microsoft/fast-web-utilities';
 import { isFocusable } from 'tabbable';
-import { Swatch } from '../color/swatch.js';
-import { fillColor, neutralFillLayerRecipe } from '../design-tokens.js';
 import { toolbarStyles as styles } from './toolbar.styles.js';
 
 /**
@@ -394,23 +391,7 @@ applyMixins(FoundationToolbar, StartEnd, DelegatesARIAToolbar);
  * @public
  * @tagname jp-toolbar
  */
-export class Toolbar extends FoundationToolbar {
-  connectedCallback() {
-    super.connectedCallback();
-
-    const parent = composedParent(this);
-
-    if (parent) {
-      fillColor.setValueFor(
-        this,
-        (target: HTMLElement): Swatch =>
-          neutralFillLayerRecipe
-            .getValueFor(target)
-            .evaluate(target, fillColor.getValueFor(parent))
-      );
-    }
-  }
-}
+export class Toolbar extends FoundationToolbar {}
 
 /**
  * A function that returns a {@link @microsoft/fast-foundation#Toolbar} registration for configuring the component with a DesignSystem.
