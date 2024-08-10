@@ -79,7 +79,7 @@ export const BaseButtonStyles = css`
     padding: 0
       max(
         1px,
-        calc((10 + (${designUnit} * 2 * (${density} + ${elementScale})))) * 1px
+        calc((14 + (${designUnit} * (${density} + ${elementScale})))) * 1px
       );
     white-space: nowrap;
     outline: none;
