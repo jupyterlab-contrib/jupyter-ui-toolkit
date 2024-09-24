@@ -86,7 +86,7 @@
     "remark-gfm": "^3.0.1",
     "resolve-typescript-plugin": "^1.1.5",
     "rimraf": "^5.0.1",
-    "rollup": "^2.40.0",
+    "rollup": "^3.29.5",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-terser": "^7.0.2",
