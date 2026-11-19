@@ -14,6 +14,8 @@ const config: PlaywrightTestConfig = {
   use: {
     baseURL: process.env.TARGET_URL ?? 'http://localhost:6006',
     trace: 'on-first-retry',
+    // Disable Storybook background transition to get stable screenshots.
+    reducedMotion: 'reduce',
     launchOptions: {
       // Force slow motion to let storybook the time to update styles
       slowMo: 40
