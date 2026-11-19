@@ -49,10 +49,10 @@ jobs:
         with:
           path: |
             ${{ github.workspace }}/pw-browsers
-          key: ${{ runner.os }}-${{ hashFiles('ui-tests/yarn.lock') }}
+          key: ${{ runner.os }}-pw-${{ hashFiles('yarn.lock') }}
 
       - name: Install Playwright Browsers
-        run: yarn run playwright install --with-deps
+        run: yarn run playwright install --with-deps --only-shell
         working-directory: packages/components
 
       - name: Run Visual Tests 🧪

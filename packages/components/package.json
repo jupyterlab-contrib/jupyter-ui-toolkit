@@ -55,7 +55,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@microsoft/api-extractor": "^7.36.0",
-    "@playwright/test": "^1.35.1",
+    "@playwright/test": "^1.65.1",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@storybook/addon-a11y": "^7.5.3",
