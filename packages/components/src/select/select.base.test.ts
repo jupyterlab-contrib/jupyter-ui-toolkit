@@ -334,17 +334,18 @@ test.describe('JpSelect', () => {
 
       await selectedOption.waitFor();
 
-      expect
-        .soft(await selectedOption.evaluate((node: JpOption) => node.scrollTop))
+      // The option is scrolled into view in a requestAnimationFrame callback.
+      await expect.soft
+        .poll(() => selectedOption.evaluate((node: JpOption) => node.scrollTop))
         .toBeGreaterThanOrEqual(794);
 
       await element.evaluate((node: JpSelect) => (node.selectedIndex = 0));
 
       await element.waitFor();
 
-      expect(
-        await selectedOption.evaluate((node: JpOption) => node.scrollTop)
-      ).toBeLessThanOrEqual(6);
+      await expect
+        .poll(() => selectedOption.evaluate((node: JpOption) => node.scrollTop))
+        .toBeLessThanOrEqual(6);
     });
   });
 });
