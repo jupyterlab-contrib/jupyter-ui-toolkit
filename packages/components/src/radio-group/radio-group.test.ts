@@ -21,6 +21,8 @@ test('Vertical', async ({ page }) => {
 
 test('Disabled', async ({ page }) => {
   await page.goto('/iframe.html?id=components-radio-group--with-disabled');
+  // The group propagates the disabled state to its radios asynchronously.
+  await expect(page.locator('jp-radio:not([disabled])')).toHaveCount(0);
 
   expect(await page.locator('jp-radio-group').screenshot()).toMatchSnapshot(
     'radio-group-disabled.png'
@@ -29,6 +31,8 @@ test('Disabled', async ({ page }) => {
 
 test('Read-only', async ({ page }) => {
   await page.goto('/iframe.html?id=components-radio-group--with-read-only');
+  // The group propagates the read-only state to its radios asynchronously.
+  await expect(page.locator('jp-radio:not([readonly])')).toHaveCount(0);
 
   expect(await page.locator('jp-radio-group').screenshot()).toMatchSnapshot(
     'radio-group-read-only.png'
