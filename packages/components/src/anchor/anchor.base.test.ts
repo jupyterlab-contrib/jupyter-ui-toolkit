@@ -10,6 +10,7 @@ type jpAnchor = HTMLElement & jpAnchorType;
 test.describe('jpAnchor', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/iframe.html?id=components-anchor--default');
+    await page.locator('body.sb-show-main').waitFor();
     await page.evaluate(() => {
       document.body.innerHTML = '';
       const element = document.createElement('jp-anchor') as jpAnchor;
