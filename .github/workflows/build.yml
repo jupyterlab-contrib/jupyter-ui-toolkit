@@ -19,11 +19,11 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '26'
       - name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.14'
           architecture: 'x64'
 
       - name: Setup pip cache
@@ -84,7 +84,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.14'
           architecture: 'x64'
       - uses: actions/download-artifact@v4
         with:
