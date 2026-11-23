@@ -87,7 +87,7 @@ WithDisabled.args = {
 export const WithReadOnly: StoryObj = { render: Template.bind({}) };
 WithReadOnly.args = {
   ...Default.args,
-  disabled: true
+  readonly: true
 };
 
 export const WithError: StoryObj = { render: Template.bind({}) };
