@@ -71,7 +71,7 @@ yarn start
 To test locally the JupyterLab demo extension, using `conda` package manager:
 
 ```sh
-conda create -n jupyter-toolkit -c conda-forge -y nodejs yarn jupyterlab=3
+conda create -n jupyter-toolkit -c conda-forge -y nodejs yarn=3 jupyterlab=4
 conda activate jupyter-toolkit
 yarn install
 yarn build
