@@ -2,6 +2,17 @@
 // Distributed under the terms of the Modified BSD License.
 import type { StoryFn, Meta, StoryObj } from '@storybook/html';
 
+// Placeholder avatar image.
+const AVATAR_IMAGE =
+  'data:image/svg+xml,' +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">' +
+      '<rect width="32" height="32" fill="#9e9e9e"/>' +
+      '<circle cx="16" cy="12" r="6" fill="#f5f5f5"/>' +
+      '<path d="M5 32a11 11 0 0 1 22 0z" fill="#f5f5f5"/>' +
+      '</svg>'
+  );
+
 export default {
   title: 'Components/Avatar',
   argTypes: {
@@ -42,7 +53,7 @@ const Template: StoryFn = (args, context): string => {
   >
     ${
       args.image
-        ? '<img class="image" slot="media" src="https://via.placeholder.com/32" />'
+        ? `<img class="image" slot="media" src="${AVATAR_IMAGE}" />`
         : 'JS'
     }
   </jp-avatar>`;
