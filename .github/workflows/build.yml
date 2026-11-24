@@ -9,37 +9,37 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '26'
       - name: Install Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: '3.10'
+          python-version: '3.15'
           architecture: 'x64'
 
       - name: Setup pip cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/pip
-          key: pip-3.10-${{ hashFiles('package.json') }}
+          key: pip-3.15-${{ hashFiles('package.json') }}
           restore-keys: |
-            pip-3.10-
+            pip-3.15-
             pip-
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Setup yarn cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -60,7 +60,8 @@ jobs:
 
           jupyter labextension list 2>&1 | grep -ie "jupyter-ui-demo.*enabled"
 
-          npx playwright install-deps
+          # Only chromium is used by jupyterlab.browser_check
+          npx playwright install-deps chromium
           python -m jupyterlab.browser_check
 
           pip install build
@@ -69,7 +70,7 @@ jobs:
           pip uninstall -y jupyter_ui_demo jupyterlab
           rm -rf myextension
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: myextension-sdist
           path: myextension.tar.gz
@@ -80,13 +81,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: '3.10'
+          python-version: '3.15'
           architecture: 'x64'
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: myextension-sdist
       - name: Install and Test
