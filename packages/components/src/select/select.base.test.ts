@@ -40,7 +40,7 @@ test.describe('JpSelect', () => {
   test("should have a value of 'one'", async ({ page }) => {
     await page.locator('jp-select').waitFor();
     expect(
-      await page.locator('jp-select').evaluate<string, JpSelect>(e => e.value)
+      await page.locator('jp-select').evaluate((e: JpSelect) => e.value)
     ).toEqual('1');
   });
 
@@ -60,7 +60,7 @@ test.describe('JpSelect', () => {
       element.waitFor();
 
       expect
-        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .soft(await element.evaluate((node: JpSelect) => node.open))
         .toEqual(false);
 
       await element.focus();
@@ -68,14 +68,14 @@ test.describe('JpSelect', () => {
       await page.keyboard.press(' ');
 
       expect
-        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .soft(await element.evaluate((node: JpSelect) => node.open))
         .toEqual(true);
 
       await page.keyboard.press(' ');
 
-      expect(
-        await element.evaluate<boolean, JpSelect>(node => node.open)
-      ).toEqual(false);
+      expect(await element.evaluate((node: JpSelect) => node.open)).toEqual(
+        false
+      );
     });
 
     // jpSelect should open when focused and receives keyboard interaction via enter key
@@ -84,7 +84,7 @@ test.describe('JpSelect', () => {
       element.waitFor();
 
       expect
-        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .soft(await element.evaluate((node: JpSelect) => node.open))
         .toEqual(false);
 
       await element.focus();
@@ -92,14 +92,14 @@ test.describe('JpSelect', () => {
       await element.press('Enter');
 
       expect
-        .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+        .soft(await element.evaluate((node: JpSelect) => node.open))
         .toEqual(true);
 
       await element.press('Enter');
 
-      expect(
-        await element.evaluate<boolean, JpSelect>(node => node.open)
-      ).toEqual(false);
+      expect(await element.evaluate((node: JpSelect) => node.open)).toEqual(
+        false
+      );
     });
   });
 
@@ -115,14 +115,14 @@ test.describe('JpSelect', () => {
         await element.press(' ');
 
         expect
-          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .soft(await element.evaluate((node: JpSelect) => node.open))
           .toEqual(true);
 
         await element.press(' ');
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(false);
+        expect(await element.evaluate((node: JpSelect) => node.open)).toEqual(
+          false
+        );
       });
 
       // FASTSelect should close when focused and keyboard interaction is received via enter key
@@ -133,14 +133,14 @@ test.describe('JpSelect', () => {
         await element.press('Enter');
 
         expect
-          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .soft(await element.evaluate((node: JpSelect) => node.open))
           .toEqual(true);
 
         await element.press('Enter');
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(false);
+        expect(await element.evaluate((node: JpSelect) => node.open)).toEqual(
+          false
+        );
       });
 
       // FASTSelect should close when focused and keyboard interaction is received via escape key
@@ -151,14 +151,14 @@ test.describe('JpSelect', () => {
         await element.click();
 
         expect
-          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .soft(await element.evaluate((node: JpSelect) => node.open))
           .toEqual(true);
 
         await page.keyboard.press('Escape');
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(false);
+        expect(await element.evaluate((node: JpSelect) => node.open)).toEqual(
+          false
+        );
       });
 
       // FASTSelect should close when focused and keyboard interaction is received via tab key
@@ -169,14 +169,14 @@ test.describe('JpSelect', () => {
         await element.click();
 
         expect
-          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .soft(await element.evaluate((node: JpSelect) => node.open))
           .toEqual(true);
 
         await element.press('Tab');
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(false);
+        expect(await element.evaluate((node: JpSelect) => node.open)).toEqual(
+          false
+        );
       });
     });
 
@@ -188,22 +188,22 @@ test.describe('JpSelect', () => {
         await element.click();
 
         expect
-          .soft(await element.evaluate<boolean, JpSelect>(node => node.open))
+          .soft(await element.evaluate((node: JpSelect) => node.open))
           .toEqual(true);
 
         await page.click('body');
 
         expect
           .soft(
-            await element.evaluate<boolean, JpSelect>(
-              element => element === document.activeElement
+            await element.evaluate(
+              (element: JpSelect) => element === document.activeElement
             )
           )
           .toEqual(false);
 
-        expect(
-          await element.evaluate<boolean, JpSelect>(node => node.open)
-        ).toEqual(false);
+        expect(await element.evaluate((node: JpSelect) => node.open)).toEqual(
+          false
+        );
       });
     });
   });
@@ -243,48 +243,48 @@ test.describe('JpSelect', () => {
       element.waitFor();
 
       expect
-        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .soft(await element.evaluate((node: JpSelect) => node.value))
         .toEqual('1');
 
       await element.press('ArrowDown');
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('2');
+      expect(await element.evaluate((node: JpSelect) => node.value)).toEqual(
+        '2'
+      );
     });
 
     test('via arrow up key', async ({ page }) => {
       const element = page.locator('jp-select');
       element.waitFor();
 
-      await element.evaluate<string, JpSelect>(node => (node.value = '2'));
+      await element.evaluate((node: JpSelect) => (node.value = '2'));
 
       expect
-        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .soft(await element.evaluate((node: JpSelect) => node.value))
         .toEqual('2');
 
       await element.press('ArrowUp');
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('1');
+      expect(await element.evaluate((node: JpSelect) => node.value)).toEqual(
+        '1'
+      );
     });
 
     test('via home key', async ({ page }) => {
       const element = page.locator('jp-select');
       element.waitFor();
 
-      await element.evaluate<string, JpSelect>(node => (node.value = '3'));
+      await element.evaluate((node: JpSelect) => (node.value = '3'));
 
       expect
-        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .soft(await element.evaluate((node: JpSelect) => node.value))
         .toEqual('3');
 
       await element.press('Home');
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('1');
+      expect(await element.evaluate((node: JpSelect) => node.value)).toEqual(
+        '1'
+      );
     });
 
     test('via end key', async ({ page }) => {
@@ -292,14 +292,14 @@ test.describe('JpSelect', () => {
       element.waitFor();
 
       expect
-        .soft(await element.evaluate<string, JpSelect>(node => node.value))
+        .soft(await element.evaluate((node: JpSelect) => node.value))
         .toEqual('1');
 
       await element.press('End');
 
-      expect(
-        await element.evaluate<string, JpSelect>(node => node.value)
-      ).toEqual('3');
+      expect(await element.evaluate((node: JpSelect) => node.value)).toEqual(
+        '3'
+      );
     });
   });
 
@@ -308,7 +308,7 @@ test.describe('JpSelect', () => {
       const element = page.locator('jp-select');
       element.waitFor();
 
-      await element.evaluate<void, JpSelect>(element => {
+      await element.evaluate((element: JpSelect) => {
         element.innerHTML = '';
         for (let i = 0; i < 50; i++) {
           const option = document.createElement('jp-option') as JpOption;
@@ -320,14 +320,12 @@ test.describe('JpSelect', () => {
 
       const selectedOption = element.locator('.listbox');
 
-      await element.evaluate<number, JpSelect>(
-        node => (node.selectedIndex = 35)
-      );
+      await element.evaluate((node: JpSelect) => (node.selectedIndex = 35));
 
       expect
         .soft(
-          await element.evaluate<string, JpSelect>(
-            node => node.firstSelectedOption.value
+          await element.evaluate(
+            (node: JpSelect) => node.firstSelectedOption.value
           )
         )
         .toEqual('35');
@@ -336,23 +334,18 @@ test.describe('JpSelect', () => {
 
       await selectedOption.waitFor();
 
-      expect
-        .soft(
-          await selectedOption.evaluate<number, JpOption>(
-            node => node.scrollTop
-          )
-        )
+      // The option is scrolled into view in a requestAnimationFrame callback.
+      await expect.soft
+        .poll(() => selectedOption.evaluate((node: JpOption) => node.scrollTop))
         .toBeGreaterThanOrEqual(794);
 
-      await element.evaluate<number, JpSelect>(
-        node => (node.selectedIndex = 0)
-      );
+      await element.evaluate((node: JpSelect) => (node.selectedIndex = 0));
 
       await element.waitFor();
 
-      expect(
-        await selectedOption.evaluate<number, JpOption>(node => node.scrollTop)
-      ).toBeLessThanOrEqual(6);
+      await expect
+        .poll(() => selectedOption.evaluate((node: JpOption) => node.scrollTop))
+        .toBeLessThanOrEqual(6);
     });
   });
 });

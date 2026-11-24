@@ -42,13 +42,13 @@ test.describe('jpListbox', () => {
       element.waitFor();
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(-1);
 
       await element.press('ArrowDown');
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(0);
     });
 
@@ -56,18 +56,16 @@ test.describe('jpListbox', () => {
       const element = page.locator('jp-listbox');
       element.waitFor();
 
-      await element.evaluate<number, jpListbox>(
-        node => (node.selectedIndex = 1)
-      );
+      await element.evaluate((node: jpListbox) => (node.selectedIndex = 1));
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(1);
 
       await element.press('ArrowUp');
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(0);
     });
 
@@ -75,18 +73,16 @@ test.describe('jpListbox', () => {
       const element = page.locator('jp-listbox');
       element.waitFor();
 
-      await element.evaluate<number, jpListbox>(
-        node => (node.selectedIndex = 2)
-      );
+      await element.evaluate((node: jpListbox) => (node.selectedIndex = 2));
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(2);
 
       await element.press('Home');
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(0);
     });
 
@@ -95,13 +91,13 @@ test.describe('jpListbox', () => {
       element.waitFor();
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(-1);
 
       await element.press('End');
 
       expect(
-        await element.evaluate<number, jpListbox>(node => node.selectedIndex)
+        await element.evaluate((node: jpListbox) => node.selectedIndex)
       ).toEqual(2);
     });
   });
